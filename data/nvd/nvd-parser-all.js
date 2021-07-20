@@ -12,6 +12,7 @@ const years = [
 const summarizationData = {
   references: {},
   types: {},
+  reportCount: 0,
 };
 
 for (let year of years.reverse()) {
@@ -41,17 +42,19 @@ for (let year of years.reverse()) {
     };
 
     reports.push(report);
+    summarizationData.reportCount++;
+
     summarization(summarizationData, report);
   }
   
-  fs.writeFile(`./parsed/nvd-${year}.json`, JSON.stringify(reports, null, 2), (err) => {
+  fs.writeFile(`./parsed-all/nvd-${year}.json`, JSON.stringify(reports, null, 2), (err) => {
     if (err) throw err;
     console.log('Data written to file');
   });
 }
 
 massager(summarizationData);
-fs.writeFile(`./parsed/nvd-summarization.json`, JSON.stringify(summarizationData, null, 2), (err) => {
+fs.writeFile(`./parsed-all/nvd-summarization.json`, JSON.stringify(summarizationData, null, 2), (err) => {
   if (err) throw err;
   console.log('Data written to file');
 });
@@ -94,18 +97,14 @@ function massager(data) {
   }
 
   data.types = tempTypes.sort((a, b) => b.count - a.count).reduce((types, {type, count}) => {
-    if (count > 100) {
-      types[type] = count;
-      typeCount++;
-    }
+    types[type] = count;
+    typeCount++;
     
     return types;
   }, {});
   data.references = tempReferences.sort((a, b) => b.count - a.count).reduce((references, {reference, count}) => {
-    if (count > 100) {
-      references[reference] = count;
-      referencesCount++;
-    }
+    references[reference] = count;
+    referencesCount++;
     
     return references;
   }, {});

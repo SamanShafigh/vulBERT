@@ -21,9 +21,9 @@ const {
 const referencesList = {};
 const referencesShortList = {};
 const summarizationData = {
-  references: {},
-  types: {},
   reportCount: 0,
+  types: {},
+  references: {},
 };
 
 for (let year of years.reverse()) {
@@ -124,9 +124,14 @@ function summarization(summarizationData, referencesList, referencesShortList, r
       });
     }
 
-    summarizationData.references[hostnameShort] = summarizationData.references[hostnameShort]
-      ? summarizationData.references[hostnameShort] + 1
-      : 1;
+    if (!summarizationData.references[hostnameShort]) {
+      summarizationData.references[hostnameShort] = {count:0, example: []}
+    }
+    
+    summarizationData.references[hostnameShort].count = summarizationData.references[hostnameShort].count + 1;
+    if (summarizationData.references[hostnameShort].example.length < 6) {
+      summarizationData.references[hostnameShort].example.push(href);
+    }
   }
 
   for (const type of types) {
