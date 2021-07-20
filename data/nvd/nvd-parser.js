@@ -19,7 +19,6 @@ const {
 } = JSON.parse(whitelistData);
 
 const referencesList = {};
-const referencesShortList = {};
 const summarizationData = {
   reportCount: 0,
   types: {},
@@ -72,7 +71,6 @@ for (let year of years.reverse()) {
         summarization(
           summarizationData, 
           referencesList, 
-          referencesShortList,
           report
         );
       }
@@ -94,12 +92,8 @@ fs.writeFile(`./parsed-${configName}/nvd-references-${configName}.json`, JSON.st
   if (err) throw err;
   console.log('Data written to file');
 });
-fs.writeFile(`./parsed-${configName}/nvd-short-references-${configName}.json`, JSON.stringify(referencesShortList, null, 2), (err) => {
-  if (err) throw err;
-  console.log('Data written to file');
-});
 
-function summarization(summarizationData, referencesList, referencesShortList, report) {
+function summarization(summarizationData, referencesList, report) {
   const { references, types, cve_id } = report;
 
   for (const { hostname, href } of references) {
@@ -107,16 +101,9 @@ function summarization(summarizationData, referencesList, referencesShortList, r
     
     if (!referencesList[hostnameShort]) {
       referencesList[hostnameShort] = [];
-      referencesShortList[hostnameShort] = [];
     }
-    referencesList[hostnameShort].push({
-      cve_id,
-      reference: href, 
-      nvd: `https://nvd.nist.gov/vuln/detail/${cve_id}`,
-      cve: `https://cve.mitre.org/cgi-bin/cvename.cgi?name=${cve_id}`,
-    });
-    if (referencesShortList[hostnameShort].length < 2) {
-      referencesShortList[hostnameShort].push({
+    if (referencesList[hostnameShort].length < 10) {
+      referencesList[hostnameShort].push({
         cve_id,
         reference: href, 
         nvd: `https://nvd.nist.gov/vuln/detail/${cve_id}`,
