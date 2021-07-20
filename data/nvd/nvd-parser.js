@@ -117,7 +117,10 @@ function summarization(summarizationData, referencesList, report) {
     
     summarizationData.references[hostnameShort].count = summarizationData.references[hostnameShort].count + 1;
     if (summarizationData.references[hostnameShort].example.length < 6) {
-      summarizationData.references[hostnameShort].example.push(href);
+      summarizationData.references[hostnameShort].example.push({
+        reference: href,
+        nvd: `https://nvd.nist.gov/vuln/detail/${cve_id}`,
+      });
     }
   }
 
@@ -136,7 +139,7 @@ function massager(data) {
   const tempReferences = [];
   for (const url of Object.keys(references)) {
     tempReferences.push({
-      count: references[url],
+      data: references[url],
       reference: url,
     })
   }
@@ -155,8 +158,8 @@ function massager(data) {
     return types;
   }, {});
 
-  data.references = tempReferences.sort((a, b) => b.count - a.count).reduce((references, {reference, count}) => {
-    references[reference] = count;
+  data.references = tempReferences.sort((a, b) => b.data.count - a.data.count).reduce((references, {reference, data}) => {
+    references[reference] = data;
     referencesCount++;
     return references;
   }, {});
