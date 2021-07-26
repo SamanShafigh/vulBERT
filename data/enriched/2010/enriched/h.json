@@ -1,0 +1,777 @@
+{
+  "year": 2010,
+  "total": 88,
+  "reference": "kb.cert.org",
+  "reports": {
+    "CVE-2010-0097": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/360341",
+        "title": "BIND 9 DNSSEC validation code could cause fake NXDOMAIN responses",
+        "overview": "A vulnerability exists in the BIND 9 DNSSEC validation code that could be used by an attacker to generate fake NXDOMAIN responses.",
+        "description": "BIND 9 contains a vulnerability in DNSSEC validation code. According to ISC:There was an error in the DNSSEC NSEC/NSEC3 validation code that could cause bogus NXDOMAIN responses (that is, NXDOMAIN responses for records proven by NSEC or NSEC3 to exist) to be cached as if they had validated correctly, so that future queries to the resolver would return the bogus NXDOMAIN with the AD flag set. This issue affects BIND versions 9.0.x, 9.1.x, 9.2.x, 9.3.x, 9.4.0 -> 9.4.3-P4, 9.5.0 -> 9.5.2-P1, 9.6.0 -> 9.6.1-P2",
+        "impact": "An attacker may be able to add fake NXDOMAIN records to a resolver's cache."
+      }
+    ],
+    "CVE-2010-0103": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/154421",
+        "title": "Energizer DUO USB battery charger software allows unauthorized remote system access",
+        "overview": "The software available for the Energizer DUO USB battery charger contains a backdoor that allows unauthorized remote system access.",
+        "description": "Energizer DUO is a USB battery charger. An optional Windows application that allows the user to view the battery charging status has been available on the Energizer website. The installer for the Energizer DUO software places the file UsbCharger.dll in the application's directory and Arucer.dll in the Windows system32 directory. When the Energizer UsbCharger software executes, it utilizes the UsbCharger.dll component for providing USB communication capabilities. UsbCharger.dll executes Arucer.dll via the Windows rundll32.exe mechanism, and it also configures Arucer.dll to execute automatically when Windows starts by creating an entry in the HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run registry key.Arucer.dll is a backdoor that allows unauthorized remote system access via accepting connections on 7777/tcp. Note that Windows XP SP2 and later systems include a firewall by default. Upon running the Energizer UsbCharger software for the first time, a dialog similar to the following is displayed:If the user selects \"Unblock,\" then the system will be at risk. Also note that if the application is unblocked, this will cause Windows to add rundll32.exe to the Windows Firewall exceptions list. This means that any DLL that is executed through the rundll32.exe mechanism will be excluded from the Windows Firewall, regardless of the DLL or port used.The backdoor capabilities include the ability to list directories, send and receive files, and execute programs. The hash information for the file isMD5: 1070be3e60a1868d2cd62fc90d76c861SHA1: d102b1d2538d8771be85403272e5a22a4b3f81adThe file details for Arucer.dll are--a-- W32i DLL CHS 1.0.0.1 shp 28,672 05-10-2007 arucer.dll Language 0x0804 (Chinese (PRC)) CharSet 0x04b0 Unicode OleSelfRegister Disabled CompanyName FileDescription Arucer DLL InternalName Arucer OriginalFilenam Arucer.DLL ProductName Arucer Dynamic Link Library ProductVersion 1, 0, 0, 1 FileVersion 1, 0, 0, 1 LegalCopyright ???? (C) 2006 LegalTrademarks VS_FIXEDFILEINFO: Signature: feef04bd Struc Ver: 00010000 FileVer: 00010000:00000001 (1.0:0.1) ProdVer: 00010000:00000001 (1.0:0.1) FlagMask: 0000003f Flags: 00000000 OS: 00000004 Win32 FileType: 00000002 Dll SubType: 00000000 FileDate: 00000000:00000000",
+        "impact": "An attacker is able to remotely control a system, including the ability to list directories, send and receive files, and execute programs. The backdoor operates with the privileges of the logged-on user."
+      }
+    ],
+    "CVE-2010-0214": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/870601",
+        "title": "PolyVision RoomWizard insecurely stores Sync Connector Active Directory credentials and uses default administrative password",
+        "overview": "The PolyVision RoomWizard web based scheduling system with touch screen display contains two vulnerabilities that allow an unauthorized user to access the device console and Sync Connector Active Directory credentials.",
+        "description": "The PolyVision RoomWizard is a touch screen scheduling device with a web-based administrative interface. The Sync Connector feature allows the RoomWizard to communicate with Microsoft Exchange in an Microsoft Windows Actitve Directory (AD) environment. The Sync Connector AD credentials are disclosed in the content of a web page on the administrative interface. This vulnerability has been reported to be affected in RoomWizard firmware version 3.2.3.An additional issue exists in that the RoomWizard ships with a default password on the administrator account permitting console access via HTTP.",
+        "impact": "An attacker with HTTP access to a RoomWizard device and knowledge of the administrative password could obtain the AD credentials. The attacker could also modify settings, including network configuration, which could prevent legitimate users from accessing the RoomWizard device."
+      }
+    ],
+    "CVE-2010-0215": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/236703",
+        "title": "ActiveCollab permissions failure",
+        "overview": "An authenticated user can view and delete projects or files that they are not assigned to.",
+        "description": "An authenticated user with no permission to a project can subscribe to the project, delete files, and possibly take other actions by loading a specifically crafted URL. Specific fields for the URL would most likely not be known to the attacker but a brute force attack could still be used to try all possibilities. ActiveCollab 2.3.1 is known to be vulnerable. Earlier versions may be vulnerable as well.",
+        "impact": "An authenticated attacker could view or modify projects they are not assigned to, resulting in loss of data integrity and confidentiality. An unauthenticated attacker may use a cross-site request forgery (XSRF) attack to trick an authenticated user into visiting a specifically crafted malicious URL as well."
+      }
+    ],
+    "CVE-2010-0218": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/784855",
+        "title": "Unexpected ACL Behavior in BIND 9.7.2",
+        "overview": "A flaw exists in BIND 9.7.2 through 9.7.2-P1 pertaining to how an ACL is applied.",
+        "description": "There is a flaw in BIND 9.7.2 through 9.7.2-P1 where the wrong ACL is applied. This flaw could allow access to a cache via recursion even though the ACL disallowed it. This bug is primarily a risk to operators running both authoritative and recursive DNS on the same BIND server in the same view.",
+        "impact": "A loss of confidentiality in cache data exists."
+      }
+    ],
+    "CVE-2010-0249": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/492515",
+        "title": "Microsoft Internet Explorer HTML object memory corruption vulnerability",
+        "overview": "An invalid pointer reference within Microsoft Internet Explorer may lead to execution of arbitrary code.",
+        "description": "Microsoft Internet Explorer contains a memory corruption vulnerability, which can result in an invalid pointer being accessed after an object is incorrectly initialized or has been deleted. In certain circumstances, the invalid pointer access can be leveraged by an attacker to execute arbitrary code. This vulnerability is being actively exploited, and exploit code is publically available.Please see Microsoft Security Advisory 979352 for further information.",
+        "impact": "By convincing a user to load a specially crafted HTML document or Microsoft Office document, a remote, unauthenticated attacker may be able to execute arbitrary code or cause a denial-of-service condition."
+      }
+    ],
+    "CVE-2010-0483": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/612021",
+        "title": "Internet Explorer VBScript Windows Help arbitrary code execution",
+        "overview": "Microsoft Internet Explorer is vulnerable to arbitrary code execution through the use of VBScript and Windows Help.",
+        "description": "Microsoft Internet Explorer supports the use of VBScript, in addition to the more widely-used JavaScript scripting language. Several VBScript commands allow a \"HelpFile\" parameter to be specified, such as the MsgBox function. This parameter may point to a file on the local filesystem, or it may refer to a file that is hosted remotely via Windows file sharing. When the F1 key is pressed, Internet Explorer will launch Windows Help (winhlp32.exe) to display the specified context-sensitive help file. Because Windows Help .HLP files are unsafe files, this behavior can result in arbitrary code execution.Exploit code for this vulnerability is publicly available.",
+        "impact": "By convincing a victim to view an HTML document (web page, HTML email, or email attachment) with Internet Explorer and to press the F1 key, an attacker could run arbitrary code with the privileges of the user running the application."
+      }
+    ],
+    "CVE-2010-0600": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/757804",
+        "title": "Cisco Network Building Mediator products contain multiple vulnerabilities",
+        "overview": "Cisco Network Building Mediator (NBM) products are affected by multiple vulnerabilities that could allow an attacker to gain control of a vulnerable device or to cause a denial of service.",
+        "description": "Cisco Network Building Mediator (NBM) products are designed to manage facility energy use. NBM products support automation protocols such as BACnet and Modbus; IT network protocols such as IP, SNMP, SSH, and HTTP/S; and application protocols like XML-RPC and SOAP. NBM products are affected by multiple vulnerabilities, including default administrative credentials, privilege escalation, plaintext transmission of credentials, and unauthenticated access to a file containing credentials. An attacker can exploit these vulnerabilities using several attack vectors over SSH, HTTP/S, and XML-RPC.Cisco Security Advisory cisco-sa-20100526-mediator notes: \"These vulnerabilities affect the legacy Richards-Zeta Mediator 2500 product and Cisco Network Building Mediator NBM-2400 and NBM-4800 models. All Mediator Framework software releases prior to 3.1.1 are affected by all vulnerabilities listed in this security advisory.\"See also ICS-CERT Advisory ICSA-10-147-01.",
+        "impact": "These vulnerabilities could allow an unauthenticated, remote attacker to gain complete control over the mediator. An authorized user could gain administrative privileges, and a remote attacker could cause a denial of service."
+      }
+    ],
+    "CVE-2010-0806": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/744549",
+        "title": "Microsoft Internet Explorer iepeers.dll use-after-free vulnerability",
+        "overview": "Microsoft Internet Explorer contains a use-after-free vulnerability in the iepeers.dll file, which may allow a remote, unauthenticated attacker to execute arbitrary code.",
+        "description": "Microsoft Internet Explorer provides support for Web Folders and printing through the use of the iepeers.dll component. According to Microsoft Security Advisory (981374), the iepeers.dll contains a vulnerability in the use of a pointer after an object is freed. Microsoft reports that the vulnerability, which affects Internet Explorer 6 and 7, has been reported publicly.Exploit code for this vulnerability is publicly available. This vulnerability is currently being exploited in the wild.",
+        "impact": "By convincing a user to load a specially crafted HTML document or Microsoft Office document, a remote, unauthenticated attacker may be able to execute arbitrary code or cause a denial-of-service condition."
+      }
+    ],
+    "CVE-2010-1028": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/964549",
+        "title": "Mozilla WOFF decoder integer overflow",
+        "overview": "An integer overflow in the Mozilla Web Open Fonts Format (WOFF) decoder may allow a remote attacker to execute code on an affected system.",
+        "description": "The Web Open Fonts Format (WOFF) is a simple compressed file format for fonts. Mozilla introduced support for WOFF in the 1.9.2 branch of the base software, which is used by Firefox versions 3.6 and later.An integer overflow error exists in the way the WOFF decoder handles the size of tables specified in the font file. This error could result in a buffer overflow vulnerability on a subsequent memory allocation. A remote attacker who is able to supply a malicious WOFF file could exploit this vulnerability.",
+        "impact": "A remote, unauthenticated attack may be able to execute arbitrary code with the privileges of the victim user."
+      }
+    ],
+    "CVE-2010-1239": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/570177",
+        "title": "Foxit Reader vulnerable to arbitrary command execution",
+        "overview": "Foxit Reader contains a vulnerability that may allow an attacker to execute arbitrary commands without requiring user interaction.",
+        "description": "Foxit Reader is software designed to view Portable Document Format (PDF) files. The Adobe PDF Reference supports a \"Launch action\" that \"... launches an application or opens or prints a document.\" Foxit Reader uses the ShellExecute function to handle PDFs that use a Launch action. In some cases, Foxit Reader will not prompt the user before an application is launched with a Launch action. It is also reported that the Launch Action can be used to launch an executable that is included in the PDF document, which results in arbitrary code execution.",
+        "impact": "By convincing a user to open a PDF document, e.g. by visiting a website, a remote, unauthenticated attacker may be able to execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2010-1423": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/886582",
+        "title": "Java Deployment Toolkit insufficient argument validation",
+        "overview": "The Sun Java Deployment Toolkit plugin and ActiveX control perform insufficient argument validation, allowing an attacker to perform several attacks, including the execution of an arbitrary JAR file.",
+        "description": "The Sun Java Deployment Toolkit contains an NPAPI (Netscape compatible) plugin and an ActiveX control which are installed in the end user's browser(s). The toolkit contains a launch() method which can be used to pass a Java Networking Launching Protocol (JNLP) URL to the registered handler for JNPL files. On Windows systems, the default handler is the Java Web Start utility, javaws.exe.As detailed here, because the launch() method performs insufficient argument validation of the URL, arbitrary arguments can be passed to javaws.exe. This includes the '-J' option, which can allow an attacker to execute a remote JAR file. The code in the JAR file will execute with elevated Java privileges, which is equivalent to the execution of arbitrary code.",
+        "impact": "By convincing a user to visit a specially crafted HTML document, a remote attacker may be able to execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2010-1574": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/732671",
+        "title": "Cisco Industrial Ethernet 3000 Series switches have hardcoded SNMP community strings",
+        "overview": "Cisco Industrial Ethernet 3000 (IE 3000) Series switches running Cisco IOS Software releases 12.2(52)SE or 12.2(52)SE1, contain well-known, hard-coded read and write SNMP community strings. An remote attacker could take full control of a vulnerable device.",
+        "description": "Cisco Industrial Ethernet 3000 (IE 3000) Series switches running Cisco IOS Software releases 12.2(52)SE or 12.2(52)SE1, contain well-known, hard-coded read and write SNMP community strings (names). The hard-coded strings are restored to the running configuration after a device reload. The SNMP service is disabled by default.",
+        "impact": "Successful exploitation of the vulnerability could result in an attacker obtaining full control of the device."
+      }
+    ],
+    "CVE-2010-1885": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/578319",
+        "title": "Microsoft Windows Help and Support Center URI processing vulnerability",
+        "overview": "The Microsoft Windows Help and Support Center application fails to properly sanitize hcp:// URIs, which can allow a remote, unauthenticated attacker to execute arbitrary commands.",
+        "description": "Microsoft Windows Help and Support Center is the default handler for the hcp protocol on Windows XP and 2003 systems. When an hcp:// URI is encountered, Windows will launch the Help and Support Center application, which is provided by helpctr.exe. When helpctr.exe is invoked from an hcp:// URI, it operates in a more restricted mode by using the -FromHCP command-line parameter. This is supposed to restrict the Help and Support Center to a whitelisted set of help documents and parameters.The UrlUnescape function that is used by helpctr.exe contains an error that allows an attacker to bypass the whitelist restrictions provided by the -FromHCP option. By leveraging an XSS vulnerability in an existing Help and Support Center document, an attacker can inject arbitrary script commands into a Help and Support Center session. Because the Help and Support Center documents are located in a trusted zone, this can allow arbitrary Windows commands to be executed.",
+        "impact": "By causing Microsoft Windows to handle a specially crafted hcp:// URI, a remote, unauthenticated attacker can execute arbitrary commands with the privileges of the user. This can happen as the result of viewing a specially crafted webpage, opening a Windows Media Player file, or through the use of other attack vectors."
+      }
+    ],
+    "CVE-2010-1905": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/602801",
+        "title": "Consona (formerly SupportSoft) Intelligent Assistance Suite (IAS) cross-site scripting, ActiveX, and Repair Service vulnerabilities",
+        "overview": "Consona (formerly SupportSoft) Intelligent Assistance Suite (IAS) contains a set of vulnerabilities that collectively could allow an attacker to execute arbitrary code on a remote system.",
+        "description": "In 2009, Consona acquired SupportSoft's enterprise software assets, including web-based assistance software called Intelligent Assistance Suite (IAS). IAS client components are delivered via ActiveX controls, Netscape-style plugins, or standalone installers. IAS runs on Microsoft Windows platforms. Consona products affected by these vulnerabilities include Consona Live Assistance, Consona Dynamic Agent, Consona Subscriber Assistance, Repair Manager, Consona Subscriber Activiation, and Subscriber Agent.IAS contains vulnerabilities in different components.Cross-site scripting (XSS) in ns6plugindestructor.aspUnsafe methods provided by SdcUser.TgConCtl ActiveX control (tgctlcm.dll)Buffer overflow in SdcUser.TgConCtl ActiveX control (tgctlcm.dll)Local privilege elevation in Repair Service (tgsrv.exe) (only installed on Windows Vista and Windows 7)Using several of these vulnerabilities, an attacker can execute arbitrary code on a vulnerable system. For example, the XSS vulnerability can be used to instantiate the SdcUser.TgConCtl control, which then can be used to download and execute arbitrary programs using the unsafe methods provided by the control. The Repair Service can be used to elevate from user (or Low-Rights IE) privileges to SYSTEM.Further details are available in Rubén Santamarta's slides from Rooted CON 2010.",
+        "impact": "By convincing a user to view a specially crafted HTML document (web page, HTML email message), an attacker could execute arbitrary code with the privileges of the user, and possibly gain SYSTEM privileges via the Repair Service."
+      }
+    ],
+    "CVE-2010-1906": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/602801",
+        "title": "Consona (formerly SupportSoft) Intelligent Assistance Suite (IAS) cross-site scripting, ActiveX, and Repair Service vulnerabilities",
+        "overview": "Consona (formerly SupportSoft) Intelligent Assistance Suite (IAS) contains a set of vulnerabilities that collectively could allow an attacker to execute arbitrary code on a remote system.",
+        "description": "In 2009, Consona acquired SupportSoft's enterprise software assets, including web-based assistance software called Intelligent Assistance Suite (IAS). IAS client components are delivered via ActiveX controls, Netscape-style plugins, or standalone installers. IAS runs on Microsoft Windows platforms. Consona products affected by these vulnerabilities include Consona Live Assistance, Consona Dynamic Agent, Consona Subscriber Assistance, Repair Manager, Consona Subscriber Activiation, and Subscriber Agent.IAS contains vulnerabilities in different components.Cross-site scripting (XSS) in ns6plugindestructor.aspUnsafe methods provided by SdcUser.TgConCtl ActiveX control (tgctlcm.dll)Buffer overflow in SdcUser.TgConCtl ActiveX control (tgctlcm.dll)Local privilege elevation in Repair Service (tgsrv.exe) (only installed on Windows Vista and Windows 7)Using several of these vulnerabilities, an attacker can execute arbitrary code on a vulnerable system. For example, the XSS vulnerability can be used to instantiate the SdcUser.TgConCtl control, which then can be used to download and execute arbitrary programs using the unsafe methods provided by the control. The Repair Service can be used to elevate from user (or Low-Rights IE) privileges to SYSTEM.Further details are available in Rubén Santamarta's slides from Rooted CON 2010.",
+        "impact": "By convincing a user to view a specially crafted HTML document (web page, HTML email message), an attacker could execute arbitrary code with the privileges of the user, and possibly gain SYSTEM privileges via the Repair Service."
+      }
+    ],
+    "CVE-2010-1907": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/602801",
+        "title": "Consona (formerly SupportSoft) Intelligent Assistance Suite (IAS) cross-site scripting, ActiveX, and Repair Service vulnerabilities",
+        "overview": "Consona (formerly SupportSoft) Intelligent Assistance Suite (IAS) contains a set of vulnerabilities that collectively could allow an attacker to execute arbitrary code on a remote system.",
+        "description": "In 2009, Consona acquired SupportSoft's enterprise software assets, including web-based assistance software called Intelligent Assistance Suite (IAS). IAS client components are delivered via ActiveX controls, Netscape-style plugins, or standalone installers. IAS runs on Microsoft Windows platforms. Consona products affected by these vulnerabilities include Consona Live Assistance, Consona Dynamic Agent, Consona Subscriber Assistance, Repair Manager, Consona Subscriber Activiation, and Subscriber Agent.IAS contains vulnerabilities in different components.Cross-site scripting (XSS) in ns6plugindestructor.aspUnsafe methods provided by SdcUser.TgConCtl ActiveX control (tgctlcm.dll)Buffer overflow in SdcUser.TgConCtl ActiveX control (tgctlcm.dll)Local privilege elevation in Repair Service (tgsrv.exe) (only installed on Windows Vista and Windows 7)Using several of these vulnerabilities, an attacker can execute arbitrary code on a vulnerable system. For example, the XSS vulnerability can be used to instantiate the SdcUser.TgConCtl control, which then can be used to download and execute arbitrary programs using the unsafe methods provided by the control. The Repair Service can be used to elevate from user (or Low-Rights IE) privileges to SYSTEM.Further details are available in Rubén Santamarta's slides from Rooted CON 2010.",
+        "impact": "By convincing a user to view a specially crafted HTML document (web page, HTML email message), an attacker could execute arbitrary code with the privileges of the user, and possibly gain SYSTEM privileges via the Repair Service."
+      }
+    ],
+    "CVE-2010-1908": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/602801",
+        "title": "Consona (formerly SupportSoft) Intelligent Assistance Suite (IAS) cross-site scripting, ActiveX, and Repair Service vulnerabilities",
+        "overview": "Consona (formerly SupportSoft) Intelligent Assistance Suite (IAS) contains a set of vulnerabilities that collectively could allow an attacker to execute arbitrary code on a remote system.",
+        "description": "In 2009, Consona acquired SupportSoft's enterprise software assets, including web-based assistance software called Intelligent Assistance Suite (IAS). IAS client components are delivered via ActiveX controls, Netscape-style plugins, or standalone installers. IAS runs on Microsoft Windows platforms. Consona products affected by these vulnerabilities include Consona Live Assistance, Consona Dynamic Agent, Consona Subscriber Assistance, Repair Manager, Consona Subscriber Activiation, and Subscriber Agent.IAS contains vulnerabilities in different components.Cross-site scripting (XSS) in ns6plugindestructor.aspUnsafe methods provided by SdcUser.TgConCtl ActiveX control (tgctlcm.dll)Buffer overflow in SdcUser.TgConCtl ActiveX control (tgctlcm.dll)Local privilege elevation in Repair Service (tgsrv.exe) (only installed on Windows Vista and Windows 7)Using several of these vulnerabilities, an attacker can execute arbitrary code on a vulnerable system. For example, the XSS vulnerability can be used to instantiate the SdcUser.TgConCtl control, which then can be used to download and execute arbitrary programs using the unsafe methods provided by the control. The Repair Service can be used to elevate from user (or Low-Rights IE) privileges to SYSTEM.Further details are available in Rubén Santamarta's slides from Rooted CON 2010.",
+        "impact": "By convincing a user to view a specially crafted HTML document (web page, HTML email message), an attacker could execute arbitrary code with the privileges of the user, and possibly gain SYSTEM privileges via the Repair Service."
+      }
+    ],
+    "CVE-2010-1909": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/602801",
+        "title": "Consona (formerly SupportSoft) Intelligent Assistance Suite (IAS) cross-site scripting, ActiveX, and Repair Service vulnerabilities",
+        "overview": "Consona (formerly SupportSoft) Intelligent Assistance Suite (IAS) contains a set of vulnerabilities that collectively could allow an attacker to execute arbitrary code on a remote system.",
+        "description": "In 2009, Consona acquired SupportSoft's enterprise software assets, including web-based assistance software called Intelligent Assistance Suite (IAS). IAS client components are delivered via ActiveX controls, Netscape-style plugins, or standalone installers. IAS runs on Microsoft Windows platforms. Consona products affected by these vulnerabilities include Consona Live Assistance, Consona Dynamic Agent, Consona Subscriber Assistance, Repair Manager, Consona Subscriber Activiation, and Subscriber Agent.IAS contains vulnerabilities in different components.Cross-site scripting (XSS) in ns6plugindestructor.aspUnsafe methods provided by SdcUser.TgConCtl ActiveX control (tgctlcm.dll)Buffer overflow in SdcUser.TgConCtl ActiveX control (tgctlcm.dll)Local privilege elevation in Repair Service (tgsrv.exe) (only installed on Windows Vista and Windows 7)Using several of these vulnerabilities, an attacker can execute arbitrary code on a vulnerable system. For example, the XSS vulnerability can be used to instantiate the SdcUser.TgConCtl control, which then can be used to download and execute arbitrary programs using the unsafe methods provided by the control. The Repair Service can be used to elevate from user (or Low-Rights IE) privileges to SYSTEM.Further details are available in Rubén Santamarta's slides from Rooted CON 2010.",
+        "impact": "By convincing a user to view a specially crafted HTML document (web page, HTML email message), an attacker could execute arbitrary code with the privileges of the user, and possibly gain SYSTEM privileges via the Repair Service."
+      }
+    ],
+    "CVE-2010-1910": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/602801",
+        "title": "Consona (formerly SupportSoft) Intelligent Assistance Suite (IAS) cross-site scripting, ActiveX, and Repair Service vulnerabilities",
+        "overview": "Consona (formerly SupportSoft) Intelligent Assistance Suite (IAS) contains a set of vulnerabilities that collectively could allow an attacker to execute arbitrary code on a remote system.",
+        "description": "In 2009, Consona acquired SupportSoft's enterprise software assets, including web-based assistance software called Intelligent Assistance Suite (IAS). IAS client components are delivered via ActiveX controls, Netscape-style plugins, or standalone installers. IAS runs on Microsoft Windows platforms. Consona products affected by these vulnerabilities include Consona Live Assistance, Consona Dynamic Agent, Consona Subscriber Assistance, Repair Manager, Consona Subscriber Activiation, and Subscriber Agent.IAS contains vulnerabilities in different components.Cross-site scripting (XSS) in ns6plugindestructor.aspUnsafe methods provided by SdcUser.TgConCtl ActiveX control (tgctlcm.dll)Buffer overflow in SdcUser.TgConCtl ActiveX control (tgctlcm.dll)Local privilege elevation in Repair Service (tgsrv.exe) (only installed on Windows Vista and Windows 7)Using several of these vulnerabilities, an attacker can execute arbitrary code on a vulnerable system. For example, the XSS vulnerability can be used to instantiate the SdcUser.TgConCtl control, which then can be used to download and execute arbitrary programs using the unsafe methods provided by the control. The Repair Service can be used to elevate from user (or Low-Rights IE) privileges to SYSTEM.Further details are available in Rubén Santamarta's slides from Rooted CON 2010.",
+        "impact": "By convincing a user to view a specially crafted HTML document (web page, HTML email message), an attacker could execute arbitrary code with the privileges of the user, and possibly gain SYSTEM privileges via the Repair Service."
+      }
+    ],
+    "CVE-2010-1911": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/602801",
+        "title": "Consona (formerly SupportSoft) Intelligent Assistance Suite (IAS) cross-site scripting, ActiveX, and Repair Service vulnerabilities",
+        "overview": "Consona (formerly SupportSoft) Intelligent Assistance Suite (IAS) contains a set of vulnerabilities that collectively could allow an attacker to execute arbitrary code on a remote system.",
+        "description": "In 2009, Consona acquired SupportSoft's enterprise software assets, including web-based assistance software called Intelligent Assistance Suite (IAS). IAS client components are delivered via ActiveX controls, Netscape-style plugins, or standalone installers. IAS runs on Microsoft Windows platforms. Consona products affected by these vulnerabilities include Consona Live Assistance, Consona Dynamic Agent, Consona Subscriber Assistance, Repair Manager, Consona Subscriber Activiation, and Subscriber Agent.IAS contains vulnerabilities in different components.Cross-site scripting (XSS) in ns6plugindestructor.aspUnsafe methods provided by SdcUser.TgConCtl ActiveX control (tgctlcm.dll)Buffer overflow in SdcUser.TgConCtl ActiveX control (tgctlcm.dll)Local privilege elevation in Repair Service (tgsrv.exe) (only installed on Windows Vista and Windows 7)Using several of these vulnerabilities, an attacker can execute arbitrary code on a vulnerable system. For example, the XSS vulnerability can be used to instantiate the SdcUser.TgConCtl control, which then can be used to download and execute arbitrary programs using the unsafe methods provided by the control. The Repair Service can be used to elevate from user (or Low-Rights IE) privileges to SYSTEM.Further details are available in Rubén Santamarta's slides from Rooted CON 2010.",
+        "impact": "By convincing a user to view a specially crafted HTML document (web page, HTML email message), an attacker could execute arbitrary code with the privileges of the user, and possibly gain SYSTEM privileges via the Repair Service."
+      }
+    ],
+    "CVE-2010-1912": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/602801",
+        "title": "Consona (formerly SupportSoft) Intelligent Assistance Suite (IAS) cross-site scripting, ActiveX, and Repair Service vulnerabilities",
+        "overview": "Consona (formerly SupportSoft) Intelligent Assistance Suite (IAS) contains a set of vulnerabilities that collectively could allow an attacker to execute arbitrary code on a remote system.",
+        "description": "In 2009, Consona acquired SupportSoft's enterprise software assets, including web-based assistance software called Intelligent Assistance Suite (IAS). IAS client components are delivered via ActiveX controls, Netscape-style plugins, or standalone installers. IAS runs on Microsoft Windows platforms. Consona products affected by these vulnerabilities include Consona Live Assistance, Consona Dynamic Agent, Consona Subscriber Assistance, Repair Manager, Consona Subscriber Activiation, and Subscriber Agent.IAS contains vulnerabilities in different components.Cross-site scripting (XSS) in ns6plugindestructor.aspUnsafe methods provided by SdcUser.TgConCtl ActiveX control (tgctlcm.dll)Buffer overflow in SdcUser.TgConCtl ActiveX control (tgctlcm.dll)Local privilege elevation in Repair Service (tgsrv.exe) (only installed on Windows Vista and Windows 7)Using several of these vulnerabilities, an attacker can execute arbitrary code on a vulnerable system. For example, the XSS vulnerability can be used to instantiate the SdcUser.TgConCtl control, which then can be used to download and execute arbitrary programs using the unsafe methods provided by the control. The Repair Service can be used to elevate from user (or Low-Rights IE) privileges to SYSTEM.Further details are available in Rubén Santamarta's slides from Rooted CON 2010.",
+        "impact": "By convincing a user to view a specially crafted HTML document (web page, HTML email message), an attacker could execute arbitrary code with the privileges of the user, and possibly gain SYSTEM privileges via the Repair Service."
+      }
+    ],
+    "CVE-2010-1939": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/943165",
+        "title": "Apple Safari window object invalid pointer vulnerability",
+        "overview": "Apple Safari contains a vulnerability in the handling of window objects, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Apple Safari fails to properly handle references to window objects. Safari can allow a window object to be deleted, while references to the object may still exist. If JavaScript code then attempts to use the deleted window object, this can result in the use of an invalid pointer. This pointer can be controlled by an attacker through the use of JavaScript.Exploit code for this vulnerability is publicly available. We have confirmed Apple Safari 4.0.5 on the Windows platform to be vulnerable. Other versions may also be affected.",
+        "impact": "By convincing a victim to view an HTML document (webpage, HTML email, or email attachment) with Apple Safari, an attacker could run arbitrary code with the privileges of the user running the application."
+      }
+    ],
+    "CVE-2010-2265": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/578319",
+        "title": "Microsoft Windows Help and Support Center URI processing vulnerability",
+        "overview": "The Microsoft Windows Help and Support Center application fails to properly sanitize hcp:// URIs, which can allow a remote, unauthenticated attacker to execute arbitrary commands.",
+        "description": "Microsoft Windows Help and Support Center is the default handler for the hcp protocol on Windows XP and 2003 systems. When an hcp:// URI is encountered, Windows will launch the Help and Support Center application, which is provided by helpctr.exe. When helpctr.exe is invoked from an hcp:// URI, it operates in a more restricted mode by using the -FromHCP command-line parameter. This is supposed to restrict the Help and Support Center to a whitelisted set of help documents and parameters.The UrlUnescape function that is used by helpctr.exe contains an error that allows an attacker to bypass the whitelist restrictions provided by the -FromHCP option. By leveraging an XSS vulnerability in an existing Help and Support Center document, an attacker can inject arbitrary script commands into a Help and Support Center session. Because the Help and Support Center documents are located in a trusted zone, this can allow arbitrary Windows commands to be executed.",
+        "impact": "By causing Microsoft Windows to handle a specially crafted hcp:// URI, a remote, unauthenticated attacker can execute arbitrary commands with the privileges of the user. This can happen as the result of viewing a specially crafted webpage, opening a Windows Media Player file, or through the use of other attack vectors."
+      }
+    ],
+    "CVE-2010-2267": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/245081",
+        "title": "Accoria Rock Web Server contains multiple vulnerabilities",
+        "overview": "Accoria Web Server contains multiple vulnerabilities that collectively could allow an attacker to execute commands through the administration interface.",
+        "description": "The Accoria web server, also known as Rock Web Server, contains several cross-site scripting (XSS) and cross-site request forgery (XSRF) vulnerabilities. Directory traversal and format string vulnerabilities exist as well. The getenv sample code contains an XSS vulnerability when viewed by Internet Explorer 6 or other web browsers that do not follow RFC 2616 Section 7.2.1. Generated cookies appear to be weak and predictable, which may allow an attacker to bypass authentication.Further details are available from the IOActive security advisory.",
+        "impact": "A remote and unauthenticated attacker may be able to execute commands in the context of the web server administrator."
+      }
+    ],
+    "CVE-2010-2268": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/245081",
+        "title": "Accoria Rock Web Server contains multiple vulnerabilities",
+        "overview": "Accoria Web Server contains multiple vulnerabilities that collectively could allow an attacker to execute commands through the administration interface.",
+        "description": "The Accoria web server, also known as Rock Web Server, contains several cross-site scripting (XSS) and cross-site request forgery (XSRF) vulnerabilities. Directory traversal and format string vulnerabilities exist as well. The getenv sample code contains an XSS vulnerability when viewed by Internet Explorer 6 or other web browsers that do not follow RFC 2616 Section 7.2.1. Generated cookies appear to be weak and predictable, which may allow an attacker to bypass authentication.Further details are available from the IOActive security advisory.",
+        "impact": "A remote and unauthenticated attacker may be able to execute commands in the context of the web server administrator."
+      }
+    ],
+    "CVE-2010-2269": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/245081",
+        "title": "Accoria Rock Web Server contains multiple vulnerabilities",
+        "overview": "Accoria Web Server contains multiple vulnerabilities that collectively could allow an attacker to execute commands through the administration interface.",
+        "description": "The Accoria web server, also known as Rock Web Server, contains several cross-site scripting (XSS) and cross-site request forgery (XSRF) vulnerabilities. Directory traversal and format string vulnerabilities exist as well. The getenv sample code contains an XSS vulnerability when viewed by Internet Explorer 6 or other web browsers that do not follow RFC 2616 Section 7.2.1. Generated cookies appear to be weak and predictable, which may allow an attacker to bypass authentication.Further details are available from the IOActive security advisory.",
+        "impact": "A remote and unauthenticated attacker may be able to execute commands in the context of the web server administrator."
+      }
+    ],
+    "CVE-2010-2270": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/245081",
+        "title": "Accoria Rock Web Server contains multiple vulnerabilities",
+        "overview": "Accoria Web Server contains multiple vulnerabilities that collectively could allow an attacker to execute commands through the administration interface.",
+        "description": "The Accoria web server, also known as Rock Web Server, contains several cross-site scripting (XSS) and cross-site request forgery (XSRF) vulnerabilities. Directory traversal and format string vulnerabilities exist as well. The getenv sample code contains an XSS vulnerability when viewed by Internet Explorer 6 or other web browsers that do not follow RFC 2616 Section 7.2.1. Generated cookies appear to be weak and predictable, which may allow an attacker to bypass authentication.Further details are available from the IOActive security advisory.",
+        "impact": "A remote and unauthenticated attacker may be able to execute commands in the context of the web server administrator."
+      }
+    ],
+    "CVE-2010-2465": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/MAPG-83TQL8",
+        "title": "S2 NetBox allows unauthenticated HTTP access to node logs, backups, and employee photographs",
+        "overview": "S2 NetBox and related products do not adequately restrict access to node logs, backups, and employee photographs. A remote, unauthenticated attacker could use information obtained from a vulnerable system to aid in further attacks.",
+        "description": "S2 NetBox is a line of \"...open architecture, scalable, IP network-ready products for the physical security industry that integrate access control, alarm monitoring, video surveillance, and temperature monitoring.\" S2 Netbox systems are operated entirely via a web interface.The Netbox web server does not properly authenticate access to several directories, allowing an unauthenticated attacker to access network node logs, employee photographs, and backup archives.Linear (formerly IEI) eMerge is based on S2 Netbox, and Sonitrol eAccess is based on Linear eMerge. eMerge and eAccess may also be affected by this vulnerability.",
+        "impact": "An unauthenticated, remote attacker can access node logs, backups, and employee photographs. An attacker may be able to crack passwords contained in a backup and gain administrative control over the system. Node logs and employee photographs could provide an attacker with reconnaissance information."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/251133",
+        "title": "S2 NetBox allows unauthenticated HTTP access to node logs, backups, and employee photographs",
+        "overview": "S2 NetBox and related products do not adequately restrict access to node logs, backups, and employee photographs. A remote, unauthenticated attacker could use information obtained from a vulnerable system to aid in further attacks.",
+        "description": "S2 NetBox is a line of \"...open architecture, scalable, IP network-ready products for the physical security industry that integrate access control, alarm monitoring, video surveillance, and temperature monitoring.\" S2 Netbox systems are operated entirely via a web interface.The Netbox web server does not properly authenticate access to several directories, allowing an unauthenticated attacker to access network node logs, employee photographs, and backup archives.Linear (formerly IEI) eMerge is based on S2 Netbox, and Sonitrol eAccess is based on Linear eMerge. eMerge and eAccess may also be affected by this vulnerability.",
+        "impact": "An unauthenticated, remote attacker can access node logs, backups, and employee photographs. An attacker may be able to crack passwords contained in a backup and gain administrative control over the system. Node logs and employee photographs could provide an attacker with reconnaissance information."
+      }
+    ],
+    "CVE-2010-2466": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/228737"
+      }
+    ],
+    "CVE-2010-2568": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/940193",
+        "title": "Microsoft Windows automatically executes code specified in shortcut files",
+        "overview": "Microsoft Windows automatically executes code specified in shortcut (LNK and PIF) files.",
+        "description": "Microsoft Windows supports the use of shortcut or LNK files. A LNK file is a reference to a local file. A PIF file is a shortcut to a MS-DOS application. Clicking on a LNK or PIF file has essentially the same outcome as clicking on the file that is specified as the shortcut target. For example, clicking a shortcut to calc.exe will launch calc.exe, and clicking a shortcut to readme.txt will open readme.txt with the associated application for handling text files.Microsoft Windows fails to safely obtain icons for shortcut files. When Windows displays Control Panel items, it will initialize each object for the purpose of providing dynamic icon functionality. This means that a Control Panel applet will execute code when the icon is displayed in Windows. Through use of a shortcut file, an attacker can specify a malicious DLL that is to be processed within the context of the Windows Control Panel, which will result in arbitrary code execution. The specified code may reside on a USB drive, local or remote filesystem, a CD-ROM, or other locations. Viewing the location of a shortcut file with Windows Explorer is sufficient to trigger the vulnerability. By default, Microsoft Windows has AutoRun/AutoPlay features enabled. These features can cause Windows to automatically open Windows Explorer when a removable drive, such as a USB thumb drive, is connected. Other applications that display file icons can be used as an attack vector for this vulnerability as well. When used in conjunction with a WebDav resource, Internet Explorer can be used as an attack vector for this vulnerability. With the case of Internet Explorer, no user interaction beyond viewing a web page is required to trigger the vulnerability.This vulnerability is being exploited in the wild to spread malware (stuxnet) that targets control systems. Exploit code for this vulnerability is publicly available.",
+        "impact": "By convincing a user to display a specially-crafted shortcut file, an attacker may be able to execute arbitrary code with the privileges of the user. Depending on the operating system and AutoRun/AutoPlay configuration, this can happen automatically by connecting a USB device. This vulnerability can also be triggered by viewing a web page with Internet Explorer or opening a document with Microsoft Office."
+      }
+    ],
+    "CVE-2010-2594": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/173009",
+        "title": "Snare Agent web interface cross-site request forgery vulnerabilities",
+        "overview": "The Snare Agent web interface is susceptible to cross-site request forgery attacks.",
+        "description": "The web interface allows the administrator to manage several agent settings, including changing the listening port and password. These HTTP requests do not perform proper validity checks and are susceptible to a cross-site request forgery attack.The vulnerability is reported in the following products and versions:Snare for Solaris 3.2.3 and priorSnare for Windows 3.1.7 and priorSnare for Linux 1.5.0 and priorSnare for AIX 1.5.0 and priorSnare for Irix 1.4 and priorEpilog for Windows 1.5.3 and priorEpilog for Unix version 1.2 and prior",
+        "impact": "An attacker can change several agent settings, such as the password or listening port, if able to trick an administrator into visiting a specially crafted link."
+      }
+    ],
+    "CVE-2010-2883": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/491991",
+        "title": "Adobe Reader and Acrobat Font Parsing Buffer Overflow Vulnerability",
+        "overview": "A vulnerability has been discovered in Adobe Reader and Acrobat that may be exploited to run arbitrary code.",
+        "description": "A critical vulnerability exists in the font parsing code of CoolType.dll. A vulnerable strcat call is used when parsing data within the \"SING\" table of a TrueType font. The vulnerability has been confirmed in versions 8.2.4 and 9.3.4 of both Reader and Acrobat. Older versions may also be affected. There have been reports of this vulnerability being actively exploited in the wild.",
+        "impact": "An attacker may use a specifically crafted PDF document to cause a crash or execute arbitrary code."
+      }
+    ],
+    "CVE-2010-2965": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/MAPG-86FPQL",
+        "title": "Wind River Systems VxWorks debug service enabled by default",
+        "overview": "Group Score Vector Base 10 AV:N/AC:L/Au:N/C:C/I:C/A:C Temporal 9.5 E:H/RL:W/RC:C Environmental 9.5 CDP:ND/TD:H/CR:ND/IR:ND/AR:ND",
+        "description": "CVE-2010-2965 Affected",
+        "impact": "CVE-2010-2965 Affected"
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/MAPG-86EPFA",
+        "title": "Wind River Systems VxWorks debug service enabled by default",
+        "overview": "Group Score Vector Base 10 AV:N/AC:L/Au:N/C:C/I:C/A:C Temporal 9.5 E:H/RL:W/RC:C Environmental 9.5 CDP:ND/TD:H/CR:ND/IR:ND/AR:ND",
+        "description": "CVE-2010-2965 Affected",
+        "impact": "CVE-2010-2965 Affected"
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/362332",
+        "title": "Wind River Systems VxWorks debug service enabled by default",
+        "overview": "Group Score Vector Base 10 AV:N/AC:L/Au:N/C:C/I:C/A:C Temporal 9.5 E:H/RL:W/RC:C Environmental 9.5 CDP:ND/TD:H/CR:ND/IR:ND/AR:ND",
+        "description": "CVE-2010-2965 Affected",
+        "impact": "CVE-2010-2965 Affected"
+      }
+    ],
+    "CVE-2010-2967": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/MAPG-863QH9",
+        "title": "Wind River Systems VxWorks weak default hashing algorithm in standard authentication API (loginLib)",
+        "overview": "The hashing algorithm that is used in the standard authentication API for VxWorks is susceptible to collisions. An attacker can brute force a password by guessing a string that produces the same hash as a legitimate password.",
+        "description": "An attacker with a known username and access to a service (telnet, rlogin or FTP) that uses the standard authentication API (loginDefaultEncrypt (), part of loginLib) can brute force the password in a relatively short period of time. Since the hashing algorithm is susceptible to collisions, the actual password does not have to be found, just a string that produces the same hash.For instance, when the default 'target/password' login example is used, 'y{{{{{kS' hashes to the same string as 'password'. It is thus possible to login using both 'password' and 'y{{{{{kS' as the passwords for the user 'target'.Additional information can be found in ICS-CERT advisory ICSA-10-214-01 and on the Metasploit Blog.",
+        "impact": "An attacker can brute force a correct password by guessing a string that produces the same hash and access the relevant service as the known user."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/840249",
+        "title": "Wind River Systems VxWorks weak default hashing algorithm in standard authentication API (loginLib)",
+        "overview": "The hashing algorithm that is used in the standard authentication API for VxWorks is susceptible to collisions. An attacker can brute force a password by guessing a string that produces the same hash as a legitimate password.",
+        "description": "An attacker with a known username and access to a service (telnet, rlogin or FTP) that uses the standard authentication API (loginDefaultEncrypt (), part of loginLib) can brute force the password in a relatively short period of time. Since the hashing algorithm is susceptible to collisions, the actual password does not have to be found, just a string that produces the same hash.For instance, when the default 'target/password' login example is used, 'y{{{{{kS' hashes to the same string as 'password'. It is thus possible to login using both 'password' and 'y{{{{{kS' as the passwords for the user 'target'.Additional information can be found in ICS-CERT advisory ICSA-10-214-01 and on the Metasploit Blog.",
+        "impact": "An attacker can brute force a correct password by guessing a string that produces the same hash and access the relevant service as the known user."
+      }
+    ],
+    "CVE-2010-2974": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/703189",
+        "title": "Invensys Wonderware Archestra ConfigurationAccessComponent ActiveX control stack buffer overflow",
+        "overview": "The Invensys Wonderware Archestra ConfigurationAccessComponent ActiveX control contains a stack buffer overflow that could allow a remote attacker to execute arbitrary code on an affected system",
+        "description": "The Invensys Wonderware Archestra ConfigurationAccessComponent ActiveX control, ConfigurationAccessComponent.dll, used by the Wonderware Archestra IDE (Integrated Development Environment) and the InFusion IEE (Integrated Engineering Environment) contains a stack buffer overflow vulnerability.The UnsubscribeData method of the IConfigurationAccess interface uses wcscpy() to copy its first parameter into a static sized local buffer.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause the web browser to crash."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/MORO-87MHPT",
+        "title": "Invensys Wonderware Archestra ConfigurationAccessComponent ActiveX control stack buffer overflow",
+        "overview": "The Invensys Wonderware Archestra ConfigurationAccessComponent ActiveX control contains a stack buffer overflow that could allow a remote attacker to execute arbitrary code on an affected system",
+        "description": "The Invensys Wonderware Archestra ConfigurationAccessComponent ActiveX control, ConfigurationAccessComponent.dll, used by the Wonderware Archestra IDE (Integrated Development Environment) and the InFusion IEE (Integrated Engineering Environment) contains a stack buffer overflow vulnerability.The UnsubscribeData method of the IConfigurationAccess interface uses wcscpy() to copy its first parameter into a static sized local buffer.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause the web browser to crash."
+      }
+    ],
+    "CVE-2010-3031": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/JALR-87AKR5",
+        "title": "Wyse ThinOS LPD service buffer overflow vulnerability",
+        "overview": "Wyse ThinOS HF 4.4.079i has a buffer overflow vulnerability in the LPD service (515/tcp).",
+        "description": "The LPD service (515/tcp) on Wyse ThinOS HF 4.4.079i crashes when a long buffer is sent to it. This condition may exist in all versions before Wyse ThinOS 6.5.",
+        "impact": "An attacker can cause the device to crash and may be able to execute arbitrary code."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/320233",
+        "title": "Wyse ThinOS LPD service buffer overflow vulnerability",
+        "overview": "Wyse ThinOS HF 4.4.079i has a buffer overflow vulnerability in the LPD service (515/tcp).",
+        "description": "The LPD service (515/tcp) on Wyse ThinOS HF 4.4.079i crashes when a long buffer is sent to it. This condition may exist in all versions before Wyse ThinOS 6.5.",
+        "impact": "An attacker can cause the device to crash and may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2010-3121": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/278785",
+        "title": "DevonIT weak authentication and buffer overflow in /usr/bin/tm-console-bin",
+        "overview": "The DevonIT management tool for thin clients uses a shared secret that is transmitted over the network in the clear. The /usr/bin/tm-console-bin application contains a buffer overflow, which may allow an attacker to execute arbitrary code.",
+        "description": "The management tool transmits an unencrypted shared secret over the network to authenticate with clients. This traffic can then be used by an attacker to mimic a thin-manager server and control thin clients.",
+        "impact": "An attacker able to sniff traffic created by the management tool will be able to compromise the configuration of thin clients. An attacker may be able to exploit a buffer overflow in /usr/bin/tm-console-bin to execute arbitrary code."
+      }
+    ],
+    "CVE-2010-3244": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/MAPG-86YPVM",
+        "title": "Blackboard Transact database credentials disclosure",
+        "overview": "The Blackboard Transact application contains two vulnerabilities that allow an unauthorized user to access the database credentials.",
+        "description": "The Blackboard Transact application (previously know as Blackboard Commerce Suite) comes with a utility called BbtsConnection_Edit.exe that is used to edit the encrypted configuration file named connection.xml. When editing connection.xml, BbtsConnection_Edit.exe decrypts all the fields except the <Password> field. If a user opens the connection.xml file in text editor and copies the data for <Password> into any other field such as <Server>, then the BbtsConnection_Edit.exe program will display the password in the other field, in this example <Server>.An additional issue exists in that the Blackboard Transact application uses multiple script and batch (.bat) files for automated backup procedures that contain the database username and password in clear text.",
+        "impact": "An attacker who has access to BbtsConnection_Edit.exe and the connection.xml file, or read access to the backup scripts, can obtain the database username and password."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/204055",
+        "title": "Blackboard Transact database credentials disclosure",
+        "overview": "The Blackboard Transact application contains two vulnerabilities that allow an unauthorized user to access the database credentials.",
+        "description": "The Blackboard Transact application (previously know as Blackboard Commerce Suite) comes with a utility called BbtsConnection_Edit.exe that is used to edit the encrypted configuration file named connection.xml. When editing connection.xml, BbtsConnection_Edit.exe decrypts all the fields except the <Password> field. If a user opens the connection.xml file in text editor and copies the data for <Password> into any other field such as <Server>, then the BbtsConnection_Edit.exe program will display the password in the other field, in this example <Server>.An additional issue exists in that the Blackboard Transact application uses multiple script and batch (.bat) files for automated backup procedures that contain the database username and password in clear text.",
+        "impact": "An attacker who has access to BbtsConnection_Edit.exe and the connection.xml file, or read access to the backup scripts, can obtain the database username and password."
+      }
+    ],
+    "CVE-2010-3245": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/204055",
+        "title": "Blackboard Transact database credentials disclosure",
+        "overview": "The Blackboard Transact application contains two vulnerabilities that allow an unauthorized user to access the database credentials.",
+        "description": "The Blackboard Transact application (previously know as Blackboard Commerce Suite) comes with a utility called BbtsConnection_Edit.exe that is used to edit the encrypted configuration file named connection.xml. When editing connection.xml, BbtsConnection_Edit.exe decrypts all the fields except the <Password> field. If a user opens the connection.xml file in text editor and copies the data for <Password> into any other field such as <Server>, then the BbtsConnection_Edit.exe program will display the password in the other field, in this example <Server>.An additional issue exists in that the Blackboard Transact application uses multiple script and batch (.bat) files for automated backup procedures that contain the database username and password in clear text.",
+        "impact": "An attacker who has access to BbtsConnection_Edit.exe and the connection.xml file, or read access to the backup scripts, can obtain the database username and password."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/MAPG-86YPVM",
+        "title": "Blackboard Transact database credentials disclosure",
+        "overview": "The Blackboard Transact application contains two vulnerabilities that allow an unauthorized user to access the database credentials.",
+        "description": "The Blackboard Transact application (previously know as Blackboard Commerce Suite) comes with a utility called BbtsConnection_Edit.exe that is used to edit the encrypted configuration file named connection.xml. When editing connection.xml, BbtsConnection_Edit.exe decrypts all the fields except the <Password> field. If a user opens the connection.xml file in text editor and copies the data for <Password> into any other field such as <Server>, then the BbtsConnection_Edit.exe program will display the password in the other field, in this example <Server>.An additional issue exists in that the Blackboard Transact application uses multiple script and batch (.bat) files for automated backup procedures that contain the database username and password in clear text.",
+        "impact": "An attacker who has access to BbtsConnection_Edit.exe and the connection.xml file, or read access to the backup scripts, can obtain the database username and password."
+      }
+    ],
+    "CVE-2010-3445": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/215900",
+        "title": "Wireshark 6LoWPAN denial of service vulnerability",
+        "overview": "Wireshark will crash on 32-bit systems while reading a malformed 6LoWPAN packet.",
+        "description": "Paul Makowski's report states:dissect_6lowpan_iphc() in /epan/dissectors/packet-6lowpan.c trusts user supplied data when incrementing 'offset'. It is possible for the user to increment 'offset' to a value greater than tvb->length and/or tvb->reported_length, forcing the dissector to attempt dissection out of bounds. If 'offset' is greater than tvb->length or tvb->reported_length, then tvb_length_remaining() or tvb_reported_length_remaining() will return -1 respectively. If tvb_length_remaining() returns -1, then a buffer is allocated 1 byte too short, leading to a partial overwrite of the heap canary.",
+        "impact": "An attacker may trigger a denial of service, causing any active capture or .pcap dissection to crash Wireshark/tshark."
+      }
+    ],
+    "CVE-2010-3613": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/706148",
+        "title": "ISC BIND cache vulnerability",
+        "overview": "The ISC BIND nameserver contains a vulnerability that could allow a remote attacker to cause a denial of service.",
+        "description": "According to ISC:Adding certain types of signed negative responses to cache doesn't clear any matching RRSIG records already in cache. A subsequent lookup of the cached data can cause named to crash (INSIST).",
+        "impact": "A remote attacker could cause the name server on an affected system to crash. ISC notes that this vulnerability affects recursive nameservers irrespective of whether DNSSEC validation is enabled or disabled."
+      }
+    ],
+    "CVE-2010-3614": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/837744",
+        "title": "ISC BIND named validator vulnerability",
+        "overview": "ISC BIND named contains a vulnerability where under certain situations it could incorrectly mark zone data as insecure.",
+        "description": "According to ISC:named, acting as a DNSSEC validator, was determining if an NS RRset is insecure based on a value that could mean either that the RRset is actually insecure or that there wasn't a matching key for the RRSIG in the DNSKEY RRset when resuming from validating the DNSKEY RRset.This can happen when in the middle of a DNSKEY algorithm rollover, when two different algorithms were used to sign a zone but only the new set of keys are in the zone DNSKEY RRset.",
+        "impact": "Answers are marked incorrectly as insecure."
+      }
+    ],
+    "CVE-2010-3615": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/510208",
+        "title": "ISC BIND named allow-query vulnerability",
+        "overview": "ISC BIND contains a vulnerability in the processing of the allow-query access control specifier.",
+        "description": "According to ISC:When named is running as an authoritative server for a zone and receives a query for that zone data, it first checks for allow-query acls in the zone statement, then in that view, then in global options. If none of these exist, it defaults to allowing any query (allow-query {\"any\"};).With this bug, if the allow-query is not set in the zone statement, it failed to check in view or global options and fell back to the default of allowing any query. This means that queries that the zone owner did not wish to allow were incorrectly allowed. This bug doesn't affect allow-recursion or allow-query-cache acls, since they are not relevant to a zone for which the server is authoritative.",
+        "impact": "The configured acl is not correctly applied, allowing queries that the owner did not wish to allow."
+      }
+    ],
+    "CVE-2010-3616": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/159528",
+        "title": "ISC DHCP server vulnerability",
+        "overview": "The ISC DHCP server contains a vulnerability that could allow a remote attacker to cause a denial of service.",
+        "description": "According to ISC:If a TCP connection is established to the server on a port which has been configured for communication with a failover peer, this can cause it to become non-responsive to all normal DHCP protocol traffic. The server will progress to a communications-interrupted state - but in addition will also cease to provide DHCP services to clients. The server must be restarted to resume normal operation.This can be used as an attack vector against servers that are configured for failover partnerships.",
+        "impact": "An unauthenticated remote attacker could cause the server to become unresponsive to all normal DHCP protocol traffic, thereby creating a denial of service."
+      }
+    ],
+    "CVE-2010-3618": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/300785",
+        "title": "PGP Desktop unsigned data injection vulnerability",
+        "overview": "PGP Desktop 10.0.3 and earlier versions as well as 10.1.0 are vulnerable to an unsigned data injection attack. PGP Command Line versions 9.6 and greater are not affected by this vulnerability.",
+        "description": "The PGP Desktop user interface incorrectly displays messages with unsigned data as signed. A user will not be able to distinguish the legitimate signed part from the malicious unsigned parts. Additional details may be found in PGP's KnowledgeBase article 2290, Symantec's Security Advisory SYM10-012, and Eric R. Verheul's Pretty Good Piggy-backing paper.",
+        "impact": "An attacker could add a message part (attachment) to a valid, signed PGP message and the entire message, including the attacker's message part, would be reported to the reader as having a valid signature."
+      }
+    ],
+    "CVE-2010-3653": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/402231",
+        "title": "Adobe Shockwave Player Director file 'rcsL' chunk parsing vulnerability",
+        "overview": "Adobe Shockwave Player 11.5.8.612 and earlier versions on the Windows and Macintosh operating systems contain a critical vulnerability in the handling of \"rcsL\" chunks.",
+        "description": "Adobe Macromedia Shockwave Player is software that plays active web content developed in Macromedia and Adobe Director. Shockwave Player is available as an ActiveX control for Internet Explorer and as a plug-in for other web browsers.A vulnerability has been discovered in Shockwave Player that can be exploited by an attacker to execute arbitrary code on a user's system. An attacker can create a specially crafted Adobe Director file with a specific value in an \"rcsL\" field causing an array-indexing error. More details are available in Adobe Security Bulletin APSA10-04.Note: Exploit code for this vulnerability is publicly available.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or cause the Shockwave player to crash."
+      }
+    ],
+    "CVE-2010-3654": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/298081",
+        "title": "Adobe Flash code execution vulnerability",
+        "overview": "Adobe Flash 10.1.85.3 contains a vulnerability that can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Adobe Flash 10.1.85.3 and earlier versions as well as 10.2.161.23 and earlier 10.2 preview versions contain a vulnerability that can result in memory corruption, which can allow arbitrary code execution. Any application that supports Flash or provides its own runtime may be vulnerable. This vulnerability is being exploited in the wild.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), PDF file, Microsoft Office document, or any other document that supports embedded SWF content, an attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2010-3787": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/309873",
+        "title": "Apple QuickTime JPEG2000 heap buffer overflow",
+        "overview": "Apple QuickTime contains a heap buffer overflow in the processing of JPEG2000 data, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Apple's QuickTime Player is multimedia software that allows users to view local and remote audio, video, and image content. QuickTime contains a heap buffer overflow in the code that handles JPEG2000 data.This vulnerability may be triggered by using the QuickTime Player or an application that uses the QuickTime plug-in, such as a web browser.Note that this issue affects QuickTime installations on both Apple Mac and Windows operating systems.",
+        "impact": "By causing QuickTime to process specially crafted JPEG2000 data (e.g. by viewing a web page, HTML email message or attachment, or by opening an image or video file), an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2010-3904": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/362983",
+        "title": "Linux kernel RDS protocol vulnerability",
+        "overview": "The RDS protocol implementation of Linux kernels 2.6.30 through 2.6.38-rc8 contain a local privilege escalation vulnerability.",
+        "description": "Kernel functions fail to properly check if a user supplied address exists in the user segment of memory. By providing a kernel address to a socket call an unprivileged user can execute arbitrary code as root. Additional details can be found in the VSR Security Advisory.",
+        "impact": "An unprivileged local attacker can escalate their privileges to root."
+      }
+    ],
+    "CVE-2010-3962": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/899748",
+        "title": "Microsoft Internet Explorer invalid flag reference vulnerability",
+        "overview": "Microsoft Internet Explorer invalid flag reference vulnerability",
+        "description": "According to the Microsoft Security Research & Defense Blog, Microsoft Internet Explorer incorrectly under-allocates memory to store a certain combination of Cascading Style Sheets (CSS) tags when parsing HTML, resulting in an overwrite of the least significant byte of a vtable pointer. The Microsoft Security Advisory (2458511) refers to the vulnerability as an invalid flag reference vulnerability, where the reference to an object can be accessed after it is deleted.Exploit code for this vulnerability is publicly available.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2010-3970": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/106516",
+        "title": "Microsoft Windows graphics engine thumbnail stack buffer overflow",
+        "overview": "Microsoft Windows contains a stack-based buffer overflow vulnerability in the graphics rendering engine, which may allow an attacker to execute arbitrary code.",
+        "description": "Microsoft Windows contains a stack-based buffer overflow vulnerability caused by a signedness error in the \"CreateSizedDIBSECTION()\" function within the shimgvw.dll library when parsing thumbnail bitmaps containing a negative \"biClrUsed\" value.Exploit code for this vulnerability is publicly available.",
+        "impact": "By convincing a user to view a specially crafted file containing a malicious thumbnail bitmap value, an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2010-3971": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/634956",
+        "title": "Microsoft Internet Explorer CSS use-after-free vulnerability",
+        "overview": "Microsoft Internet Explorer contains a use-after-free vulnerability in the handling of CSS, which may allow a remote, unauthenticated attacker to execute arbitrary code.",
+        "description": "Microsoft Internet Explorer contains a vulnerability caused by a use-after-free error within the mshtml.dll library. This vulnerability can be exploited when processing a web page referencing a Cascading Style Sheet (CSS) file that includes various @import rules. We have confirmed that Internet Explorer 6, 7, and 8 are affected.Exploit code for this vulnerability is publicly available.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2010-3972": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/842372",
+        "title": "Microsoft IIS FTP server memory corruption vulnerability",
+        "overview": "Microsoft IIS FTP server 7.5 is affected by a pre-authentication memory corruption vulnerability.",
+        "description": "A specifically crafted request sent to the IIS FTP service can result in memory corruption causing the service to crash. A denial-of-service exploit has been released to the public. IIS 7.5.7600.16385 on Windows 7 is reported to be affected. Other versions may also be affected. Additional details are available on Microsoft's Security Research & Defense blog.",
+        "impact": "An attacker can cause a denial of service. Depending on the specifics of the vulnerability, an attacker could potentially execute arbitrary code."
+      }
+    ],
+    "CVE-2010-3973": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/725596",
+        "title": "Microsoft WMI Administrative Tools WBEMSingleView.ocx ActiveX control vulnerability",
+        "overview": "The ActiveX control, WBEMSingleView.ocx, that is a part of the WMI Administrative Tools package contains a vulnerability.",
+        "description": "The AddContextRef() and ReleaseContext() functions of the WMI Object Viewer control can be passed an object pointer from an attacker that results in arbitrary code execution. An Internet Explorer user with WBEMSingleView.ocx installed can be exploited by visiting a malicious web page.",
+        "impact": "An attacker can execute arbitrary code as the user."
+      }
+    ],
+    "CVE-2010-4052": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/912279",
+        "title": "GNU libc regcomp() stack exhaustion denial of service",
+        "overview": "The regcomp() function of GNU libc is susceptible to stack exhaustion which may result in a denial of service.",
+        "description": "It is possible to trigger deep recursion which results in stack exhaustion. An example trigger is: grep -E \".*{10,}{10,}{10,}{10,}{10,}\"",
+        "impact": "An attacker may be able to trigger a denial of service in applications that accept regular expressions."
+      }
+    ],
+    "CVE-2010-4054": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/538191",
+        "title": "Ghostscript crashes when passing a null ipsp->ip value to the gs_type2_interpret function",
+        "overview": "The gs_type2_interpret function which is a part of Ghostscript is prone to denial-of-service conditions.",
+        "description": "Ghostscript contains a function called gs_type2_interpret which is not performing null value error checking. A specially crafted document can cause Ghostscript to deference a null pointer, causing a denial-of-service condition.",
+        "impact": "An attacker may use a specially crafted document to cause a denial-of-service condition."
+      }
+    ],
+    "CVE-2010-4093": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/189929",
+        "title": "Adobe Shockwave 11.5.9.615 contains multiple memory corruption vulnerabilities",
+        "overview": "Adobe Shockwave Player 11.5.9.615 and earlier versions on the Windows and Macintosh operating systems contain critical vulnerabilities that can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Adobe Macromedia Shockwave Player is software that plays active web content developed in Macromedia and Adobe Director. Shockwave Player is available as an ActiveX control for Internet Explorer and as a plug-in for other web browsers. Multiple vulnerabilities have been discovered in Shockwave Player and its Xtra components that can be exploited by an attacker to execute arbitrary code on a user's system. More details are available in Adobe Security Bulletin APSB11-01.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), Microsoft Office document, or any other document that supports embedded Shockwave content, an attacker may be able to execute arbitrary code"
+      }
+    ],
+    "CVE-2010-4184": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/465239",
+        "title": "NetSupport Manager Gateway transmits identifying information in plaintext",
+        "overview": "The NetSupport HTTP protocol implementation used for communication between the NetSupport Manager Gateway and NetSupport Manager Controls or NetSupport Manager Clients is not encrypting http headers sent between systems.",
+        "description": "The NetSupport HTTP protocol implementation used for communication between the NetSupport Manager Gateway and NetSupport Manager Controls or NetSupport Manager Clients is sending plaintext http headers between systems. The header of some of the NetSupport HTTP packets contain information in plaintext that could be used to identify information about the client machine.",
+        "impact": "An attacker could view identification information about the client machine such as the client's ip address, hardware MAC address, user's login name, and password hash."
+      }
+    ],
+    "CVE-2010-4193": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/189929",
+        "title": "Adobe Shockwave 11.5.9.615 contains multiple memory corruption vulnerabilities",
+        "overview": "Adobe Shockwave Player 11.5.9.615 and earlier versions on the Windows and Macintosh operating systems contain critical vulnerabilities that can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Adobe Macromedia Shockwave Player is software that plays active web content developed in Macromedia and Adobe Director. Shockwave Player is available as an ActiveX control for Internet Explorer and as a plug-in for other web browsers. Multiple vulnerabilities have been discovered in Shockwave Player and its Xtra components that can be exploited by an attacker to execute arbitrary code on a user's system. More details are available in Adobe Security Bulletin APSB11-01.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), Microsoft Office document, or any other document that supports embedded Shockwave content, an attacker may be able to execute arbitrary code"
+      }
+    ],
+    "CVE-2010-4194": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/189929",
+        "title": "Adobe Shockwave 11.5.9.615 contains multiple memory corruption vulnerabilities",
+        "overview": "Adobe Shockwave Player 11.5.9.615 and earlier versions on the Windows and Macintosh operating systems contain critical vulnerabilities that can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Adobe Macromedia Shockwave Player is software that plays active web content developed in Macromedia and Adobe Director. Shockwave Player is available as an ActiveX control for Internet Explorer and as a plug-in for other web browsers. Multiple vulnerabilities have been discovered in Shockwave Player and its Xtra components that can be exploited by an attacker to execute arbitrary code on a user's system. More details are available in Adobe Security Bulletin APSB11-01.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), Microsoft Office document, or any other document that supports embedded Shockwave content, an attacker may be able to execute arbitrary code"
+      }
+    ],
+    "CVE-2010-4195": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/189929",
+        "title": "Adobe Shockwave 11.5.9.615 contains multiple memory corruption vulnerabilities",
+        "overview": "Adobe Shockwave Player 11.5.9.615 and earlier versions on the Windows and Macintosh operating systems contain critical vulnerabilities that can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Adobe Macromedia Shockwave Player is software that plays active web content developed in Macromedia and Adobe Director. Shockwave Player is available as an ActiveX control for Internet Explorer and as a plug-in for other web browsers. Multiple vulnerabilities have been discovered in Shockwave Player and its Xtra components that can be exploited by an attacker to execute arbitrary code on a user's system. More details are available in Adobe Security Bulletin APSB11-01.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), Microsoft Office document, or any other document that supports embedded Shockwave content, an attacker may be able to execute arbitrary code"
+      }
+    ],
+    "CVE-2010-4196": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/189929",
+        "title": "Adobe Shockwave 11.5.9.615 contains multiple memory corruption vulnerabilities",
+        "overview": "Adobe Shockwave Player 11.5.9.615 and earlier versions on the Windows and Macintosh operating systems contain critical vulnerabilities that can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Adobe Macromedia Shockwave Player is software that plays active web content developed in Macromedia and Adobe Director. Shockwave Player is available as an ActiveX control for Internet Explorer and as a plug-in for other web browsers. Multiple vulnerabilities have been discovered in Shockwave Player and its Xtra components that can be exploited by an attacker to execute arbitrary code on a user's system. More details are available in Adobe Security Bulletin APSB11-01.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), Microsoft Office document, or any other document that supports embedded Shockwave content, an attacker may be able to execute arbitrary code"
+      }
+    ],
+    "CVE-2010-4284": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/236668",
+        "title": "Samsung Data Management Server vulnerable to SQL injection",
+        "overview": "The Samsung Integrated Management System DMS is used to manage several air conditioning units. The DMS contains a built-in web server that is susceptible to SQL injection attacks.",
+        "description": "The DMS application's authentication form can be bypassed with SQL injection attacks. Versions 1.3.3, 1.4.1 and 1.4.2 are reported to be affected. Other versions may also be affected. More details can be found in ICS-CERT's 11-069-01 advisory.",
+        "impact": "An attacker can bypass authentication and access the web server as an administrative user."
+      }
+    ],
+    "CVE-2010-4344": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/682457",
+        "title": "Exim string_format() buffer overflow",
+        "overview": "The Exim mail server contains a buffer overflow that could allow a remote attacker to execute arbitrary code on an affected system.",
+        "description": "Exim is a message transfer agent (MTA) developed at the University of Cambridge for use on Unix systems connected to the Internet. The internal string handling functions of the Exim software contain a function called string_format(). The version of this function included with Exim versions prior to 4.70 contains a flaw that can result in a buffer overflow. An attacker can exploit this vulnerability by crafting message headers that are subsequently supplied to Exim logging functions.Note: this vulnerability has been reported being exploited in the wild.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the Exim server. A separate vulnerability in Exim could then allow the attacker to escalate privileges to root."
+      }
+    ],
+    "CVE-2010-4345": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/758489",
+        "title": "Exim alternate configuration privilege escalation vulnerability",
+        "overview": "A vulnerability in the way that the Exim mail server handles configuration files may allow a local attacker to gain escalated privileges on an affected system.",
+        "description": "Exim is a message transfer agent (MTA) developed at the University of Cambridge for use on Unix systems connected to the Internet. If Exim is built without specifying the ALT_CONFIG_ROOT_ONLY configuration option, then the Exim user can invoke Exim with an arbitrary configuration file. The Exim developers note that this option is unspecified by default. Consequently, any ${run...} directives specified in that configuration file will be executed as root.Note: this vulnerability has been reported being exploited in the wild.",
+        "impact": "A local attacker with the ability to execute commands as the Exim user may be able to execute code with root privileges."
+      }
+    ],
+    "CVE-2010-4368": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/870532",
+        "title": "AWStats fails to properly handle \"\\\\\" when specifying a configuration file directory",
+        "overview": "AWStats fails to properly handle \"\\\\\" when specifying a configuration file directory. This could allow an attacker to specify an arbitrary configuration file located on an SMB share.",
+        "description": "From the AWStats project website: \"AWStats is a free powerful and featureful tool that generates advanced web, streaming, ftp or mail server statistics, graphically\". AWStats is vulnerable to remote command execution when installed on Apache Tomcat on Microsoft Windows operating systems. The AWStats application fails to properly handle \"\\\\\" when specifying a configuration file directory.",
+        "impact": "An attacker can instruct the web server to load a malicious configuration file located on a malicious SMB file share. The malicious configuration file can contain arbitrary commands to be run on the vulnerable remote server as the web service account."
+      }
+    ],
+    "CVE-2010-4398": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/529673",
+        "title": "Microsoft Windows RtlQueryRegistryValues() does not adequately validate registry data",
+        "overview": "Microsoft Windows does not adequately validate registry data read using the function RtlQueryRegistryValues(). By modifying an EUDC registry key value, a local user could execute arbitrary code with SYSTEM privileges.",
+        "description": "Microsoft Windows supports end-user-defined characters (EUDC) to allow users to define custom unicode characters. The Windows kernel (win32k.sys) graphics device interface (GDI) reads the EUDC registry key for font information. More specifically, GreEnableEudc() uses RtlQueryRegistryValues() to read HKCU\\EUDC\\{codepage}\\SystemDefaultEUDCFont. In this case RtlQueryRegistryValues() expects to read a REG_SZ (string) value into a buffer whose length and contents are determined by the type and value of SystemDefaultEUDCFont.By default, an unprivileged user has access to modify the EUDC registry key. Furthermore, RtlQueryRegistryValues() does not validate the data read from SystemDefaultEUDCFont.By changing the type and data of SystemDefaultEUDCFont and enabling EUDC, an attacker can overwrite kernel memory.Publicly available exploit code targets Windows Vista, Windows 7, and Windows Server 2008 platforms. Windows XP and Windows Server 2003 may also be affected.",
+        "impact": "An unprivileged local user can execute arbitrary code with SYSTEM privileges."
+      }
+    ],
+    "CVE-2010-4409": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/479900",
+        "title": "PHP getSymbol vulnerability allows denial of service",
+        "overview": "PHP fails to properly sanitize input passed to the getSymbol function in a way that could allow and attacker to cause a segmentation fault.",
+        "description": "PHP is a scripting language that is designed for web-based applications and can be embedded directly into HTML.The getSymbol function in PHP versions prior to 5.3.3 revision 305571 contains an integer overflow vulnerability. For more information about this issue, see the PHP CVS log.",
+        "impact": "A remote attacker could cause a segmentation fault in PHP, leading to a denial of service."
+      }
+    ],
+    "CVE-2010-4557": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/647928",
+        "title": "Invensys Wonderware InBatch and Foxboro I/A Series Batch database lock manager service (lm_tcp) buffer overflow vulnerability",
+        "overview": "The lm_tcp service in Invensys Wonderware InBatch and Foxboro I/A Series Batch contains a buffer overflow vulnerability when coping string data into a buffer in a fixed structure.",
+        "description": "From the Invensys Wonderware website: \"InBatch is powerful software that can be used in the most complex batching processes that require a high level of flexibility.\" Wonderware InBatch runs a database lock manager (lm_tcp) service that listens (manually or automatically during the launching of \"Environment Display/Manager\") on port 9001. Foxboro I/A Series Batch includes an application with the same service. The service in both products is vulnerable to a buffer overflow when copying a string into a buffer of 150 bytes which is part of a fixed structure.",
+        "impact": "An attacker can cause the device to crash and may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2010-4588": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/725596",
+        "title": "Microsoft WMI Administrative Tools WBEMSingleView.ocx ActiveX control vulnerability",
+        "overview": "The ActiveX control, WBEMSingleView.ocx, that is a part of the WMI Administrative Tools package contains a vulnerability.",
+        "description": "The AddContextRef() and ReleaseContext() functions of the WMI Object Viewer control can be passed an object pointer from an attacker that results in arbitrary code execution. An Internet Explorer user with WBEMSingleView.ocx installed can be exploited by visiting a malicious web page.",
+        "impact": "An attacker can execute arbitrary code as the user."
+      }
+    ],
+    "CVE-2010-4597": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/603928",
+        "title": "Ecava IntegraXor stack-based buffer overflow vulnerability",
+        "overview": "Ecava IntegraXor contains a stack-based buffer overflow vulnerability in the Ecava IntegraXor Human-Machine Interface (HMI) product that could allow the execution of arbitrary code.",
+        "description": "According to Ecava's website: IntegraXor is a suite of tools used to create and run a web-based HMI interface for a Supervisory Control and Data Acquisition (SCADA) system. Ecava IntegraXor is vulnerable to a stack-based buffer overflow when more than 1024 bytes are written to the fixed-size stack buffer. When an exploit sends a request greater than 1024 bytes, IntegraXor writes past the buffer bounds and corrupts memory, allowing execution of arbitrary code.",
+        "impact": "An attacker can cause the device to crash and may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2010-4598": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/979776",
+        "title": "Ecava IntegraXor web service allows directory traversal outside of web root",
+        "overview": "Ecava IntegraXor contains a directory traversal vulnerability",
+        "description": "According to Ecava's website: IntegraXor is a suite of tools used to create and run a web-based HMI interface for a Supervisory Control and Data Acquisition (SCADA) system. Ecava IntegraXor runs a web service that listens on port 7131/tcp. The web service in this product is vulnerable to a directory traversal vulnerability. Public exploit code is available.",
+        "impact": "A remote attacker can access files outside of the web application or document root by supplying a crafted URL to an vulnerable system."
+      }
+    ],
+    "CVE-2010-4709": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/768840",
+        "title": "Automated Solutions Modbus/TCP Master OPC server Modbus TCP header vulnerability",
+        "overview": "Automated Solutions OPC Server contains a heap corruption vulnerability in the Modbus/TCP Master OPC server.",
+        "description": "Automated Solutions Modbus/TCP Master OPC Server contains a heap corruption vulnerability. The server is vulnerable to an attacker writing an arbitrary number of double words or DWORDs onto the heap.For additional information see ICSA-10-322-02A.Exploit code for this vulnerability is publicly available.",
+        "impact": "Successful exploitation would likely not allow arbitrary code execution; however, an exploit could possibly corrupt the OPC server memory and cause a denial of service."
+      }
+    ],
+    "CVE-2010-4730": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/114560",
+        "title": "IntelliCom NetBiter NB100 and NB200 platforms contain multiple vulnerabilities",
+        "overview": "IntelliCom NetBiter products based on the NB100 and NB200 platforms contain multiple vulnerabilities.",
+        "description": "IntelliCom NetBiter products based on the NB100 and NB200 platforms contain multiple vulnerabilities. A user who has been authenticated at the superadmin level (highest authentication level) has permission to read system files by calling read.cgi with options to read a system file. Local configuration files may be accessed by exploiting a directory traversal vulnerability. This may lead an attacker to research other potential attack vectors. An attacker may also execute arbitrary commands by uploading malicious code.For additional information see ICS-CERT Advisory ICSA-10-316-01A.",
+        "impact": "An attacker who is authenticated at the superadmin level exploiting this directory traversal vulnerability could access local configuration files. An attacker may also execute arbitrary commands by uploading malicious code."
+      }
+    ],
+    "CVE-2010-4731": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/114560",
+        "title": "IntelliCom NetBiter NB100 and NB200 platforms contain multiple vulnerabilities",
+        "overview": "IntelliCom NetBiter products based on the NB100 and NB200 platforms contain multiple vulnerabilities.",
+        "description": "IntelliCom NetBiter products based on the NB100 and NB200 platforms contain multiple vulnerabilities. A user who has been authenticated at the superadmin level (highest authentication level) has permission to read system files by calling read.cgi with options to read a system file. Local configuration files may be accessed by exploiting a directory traversal vulnerability. This may lead an attacker to research other potential attack vectors. An attacker may also execute arbitrary commands by uploading malicious code.For additional information see ICS-CERT Advisory ICSA-10-316-01A.",
+        "impact": "An attacker who is authenticated at the superadmin level exploiting this directory traversal vulnerability could access local configuration files. An attacker may also execute arbitrary commands by uploading malicious code."
+      }
+    ],
+    "CVE-2010-4732": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/114560",
+        "title": "IntelliCom NetBiter NB100 and NB200 platforms contain multiple vulnerabilities",
+        "overview": "IntelliCom NetBiter products based on the NB100 and NB200 platforms contain multiple vulnerabilities.",
+        "description": "IntelliCom NetBiter products based on the NB100 and NB200 platforms contain multiple vulnerabilities. A user who has been authenticated at the superadmin level (highest authentication level) has permission to read system files by calling read.cgi with options to read a system file. Local configuration files may be accessed by exploiting a directory traversal vulnerability. This may lead an attacker to research other potential attack vectors. An attacker may also execute arbitrary commands by uploading malicious code.For additional information see ICS-CERT Advisory ICSA-10-316-01A.",
+        "impact": "An attacker who is authenticated at the superadmin level exploiting this directory traversal vulnerability could access local configuration files. An attacker may also execute arbitrary commands by uploading malicious code."
+      }
+    ],
+    "CVE-2010-4740": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/660688",
+        "title": "SCADA Engine BACnet OPC Client buffer overflow vulnerability",
+        "overview": "SCADA Engine BACnet OPC Client contains a buffer overflow when parsing .csv files. This vulnerability may allow an attacker to execute arbitrary code.",
+        "description": "According to SCADA Engine website: \"The SCADA Engine BACnet OPC Server is a server that provides data access (DA), Alarms and Events (AE), and Historical Data Access (HDA) between OPC clients and BACnet-compliant devices.\" SCADA Engine BACnet OPC Client contains a stack-based buffer overflow when parsing .csv files. The vulnerability is caused by a boundary error in the WTclient.dll library when preparing a status log message.For additional information see ICS-CERT Advisory ICSA-10-264-01.",
+        "impact": "An attacker could exploit the vulnerability by tricking a user into opening a crafted .csv file, leading to execution of arbitrary code. Failed execution of this vulnerability may also lead to denial-of-service conditions."
+      }
+    ],
+    "CVE-2010-4741": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/MORO-8D9JX8",
+        "title": "MOXA Device Manager MDM Tool buffer overflow",
+        "overview": "The MOXA Device Manager MDM Tool contains a stack-based buffer overflow.",
+        "description": "The MOXA Device Manager consists of an MDM Tool, which allows local users to connect to a remote MDM Gateway to monitor and manage embedded computers installed with MDM Agent software. MOXA Device Manager contains a stack-based buffer overflow vulnerability caused by the use of the strcpy function in the MDM Tool software component.For additional information see ICSA-10-301-01A.",
+        "impact": "An attacker can cause the device to crash and may be able to execute arbitrary code."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/237495",
+        "title": "MOXA Device Manager MDM Tool buffer overflow",
+        "overview": "The MOXA Device Manager MDM Tool contains a stack-based buffer overflow.",
+        "description": "The MOXA Device Manager consists of an MDM Tool, which allows local users to connect to a remote MDM Gateway to monitor and manage embedded computers installed with MDM Agent software. MOXA Device Manager contains a stack-based buffer overflow vulnerability caused by the use of the strcpy function in the MDM Tool software component.For additional information see ICSA-10-301-01A.",
+        "impact": "An attacker can cause the device to crash and may be able to execute arbitrary code."
+      }
+    ]
+  }
+}

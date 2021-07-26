@@ -1,0 +1,1920 @@
+{
+  "year": 2002,
+  "total": 229,
+  "reference": "securityfocus.com",
+  "reports": {
+    "CVE-1999-0002": [
+      {
+        "url": "http://www.securityfocus.com/bid/121",
+        "title": "Multiple Vendor Linux Mountd Vulnerability",
+        "body": "NFS servers running certain implementations of mountd, primarily Linux systems. On some systems, the vulnerable NFS server is enabled by default. This vulnerability can be exploited even if the NFS server does not share any file systems. This vulnerability is specifically a buffer overflow in the mount daemons logging code which is supposed to log unauthorized mount attempts."
+      }
+    ],
+    "CVE-1999-0491": [
+      {
+        "url": "http://www.securityfocus.com/templates/archive.pike?list=1&msg=Pine.LNX.4.10.9904202114070.6623-100000@smooth.Operator.org",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/119",
+        "title": "Bash Path Embedded Code Execution Vulnerability",
+        "body": "A vulnerability in bash may allow inadvertently running commands embedded in the path to the currently working directory.If an unsuspecting user enters a directory created by some malicious user with embedded commands, and their prompt (PS1) contains '\\w' or '\\W', and the prompt is displayed the commands will be executed. The vulnerability is in the parsing of the '\\w' and '\\W' escape codes.As the prompt must be displayed unattended shell scripts are not vulnerable."
+      }
+    ],
+    "CVE-1999-1547": [
+      {
+        "url": "http://www.securityfocus.com/bid/841",
+        "title": "Oracle Web Listener URL Character Substitution Vulnerability",
+        "body": "Oracle's Web Listener, a combination webserver and web-database interface, has been shown to have a weakness whereby unauthorized users can gain access to restricted queries. If a character in a URL is replaced with it's HTTP-escaped equivalent, the Web Listener will grant access without requiring authentication.If an attacker requests (for example)http: //target.host/ows/restricted.showthe Web Listener will request a userid and password.However, if the attacker requests:http: //target.host/ows/restricted%2eshowthe Web Listener will perform the action and display the results."
+      }
+    ],
+    "CVE-2000-0132": [
+      {
+        "url": "http://www.securityfocus.com/bid/957",
+        "title": "Microsoft Java Virtual Machine getSystemResource Vulnerability",
+        "body": "Microsoft's Java Virtual Machine will allow the reading of  local file information by a remote Java application. This can be done two ways:1: Via the getSystemResourceAsStream() function. The filename must be specified, and must be in certain paths: the JVM 'home' directory, and any directory in the CLASSPATH environment variable. For IE 5 the home directory is the current user's desktop, for IE4 it is C:\\ . The specified file can be read. 2:  Via the getSystemResource() function. Unlike the first function, this one will accept the ../ string in the pathname, making it possible to access any file on the same drive as the Java installation. However, the file cannot be read, it is only possible to verify the existence or non-existence of a file by this method."
+      }
+    ],
+    "CVE-2000-0155": [
+      {
+        "url": "http://www.securityfocus.com/bid/993",
+        "title": "Microsoft Windows autorun.inf Vulnerability",
+        "body": "The Windows Autorun feature was designed to allow an executable and an icon to be specified for any piece of removable media. Upon insertion, the icon would be displayed for the drive, and the executable would automatically run. This feature also applies to fixed and networked drives however, making it much easier to abuse. Any user with write access to the root of a logical drive can install an executable and specify it in an autorun.inf file. Anytime that drive is accessed later, the code will run with the privileges of the currently logged in user. This could be used in privilege escalation attacks."
+      },
+      {
+        "url": "http://www.securityfocus.com/templates/archive.pike?list=1&date=2000-02-15&msg=000701bf79cd$fdb5a620$4c4342a6@mightye.org",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2000-0219": [
+      {
+        "url": "http://www.securityfocus.com/bid/1005",
+        "title": "RedHat Single User Mode Authentication Vulnerability",
+        "body": "A vulnerability exists in the manner in which RedHat Linux 6.0 protects the obtaining of a shell by booting single user mode. RedHat will prompt for the root password upon entering single user mode. Pressing ^C (causing a SIGINT to be sent) immediately results in a root shell being made available."
+      },
+      {
+        "url": "http://www.securityfocus.com/templates/archive.pike?list=1&msg=200002230248.NAA19185@cairo.anu.edu.au",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2000-0380": [
+      {
+        "url": "http://www.securityfocus.com/bid/1154",
+        "title": "Cisco IOS HTTP %% Vulnerability",
+        "body": "A denial of service attack exists in versions of Cisco IOS, running on a variety of different router hardware. If the router is configured to have a web server running for configuration and other information a user can cause the router to crash."
+      }
+    ],
+    "CVE-2000-0400": [
+      {
+        "url": "http://www.securityfocus.com/bid/1221",
+        "title": "Microsoft Active Movie Control Filetype Vulnerability",
+        "body": "The Microsoft Active Movie Control (a multimedia ActiveX control) will download files of any type specified in the control parameters in an HTML document, regardless of whether or not they are a valid media type. A hostile website, HTML email or HTML newsgroup post could therefore write executables and other potentially harmful content to target machines, which will be stored with their known filenames in the default Windows Temp directory. This vulnerability could be used in conjunction with other exploits to run arbitrary code on the target machine(s)."
+      }
+    ],
+    "CVE-2000-0588": [
+      {
+        "url": "http://www.securityfocus.com/bid/1402",
+        "title": "Flowerfire Sawmill File Access Vulnerability",
+        "body": "Sawmill is a site statistics package for Unix, Windows and Mac OS.   A specially crafted request can disclose the first line of any world readable file for which the full pathname is known, for example /etc/passwd.   The output of the request is similar to the following:  'Unknown configuration command \"root:x:0:0:root:/root:/bin/sh\" in \"/etc/passwd\".'"
+      }
+    ],
+    "CVE-2000-0589": [
+      {
+        "url": "http://www.securityfocus.com/bid/1403",
+        "title": "Flowerfire Sawmill Weak Password Encryption Vulnerability",
+        "body": "Sawmill is a site statistics package for Unix, Windows and Mac OS.  Passwords are encrypted using a weak hash function.  This combined with the file disclosure vulnerability in Sawmill (bid = 1402) could allow an attacker to read the contents of sawmill's password file, then decrypt the password and gain Sawmill administrative capabilities."
+      }
+    ],
+    "CVE-2000-0649": [
+      {
+        "url": "http://www.securityfocus.com/bid/1499",
+        "title": "Microsoft IIS Internal IP Address Disclosure Vulnerability",
+        "body": "When a remote user attempts to access an area protected by basic authentication with no realm defined, while specifying HTTP 1.0, Microsoft IIS will return an Access Denied error message containing the internal IP address of the host.  Even if IIS is behind a firewall or NAT, it will disclose the true internal IP address to the remote user.The internal IP address may also be revealed through a HTTP request made with an empty host name. If a PROPFIND HTTP request is made, the message returned will include the IP address as part of the HREF header. The IP address may also be exposed through the WRITE or MKCOL methods, although they would not normally be exposed to the external network.Eg.telnet target 80Trying target...Connected to target.Escape character is '^]'.HEAD /directory HTTP/1.0[CRLF][CRLF]HTTP/1.1 401 Access DeniedWWW-Authenticate: Basic realm=\"&lt;Internal IP Address&gt;\"Content-Length: 644Content-Type: text/html"
+      }
+    ],
+    "CVE-2001-0308": [
+      {
+        "url": "http://www.securityfocus.com/bid/2388",
+        "title": "Bajie Webserver Remote Command Execution Vulnerability",
+        "body": "It is possible to execute arbitrary commands on a host running Bajie Webserver.  A remote user can use Bajie's built-in upload feature to place malicious scripts on Bajie webservers.  These uploaded scripts are placed in known destination directories and can be automatically executed. Unfortunately Bajie's CGI processor doesn't verify the CGI program exists before executing the script.Once these files are uploaded, they can be then executed as CGI scripts on the server."
+      }
+    ],
+    "CVE-2001-0748": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/188141",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/2809",
+        "title": "Acme.Serve v1.7 Arbitrary File Access Vulnerability",
+        "body": "Acme.Serve is a free, open-source, embeddable webserver written in Java. It is small, is intended to provide minimal functionality, and is fully compatible with JavaServer.  Acme.Serve 1.7 comes with a webserver that listens on port 9090.  This webserver allows clients to browse the  filesystem.  By default, this webserver is enabled and accessible by any remote host on the Internet.  If an attacker were to connect, they could view possibly sensitive information."
+      }
+    ],
+    "CVE-2001-0780": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/187182",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/2793",
+        "title": "Directory Pro Arbitrary File Disclosure Vulnerability",
+        "body": "Webdirectory Pro is a web application used to create a searchable directory of links developed by Cosmicperl.Webdirectory Pro contains an input validation vulnerability which may lead to disclosure of sensitive information to attackers.  The value of the 'show' variable is not properly validated and can be used to force 'directorypro.cgi' to output the contents of an arbitrary webserver-readable file to a remote attacker.This is due to a lack of checks for NULL bytes in user-supplied data."
+      }
+    ],
+    "CVE-2001-1205": [
+      {
+        "url": "http://www.securityfocus.com/bid/3754",
+        "title": "Last Lines CGI Script Directory Traversal Vulnerability",
+        "body": "Last Lines CGI is a freely available script written in Perl and maintained by the Matrix's CGI Vault. It allows the user to print a specified number of lines from a log file(or any text file) to a webpage.  It can run on Linux and Unix systems or any other platform with Apache and Perl support.Lastlines.cgi is prone to directory traversal attacks. It is possible for a remote attacker to submit a maliciously crafted web request which is capable of breaking out of wwwroot and browsing arbitrary web-readable files on a host running the vulnerable script."
+      }
+    ],
+    "CVE-2001-1582": [
+      {
+        "url": "http://www.securityfocus.com/bid/2931",
+        "title": "Solaris libsldap Buffer Overflow Vulnerability",
+        "body": "Solaris 8 ships with a shared library that implements LDAP functionality called 'libsldap'.  This library is linked to by a number of system utilities, many of them installed setuid or setgid.  Libsldap contains a buffer overflow vulnerability in it's handling of the 'LDAP_OPTIONS' environment variable.Local attackers can exploit this vulnerability in setuid/setgid programs linked to libsldap to elevate privileges."
+      }
+    ],
+    "CVE-2002-0080": [
+      {
+        "url": "http://www.securityfocus.com/bid/4285",
+        "title": "RSync Daemon Mode Supplementary Group Privilege Vulnerability",
+        "body": "The rsync program is used to synchronize files and directory structures across a network. It is commonly used to maintain mirrors of ftp sites, often through anonymous access to the rsync server. It is available for Linux and other Unix operating systems. rsync is usually configured to run as the root user. Under some circumstances, rsync fails to drop privileges for supplementary groups after it has been started. This is particularly the case when rsync is run from the command line using daemon mode, causing the process to inherit the group of the user that started it. In such cases, rsync does not properly drop privileges. "
+      }
+    ],
+    "CVE-2002-0146": [
+      {
+        "url": "http://www.securityfocus.com/bid/4788",
+        "title": "Eric S. Raymond Fetchmail Message Count IMAP Buffer Overflow Vulnerability",
+        "body": "Fetchmail is a freely available, open source mail retrieval utility.  It is maintained by Eric S. Raymond.A malicious IMAP server may return a message index count of large size.  In the event of an IMAP server doing so, the fetchmail client could allocate an amount of memory that overwrites the process stack memory space."
+      }
+    ],
+    "CVE-2002-0419": [
+      {
+        "url": "http://www.securityfocus.com/bid/4235",
+        "title": "Microsoft IIS Authentication Method Disclosure Vulnerability",
+        "body": "Microsoft IIS supports Basic and NTLM authentication. Reportedly, the authentication methods supported by a given IIS server can be revealed to an attacker through the inspection of returned error messages, even when anonymous access is also granted. When a valid authentication request is submitted for either message with an invalid username and password, an error message will be returned. This happens even if anonymous access to the requested resource is allowed. An attacker may be able to use this information to launch further intelligent attacks against the server, or to launch a brute-force password attack against a known username."
+      }
+    ],
+    "CVE-2002-0507": [
+      {
+        "url": "http://www.securityfocus.com/bid/4390",
+        "title": "Microsoft Outlook Web Access with RSA SecurID Authentication Bypass Vulnerability",
+        "body": "RSA SecurID is a two factor Authentication system, designed to allow remote authentication to a variety of resources through the usage of an authenticator in conjunction with a user password. Microsoft Outlook Web Access (OWA) is a component of Microsoft Exchange Server, used to provide a web interface for email.  Reportedly, a user able to access the OWA system after proper SecurID authentication may then attempt to access OWA as a different user without providing additional SecurID authentication. A valid user and password is still required for both OWA authentication attempts.  Although an error message is displayed, multiple attempts will reportedly result in access to the OWA system."
+      }
+    ],
+    "CVE-2002-0812": [
+      {
+        "url": "http://www.securityfocus.com/bid/5436",
+        "title": "Orinoco OEM Residential Gateway SNMP Community String Remote Configuration Vulnerability",
+        "body": "Orinoco is the manufacturer of various wireless network components, including access points and network cards.It is possible to remotely gain access to the identification string used for configuration of OEM access points manufactured by Orinoco through SNMP.  By sending a custom-crafted SNMP query to a vulnerable access point, the access point will return system credentials, including the identification string.  This identification string can be used as the administrative community string."
+      }
+    ],
+    "CVE-2002-0813": [
+      {
+        "url": "http://www.securityfocus.com/bid/5328",
+        "title": "Cisco IOS TFTP Server Long File Name Buffer Overflow Vulnerability",
+        "body": "A problem has been discovered in Cisco IOS and MGX switches that could result in a denial of service, and potential code execution.It has been discovered that the TFTP server file name handling of Cisco IOS is vulnerable to a buffer overflow.  This overflow results due insufficient bounds checking on requested file names.  A request for a file name of 700 or more bytes will result a crash of the router, and reboot of the device.On Cisco MGX switches, the TFTP service will fail but the device will continue to function.Cisco IOS versions 12.0 and later are not prone to this issue.  Cisco has assigned Cisco Bug ID CSCdy03429 to this vulnerability.Cisco has announced that some MGX switches are also affected by this issue. Cisco has assigned Cisco Bug ID CSCdy03429 to this vulnerability."
+      }
+    ],
+    "CVE-2002-0999": [
+      {
+        "url": "http://www.securityfocus.com/bid/5219",
+        "title": "CARE 2002 Multiple SQL Injection Vulnerabilities",
+        "body": "CARE 2002 is software designed to integrate various systems in the health care industry. It provides a web interface, and is implemented in PHP.Reportedly, CARE 2002 suffers from multiple SQL injection issues. Exploitation of this issue may result in the disclosure of sensitive information, modification of sensitive information, or privilege escalation. Full details on the nature of these vulnerabilities are not currently available."
+      }
+    ],
+    "CVE-2002-1203": [
+      {
+        "url": "http://www.securityfocus.com/bid/5924",
+        "title": "IBM SecureWay Firewall Denial of Service Vulnerability",
+        "body": "A vulnerability has been discovered in IBM SecureWay Firewall for the AIX operating system.Reportedly, a problem exists in the SecureWay firewall stack implementation, making it prone to a denial of service when processing TCP packets with zero bit flags.To reach a denial of service condition, 2.8Mbps of malicious requests must be sent to the vulnerable firewall."
+      }
+    ],
+    "CVE-2002-1222": [
+      {
+        "url": "http://www.securityfocus.com/bid/5976",
+        "title": "Cisco CatOS CiscoView HTTP Server Buffer Overflow Vulnerability",
+        "body": "Certain versions of Cisco CatOS ship with an embedded HTTP server.  Switches that run these versions of CatOS are prone to a denial of service, which is due to a remote buffer overflow condition in the HTTP server.This issue is reported to affect CatOS versions 5.4 through 7.4 which contain \"cv\" in the image name."
+      }
+    ],
+    "CVE-2002-1432": [
+      {
+        "url": "http://www.securityfocus.com/bid/5438",
+        "title": "Midicart ASP Remote Customer Information Retrieval Vulnerability",
+        "body": "Midicart ASP is a commercially available e-commerce solution distributed by Coxco Support.  It is available for the Microsoft Windows operating system.The default installation of Midicart ASP does not place sufficient access control on the midicart.mdb file.  Due to this lack of access control, it is possible for a remote user to gain access to this file.  This file may yield sensitive customer information, such as customer names, addresses, and credit card information."
+      }
+    ],
+    "CVE-2002-1718": [
+      {
+        "url": "http://www.securityfocus.com/bid/4084",
+        "title": "Microsoft IIS 5.1 Frontpage Server Extensions File Source Disclosure Vulnerability",
+        "body": "An issue in IIS has been reported which could allow for a remote attacker to reveal the source of a Frontpage Server Extension file. Allegedly, submitting a request using '../' character sequences followed by the path to a known FPSE file, will cause the host to reveal the source of the requested file.Microsoft has not confirmed the existence of these vulnerabilities.* Confliciting details exist. This issue may be the result of a configuration error, although this has not been confirmed"
+      }
+    ],
+    "CVE-2002-1798": [
+      {
+        "url": "http://www.securityfocus.com/bid/5851",
+        "title": "Midicart PHP Information Disclosure Vulnerability",
+        "body": "A problem with the default installation of Midicart PHP may make it possible for remote users to gain access to sensitive information.The default installation of Midicart PHP does not place sufficient access control on files residing in the 'admin' folder. Files in this folder are meant to be accessed by privileged individuals and may contain sensitive information."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/5855",
+        "title": "Midicart PHP Arbitrary File Upload Vulnerability",
+        "body": "A problem with the default installation of Midicart PHP may make it possible for remote users to gain access to sensitive information.The default installation of Midicart PHP does not place sufficient access control on files residing in the 'admin' folder. Due to this lack of access control, it is possible for a remote attacker to gain access to this file and upload arbitrary files to a vulnerable system. "
+      }
+    ],
+    "CVE-2002-1852": [
+      {
+        "url": "http://www.securityfocus.com/bid/5829",
+        "title": "Monkey HTTP Server Multiple Cross Site Scripting Vulnerabilities",
+        "body": "Monkey HTTP server is prone to cross site scripting vulnerabilities. An attacker may exploit this vulnerability by enticing a victim user to follow a malicious link. Attacker-supplied HTML and script code may be executed on a web client visiting the malicious link in the context of the webserver.Attackers may potentially exploit this issue to manipulate web content or to steal cookie-based authentication credentials. It may be possible to take arbitrary actions as the victim user."
+      }
+    ],
+    "CVE-2002-1877": [
+      {
+        "url": "http://www.securityfocus.com/bid/5667",
+        "title": "NetGear FM114P Prosafe URL Filter Bypassing Vulnerability",
+        "body": "FM114P Prosafe firewalls are a hardware solution manufactured and distributed by Netgear.It has been reported that FM114P firewalls do not sufficiently check addresses when requests are made.  Because of this, it would be possible for a user behind the system to reach a restricted-access site by requesting the site on the basis of IP address."
+      }
+    ],
+    "CVE-2002-1958": [
+      {
+        "url": "http://www.securityfocus.com/bid/5173",
+        "title": "KMMail Code Injection Vulnerability",
+        "body": "kmMail is a freely available, open source web-based mail software package written with PHP.  It is available for the Unix, Linux, and Microsoft Operating Environments.kmMail does not sufficiently filter javascript from mails.  As a result, when a user opens a mail in kmMail that contains javascript, the code contained in the mail would be executed in the browser of the mail user.  Additionally, HTML included in the Subject: field is not filtered, and could be rendered in the browser."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6013",
+        "title": "KMMail E-Mail HTML Injection Vulnerability",
+        "body": "kmMail does not sufficiently sanitize HTML and script code from the body of e-mail messages.  As a result, an attacker may send a malicious message to a user of kmMail that includes arbitrary HTML and script code.This may allow an attacker to steal cookie-based authentication credentials from users of the webmail system.  Other attacks are also possible."
+      }
+    ],
+    "CVE-2002-1991": [
+      {
+        "url": "http://www.securityfocus.com/bid/5037",
+        "title": "OSCommerce Remote File Include Vulnerability",
+        "body": "osCommerce is prone to an issue which may allow remote attackers to include arbitrary files located on remote servers.  If the remote file is a PHP script, this may allow for execution of attacker-supplied PHP code with the privileges of the webserver."
+      }
+    ],
+    "CVE-2002-2019": [
+      {
+        "url": "http://www.securityfocus.com/bid/5037",
+        "title": "OSCommerce Remote File Include Vulnerability",
+        "body": "osCommerce is prone to an issue which may allow remote attackers to include arbitrary files located on remote servers.  If the remote file is a PHP script, this may allow for execution of attacker-supplied PHP code with the privileges of the webserver."
+      }
+    ],
+    "CVE-2002-2154": [
+      {
+        "url": "http://www.securityfocus.com/bid/5792",
+        "title": "Monkey HTTP Server File Disclosure Vulnerability",
+        "body": "Monkey HTTP server is prone to a directory-traversal bug that may allow attackers to access sensitive files.By passing a malicious query to a vulnerable server, an attacker can potentially gain access to arbitrary webserver-readable files. This issue occurs because the application fails to sufficiently validate the user-supplied input."
+      }
+    ],
+    "CVE-2002-2196": [
+      {
+        "url": "http://www.securityfocus.com/bid/5587",
+        "title": "Samba Improperly Terminated Struct Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported for Samba version 2.2.4. Reportedly, a buffer overflow condition may arise due to improper termination of memory structures used by Samba. As this is a buffer overflow vulnerability, it may be possible for an attacker to cause Samba to execute code. This has not, however, been confirmed."
+      }
+    ],
+    "CVE-2002-2228": [
+      {
+        "url": "http://www.securityfocus.com/bid/6148",
+        "title": "MailScanner Attachment Filename Validation Vulnerability",
+        "body": "A vulnerability has been reported in how MailScanner handles filenames for attachments.  It may be possible to bypass MailScanner security with attachment filenames that contain excessive trailing/leading whitespace, are blank, or use character encodings that are unknown to MailScanner.The exact consequences of this vulnerability are not known."
+      }
+    ],
+    "CVE-2002-2229": [
+      {
+        "url": "http://www.securityfocus.com/bid/6327",
+        "title": "Sapio WebReflex Directory Traversal Vulnerability",
+        "body": "It has been reported that WebReflex fails to properly sanitize web requests. By sending a malicious web request to the vulnerable server, using directory traversal sequences, it is possible for a remote attacker to access sensitive resources located outside of the web root.An attacker is able to traverse outside of the established web root by using dot-dot-slash (../) directory traversal sequences. An attacker may be able to obtain any web server readable files from outside of the web root directory."
+      }
+    ],
+    "CVE-2002-2232": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/303990",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6345",
+        "title": "Mollensoft Software Enceladus Server Suite FTP Command Buffer Overflow Vulnerability",
+        "body": "Enceladus Server Suite is prone to a remotely exploitable buffer overflow vulnerability.  It is possible to trigger this condition by supplying an overly long value for several FTP commands.  To exploit this issue, the attacker must be able to authenticate to the FTP server included in Enceladus and issue a maliciously crafted command.Successful exploitation will enable a remote attacker to execute arbitrary code with the privileges of the Enceladus Server Suite software, which will most likely run with SYSTEM (or equivalent) privileges.  This vulnerability may also be used to cause a denial of service.This issue has been reported for Enceladus Server Suite 3.9.  Other versions may also be affected."
+      }
+    ],
+    "CVE-2002-2235": [
+      {
+        "url": "http://www.securityfocus.com/bid/6246",
+        "title": "VBulletin members2.php Cross Site Scripting Vulnerability",
+        "body": "Due to insufficient sanitization of user supplied values, it is possible to exploit a vulnerability in VBulletin. By passing an invalid value to a variable located in 'members2.php', it is possible to generate an error page which will include attacker-supplied HTML code which will be executed in a legitimate users browser.This issue may be exploited to steal cookie-based authentication credentials from legitimate users of the website running the vulnerable software. The attacker may use cookie-based authentication credentials to hijack the session of the legitimate user."
+      }
+    ],
+    "CVE-2002-2236": [
+      {
+        "url": "http://www.securityfocus.com/bid/6340",
+        "title": "apt-www-proxy Format String Vulnerability",
+        "body": "apt-www-proxy is prone to a format string vulnerability. This problem is due to incorrect use of the syslog() function to log error messages. It is possible to corrupt memory by passing format strings through the vulnerable logging function. This may potentially be exploited to overwrite arbitrary locations in memory with attacker-specified values."
+      }
+    ],
+    "CVE-2002-2309": [
+      {
+        "url": "http://www.securityfocus.com/bid/5280",
+        "title": "PHP Interpreter Direct Invocation Denial Of Service Vulnerability",
+        "body": "It is possible, under some circumstances, for remote attackers to invoke the PHP interpreter from the web.  If the interpreter is invoked with no command line options, it will hang.  Attackers may exploit this condition to cause a denial of service.This is reported to be a problem with PHP and Apache on Microsoft Windows platforms.  It may be possible to create this condition in other environments as well."
+      }
+    ],
+    "CVE-2002-2311": [
+      {
+        "url": "http://www.securityfocus.com/bid/5290",
+        "title": "Multiple Vendor Web Browser JavaScript Modifier Keypress Event Subversion Vulnerability",
+        "body": "An issue has been reported with the JavaScript implementation of multiple web browsers, including Microsoft Internet Explorer and Opera. Malicious JavaScript may subvert some keypress events, with consequences including the disclosure of arbitrary local files to a remote server.Through JavaScript, it is possible to define an event handler for the 'onkeydown' event, which fires when a key is pressed by the end user. Malicious script code may subvert this event to an arbitrary Ctrl-key combination, including events such as Paste. By further modifying the environment, it is possible to paste arbitrary content into a file upload form field.This form may also be submitted by the malicious script, disclosing arbitrary local file contents to a remote server.Other attacks based on script interaction with the cut and paste functionality of Windows may also be possible."
+      }
+    ],
+    "CVE-2002-2317": [
+      {
+        "url": "http://www.securityfocus.com/bid/5909",
+        "title": "Symantec VelociRaptor Denial of Service Vulnerability",
+        "body": "Symantec has reported that VelociRaptor firewalls are vulnerable to a memory leak bug, that could potentially result in a denial of service attack. Other security issues may also exist that were also corrected by the fix.Precise technical details regarding this bug are still unknown. Updates will occur as more information regarding this issue becomes available."
+      }
+    ],
+    "CVE-2002-2318": [
+      {
+        "url": "http://www.securityfocus.com/bid/5435",
+        "title": "BlueFace Falcon Web Server Error Message Cross-Site Scripting Vulnerability",
+        "body": "Falcon Webserver does not sufficiently sanitize HTML tags from error message output.  In particular, attackers may inject HTML into 301 and 404 error pages.    It is possible to create a malicious link to the server which will generate an error page with attacker-supplied HTML and script code when visited.  Arbitrary HTML and script code will be executed by the web client of the user visiting the server, in the security context of the server."
+      }
+    ],
+    "CVE-2002-2319": [
+      {
+        "url": "http://www.securityfocus.com/bid/5865",
+        "title": "MySimpleNews PHP Injection Vulnerability",
+        "body": "MySimpleNews allows users to enter news articles through a web interface.  It will allow PHP code to be injected into URI parameters of the 'users.php' script, which will be stored into a MySimpleNews file (news.php3).  The injected code may then be executed by the attacker by requesting the 'news.php3' script."
+      }
+    ],
+    "CVE-2002-2321": [
+      {
+        "url": "http://www.securityfocus.com/bid/5890",
+        "title": "phpLinkat Multiple Cross Site Scripting Vulnerabilities",
+        "body": "Reportedly, phpLinkat is prone to cross site scripting attacks.An attacker may exploit this vulnerability by enticing a victim user to follow a malicious link containing HTML and script code. The attacker-supplied HTML and script code may be executed on a web client in the context of the site hosting phpLinkat.Attackers may potentially exploit this issue to manipulate web content or to steal cookie-based authentication credentials. It may be possible to take arbitrary actions as the victim user."
+      }
+    ],
+    "CVE-2002-2322": [
+      {
+        "url": "http://www.securityfocus.com/bid/5858",
+        "title": "Ultimate PHP Board Information Disclosure Vulnerability",
+        "body": "A vulnerability has been discovered in Ultimate PHP Board. It has been reported that by including the path to sensitive files in a web request, it is possible for an unauthorized user to access PHP board data files. This is due to insufficient input validation.This vulnerability was reported for version 1.0b. It is not known whether other versions are affected."
+      }
+    ],
+    "CVE-2002-2324": [
+      {
+        "url": "http://www.securityfocus.com/bid/5894",
+        "title": "Microsoft Windows XP System Restore Folder Permissions Weakness",
+        "body": "Microsoft Windows XP stores system restore information in the 'System Volume Information' directory.  While this directory has appropriate access controls set, its subfolders do not.  This could allow a knowledgeable unprivileged user to browse the subdirectories."
+      }
+    ],
+    "CVE-2002-2325": [
+      {
+        "url": "http://www.securityfocus.com/bid/5301",
+        "title": "Pine Empty MIME Boundary Denial Of Service Vulnerability",
+        "body": "Pine is an open source mail user agent distributed by the University of Washington.  It is freely available for Unix, Linux, and Microsoft Operating Systems.When a mail is received by pine that contains MIME content, and the value of the MIME boundary is blank, pine becomes unstable.  This vulnerability has been discovered to cause a core dump in the pine client, and could be used to deny service to legitimate users of the client."
+      }
+    ],
+    "CVE-2002-2326": [
+      {
+        "url": "http://www.securityfocus.com/bid/5303",
+        "title": "Apple MacOS iDisk Mail.APP Default Configuration Password Disclosure Vulnerability",
+        "body": "A configuration-related vulnerability is reported to exist in certain MacOS tools which may expose iDisk authentication credentials to attackers with the capability to sniff network traffic that is passed between a client system and the Mac.com service.The iDisk service password is also used by the Mac.com service.  Users of both services can use Mail.app to retrieve mail from Mac.com.  Authentication credentials for the iDisk service are sent using HTTPS over WebDAV, which ensures that the communications between client and server are encrypted.  However, Mail.app does not appear to use the same security measure by default when communicating with Mac.com.  While Mail.app can be configured to communicate with mail servers using SSL, this option does not appear to be enabled in the default Mail.app configuration.  STARTTLS is supported on the server-side by Mac.com.An attacker may potentially take advantage of this exposure to gain unauthorized access to both Mac.com and iDisk, since the credentials are shared between the two services."
+      }
+    ],
+    "CVE-2002-2327": [
+      {
+        "url": "http://www.securityfocus.com/bid/5288",
+        "title": "Sun Fire Unauthorized Environmental Monitoring Subsystem Modification Vulnerability",
+        "body": "Sun Fire products are general purpose server hardware platforms which can be used for a variety of applications. Some Sun Fire systems include an environmental monitoring subsystem which provides feedback on the device.It may be possible for a malicious, unprivileged local user to issue commands to the environmental monitoring system, creating a denial of service condition.This vulnerability has been reported in Sun Fire 280R, V880, and V480 systems used with Solaris 8. Reportedly, Solaris 9 does not suffer from this issue."
+      }
+    ],
+    "CVE-2002-2328": [
+      {
+        "url": "http://www.securityfocus.com/bid/4804",
+        "title": "Microsoft Active Directory Zero Page Length Query Vulnerability",
+        "body": "Microsoft Active Directory is reportedly vulnerable to a query that will result in Active Directory to cease responding.The vulnerability has been reported for querying Active Directory servers using Kerberos V authentication via GSS-API.A LDAP client is able to specify the number of entries to be retrieved by setting a page length to a smaller number.  The reported vulnerability occurs when the page length value is set to zero and the client makes a large request. Such a request will cause the vulnerable Active Directory server to hang causing a denial of service to occur."
+      }
+    ],
+    "CVE-2002-2329": [
+      {
+        "url": "http://www.securityfocus.com/bid/5295",
+        "title": "ICQ 2001/2002 Malformed Message Denial Of Service Vulnerability",
+        "body": "ICQ clients versions 2001/2002 are prone to a remotely exploitable denial of service condition.  It is possible to produce this condition by sending a client a large number of graphical emoticons.  It should be noted that the attacker cannot exploit this using the normal ICQ client, as the client restricts the number of emoticons that may be sent in messages."
+      }
+    ],
+    "CVE-2002-2330": [
+      {
+        "url": "http://www.securityfocus.com/bid/5316",
+        "title": "StatsPlus HTTP Header HTML Injection Vulnerability",
+        "body": "StatsPlus is prone to HTML injection attacks.  StatsPlus logs information about incoming requests to monitored webpages.  HTTP headers such as the HTTP_USER_AGENT and HTTP_REFERER are logged by the software.  StatsPlus does not sufficiently sanitize HTML when logging these fields.  An attacker may create false HTTP_USER_AGENT and HTTP_REFERER headers which contain arbitrary HTML and script code and it will be stored on the statistics page."
+      }
+    ],
+    "CVE-2002-2332": [
+      {
+        "url": "http://www.securityfocus.com/bid/5717",
+        "title": "Opera Oversized Image Width Denial Of Service Vulnerability",
+        "body": "Opera is a web browser created by Opera Software. It is available for a range of operating systems including Windows and Linux. It has been reported that Opera is prone to a denial of service vulnerability when processing overly wide images.Although not confirmed, it has been reported that this may actually be a bug in QImage, which Opera uses to display image files.This issue was reported in Opera on Linux platforms. Other versions may also be affected."
+      }
+    ],
+    "CVE-2002-2333": [
+      {
+        "url": "http://www.securityfocus.com/bid/5721",
+        "title": "KDE Konqueror Oversized Image Width Denial of Service Vulnerability",
+        "body": "Konqueror is an Open Source web browser, shipped with the KDE desktop. It is available on Linux platforms.It has been reported that Konqueror is prone to a denial of service vulnerability when processing overly wide images.The problem reportedly exists on Mandrake 8.2 running KDE 3.0.2Although unconfirmed, it likely exists on all systems running KDE3.0.2"
+      }
+    ],
+    "CVE-2002-2334": [
+      {
+        "url": "http://www.securityfocus.com/bid/5732",
+        "title": "Joe Text Editor Backup SetUID Executable Editing Permission Elevation Vulnerability",
+        "body": "Joe is a freely available, open source text editor.  It is available for Unix and Linux operating systems.When joe is used to edit a setuid file, joe automatically creates a copy of the setuid file.  The permissions on the file are preserved with the exception of ownership.  This could result in an arbitrary copy of a setuid file being created with the permissions of the joe user."
+      }
+    ],
+    "CVE-2002-2339": [
+      {
+        "url": "http://www.securityfocus.com/bid/5915",
+        "title": "SSGBook Image Tag HTML Injection Vulnerabilities",
+        "body": "SSGbook includes codes for allowing users to specify HTML formatting and layout inside of guestbook entries.  For example, a user can include an image by including it inside of [image] or [img] tags.  However, arbitrary HTML and script code are not sufficiently sanitized within these tags.As a result, users may include malicious HTML and script code inside of guestbook entries.  The attacker-supplied code will be rendered in the web client of a user who views a malicious guestbook entry."
+      }
+    ],
+    "CVE-2002-2340": [
+      {
+        "url": "http://www.securityfocus.com/bid/4739",
+        "title": "Phorum Reply Email Address Script Injection Vulnerability",
+        "body": "Phorum is a PHP based web forums package. It has been reported possible to inject script code into the body of a message response. The attacker's script code may be executed in the web client of arbitrary users who view the malicious post.Attackers may potentially exploit this issue to hijack web content or to steal cookie-based authentication credentials."
+      }
+    ],
+    "CVE-2002-2341": [
+      {
+        "url": "http://www.securityfocus.com/bid/4755",
+        "title": "SonicWall SOHO3 Content Blocking Script Injection Vulnerability",
+        "body": "The Sonicwall SOHO3 is an Internet security appliance that provides firewall security solutions.Reportedly, a vulnerability exists in the product that allows for a script injection attack to be launched from a malicious user within the internal LAN.It is possible to configure Sonicwall to block domains from a list of user entered domains. Sonicwall will deny local users access to the websites that have been blocked. A malicious user may be able to inject script code as part of a URL of a blocked domain. Attempts to access blocked domains will be entered into the log files of Sonicwall. An administrator viewing the log files will automatically cause the malicious script code execute.If the attacker's script code is injected into the logfile then the administrator will not be able to access the log normally.  To regain access to the logs the appliance will need to be rebooted.  It should be noted that rebooting the appliance will cause the logs to be cleared and will effectively eliminate any indication in the logs of which user initiated the attack.It is possible for a malicious remote user to exploit this issue by crafting a URL of a known blocked domain that includes script code, and enticing a local user into following the link. "
+      }
+    ],
+    "CVE-2002-2342": [
+      {
+        "url": "http://www.securityfocus.com/bid/4738",
+        "title": "Bannermatic World Readable Data Files Information Disclosure Vulnerability",
+        "body": "Bannermatic is a banner ad rotation system maintained by Joe DePasquale of GetCruising.Bannermatic is subject to an information disclosure issue. Reportedly, ban.log, ban.bak, ban.dat and banmat.pwd are world readable and all contain sensitive data. Obtaining the information contained within either file, could result in the attacker launching further attacks against the host."
+      }
+    ],
+    "CVE-2002-2343": [
+      {
+        "url": "http://www.securityfocus.com/bid/4740",
+        "title": "NOCC Webmail Script Injection Vulnerability",
+        "body": "NOCC is a web based email client implemented in PHP4.  It includes support for POP3, SMTP and IMAP servers, MIME attachments and multiple languages.A script injection issue has been reported with the way emails are displayed to users of NOCC webmail.  A malicious attacker can include script code in an email and potentially get full access to a victim's mailbox."
+      }
+    ],
+    "CVE-2002-2346": [
+      {
+        "url": "http://www.securityfocus.com/bid/5923",
+        "title": "PHPBB2 Avatar Images Information Disclosure Vulnerability",
+        "body": "It has been reported that phpBB2 reveals a user's IP address. This vulnerability is due to phpBB2's file naming scheme for avatar files.  When a user elects to upload an avatar file to a system using phpBB2, the system will save the file with a random name. This random name consists of the user's IP address, encoded in hexadecimal values, followed by other characters. A malicious attacker can exploit this vulnerability to find out IP addresses of the users of the system hosting phpBB2 forums."
+      }
+    ],
+    "CVE-2002-2347": [
+      {
+        "url": "http://www.securityfocus.com/bid/5452",
+        "title": "Oracle 9iAS OJSP Demo Scripts Cross-Site Scripting Vulnerability",
+        "body": "Oracle 9iAS is bundled with a number of sample JSP scripts that are prone to cross-site scripting attacks.  This is due to insufficient sanitization of HTML tags from data submitted via text fields in forms used by the vulnerable scripts.  This data may also be submitted via parameters in a CGI query string.'hellouser.jsp', 'welcomeuser.jsp' and 'usebean.jsp' are all affected by this issue.This potentially be exploited to cause script code to be executed in the browser of a legitimate user of Oracle 9iAS and may lead to disclosure of the user's JSESSIONID credential."
+      }
+    ],
+    "CVE-2002-2348": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/294624",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/5932",
+        "title": "Authoria HR Suite AthCGI.EXE Cross-Site Scripting Vulnerability",
+        "body": "Authoria HR Suite is prone to cross-site scripting attacks.An attacker could construct a malicious link to a vulnerable host that contains arbitrary HTML and script code. If this link is visited by a web user, the attacker-supplied code will be rendered in their browser, in the security context of the vulnerable site."
+      }
+    ],
+    "CVE-2002-2349": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/294701",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/5942",
+        "title": "PHPBBMod PHPInfo Information Disclosure Vulnerability",
+        "body": "phpBBmod ships with a sample script (phpinfo.php) that may disclosure sensitive information to remote attackers.  When this script is accessed, sensitive information about the underlying environment will be revealed.This issue was reported in phpBBmod version 1.3.3.  Other versions may also be affected."
+      }
+    ],
+    "CVE-2002-2351": [
+      {
+        "url": "http://www.securityfocus.com/bid/5432",
+        "title": "Qualcomm Eudora File Attachment Spoofing Vulnerability",
+        "body": "Eudora is reported to be prone to an issue which may allow attackers to spoof the file extension in an attachment.  This may aid an attacker in enticing a user of the e-mail client into executing malicious content, and in avoiding generating warning messages.It is possible to refer to other files or attachments in a message through specially formatted inline text. It has been demonstrated possible to misrepresent some aspects of files referenced in this manner. This may cause end users to make erroneous judgements about the nature of file attachments, and allow malicious attachments to bypass normal warning dialogs displayed when executable content is launched.If an attachment path to an executable file has a single '.' character appended, warning messages will not be displayed. Attachments such as 'calc.exe.' may execute when launched without the requirement for further interaction. Additionally, an arbitrary file name may be specified by the attacker which will be displayed to the end user. If a filename such as 'readme.txt' is associated with a malicious, executable attachment, the user may make innacurate decisions about the risk associated with opening the attachment. If the specified file does not exist on the local system, the full path provided will be used to locate and launch a file, with no further warnings given.Successful exploitation may require the attacker to know the full path to the attachment directory.** A new version of Eudora is available however, reports suggest that the new version may still be affected.** May 21, 2004 - Eudora version 6.1.1 has been released, however, it is reported that the new versions is vulnerable to this issue as well."
+      }
+    ],
+    "CVE-2002-2354": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/294702",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/5940",
+        "title": "Netgear FM114P Wireless Firewall TCP Connect Denial of Service Vulnerability",
+        "body": "Netgear FM114P Cable/DSL Prosafe 802.11b Wireless Firewall may be vulnerable to a denial of service condition.  If an unusually large number of TCP connections are made to the device, it will stop responding and cease to process traffic.A reboot of the device is necessary to resume normal operation."
+      }
+    ],
+    "CVE-2002-2357": [
+      {
+        "url": "http://www.securityfocus.com/bid/6197",
+        "title": "MailEnable Email Server Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported for MailEnable's POP3 server. The vulnerability is due to insufficent bounds checking of the USER login field. An attacker can exploit this vulnerability by connecting to a vulnerable MailEnable server and sending an overly long string as the value for the USER login prompt. This will trigger the buffer overflow condition."
+      }
+    ],
+    "CVE-2002-2358": [
+      {
+        "url": "http://www.securityfocus.com/bid/5401",
+        "title": "Opera FTP View Cross-Site Scripting Vulnerability",
+        "body": "A cross-site scripting vulnerability in Opera has been reported.  When viewing the contents of an FTP site as web content, the data within <title> tags is not sanitized.  An attacker may embed javascript between open and closing <title> tags in a FTP URL.  This vulnerability has been confirmed on Opera 6.03 and 6.04 for Windows 2000."
+      }
+    ],
+    "CVE-2002-2360": [
+      {
+        "url": "http://www.securityfocus.com/bid/5591",
+        "title": "Webmin RPC Function Privilege Escalation Vulnerability",
+        "body": "In cases where users of Webmin do not have root access on the underlying host, it may be possible to mount privilege escalation attacks on the underlying host.  This normally occurs in configurations where multiple Webmin client systems have access to a centralized Webmin server.Webmin allows commands to be executed remotely on the underlying host from other Webmin client systems via the RPC module.  However, the script that provides this facility does not sufficiently check the permissions of the source of the remote commands.  As a result, it is possible for remote authenticated Webmin users to abuse this facility to execute commands (as root) on the underlying host.  This may be exploited to gain root access to a system hosting the vulnerable software."
+      }
+    ],
+    "CVE-2002-2361": [
+      {
+        "url": "http://www.securityfocus.com/bid/5579",
+        "title": "Yahoo Instant Messenger Signed Content Weakness",
+        "body": "Yahoo Instant Messenger is an instant messenger client distributed by Yahoo. It is available for Microsoft Windows sytems.A weakness has been reported in the Yahoo Instant Messenger installer where an attacker may use the installer to install malicious software on the vulnerable system. The Yahoo Instant Messenger Installer uses HTTP, and though it uses signed content for the installer, does not verify the signature of packages downloaded from Yahoo."
+      }
+    ],
+    "CVE-2002-2362": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/296861",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6035",
+        "title": "MyMarket Form_Header.PHP Cross-Site Scripting Vulnerability",
+        "body": "MyMarket is prone to cross-site scripting attacks.HTML tags and script code are not sanitized from CGI variables which may cause user-supplied input to be displayed.  As a result, an attacker can create a link to a site running the vulnerable software which contains malicious attacker-supplied HTML and script code.When this link is visited, the attacker-supplied code will execute in the user's web client in the security context of the site hosting the software."
+      }
+    ],
+    "CVE-2002-2363": [
+      {
+        "url": "http://www.securityfocus.com/bid/5583",
+        "title": "HP-UX VJE.VJE-RUN Default Path Modification Vulnerability",
+        "body": "HP-UX is the Unix Operating System variant distributed and maintained by HP. An issue has been reported with the VJE.VJE-RUN fileset used to provide vje Japanese Input support.When installed, VJE.VJE-RUN modifies the file /etc/PATH. The string 'bin' is erroneously added to this file. As a result, the PATH environment variable for users and processes may be modified in unexpected ways.A malicious local user may be able to exploit this issue to gain elevated privileges."
+      }
+    ],
+    "CVE-2002-2364": [
+      {
+        "url": "http://www.securityfocus.com/bid/5124",
+        "title": "PHP Ticket Cross Site Scripting Vulnerability",
+        "body": "PHP Ticket is a \"To Do List\" tracking system maintained by MrSpiff.A cross site scripting vulnerability is present in PHP Ticket. The application does not properly sanitize HTML before it is included in PHP generated HTML pages."
+      }
+    ],
+    "CVE-2002-2365": [
+      {
+        "url": "http://www.securityfocus.com/bid/5127",
+        "title": "Simple WAIS Interface Arbitrary Command Execution Vulnerability",
+        "body": "The Simple WAIS interface is an integrated interface to the WAIS system.  It is designed for use on Unix and Linux operating systems.The Simple WAIS interface does not properly handle some types of input.  Because of the insufficient santizing of user-supplied input, it is possible for a user with access to the interface to execute arbitrary commands with the privileges of the SWAIS daemon.  This may be done by appending a command with the search, seperated by a pipe."
+      }
+    ],
+    "CVE-2002-2366": [
+      {
+        "url": "http://www.securityfocus.com/bid/5601",
+        "title": "Cerulean Studios Trillian Skins Colors File Name Buffer Overflow Vulnerability",
+        "body": "Trillian is a freely available instant message software package.  It is designed for use on the Microsoft Windows operating system.Trillian skins files are XML forms designed to allow the easy creation of custom interfaces, or \"skins\" for the Trillian client.  When a colors file name of excessive length is supplied in a skin, a buffer overflow occurs.  This could make it possible to execute arbitrary code through a malicious skin."
+      }
+    ],
+    "CVE-2002-2367": [
+      {
+        "url": "http://www.securityfocus.com/bid/5149",
+        "title": "NEC Socks5 Host Name Off-By-One Buffer Overflow Vulnerability",
+        "body": "Socks5 is the freely available, open source proxy implementation developed by NEC.  It is available for Unix, Linux, and Microsoft operating environments.Socks5 handles host names in an unsafe manner.  An off-by-one error in the software package may make it possible for users to send host names of 256 bytes and cause memory corruption.Exploitation of this condition may cause a denial of service or potentially allow for code execution.  "
+      }
+    ],
+    "CVE-2002-2368": [
+      {
+        "url": "http://www.securityfocus.com/bid/5145",
+        "title": "NEC Socks5 User Name Buffer Overflow Vulnerability",
+        "body": "Socks5 is the freely available, open source proxy implementation developed by NEC.  It is available for Unix, Linux, and Microsoft operating environments.Socks5 handles user names in an unsafe manner.  A boundary condition error in the software package may make it possible for users to send user names of 132 bytes or greater, and cause memory corruption.  This could result in denial of service, and potentially code execution."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/5147",
+        "title": "NEC Socks4 User Name Buffer Overflow Vulnerability",
+        "body": "Socks4 is the freely available, open source proxy implementation developed by NEC.  It is available for Unix, Linux, and Microsoft operating environments.Socks4 handles user names in an unsafe manner.  A boundary condition error in the software package may make it possible for users to send user names of 132 bytes or greater, and cause memory corruption."
+      }
+    ],
+    "CVE-2002-2369": [
+      {
+        "url": "http://www.securityfocus.com/bid/6042",
+        "title": "LiteServe Web Server File Disclosure Vulnerability",
+        "body": "A vulnerability has been discovered in LiteServe Web Server v2.0.By sending a maliciously constructed HTTP request to the target server, it is possible for a remote attacker to access password protected files and folders.Exploiting this issue may allow an attacker to gain information needed to launch further attacks against the target server and legitimate users."
+      }
+    ],
+    "CVE-2002-2371": [
+      {
+        "url": "http://www.securityfocus.com/bid/6046",
+        "title": "Linksys WET11 Denial Of Service Vulnerability",
+        "body": "It has been reported that the WET11 device is prone to a denial of service condition when receiving specially crafted packets.The device will crash when it receives packets that have the same MAC address as the device itself."
+      }
+    ],
+    "CVE-2002-2372": [
+      {
+        "url": "http://www.securityfocus.com/bid/6047",
+        "title": "IBM Infoprint Printers Remote Management Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported for IBM Infoprint series of printers.The vulnerability is present in the Telnet-based remote management services of the printer. It has been reported that when using the remote management services, the printer does not perform adequate checks on user supplied input for the login parameter.By sending an excessively long string to the printer's remote management services, it is possible to cause the device to be unresponsive to further requests for service.This vulnerability was reported on IBM Infoprint 21 printers with Controller Software version 1.047012. IBM Infoprint printers with Controller Software version 1.056007 are reportedly not vulnerable to this issue. IBM Infoprint 32 (model 4332-002) printers running printer software version 2.55F  and network software version 7.34 are reported to not be affected by this issue."
+      }
+    ],
+    "CVE-2002-2376": [
+      {
+        "url": "http://www.securityfocus.com/bid/5128",
+        "title": "E-Guest Guest Book Script Injection Vulnerability",
+        "body": "E-Guest guest book is a freely available, open source guest book.  It is designed for Unix and Linux operating systems.E-Guest does not properly filter script code from some fields of the guest book entries.  It is possible for a remote user to enter HTML and script code in the name, email, homepage, and location fields.  Upon visiting the page, this script code would be executed in browser of the visiting user."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/5129",
+        "title": "E-Guest Server Side Include Arbitrary Command Execution Vulnerability",
+        "body": "E-Guest guest book is a freely available, open source guest book.  It is designed for Unix and Linux operating systems.E-Guest does not adequately sanitize user-supplied input in guest book entries.  Because of this, it is possible to pass along commands via server-side includes that could allow a remote user to execute commands on the local host."
+      }
+    ],
+    "CVE-2002-2377": [
+      {
+        "url": "http://www.securityfocus.com/bid/5130",
+        "title": "Zap Book Server Side Include Arbitrary Command Execution Vulnerability",
+        "body": "Zap Book is a freely available, open source guest book.  It is designed for Unix and Linux operating systems.Zap Book does not adequately sanitize user-supplied input in guest book entries.  Because of this, it is possible to pass along commands via server-side includes that could allow a remote user to execute commands on the local host."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/5131",
+        "title": "Zap Book Script Injection Vulnerability",
+        "body": "Zap Book is a freely available, open source guest book.  It is designed for Unix and Linux operating systems.Zap Book does not properly filter script code from some fields of the guest book entries.  It is possible for a remote user to enter HTML and script code in the name, email, homepage, and location fields.  Upon visiting the page, this script code would be executed in browser of the visiting user."
+      }
+    ],
+    "CVE-2002-2378": [
+      {
+        "url": "http://www.securityfocus.com/bid/6054",
+        "title": "AN HTTPD Error Page Cross Site Scripting Vulnerability",
+        "body": "AN HTTPD does not filter HTML tags from URI parameters, making it prone to cross-site scripting attacks. As a result, it is possible for a remote attacker to create a malicious link containing script code which will be executed in the browser of a legitimate user, in the context of the website running AN HTTPD.This issue may be exploited to steal cookie-based authentication credentials from legitimate users of the website running the vulnerable software."
+      }
+    ],
+    "CVE-2002-2379": [
+      {
+        "url": "http://www.securityfocus.com/bid/6059",
+        "title": "Cisco AS5350 Universal Gateway Portscan Denial Of Service Vulnerability",
+        "body": "The Cisco AS5350 Universal Gateway is reported to be prone to a denial of service condition.  It is possible to cause this condition by portscanning a vulnerable device.This issue was reported for Cisco AS5350 devices running Cisco IOS release 12.2(11)T.  Other firmware and devices may also be affected.There are conflicting reports regarding the existence of this vulnerability.  One source states that this condition reportedly does not occur if there are no Access Control Lists (ACL) applied on the device and also mentions that this may be related to a known SSH bug.  Other sources have indicated that the issue may be related to a configuration problem."
+      }
+    ],
+    "CVE-2002-2380": [
+      {
+        "url": "http://www.securityfocus.com/bid/6064",
+        "title": "Arescom NetDSL-800 Firmware Undocumented Username/Password Weakness",
+        "body": "A weakness has been discovered in NetDSL-800 router firmware.It has been reported that NetDSL-800 firmware, configured by certain Internet Service Providers(ISP), contains undocumented users. It is possible to obtain a target devices undocumented username and password using a network sniffer and the Arescom NetDSL Remote Manager. Access via undocumented accounts may allow attackers to corrupt configuration settings or cause a denial of service.It should be noted that all firmware configurations may not contain undocumented users. Firmware configured by the MSN ISP has been reported vulnreable.It should also be noted that it has not yet been confirmed whether unique username and passwords are generated for each device."
+      }
+    ],
+    "CVE-2002-2385": [
+      {
+        "url": "http://www.securityfocus.com/bid/6156",
+        "title": "Hotfoon Dialer Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported for the Hotfoon dialer. The vulnerability exists in a text input field for dialing telephone numbers. Reportedly, Hotfoon4.exe does not adequately perform boundary checks on this field.It is possible to crash the service and execute code."
+      }
+    ],
+    "CVE-2002-2390": [
+      {
+        "url": "http://www.securityfocus.com/bid/5733",
+        "title": "Trillian Identd Buffer Overflow Vulnerability",
+        "body": "Trillian ships with an ident server to facilitate connections to IRC servers that require an ident response before allowing access.  A buffer overflow condition exists in the Trillian ident server, which may potentially be exploited to cause a denial of service or execute arbitrary code.When the ident server receives a malformed request that is 418 bytes or more in length, the client crashes and memory is corrupted.  It may be possible for an attacker to exploit the resulting memory corruption to execute arbitrary instructions with the privileges of the ident server."
+      }
+    ],
+    "CVE-2002-2391": [
+      {
+        "url": "http://www.securityfocus.com/bid/6165",
+        "title": "Xoops WebChat Module Remote SQL Injection Vulnerability",
+        "body": "A vulnerability exists in the WebChat module included with Xoops. The vulnerability is due to insufficient sanitization of variables used to construct SQL queries in the 'index.php' script. It is possible to modify the logic of SQL queries through malformed query strings in requests for the vulnerable script.By injecting SQL code into variables, it may be possible for an attacker to corrupt database information."
+      }
+    ],
+    "CVE-2002-2393": [
+      {
+        "url": "http://www.securityfocus.com/bid/6112",
+        "title": "RhinoSoft Serv-U FTP Server Denial Of Service Vulnerability",
+        "body": "A denial of service vulnerability has been reported for Serv-U FTP server. The vulnerability is a result of Serv-U FTP Server processing certain commands. When the Serv-U server receives a MKD command it attempts to verify whether the user that issued the command has sufficient rights. When performing this verification, it will not accept any more connections.An attacker that issues many such commands will prevent the server from accepting connections for an indefinite period of time thus creating the denial of service condition."
+      }
+    ],
+    "CVE-2002-2394": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/291538",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/5697",
+        "title": "Trend Micro InterScan VirusWall HTTP 1.1 Transfer-Encoding Bypass Vulnerability",
+        "body": "InterScan VirusWall does not include support for HTTP 1.1 Transfer-Encoding, allowing for malicious files, transferred using this method, to bypass scanning procedures."
+      }
+    ],
+    "CVE-2002-2395": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/291538",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/5701",
+        "title": "Trend Micro InterScan VirusWall Content-Encoding Bypass Vulnerability",
+        "body": "InterScan VirusWall does not include support for HTTP 1.0 gzip Content-Encoding, allowing for malicious files transferred using this method to bypass scanning procedures."
+      }
+    ],
+    "CVE-2002-2396": [
+      {
+        "url": "http://www.securityfocus.com/bid/5760",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2002-2399": [
+      {
+        "url": "http://www.securityfocus.com/bid/6170",
+        "title": "W3Mail File Disclosure Vulnerability",
+        "body": "Versions of W3Mail 1.0.6 and greater are susceptible to a file disclosure vulnerability.  To view attachments, the script \"viewAttachment.cgi\" accepts the parameter \"file\".  The value of this parameter is passed to the open() function as the filename argument without being sanitized.  Attackers may cause any file on the filesystem to open by specifying its relative path using directory traversal characters."
+      }
+    ],
+    "CVE-2002-2400": [
+      {
+        "url": "http://www.securityfocus.com/bid/6172",
+        "title": "LibHTTPD POST Buffer Overflow Vulnerability",
+        "body": "LibHTTPD is vulnerable to a buffer overflow condition. By passing a POST request of excessive length, it is possible to overrun a static buffer. This may result in sensitive locations in memory being overwritten by attacker-supplied values. Successful exploitation of this vulnerability may allow an attacker to execute arbitrary code with super user privileges.It should be noted that this vulnerability was reported in LibHTTPD v1.2. It is not yet known whether earlier versions are affected."
+      }
+    ],
+    "CVE-2002-2401": [
+      {
+        "url": "http://www.securityfocus.com/bid/5740",
+        "title": "Windows 2000/NT/XP 16-bit Application Permission Bypass Vulnerability",
+        "body": "A vulnerability has been reported in Microsoft Windows NT/2000/XP that allows 16-bit applications to bypass execution rights verification.When a 16-bit application is executed from an already running 16-bit program, it will bypass permission verification, normally done by a program loader. This will result in unauthorized programs being executed."
+      }
+    ],
+    "CVE-2002-2403": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/299742",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6180",
+        "title": "KeyFocus KF Web Server Directory Traversal Vulnerability",
+        "body": "KeyFocus KF Web Server is vulnerable to a directory traversal attack.  This is due to the web server's inability to properly handle file names containing consecutive dot characters.  By exploiting this vulnerability, an attacker is able to break out of the web root and retrieve any file readable by the web server.  Only files of recognized MIME types can be retrieved."
+      }
+    ],
+    "CVE-2002-2404": [
+      {
+        "url": "http://www.securityfocus.com/bid/6183",
+        "title": "IISPop Remote Buffer Overflow Denial of Service Vulnerability",
+        "body": "IISPop is vulnerable to a denial of service caused by a buffer overflow.  By sending an unusually large amount of data to IISPop on TCP port 110, the application will terminate with an access violation.  Arbitrary code execution may be possible."
+      }
+    ],
+    "CVE-2002-2405": [
+      {
+        "url": "http://www.securityfocus.com/bid/5744",
+        "title": "Check Point Firewall-1 HTTP Proxy Server Unauthorized Protocol Access Vulnerability",
+        "body": "Firewall-1 is an enterprise level firewall package distributed by Check Point Technologies.  It is available for the Unix, Linux, and Microsoft Windows platforms.It has been reported that Firewall-1 does not properly check the contents of sessions when passed through the HTTP proxy server.  It is possible for a remote user with access to the proxy server through an authenticated user account to pass protocols through the system that violate security policy.  These protocols include FTP, and HTTPS.  It should also be noted that this vulnerability affects the HTTPS proxy for Firewall-1."
+      }
+    ],
+    "CVE-2002-2406": [
+      {
+        "url": "http://www.securityfocus.com/bid/6192",
+        "title": "Perception LiteServe Malformed GET Request Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported for Perception LiteServe HTTP server. The vulnerability occurs when the web server attempts to process malformed GET requests. Reportedly, when processing overly long GET requests consisting of illegal character sequences, the web server will crash.An attacker can exploit this vulnerability by issuing a long malformed GET request consisting  of illegal characters. This will cause the LiteServe HTTP server to crash. "
+      }
+    ],
+    "CVE-2002-2407": [
+      {
+        "url": "http://www.securityfocus.com/bid/6206",
+        "title": "QNX Multiple Program Insecure Default Permissions Vulnerability",
+        "body": "QNX is distributed with several programs that have insecure default permissions.  These programs may be written to by any user of the system in a typical implementation./sbin/io-audio/bin/shutdown/sbin/fs-pkg/usr/photon/bin/phshutdown/usr/photon/bin/cpim/usr/photon/bin/vpim/usr/photon/bin/phrelaycfg/usr/photon/bin/columns/usr/photon/bin/othello/usr/photon/bin/peg/usr/photon/bin/solitaire/usr/photon/bin/vpoker"
+      }
+    ],
+    "CVE-2002-2409": [
+      {
+        "url": "http://www.securityfocus.com/bid/6207",
+        "title": "QNX Photon MicroGUI Clipboard Insecure Data Storage Vulnerability",
+        "body": "QNX Photon microGUI is a graphical interface for the QNX realtime operating system (RTOS). It is distributed and maintained by QNX Software Systems Limited.  Photon does not securely store data.  When data is copied to the clipboard, it is stored insecurely on the local filesystem.  This could allow local users to view the contents of another user's clipboard."
+      }
+    ],
+    "CVE-2002-2410": [
+      {
+        "url": "http://www.securityfocus.com/bid/6232",
+        "title": "Open WebMail User Name Information Disclosure Vulnerability",
+        "body": "Open Webmail is a freely available, open source web email application.  It is available for Unix and Linux operating systems.It has been reported that Open Webmail reveals too much information during the authentication process.  When a user enters a user name, Open Webmail returns information indicating the validity of the entered user name.  This could allow remote users to gather a list of valid user names through an enumeration attack."
+      }
+    ],
+    "CVE-2002-2415": [
+      {
+        "url": "http://www.securityfocus.com/bid/6233",
+        "title": "Allied Telesyn Switch UDP Data Flood Management Denial Of Service Vulnerability",
+        "body": "The AT-8024 and Rapier 24 switches are ethernet switches distributed by Allied Telesyn.Under some circumstances the affected switches may cease to function properly.  When a large stream of UDP data is sent to a vulnerable switch, the device becomes unstable.  It has been reported that this type of attack results in a denial of service to the management interface of the device, and may also cause the device to stop routing.** The vendor has replied stating that they were unable to replicate this vulnerability on the Rapier release 2.4.1 Patch 02."
+      }
+    ],
+    "CVE-2002-2416": [
+      {
+        "url": "http://www.securityfocus.com/bid/6308",
+        "title": "Zeroo HTTP Server Directory Traversal Vulnerability",
+        "body": "It has been reported that Zeroo fails to properly sanitize web requests. By sending a malicious web request to the vulnerable server, using directory traversal sequences, it is possible for a remote attacker to access sensitive resources located outside of the web root.An attacker is able to traverse outside of the established web root by using dot-dot-slash (../) directory traversal sequences. An attacker may be able to obtain any web server readable files from outside of the web root directory."
+      }
+    ],
+    "CVE-2002-2417": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/300929",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6235",
+        "title": "acFTP Invalid Password Weak Authentication Vulnerability",
+        "body": "A vulnerability has been reported for acFTP. Reportedly, acFTP allows users to authenticate without a valid password.An attacker can exploit this vulnerability and log on to the vulnerable FTP server without need for proper authentication. "
+      }
+    ],
+    "CVE-2002-2418": [
+      {
+        "url": "http://www.securityfocus.com/bid/6236",
+        "title": "acFreeProxy Cross Site Scripting Vulnerability",
+        "body": "It has been reported that acFreeProxy is prone to cross site scripting attacks. As this vulnerability exists in acFreeProxy, it is possible for a remote attacker to create a malicious link containing script code which will be executed in the browser of a legitimate user, in the context of any domain.This issue may be exploited to steal cookie-based authentication credentials from legitimate users of the vulnerable software."
+      }
+    ],
+    "CVE-2002-2419": [
+      {
+        "url": "http://www.securityfocus.com/bid/5781",
+        "title": "Eric Prevoteau DCTC NULL Byte Denial Of Service Vulnerability",
+        "body": "A vulnerability has been reported for DCTC 0.83.3 that results in the client crashing. This vulnerability occurs due to inadequate checks when processing requests. The DCTC client will crash if it receives a string that contains a NULL byte."
+      }
+    ],
+    "CVE-2002-2422": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/293715",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/5780",
+        "title": "HP Compaq Insight Manager Web Interface Cross-Site Scripting Vulnerability",
+        "body": "It has been reported that the Compaq Insight Manager web interface is prone to cross-site scripting attacks.  It is possible to construct a malicious link to a Compaq Insight Manager web interface that includes arbitrary script code.  When the link is visited with a web client, the script code will execute in the context of the Compaq Insight Manager web interface.The component which appears to be affected is Compaq Insight Management Agents.  However, further details about which software is vulnerable are not available."
+      }
+    ],
+    "CVE-2002-2423": [
+      {
+        "url": "http://www.securityfocus.com/bid/5770",
+        "title": "Sendmail Long Ident Logging Circumvention Weakness",
+        "body": "Sendmail is a freely available, open source mail transport agent.  It is maintained and distributed by the Sendmail Consortium.It has been reported that Sendmail does not properly handle long idents.  Due to the improper handling of long idents, an attacker may supply a long ident which will result in the omission of the IP address from logs when a user attempts certain commands."
+      }
+    ],
+    "CVE-2002-2424": [
+      {
+        "url": "http://www.securityfocus.com/bid/5569",
+        "title": "PHPReactor Style Attribute HTML Injection Vulnerability",
+        "body": "php(Reactor) does not sufficiently sanitize HTML from various fields (such as in the body of a message or in profile fields).  It is possible to inject arbitrary HTML and script code into these fields.An attacker may potentially exploit this situation to cause arbitrary HTML and script code to execute in the web client of a user of a vulnerable website.  The attacker-supplied code will execute in the context of the vulnerable website."
+      }
+    ],
+    "CVE-2002-2425": [
+      {
+        "url": "http://www.securityfocus.com/bid/5383",
+        "title": "Sun AnswerBook2 Unauthorized Administrative Script Access Vulnerability",
+        "body": "Sun Microsystems AnswerBook2 allows users to view Sun documentation through a web browser, and is available for Solaris.AnswerBook2 includes an administrative web interface. Reportedly, it is possible to access these scripts without authorization, and add a new administrative user of the AnswerBook2 system."
+      }
+    ],
+    "CVE-1999-0680": [
+      {
+        "url": "http://www.securityfocus.com/bid/571",
+        "title": "NT Terminal Server Multiple Connection Request DoS Vulnerability",
+        "body": "Windows NT 4.0 Terminal Server will start to create a Terminal Server connection immediately upon receiving a TCP connection on port 3389, even before authenticating the system or user making the request. Each connection instance requires about 1MB of memory. If enough requests are made concurrently to a server with low memory and no cap on simultaneous requests, the system will slow down to the point where it is unusable by legitimate users, and in some cases will crash and need to be rebooted."
+      }
+    ],
+    "CVE-1999-0702": [
+      {
+        "url": "http://www.securityfocus.com/bid/627",
+        "title": "Microsoft IE Import/Export Favorites Vulnerability",
+        "body": "The ImportExportFavorites() method, used to import and export favorites to/from a file in IE5, can be made to write to any file on the system, in some cases from an email or remote webpage."
+      }
+    ],
+    "CVE-1999-0726": [
+      {
+        "url": "http://www.securityfocus.com/bid/499",
+        "title": "NT Malformed Image Header DoS Vulnerability",
+        "body": "The system will crash and will need to be rebooted if an executable file with a specific type of malformed image header is run. The machine will BSOD with the error message:STOP 0x0000000A IRQ_not_less_or_equal or 0x00000050 PAGE_FAULT_IN_NON_PAGED_AREA"
+      }
+    ],
+    "CVE-1999-0777": [
+      {
+        "url": "http://www.securityfocus.com/bid/658",
+        "title": "Microsoft IIS FTP NO ACCESS Read/Delete File Vulnerability",
+        "body": "IIS 4.0 FTP servers which have installed a specific post SP5 FTP hotfix are vulnerable to an exploit whereby FTP clients may download. and/or delete files (on the FTP server) that have been specifically marked as 'No Access' (via NTFS file or directory permissions). Web browser FTP clients may be able to view and/or download these files, while specially crafted requests from non-browser based FTP clients may be able to delete these files. This vulnerability only affects IIS 4.0 servers running NT 4.0 SP5 with a specific post SP5 hotfix for an FTP get error as described in <http://support.microsoft.com/support/kb/articles/Q237/9/87.ASP >. Microsoft states there are no negative ramifications to applying this hotfix to SP4 or SP5 hosts who have not installed the previously referenced FTP hotfix. To see if you are vulnerable, check the file version for Ftpsvc.dll. Versions 0718 through 0722 are thought to be vulnerable, although Microsoft documentation is unclear as to whether the vulnerable versions start with 0718 or 0719. Version 0724 represents the version installed by the latest hotfix. The hotfix designed to correct this problem was not released in time for the upcoming NT 4.0 Service Pack 6. Service Pack 6 contains the \"buggy\" hotfix and will be vulnerable to this error when it is released.  It will be necessary to install the corresponding hotfix after installing Service Pack 6, regardless of whether or not the Service Pack 5 installation was vulnerable."
+      }
+    ],
+    "CVE-1999-0839": [
+      {
+        "url": "http://www.securityfocus.com/bid/828",
+        "title": "Microsoft IE5 Offline Browsing Pack Task Scheduler Vulnerability",
+        "body": "The Internet Explorer 5 Offline Browsing Pack includes the Task Scheduler utility. This program is similar to the NT AT service, and on NT systems, it replaces the AT service. The Task Scheduler will allow unauthorized users to create AT jobs by modifying an existing, administrator-owned file and placing it into the %systemroot%\\tasks folder. This vulnerability could only be exploited remotely if the tasks folder was specifically shared, or through the default C$ share on NT. Task Scheduler can be made to use any other arbitrary folder by editing the following registry key: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\SchedulingAgent\\TasksFolder (Changes will not take effect until after the target has been rebooted.) The IE5 Offline Browsing Pack ships with IE5, but is not installed by default."
+      }
+    ],
+    "CVE-1999-0867": [
+      {
+        "url": "http://www.securityfocus.com/bid/579",
+        "title": "NT IIS Malformed HTTP Request Header DoS Vulnerability",
+        "body": "Microsoft IIS and all other products that use the IIS web engine have a vulnerability whereby a flood of specially formed HTTP request headers will make IIS consume all available memory on the server and then hang. IIS activity will be halted until the flood ceases or the service is stopped and restarted."
+      }
+    ],
+    "CVE-1999-0898": [
+      {
+        "url": "http://www.securityfocus.com/bid/768",
+        "title": "NT Spoolss.exe Buffer Overflow Vulnerabilities",
+        "body": "Spoolss.exe, AKA the spooler service, which handles all print requests for the NT operating system, has a number of APIs with unchecked buffers. Some of these can only be executed by Power Users or Administrators, but some are accessible to all authenticated users. Many of the overflows will write directly into the EIP register, meaning that an exploit could be created to run arbitrary code as SYSTEM."
+      }
+    ],
+    "CVE-1999-0899": [
+      {
+        "url": "http://www.securityfocus.com/bid/769",
+        "title": "NT Spoolss.exe DLL Insertion Vulnerability",
+        "body": "The spooler service (spoolss.exe) allows local users to add their own dll files and have the spooler run them at SYSTEM level. This could lead to privilege escalation all the way up to Administrator level. The problem is in the function AddPrintProvider()."
+      }
+    ],
+    "CVE-1999-0909": [
+      {
+        "url": "http://www.securityfocus.com/bid/646",
+        "title": "Microsoft Windows IP Source Routing Vulnerability",
+        "body": "A vulnerability in the Windows 95/98 and NT TCP/IP stacks allows specially crafted IP packets to perform source routing functions, even when source routing has been specifically disabled (NT SP5 Registry Setting: (HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\DisableIPSourceRouting) The vulnerability lies within the stack's inability to properly process source routed packets where the offset value is set greater than the specified route length. In this case, the data in the packet will get passed to the application layer of the host for further processing (instead of being dropped by the stack.) Should the attacker spoof the source address and, instead, use a source address of a known host on an internal network (assuming the Windows host is dual-homed), the datagram reply will be sent to the host on the internal network (accessible via the second NIC). In addition to being susceptible to various tunneling attacks, the vulnerable host may be used to aid an attacker in locating other non-Windows hosts that have source routing enabled and/or perform port scans against other Windows hosts."
+      }
+    ],
+    "CVE-1999-0918": [
+      {
+        "url": "http://www.securityfocus.com/bid/514",
+        "title": "Microsoft Windows Invalid IGMP Header DoS Vulnerability",
+        "body": "The Windows 98 and Windows 2000 TCP/IP stacks were not built to reliably tolerate malformed IGMP headers. When one is received, the stack will sometimes fail with unpredictable results ranging from a Blue Screen to instantaneous reboot."
+      }
+    ],
+    "CVE-1999-0995": [
+      {
+        "url": "http://www.securityfocus.com/bid/875",
+        "title": "NT LsaLookupSids() DoS Vulnerability",
+        "body": "The LsaLookupSids() function (part of the LSA API) in Windows NT 4.0, if passed an invalid argument, can be made to force the LSASS.exe process to crash. Without a functional LSA, the system will be unable to handle logons, logoffs, and most other operations involving user authentication. To restore normal operation, the affected system needs to be rebooted."
+      }
+    ],
+    "CVE-1999-0999": [
+      {
+        "url": "http://www.securityfocus.com/bid/817",
+        "title": "Microsoft SQL Server 7.0 NULL Data DoS Vulnerability",
+        "body": "If Microsoft SQL Server 7.0 receives a TDS header with three or more NULL bytes as data it will crash. The crash will generate an event in the log with ID 17055 \"fatal exception EXCEPTION_ACCESS VIOLATION\"."
+      }
+    ],
+    "CVE-1999-1011": [
+      {
+        "url": "https://www.securityfocus.com/bid/529",
+        "title": "NT IIS MDAC RDS Vulnerability",
+        "body": "MDAC (Microsoft Data Access Components) is a package used to integrate web and database services. It includes a component named RDS (Remote Data Services). RDS allows remote access via the internet to database objects through IIS. Both are included in a default installation of the Windows NT 4.0 Option Pack, but can be excluded via a custom installation. RDS includes a component called the DataFactory object, which has a vulnerability that could allow any web user to: --Obtain unauthorized access to unpublished files on the IIS server --Use MDAC to tunnel ODBC requests through to a remote internal or external location, thereby obtaining access to non-public servers or effectively masking the source of an attack on another network.The main risk in this vulnerability is the following: --If the Microsoft JET OLE DB Provider or Microsoft DataShape Provider are installed, a user could use the shell() VBA command on the server with System privileges. (See the Microsoft JET Database Engine VBA Vulnerability for more information). These two vulnerabilities combined can allow an attacker on the Internet to run arbitrary commands with System level privileges on the target host."
+      }
+    ],
+    "CVE-2000-0258": [
+      {
+        "url": "http://www.securityfocus.com/bid/1101",
+        "title": "Microsoft IIS 4.0/5.0 Escaped Characters Vulnerability",
+        "body": "Requesting a malformed URL containing numerous escaped characters will cause Microsoft IIS performance to dramatically decrease until the URL has been processed."
+      }
+    ],
+    "CVE-2000-0305": [
+      {
+        "url": "http://www.securityfocus.com/templates/advisory.html?id=2240",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/1236",
+        "title": "Multiple Vendor Fragmented IP Packets DoS Vulnerability",
+        "body": "Transmitting identical fragmented IP Packets to a Windows 9x, NT 4.0, NT Terminal Server, 2000 or Be/OS 5.0 host at a rate of approximately 150 packets per second will cause the target's CPU utilization to reach 100%. CPU utilization will return to normal after the attack has ceased. In some cases, this attack could produce a blue screen of death. An analysis of the exploit was posted to BugTraq on May 26, 2000 by Mikael Olsson <mikael.olsson@enternet.se>. He concludes that the DoS initated by this attack may not be related to IP fragmentation but rather to resource exhaustion and a problem in filtering bad packets by Microsoft Windows.   See the message references by Mikael Olsson for a further interpretation of the mechanism of this attack. "
+      }
+    ],
+    "CVE-2002-0070": [
+      {
+        "url": "http://www.securityfocus.com/bid/4248",
+        "title": "Microsoft Windows User Shell Buffer Overflow Vulnerability",
+        "body": "A buffer overflow has been discovered in the Windows user shell.  The condition exists in the component of the user shell responsible for locating programs that are 'missing' to the system.  'missing' applications are those which have been registered as installed programs, but have been deleted or improperly uninstalled.Under extreme circumstances, this vulnerability may be remotely exploitable.  This may be the case if an application has registered itself as an URL handler and is improperly uninstalled.  The overflow condition may be triggered in an exploitable manner if the URL handler is invoked when a specially constructed link is clicked on by a user visiting a malicious website (or reading HTML email).  When searching for the 'missing' application, the data in the URL may overwrite an activation record in the stack of the shell process.  If an attacker is aware of the registered URL-handler and can anticipate the application being 'missing', an URL containing a replacement return address and shellcode may be constructed.  If a victim were to click on the link (and if the attempt is successful), arbitrary code may be executed on the client system within the security context of the user."
+      }
+    ],
+    "CVE-1999-0891": [
+      {
+        "url": "http://www.securityfocus.com/bid/674",
+        "title": "Microsoft IE5 Download Behavior Vulnerability",
+        "body": "The \"download behavior\" feature of Microsoft's Internet Explorer 5 may allow a malicious web site operator to read files on an IE5 client computer or on a computer that is in the client's 'Local Intranet' web content zone. IE5 introduced a new feature called DHTML Behaviors. DHTML Behaviors allow web developers to encapsulate methods, properties and events that can then be applied to HTML and XML elements. IE5 comes with set of built-in DHTML behaviors. One of them is the \"#default#download\" behaviors. This behavior defines a new Javascript method called \"startDownload\" that takes two parameters, the file to download and a function to call once the file has been downloaded. By default the \"startDownload\" method checks that the file to be downloaded is in the same web content zone as the file calling the method. When both the file to be downloaded and the file executing the behavior are in the same security zone, the client will safely download the requested file and subsequently perform the specified function. A malicious web site owner may bypass this security restriction and force an IE5 client to both read and perform a follow-up action on the contents of a local file or files in other security zones. This action may include sending the contents of the file back to the malicious web site operator. Here's how it works: 1: An IE5 client visits a malicious website and loads a web page containing a client side scripting that makes use of the \"#default#download\" behavior. 2: The client side script calls the \"startDownload\" method and passes it the URL of a file to download and a function to call with the contents of the file once the file is finished downloading. 3. The startDownload method verifies that the URL is in fact in the same zone as the malicious web server.  4: The startDownload method begins the download, requesting the URL specified in step 2 from a malicious web server. 5: The malicious web server send an HTTP redirect to some other file in any security zone including local files on the IE5 client machine (for example: c:\\winnt\\repair\\sam._). 6: startDownload reads the file and executes the function specified in step 2 on that file's content. The malicious web server has now bypassed the security restrictions outlined earlier by successfully forcing the client to load and act upon a file that resides in a web content zone different than that of the malicious web server. This can all be done transparently to the end user. This vulnerability cannot be used to delete or modify files on the vulnerable IE5 client. The vulnerability can only retrieve text files or small parts of binary files."
+      }
+    ],
+    "CVE-1999-1462": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/13440",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/142",
+        "title": "Big Brother file browsing Vulnerability",
+        "body": "Big Brother is a loosely-coupled distributed set of tools for monitoring and displaying the current status of an entire network and notifying the admin should need be. A vulnerability in the CGI script bb-hist.sh, the new history viewer, can be exploited to allow the partial display of local files provided they are readable by the user id CGI scripts are executed under by the web server, and that they are text based."
+      }
+    ],
+    "CVE-2000-0844": [
+      {
+        "url": "http://www.securityfocus.com/bid/1634",
+        "title": "Multiple Vendor Locale Subsystem Format String Vulnerability",
+        "body": "Many UNIX operating systems provide internationalization support according to the X/Open XPG3, XPG4 and Sun/Uniforum specifications using the of the locale subsystem. The locale subsystem comprises a set of databases that store language and country specific information and a set of library functions used to store, retrieve and generally manage that information. In particular a database with messages used by almost all the operating system programs is keep for each supported language. The programs access this database using the gettext(3), dgettext(3), dcgettext(3) C functions (Sun/Uniforum specifications) or catopen(3), catgets(3) and catclose(3) ( X/Open XPG3 and XPG4 specification). Generally a program that needs to display a message to the user will obtain the proper language specific string from the database using the original message as the search key and printing the results using the printf(3) family of functions. By building and installing a custom messages database an attacker can control the output of the message retrieval functions that get feed to the printf(3) functions. Bad coding practices and the ability to feed format strings to the later functions makes it possible for an attacker to execute arbitrary code as a privileged user (root) using almost any SUID program on the vulnerable systems. Alternatively, on some operating systems, the problem can be exploited remotely using the environment variable passing options in telnetd. However, a remote attacker must be able to place the suitable messages database on the target host (i.e. anonymous ftp, NFS, email, etc.) It should be noted under Linux this problem must be exploited in conjunction with a another flaw in glibc. On RedHat systems, it is possible to evade the protection built-into libc that patches this vulnerability and exploit userhelper to gain root access. RedHat has released packages to fix this vulnerability."
+      }
+    ],
+    "CVE-2000-1254": [
+      {
+        "url": "http://www.securityfocus.com/bid/90109",
+        "title": "OpenSSL CVE-2000-1254 Security Bypass Vulnerability",
+        "body": "OpenSSL is prone to a security-bypass vulnerability.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Successfully exploiting this issue may allow attackers to perform unauthorized actions. This may lead to other attacks.    Versions prior to OpenSSL 0.9.6 are vulnerable."
+      }
+    ],
+    "CVE-2001-0041": [
+      {
+        "url": "http://www.securityfocus.com/bid/2072",
+        "title": "Cisco Catalyst Memory Leak Denial of Service Vulnerability",
+        "body": "Cisco Catalyst is a high speed switch implemented in local area networks.  The telnet server that is built into the Catalyst firmware for remote administration contains a memory leak vulnerability that can result in a denial of service. Each time that the telnet service started, memory resources are used without being freed afterwards. As a result, memory can be depleted by connecting multiple clients to the Catalyst telnet server leaving the device unable to function properly.  This can lead to a denial of service of network services dependent on the Catalyst until the device is manually reset."
+      }
+    ],
+    "CVE-2001-0054": [
+      {
+        "url": "http://www.securityfocus.com/bid/2052",
+        "title": "Serv-U FTP Directory Traversal Vulnerability",
+        "body": "FTP Serv-U is an internet FTP server from CatSoft. Authenticated users can gain access to the ftproot of the drive where Serv-U FTP has been installed. Users that have read, write, execute and list access in the home directory will have the same permissions to any file which resides on the same partition as the ftproot, once a user is in the home directory they can successfully transfer any files using specially crafted GET requests. All hidden files will be revealed even if the 'Hide hidden files' feature is on.  Successful exploitation of this vulnerability could enable a remote user to gain access to systems files, password files, etc. This could lead to a complete compromise of the host."
+      }
+    ],
+    "CVE-2001-0103": [
+      {
+        "url": "http://www.securityfocus.com/bid/2107",
+        "title": "CoffeeCup FTP Clients Weak Password Encryption Vulnerability",
+        "body": "A vulnerability exists in the FTP clients CoffeCupt Direct and CoffeeCup Free.  The clients use the file FTPServers.ini to store password information for sites to which the client has been connected.  The encryption method designed to obfuscate these passwords can be easily defeated.As a result, a malicious user able to read the FTPServers.ini will be able to obtain the passwords to any of the stored FTP servers, compromising their security."
+      }
+    ],
+    "CVE-2001-0136": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/152206",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2001-0361": [
+      {
+        "url": "http://www.securityfocus.com/bid/2344",
+        "title": "PKCS #1 Version 1.5 Session Key Retrieval Vulnerability",
+        "body": "The data encryption techniques described in RSA's PKCS #1 standard are used in many protocols which rely on, at least in part, the security provided by public-key cryptography systems.Several protocols which implement the digital enveloping method described in version 1.5 of the PKCS #1 standard are susceptible to an adaptive ciphertext attack which may allow the recovery of session keys, thus compromising the integrity of the data transmitting during that session.By capturing and logging the packets transmitted between a client and a server, an opponent could make use of a captured encrypted session key to launch a Bleichenbacher attack together with a simple timing attack.  If the session key is successfully decrypted, the saved packets can easily be decrypted in a uniform manner.Interactive key establishment protocols, such as SSH or SSL, are generally significantly more susceptible to successful attacks."
+      }
+    ],
+    "CVE-2001-0537": [
+      {
+        "url": "http://www.securityfocus.com/bid/2936",
+        "title": "Cisco IOS HTTP Configuration Arbitrary Administrative Access Vulnerability",
+        "body": "IOS is router firmware developed and distributed by Cisco Systems.  IOS functions on numerous Cisco devices, including routers and switches.It is possible to gain full remote administrative access on devices using affected releases of IOS.  By using a URL of http://router.address/level/$NUMBER/exec/.... where $NUMBER is an integer between 16 and 99, it is possible for a remote user to gain full administrative access.This problem makes it possible for a remote user to gain full administrative privileges, which may lead to further compromise of the network or result in a denial of service."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/4.3.2.7.2.20010629095801.0c3e6a70@brussels.cisco.com",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/1601227034.20010702112207@olympos.org",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/Pine.LNX.3.96.1010702134611.22995B-100000@Lib-Vai.lib.asu.edu",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/20010703011650.60515.qmail@web14910.mail.yahoo.com",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2001-0629": [
+      {
+        "url": "http://www.securityfocus.com/bid/2761",
+        "title": "HP OpenView ECSD Buffer Overflow Vulnerability",
+        "body": "HP OpenView Network Node Manager (NNM) is a system management software package distributed by HP.  It is designed for use on enterprise systems, and offers remote administrative facilities.A problem in the software could allow a local user elevated privileges.  Due to the unsafe handling of command line input by the Event Correlation Services daemon (ecsd), a buffer overflow makes it possible to overwrite stack variables, including the return address.This problem makes it possible for a local user to execute arbitrary code, and gain elevated privileges on the local system."
+      }
+    ],
+    "CVE-2001-0771": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/186006",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/2755",
+        "title": "Spytech SpyAnywhere Unauthorized Administrator Access Vulnerability",
+        "body": "By placing a single character in the 'loginpass' field when supplying authentication credentials, the user will be authenticated as administrator."
+      }
+    ],
+    "CVE-2001-0775": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/195823",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/3006",
+        "title": "xloadimage Buffer Overflow Vulnerability",
+        "body": "xloadimage is a utility used for displaying images of varying formats on X11 servers.xloadimage and possibly derivatives such as 'xli' contain a buffer overflow vulnerability in the handling of the 'Faces Project' image type.  It is possible for remote attackers to create a file that will exploit this overflow to execute arbitrary code.  An optional netscape plugin shipped with Red Hat powertools invokes xloadimage to load certain image types.  If this plugin is in use, this vulnerability may be remotely exploitable if an attacker places the exploit-file on a webserver.S.uS.E. Linux also ships with plugger, which invokes a derivative of xloadimage called 'xli'.  'xli' is also vulnerable."
+      }
+    ],
+    "CVE-2001-0803": [
+      {
+        "url": "http://www.securityfocus.com/bid/3517",
+        "title": "Multiple Vendor CDE dtspcd Buffer Overflow Vulnerability",
+        "body": "CDE is a Motif-based graphical user environment for UNIX systems.  It is shipped with a number of commercial systems.  A buffer-overflow vulnerability in the 'dtspcd' component may allow a remote attacker to gain administrative privileges on the affected host.  The overflow is believed to be in the libDtSvc library, which used by the 'Subprocess Control Service'.  The overflow is exploitable through the 'dtspcd' service,a server utility that facilitates remote invocation of CDE utilities and commands. The 'dtspcd' service listens on TCP port 6112, runs with root privileges, and is enabled by default (through 'inetd') on many systems."
+      },
+      {
+        "url": "http://www.securityfocus.com/advisories/3651",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2001-0819": [
+      {
+        "url": "http://www.securityfocus.com/bid/2877",
+        "title": "Fetchmail Buffer Overflow Vulnerability",
+        "body": "Fetchmail is a unix utility for downloading email from mail servers via POP.Fetchmail contains a buffer overflow in its handling of email header information.  If the 'To:' field is too large, fetchmail will overflow a local buffer.  It may be possible for remote attackers to create malicious emails that will cause execution of arbitrary code when processed by fetchmail.  Fetchmail often runs as root. If this vulnerability were exploited, it is likely that an attacker would gain root access on target clients."
+      }
+    ],
+    "CVE-2001-0925": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/168497",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/193081",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/2503",
+        "title": "Apache Artificially Long Slash Path Directory Listing Vulnerability",
+        "body": "Apache HTTPD is the Apache Web Server, freely distributed and actively maintained by the Apache Software Foundation. It is a freely available and widely used software package, included with various implementations of the UNIX operating system and can be used on Microsoft Windows operating systems. A problem in the package could allow directory indexing and path discovery. In a default configuration, Apache enables mod_dir, mod_autoindex, and mod_negotiation. However, by sending the Apache server a custom-crafted request consisting of a long path name created artificially by using numerous slashes, an attacker can cause these modules to misbehave, allowing the attacker to escape the error page and to gain a listing of the directory contents. This vulnerability allows a malicious remote user to launch an information-gathering attack, which could potentially result in a compromise of the system. Additionally, this vulnerability affects all releases of Apache previous to 1.3.19."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/178066",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/cgi-bin/archive.pl?id=1&start=2002-01-27&end=2002-02-02&mid=199857&threads=1",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2001-1009": [
+      {
+        "url": "http://www.securityfocus.com/bid/3166",
+        "title": "Fetchmail IMAP Reply Signed Integer Index Vulnerability",
+        "body": "Fetchmail is a unix utility for downloading email from mail servers via POP3 and IMAP.Fetchmail contains a vulnerability that may allow for remote attackers to gain access to client systems.  The vulnerability has to do with the use of a remotely supplied signed integer value as the index to an array when writing data to memory.It is be possible for attackers to overwrite critical variables in memory with arbitrary values if the target client's IMAP server can be impersonated.  Successful exploitation can lead to the exectution of arbitrary code on the client host."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/3164",
+        "title": "Fetchmail POP3 Reply Signed Integer Index Vulnerability",
+        "body": "Fetchmail is a unix utility for downloading email from mail servers via POP3.Fetchmail contains a vulnerability that may allow for remote attackers to gain access to client systems.  The vulnerability has to do with the use of a remotely supplied signed integer value as the index to an array when writing data to memory.It is be possible for attackers to overwrite critical variables in memory with arbitrary values if the target client's POP3 server can be impersonated.  Successful exploitation can lead to the exectution of arbitrary code on the client host."
+      }
+    ],
+    "CVE-2001-1371": [
+      {
+        "url": "http://www.securityfocus.com/bid/4289",
+        "title": "Oracle 9iAS SOAP Default Configuration Vulnerability",
+        "body": "Security issues reportedly exist with Oracle's Simple Object Access Protocol (SOAP) implementation.It is possible for remote attackers to deploy and undeploy SOAP providers and services without valid credentials by default. Further compromise may occur if this vulnerability is exploited in conjunction with others."
+      }
+    ],
+    "CVE-2001-1432": [
+      {
+        "url": "http://www.securityfocus.com/bid/3772",
+        "title": "Cherokee HTTPD Directory Traversal Vulnerability",
+        "body": "Cherokee is a compact web server which provides fast delivery of web content. It is freely available and distributed under the GPL.  It runs on Linux and other Unix systems.Cherokee is prone to directory traversal attacks. By appending '../' sequences to a web request, it is possible for an attacker to browse the filesystem of the host.Furthermore, another issue is known to exist in Cherokee which increases the impact of this vulnerability dramatically. BugTraq ID 3771, \"Cherokee HTTPD Insecure Privilege Release Vulnerability\" describes a problem in which Cherokee web server fails to drop root privileges after binding to port 80. The implication is that an attacker may browse any file on the system, as the web server is running with root privileges."
+      }
+    ],
+    "CVE-2001-1456": [
+      {
+        "url": "http://www.securityfocus.com/bid/3290",
+        "title": "Gauntlet Firewall for Unix and WebShield CSMAP and smap/smapd Buffer Overflow Vulnerability",
+        "body": "A boundary condition error exists in the smap/smapd and CSMAPD daemons, shipped with several popular Network Associates products.  The smap/smapd and CSMAP daemons are proxy servers used to handle e-mail transactions for both inbound and outbound e-mail.By successfully exploiting this condition, an attacker may be able to cause arbitrary code/commands to be executed on a vulnerable system with the privileges of the attacked daemon.Additional technical details are currently unknown.Some versions of SGI IRIX shipped with the Gauntlet Firewall package, and in the past it was a supported SGI product. While it is no longer being supported, SGI IRIX versions 6.5.2, 6.5.3, 6.5.4 and 6.5.5 may be prone to this issue."
+      }
+    ],
+    "CVE-2001-1584": [
+      {
+        "url": "http://www.securityfocus.com/bid/3360",
+        "title": "Michael Barretto CardBoard Remote Command Execution Vulnerability",
+        "body": "CardBoard is an application used to send out e-greeting cards, and is maintained by Michael Barretto.Due to the improper filtering of certain types of user-supplied input, it is possible for a user to submit a greeting card which causes arbitrary commands to be executed on the host with privileges of the server.* Reproduction of this issue has not been successful. "
+      }
+    ],
+    "CVE-2001-1586": [
+      {
+        "url": "http://www.securityfocus.com/bid/3112",
+        "title": "SimpleServer:WWW Hex Encoded URL Directory Traversal Vulnerability",
+        "body": "SimpleServer:WWW is a freely available HTTP daemon available from AnalogX.  It is designed for simplicity of operation.A problem with the web server could allow a remote user to execute arbitrary commands, and potentially gain local access to the system.  The problem is in the validation of URLs that have been encoded in hex.  By encoding an URL in hex, it is possible to bypass any filtering for directory traversal, and execute arbitrary programs on the local system."
+      }
+    ],
+    "CVE-2002-0012": [
+      {
+        "url": "http://www.securityfocus.com/advisories/4211",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/5043",
+        "title": "HP MPE/iX Malformed SNMP Vulnerability",
+        "body": "MPE/iX is an Internet-ready operating system for the HP e3000 class servers.A problem with MPE/iX may allow remote attackers to exploit the SNMP protocol implementation.Multiple vulnerabilities have been discovered in a number of SNMP implementations. This vulnerability entry is for the HP MPE/iX implementation, identifying the \"Multiple Vendor SNMP Trap Handling Vulnerabilities\" described in BID 4088, and \"Multiple Vendor SNMP Request Handling Vulnerabilities\" discussed in BID 4089."
+      }
+    ],
+    "CVE-2002-0049": [
+      {
+        "url": "http://www.securityfocus.com/bid/4053",
+        "title": "Microsoft Exchange Inappropriate Registry Permissions Vulnerability",
+        "body": "A flaw has been reported in the Microsoft Exchange System Attendant, which could allow unprivileged users access to the WinReg key.The WinReg key controls users and groups ability to connect remotely to the registry. The System Attendant must ensure the that the Microsoft Exchange System Manager can remotely connect, in doing so, the System Attendant adds the 'Everyone' group to the WinReg key."
+      }
+    ],
+    "CVE-2002-0083": [
+      {
+        "url": "http://www.securityfocus.com/bid/4241",
+        "title": "OpenSSH Channel Code Off-By-One Vulnerability",
+        "body": "OpenSSH is a suite implementing the SSH protocol. It includes client and server software, and supports ssh and sftp. It was initially developed for BSD, but is also widely used for Linux, Solaris, and other UNIX-like operating systems.  A vulnerability has been announced in some versions of OpenSSH. An off-by-one error occurs in the channel code. A malicious client may exploit this vulnerability by connecting to a vulnerable server.  Valid credentials are believed to be required, since the exploitable condition reportedly occurs after successful authentication.  An examination of the code suggests this, but it has not been confirmed by the maintainer.    Administrators should assume that this can be exploited without authentication and should patch vulnerable versions immediately."
+      }
+    ],
+    "CVE-2002-0184": [
+      {
+        "url": "http://www.securityfocus.com/bid/4593",
+        "title": "Sudo Password Prompt Heap Overflow Vulnerability",
+        "body": "Sudo is a widely used Linux/Unix utility allow users to securely run commands as other users.Sudo is vulnerable to a heap overflow condition related to it's customizable password prompt feature.  The nature of the sudo utility requires that it be installed setuid root.  Successful exploitation may allow for local attackers to gain root privileges."
+      }
+    ],
+    "CVE-2002-0563": [
+      {
+        "url": "http://www.securityfocus.com/bid/4293",
+        "title": "Oracle 9iAS Unautheticated User Access To Sensitive Services Vulnerability",
+        "body": "Oracle 9iAS installations include the Apache web server and several Apache services which are installed by default.On default installations of Oracle 9iAS, unauthenticated remote users can view sensitive services, including Dynamic Monitoring Services. "
+      }
+    ],
+    "CVE-2002-0649": [
+      {
+        "url": "http://www.securityfocus.com/bid/5310",
+        "title": "Microsoft SQL Server 2000 Resolution Service Heap Overflow Vulnerability",
+        "body": "A vulnerability in Microsoft SQL Server 2000 could allow remote attackers to access target hosts.  A problem in the SQL Server Resolution Service allows a remote attacker to execute arbitrary code on a vulnerable host.  The attacker could exploit a heap-based buffer overflow in the resolution service by sending a maliciously crafted UDP packet to port 1434.   ***UPDATE:A worm that may exploit this vulnerability has been detected in the wild.    Administrators are advised to:- Block all external access to database servers until more information is available.- Deny access to TCP and UDP ports 1434 completely- Implement filter rules for other ports to decrease the chances of compromise through yet unknown avenues, even if the patch for this particular vulnerability has been installed.  Cisco has released an advisory that details workaround information. Microsoft recommends that affected users apply SQL Server 2000 Service Pack 3."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/309776/30/26090/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/309324/30/26120/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/309096/30/26120/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/308806/30/26120/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/308760/30/26120/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/308419/30/26150/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/308418/30/26150/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/308396/30/26150/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/308393/30/26180/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/308388/30/26180/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/308324/30/26180/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/308321/30/26180/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/308306/30/26180/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2002-1024": [
+      {
+        "url": "http://www.securityfocus.com/bid/5114",
+        "title": "Cisco SSH Denial of Service Vulnerability",
+        "body": "While addressing vulnerabilities described in http://www.cisco.com/warp/public/707/SSH-multiple-pub.html, a denial of service condition has been inadvertently introduced into firmware upgrades.  Firmware for routers and switches (IOS), Catalyst 6000 switches running CatOS, Cisco PIX Firewall and Cisco 11000 Content Service Switch devices may be vulnerable.Cisco has reported that scanning for SSH vulnerabilities on affected devices will cause excessive CPU consumption.  The condition is due to a failure of the Cisco SSH implementation to properly process large SSH packets.  Repeated and concurrent attacks may result in a denial of device service.  As many of these devices are critical infrastructure components, more serious network outages may occur.Cisco has released upgrades that will eliminate this vulnerability."
+      }
+    ],
+    "CVE-2002-1111": [
+      {
+        "url": "http://www.securityfocus.com/bid/5515",
+        "title": "Mantis Print Reports Limit Reporters Option Bypass Vulnerability",
+        "body": "Mantis is a web-based bug tracking system.  It is written in PHP and back-ended by a MySQL database.Mantis is prone to an issue which may allow malicious users of the bug tracking system to gain unauthorized access to restricted bug summaries.  This may be a security concern in organizations that use the software to restrict viewing rights of bugs to some users.Mantis includes the option limit_reporters, which allows users to view only those bugs which they reported. This functionality is not, however, implemented in the 'print_all_bug_page.php' script, used to format bug results for printing. Valid users may be able to view summary information for all bugs, not just those they have reported."
+      }
+    ],
+    "CVE-2002-1174": [
+      {
+        "url": "http://www.securityfocus.com/bid/5825",
+        "title": "Eric S. Raymond Fetchmail Email Header Parsing Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported for Fetchmail. Reportedly, this vulnerability is due to improper checks of user-supplied values for email headers.Fetchmail does not properly check the size of some user-specified data when copying information into stack buffers. A remote attacker is able to trigger the overflow condition and cause Fetchmail to improperly allocate space on the system stack. Code execution may be possible."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/5827",
+        "title": "Eric S. Raymond Fetchmail Multidrop Mode Email Header Parsing Heap Overflow Vulnerability",
+        "body": "A remotely exploitable heap overflow vulnerability has been reported for Fetchmail 6.0.0 and earlier. The vulnerability occurs in the function which is used to parse email headers. This vulnerability affects Fetchmail in multidrop mode and will cause Fetchmail to corrupt heap memory with attacker-supplied values.An attacker may exploit this condition to overwrite arbitrary words in memory. This may allow for the execution of arbitrary code."
+      }
+    ],
+    "CVE-2002-1175": [
+      {
+        "url": "http://www.securityfocus.com/bid/5826",
+        "title": "Eric S. Raymond Fetchmail Multidrop Mode Denial Of Service Vulnerability",
+        "body": "A denial of service vulnerability has been reported for Fetchmail 6.0.0 and earlier. The vulnerability is due to improper boundary checks when processing email headers in multidrop mode. This results in Fetchmail crashing and failing to respond to further requests for service."
+      }
+    ],
+    "CVE-2002-1200": [
+      {
+        "url": "http://www.securityfocus.com/bid/5934",
+        "title": "Syslog-ng Macro Expansion Remote Buffer Overflow Vulnerability",
+        "body": "A vulnerability has been discovered in syslog-ng.Reportedly, syslog-ng macro expansion fails to do proper bounds checking when handling constant characters. By passing an overly large amount of constants to a macro, it may be possible to cause a overflow in the macro expansion buffer.This issue could be exploited by a remote attacker to execute arbitrary commands as the syslog-ng process. Although discovered for version 1.4.15 and 1.5.20, it is likely that early versions of the software are also vulnerable."
+      }
+    ],
+    "CVE-2002-1357": [
+      {
+        "url": "http://www.securityfocus.com/bid/6405",
+        "title": "Multiple Vendor SSH2 Implementation Incorrect Field Length Vulnerabilities",
+        "body": "A vulnerability with incorrect lengths of fields in SSH packets has been reported for multiple products that use SSH2 for secure communications. The vulnerability has been reported to affect initialization, key exchange, and negotiation phases of SSH communications. An attacker may exploit the vulnerability to perform denial-of-service attacks against vulnerable systems and possibly to execute malicious, attacker-supplied code. Further details about the vulnerability are currently unknown. This BID will be updated as more information becomes available. This vulnerability was originally described in Bugtraq ID 6397."
+      }
+    ],
+    "CVE-2002-1359": [
+      {
+        "url": "http://www.securityfocus.com/bid/6407",
+        "title": "Multiple Vendor SSH2 Implementation Buffer Overflow Vulnerabilities",
+        "body": "Multiple vendor SSH2 implementations are reported to be prone to buffer overflows.  These buffer overflows are alleged to be exploitable prior to authentication.These conditions were discovered during tests of the initialization, key exchange, and negotiation phases (KEX, KEXINIT) of a SSH2 transaction between client and server.  These issues are known to affect various client and server implementations of the protocol.Successful exploitation will enable remote attackers to cause execution of code in the security context of the specific server and client implementations.  Further details about this vulnerability are currently unknown. This BID will be updated as more information becomes available. This vulnerability was originally described in BugTraq ID 6397."
+      }
+    ],
+    "CVE-2002-1365": [
+      {
+        "url": "http://www.securityfocus.com/bid/6390",
+        "title": "Eric S. Raymond Fetchmail Heap Corruption Vulnerability",
+        "body": "A remotely exploitable heap overflow vulnerability has been reported for Fetchmail 6.1.3 and earlier. The vulnerability occurs when Fetchmail performs a reply-hack action. The action is performed so that all addresses in email headers are searched for local email addresses. Next Fetchmail will allocate enough space for the case that all addresses are local addresses. Due to a flaw in the calculation, Fetchmail does not sufficiently allocate enough space. An attacker can exploit this vulnerability by composing an email with specially crafted header lines and sending it to the vulnerable system. When Fetchmail attempts to parse the headers, it will allocate insufficient space and will result in Fetchmail corrupting heap memory with attacker-supplied values.An attacker may exploit this condition to overwrite arbitrary words in memory. This may allow for the execution of arbitrary code."
+      }
+    ],
+    "CVE-2002-1590": [
+      {
+        "url": "http://www.securityfocus.com/bid/6061",
+        "title": "Sun Solaris Web-Based Enterprise Management Insecure Default File Permissions Vulnerability",
+        "body": "A problem with some releases of Solaris 8 may make it possible for local users to perform unintended actions.  The problem is in the Web-Based Enterprise Management (WBEM) component packaged with recent releases of Solaris.The WBEM packages included with some releases of Solaris install files with insecure permissions.  By default, some files contained within WBEM packages are installed with default group-writable permissions, and in some cases default world-writable permissions.  This could lead to local users gaining write access to potentially sensitive files, and potentially launching a denial of service or privilege escalation attack.  This problem is known to exist in Solaris 8 Update 1/01 and later."
+      }
+    ],
+    "CVE-2002-1651": [
+      {
+        "url": "http://www.securityfocus.com/bid/5102",
+        "title": "Verity Search97 Error Page Cross Site Scripting Vulnerability",
+        "body": "Search97 is a CGI search engine application for websites and is maintained by Verity.It is possible for attackers to construct a URL that will cause scripting code to be embedded in error pages. As a result, when an innocent user follows such a link, the script code will execute within the context of the hosted site.It should be noted that all versions of Search97 for Windows and UNIX may be affected by this issue."
+      }
+    ],
+    "CVE-2002-1660": [
+      {
+        "url": "http://www.securityfocus.com/bid/5820",
+        "title": "VBulletin Calendar.PHP Command Execution Vulnerability",
+        "body": "A remote command execution vulnerability has been reported for vBulletin. The vulnerability is due to vBulletin failing to properly sanitize user-supplied input from URI parameters. An attacker can exploit this vulnerability to execute malicious commands on the vulnerable system."
+      }
+    ],
+    "CVE-2002-1663": [
+      {
+        "url": "http://www.securityfocus.com/bid/6096",
+        "title": "Monkey HTTP Server Invalid POST Request Denial Of Service Vulnerability",
+        "body": "A denial of service vulnerability has been reported for Monkey HTTP server. The vulnerability is due to inadequate checks being performed when decoding POST requests.An attacker can exploit this vulnerability by issuing a POST request with an invalid Content-Length header, or without a Content-Length value. When the server attempts to service the request, it will crash and lead to the denial of service condition."
+      }
+    ],
+    "CVE-2002-1700": [
+      {
+        "url": "http://www.securityfocus.com/bid/5011",
+        "title": "ColdFusion MX Missing Template Cross Site Scripting Vulnerability",
+        "body": "ColdFusion MX is prone to cross site scripting attacks.Attacker-supplied script code may be included in a malicious missing template URI generated by the default Missing Template handler of ColdFusion. The attacker-supplied script code will be executed in the browser of a web user who visits this link, in the security context of the host running ColdFusion."
+      }
+    ],
+    "CVE-2002-1717": [
+      {
+        "url": "http://www.securityfocus.com/bid/4078",
+        "title": "Microsoft IIS 5.1 Frontpage Extensions Path Disclosure Information Vulnerability",
+        "body": "An issue has been reported that a number of configuration files (.cnf) in Microsoft IIS 5.1, could be used to disclose sensitive system information to remote users.Allegedly, submitting a request for one of the vulnerable files by way of '/_vti_pvt/', will cause the host to reveal system path information. The reported problematic files are 'access.cnf', 'botinfs.cnf', 'bots.cnf' and 'linkinfo.cnf'.Microsoft has not confirmed the existence of these vulnerabilities.* Confliciting details exist. This issue may be the result of a configuration error, although this has not been confirmed"
+      }
+    ],
+    "CVE-2002-1874": [
+      {
+        "url": "http://www.securityfocus.com/bid/6105",
+        "title": "Astrocam Remote Command Execution Vulnerability",
+        "body": "AstroCam is prone to a vulnerability which may allow remote attackers to execute commands.  This problem is reported to occur because the 'astrocam.cgi' does not sufficiently sanitize shell metacharacters from input supplied via CGI parameters.  As a result, an attacker may cause commands to be executed through the underlying shell with the privileges of the webserver process."
+      }
+    ],
+    "CVE-2002-1978": [
+      {
+        "url": "http://www.securityfocus.com/bid/6010",
+        "title": "IPFilter FTP Proxy Unauthorized Access Vulnerability",
+        "body": "In versions of IPFilter prior to 3.4.29, the FTP proxy was vulnerable to a flaw that allowed for attackers to open ports on FTP servers under certain circumstances.  Attackers may fool vulnerable versions of IPFilter into opening ports if a FTP server is in use that will echo text from a client back to the client."
+      }
+    ],
+    "CVE-2002-2226": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/300395",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6199",
+        "title": "TFTPD32 Long Filename Buffer Overflow Vulnerability",
+        "body": "A buffer-overflow vulnerability has been reported for Tftpd32. The vulnerability is due to insufficient checks on user-supplied input. A remote attacker can exploit this vulnerability by supplying a long string as a name of the file to retrieve. This will trigger the buffer-overflow condition. Any malicious attacker-supplied code will be executed with the privileges of the Tftpd32 process."
+      }
+    ],
+    "CVE-2002-2227": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/291329",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/5693",
+        "title": "ssldump SSLv2 Challenge Buffer Underflow Vulnerability",
+        "body": "The ssldump analysis tool is vulnerable to a buffer underflow when copying an SSLv2 \"Challenge\" value, potentially resulting in complete compromise of the affected host."
+      }
+    ],
+    "CVE-2002-2231": [
+      {
+        "url": "http://www.securityfocus.com/bid/6342",
+        "title": "Ikonboard User Profile Photo URI HTML Injection Vulnerability",
+        "body": "Ikonboard does not sufficiently sanitize HTML from photo URIs in user profiles.  An attacker may take advantage of this issue to embed malicious script code into their user profile.  When the profile is viewed by other users, the attacker-supplied script code will execute in the security context of the site hosting the Ikonboard software.This issue was reported in Ikonboard 3.1.1.  Other versions may also be affected."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6343",
+        "title": "Ikonboard X-Forwarded-For: Proxy Header Field HTML Injection Vulnerability",
+        "body": "Ikonboard is prone to HTML injection attacks via X-Forwarded-For: HTTP header fields for proxies.  When Ikonboard is accessed via a proxy, it will log the user's IP address as the address that appears in the X-Forwarded-For: HTTP header field.  HTML will not be sanitized when this information in the HTTP header field is logged.  When an administrator views the logged IP address, script code supplied via a malicious X-Forwarded-For: HTTP header field will be executed in the web client of the administrator.  While the data in the header field is limited to 16 characters, it may be possible to embed malicious script code or HTML over multiple requests.This issue was reported in Ikonboard 3.1.1.  Other versions may also be affected."
+      }
+    ],
+    "CVE-2002-2238": [
+      {
+        "url": "http://www.securityfocus.com/bid/6355",
+        "title": "Kunani FTP File Disclosure Vulnerability",
+        "body": "A vulnerability has been discovered in Kunani FTP server. By passing a malicious request containing dot-dot-slash ('../') directory-traversal sequences, a remote attacker may access arbitrary system files outside of FTP directories. This issue was discovered in Kunani FTP server 1.0.10. It is not known whether other versions are affected."
+      }
+    ],
+    "CVE-2002-2239": [
+      {
+        "url": "http://www.securityfocus.com/bid/6358",
+        "title": "Cisco OSM Line Cards Denial Of Service Vulnerability",
+        "body": "A vulnerability has been discovered in OSM Line Cards when installed in various Cisco devices. Cisco has reported that a denial of service may occur when processing an irregularly constructed network packet. Exploitation of this issue will cause the Cisco device to no longer forward legitimate packets.Precise technical details regarding this vulnerability are not yet known. This BID will be updated as further information becomes available."
+      }
+    ],
+    "CVE-2002-2240": [
+      {
+        "url": "http://www.securityfocus.com/bid/6359",
+        "title": "myServer File Disclosure Vulnerability",
+        "body": "It has been reported that myServer fails to properly sanitize web requests. By sending a malicious web request to the vulnerable server, using directory traversal sequences, it is possible for a remote attacker to access sensitive resources located outside of the web root."
+      }
+    ],
+    "CVE-2002-2241": [
+      {
+        "url": "http://www.securityfocus.com/bid/6364",
+        "title": "Deerfield VisNetic Website OPTIONS Memory Corruption Vulnerability",
+        "body": "Deerfield VisNetic Website is prone to a memory corruption vulnerability that may be triggered when attempting to handle a malformed request for a resource in the OPTIONS directory.  It has been demonstrated that this issue may be exploited to cause a denial of service.  However, since an attacker is able to corrupt memory with attacker-supplied data, it may be possible to execute arbitrary code.If this vulnerability can be exploited to execute arbitrary code, this will occur in the security context of the VisNetic Website process, which may run with SYSTEM (or equivalent privileges) on Microsoft Windows operating systems.This issue was reported in VisNetic Website 3.5.13.1.  Other versions may also be affected."
+      }
+    ],
+    "CVE-2002-2242": [
+      {
+        "url": "http://www.securityfocus.com/bid/6336",
+        "title": "KisMac Insecure File Permissions Vulnerability",
+        "body": "KisMAC is a freely available net stumbling application for Apple's Mac OS X.A problem has been reported in the KisMAC application.  When the Apple Package Manager is used to install the application, the installation program may change file permissions to unsafe modes.  This could lead to local users gaining unauthorized access to sensitive files."
+      }
+    ],
+    "CVE-2002-2246": [
+      {
+        "url": "http://www.securityfocus.com/bid/6369",
+        "title": "Deerfield VisNetic WebSite Cross Site Scripting Vulnerability",
+        "body": "A vulnerability has been discovered in VisNetic Website when generating a 404 page for a non-existent resources. The issue is due to insufficient sanitization of the HTTP 'referer' header. It is possible to cause arbitrary code to be executed within the context of the visited 404 page by embedding script code into the HTTP 'referer' header.An attacker could exploit this issue to steal cookie-based authentication credentials which could be used to hijack a legitimate users session.It should be noted that this vulnerability was discovered in VisNetic WebSite 3.5.13.1. It is not yet known whether this issue also affects earlier versions."
+      }
+    ],
+    "CVE-2002-2248": [
+      {
+        "url": "http://www.securityfocus.com/bid/6256",
+        "title": "Netscape Java canConvert() Buffer Overflow Vulnerability",
+        "body": "Netscape 4's Java implementation contains an unchecked buffer in the sun.awt.windows.WDefaultFontCharset.canConvert() method.  Successful exploitation could lead to arbitrary code execution when a vulnerable user visits a website hosting a malicious applet.This vulnerability only affects Netscape 4 running on Microsoft Windows platforms."
+      }
+    ],
+    "CVE-2002-2249": [
+      {
+        "url": "http://www.securityfocus.com/bid/6260",
+        "title": "News Evolution Include Undefined Variable Command Execution Vulnerability",
+        "body": "News Evolution is a freely available, open source news software package.  It is written in PHP, and designed for use on Unix and Linux operating systems.The problem occurs in the aff_news.php file.  By loading this file, and defining the chemin variable to an arbitrary location, commands can be executed on the local host.  This vulnerability may also be used to reveal sensitive information on the local host.  This same vulnerability also occurs in the export_news.php file."
+      }
+    ],
+    "CVE-2002-2250": [
+      {
+        "url": "http://www.securityfocus.com/bid/6269",
+        "title": "Sybase Adaptive Server DBCC CHECKVERIFY Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported for the Sybase Adapative Server. The vulnerability exists in the DBCC CHECKVERIFY function.The DBCC CHECKVERIFY function does not perform sufficient checks on the length of the string that is supplied as input when the function is called. This will trigger the buffer overflow condition if this input is overly long.An attacker may exploit this vulnerability to cause the database process to execute malicious attacker-supplied code."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6266",
+        "title": "Sybase Adaptive Server xp_freedll Buffer Overrun Vulnerability",
+        "body": "A vulnerability has been discovered in Sybase Adaptive Server. By passing xp_freedll a parameter of excessive length it is possible to overrun a static buffer. By overwriting memory with attacker-supplied values, it may be possible to direct program flow to execute malicious instructions.Successful exploitation of this vulnerability would allow an attacker to execute arbitrary system commands with the privileges of the database server."
+      }
+    ],
+    "CVE-2002-2251": [
+      {
+        "url": "http://www.securityfocus.com/bid/6264",
+        "title": "Lib CGI Include Buffer Overflow Vulnerability",
+        "body": "Lib CGI is a freely available, open source CGI library for C programmers.  It is available for Unix and Linux operating systems.It has been reported that a buffer overflow exists in the Lib CGI development library.  Due to improper bounds checking in an include file, programs making use of this include, or programs linked against libraries using this include could be vulnerable to a remote buffer overflow attack.  This could result in an attacker gaining remote access with the privileges of the web server process."
+      }
+    ],
+    "CVE-2002-2253": [
+      {
+        "url": "http://www.securityfocus.com/bid/6294",
+        "title": "libSieve Header Name Buffer Overrun Vulnerability",
+        "body": "A vulnerability has been discovered in the Sieve library. By passing a malicious header of excessive length to a vulnerable program, it is possible to overrun a buffer and corrupt memory. By overwriting sensitive memory with attacker-supplied values, it may be possible to execute arbitrary instructions with privileges of the vulnerable process."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6299",
+        "title": "libSieve IMAP Flag Buffer Overrun Vulnerability",
+        "body": "A vulnerability has been discovered in the Sieve library. By passing a malicious IMAP flag of excessive length to a vulnerable program, it is possible to overrun a buffer and corrupt memory. By overwriting sensitive memory with attacker-supplied values, it may be possible to execute arbitrary instructions with privileges of the vulnerable process."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6300",
+        "title": "libSieve Error Message Buffer Overrun Vulnerability",
+        "body": "A vulnerability has been discovered in the Sieve library. By generating excessive error messages in a program linked to the vulnerable library it is possible to overrun a buffer. Overwriting sensitive memory with attacker-supplied values may make it possible to execute arbitrary instructions with privileges of the vulnerable process."
+      }
+    ],
+    "CVE-2002-2254": [
+      {
+        "url": "http://www.securityfocus.com/bid/6305",
+        "title": "Linux Netfilter/IPTables IP Queuing Arbitrary Network Traffic Reading Vulnerability",
+        "body": "IPTables and Netfilter are the firewall infrastructure developed for the Linux kernel.The IP Queuing module requires a privileged process to communicate with user space to handle the queuing of network traffic on the local host.  Insufficient checking of the integrity of the privileged process is performed.  This could lead to a local user gaining access to information meant for the privileged process."
+      }
+    ],
+    "CVE-2002-2255": [
+      {
+        "url": "http://www.securityfocus.com/bid/6311",
+        "title": "phpBB search.php Cross Site Scripting Vulnerability",
+        "body": "phpBB is vulnerable to cross site scripting attacks. This is due to insufficient santization of user-supplied input. The problem is located in the search.php script. This issue may be exploited by an attacker to steal a legitimate users cookie-based authentication credentials."
+      }
+    ],
+    "CVE-2002-2256": [
+      {
+        "url": "http://www.securityfocus.com/bid/6271",
+        "title": "pWins Web Server Directory Traversal Vulnerability",
+        "body": "It has been reported that pWins fails to properly sanitize web requests. By sending a malicious web request to the vulnerable server, using directory traversal sequences, it is possible for a remote attacker to access sensitive resources located outside of the web root.An attacker is able to traverse outside of the established web root by using dot-dot-slash (../) directory traversal sequences. An attacker may be able to obtain any web server readable files from outside of the web root directory."
+      }
+    ],
+    "CVE-2002-2257": [
+      {
+        "url": "http://www.securityfocus.com/bid/6270",
+        "title": "TuxBR LIGCGI Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported for LIBCGI. Reportedly, the vulnerability exists in the 'parse_field()' function in the 'cgi_lib.c' source file.The function does not perform adequate bounds checking on supplied input. Thus, it may be possible to cause 'parse_field()' to corrupt memory on the system stack.Exploiting this issue may allow a local attacker to overwrite sensitive memory with malicious values, thereby redirecting typical program flow to execute attacker-supplied commands."
+      }
+    ],
+    "CVE-2002-2258": [
+      {
+        "url": "http://www.securityfocus.com/bid/6277",
+        "title": "Moby NetSuite POST Handler Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported for Moby NetSuite that may result in a denial of service condition. Reportedly, it is possible to cause NetSuite to crash when a malformed POST request is received. An attacker can exploit this vulnerability by issuing a malformed POST request. When NetSuite attempts to service the malformed POST request, it will crash resulting in a denial of service. Restarting the service is neccessary to restore functionality."
+      }
+    ],
+    "CVE-2002-2259": [
+      {
+        "url": "http://www.securityfocus.com/bid/6329",
+        "title": "SuSE GNUPlot French Documentation Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported for GNUPlot shipped with SuSE Linux. Reportedly, the vulnerability exists in the French documentation and may allow an attacker to obtain root privileges.Precise technical details about the nature of the vulnerability are currently unknown. This BID will be updated as more information becomes available."
+      }
+    ],
+    "CVE-2002-2260": [
+      {
+        "url": "http://www.securityfocus.com/bid/6257",
+        "title": "Bugzilla quips Feature Cross Site Scripting Vulnerability",
+        "body": "A cross site scripting vulnerability has been reported for Bugzilla. This vulnerability only affects users who have the 'quips' feature enabled.Reportedly, Bugzilla does not sufficiently sanitize user-supplied input that is used in the quips feature. As a result, it is possible for a remote attacker to create a malicious link containing script code which will be executed in the browser of a legitimate user, in the context of the website running Bugzilla.This issue may be exploited to steal cookie-based authentication credentials from legitimate users of the website running the vulnerable software."
+      }
+    ],
+    "CVE-2002-2261": [
+      {
+        "url": "http://www.securityfocus.com/bid/6548",
+        "title": "Sendmail check_relay Access Bypassing Vulnerability",
+        "body": "A vulnerability in Sendmail may allow attackers who use bogus DNS data to bypass the access restrictions imposed by the 'access_db' FEATURE when used with the 'check_relay' ruleset.  An attacker can exploit this vulnerability to connect to a sendmail server that would otherwise be inaccessible."
+      }
+    ],
+    "CVE-2002-2265": [
+      {
+        "url": "http://www.securityfocus.com/bid/6174",
+        "title": "HP Tru64/TruCluster OSIS V5.4 LDAP Module Unauthorized File Access Vulnerability",
+        "body": "HP has reported an unspecified vulnerability in Tru64 Unix/TruCluster OSIS V5.4 LDAP Module for System Authentication.This issue may allow local and remote attackers to gain unauthorized access to files and systems."
+      }
+    ],
+    "CVE-2002-2268": [
+      {
+        "url": "http://www.securityfocus.com/bid/6289",
+        "title": "Webster HTTP Server Long Request Buffer Overrun Vulnerability",
+        "body": "A buffer overrun has been discovered in Webster HTTP server when processing malicious URLs. It is possible to trigger this vulnerability by passing an affected server a malconstructed URL of excessive length.Successful exploitation of this issue may allow an attacker to overwrite sensitive locations in memory with malicious values. This may result in the execution of arbitrary code with the privileges of Webster."
+      }
+    ],
+    "CVE-2002-2269": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/301893",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6291",
+        "title": "Webster HTTP Server File Disclosure Vulnerability",
+        "body": "A file disclosure vulnerability has been discovered in Webster HTTP Server. It has been reported that by passing directory traversal sequences to the vulnerable server, it is possible to access arbitrary files located on the system.Information gained by exploiting this vulnerability may assist attackers in launching further attacks against target systems."
+      }
+    ],
+    "CVE-2002-2270": [
+      {
+        "url": "http://www.securityfocus.com/bid/6317",
+        "title": "HP-UX ied Unspecified Information Disclosure Vulnerability",
+        "body": "HP-UX is the Unix Operating System variant distributed and maintained by HP.A vulnerability in the ied program has been discovered.  This vulnerability has been reported as allowing local users to view data that is normally invisible.  Further details of this vulnerability have not currently been made available."
+      },
+      {
+        "url": "http://www.securityfocus.com/advisories/4742",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2002-2272": [
+      {
+        "url": "http://www.securityfocus.com/bid/6320",
+        "title": "Apache/Tomcat Mod_JK Chunked Encoding Denial Of Service Vulnerability",
+        "body": "Apache Webserver and Tomcat are HTTP servers maintained and distributed by the Apache project.  Apache Webserver and Tomcat are available for the Unix, Linux, and Microsoft Windows platforms.It has been reported that a denial of service exists in Apache Webserver and Tomcat when mod_jk is used.  Due to design problems in the module, a user submitting malicious requests to the Apache Webserver may cause desynchronization between Apache and Tomcat.  This could be done through malicious chunked encoding requests."
+      }
+    ],
+    "CVE-2002-2273": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/301893",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6292",
+        "title": "Webster HTTP Server Cross Site Scripting Vulnerability",
+        "body": "It has been discovered that Webster HTTP Server fails to properly sanitize user-supplied input, making it vulnerable to cross site scripting attacks. This issue can be exploited by sending a maliciously constructed a link, containing arbitrary script code, to an unsuspecting user.Exploitation of this issue may be used to steal cookie-based credentials, potentially allowing an attacker to hijack user sessions."
+      }
+    ],
+    "CVE-2002-2276": [
+      {
+        "url": "http://www.securityfocus.com/bid/6333",
+        "title": "Ultimate PHP Board Add.PHP Path Disclosure Vulnerability",
+        "body": "Ultimate PHP Board (UPB) is a freely available, open source PHP Bulletin Board.  It is available for the Unix and Linux operating systems.Under some circumstances, it may be possible to gain access to sensitive information, such as the installation path of UPB.  By passing an erroneous request to the add.php script, UPB may return the full path to the installation.  This could lead to the disclosure of sensitive information, and potentially lead to further attack."
+      }
+    ],
+    "CVE-2002-2277": [
+      {
+        "url": "http://www.securityfocus.com/bid/6273",
+        "title": "PortailPHP SQL Injection Vulnerability",
+        "body": "A vulnerability exists in the mod_search module included with PortailPHP. The vulnerability is due to insufficient sanitization of variables used to construct SQL queries in the 'index.php' script. It is possible to modify the logic of SQL queries through malformed query strings in requests for the vulnerable script.By injecting SQL code into variables, it may be possible for an attacker to corrupt database information."
+      }
+    ],
+    "CVE-2002-2279": [
+      {
+        "url": "http://www.securityfocus.com/bid/6310",
+        "title": "Aldap Contact Manager Authentication Bypass Vulnerability",
+        "body": "An authentication bypassing vulnerability has been reported for Aldap. Reportedly, it may be possible for attackers to login to the Aldap contact manager with 'Manager' privileges regardless of the supplied password."
+      }
+    ],
+    "CVE-2002-2283": [
+      {
+        "url": "http://www.securityfocus.com/bid/6280",
+        "title": "Microsoft Windows XP Fast User Switching Process Viewing Weakness",
+        "body": "Microsoft Windows XP contains a feature called Fast User Switching (FUS).  This allows multiple users to be concurrently logged onto the system; only one user can interact with the system at a time.There is a weakness in FUS that could allow a user that was previously a member of the Administrators group to still view other users' processes.  If the user enabled the ability to view other users' processes while they were a member of the Administrators group, they will still be able to do this after they are removed from the Administrators group."
+      }
+    ],
+    "CVE-2002-2286": [
+      {
+        "url": "http://www.securityfocus.com/bid/6339",
+        "title": "apt-www-proxy NULL HTTP Request Denial Of Service Vulnerability",
+        "body": "A denial of service vulnerability has been reported for apt-www-proxy. Reportedly, apt-www-proxy will crash when it receives a NULL HTTP request."
+      }
+    ],
+    "CVE-2002-2287": [
+      {
+        "url": "http://www.securityfocus.com/bid/6173",
+        "title": "PHPBB Advanced Quick Reply Hack Remote File Include Vulnerability",
+        "body": "The phpBB Advanced Quick Reply Hack is prone to an issue which may allow attackers to include arbitrary files from a remote server.It is possible for remote attackers to influence the include path for 'extension.inc' in the 'quick_reply.php' script.  As a result, an attacker may cause an arbitrary PHP script to be included from an attacker-supplied source, which may result in execution of commands with the privileges of the webserver."
+      }
+    ],
+    "CVE-2002-2288": [
+      {
+        "url": "http://www.securityfocus.com/bid/6387",
+        "title": "Mambo Site Server Path Disclosure Vulnerability",
+        "body": "A vulnerability has been discovered in Mambo Site Server. Requesting the 'index.php' script with an invalid parameter will cause an error page to be generated containing the path of the Mambo script.Information obtained by exploiting this issue may aid an attacker in launching further attacks against a target server.It should be noted that this vulnerability was reported in Mambo Site Server 4.0.11. It is not yet known whether other versions are affected."
+      }
+    ],
+    "CVE-2002-2289": [
+      {
+        "url": "http://www.securityfocus.com/bid/6243",
+        "title": "Working Resources BadBlue Information Disclosure Vulnerability",
+        "body": "An information disclosure vulnerability has been discovered in the 'soinfo.php' script. A remote attacker that runs this script may be able to obtain sensitive server information such as database passwords.Information disclosed in this manner may aid an attacker in launching further attacks against the target system.It should be noted that PHP must be enabled on a target BadBlue server, for this issue to be exploitable."
+      }
+    ],
+    "CVE-2002-2291": [
+      {
+        "url": "http://www.securityfocus.com/bid/6238",
+        "title": "Calisto Internet Talker Denial Of Service Vulnerability",
+        "body": "A vulnerability has been discovered in Calisto that may result in a denial of service. By passing an excessive amount of data to a vulnerable Calisto daemon, it is possible to freeze to program.A manual restart of the daemon is required to restore functionality.This issue was discovered in Calisto Internet Talker 0.4. It is not yet known whether earlier versions are also affected."
+      }
+    ],
+    "CVE-2002-2292": [
+      {
+        "url": "http://www.securityfocus.com/bid/6394",
+        "title": "Halcyon Software iASP File Disclosure Vulnerability",
+        "body": "A vulnerability has been discovered in Halcyon Software iASP. The flaw lies in the Remote Console Applet, which allows remote users access to arbitrary system files. It is possible to view a known system resource by including dot-dot-slash (../) directory traversal sequences in a malicious request to the iASP server.Information gained through exploiting this issue may aid an attacker in launching further attacks against a target server.It should be noted that this vulnerability is known to exist in iASP v1.0.9 and earlier. It is not yet know whether this issue affects later versions."
+      }
+    ],
+    "CVE-2002-2294": [
+      {
+        "url": "http://www.securityfocus.com/bid/6389",
+        "title": "Symantec Enterprise Firewall RealAudio Proxy Buffer Overflow Vulnerability",
+        "body": "A vulnerability has been reported for Symantec Enterprise Firewall. A buffer overflow vulnerability occurs in the RealAudio Proxy installed on Symantec Enterprise Firewall. Reportedly when the Proxy is sent a specially formatted stream of data, it will trigger a buffer overflow condition. An attacker can exploit this vulnerability and send a specially crafted stream of data to the Proxy . This will result in a local buffer to be overrun with attacker supplied values and will trigger the buffer overflow condition.Although unconfirmed, it may be possible for an attacker to gain control over the execution of the vulnerable RealAudio Proxy process. "
+      }
+    ],
+    "CVE-2002-2295": [
+      {
+        "url": "http://www.securityfocus.com/bid/6283",
+        "title": "Pserv Stream Reading Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported in Pserv. The buffer overflow condition is due to the way Pserv handles data streams from remote connections. Reportedly, it is possible to overflow a local buffer and corrupt memory by issuing a request that is of a certain length. This may result in a denial of service. Although it has not been confirmed, it may be possible for an attacker to execute arbitrary code."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6284",
+        "title": "Pserv Request Method Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported in Pserv. The buffer overflow condition is due to the way Pserv handles data streams from remote connections. Reportedly, Pserv reads 1024 bytes at a time from a connected socket but fails to allocate sufficient space in local buffers for the data. Due to this, it may be possible to corrupt sensitive memory on the system stack.This may cause the web server to exhibit signs of unpredictable behaviour. Although it has not been confirmed, it may be possible for an attacker to execute arbitrary code."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6285",
+        "title": "Pserv HTTP Version Specifier Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported in Pserv. The buffer overflow condition is due to the way Pserv handles data streams from remote connections. An attacker can exploit this vulnerability by issuing a HTTP request with an invalid HTTP version specifier. Due to insufficient buffers being allocated when processing the data, it may be possible to corrupt sensitive memory on the system stack."
+      }
+    ],
+    "CVE-2002-2296": [
+      {
+        "url": "http://www.securityfocus.com/bid/6272",
+        "title": "YaBB YaBB.pl Cross Site Scripting Vulnerability",
+        "body": "A cross-site scripting vulnerability has been reported in the YaBB forum. This vulnerability is due to insufficient sanitization of URI parameters in some scripts.As a result, it is possible for a remote attacker to create a malicious link to the login page of a site hosting the web forum. When this link is visited by an unsuspecting web user, the attacker-supplied code will be executed in their browser in the security context of the vulnerable website.It has been demonstrated that this vulnerability may be exploited to steal cookie-based authentication credentials."
+      }
+    ],
+    "CVE-2002-2300": [
+      {
+        "url": "http://www.securityfocus.com/bid/6297",
+        "title": "3Com SuperStack 3 NBX FTPD Denial of Service Vulnerability",
+        "body": "It has been reported that the ftpd server, included in the Embedded Real Time Operating System (ERTOS) of 3Com Superstack 3 NBX IP phones, contains a denial of service vulnerability. This issue can be triggered by sending a CEL paramater of excessive length, effectively causing the ftpd server and various VoIP services to no longer respond.It should be noted that this issue may be similar to the vulnerability described in BID 679.Although unconfirmed, it should also be noted that due to the nature of this vulnerability under some circumstances it may be exploited to execute arbitrary code."
+      }
+    ],
+    "CVE-2002-2302": [
+      {
+        "url": "http://www.securityfocus.com/bid/6296",
+        "title": "3D3.Com ShopFactory Shopping Cart Cookie Price Manipulation Vulnerability",
+        "body": "ShopFactory is an e-commerce application for Microsoft Windows operating systems.  It is distributed by 3D3.Com.When a user visits a site and creates a shopping cart, information on items added to the cart are stored in web cookies.  The information stored in these cookies is later retrieved by ShopFactory and used to give the user the price on the item.  Changing the information contained in the cookie could change variables quoted to the user by the ShopFactory site.** It has been reported that ShopFactory 5.8 uses a form of encryption to encode values stored in cookies. However, as this encryption is performed on client-side, it is trivial to break the encryption. Thus it is still possible to manipulate the values of cookies. "
+      }
+    ],
+    "CVE-2002-2303": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/301863",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6296",
+        "title": "3D3.Com ShopFactory Shopping Cart Cookie Price Manipulation Vulnerability",
+        "body": "ShopFactory is an e-commerce application for Microsoft Windows operating systems.  It is distributed by 3D3.Com.When a user visits a site and creates a shopping cart, information on items added to the cart are stored in web cookies.  The information stored in these cookies is later retrieved by ShopFactory and used to give the user the price on the item.  Changing the information contained in the cookie could change variables quoted to the user by the ShopFactory site.** It has been reported that ShopFactory 5.8 uses a form of encryption to encode values stored in cookies. However, as this encryption is performed on client-side, it is trivial to break the encryption. Thus it is still possible to manipulate the values of cookies. "
+      }
+    ],
+    "CVE-2002-2304": [
+      {
+        "url": "http://www.securityfocus.com/bid/6395",
+        "title": "MyPHPSoft MyPHPLinks SQL Injection Administration Bypassing Vulnerability",
+        "body": "MyPHPLinks is a freely available, open source PHP application distributed by MyPHPSoft.  It is available for Unix, Linux, and Microsoft Windows operating systems.It has been reported that a problem with the checking of input by MyPHPLinks exists.  A problem in the checking of the idsession variable used by MyPHPLinks to verify Administrator access may allow a remote user to gain access to the host.  This problem could allow an attacker to gain administrator access to the MyPHPLinks section of a web site."
+      }
+    ],
+    "CVE-2002-2306": [
+      {
+        "url": "http://www.securityfocus.com/bid/5317",
+        "title": "KaZaA Media Desktop Large Message Denial Of Service Vulnerability",
+        "body": "KaZaA may consume large amounts of CPU when processing a sequence of large messages. It is possible for an attacker to flood a vulnerable system with a large number of messages, resulting in a denial of service condition."
+      }
+    ],
+    "CVE-2002-2314": [
+      {
+        "url": "http://www.securityfocus.com/bid/5293",
+        "title": "Mozilla JavaScript URL Host Spoofing Arbitrary Cookie Access Vulnerability",
+        "body": "Mozilla is an open source web browser available for a number of platforms, including Microsoft Windows and Linux. An issue has been reported in the Mozilla web browser which may allow script code to access cookie data associated with arbitrary domains.It has been reported possible to create a javascript: URL which appears to start with a valid domain. Malicious script code may specify an arbitrary domain, and will be able to access cookie data associated with that domain.Exploitation of this vulnerability may result in a remote attacker gaining access to sensitive cookie data, including authentication credentials."
+      }
+    ],
+    "CVE-2002-2338": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/276946",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/5002",
+        "title": "Netscape / Mozilla Malformed Email POP3 Denial Of Service Vulnerability",
+        "body": "The Netscape Communicator and Mozilla browsers include support for email, and the ability to fetch mail through a POP3 server. Both products are available for a range of platforms, including Microsoft Windows and Linux.Under some circumstances, malformed email messages may prevent Netscape and Mozilla clients from accessing POP3 mailboxes. In particular, users will be unable to access more recent messages or delete the malicious email."
+      }
+    ],
+    "CVE-2002-2344": [
+      {
+        "url": "http://www.securityfocus.com/bid/5418",
+        "title": "Ensim Webppliance Unauthorized Email Access Vulnerability",
+        "body": "A vulnerability has been reported for Ensim Webppliance. Reportedly, it is possible for malicious users of Webppliance to receive other users' emails.The vulnerability is the result of Webppliance incorrectly processing an existing user's email alias. Reportedly, users that are allocated email and user accounts can intercept another user's email."
+      }
+    ],
+    "CVE-2002-2353": [
+      {
+        "url": "http://www.securityfocus.com/bid/6198",
+        "title": "TFTPD32 Arbitrary File Download/Upload Vulnerability",
+        "body": "A vulnerability has been discovered in Tftpd32 which allows a remote attacker to download and upload arbitrary system files. The ability to upload system files may allow an attacker to replaced key system files with trojaned copies, used to open backdoors into a target system."
+      }
+    ],
+    "CVE-2002-2359": [
+      {
+        "url": "http://www.securityfocus.com/bid/5403",
+        "title": "Mozilla FTP View Cross-Site Scripting Vulnerability",
+        "body": "A cross-site scripting vulnerability in Mozilla has been reported.  When viewing the contents of a FTP site as web content from a ftp:// URL, the directory name is included in the HTML representation.  It is not adequately sanitized before this occurs.  An attacker may embed javascript as this value between opening and closing \"<title>\" tags in a FTP URL.  "
+      }
+    ],
+    "CVE-2002-2381": [
+      {
+        "url": "http://www.securityfocus.com/bid/6062",
+        "title": "GTetrinet Multiple Remote Buffer Overflow Vulnerabilities",
+        "body": "GTetrinet is a freely available, open source networked Tetris game client.  It is available for Linux and Microsoft Windows systems.Several problems have been reported in the GTetrinet client that could result in remote exploitation.  Due to several bounds checking vulnerabilities in GTetrinet, the user of a vulnerable client could allow unintended actions on the part of a malicious server.  Exploitation of these vulnerabilities by a malicious server could result in a denial of service, and potentially execution of arbitrary instructions in the security context of the user."
+      }
+    ],
+    "CVE-2002-2383": [
+      {
+        "url": "http://www.securityfocus.com/bid/5123",
+        "title": "F2HTML.PL SQL Injection Vulnerability",
+        "body": "The f2html.pl script does not sufficiently validate filenames before passing them into SQL queries.  In the instance that f2html.pl is used to search a directory which may be accessible to untrusted local users, it may be possible to launch a SQL injection attack via a maliciously crafted filename. "
+      }
+    ],
+    "CVE-2002-2411": [
+      {
+        "url": "http://www.securityfocus.com/bid/4782",
+        "title": "BannerWheel Remote Buffer Overflow Vulnerability",
+        "body": "BannerWheel is a freely available ad banner rotation program.  It runs on most Unix and Linux variants as well as Microsoft Windows operating systems.Due to insufficient bounds checking of externally supplied data, BannerWheel may be prone to a buffer overflow condition.If exploitable, this condition may allow a remote attacker to execute arbitrary instructions with the privileges of the webserver process."
+      }
+    ],
+    "CVE-2002-2420": [
+      {
+        "url": "http://www.securityfocus.com/bid/5605",
+        "title": "Super Site Searcher Remote Command Execution Vulnerability",
+        "body": "Super Site Searcher is prone to remote command execution.  Shell metacharacters are not adequately filtered from query string parameters in a request to the vulnerable search engine script.  The parameters are then used in a function which passes commands directly through the shell.  A remote attacker may exploit this condition to execute arbitrary commands on the shell with the privileges of the webserver process.Simple Site Searcher, released by the same vendor, is also prone to this issue."
+      }
+    ],
+    "CVE-2002-2426": [
+      {
+        "url": "http://www.securityfocus.com/bid/26451",
+        "title": "Citrix Presentation Server Remote Unauthorized Code Execution Vulnerability",
+        "body": "Citrix Presentation Server is prone to a vulnerability that may allow remote attackers to execute unauthorized code on the server in the context of the authorized user. The issue stems from a design error.The issue affects the following applications:Access Essentials 1.0Citrix Access Essentials 1.5Citrix Access Essentials 2.0Citrix MetaFrame Presentation Server 3.0 for Microsoft Windows 2000Citrix MetaFrame Presentation Server 3.0 for Microsoft Windows 2003Citrix Presentation Server 4.0 for Microsoft Windows 2000Citrix Presentation Server 4.0 for Microsoft Windows 2003Citrix Presentation Server 4.0 x64 EditionCitrix Presentation Server 4.5 for Windows Server 2003Citrix Presentation Server 4.5 for Windows Server 2003 Feature Pack 1Citrix Presentation Server 4.5 for Windows Server 2003 x64 Edition"
+      }
+    ]
+  }
+}

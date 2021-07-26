@@ -1,0 +1,819 @@
+{
+  "year": 2005,
+  "total": 138,
+  "reference": "debian.org",
+  "reports": {
+    "CVE-2005-0211": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-667",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2005-0227": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-668",
+        "title": "",
+        "body": "John Heasman and others discovered a bug in the PostgreSQL enginewhich would allow any user load an arbitrary local library into it.For the stable distribution (woody) this problem has been fixed inversion 7.2.1-2woody7.For the unstable distribution (sid) this problem has been fixed inversion 7.4.7-1.We recommend that you upgrade your postgresql packages."
+      }
+    ],
+    "CVE-2005-0247": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-683",
+        "title": "",
+        "body": "Several buffer overflows have been discovered in PL/PgSQL as part ofthe PostgreSQL engine which could lead to the execution of arbitrarycode.For the stable distribution (woody) these problems have been fixed inversion 7.2.1-2woody8.For the unstable distribution (sid) these problems have been fixed inversion 7.4.7-2.We recommend that you upgrade your postgresql packages."
+      }
+    ],
+    "CVE-2005-0256": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-705",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2005-0449": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1017",
+        "title": "",
+        "body": "An error in the skb_checksum_help() function from the netfilter framework has been discovered that allows the bypass of packet filter rules or a denial of service attack."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1018",
+        "title": "",
+        "body": "An error in the skb_checksum_help() function from the netfilter framework has been discovered that allows the bypass of packet filter rules or a denial of service attack."
+      }
+    ],
+    "CVE-2005-0504": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1070",
+        "title": "",
+        "body": "An integer overflow in the Moxa driver may lead to privilege escalation."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1067",
+        "title": "",
+        "body": "An integer overflow in the Moxa driver may lead to privilege escalation."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1069",
+        "title": "",
+        "body": "An integer overflow in the Moxa driver may lead to privilege escalation."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1082",
+        "title": "",
+        "body": "An integer overflow in the Moxa driver may lead to privilege escalation."
+      }
+    ],
+    "CVE-2005-0709": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-707",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2005-0739": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-718",
+        "title": "",
+        "body": "[ This version lists the correct packages in the packagessection. ]A buffer overflow has been detected in the IAPP dissector of Ethereal,a commonly used network traffic analyser. A remote attacker may beable to overflow a buffer using a specially crafted packet. Moreproblems have been discovered which don't apply to the version inwoody but are fixed in sid as well.For the stable distribution (woody) this problem has been fixed inversion 0.9.4-1woody12.For the unstable distribution (sid) these problems have been fixed inversion 0.10.10-1.We recommend that you upgrade your ethereal packages."
+      }
+    ],
+    "CVE-2005-0756": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-922",
+        "title": "",
+        "body": "Alexander Nyberg discovered that the ptrace() system call does not properly verify addresses on the amd64 architecture which can be exploited by a local attacker to crash the kernel."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-921",
+        "title": "",
+        "body": "Alexander Nyberg discovered that the ptrace() system call does not properly verify addresses on the amd64 architecture which can be exploited by a local attacker to crash the kernel."
+      }
+    ],
+    "CVE-2005-1689": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-757",
+        "title": "",
+        "body": "Daniel Wachdorf reported two problems in the MIT krb5 distribution usedfor network authentication. First, the KDC program from the krb5-kdcpackage can corrupt the heap by trying to free memory which has alreadybeen freed on receipt of a certain TCP connection. This vulnerabilitycan cause the KDC to crash, leading to a denial of service.[CAN-2005-1174] Second, under certain rare circumstances this type ofrequest can lead to a buffer overflow and remote code execution.[CAN-2005-1175] Additionally, Magnus Hagander reported another problem in which thekrb5_recvauth function can in certain circumstances free previouslyfreed memory, potentially leading to the execution of remote code.[CAN-2005-1689] All of these vulnerabilities are believed difficult to exploit, and noexploits have yet been discovered.For the old stable distribution (woody), these problems have been fixedin version 1.2.4-5woody10. Note that woody's KDC does not have TCPsupport and is not vulnerable to CAN-2005-1174.For the stable distribution (sarge), these problems have been fixed inversion 1.3.6-2sarge2.For the unstable distribution (sid), these problems have been fixed inversion 1.3.6-4.We recommend that you upgrade your krb5 package."
+      }
+    ],
+    "CVE-2005-1761": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-922",
+        "title": "",
+        "body": "A vulnerability on the IA-64 architecture can lead local attackers to overwrite kernel memory and crash the kernel."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1018",
+        "title": "",
+        "body": "A vulnerability in the ptrace subsystem of the IA-64 architecture can allow local attackers to overwrite kernel memory and crash the kernel."
+      }
+    ],
+    "CVE-2005-2177": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-873",
+        "title": "",
+        "body": "A security vulnerability has been found in Net-SNMP releases thatcould allow a denial of service attack against Net-SNMP agents thathave opened a stream based protocol (e.g. TCP but not UDP). By default,Net-SNMP does not open a TCP port.The old stable distribution (woody) does not contain a net-snmp package.For the stable distribution (sarge) this problem has been fixed inversion 5.1.2-6.2.For the unstable distribution (sid) this problem has been fixed inversion 5.2.1.2-1.We recommend that you upgrade your net-snmp package."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-873",
+        "title": "",
+        "body": "A security vulnerability has been found in Net-SNMP releases thatcould allow a denial of service attack against Net-SNMP agents thathave opened a stream based protocol (e.g. TCP but not UDP). By default,Net-SNMP does not open a TCP port.The old stable distribution (woody) does not contain a net-snmp package.For the stable distribution (sarge) this problem has been fixed inversion 5.1.2-6.2.For the unstable distribution (sid) this problem has been fixed inversion 5.2.1.2-1.We recommend that you upgrade your net-snmp package."
+      }
+    ],
+    "CVE-2005-2335": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-774",
+        "title": "",
+        "body": "Edward Shornock discovered a bug in the UIDL handling code offetchmail, a common POP3, APOP and IMAP mail fetching utility. Amalicious POP3 server could exploit this problem and inject arbitrarycode that will be executed on the victim host. If fetchmail isrunning as root, this becomes a root exploit.The old stable distribution (woody) is not affected by this problem.For the stable distribution (sarge) this problem has been fixed inversion 6.2.5-12sarge1.For the unstable distribution (sid) this problem has been fixed inversion 6.2.5-16.We recommend that you upgrade your fetchmail package."
+      }
+    ],
+    "CVE-2005-2370": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-813",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1318",
+        "title": "",
+        "body": "It was discovered that memory alignment errors may allow remote attackers to cause a denial of service on certain architectures such as sparc. This only affects Debian Sarge."
+      }
+    ],
+    "CVE-2005-2459": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-922",
+        "title": "",
+        "body": "Another vulnerability has been discovered in the zlib routines which are also present in the Linux kernel and allows remote attackers to crash the kernel."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-921",
+        "title": "",
+        "body": "Another vulnerability has been discovered in the zlib routines which are also present in the Linux kernel and allows remote attackers to crash the kernel."
+      }
+    ],
+    "CVE-2005-2495": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-816",
+        "title": "",
+        "body": "Søren Sandmann discovered a bug in memory allocation for pixmap images,that can cause a crash of the X server or to execute arbitrary code.The update for the old stable distribution (woody) also contains adifferent correction for multiple vulnerabilities in libXpm (DSA 607, CAN-2004-0914,Bug#309143),since the old fix contained a regression.For the old stable distribution (woody) this problem has been fixed inversion 4.1.0-16woody7.For the stable distribution (sarge) this problem has been fixed inversion 4.3.0.dfsg.1-14sarge1.For the unstable distribution (sid) this problem has been fixed inversion 6.8.2.dfsg.1-7 of X.Org.We recommend that you upgrade your xfree86 and xorg packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-816",
+        "title": "",
+        "body": "Søren Sandmann discovered a bug in memory allocation for pixmap images,that can cause a crash of the X server or to execute arbitrary code.The update for the old stable distribution (woody) also contains adifferent correction for multiple vulnerabilities in libXpm (DSA 607, CAN-2004-0914,Bug#309143),since the old fix contained a regression.For the old stable distribution (woody) this problem has been fixed inversion 4.1.0-16woody7.For the stable distribution (sarge) this problem has been fixed inversion 4.3.0.dfsg.1-14sarge1.For the unstable distribution (sid) this problem has been fixed inversion 6.8.2.dfsg.1-7 of X.Org.We recommend that you upgrade your xfree86 and xorg packages."
+      }
+    ],
+    "CVE-2005-2548": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-922",
+        "title": "",
+        "body": "Peter Sandstrom noticed that snmpwalk from a remote host could cause a denial of service (kernel oops from null dereference) via certain UDP packets that lead to a function call with the wrong argument."
+      }
+    ],
+    "CVE-2005-2555": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1017",
+        "title": "",
+        "body": "Herbert Xu discovered that the setsockopt() function was not restricted to users/processes with the CAP_NET_ADMIN capability. This allows attackers to manipulate IPSEC policies or initiate a denial of service attack."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1018",
+        "title": "",
+        "body": "Herbert Xu discovered that the setsockopt() function was not restricted to users/processes with the CAP_NET_ADMIN capability. This allows attackers to manipulate IPSEC policies or initiate a denial of service attack."
+      }
+    ],
+    "CVE-2005-2703": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-868",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-838",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-866",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-868",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-838",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-866",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2005-2709": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1017",
+        "title": "",
+        "body": "Al Viro discovered a race condition in the /proc handling of network devices. A (local) attacker could exploit the stale reference after interface shutdown to cause a denial of service or possibly execute code in kernel mode."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1018",
+        "title": "",
+        "body": "Al Viro discovered a race condition in the /proc handling of network devices. A (local) attacker could exploit the stale reference after interface shutdown to cause a denial of service or possibly execute code in kernel mode."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1017",
+        "title": "",
+        "body": "Al Viro discovered a race condition in the /proc handling of network devices. A (local) attacker could exploit the stale reference after interface shutdown to cause a denial of service or possibly execute code in kernel mode."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1018",
+        "title": "",
+        "body": "Al Viro discovered a race condition in the /proc handling of network devices. A (local) attacker could exploit the stale reference after interface shutdown to cause a denial of service or possibly execute code in kernel mode."
+      }
+    ],
+    "CVE-2005-2800": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1017",
+        "title": "",
+        "body": "Jan Blunck discovered that repeated failed reads of /proc/scsi/sg/devices leak memory, which allows a denial of service attack."
+      }
+    ],
+    "CVE-2005-2919": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-824",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2005-2959": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-870",
+        "title": "",
+        "body": "Tavis Ormandy noticed that sudo, a program that provides limited superuser privileges to specific users, does not clean the environmentsufficiently. The SHELLOPTS and PS4 variables are dangerous and arestill passed through to the program running as privileged user. Thiscan result in the execution of arbitrary commands as privileged userwhen a bash script is executed. These vulnerabilities can only beexploited by users who have been granted limited super userprivileges.For the old stable distribution (woody) this problem has been fixed inversion 1.6.6-1.4.For the stable distribution (sarge) this problem has been fixed inversion 1.6.8p7-1.2.For the unstable distribution (sid) this problem has been fixed inversion 1.6.8p9-3.We recommend that you upgrade your sudo package."
+      }
+    ],
+    "CVE-2005-2972": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-894",
+        "title": "",
+        "body": "Chris Evans discovered several buffer overflows in the RTF importmechanism of AbiWord, a WYSIWYG word processor based on GTK 2.Opening a specially crafted RTF file could lead to the execution ofarbitrary code.For the old stable distribution (woody) these problems have been fixed inversion 1.0.2+cvs.2002.06.05-1woody3.For the stable distribution (sarge) these problems have been fixed inversion 2.2.7-3sarge2.For the unstable distribution (sid) these problems have been fixed inversion 2.4.1-1.We recommend that you upgrade your abiword package."
+      }
+    ],
+    "CVE-2005-2975": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-913",
+        "title": "",
+        "body": "Ludwig Nussel discovered an infinite loop when processing XPM images that allows an attacker to cause a denial of service via a specially crafted XPM file."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-911",
+        "title": "",
+        "body": "Ludwig Nussel discovered an infinite loop when processing XPM images that allows an attacker to cause a denial of service via a specially crafted XPM file."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-913",
+        "title": "",
+        "body": "Ludwig Nussel discovered an infinite loop when processing XPM images that allows an attacker to cause a denial of service via a specially crafted XPM file."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-911",
+        "title": "",
+        "body": "Ludwig Nussel discovered an infinite loop when processing XPM images that allows an attacker to cause a denial of service via a specially crafted XPM file."
+      }
+    ],
+    "CVE-2005-2976": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-913",
+        "title": "",
+        "body": "Ludwig Nussel discovered an integer overflow in the way XPM images are processed that could lead to the execution of arbitrary code or crash the application via a specially crafted XPM file."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-911",
+        "title": "",
+        "body": "Ludwig Nussel discovered an integer overflow in the way XPM images are processed that could lead to the execution of arbitrary code or crash the application via a specially crafted XPM file."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-913",
+        "title": "",
+        "body": "Ludwig Nussel discovered an integer overflow in the way XPM images are processed that could lead to the execution of arbitrary code or crash the application via a specially crafted XPM file."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-911",
+        "title": "",
+        "body": "Ludwig Nussel discovered an integer overflow in the way XPM images are processed that could lead to the execution of arbitrary code or crash the application via a specially crafted XPM file."
+      }
+    ],
+    "CVE-2005-3055": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1017",
+        "title": "",
+        "body": "Harald Welte discovered that if a process issues a USB Request Block (URB) to a device and terminates before the URB completes, a stale pointer would be dereferenced. This could be used to trigger a denial of service attack."
+      }
+    ],
+    "CVE-2005-3088": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-900",
+        "title": "",
+        "body": "Due to restrictive dependency definition for fetchmail-ssl the updated fetchmailconfpackage couldn't be installed on the old stable distribution (woody)together with fetchmail-ssl. Hence, this update loosens it, so thatthe update can be pulled in. For completeness we're including theoriginal advisory text:Thomas Wolff discovered that the fetchmailconf program which isprovided as part of fetchmail, an SSL enabled POP3, APOP, IMAP mailgatherer/forwarder, creates the new configuration in an insecurefashion that can lead to leaking passwords for mail accounts to localusers.This update also fixes a regression in the package for stable causedby the last security update.For the old stable distribution (woody) this problem has been fixed inversion 5.9.11-6.4 of fetchmail and in version 5.9.11-6.3 offetchmail-ssl.For the stable distribution (sarge) this problem has been fixed inversion 6.2.5-12sarge3.For the unstable distribution (sid) this problem has been fixed inversion 6.2.5.4-1.We recommend that you upgrade your fetchmail package."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-900",
+        "title": "",
+        "body": "Due to restrictive dependency definition for fetchmail-ssl the updated fetchmailconfpackage couldn't be installed on the old stable distribution (woody)together with fetchmail-ssl. Hence, this update loosens it, so thatthe update can be pulled in. For completeness we're including theoriginal advisory text:Thomas Wolff discovered that the fetchmailconf program which isprovided as part of fetchmail, an SSL enabled POP3, APOP, IMAP mailgatherer/forwarder, creates the new configuration in an insecurefashion that can lead to leaking passwords for mail accounts to localusers.This update also fixes a regression in the package for stable causedby the last security update.For the old stable distribution (woody) this problem has been fixed inversion 5.9.11-6.4 of fetchmail and in version 5.9.11-6.3 offetchmail-ssl.For the stable distribution (sarge) this problem has been fixed inversion 6.2.5-12sarge3.For the unstable distribution (sid) this problem has been fixed inversion 6.2.5.4-1.We recommend that you upgrade your fetchmail package."
+      }
+    ],
+    "CVE-2005-3109": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-922",
+        "title": "",
+        "body": "The HFS and HFS+ (hfsplus) modules allow local attackers to cause a denial of service (oops) by using hfsplus to mount a filesystem that is not hfsplus."
+      }
+    ],
+    "CVE-2005-3181": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1017",
+        "title": "",
+        "body": "Robert Derr discovered that the audit subsystem uses an incorrect function to free memory, which allows a denial of service attack."
+      }
+    ],
+    "CVE-2005-3185": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-919",
+        "title": "",
+        "body": "A buffer overflow has been discovered in libcurl that could allow the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-919",
+        "title": "",
+        "body": "A buffer overflow has been discovered in libcurl that could allow the execution of arbitrary code."
+      }
+    ],
+    "CVE-2005-3191": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-936",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf, the Portable Document Format (PDF) suite, which isalso present in libextractor, a library to extract arbitrary meta-datafrom files, and which can lead to a denial of service by crashing theapplication or possibly to the execution of arbitrary code.The old stable distribution (woody) does not contain libextractorpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.4.2-2sarge2.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your libextractor packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-950",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in CUPS, the Common UNIXPrinting System, and which can lead to a denial of service by crashingthe application or possibly to the execution of arbitrary code.For the old stable distribution (woody) these problems have been fixed inversion 1.1.14-5woody14.CUPS doesn't use the xpdf source anymore since 1.1.22-7, when it switchedto using xpdf-utils for PDF processing.We recommend that you upgrade your CUPS packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-961",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdfkit.framework, theGNUstep framework for rendering PDF content, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdfkit.frameworkpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.8-2sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdfkit.framework package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-962",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdftohtml, a utility thattranslates PDF documents into HTML format, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdftohtml packages.For the stable distribution (sarge) these problems have been fixed inversion 0.36-11sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdftohtml package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-936",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf, the Portable Document Format (PDF) suite, which isalso present in libextractor, a library to extract arbitrary meta-datafrom files, and which can lead to a denial of service by crashing theapplication or possibly to the execution of arbitrary code.The old stable distribution (woody) does not contain libextractorpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.4.2-2sarge2.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your libextractor packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-950",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in CUPS, the Common UNIXPrinting System, and which can lead to a denial of service by crashingthe application or possibly to the execution of arbitrary code.For the old stable distribution (woody) these problems have been fixed inversion 1.1.14-5woody14.CUPS doesn't use the xpdf source anymore since 1.1.22-7, when it switchedto using xpdf-utils for PDF processing.We recommend that you upgrade your CUPS packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-961",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdfkit.framework, theGNUstep framework for rendering PDF content, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdfkit.frameworkpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.8-2sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdfkit.framework package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-962",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdftohtml, a utility thattranslates PDF documents into HTML format, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdftohtml packages.For the stable distribution (sarge) these problems have been fixed inversion 0.36-11sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdftohtml package."
+      }
+    ],
+    "CVE-2005-3192": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-936",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf, the Portable Document Format (PDF) suite, which isalso present in libextractor, a library to extract arbitrary meta-datafrom files, and which can lead to a denial of service by crashing theapplication or possibly to the execution of arbitrary code.The old stable distribution (woody) does not contain libextractorpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.4.2-2sarge2.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your libextractor packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-950",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in CUPS, the Common UNIXPrinting System, and which can lead to a denial of service by crashingthe application or possibly to the execution of arbitrary code.For the old stable distribution (woody) these problems have been fixed inversion 1.1.14-5woody14.CUPS doesn't use the xpdf source anymore since 1.1.22-7, when it switchedto using xpdf-utils for PDF processing.We recommend that you upgrade your CUPS packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-961",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdfkit.framework, theGNUstep framework for rendering PDF content, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdfkit.frameworkpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.8-2sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdfkit.framework package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-962",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdftohtml, a utility thattranslates PDF documents into HTML format, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdftohtml packages.For the stable distribution (sarge) these problems have been fixed inversion 0.36-11sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdftohtml package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-937",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based buffer overflows in xpdf,the Portable Document Format (PDF) suite, which is also present intetex-bin, the binary files of teTeX, and which can lead to a denial ofservice by crashing the application or possibly to the execution ofarbitrary code.For the old stable distribution (woody) these problems have been fixed inversion 1.0.7+20011202-7.7.For the stable distribution (sarge) these problems have been fixed inversion 2.0.2-30sarge4.For the unstable distribution (sid) these problems have been fixed inversion 0.4.3-2 of poppler against which tetex-bin links.We recommend that you upgrade your tetex-bin package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-936",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf, the Portable Document Format (PDF) suite, which isalso present in libextractor, a library to extract arbitrary meta-datafrom files, and which can lead to a denial of service by crashing theapplication or possibly to the execution of arbitrary code.The old stable distribution (woody) does not contain libextractorpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.4.2-2sarge2.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your libextractor packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-950",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in CUPS, the Common UNIXPrinting System, and which can lead to a denial of service by crashingthe application or possibly to the execution of arbitrary code.For the old stable distribution (woody) these problems have been fixed inversion 1.1.14-5woody14.CUPS doesn't use the xpdf source anymore since 1.1.22-7, when it switchedto using xpdf-utils for PDF processing.We recommend that you upgrade your CUPS packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-961",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdfkit.framework, theGNUstep framework for rendering PDF content, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdfkit.frameworkpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.8-2sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdfkit.framework package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-962",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdftohtml, a utility thattranslates PDF documents into HTML format, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdftohtml packages.For the stable distribution (sarge) these problems have been fixed inversion 0.36-11sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdftohtml package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-937",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based buffer overflows in xpdf,the Portable Document Format (PDF) suite, which is also present intetex-bin, the binary files of teTeX, and which can lead to a denial ofservice by crashing the application or possibly to the execution ofarbitrary code.For the old stable distribution (woody) these problems have been fixed inversion 1.0.7+20011202-7.7.For the stable distribution (sarge) these problems have been fixed inversion 2.0.2-30sarge4.For the unstable distribution (sid) these problems have been fixed inversion 0.4.3-2 of poppler against which tetex-bin links.We recommend that you upgrade your tetex-bin package."
+      }
+    ],
+    "CVE-2005-3193": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-936",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf, the Portable Document Format (PDF) suite, which isalso present in libextractor, a library to extract arbitrary meta-datafrom files, and which can lead to a denial of service by crashing theapplication or possibly to the execution of arbitrary code.The old stable distribution (woody) does not contain libextractorpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.4.2-2sarge2.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your libextractor packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-950",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in CUPS, the Common UNIXPrinting System, and which can lead to a denial of service by crashingthe application or possibly to the execution of arbitrary code.For the old stable distribution (woody) these problems have been fixed inversion 1.1.14-5woody14.CUPS doesn't use the xpdf source anymore since 1.1.22-7, when it switchedto using xpdf-utils for PDF processing.We recommend that you upgrade your CUPS packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-961",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdfkit.framework, theGNUstep framework for rendering PDF content, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdfkit.frameworkpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.8-2sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdfkit.framework package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-962",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdftohtml, a utility thattranslates PDF documents into HTML format, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdftohtml packages.For the stable distribution (sarge) these problems have been fixed inversion 0.36-11sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdftohtml package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-936",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf, the Portable Document Format (PDF) suite, which isalso present in libextractor, a library to extract arbitrary meta-datafrom files, and which can lead to a denial of service by crashing theapplication or possibly to the execution of arbitrary code.The old stable distribution (woody) does not contain libextractorpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.4.2-2sarge2.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your libextractor packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-950",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in CUPS, the Common UNIXPrinting System, and which can lead to a denial of service by crashingthe application or possibly to the execution of arbitrary code.For the old stable distribution (woody) these problems have been fixed inversion 1.1.14-5woody14.CUPS doesn't use the xpdf source anymore since 1.1.22-7, when it switchedto using xpdf-utils for PDF processing.We recommend that you upgrade your CUPS packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-961",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdfkit.framework, theGNUstep framework for rendering PDF content, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdfkit.frameworkpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.8-2sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdfkit.framework package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-962",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdftohtml, a utility thattranslates PDF documents into HTML format, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdftohtml packages.For the stable distribution (sarge) these problems have been fixed inversion 0.36-11sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdftohtml package."
+      }
+    ],
+    "CVE-2005-3257": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1017",
+        "title": "",
+        "body": "Rudolf Polzer discovered that the kernel improperly restricts access to the KDSKBSENT ioctl, which can possibly lead to privilege escalation."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1018",
+        "title": "",
+        "body": "Rudolf Polzer discovered that the kernel improperly restricts access to the KDSKBSENT ioctl, which can possibly lead to privilege escalation."
+      }
+    ],
+    "CVE-2005-3273": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-922",
+        "title": "",
+        "body": "The ioctl for the packet radio ROSE protocol does not properly verify the arguments when setting a new router, which allows attackers to trigger out-of-bounds errors."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-922",
+        "title": "",
+        "body": "The ioctl for the packet radio ROSE protocol does not properly verify the arguments when setting a new router, which allows attackers to trigger out-of-bounds errors."
+      }
+    ],
+    "CVE-2005-3325": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-893",
+        "title": "",
+        "body": "Remco Verhoef has discovered a vulnerability in acidlab, AnalysisConsole for Intrusion Databases, and in acidbase, Basic Analysis andSecurity Engine, which can be exploited by malicious users to conductSQL injection attacks.The maintainers of Analysis Console for Intrusion Databases (ACID) in Debian,of which BASE is a fork off, after a security audit of both BASE and ACIDhave determined that the flaw found not only affected the base_qry_main.php (inBASE) or acid_qry_main.php (in ACID) component but was also found in otherelements of the consoles due to improper parameter validation and filtering.All the SQL injection bugs and Cross Site Scripting bugs found have beenfixed in the Debian package, closing all the different attack vectors detected.For the old stable distribution (woody) this problem has been fixed inversion 0.9.6b20-2.1.For the stable distribution (sarge) this problem has been fixed inversion 0.9.6b20-10.1.For the unstable distribution (sid) this problem has been fixed inversion 0.9.6b20-13 and in version 1.2.1-1 of acidbase.We recommend that you upgrade your acidlab and acidbase package."
+      }
+    ],
+    "CVE-2005-3347": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-898",
+        "title": "",
+        "body": "Christopher Kunz discovered that local variables get overwritten unconditionally and are trusted later, which could lead to the inclusion of arbitrary files."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-899",
+        "title": "",
+        "body": "Christopher Kunz discovered that local variables get overwritten unconditionally in phpsysinfo, which are also present in egroupware, and are trusted later, which could lead to the inclusion of arbitrary files."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-897",
+        "title": "",
+        "body": "Christopher Kunz discovered that local variables get overwritten unconditionally and are trusted later, which could lead to the inclusion of arbitrary files."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-898",
+        "title": "",
+        "body": "Christopher Kunz discovered that local variables get overwritten unconditionally and are trusted later, which could lead to the inclusion of arbitrary files."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-899",
+        "title": "",
+        "body": "Christopher Kunz discovered that local variables get overwritten unconditionally in phpsysinfo, which are also present in egroupware, and are trusted later, which could lead to the inclusion of arbitrary files."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-897",
+        "title": "",
+        "body": "Christopher Kunz discovered that local variables get overwritten unconditionally and are trusted later, which could lead to the inclusion of arbitrary files."
+      }
+    ],
+    "CVE-2005-3348": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-898",
+        "title": "",
+        "body": "Christopher Kunz discovered that user-supplied input is used unsanitised, causing a HTTP Response splitting problem."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-899",
+        "title": "",
+        "body": "Christopher Kunz discovered that user-supplied input is used unsanitised in phpsysinfo and imported in egroupware, causing a HTTP Response splitting problem."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-897",
+        "title": "",
+        "body": "Christopher Kunz discovered that user-supplied input is used unsanitised, causing a HTTP Response splitting problem."
+      }
+    ],
+    "CVE-2005-3354": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-906",
+        "title": "",
+        "body": "Colin Leroy discovered several buffer overflows in a number ofimporter routines in sylpheed, a light-weight e-mail client with GTK+,that could lead to the execution of arbitrary code.The following matrix explains which versions fix this vulnerability old stable (woody) stable (sarge) unstable (sid) sylpheed 0.7.4-4woody1 1.0.4-1sarge1 2.0.4-1 sylpheed-gtk1 n/a n/a 1.0.6-1 sylpheed-claws 0.7.4claws-3woody1 1.0.4-1sarge1 1.0.5-2 sylpheed-claws-gtk2 n/a n/a 1.9.100-1 We recommend that you upgrade your sylpheed package."
+      }
+    ],
+    "CVE-2005-3355": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-901",
+        "title": "",
+        "body": "Ludwig Nussel discovered that the theme parameter to HTTP requests may be used for path traversal."
+      }
+    ],
+    "CVE-2005-3501": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-887",
+        "title": "",
+        "body": "A specially crafted CAB file could cause ClamAV to be locked in an infinite loop and use all available processor resources, resulting in a denial of service."
+      },
+      {
+        "url": "http://www.debian.org/security/2005/dsa-887",
+        "title": "",
+        "body": "A specially crafted CAB file could cause ClamAV to be locked in an infinite loop and use all available processor resources, resulting in a denial of service."
+      }
+    ],
+    "CVE-2005-3534": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-924",
+        "title": "",
+        "body": "Kurt Fitzner discovered a buffer overflow in nbd, the network blockdevice client and server that could potentially allow arbitrary code onthe NBD server.For the old stable distribution (woody) this problem has been fixed inversion 1.2cvs20020320-3.woody.3.For the stable distribution (sarge) this problem has been fixed inversion 2.7.3-3sarge1.For the unstable distribution (sid) this problem will be fixed soon.We recommend that you upgrade your nbd-server package."
+      }
+    ],
+    "CVE-2005-3570": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-914",
+        "title": "",
+        "body": "A vulnerability has been discovered in horde2, a web applicationsuite, that allows attackers to insert arbitrary script code into theerror web page.The old stable distribution (woody) does not contain horde2 packages.For the stable distribution (sarge) this problem has been fixed inversion 2.2.8-1sarge1.For the unstable distribution (sid) this problem has been fixed inversion 2.2.9-1.We recommend that you upgrade your horde2 package."
+      }
+    ],
+    "CVE-2005-3624": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-936",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf, the Portable Document Format (PDF) suite, which isalso present in libextractor, a library to extract arbitrary meta-datafrom files, and which can lead to a denial of service by crashing theapplication or possibly to the execution of arbitrary code.The old stable distribution (woody) does not contain libextractorpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.4.2-2sarge2.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your libextractor packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-950",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in CUPS, the Common UNIXPrinting System, and which can lead to a denial of service by crashingthe application or possibly to the execution of arbitrary code.For the old stable distribution (woody) these problems have been fixed inversion 1.1.14-5woody14.CUPS doesn't use the xpdf source anymore since 1.1.22-7, when it switchedto using xpdf-utils for PDF processing.We recommend that you upgrade your CUPS packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-961",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdfkit.framework, theGNUstep framework for rendering PDF content, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdfkit.frameworkpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.8-2sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdfkit.framework package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-962",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdftohtml, a utility thattranslates PDF documents into HTML format, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdftohtml packages.For the stable distribution (sarge) these problems have been fixed inversion 0.36-11sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdftohtml package."
+      }
+    ],
+    "CVE-2005-3625": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-936",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf, the Portable Document Format (PDF) suite, which isalso present in libextractor, a library to extract arbitrary meta-datafrom files, and which can lead to a denial of service by crashing theapplication or possibly to the execution of arbitrary code.The old stable distribution (woody) does not contain libextractorpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.4.2-2sarge2.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your libextractor packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-950",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in CUPS, the Common UNIXPrinting System, and which can lead to a denial of service by crashingthe application or possibly to the execution of arbitrary code.For the old stable distribution (woody) these problems have been fixed inversion 1.1.14-5woody14.CUPS doesn't use the xpdf source anymore since 1.1.22-7, when it switchedto using xpdf-utils for PDF processing.We recommend that you upgrade your CUPS packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-961",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdfkit.framework, theGNUstep framework for rendering PDF content, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdfkit.frameworkpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.8-2sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdfkit.framework package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-962",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdftohtml, a utility thattranslates PDF documents into HTML format, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdftohtml packages.For the stable distribution (sarge) these problems have been fixed inversion 0.36-11sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdftohtml package."
+      }
+    ],
+    "CVE-2005-3626": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-936",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf, the Portable Document Format (PDF) suite, which isalso present in libextractor, a library to extract arbitrary meta-datafrom files, and which can lead to a denial of service by crashing theapplication or possibly to the execution of arbitrary code.The old stable distribution (woody) does not contain libextractorpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.4.2-2sarge2.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your libextractor packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-950",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in CUPS, the Common UNIXPrinting System, and which can lead to a denial of service by crashingthe application or possibly to the execution of arbitrary code.For the old stable distribution (woody) these problems have been fixed inversion 1.1.14-5woody14.CUPS doesn't use the xpdf source anymore since 1.1.22-7, when it switchedto using xpdf-utils for PDF processing.We recommend that you upgrade your CUPS packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-961",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdfkit.framework, theGNUstep framework for rendering PDF content, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdfkit.frameworkpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.8-2sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdfkit.framework package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-962",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdftohtml, a utility thattranslates PDF documents into HTML format, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdftohtml packages.For the stable distribution (sarge) these problems have been fixed inversion 0.36-11sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdftohtml package."
+      }
+    ],
+    "CVE-2005-3627": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-936",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf, the Portable Document Format (PDF) suite, which isalso present in libextractor, a library to extract arbitrary meta-datafrom files, and which can lead to a denial of service by crashing theapplication or possibly to the execution of arbitrary code.The old stable distribution (woody) does not contain libextractorpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.4.2-2sarge2.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your libextractor packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-950",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in CUPS, the Common UNIXPrinting System, and which can lead to a denial of service by crashingthe application or possibly to the execution of arbitrary code.For the old stable distribution (woody) these problems have been fixed inversion 1.1.14-5woody14.CUPS doesn't use the xpdf source anymore since 1.1.22-7, when it switchedto using xpdf-utils for PDF processing.We recommend that you upgrade your CUPS packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-961",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdfkit.framework, theGNUstep framework for rendering PDF content, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdfkit.frameworkpackages.For the stable distribution (sarge) these problems have been fixed inversion 0.8-2sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdfkit.framework package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-962",
+        "title": "",
+        "body": "\"infamous41md\" and Chris Evans discovered several heap based bufferoverflows in xpdf which are also present in pdftohtml, a utility thattranslates PDF documents into HTML format, and which can lead to adenial of service by crashing the application or possibly to theexecution of arbitrary code.The old stable distribution (woody) does not contain pdftohtml packages.For the stable distribution (sarge) these problems have been fixed inversion 0.36-11sarge1.For the unstable distribution (sid) these problems will be fixed soon.We recommend that you upgrade your pdftohtml package."
+      }
+    ],
+    "CVE-2005-3662": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-904",
+        "title": "",
+        "body": "Greg Roelofs discovered and fixed several buffer overflows in pnmtopngwhich is also included in netpbm, a collection of graphic conversionutilities, that can lead to the execution of arbitrary code via aspecially crafted PNM file.For the oldstable distribution (woody) these problems have been fixed inversion 9.20-8.5.For the stable distribution (sarge) these problems have been fixed inversion 10.0-8sarge2.For the unstable distribution (sid) these problems will be fixed inversion 10.0-11.We recommend that you upgrade your netpbm package."
+      }
+    ],
+    "CVE-2005-3732": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-965",
+        "title": "",
+        "body": "The Internet Key Exchange version 1 (IKEv1) implementation in racoonfrom ipsec-tools, IPsec tools for Linux, try to dereference a NULLpointer under certain conditions which allows a remote attacker tocause a denial of service.The old stable distribution (woody) does not contain ipsec-tools.For the stable distribution (sarge) this problem has been fixed inversion 0.5.2-1sarge1.For the unstable distribution (sid) this problem has been fixed inversion 0.6.3-1.We recommend that you upgrade your racoon package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-965",
+        "title": "",
+        "body": "The Internet Key Exchange version 1 (IKEv1) implementation in racoonfrom ipsec-tools, IPsec tools for Linux, try to dereference a NULLpointer under certain conditions which allows a remote attacker tocause a denial of service.The old stable distribution (woody) does not contain ipsec-tools.For the stable distribution (sarge) this problem has been fixed inversion 0.5.2-1sarge1.For the unstable distribution (sid) this problem has been fixed inversion 0.6.3-1.We recommend that you upgrade your racoon package."
+      }
+    ],
+    "CVE-2005-3759": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-909",
+        "title": "",
+        "body": "Daniel Schreckling discovered that the MIME viewer in horde3, a webapplication suite, does not always sanitise its input leaving apossibility to force the return of malicious code that could beexecuted on the victims machine.The old stable distribution (woody) does not contain horde3 packages.For the stable distribution (sarge) these problems have been fixed inversion 3.0.4-4sarge2.For the unstable distribution (sid) these problems have been fixed inversion 3.0.7-1.We recommend that you upgrade your horde3 package."
+      }
+    ],
+    "CVE-2005-3784": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1017",
+        "title": "",
+        "body": "The auto-reaping of child processes functionality included ptraced-attached processes, which allows denial of service through dangling references."
+      }
+    ],
+    "CVE-2005-3806": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1017",
+        "title": "",
+        "body": "Yen Zheng discovered that the IPv6 flow label code modified an incorrect variable, which could lead to memory corruption and denial of service."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1018",
+        "title": "",
+        "body": "Yen Zheng discovered that the IPv6 flow label code modified an incorrect variable, which could lead to memory corruption and denial of service."
+      }
+    ],
+    "CVE-2005-3857": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1017",
+        "title": "",
+        "body": "Chris Wright discovered that excessive allocation of broken file lock leases in the VFS layer can exhaust memory and fill up the system logging, which allows denial of service."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1018",
+        "title": "",
+        "body": "Chris Wright discovered that excessive allocation of broken file lock leases in the VFS layer can exhaust memory and fill up the system logging, which allows denial of service."
+      }
+    ],
+    "CVE-2005-3863": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1083",
+        "title": "",
+        "body": "Mehdi Oudad and Kevin Fernandez discovered a buffer overflow in thektools library which is used in motor, an integrated developmentenvironment for C, C++ and Java, which may lead local attackers toexecute arbitrary code.For the old stable distribution (woody) this problem has been fixed inversion 3.2.2-2woody1.For the stable distribution (sarge) this problem has been fixed inversion 3.4.0-2sarge1.For the unstable distribution (sid) this problem has been fixed inversion 3.4.0-6.We recommend that you upgrade your motor package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1088",
+        "title": "",
+        "body": "Mehdi Oudad and Kevin Fernandez discovered a buffer overflow in thektools library which is used in centericq, a text-mode multi-protocolinstant messenger client, which may lead local or remote attackers toexecute arbitrary code.For the old stable distribution (woody) this problem has been fixed inversion 4.5.1-1.1woody2.For the stable distribution (sarge) this problem has been fixed inversion 4.20.0-1sarge4.For the unstable distribution (sid) this problem has been fixed inversion 4.21.0-6.We recommend that you upgrade your centericq package."
+      }
+    ],
+    "CVE-2005-3962": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-943",
+        "title": "",
+        "body": "Jack Louis discovered an integer overflow in Perl, Larry Wall'sPractical Extraction and Report Language, that allows attackers tooverwrite arbitrary memory and possibly execute arbitrary code viaspecially crafted content that is passed to vulnerable format stringsof third party software.The old stable distribution (woody) does not seem to be affected bythis problem.For the stable distribution (sarge) this problem has been fixed inversion 5.8.4-8sarge3.For the unstable distribution (sid) this problem has been fixed inversion 5.8.7-9.We recommend that you upgrade your perl packages."
+      }
+    ],
+    "CVE-2005-4048": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1004",
+        "title": "",
+        "body": "Simon Kilvington discovered that specially crafted PNG images can triggera heap overflow in libavcodec, the multimedia library of ffmpeg, which maylead to the execution of arbitrary code.The vlc media player links statically against libavcodec.The old stable distribution (woody) isn't affected by this problem.For the stable distribution (sarge) this problem has been fixed inversion 0.8.1.svn20050314-1sarge1.For the unstable distribution (sid) this problem has been fixed inversion 0.8.4.debian-2.We recommend that you upgrade your vlc package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1005",
+        "title": "",
+        "body": "Simon Kilvington discovered that specially crafted PNG images can triggera heap overflow in libavcodec, the multimedia library of ffmpeg, which maylead to the execution of arbitrary code.xine-lib includes a local copy of libavcodec.The old stable distribution (woody) isn't affected by this problem.For the stable distribution (sarge) this problem has been fixed inversion 1.0.1-1sarge2.For the unstable distribution (sid) this problem has been fixed inversion 1.0.1-1.5.We recommend that you upgrade your xine-lib package."
+      }
+    ],
+    "CVE-2005-4077": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-919",
+        "title": "",
+        "body": "Stefan Esser discovered several off-by-one errors that allows local users to trigger a buffer overflow and cause a denial of service or bypass PHP security restrictions via certain URLs."
+      }
+    ],
+    "CVE-2005-4190": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1033",
+        "title": "",
+        "body": "Several Cross-Site-Scripting vulnerabilities have been discovered in the \"share edit window\"."
+      }
+    ],
+    "CVE-2005-4667": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1012",
+        "title": "",
+        "body": "A buffer overflow in the command line argument parsing has beendiscovered in unzip, the de-archiver for ZIP files, that could lead tothe execution of arbitrary code.For the old stable distribution (woody) this problem has been fixed inversion 5.50-1woody6.For the stable distribution (sarge) this problem has been fixed inversion 5.52-1sarge4.For the unstable distribution (sid) this problem has been fixed inversion 5.52-7.We recommend that you upgrade your unzip package."
+      }
+    ],
+    "CVE-2005-4878": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-893",
+        "title": "",
+        "body": "Remco Verhoef has discovered a vulnerability in acidlab, AnalysisConsole for Intrusion Databases, and in acidbase, Basic Analysis andSecurity Engine, which can be exploited by malicious users to conductSQL injection attacks.The maintainers of Analysis Console for Intrusion Databases (ACID) in Debian,of which BASE is a fork off, after a security audit of both BASE and ACIDhave determined that the flaw found not only affected the base_qry_main.php (inBASE) or acid_qry_main.php (in ACID) component but was also found in otherelements of the consoles due to improper parameter validation and filtering.All the SQL injection bugs and Cross Site Scripting bugs found have beenfixed in the Debian package, closing all the different attack vectors detected.For the old stable distribution (woody) this problem has been fixed inversion 0.9.6b20-2.1.For the stable distribution (sarge) this problem has been fixed inversion 0.9.6b20-10.1.For the unstable distribution (sid) this problem has been fixed inversion 0.9.6b20-13 and in version 1.2.1-1 of acidbase.We recommend that you upgrade your acidlab and acidbase package."
+      }
+    ]
+  }
+}

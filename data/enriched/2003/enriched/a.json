@@ -1,0 +1,2272 @@
+{
+  "year": 2003,
+  "total": 220,
+  "reference": "securityfocus.com",
+  "reports": {
+    "CVE-2003-0218": [
+      {
+        "url": "http://www.securityfocus.com/bid/7202",
+        "title": "Monkey HTTP Daemon Excessive POST Data Buffer Overflow Vulnerability",
+        "body": "Monkey HTTP Daemon is prone to a boundary condition error.  This condition occurs when the server attempts to handle excessive HTTP POST data.  Exploitation could allow a remote attacker to corrupt sensitive regions of memory with attacker-supplied values, resulting in code execution.  Exploitation attempts may also result in a denial of service."
+      }
+    ],
+    "CVE-2003-0372": [
+      {
+        "url": "http://www.securityfocus.com/bid/7664",
+        "title": "Nessus LibNASL Arbitrary Code Execution Vulnerability",
+        "body": "Nessus has reported that various flaws have been discovered in the 'libnasl' library used by the Nessus application. As a result, a malicious NASL script may be able to break outside of the established sandbox environment and execute arbitrary commands on the local system.  Note that this malicious script must be a legitimate plugin that has been uploaded to the Nessus server. Furthermore, the affected Nessus application must have enabled the 'plugins_upload' option (which is disabled by default)."
+      }
+    ],
+    "CVE-2003-0373": [
+      {
+        "url": "http://www.securityfocus.com/bid/7664",
+        "title": "Nessus LibNASL Arbitrary Code Execution Vulnerability",
+        "body": "Nessus has reported that various flaws have been discovered in the 'libnasl' library used by the Nessus application. As a result, a malicious NASL script may be able to break outside of the established sandbox environment and execute arbitrary commands on the local system.  Note that this malicious script must be a legitimate plugin that has been uploaded to the Nessus server. Furthermore, the affected Nessus application must have enabled the 'plugins_upload' option (which is disabled by default)."
+      }
+    ],
+    "CVE-2003-0845": [
+      {
+        "url": "http://www.securityfocus.com/bid/8773",
+        "title": "JBoss HSQLDB Remote Command Injection Vulnerability",
+        "body": "A remote command-injection vulnerability has been reported in JBoss.  The issue is reportedly exposed via the HSQLDB component, which is a SQL database server that manages JMS connections. Because of a number of flaws, an attacker can pass commands to the HSQLDB component via the port it listens on. Note that the port may vary between versions; by default it is 1701/TCP for JBoss 3.2.1 and 1476/TCP for 3.0.8.  Attackers can exploit this issue to mount a number of attacks, including execution of database commands, denial-of-service attacks, log manipulation, information disclosure, and execution of operating system commands on some supported platforms.  This issue is reported to exist with JBoss 3.2.1/3.0.8 on any Java 1.4.x-enabled platforms.  Other versions may also be affected."
+      }
+    ],
+    "CVE-2003-1240": [
+      {
+        "url": "http://www.securityfocus.com/bid/6935",
+        "title": "CuteNews Remote File Include Vulnerability",
+        "body": "CuteNews is prone to an issue that may allow remote attackers to include files located on remote servers.Under some circumstances, it is possible for remote attackers to influence the include path for several include files to point to an external file on a remote server.If the remote file is a malicious file, this may be exploited to execute arbitrary system commands in the context of the web server."
+      }
+    ],
+    "CVE-2003-1244": [
+      {
+        "url": "http://www.securityfocus.com/bid/6888",
+        "title": "PHPBB2 Page_Header.PHP SQL Injection Vulnerability",
+        "body": "A SQL injection vulnerability has been reported in phpBB2.phpBB2, in some cases, does not sufficiently sanitize user-supplied input which is used when constructing SQL queries. As a result, attackers may supply malicious parameters to manipulate the structure and logic of SQL queries. This may result in unauthorized operations being performed on the underlying database. This issue may be exploited to cause sensitive information to be disclosed to a remote attacker."
+      }
+    ],
+    "CVE-2003-1340": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/323425",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/480866/100/0/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1460": [
+      {
+        "url": "http://www.securityfocus.com/bid/7460",
+        "title": "Worker Filemanager Directory Creation Race Condition Vulnerability",
+        "body": "A vulnerability has been discovered in Worker Filemanager 2.7. The problem lies in the temporary permissions set on a destination directory during data transfer. As a result, during a specific time window an attacker may be capable of accessing sensitive files located in the directory. Exploitation of this issue may allow an attacker to view sensitive data located in files within the directory.  Though unconfirmed, it may also be possible to tamper with these files if they are writeable in such a way that elevated privileges may be obtained."
+      }
+    ],
+    "CVE-2003-1474": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/321001",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1480": [
+      {
+        "url": "http://www.securityfocus.com/bid/7500",
+        "title": "MySQL Weak Password Encryption Vulnerability",
+        "body": "MySQL has been reported to implement a weak password encryption algorithm. It has been reported that the MySQL function used to encrypt MySQL passwords makes just one pass over the password and employs a weak left shift based cipher. The hash may be cracked in little time using a bruteforce method.An attacker may use information recovered in this way to aid in further attacks launched against the underlying system."
+      }
+    ],
+    "CVE-2003-1485": [
+      {
+        "url": "http://www.securityfocus.com/bid/7568",
+        "title": "Clearswift MailSweeper Attachment Filename Validation Vulnerability",
+        "body": "A vulnerability has been reported in how MailSweeper handles filenames for attachments. MailSweeper does not sufficiently validate certain types of malformed filenames.  This could lead to the bypassing of MailSweeper filtering."
+      }
+    ],
+    "CVE-2003-1508": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/342179",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/8880",
+        "title": "mIRC DCC SEND Variant Buffer Overflow Vulnerability",
+        "body": "mIRC has been reported to be prone to a variant DCC SEND buffer overflow vulnerability. The issue is said to occur when receiving a filename of excessive length, containing certain characters, and the victim user carries out a specific sequence of actions. It is said that this issue will result in a denial of service condition, however due to the nature of this issue the possibility of code execution has not been entirely ruled out."
+      }
+    ],
+    "CVE-2003-1511": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/341452",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/8841",
+        "title": "Bajie HTTP Server Example Scripts And Servlets Cross-Site Scripting Vulnerability",
+        "body": "Demonstration scripts and servlets that are distributed as part of Bajie HTTP Server have been reported prone to multiple cross-site scripting vulnerabilities.It has been reported that a remote attacker may construct a malicious link containing script and HTML code to any one of the vulnerable demonstration scripts or servlets on the affected server. If this link is followed the code contained therein will be rendered in the browser of the user who followed the link."
+      }
+    ],
+    "CVE-2003-1512": [
+      {
+        "url": "http://www.securityfocus.com/bid/8818",
+        "title": "mIRC DCC SEND Buffer Overflow Vulnerability",
+        "body": "A vulnerability has been reported to exist in the mIRC client that may allow a remote attacker to crash a vulnerable mIRC client. The condition is most likely present due to insufficient boundary checking performed on 'DCC SEND' requests.It has been reported that when received, a malicious 'DDC SEND' request can trigger a fatal error and cause an affected mIRC client to crash."
+      }
+    ],
+    "CVE-2003-1520": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/341908",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/8863",
+        "title": "FuzzyMonkey MyClassifieds Email Variable SQL Injection Vulnerability",
+        "body": "It has been reported that FuzzyMonkey MyClassifieds may be prone to a SQL injection vulnerability that may allow an attacker to disclose user passwords by supplying malicious SQL code to the Email variable.  This attack may cause the software to write user password to a world readable file, which may be accessed to launch further attacker against a system.A malicious user may influence database queries in order to view or modify sensitive information, and gain unauthorized access by disclosing user passwords therefore potentially compromising the software or the database.MyClassifieds version 2.11 has been reported to be prone to this vulnerability, however other versions may be affected as well. "
+      }
+    ],
+    "CVE-2003-1526": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/341743",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/8848",
+        "title": "PHP-Nuke Search Field Path Disclosure Vulnerability",
+        "body": "PHP-Nuke is prone to a path disclosure vulnerability.  Path information will be displayed in error output when invalid input is supplied in search fields.This issue may be related to a number of previously reported vulnerabilities in PHP-Nuke.  "
+      }
+    ],
+    "CVE-2003-1530": [
+      {
+        "url": "http://www.securityfocus.com/bid/6634",
+        "title": "phpBB2 privmsg.php SQL Injection Vulnerability",
+        "body": "A SQL injection vulnerability has been reported for phpBB2 systems that may result in the deletion of all private messages.phpBB2, in some cases, does not sufficiently sanitize user-supplied input which is used when constructing SQL queries to execute on the underlying database. As a result, it is possible to manipulate SQL queries. This may allow a remote attacker to modify query logic or potentially corrupt the database. A remote attacker can exploit this vulnerability by manipulating URI parameters to cause the text of all private messages to be deleted."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/307212/30/26300/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1539": [
+      {
+        "url": "http://www.securityfocus.com/bid/7035",
+        "title": "Simple File Manager Filename Script Injection Vulnerability ",
+        "body": "It has been reported that Simple File Manager fails to sufficiently sanitize user-supplied data. As it is possible for a remote user to supply data that is used within dynamically generated web pages, it may be possible to launch HTML injection attacks.Injected HTML code may be executed in the browser of a legitimate web user who views a malicious filename. Any code executed would be in the context of the website running Simple File Manager."
+      }
+    ],
+    "CVE-2003-1542": [
+      {
+        "url": "http://www.securityfocus.com/bid/6933",
+        "title": "phpWebFileManager File Disclosure Vulnerability",
+        "body": "phpWebFileManager has been reported to be vulnerable by a file disclosure issue.The 'file.php' script does not sufficiently validate externally supplied input and is therefore prone to a file disclosure vulnerability. It is possible for a remote attacker to submit a maliciously crafted web request, containing modified directory traversal sequences, which is capable of breaking out of wwwroot and browsing arbitrary web-readable files on a host running the vulnerable script.Information gathered as a result of successful exploitation may aid in further attacks against the host."
+      }
+    ],
+    "CVE-2003-1556": [
+      {
+        "url": "http://www.securityfocus.com/bid/7237",
+        "title": "CCGuestBook HTML Injection Vulnerability",
+        "body": "CCGuestBook does not adequately filter some HTML code thus making it prone to HTML injection attacks.This issue may be exploited to steal cookie-based authentication credentials from legitimate users of the website running the vulnerable software. The attacker may hijack the session of the legitimate by using cookie-based authentication credentials. Other attacks are also possible."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/316764/30/25250/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1559": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/348360",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/348574",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/9295",
+        "title": "Microsoft Internet Explorer HTTP Referer Information Disclosure Vulnerability",
+        "body": "Microsoft Internet Explorer for the Apple Mac platform has been reported prone to an information disclosure vulnerability.  The browser allegedly forwards HTTP Referer data in HTTP requests made from secure HTTPS servers. This behavior does not comply with the HTTP 1.1 RFC and so may present a security risk in certain circumstances."
+      }
+    ],
+    "CVE-2003-1560": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/348574",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1561": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/348574",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1579": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/313867",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1580": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/313867",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1581": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/313867",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1582": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/313867",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-0001": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/307564/30/26270/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/305335/30/26420/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-0095": [
+      {
+        "url": "http://www.securityfocus.com/bid/6849",
+        "title": "Oracle Database Server ORACLE.EXE Buffer Overflow Vulnerability",
+        "body": "The 'ORACLE.EXE' binary does not implement sufficient bounds checking on external data which is copied into local memory buffers.An attacker may exploit this problem to corrupt sensitive regions of memory, in an effort to execute arbitrary code. Code will be executed with the privileges of the underlying server. This issue may only be exploited if a client application does not place bounds limits on externally supplied data before passing it to Oracle."
+      }
+    ],
+    "CVE-2003-0096": [
+      {
+        "url": "http://www.securityfocus.com/bid/6847",
+        "title": "Oracle Database Server TO_TIMESTAMP_TZ Buffer Overflow Vulnerability",
+        "body": "Oracle Database Server is prone to a buffer overflow in the TO_TIMESTAMP_TZ function.  Malicious users who can execute this function with malformed parameters or influence a query which causes this function to be executed may exploit this vulnerability.  Successful exploitation will enable the attacker to execute malicious instructions in the context of the database server."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6848",
+        "title": "Oracle Database Server TZ_OFFSET Buffer Overflow Vulnerability",
+        "body": "Oracle Database Server contains an unchecked buffer in the TZ_OFFSET function.  Malicious users who can execute this function with malformed parameters or influence a query which causes this function to be executed may exploit this vulnerability.  Successful exploitation will enable the attacker to execute malicious instructions in the context of the database server."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6850",
+        "title": "Oracle Database Server DIRECTORY Buffer Overflow Vulnerability",
+        "body": "Oracle has announced a vulnerability in the Oracle 9i Database Server. This issue affects Oracle 9i Release 2 and earlier. It has been reported that a buffer overflow condition may occur in the BFILENAME function when run with malicious arguments. This issue likely occurs due to insufficient bounds checking on user-supplied input.As this issue allows a user to overwrite memory, it may be possible for an attacker to exploit this vulnerability to execute commands."
+      }
+    ],
+    "CVE-2003-0222": [
+      {
+        "url": "http://www.securityfocus.com/bid/7453",
+        "title": "Oracle Net Services Link Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported for Oracle Database Server. The vulnerability exists due to insufficient boundary checks performed on the CREATE DATABASE LINK query.Successful exploitation will result in the corruption of sensitive stack memory to execute attacker-supplied code with the privileges of the database server."
+      }
+    ],
+    "CVE-2003-0286": [
+      {
+        "url": "http://www.securityfocus.com/bid/7549",
+        "title": "Snitz Forums 2000 Register.ASP SQL Injection Vulnerability",
+        "body": "Snitz Forums 2000 is ASP-based web forum software. It runs on Microsoft Windows operating systems.  Snitz is back-ended by a database and supports Microsoft Access 97/2000, SQL Server 6.5/7.0/2000 and MySQL.It is possible for a remote attacker to inject SQL into queries made by the register.asp script.  Depending on the database implementation used, this may possibly result in sensitive information information in the database being disclosed or may enable the attacker to modify data.  There is also the possibility that this issue may be leveraged to exploit vulnerabilities that may exist in the underlying database."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/35764",
+        "title": "Snitz Forums 2000 'register.asp' SQL Injection Vulnerability",
+        "body": "Snitz Forums 2000 is prone to an SQL-injection vulnerability because it fails to sufficiently sanitize user-supplied data before using it in an SQL query.Exploiting this issue could allow an attacker to compromise the application, access or modify data, or exploit latent vulnerabilities in the underlying database.Snitz Forums 2000 3.4.07 is vulnerable; other versions may also be affected."
+      }
+    ],
+    "CVE-2003-0367": [
+      {
+        "url": "http://www.securityfocus.com/bid/7872",
+        "title": "GZip ZNew Insecure Temporary File Creation Symbolic Link Vulnerability",
+        "body": "It has been reported that gzip does not securely handle temporary files in the znew script.  Because of this, a local attacker may be able to launch a symbolic link attack against sensitive files."
+      }
+    ],
+    "CVE-2003-0368": [
+      {
+        "url": "http://www.securityfocus.com/bid/7854",
+        "title": "Nokia GGSN Kernel Panic Denial of Service Vulnerability",
+        "body": "Nokia GGSN devices are reported to be prone to a denial of service vulnerability.  Sending specifically malformed IP packets to the device over a cellular phone will cause a kernel panic causing the device to shut down."
+      }
+    ],
+    "CVE-2003-0456": [
+      {
+        "url": "http://www.securityfocus.com/bid/8075",
+        "title": "VisNetic Website Path Disclosure Vulnerability",
+        "body": "VisNetic Website has been reported prone to a path disclosure vulnerability.It has been reported that a remote attacker may make a HTTP request for a CGI resource that does not exist and in doing so trigger an error. The resulting error message will disclose path information to the remote attacker.It should be noted that this vulnerability has been reported to affect VisNetic Website 3.5 Service release 17, prior versions are also likely affected."
+      }
+    ],
+    "CVE-2003-0542": [
+      {
+        "url": "http://www.securityfocus.com/bid/8911",
+        "title": "Apache Web Server Multiple Module Local Buffer Overflow Vulnerability",
+        "body": "A vulnerability has been reported in Apache that may allow a local attacker to execute arbitrary code on vulnerable host.  The issue is reported to exist due to a lack of bounds checking by the software, leading to a buffer overflow condition.  The problem is reported to exist in the mod_alias and mod_rewrite modules when a regular expression is configured with more the 9 captures using parenthesis.    This issue may allow an attacker to gain unauthorized access to a vulnerable host. Successful exploitation of this issue may allow an attacker to execute arbitrary code in the context of the web server in order to gain unauthorized access to a vulnerable system."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/342674",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/advisories/6079",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/9504",
+        "title": "Multiple Apple Mac OS X Operating System Component Vulnerabilities",
+        "body": "Apple has released Security Update 2004-01-26 to address multiple previously known and newly discovered security vulnerabilities in Mac OS X 10.1.x through 10.3.x."
+      }
+    ],
+    "CVE-2003-0545": [
+      {
+        "url": "http://www.securityfocus.com/bid/8732",
+        "title": "OpenSSL ASN.1 Parsing Vulnerabilities",
+        "body": "Multiple vulnerabilities were reported in the ASN.1 parsing code in OpenSSL. Attackers could exploit these issues to cause a denial of service or to execute arbitrary code."
+      }
+    ],
+    "CVE-2003-0624": [
+      {
+        "url": "http://www.securityfocus.com/bid/8938",
+        "title": "BEA WebLogic InteractiveQuery.jsp Cross-Site Scripting Vulnerability",
+        "body": "It has been reported that BEA WebLogic InteractiveQuery.jsp example application is prone to a cross-site scripting vulnerability.  The issue is reported to exist due insufficient sanitization of user-supplied data in an initialization argument called 'person'.  It has been reported that if an invalid value is passed to this argument, the software returns the value back to the user in a results page without proper sanitization.  The problem may allow a remote attacker to execute HTML or script code in the browser of a user following a malicious link created by an attacker.Successful exploitation of this attack may allow an attacker to steal cookie-based authentication information that could be used to launch further attacks.BEA WebLogic 8.1 and prior are reported to be prone to this issue, however other versions may be affected as well."
+      }
+    ],
+    "CVE-2003-0662": [
+      {
+        "url": "http://www.securityfocus.com/bid/8833",
+        "title": "Microsoft Windows 2000 TroubleShooter ActiveX Control Buffer Overflow Vulnerability",
+        "body": "A vulnerability has been discovered in the Microsoft TroubleShooter ActiveX control.  Because of this, it may be possible for a remote attacker to execute arbitrary with the privileges of a local user."
+      }
+    ],
+    "CVE-2003-0712": [
+      {
+        "url": "http://www.securityfocus.com/bid/8832",
+        "title": "Microsoft Exchange Server 5.5 Outlook Web Access Cross-Site Scripting Vulnerability",
+        "body": "It has been reported that Microsoft Exchange Server Outlook Web Access is prone to a cross-site scripting vulnerability.  The issue is reported to exist due insufficient sanitization of user-supplied data in HTML encoding performed by Compose New Message form.  The problem may allow a remote attacker to execute HTML or script code in the browser of a user running the vulnerable software.Successful exploitation of this attack may allow an attacker to steal cookie-based authentication information that could be used to launch further attacks."
+      }
+    ],
+    "CVE-2003-0792": [
+      {
+        "url": "http://www.securityfocus.com/bid/8843",
+        "title": "Eric S. Raymond Fetchmail Unspecified Denial of Service Vulnerability",
+        "body": "Fetchmail 6.2.4 is reported prone to a denial-of-service issue that may allow an attacker to crash the software by sending a specially crafted email message. Exact details of this issue are not currently known, but attackers may be able to cause a denial-of-service condition or execute arbitrary code in the vulnerable software. This vulnerability may be related to known issues, but Symantec has not confirmed this. This BID and any other applicable BIDs will be updated as further information is available. Fetchmail version 6.2.4 has been reported prone to this issue, but other versions may be vulnerable as well."
+      },
+      {
+        "url": "http://www.securityfocus.com/advisories/5987",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-0819": [
+      {
+        "url": "http://www.securityfocus.com/bid/9408",
+        "title": "Microsoft ISA Server 2000 H.323 Filter Remote Buffer Overflow Vulnerability",
+        "body": "It has been reported that the H.323 filter used by Microsoft ISA Server 2000 is prone to a remote buffer overflow vulnerability.  The condition presents itself due to insufficient boundary checks performed by the Microsoft Firewall Service on specially crafted H.323 traffic.Successful exploitation of this vulnerability may allow a remote attacker to execute arbitrary code in the context of Microsoft Firewall Service running on ISA Server 2000.  This may lead to complete control of the vulnerable system."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/9406",
+        "title": "Multiple Vendor H.323 Protocol Implementation Vulnerabilities",
+        "body": "Multiple vendor implementations of the H.323 protocol contain various vulnerabilities; these may range from simple denial of service to potential arbitrary code execution."
+      }
+    ],
+    "CVE-2003-0825": [
+      {
+        "url": "http://www.securityfocus.com/bid/9624",
+        "title": "Microsoft Windows Internet Naming Service Buffer Overflow Vulnerability",
+        "body": "The Microsoft Windows Internet Name Service (WINS) is prone to a remotely exploitable buffer overflow condition.  Sending a series of specially crafted packets to the service could cause it to fail.  On some Windows platforms, this could also lead to execution of arbitrary code."
+      }
+    ],
+    "CVE-2003-0899": [
+      {
+        "url": "http://www.securityfocus.com/bid/8906",
+        "title": "thttpd defang Remote Buffer Overflow Vulnerability",
+        "body": "A vulnerability has been reported in thttpd that may allow a remote attacker to execute arbitrary code on vulnerable host.  The issue is reported to exist due to a lack of bounds checking by software, leading to a buffer overflow condition.  The problem is reported to exist in the defang() function in libhttpd.c.This issue may allow an attacker to gain unauthorized access to a vulnerable host. Successful exploitation of this issue may allow an attacker to execute arbitrary code in the context of the web server in order to gain unauthorized access to a vulnerable system.thttpd versions 2.21 to 2.23b1 have been reported to be prone to this issue, however other versions may be affected as well."
+      }
+    ],
+    "CVE-2003-0903": [
+      {
+        "url": "http://www.securityfocus.com/bid/9407",
+        "title": "Microsoft MDAC Function Broadcast Response Buffer Overrun Vulnerability",
+        "body": "Microsoft has released an advisory reporting a buffer overrun vulnerability in an MDAC function.  This issue is exposed when an application makes a broadcast request to query for SQL Servers on the network and malformed data is returned in the broadcast response.  Successful exploitation will allow for code execution in the context of the application using the vulnerable MDAC function.  If the application is run with system-level privileges, this could completely compromise a vulnerable system.  Exploitation attempts may also result in a denial of service in client applications.Microsoft has reported that this would only result in a denial of service with MDAC 2.8."
+      }
+    ],
+    "CVE-2003-0904": [
+      {
+        "url": "http://www.securityfocus.com/bid/9118",
+        "title": "Microsoft Exchange Server 2003 Outlook Web Access Lowered Security Settings Weakness ",
+        "body": "It has been reported that Microsoft Exchange Server 2003 may be prone to a weakness when Microsoft Windows SharePoint Services 2.0 is installed on a machine running both Exchange Server 2003 and Microsoft Windows Server 2003.  This installation may cause the Kerberos authentication employed by the server to be disabled in IIS (Internet Information Services) resorting to NTLM."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/9409",
+        "title": "Microsoft Exchange Server 2003 Outlook Web Access Random Mailbox Access Vulnerability",
+        "body": "A vulnerability has been reported in Exchange Server 2003 with Outlook Web Access (OWA) configured.  Exploitation of this vulnerability could allow an authenticated OWA user to connect to another user's OWA mailbox."
+      }
+    ],
+    "CVE-2003-1025": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/346948",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1048": [
+      {
+        "url": "http://www.securityfocus.com/bid/8530",
+        "title": "Microsoft Internet Explorer Malformed GIF Double Free Code Execution Vulnerability",
+        "body": "Microsoft Internet Explorer is reported prone to a double free memory corruption vulnerability when processing a malformed GIF image file.  This vulnerability may potentially be exploited to execute arbitrary code in the context of the currently logged in user.  Exploitation attempts could also cause a denial of service.To exploit this issue, an attacker could create a malicious GIF file and entice a user to view the file through Internet Explorer.  Other applications that support the GIF format may also be affected, though this has not been confirmed.  An attacker could exploit this issue through various means, such as enticing a user to visit a Web page that references the malicious file or through HTML email."
+      }
+    ],
+    "CVE-2003-1081": [
+      {
+        "url": "http://www.securityfocus.com/bid/5698",
+        "title": "Sun Solaris ASPPPLS Insecure Temporary File Creation Vulnerability",
+        "body": "Solaris is the UNIX Operating System variant distributed and maintained by Sun Microsystems.aspppls creates insecure temporary files.  aspppls is a setuid root application that when executed will create temporary files with root privileges.  This could result in a local attacker launching a symbolic link attack to overwrite root-owned files.It should be noted that this vulnerability is likely related to Bugtraq ID 292 titled \"Solaris aspppd Insecure Temporary File Creation Vulnerability.\""
+      }
+    ],
+    "CVE-2003-1151": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/342678",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/8908",
+        "title": "Fastream NetFile Error Message Cross-Site Scripting Vulnerability",
+        "body": "It has been reported that a cross-site scripting vulnerability may exist in NetFile that may allow remote attackers to execute HTML or script code in a user's browser.  The issue is reported to occur due to a \"404 Not Found\" error message returned to the user due to a request for a URL that does not exist.  The error message reportedly contains the bad URL which is not properly sanitized therefore allowing an attacker to a construct a malicious link containing HTML or script code that may be rendered in a user's browser.Successful exploitation of this attack may allow an attacker to steal cookie-based authentication information that could be used to launch further attacks.NetFile FTP/Webserver Version 6.0.3.588 has been reported to be prone to this issue, however other versions may be affected as well."
+      }
+    ],
+    "CVE-2003-1209": [
+      {
+        "url": "http://www.securityfocus.com/bid/7201",
+        "title": "Monkey HTTP Daemon Missing Content-Type Field Denial Of Service Vulnerability",
+        "body": "Monkey HTTP Daemon is prone to a denial of service attacks.  HTTP POST requests which do not include a 'Content-Type' header field will trigger this condition.  This issue is due to a programming mistake in an error handling statement."
+      }
+    ],
+    "CVE-2003-1227": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/341044",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/341098",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/8814",
+        "title": "Gallery index.php Remote File Include Vulnerability",
+        "body": "It has been reported that Gallery is prone to a remote file include vulnerability in the index.php script file. The problem occurs due to the program failing to verify the location in which it includes the util.php script, when handling specific requests to index.php. As a result, an attacker may be capable of having arbitrary PHP script code being executed on the remote host with the privileges of the web server."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/341094",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1336": [
+      {
+        "url": "http://www.securityfocus.com/bid/8819",
+        "title": "mIRC IRC URL Buffer Overflow Vulnerability",
+        "body": "When mIRC is installed it registers a handler for a 'irc://' type of URL. Through these means, mIRC is invoked when an 'IRC URL' is followed.mIRC has been reported prone to a buffer overflow vulnerability when handling malicious 'IRC URLs'. The issue likely presents itself due to a lack of sufficient boundary checks performed when IRC URL data is being copied into an insufficient buffer in memory. Ultimately a remote attacker may exploit this condition to execute arbitrary instructions in the context of the user running the affected client."
+      }
+    ],
+    "CVE-2003-1337": [
+      {
+        "url": "http://www.securityfocus.com/bid/8062",
+        "title": "Abyss Web Server HTTP GET Heap Overrun Vulnerability",
+        "body": "Abyss Web Server is prone to a remotely exploitable heap overrun.  This is due to insufficient bounds checking of data supplied via client HTTP GET requests.  This condition could be exploited to execute arbitrary code with the privileges of the web server.This issue is reported to affect Abyss Web Server 1.1.2.  Later versions, such as 1.1.4 and 1.1.5 may be similarly affected, though this has not been confirmed."
+      }
+    ],
+    "CVE-2003-1342": [
+      {
+        "url": "http://www.securityfocus.com/bid/6617",
+        "title": "Trend Micro Virus Control System Denial Of Service Vulnerability",
+        "body": "A denial of service vulnerability has been reported for Trend Micro TVCS. The vulnerability occurs when numerous requests for 'activesupport.exe' are made. This will cause the web server to stop responding to requests for a limited period of time. Repeated requests will cause a denial of service for an indefinite period of time."
+      }
+    ],
+    "CVE-2003-1343": [
+      {
+        "url": "http://www.securityfocus.com/bid/6619",
+        "title": "Trend Micro ScanMail For Exchange Authentication Bypass Vulnerability",
+        "body": "A vulnerability has been reported for ScanMail for Microsoft Exchange. The vulnerability allows a remote attacker to bypass existing authentication mechanisms and obtain access to ScanMail's management system."
+      }
+    ],
+    "CVE-2003-1344": [
+      {
+        "url": "http://www.securityfocus.com/bid/6618",
+        "title": "Trend Micro Virus Control System Information Disclosure Vulnerability",
+        "body": "An information disclosure vulnerability has been reported for TVCS. Reportedly, it is possible for an attacker to access the log files generated by TVCS. The log files contain very sensitive information about the system, including user names and passwords. Any information obtained in this manner may be used by an attacker to launch further destructive attacks against a system."
+      }
+    ],
+    "CVE-2003-1345": [
+      {
+        "url": "http://www.securityfocus.com/bid/6574",
+        "title": "Follett Software WebCollection Plus File Reading Vulnerability",
+        "body": "Follett Software's WebCollection Plus does not properly filter input, allowing remote users read access to local files.  It appears that only files in the root of the drive containing WebCollection Plus are accessible."
+      }
+    ],
+    "CVE-2003-1346": [
+      {
+        "url": "http://www.securityfocus.com/bid/6609",
+        "title": "D-Link DWL-900AP+ Firmware Upgrade Configuration Reset Vulnerability",
+        "body": "The D-Link AirPlus Access Point Manager is used for various adminstrative tasks including firmware upgrades. It has been reported that upgrading the DWL-900AP+ firmware with this software will cause all configuration settings to be reset to factory defaults."
+      }
+    ],
+    "CVE-2003-1347": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/306770",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6601",
+        "title": "Geeklog Profiles.PHP Multiple Cross-Site Scripting Vulnerabilities",
+        "body": "The Geeklog 'profiles.php' script is prone to multiple cross-site scripting vulnerabilities.This issue is due to insufficient sanitization of input submitted in URI parameters.  As a result, an attacker may create a malicious link to a site hosting Geeklog, which contains malicious HTML or script code.When such a link is visited by an unsuspecting user, attacker-supplied script code will be interpreted by their web client."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6602",
+        "title": "Geeklog Users.PHP Cross-Site Scripting Vulnerability",
+        "body": "Geeklog is prone to a cross-site scripting vulnerability in the 'users.php' script.This issue is due to insufficient sanitization of input submitted in URI parameters.  As a result, an attacker may create a malicious link to a site hosting Geeklog, which contains malicious HTML or script code.When such a link is visited by an unsuspecting user, attacker-supplied script code will be interpreted by their web client."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6603",
+        "title": "Geeklog Comment.PHP Cross-Site Scripting Vulnerability",
+        "body": "Geeklog is prone to a cross-site scripting vulnerability in the 'comment.php' script.This issue is due to insufficient sanitization of input submitted in URI parameters.  As a result, an attacker may create a malicious link to a site hosting Geeklog, which contains malicious HTML or script code.When such a link is visited by an unsuspecting user, attacker-supplied script code will be interpreted by their web client."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6604",
+        "title": "Geeklog Homepage User Field HTML Injection Vulnerability",
+        "body": "Geeklog is prone to HTML injection attacks.The user account 'Homepage' field is not sufficiently sanitized of HTML and script code.  As a result, a malicious user may inject malicious HTML and script code into this field.  When the malicious user's account information is displayed to other web users, the attacker-supplied code will be interpreted in their web client in the security context of the site hosting the vulnerable software."
+      }
+    ],
+    "CVE-2003-1348": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/308312",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6686",
+        "title": "FTLS GuestBook Script Injection Vulnerability",
+        "body": "Guestbook does not adequately filter HTML tags from various fields. This may enable an attacker to inject arbitrary script code into pages that are generated by the guestbook.The attacker's script code may be executed in the web client of arbitrary users who view the pages generated by the guestbook, in the security context of the website running the software."
+      }
+    ],
+    "CVE-2003-1349": [
+      {
+        "url": "http://www.securityfocus.com/bid/6648",
+        "title": "Nite Server FTPD File Disclosure Vulnerability",
+        "body": "Nite Server is prone to a file disclosure vulnerability.  It is possible for remote FTP users to break out of the FTP root directory by issuing a 'cd' (change directory) request containing directory traversal sequences.This may cause sensitive system files to be disclosed to malicious FTP users.This issue was reported in Nite Server 1.83.  Earlier versions may also be affected."
+      }
+    ],
+    "CVE-2003-1350": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/308300",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6685",
+        "title": "List Site Pro User Database Delimiter Injection Vulnerability",
+        "body": "List Site PRO is a top site ranking system that counts hits from member sites and then ranks them according to the number of hits.A problem has been reported for List Site PRO that would allow an attacker to inject arbitrary values via html input form fields into the underlying flat-file database used by List Site PRO."
+      }
+    ],
+    "CVE-2003-1351": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/308162",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6675",
+        "title": "EditTag edittag.pl File Disclosure Vulnerability",
+        "body": "EditTag is a script which facilitates website content management.A file disclosure vulnerability has been reported in the EditTag 'edittag.pl'perl script.Due to insufficient sanitization of CGI parameters a maliciously crafted web request containing encoded directory traversal sequences may result in the disclosure of arbitrary web server readable files."
+      }
+    ],
+    "CVE-2003-1353": [
+      {
+        "url": "http://www.securityfocus.com/bid/6631",
+        "title": "CSO Lanifex Outreach Project Tool HTML Injection Vulnerability",
+        "body": "It has been reported that OPT does not properly filter input from remote users.  Because of this, it is possible for a remote user to inject arbitrary HTML or script code into the site that will be executed in the security context of the OPT site."
+      }
+    ],
+    "CVE-2003-1354": [
+      {
+        "url": "http://www.securityfocus.com/bid/6636",
+        "title": "GameSpy 3D Packet Amplification Denial Of Service Vulnerability",
+        "body": "A vulnerability has been reported for several games that support the use of the GameSpy network.A game client typically queries a game server using the UDP protocol. It has been reported that a simple query by a client may result in a game server responding with overly large responses which may result in the saturation of available network bandwidth.Exploitation of this issue may aid in launching denial of service attacks against other hosts and networks."
+      }
+    ],
+    "CVE-2003-1355": [
+      {
+        "url": "http://www.securityfocus.com/bid/6967",
+        "title": "Electronic Arts Battlefield 1942 Remote Administration Authentication Buffer Overflow Vulnerability",
+        "body": "It has been reported that Battlefield 1942 does not properly check input sent to the administration port of a game server.  By sending a string of excessive length, a remote attacker could crash the server, resulting in a denial of service.  A manual restart of the server process would be required to resume normal service.It is possible that this issue may be exploitable to execute arbitrary code, though this has not been confirmed."
+      }
+    ],
+    "CVE-2003-1356": [
+      {
+        "url": "http://www.securityfocus.com/bid/6640",
+        "title": "HP-UX sort Unspecified File Handling Vulnerability",
+        "body": "HP has stated that the sort utility distributed with HP-UX may be prone to a file handling issue. A denial of service, or unauthorized access, is possible as a consequence of this vulnerability. "
+      }
+    ],
+    "CVE-2003-1358": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/324381",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/advisories/4960",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6837",
+        "title": "HP-UX rs.F3000 Unspecified Unauthorized Access Vulnerability",
+        "body": "The rs.F3000 binary is prone to an issue that may allow attackers to obtain unauthorized access to a vulnerable system. A denial of service attack is also possible.  This is due to multiple instances of the system() function being used in an unsafe manner."
+      }
+    ],
+    "CVE-2003-1359": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/324381",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/advisories/4959",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6836",
+        "title": "HP-UX stmkfont Alternate Typeface Library Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported in the stmkfont utility shipped with HP-UX systems. The problem occurs due to insufficient bounds checking on user-suplied data to the alternate typeface library command-line option.A local attacker may be able to exploit this issue to execute arbitrary code with elevated privileges.All Avaya PDS 9 and 11 platforms are vulnerable to this issue.  Avaya PDS 12 platforms running on HP-UX 11.00 are vulnerable as well.  PDS 12 versions running on HP-UX 11.11 are not vulnerable."
+      }
+    ],
+    "CVE-2003-1360": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/324381",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/advisories/4957",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6834",
+        "title": "HP-UX landiag/lanadmin Environment Variable Local Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported for two utilities shipped with HP-UX systems. The vulnerabilities exist in the landiag and lanadmin programs. The vulnerability exists due to improper bounds checking of some environment variables."
+      }
+    ],
+    "CVE-2003-1364": [
+      {
+        "url": "http://www.securityfocus.com/bid/7287",
+        "title": "Abyss Web Server Incomplete HTTP Request Denial Of Service Vulnerability",
+        "body": "A denial of service vulnerability has been reported for Abyss Web Server. The vulnerability exists when Abyss attempts to parse certain incomplete HTTP headers. "
+      }
+    ],
+    "CVE-2003-1365": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/311414",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6833",
+        "title": "CGI Lite Perl Module Metacharacter Input Validation Vulnerability",
+        "body": "A vulnerability has been reported in the escape_dangerous_chars() function, which is a part of the CGI Lite Perl module. The function does not sufficiently sanitize all instances of potentially dangerous characters. As the end result, externally supplied input may not be adequately sanitized before being used in other Perl functions. This will create a false sense of security and may allow an attacker to execute arbitrary commands via a CGI program which depends on the vulnerable function."
+      }
+    ],
+    "CVE-2003-1366": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/309962",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6748",
+        "title": "OpenBSD CHPass Temporary File Link File Content Revealing Vulnerability",
+        "body": "It has been reported that a problem with chpass included with OpenBSD may allow local users to gain access to the content of specific files.  This vulnerability requires that lines in the target file be constructed in a specific format.  This problem also affects the chfn and chsh programs which are hard links to the chpass binary."
+      }
+    ],
+    "CVE-2003-1368": [
+      {
+        "url": "http://www.securityfocus.com/bid/6764",
+        "title": "Electrasoft 32Bit FTP Client Long Server Banner Buffer Overflow Vulnerability",
+        "body": "It has been reported that Electrasoft 32Bit FTP client may be prone to a buffer overflow condition. This issue is due to the client not implementing bounds checking on banner data copied into local memory buffers.It may be possible for remote attackers to corrupt sensitive regions of memory with attacker-supplied values, possibly resulting in execution of arbitrary code."
+      }
+    ],
+    "CVE-2003-1369": [
+      {
+        "url": "http://www.securityfocus.com/bid/6762",
+        "title": "ByteCatcher FTP Client Long Server Banner Buffer Overflow Vulnerability",
+        "body": "It has been reported that ByteCatcher FTP client may be prone to a buffer overflow condition. This issue is due to the client not implementing bounds checking on banner data copied into local memory buffers.It may be possible for remote attackers to corrupt sensitive regions of memory with attacker-supplied values, possibly resulting in execution of arbitrary code."
+      }
+    ],
+    "CVE-2003-1370": [
+      {
+        "url": "http://www.securityfocus.com/bid/6697",
+        "title": "Nuked-Klan Guestbook HTML Injection Vulnerability",
+        "body": "A vulnerability has been discovered in the Nuked-Klan guestbook module. It has been reported that Nuked-Klan fails to sufficiently sanitize script code embedded in certain user-supplied variables.As a result, attackers may embed malicious script code or HTML into forum posts. When a malicious post is viewed by another user, the attacker-supplied code will be interpreted in their web browser in the security context of the site hosting the software."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6699",
+        "title": "Nuked-Klan Forum Module HTML Injection Vulnerability",
+        "body": "A vulnerability has been discovered in the Nuked-Klan 'Forum' module. It has been reported that Nuked-Klan fails to sufficiently sanitize script code embedded in certain user-supplied variables.As a result, attackers may embed malicious script code or HTML into forum posts. When a malicious post is viewed by another user, the attacker-supplied code will be interpreted in their web browser in the security context of the site hosting the software."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6700",
+        "title": "Nuked-Klan Shoutbox HTML Injection Vulnerability",
+        "body": "A vulnerability has been discovered in the Nuked-Klan 'Shoutbox' module. It has been reported that Nuked-Klan fails to sufficiently sanitize script code embedded in certain user-supplied variables.As a result, attackers may embed malicious script code or HTML into shoutbox messages. When a malicious message is viewed by another user, the attacker-supplied code will be interpreted in their web browser in the security context of the site hosting the software."
+      }
+    ],
+    "CVE-2003-1371": [
+      {
+        "url": "http://www.securityfocus.com/bid/6917",
+        "title": "Nuked-Klan Remote Information Disclosure Vulnerability",
+        "body": "A vulnerability has been discovered in Nuked-Klan which may be exploited to execute certain PHP functions on a target server. This issue occurs in the 'Team', 'News', and 'Lien' modules and is due to insufficient sanitization of user-supplied URI parameters. This issue may be exploited by a remote attacker to obtain sensitive server information, which could aid in launching further attacks against a target system.The vulnerability was reported for Nuked-Klan beta 1.3; earlier versions may also be affected."
+      }
+    ],
+    "CVE-2003-1372": [
+      {
+        "url": "http://www.securityfocus.com/bid/6892",
+        "title": "myPHPNuke Links.php Cross Site Scripting Vulnerability ",
+        "body": "Reportedly, myPHPNuke 'links.php' does not adequately filter HTML code thus making it prone to cross-site scripting attacks. It is possible for a remote attacker to create a malicious link containing script code that will be executed in the browser of a legitimate user. All code will be executed within the context of the website running myPHPNuke.This issue may be exploited to steal cookie-based authentication credentials from legitimate users of the website running the vulnerable software.This vulnerability was reported for myPHPNuke 1.8.8 earlier versions may also be affected."
+      }
+    ],
+    "CVE-2003-1373": [
+      {
+        "url": "http://www.securityfocus.com/bid/6889",
+        "title": "PHPBB Auth.PHP File Disclosure Vulnerability",
+        "body": "A flaw exists in the 'auth.php' script which may allow attackers to cause local web server readable files to be disclosed or interpreted.  This is due to insufficient sanitization of the null character (%00) from CGI parameters.  It has been demonstrated that in some circumstances it is possible to exploit this issue to execute arbitrary PHP code with the privileges of the webserver process."
+      }
+    ],
+    "CVE-2003-1374": [
+      {
+        "url": "http://www.securityfocus.com/bid/6845",
+        "title": "HP-UX 'disable' Local Buffer Overflow Vulnerability",
+        "body": "It has been reported that a vulnerability exists in the HP-UX 'disable' utility that may cause memory corruption. This issue occurs when passing a string of excessive length as the '-r' command-line argument.Although it has not been confirmed, it may be possible to exploit this issue to execute commands. If this situation were to occur an attacker may run arbitrary commands with 'lp' privileges."
+      }
+    ],
+    "CVE-2003-1375": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/310908",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/advisories/5369",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6800",
+        "title": "HPUX Wall Message Buffer Overflow Vulnerability",
+        "body": "It has been reported that the HPUX wall executable may be prone to a buffer overflow condition. This buffer overflow is alleged to be triggered when an excessive amount of data is redirected into wall as a message intended to be broadcast.It may be possible for remote attackers to corrupt sensitive regions of memory with attacker-supplied values, possibly resulting in execution of arbitrary code."
+      }
+    ],
+    "CVE-2003-1377": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/312924",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6924",
+        "title": "Smart IRC Daemon Remote Client DNS Buffer Overflow Vulnerability",
+        "body": "It has been reported that sircd is vulnerable to a boundary condition error.  Under certain circumstances, a client with malicious DNS information may be able to cause a stack-based overflow in the IRC server.  This could lead to denial of service, and potentially code execution."
+      }
+    ],
+    "CVE-2003-1378": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/312910",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/312929",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6923",
+        "title": "Microsoft Outlook and Outlook Express Arbitrary Program Execution Vulnerability",
+        "body": "Microsoft Outlook and Outlook Express may execute arbitrary programs through objects embedded in HTML email messages.  When an email message or newsgroup message is viewed using Outlook, a temporary object is created in the Internet Explorer cache.  The security zone of this cache should be set by Internet Explorer and is set to the Internet Zone by default.It is possible to have an object embedded in an HTML message reference an executable file using a CODEBASE reference and non-zero CLASSID value.  It may also be possible for an attacker to place a file in a known temporary folder and have it executed through this method.An issue similar to this was reported for Internet Explorer (BID 3867).  It appears that the issue was fixed for objects viewed in a web page through Internet Explorer, but not through HTML email viewed with Outlook or Outlook Express."
+      }
+    ],
+    "CVE-2003-1379": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/313080",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6934",
+        "title": "ClarkConnect Linux clarkconnectd Remote Information Disclosure Vulnerability",
+        "body": "An information disclosure vulnerability has been reported for ClarkConnect Linux that may result in the clarkconnectd service divulging potentially sensitive information to remote attackers.An attacker can exploit this vulnerability by connecting to the remote system and sending special character codes. This will cause the service to send various system information to a remote party."
+      }
+    ],
+    "CVE-2003-1380": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/312032",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6873",
+        "title": "BisonFTP Information Disclosure Vulnerability",
+        "body": "BisonFTP server can disclose information about files outside the FTP root.  If an attacker submits an 'ls' command using the character sequence '@../' then the FTP server will return a directory listing for the parent directory of the FTP root."
+      }
+    ],
+    "CVE-2003-1382": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/313363",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6972",
+        "title": "InstantServer ISMail Remote User Fields Buffer Overflow Vulnerability",
+        "body": "It has been reported that ISMail does not properly handle long strings under some circumstances.  When an email containing specifically crafted strings in various fields of the email header is passed through the server, a buffer overflow occurs.  This could be exploited to execute code on vulnerable server."
+      }
+    ],
+    "CVE-2003-1383": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/313575",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6996",
+        "title": "Web-ERP Configuration File Remote Access Vulnerability",
+        "body": "It has been reported that Web-ERP does not sufficiently restrict access to it's configuration information.  Because of this, an attacker may be able to remotely access Web-ERP information, and potentially gain access to information that is sensitive in nature."
+      }
+    ],
+    "CVE-2003-1384": [
+      {
+        "url": "http://www.securityfocus.com/bid/6997",
+        "title": "PY-Livredor index.php HTML Injection Vulnerability",
+        "body": "PY-Livredor does not adequately filter HTML tags from various fields. This may enable an attacker to inject arbitrary HTML code into pages that are generated by the guestbook.The attacker's code may be executed in the web client of users who view the pages generated by the guestbook, in the security context of the website hosting the software.Attackers may potentially exploit this issue to hijack web content or to steal cookie-based authentication credentials."
+      }
+    ],
+    "CVE-2003-1385": [
+      {
+        "url": "http://www.securityfocus.com/bid/6976",
+        "title": "Invision Board ipchat.php Remote File Include Vulnerability",
+        "body": "Invision Board is prone to an issue that may allow remote attackers to include files located on attacker-controlled servers.This vulnerability is as a result of insufficient sanitization performed on remote user supplied data used in URI parameters of certain PHP pages.Under some circumstances, it may be possible for remote attackers to influence the include path for a global configuration file to point to an external file on a remote server.If the remote file is a malicious file, this vulnerability may be exploited to execute arbitrary system commands in the context of the web server."
+      }
+    ],
+    "CVE-2003-1386": [
+      {
+        "url": "http://www.securityfocus.com/bid/6980",
+        "title": "Axis Communications HTTP Server Messages Information Disclosure Vulnerability",
+        "body": "It has been reported that the Axis Video Server does not properly secure sensitive information.  Because of this, an attacker may be able to gather details about server operation and traffic that could lead to further attacks."
+      }
+    ],
+    "CVE-2003-1387": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/311194",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/315794",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6811",
+        "title": "Opera Username URI Warning Dialog Buffer Overflow Vulnerability",
+        "body": "The Opera browser for Win32 (and possibly other) systems is prone to a remotely exploitable buffer overflow condition.  For security purposes, Opera will display a warning any time a user of the client visits a link containing a username as part of the URI.  An excessively long username will trigger a buffer overflow condition related to this security feature that may overwrite the stack frame of the affected function.  Attackers may exploit this vulnerability to execute instructions on client systems."
+      }
+    ],
+    "CVE-2003-1389": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/311176",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6815",
+        "title": "CryptoBuddy Long Passphrase Truncation Weakness",
+        "body": "It has been reported that CryptoBuddy will truncate passphrases over 55 characters in length. This weakness employed by the encryption algorithm of CryptoBuddy may result in a user having a false sense of security."
+      }
+    ],
+    "CVE-2003-1390": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/311176",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1391": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/311176",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6810",
+        "title": "CryptoBuddy Predictable Encrypted Passphrase Weakness",
+        "body": "It has been reported that the passphrase encryption algorithm employed by CryptoBuddy is weak. Specifically, the encryption algorithm used generates predictable ciphertext for specific sequences of characters used as a passphrase.      An attacker can exploit this weakness to build a dictionary of encrypted passphrases and use this to decrypt stolen files."
+      }
+    ],
+    "CVE-2003-1392": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/311176",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6812",
+        "title": "CryptoBuddy Unused Encryption Passphrase Vulnerability",
+        "body": "A vulnerability has been reported for CryptoBuddy that may result in attackers intercepting and decoding encrypted information. The vulnerability exists because CryptoBuddy does not use the user-supplied passphrase to encrypt files. Instead, the passphrase is encrypted and stored at a known offset in the encrypted file. It is likely that the passphrase is tested and used to initiate the decryption of the data using the CryptoBuddy algorithm.    By modifying the contents of an encrypted file it is possible for an attacker to use their own encrypted passphrase to decrypt the contents. An attacker can exploit this vulnerability by creating a passphrase and replacing the passphrase located in an encrypted file, at a known offset, with their own. By using CryptoBuddy to decrypt the file, the attacker-supplied passphrase could then be supplied to initiate the decryption.    Exploitation of this vulnerability may result in the disclosure of sensitive information."
+      }
+    ],
+    "CVE-2003-1393": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/311159",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/314379",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6808",
+        "title": "Gupta SQLBase EXECUTE Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported for SQLBase when using the EXECUTE command.An attacker can exploit this vulnerability by issuing an EXECUTE command with an overly large value as a parameter. This will cause SQLBase to crash and possibly execute attacker-supplied code with elevated privileges."
+      }
+    ],
+    "CVE-2003-1395": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/309935",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6747",
+        "title": "KaZaA Advertisement Response Denial of Service Vulnerability",
+        "body": "A vulnerability has been discovered in KaZaA Media Desktop v2. When a KaZaA client establishes a connection with the server, an advertisement download request is made. It has been reported that KaZaA fails to sufficiently handle unsuspected responses to ad requests. As a result, it may be possible to crash a vulnerable KaZaA client by sending malicious responses."
+      }
+    ],
+    "CVE-2003-1396": [
+      {
+        "url": "http://www.securityfocus.com/bid/7450",
+        "title": "Opera Long File Name Remote Heap Corruption Vulnerability",
+        "body": "A vulnerability has been reported for Opera versions 7.10 and earlier. The problem is said to occur due to insufficient bounds checking on filename extensions. As a result, it may be possible for an attacker to corrupt heap-based memory.Successful exploitation of this vulnerability may result in a denial of service, possibly prolonged. If a malicious filename entry were placed in a cache file, Opera may continuously crash until the cache file has been deleted."
+      }
+    ],
+    "CVE-2003-1397": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/311214",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6814",
+        "title": "Opera opera.PluginContext Native Method Denial Of Service Vulnerability",
+        "body": "Opera ships with a trusted Java class ('opera.PluginContext') that includes a native method that is reportedly prone to denial of service attacks.  It is possible for a malicious Java applet to trigger this condition to cause a denial of service.  This issue was reported in versions of Opera for Microsoft Windows operating systems.  It is not known if other platforms are also affected.  Java support must enabled for this issue to be present and can be disabled to prevent attacks."
+      }
+    ],
+    "CVE-2003-1398": [
+      {
+        "url": "http://www.securityfocus.com/bid/6823",
+        "title": "Cisco IOS ICMP Redirect Routing Table Modification Vulnerability",
+        "body": "It has been reported that it is possible to make arbitrary remote modifications to the Cisco IOS routing table.If IP routing is disabled on a vulnerable router, the router will accept malicious ICMP redirect packets and modify its routing table accordingly.  ICMP redirect messages are normally sent to indicate inefficient routing, a new route or a routing change. An attacker may specify a default gateway on the local network that does not exist, thus denying service to the affected router for traffic destined to any location outside the local subnet."
+      }
+    ],
+    "CVE-2003-1400": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/309959",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/310115",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6750",
+        "title": "PHP-Nuke Avatar HTML Injection Vulnerability",
+        "body": "A problem with PHP-Nuke could allow remote users to execute arbitrary code in the context of the web site. The problem is in the lack of sanitization of some types of input.PHP-Nuke does not sanitize code submitted to a site from the avatar select box. Due to this, a malicious user may be able to submit embedded code from their profile page instead of an avatar. This would result in code being executed in the location where a user's avatar should normally display. This code would be executed by a victim user's browser in the context of the site."
+      }
+    ],
+    "CVE-2003-1402": [
+      {
+        "url": "http://www.securityfocus.com/bid/6863",
+        "title": "Kietu Hit.PHP Remote File Inclusion Vulnerability",
+        "body": "Kietu may permit remote attackers to specify the include path for a configuration file.  An attacker may exploit this to include a malicious PHP script from a remote host, resulting in execution of arbitrary commands with the privileges of the webserver process."
+      }
+    ],
+    "CVE-2003-1403": [
+      {
+        "url": "http://www.securityfocus.com/bid/6864",
+        "title": "DotBr PHPInfo Environment Information Disclosure Vulnerability",
+        "body": "DotBr may disclose sensitive information to remote attackers about the environment of the system hosting the software.  This is due to the use of the PHP phpinfo() function in the 'foo.php3' script.  This information may be helpful in mounting further attacks against the system."
+      }
+    ],
+    "CVE-2003-1404": [
+      {
+        "url": "http://www.securityfocus.com/bid/6865",
+        "title": "DotBr Config.Inc Information Disclosure Vulnerability",
+        "body": "The DotBr configuration file may potentially disclose sensitive information to remote attackers.  This issue occurs because the configuration file does not have the proper PHP file extension, and may be displayed by the webserver instead of handled by the PHP interpreter.  Database authentication credentials and other information may be disclosed as a result."
+      }
+    ],
+    "CVE-2003-1405": [
+      {
+        "url": "http://www.securityfocus.com/bid/6866",
+        "title": "DotBr System.PHP3 Remote Command Execution Vulnerability",
+        "body": "The DotBr 'system.php3' script is prone to a remote command execution vulnerability.  This is due to insufficient sanitization of user-supplied data.  Exploitation may result in execution of arbitrary shell commands with the privileges of the webserver process."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6867",
+        "title": "DotBr Exec.PHP3 Remote Command Execution Vulnerability",
+        "body": "The DotBr 'exec.php3' script is prone to a remote command execution vulnerability.  This is due to insufficient sanitization of user-supplied data.  Exploitation may result in execution of arbitrary shell commands with the privileges of the webserver process."
+      }
+    ],
+    "CVE-2003-1406": [
+      {
+        "url": "http://www.securityfocus.com/bid/6879",
+        "title": "D-Forum Remote File Include Vulnerability",
+        "body": "D-Forum is prone to an issue which may allow remote attackers to include files located on remote servers. This issue is present in the /includes/header.php3 and /includes/footer.php3 scripts.Under some circumstances, it is possible for remote attackers to influence the include path for the header and footer files to point to an external file on a remote server by manipulating some URI parameters."
+      }
+    ],
+    "CVE-2003-1407": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/311359",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6829",
+        "title": "Microsoft Windows NT/2000 cmd.exe CD Buffer Overflow Vulnerability",
+        "body": "The Windows NT and 2000 command prompt (cmd.exe) does not properly handle paths containing more than 256 characters.  If the cd (change directory) command is used to change to a subdirectory resulting in a path with more than 256 characters, a buffer is overrun.  This could lead to cmd.exe failing with the possibility of code execution on Windows NT 4.0 systems.  Automated scripts that traverse and preform operations on arbitrary directories are particularly vulnerable.On Windows 2000 systems, cmd.exe will become 'jailed' in the directory."
+      }
+    ],
+    "CVE-2003-1408": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/311660",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/311806",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6841",
+        "title": "Lotus Domino Dot File Disclosure Vulnerability",
+        "body": "A problem has been found in Lotus Domino. It has been reported that requests are not sufficiently sanitized allowing an attacker to reveal the contents of arbitrary web server readable resources that are of a file type not specific to Lotus.By appending a dot to the requested filename an attacker may disclose sensitive information embedded in server side scripts or include files. Other resources may also be disclosed."
+      }
+    ],
+    "CVE-2003-1409": [
+      {
+        "url": "http://www.securityfocus.com/bid/6768",
+        "title": "TOPO Remote Path Disclosure Vulnerability",
+        "body": "It has been reported that TOPo may return information to users that is sensitive in nature.  Under some circumstances, it is possible to produce an error message that reveals information about web directory structure.  This could result in more organized attack against system resources."
+      }
+    ],
+    "CVE-2003-1410": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/311173",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6818",
+        "title": "Cedric Email Reader Skin Configuration Script Remote File Include Vulnerability",
+        "body": "It has been reported that Cedric Email Reader is prone to an issue that may allow remote attackers to include malicious files located on remote servers. This issue is present in the 'email.php' script.Under some circumstances, it is possible for remote attackers to influence the include path for a configuration file to point to an external file on a remote server.If the remote file is a malicious PHP script, this may be exploited to execute arbitrary system commands in the context of the web server.It has also been reported that it is possible to cause local files to be included, resulting in disclosure of webserver readable files to the attacker.  This has not been confirmed."
+      }
+    ],
+    "CVE-2003-1411": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/311173",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6820",
+        "title": "Cedric Email Reader Global Configuration Script Remote File Include Vulnerability",
+        "body": "It has been reported that Cedric Email Reader is prone to an issue that may allow remote attackers to include malicious files located on remote servers. This issue is present in the 'emailreader_execute_on_each_page.inc.php' script.Under some circumstances, it is possible for remote attackers to influence the include path for a configuration file to point to an external file on a remote server.If the remote file is a malicious PHP script, this may be exploited to execute arbitrary system commands in the context of the web server.It has also been reported that it is possible to cause local files to be included, resulting in disclosure of webserver readable files to the attacker.  This has not been confirmed."
+      }
+    ],
+    "CVE-2003-1412": [
+      {
+        "url": "http://www.securityfocus.com/bid/6922",
+        "title": "GONiCUS System Administrator Remote File Include Vulnerability",
+        "body": "GONiCUS System Administrator is prone to an issue that may allow remote attackers to include files located on remote servers. This issue is present in several PHP pages existing in the /plugins and /includes folders.By crafting specific URI parameters it is possible for an attacker to influence the include path for these scripts to an external file on an attacker-controlled host. If the remote file is a malicious file, this may be exploited to execute arbitrary system commands in the context of the vulnerable web server.This vulnerability has been reported for GONiCUS System Administrator Version 1, previous versions may also be affected."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/313282/30/25760/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1413": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/313517",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6992",
+        "title": "Apple QuickTime/Darwin Streaming Server Remote File Existence Revealing Vulnerability",
+        "body": "It has been reported that the QuickTime/Darwin Streaming Server reveals information that may be sensitive.  When certain requests are made, a difference in reponses could make possible for an attacker to gain information about the local host."
+      }
+    ],
+    "CVE-2003-1414": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/313517",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6990",
+        "title": "Apple QuickTime/Darwin Streaming Server parse_xml.cgi File Disclosure Vulnerability",
+        "body": "A file retrieval vulnerability has been reported for QuickTime/Darwin Streaming Server. The vulnerability exists due to insufficient sanitization of some parameters given to the parse_xml.cgi script. Information obtained in this manner may be used by an attacker to launch more organinzed attacks against a vulnerable system.This vulnerability was tested on SS for Microsoft Windows systems."
+      }
+    ],
+    "CVE-2003-1415": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/312187",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6877",
+        "title": "Netcharts Server Chunked Encoding Information Leakage Vulnerability",
+        "body": "It has been reported that Netcharts Server is unable to sufficiently handle invalid chunked encoded HTTP requests. An attacker may attempt to desynchronize the Netcharts server in an attempt to lead valid users to a specified response by flooding the Netchart Server communication channels with an attacker-supplied response."
+      }
+    ],
+    "CVE-2003-1416": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/312032",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6869",
+        "title": "BisonFTP Long Command Denial of Service Vulnerability",
+        "body": "BisonFTP is prone to a denial of service condition.  When exceptionally long FTP commands such as 'cwd' or 'ls' are sent to the server containing 4300 bytes of data or more, CPU usage will increase to 100%.  This condition will persist until the client closes the connection to the server."
+      }
+    ],
+    "CVE-2003-1418": [
+      {
+        "url": "http://www.securityfocus.com/bid/6939",
+        "title": "Apache Web Server ETag Header Information Disclosure Weakness",
+        "body": "A weakness has been discovered in Apache web servers that are configured to use the FileETag directive. Due to the way in which Apache generates ETag response headers, it may be possible for an attacker to obtain sensitive information regarding server files. Specifically, ETag header fields returned to a client contain the file's inode number.Exploitation of this issue may provide an attacker with information that may be used to launch further attacks against a target network. OpenBSD has released a patch that addresses this issue. Inode numbers returned from the server are now encoded using a private hash to avoid the release of sensitive information."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6943",
+        "title": "Apache Web Server MIME Boundary Information Disclosure Vulnerability",
+        "body": "A vulnerability has been discovered in the Apache web server that may result in the disclosure of sensitive information. Specifically, sensitive process information is used within generated MIME message boundaries.Access to this information may aid an attacker in launching attacks further attacks against target services.OpenBSD has released a patch that addresses this issue. MIME boundaries are now generated by the server using BASE64 encoded random numbers."
+      }
+    ],
+    "CVE-2003-1419": [
+      {
+        "url": "http://www.securityfocus.com/bid/6959",
+        "title": "Netscape JavaScript Regular Expression Denial Of Service Vulnerability",
+        "body": "It has been reported that Netscape based browsers may be vulnerable to a denial of service condition when executing certain JavaScript methods.If a malicious page containing a specially crafted JavaScript regular expression method is viewed the browser reportedly becomes un-stable this may result in the critical failure of an affected browser.This vulnerability was reported for Netscape version 7. It is not known if previous versions are also affected."
+      }
+    ],
+    "CVE-2003-1420": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/313216",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6962",
+        "title": "Opera Automatic Redirection Cross Site Scripting Vulnerability",
+        "body": "A cross site scripting vulnerability has been reported in Opera browsers for Windows and Linux platforms. The vulnerability exists due to insufficient sanitization of some user-supplied input when redirecting visitors to another page or site.When a user visits a site that redirects a user to another page, attacker-supplied script code will be interpreted by Opera in the security context of the maliciuos site.Exploitation of this issue may enable an attacker to steal cookie-based authentication credentials of victim users. Other attacks are also possible.Update (Jun 16, 2005): Reports indicate that this vulnerability was reintroduced in Opera 8.0."
+      }
+    ],
+    "CVE-2003-1421": [
+      {
+        "url": "http://www.securityfocus.com/bid/6854",
+        "title": "Suckbot Remote Denial Of Service Vulnerability",
+        "body": "A vulnerability has been discovered in SuckBot. The problem occurs within the mod_mysql_logger shared object. It may be possible for an attacker to make a request to SuckBot which could cause the process to crash.This issue affects Suckbot version 0.006 and earlier."
+      }
+    ],
+    "CVE-2003-1425": [
+      {
+        "url": "http://www.securityfocus.com/bid/6882",
+        "title": "cPanel Guestbook.cgi Remote Command Execution Vulnerability",
+        "body": "A remote command execution vulnerability has been discovered in the cPanel CGI Application. This issue occurs due to insufficient sanitization of externally supplied data to the 'guestbook.cgi' script.An attacker may exploit this vulnerability to execute commands in the security context of the web server hosting the affected script.This vulnerability has been reported to affect cPanel version 5, previous versions may also be affected."
+      }
+    ],
+    "CVE-2003-1427": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/311160",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6807",
+        "title": "Netgear FM114P Wireless Firewall File Disclosure Vulnerability",
+        "body": "Netgear FM114P Wireless Firewalls allow directory traversal using escaped character sequences.  It is possible for an unauthenticated user to retrieve the firewall's configuration file by escaping from the /upnp/service directory."
+      }
+    ],
+    "CVE-2003-1430": [
+      {
+        "url": "http://www.securityfocus.com/bid/6775",
+        "title": "Epic Games Unreal Engine Unreal URL Directory Traversal Vulnerability",
+        "body": "It has been reported that a directory traversal vulnerability exists in several games using some versions of the Unreal Engine.It is possible for attackers to traverse outside of the game's installation directory using directory traversal sequences.If the attacker refers to specific files it may be possible to cause the vulnerable game client to crash."
+      }
+    ],
+    "CVE-2003-1431": [
+      {
+        "url": "http://www.securityfocus.com/bid/6774",
+        "title": "Epic Games Unreal Engine Client Unreal URL Denial Of Service Vulnerability",
+        "body": "It has been reported that a memory corruption bug exists in games based on the Unreal Engine. Under some circumstances, when the game client connects to a server using a excessive length Unreal URL it may be possible for the malformed URL to write over sensitive areas of stack memory causing the client to crash."
+      }
+    ],
+    "CVE-2003-1432": [
+      {
+        "url": "http://www.securityfocus.com/bid/6770",
+        "title": "Epic Games Unreal Engine Memory Consumption Denial Of Service Vulnerability",
+        "body": "A vulnerability has been reported for games using some versions of the Unreal Engine.The Unreal Engine has a facility to provide networked gaming to its users. This vulnerability exists due to the way the Engine handles some specially crafted packets.  A malformed packet sent by a malicious client can result in the consumption of all available memory. This will result in a denial of service condition.  There are currently no fixes available."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6772",
+        "title": "Epic Games Unreal Engine Package Files Code Execution Vulnerability",
+        "body": "A vulnerability has been reported for several games using the Unreal game engine that may result in code execution.An attacker can exploit this vulnerability by creating a package file with a large negative index value. Due to inconsistent interpretation of integers, it is possible for attackers to cause the server to allocate large amounts of memory by attempting to read a package file with a negative index value. This will result in the corruption of sensitive memory with attacker-supplied values."
+      }
+    ],
+    "CVE-2003-1433": [
+      {
+        "url": "http://www.securityfocus.com/bid/6771",
+        "title": "Epic Games Unreal Engine Multiple Players Denial Of Service Vulnerability",
+        "body": "A vulnerability has been reported for several games using some versions of the Unreal Engine. An attacker can exploit this vulnerability by sending a packet to the game server asking to join. This will cause the game server to add the attacker as a player. Several such join requests will cause the game server to add all requests as players. As servers contain a set limit on the maximum number of players, server resources will be exhausted, and legitimate players will not be allowed to join the game."
+      }
+    ],
+    "CVE-2003-1434": [
+      {
+        "url": "http://www.securityfocus.com/bid/6903",
+        "title": "login_ldap Module Unauthorized Access Vulnerability",
+        "body": "A vulnerability has been discovered in the login_ldap module. The issue occurs when the module is used in conjunction with specific LDAP server configurations.It may be possible for an attacker to gain anonymous authorization on affected systems running login_ldap.  Multiple versions of at least one LDAP server, OpenLDAP, ships with a default configuration that allows exploitation of this vulnerability."
+      }
+    ],
+    "CVE-2003-1435": [
+      {
+        "url": "http://www.securityfocus.com/bid/6887",
+        "title": "PHPNuke Search Engine SQL Injection Vulnerability",
+        "body": "It has been reported that the search module distributed with PHPNuke is vulnerable to an SQL injection attack. PHPNuke, in some cases, does not sufficiently sanitize user-supplied input which is used when constructing SQL queries. As a result, attackers may supply malicious parameters to manipulate the structure and logic of SQL queries. This may result in unauthorized operations being performed on the underlying database. This issue may be exploited to cause sensitive information to be disclosed to a remote attacker."
+      }
+    ],
+    "CVE-2003-1436": [
+      {
+        "url": "http://www.securityfocus.com/bid/6731",
+        "title": "Nukebrowser Remote File Include Vulnerability",
+        "body": "Nukebrowser is prone to an issue which may allow remote attackers to include files located on remote servers. This issue is present in the nukebrowser.php script file.Under some circumstances, it is possible for remote attackers to influence the include path for 'cmd.txt' to point to an external file on a remote server by manipulating some URI parameters."
+      }
+    ],
+    "CVE-2003-1440": [
+      {
+        "url": "http://www.securityfocus.com/bid/6739",
+        "title": "SpamProbe Remote Denial of Service Vulnerability",
+        "body": "A denial of service vulnerability exists in SpamProbe. It has been reported that emails containing newlines within HTML <href> tags may cause SpamProbe to crash. This occurs when parsing the tag with a regular expression.This issue has been reported to occur on RedHat 8.0. It is not yet known whether SpamProbe is prone to this issue when running on other distributions or operating systems."
+      }
+    ],
+    "CVE-2003-1441": [
+      {
+        "url": "http://www.securityfocus.com/bid/6799",
+        "title": "Posadis DNS Request Question Section Denial Of Service Vulnerability",
+        "body": "A denial of service vulnerability has been reported for Posadis. The vulnerability exists due to the way the DNS server reads certain DNS queries. An attacker can exploit this vulnerability by sending a malformed DNS query to a Posadis server. When Posadis attempts to parse the request, it will fail and cause the server to crash."
+      }
+    ],
+    "CVE-2003-1442": [
+      {
+        "url": "http://www.securityfocus.com/bid/6824",
+        "title": "Ericsson HM220dp DSL Modem World Accessible Web Administration Interface Vulnerability",
+        "body": "The Ericsson HM220dp DSL Modem uses a web interface for remote administration and configuration.  This interface does not require any authentication in order to access.  There is no option to enable any authentication requirement."
+      }
+    ],
+    "CVE-2003-1445": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/311334",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6822",
+        "title": "RARLAB FAR File Manager Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported for FAR that may result in a denial of service condition. The vulnerability exists due to insufficient bounds checking performed by FAR when parsing directory paths. Specifically, when FAR attempts to parse overly long paths it will crash thereby resulting in a denial of service condition."
+      }
+    ],
+    "CVE-2003-1446": [
+      {
+        "url": "http://www.securityfocus.com/bid/6912",
+        "title": "Rogue Variable Expansion Buffer Overflow Vulnerability",
+        "body": "A vulnerability has been discovered in Rogue which may allow a local attacker to obtain elevated privileges. Due to insufficient bounds checking of user-supplied input, it is possible to overflow a buffer used to save games. A malicious user may be able to exploit this issue to overwrite a return address in the target application. This would allow for the execution of arbitrary instructions supplied by the attacker. Successful exploitation would result in an attacker gaining privileges of group 'games' or equivalent access on systems where Rogue is installed setgid."
+      }
+    ],
+    "CVE-2003-1447": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/310118",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/310796",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6758",
+        "title": "IBM WebSphere Exported XML Password Encoding Weakness",
+        "body": "IBM WebSphere allows administrators to export configuration files to XML.  When the WebSphere configuration file is exported in this manner, passwords are obfuscated using an easily reversible algorithm.  If an attacker gains access to an exported XML configuration file, it is a trivial task to decode the password.The WebSphere documentation states that exported configurations will contain encoded (and not encrypted) passwords.  Administrators should be cautious when exporting configuration files.This issue was reported in IBM WebSphere Advanced Server Edition 4.0.4.  It is not known if the same encoding is used in other versions.  Though the core weakness is that passwords are encoded and may be easier to reverse than if encrypted using a strong algorithm, so all current versions so should be considered prone to this weakness to some degree."
+      }
+    ],
+    "CVE-2003-1448": [
+      {
+        "url": "http://www.securityfocus.com/bid/6766",
+        "title": "Microsoft Windows 2000 NetBIOS Continuation Packets Kernel Memory Leak Vulnerability",
+        "body": "Microsoft Windows 2000 is reported to be prone to a kernel memory leak when handling NetBIOS continuation packets.  This may result in a failure to service SMB requests, which will cause a denial of service."
+      }
+    ],
+    "CVE-2003-1450": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/312133",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/6880",
+        "title": "BitchX Malformed RPL_NAMREPLY Denial Of Service Vulnerability",
+        "body": "It has been reported that BitchX does not properly handle some types of replies contained in the RPL_NAMREPLY numeric.  When a malformed reply is received by the client, the client crashes, resulting in a denial of service."
+      }
+    ],
+    "CVE-2003-1451": [
+      {
+        "url": "http://www.securityfocus.com/bid/6886",
+        "title": "Norton Antivirus 2002 Email Scanner Buffer Overflow Vulnerability",
+        "body": "The Norton Antivirus 2002 email scanner is vulnerable to a buffer overflow.  The overflow occurs during the scanning of a compressed message attachment containing a file with an excessively long file name.  This could potentially result in code execution in the security context of the antivirus scanner."
+      }
+    ],
+    "CVE-2003-1453": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/319715",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7434",
+        "title": "Xoops MyTextSanitizer HTML Injection Vulnerability",
+        "body": "A HTML injection vulnerability has been discovered in Xoops. The problem occurs due to insufficient filtering of HTML and script code by the MyTextSanitizer script.Successful exploitation of this vulnerability may allow a malicious Xoops user to execute arbitrary HTML or script code within the browser of a legitimate user."
+      }
+    ],
+    "CVE-2003-1455": [
+      {
+        "url": "http://www.securityfocus.com/bid/7582",
+        "title": "Poptop PPTP BCRELAY sprintf() Buffer Overflow Vulnerability",
+        "body": "A vulnerability has been discovered in Poptop pptpd-1.1.4 b3 and earlier. The problem occurs due to insufficient bounds checking before calling the sprintf() function. As a result, it may be possible for a malicious attacker to supply excessive data to the program which may trigger memory corruption.Successful exploitation of this issue may allow an attacker to execution arbitrary commands with the privileges of Poptop, typically root."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7590",
+        "title": "Poptop PPTP BCRELAY fscanf() Buffer Overflow Vulnerability",
+        "body": "A vulnerability has been discovered in Poptop pptpd-1.1.4 b3 and earlier. The problem occurs due to insufficient bounds checking before calling the fscanf() function. As a result, it may be possible for a malicious attacker to supply excessive data to the program which may trigger memory corruption. This data will be read from a file being accessed by Poptop. As a result, an attacker must have sufficient privileges to construct a file which will be read by Poptop.Successful exploitation of this issue may allow an attacker to execution arbitrary commands with the privileges of Poptop, typically root."
+      }
+    ],
+    "CVE-2003-1456": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/319763",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7444",
+        "title": "Mike Bobbitt Album.PL Remote Command Execution Vulnerability",
+        "body": "A remote command execution vulnerability has been reported for Album.pl. The vulnerability reportedly exists when alternate configuration files are used.The precise technical details of this vulnerability are currently unknown. This BID will be updated as further information is available."
+      }
+    ],
+    "CVE-2003-1458": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/321000",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7543",
+        "title": "ttCMS / ttForum Profile.php SQL Injection Vulnerability",
+        "body": "A problem with ttCMS/ttForum could make it possible for a remote user launch SQL injection attacks.It has been reported that a problem exists in the Profile.php script distributed as part of the software. Due to insufficient sanitizing of input, it is possible for a remote user to inject arbitrary SQL into the database used by the web forums. This vulnerability may be exploited to reset or change the password of a user.There are conflicting reports about whether or not this issue exists.  The vendor has stated that exploitation of this issue is not possible."
+      }
+    ],
+    "CVE-2003-1459": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/321000",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7542",
+        "title": "ttCMS / ttForum Remote File Include Vulnerability",
+        "body": "A remote file include vulnerability has been reported for both ttForum and ttCMS. Due to insufficient sanitization of some user-supplied variables by the 'News.php' and 'Install.php' scripts, it is possible for a remote attacker to include a malicious PHP file in a URL.Successful exploitation will result in the execution of the attacker-supplied PHP instructions with the privileges of the web server.There are conflicting reports about whether or not this issue exists.  The vendor has stated that exploitation of this issue is not possible."
+      }
+    ],
+    "CVE-2003-1461": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/320323",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/320371",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7489",
+        "title": "HP-UX RWrite Buffer Overflow Vulnerability",
+        "body": "HP-UX rwrite utility has been reported prone to a buffer overflow vulnerability. Although unconfirmed code execution with elevated privileges may be possible.The condition presents itself when excessive data is supplied as part of an argument passed to the vulnerable utility. Due to the lack of bounds checking, the vulnerable utility will crash.The precise technical details of this vulnerability are currently unknown. This BID will be updated, as further information is available."
+      }
+    ],
+    "CVE-2003-1463": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/319735",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7438",
+        "title": "Alt-N WebAdmin Remote File Viewing Vulnerability",
+        "body": "Alt-N WebAdmin allows a remote user to access files that they should not be able to access.  The remote user can submit an HTTP request that will return the contents of any webserver-readable file on the system.  NOTE: The user must have administrative privileges in WebAdmin to access these files."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7439",
+        "title": "Alt-N WebAdmin Remote File Disclosure Vulnerability",
+        "body": "Reportedly, remote users can discover the installation directory of certain software on the underlying system by submitting an HTTP request to the WebAdmin server.  This could allow an attacker to obtain sensitive information."
+      }
+    ],
+    "CVE-2003-1464": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/320555",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7507",
+        "title": "Siemens Mobile Phones %IMG_NAME Denial Of Service Vulnerability",
+        "body": "Siemens Mobile Phones are prone to a denial of service when handling malformed image attachments in SMS messages.  This is reportedly due to a boundary condition error that occurs when an overly large image name is included in a SMS message.  This vulnerability was reported in Siemens *45 Series phones, but other phones may also be affected."
+      }
+    ],
+    "CVE-2003-1465": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/321310",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7569",
+        "title": "Phorum Download File Disclosure Vulnerability",
+        "body": "The Phorum download script is prone to directory traversal attacks.  This could result in disclosure of sensitive files which are readable by the web server.  This problem is due to insufficient sanitization of directory traversal sequences from user-supplied input. "
+      }
+    ],
+    "CVE-2003-1467": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/321310",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7572",
+        "title": "Phorum Register.PHP Cross-Site Scripting Vulnerability",
+        "body": "Phorum is prone to cross-site scripting attacks.  This could permit a malicious attacker to cause the execution of hostile HTML and script code in the web client of a user who visits a vulnerable site hosting Phorum."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7573",
+        "title": "Phorum Post.PHP Cross-Site Scripting Vulnerability",
+        "body": "A cross-site scripting vulnerability has been reported for Phorum. Specifically, Phorum does not sufficiently sanitize user-supplied input for some URI parameters to the post.php script.This may allow for theft of cookie-based authentication credentials and other attacks."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7576",
+        "title": "Phorum Common.PHP Cross-Site Scripting Vulnerability",
+        "body": "The 'common.php' script contained in Phorum is prone to cross-site scripting attacks due to insufficient sanitization of input parameters.As a result of this deficiency, it is possible for a remote attacker to create a malicious link containing script code that may be executed in the browser of the web user that visits the link."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7577",
+        "title": "Phorum login.PHP Cross Site Scripting Vulnerability",
+        "body": "A cross site scripting vulnerability has been discovered in Phorum 3.4.3. The problem occurs due to insufficient sanitization of user-supplied URI parameters to the login.php script. As a result, it may be possible to execute arbitrary script code within the browser of a target user who follows a maliciously constructed link."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7584",
+        "title": "Phorum Register.PHP Existing User HTML Injection Vulnerability",
+        "body": "Phorum is prone to HTML injection attacks.  HTML and script code may be echoed back when an existing user is specified from the registration page.  This could potentially permit a malicious attacker to cause the execution of hostile HTML and script code in the web client of a user who visits a vulnerable site hosting Phorum.  "
+      }
+    ],
+    "CVE-2003-1468": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/321313",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7589",
+        "title": "PHP-Nuke Web_Links Module Path Disclosure Vulnerability",
+        "body": "The Web_Links module for PHP-Nuke has been reported prone to a vulnerability which, when exploited, may disclose sensitive path information to a remote attacker.An attacker may use the information gathered in this manner to mount further attacks against the host.It should be noted that although PHP-Nuke version 6.x has been reported vulnerable, other versions might also be affected."
+      }
+    ],
+    "CVE-2003-1469": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/319867",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7443",
+        "title": "Macromedia ColdFusion MX Error Message Path Disclosure Vulnerability",
+        "body": "A vulnerability has been reported for Macromedia ColdFusion MX that may reveal the physical path information to attackers.When certain malformed URL requests are received by the server, an error message is returned containing the full path of the ColdFusion installation."
+      }
+    ],
+    "CVE-2003-1470": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/319879",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7446",
+        "title": "Alt-N MDaemon IMAP Server Folder Creation Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported for the MDaemon IMAP server. The vulnerability exists when IMAP folders are created which may result in the execution of code with elevated privileges."
+      }
+    ],
+    "CVE-2003-1471": [
+      {
+        "url": "http://www.securityfocus.com/bid/7445",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1472": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/319818",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7451",
+        "title": "3D-FTP Client Buffer Overflow Vulnerability",
+        "body": "It has been reported that 3D-FTP client may be prone to a buffer overflow condition. This issue is due to the client not implementing sufficient bounds checking on banner data copied into local memory buffers.It may be possible for remote attackers to corrupt sensitive regions of memory with attacker-supplied values, possibly resulting in execution of arbitrary code."
+      }
+    ],
+    "CVE-2003-1473": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/321001",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7537",
+        "title": "Lgames LTris Local Memory Corruption Vulnerability",
+        "body": "A memory corruption vulnerability has been reported for LTris that may result in a local attacker obtaining group 'games' privileges."
+      }
+    ],
+    "CVE-2003-1475": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/320980",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7538",
+        "title": "Netbus Authentication Bypass Vulnerability",
+        "body": "A vulnerability in Netbus may permit remote users to bypass authentication.  If a connection is made to a Netbus server from a host, further connections from that IP address may not need to authenticate with the server."
+      }
+    ],
+    "CVE-2003-1477": [
+      {
+        "url": "http://www.securityfocus.com/bid/7562",
+        "title": "Clearswift MailSweeper PowerPoint File Denial of Service Vulnerability",
+        "body": "A vulnerability has been discovered in Clearswift MAILsweeper. The problem occurs when handling PowerPoint files containing malformed attributes. When a malicious file is encountered, MAILsweeper will enter an endless loop. This will effectively cause available system resources to be consumed."
+      }
+    ],
+    "CVE-2003-1478": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/320266",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7486",
+        "title": "KDE Konqueror Malformed HTML Page Denial of Service Vulnerability",
+        "body": "KDE Konqueror has been reported prone to a denial of service vulnerability when rendering a HTML page that contains malformed data. Although unconfirmed, code execution may be possible.The precise technical details of this vulnerability are currently unknown. This BID will be updated, as further information is available."
+      }
+    ],
+    "CVE-2003-1479": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/320345",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7490",
+        "title": "WebcamXP Message Field HTML Code Injection Vulnerability",
+        "body": "A problem with WebcamXP Chat page could allow remote users to execute arbitrary code in the context of the web site running WebcamXP Chat. The problem occurs due to the lack of sanitization performed on user-supplied input.As a result, a malicious user may have the ability to submit a post to the site containing embedded HTML code. This code would be executed by a user's browser in the context of the vulnerable site.It should be noted that although this vulnerability has been reported to affect WebcamXP version 1.02.432 and 1.02.535.4.0, previous versions might also be affected."
+      }
+    ],
+    "CVE-2003-1481": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/320438",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7501",
+        "title": "CommuniGate Pro Webmail Session Hijacking Vulnerability",
+        "body": "CommuniGate Pro Webmail has been reported prone to a session hijacking vulnerability. The vulnerability presents itself when the victim views an image or similar resource embedded in a HTML web-mail.The attacker may intercept the HTTP header and extract URL data contained within. The attacker may use this data, within a certain time frame, to hijack the current user session."
+      }
+    ],
+    "CVE-2003-1483": [
+      {
+        "url": "http://www.securityfocus.com/bid/7499",
+        "title": "FlashFXP User Password Encryption Weakness",
+        "body": "FlashFXP uses a trivially reversible algorithm to encrypt FTP user credentials.  Local attackers with access to the sites.data may exploit this weakness to gain unauthorized access to FTP user credentials for remote sites."
+      }
+    ],
+    "CVE-2003-1484": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/320544",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7502",
+        "title": "Microsoft Internet Explorer DHTML AnchorClick Partial Denial Of Service Vulnerability",
+        "body": "Microsoft Internet Explorer has been reported prone to a denial of service condition when handling certain DHTML objects. It has been reported that an attacker may craft a malicious DHTML page containing a malformed 'AnchorClick' link, upon following the malicious link, Internet Explorer will fail. This issue is believed to be as a result of an illegal exception thrown while attempting to access a null pointer.This issue will only affect the active Internet Explorer window, inactive Internet Explorer windows are not affected.It should be noted that, although this vulnerability has been reported to affect Internet Explorer version 6.0 SP1,  previous versions might also be affected."
+      }
+    ],
+    "CVE-2003-1486": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/321310",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7571",
+        "title": "Phorum Multiple Path Disclosure Vulnerabilities",
+        "body": "Phorum is prone to multiple path disclosure vulnerabilities.  The path to the webroot is disclosed when certain scripts are called incorrectly.  Paths may be disclosed in error messages."
+      }
+    ],
+    "CVE-2003-1487": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/321310",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7574",
+        "title": "Phorum Edit User Profile Arbitrary Command Execution Vulnerability",
+        "body": "Phorum has been reported prone to remote arbitrary command execution vulnerability.The issue presents itself due to a lack of sufficient sanitization performed on user-supplied data submitted via the 'Phorum Edit user' profile page."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7578",
+        "title": "Phorum UserAdmin Arbitrary Command Execution Vulnerability",
+        "body": "Phorum has been reported prone to remote arbitrary command execution vulnerability.The issue presents itself due to a lack of sufficient sanitization performed on user-supplied data submitted via the 'UserAdmin' page."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7579",
+        "title": "Phorum Stats Program Arbitrary Command Execution Vulnerability",
+        "body": "Phorum has been reported prone to remote arbitrary command execution vulnerability.The issue presents itself due to a lack of sufficient sanitization performed on user-supplied data submitted to the Phorum Stats program."
+      }
+    ],
+    "CVE-2003-1488": [
+      {
+        "url": "http://www.securityfocus.com/bid/7427",
+        "title": "Truegalerie Unauthorized Administrative Access Vulnerability",
+        "body": "A vulnerability has been reported for Truegalerie that may result in unauthorized administrative access. The vulnerability exists due to insufficient sanitization of some URI values."
+      }
+    ],
+    "CVE-2003-1490": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/319712",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7435",
+        "title": "SonicWALL Pro Large HTTP POST Denial of Service Vulnerability",
+        "body": "The SonicWALL Pro firewall is reported to be prone to a denial of service condition when an unusually large HTTP POST is sent to the internal interface.  The firewall device will reset, resulting in a loss of availability while it goes through this cycle.  This may be the result of a buffer being overrun, however, this has not been confirmed."
+      }
+    ],
+    "CVE-2003-1491": [
+      {
+        "url": "http://www.securityfocus.com/bid/7436",
+        "title": "Kerio Personal Firewall Firewall Filter Bypass Vulnerability",
+        "body": "Reportedly, KPF suffers from a vulnerability whereby the existing firewall filters may be bypassed. This vulnerability exists due to the fact that UDP traffic to and from port 53 is allowed.Allegedly, an attacker may craft a special packet with a source port of 53 and send this packet to a vulnerable system. KPF will allow this packet to proceed thus bypassing the firewall filters."
+      }
+    ],
+    "CVE-2003-1494": [
+      {
+        "url": "http://www.securityfocus.com/bid/8859",
+        "title": "HP OpenView Network Node Manager Denial Of Service Vulnerabilities",
+        "body": "HP has announced that a number of vulnerabilities exist in the OpenView Network Node Manager (NNM). As a result, certain NNM processes may be prone to denial of service attacks.Specifically, a memory leak condition may occur when handling malformed TCP packets. The successful exploitation of this issue would effectively trigger a denial of service.HP has also reported that NNM is prone to a seperate denial of service condition, also when handling malformed TCP packets. The precise details regarding these issues are currently unknown, however if new information is made available, this BID will be updated accordingly."
+      }
+    ],
+    "CVE-2003-1495": [
+      {
+        "url": "http://www.securityfocus.com/bid/8878",
+        "title": "HP Management Software Web Agents Unspecified Unauthorized Access Vulnerability",
+        "body": "HP has announced that a vulnerability in various web agents released with their Management Software could allow for unauthorized remote access. Exploitation of this issue is said to allow for unauthorized remote access, as well as a possible denial of service. "
+      }
+    ],
+    "CVE-2003-1496": [
+      {
+        "url": "http://www.securityfocus.com/advisories/5973",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/8813",
+        "title": "HP Tru64 CDE dtmailpr Unspecified Privileged Access Vulnerability",
+        "body": "A problem has been identified in dtmailpr that may allow authenticated attackers to gain unauthorized privileged access to remote systems.It has been reported by HP that an issue in the Common Desktop Environment suite distributed with Tru64 contains a vulnerability that could be exploited by a remote attacker to gain unauthorized remote privileged access. Specific information about this vulnerability is not currently available."
+      }
+    ],
+    "CVE-2003-1497": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/341309",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/8834",
+        "title": "Linksys BEFSX41 EtherFast Router Log Viewer Denial Of Service Vulnerability",
+        "body": "Linksys BEFSX41 EtherFast Routers are prone to a denial of service.  This issue is exposed via the log viewer in the web administrative interface.  By submitting an invalid value for the \"Log_Page_Num\" parameter, it is possible to trigger this condition, causing the router to be unresponsive.  While exploitation does require a logged in administrative user to submit a request to the log viewer with malformed parameters, it is possible that the admin could be tricked into visiting a specially crafted URI that contains the IP address of the router and malformed URI parameters."
+      }
+    ],
+    "CVE-2003-1498": [
+      {
+        "url": "http://www.securityfocus.com/bid/8823",
+        "title": "WrenSoft Zoom Search Engine Cross-Site Scripting Vulnerability",
+        "body": "WrenSoft Zoom Search Engine is prone to a cross-site scripting issue in the software's search module. A remote attacker may be able to execute HTML or script code in a user's browser.   The problem occurs because the software fails to properly sanitize user-supplied input. An attacker may be able to a construct a malicious link containing HTML or script code that may be rendered in a user's browser upon visiting that link. This attack would occur in the security context of the vulnerable site."
+      }
+    ],
+    "CVE-2003-1499": [
+      {
+        "url": "http://www.securityfocus.com/bid/8850",
+        "title": "Bytehoard File Disclosure Vulnerability",
+        "body": "Bytehoard is prone to directory traversal attacks.  This could potentially permit remote attackers to gain unauthorized access to sensitive files hosted on the system running the software."
+      }
+    ],
+    "CVE-2003-1500": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/341757",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/8851",
+        "title": "CPCommerce Functions Remote File Include Vulnerability",
+        "body": "cpCommerce may allow remote users to influence the include path for PHP scripts.  This could be exploited to include a malicious script that is hosted on an attacker-controlled server, allowing for execution of arbitrary code in the context of the web server."
+      }
+    ],
+    "CVE-2003-1501": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/341870",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/8858",
+        "title": "Gast Arbeiter File Upload Validation Vulnerability",
+        "body": "Gast Arbeiter allegedly does not sufficiently validate user-supplied input during uploads.  This could be exploited by a remote attacker to upload a file to an attacker-specified location on the file system hosting the software.  The issue appears to be exploitable by including directory traversal sequences during a file upload. Consequences of exploitation include the possibility of corruption files on the system or placing files such as malicious scripts in directories where they may be interpreted."
+      }
+    ],
+    "CVE-2003-1503": [
+      {
+        "url": "http://www.securityfocus.com/bid/8825",
+        "title": "AOL Instant Messenger Getfile Screenname Buffer Overrun Vulnerability",
+        "body": "A remotely exploitable buffer overrun vulnerability has been reported in AOL Instant Messenger (AIM).  Attackers may exploit this by enticing a user of the client to follow a maliciously constructed AIM URI (using the AIM protocol handler) that performs a \"getfile\" operation with an overly long value as the screenname."
+      }
+    ],
+    "CVE-2003-1504": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/341760",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/8847",
+        "title": "GoldLink Cookie SQL Injection Vulnerability",
+        "body": "GoldLink is prone to SQL injection attacks.  This is due to insufficient validation of values supplied via cookies.  As a result, it may be possible to manipulate SQL queries, potentially resulting in information disclosure, bulletin board compromise or other consequences."
+      }
+    ],
+    "CVE-2003-1506": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/342160",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/342551",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/342577",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/8876",
+        "title": "DansGuardian Denied URL Cross-Site Scripting Vulnerability",
+        "body": "A problem has been reported in the handling of some types of input to DansGuardian.  This problem may permit an attacker to launch cross-site scripting attacks."
+      }
+    ],
+    "CVE-2003-1513": [
+      {
+        "url": "http://www.securityfocus.com/bid/8852",
+        "title": "Caucho Resin Multiple HTML Injection and Cross-site Scripting Vulnerabilities",
+        "body": "It has been reported that Caucho Resin is prone to multiple HTML Injection and cross-site scripting vulnerabilities in various scripts that may allow a remote attacker to cause hostile HTML or script code to be rendered in the browser of a user who follows a malicious link supplied by the attacker.  The affected scripts include env.jsp, form.jsp, session.jsp, and tictactoe.jsp.  The 'name' and 'comment' fields of guestbook.jsp have been reported to be vulnerable to HTML injection.  An attacker may exploit this vulnerability to execute arbitrary HTML and script code in the browser of an unsuspecting user.  Exploitation may also allow attackers to inject hostile HTML and script code into the sample guestbook.Successful exploitation of these issues may allow an attacker to steal cookie-based credentials.  Other attacks may also be possible.Caucho Resin version 2.1 and prior have been reported to be prone to this issue, however other versions may be affected as well."
+      }
+    ],
+    "CVE-2003-1514": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/341754",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/8854",
+        "title": "Emule Web Control Panel HTTP Login Long Password Denial of Service Vulnerability",
+        "body": "It has been reported that the eMule Web Control Panel HTTP login mechanism may be prone to denial of service attacks. The issue is said to occur due to the mechanism failing to verify the origin of data transmitted via a login form. As a result, eMule expects a limited number of password characters to be transmitted when attempting to login. By making use of a malicious form, it may be possible for an attacker to transmit excessive data to eMule and effectively trigger a denial of service."
+      }
+    ],
+    "CVE-2003-1515": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/341752",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/8855",
+        "title": "Origo ADSL Router Remote Administrative Interface Configuration Vulnerability",
+        "body": "A problem has been identified in some Origo ADSL routers.  Due to insufficient access control, it may be possible for a remote user to gain unauthorized administrative access to routers, potentially resulting in a denial of service."
+      }
+    ],
+    "CVE-2003-1517": [
+      {
+        "url": "http://www.securityfocus.com/bid/8860",
+        "title": "Dansie Shopping Cart Server Error Message Installation Path Disclosure Vulnerability",
+        "body": "Dansie Shopping Cart is reported to be prone to path disclosre issue in the 'db' parameter of 'cart.pl' that may lead to an attacker gaining sensitive information about the installation path of the system. Information gained by exploiting this attack may aid an attacker in launching further attacks against a vulnerable system."
+      }
+    ],
+    "CVE-2003-1518": [
+      {
+        "url": "http://www.securityfocus.com/bid/8821",
+        "title": "WinSyslog Interactive Syslog Server Long Message Remote Denial Of Service Vulnerability",
+        "body": "WinSyslog is prone to a remotely exploitable denial of service vulnerability.  The issue exists in the Interactive Syslog Server specifically.  This occurs when the program receives multiple excessive syslog messages via the port it listens on (10514/UDP by default).  This is also reported to cause system instability, which is likely due to resource exhaustion.The issue does not affect the WinSyslog or MonitorWare agent services.  This issue affects versions of WinSyslog prior to 2003-09-15.  The vendor has released hot fixes for the MonitorWare Agent product, which also includes the vulnerable component."
+      }
+    ],
+    "CVE-2003-1519": [
+      {
+        "url": "http://www.securityfocus.com/bid/8862",
+        "title": "Vivisimo Clustering Engine Search Script Cross-Site Scripting Vulnerability",
+        "body": "Vivisimo Clustering Engine reported prone to cross-site scripting vulnerability. The problem occurs due to insufficient sanitization of parameters passed to the search script. As a result, an attacker may be capable of constructing a link designed to execute arbitrary script code within the browser of a user who follows it."
+      }
+    ],
+    "CVE-2003-1522": [
+      {
+        "url": "http://www.securityfocus.com/bid/8869",
+        "title": "PSCS VPOP3 Email Server WebAdmin Cross-Site Scripting Vulnerability",
+        "body": "It has been reported that PSCS VPOP3 Email Server may be prone to a cross-site scripting vulnerability that may allow a remote attacker to embed malicious HTML and script code in a link.  The issue is reported to be present in the WebAdmin utility of the software because of improper sanitization of user-supplied data that will be displayed by the utility.Successful exploitation of this attack may allow an attacker to steal cookie-based authentication information that could be used to launch further attacks.PSCS VPOP3 versions 2.0.0e and 2.0.0f have been reported to be prone to this vulnerability, however other versions may be affected as well."
+      }
+    ],
+    "CVE-2003-1523": [
+      {
+        "url": "http://www.securityfocus.com/bid/8829",
+        "title": "DBMail IMAP Service SQL Injection Vulnerability",
+        "body": "It has been reported that dbmail IMAP service is prone to an SQL injection vulnerability due to insufficient sanitization of user-supplied input.  The problem is reported to be present in various parameters such as username and password.  This issue may allow a remote attacker to influence SQL query logic in order to view or modify sensitive information.  Other attacks are possible as well.dbmail versions 1.1 and prior have been reported to be prone to this issue, however other versions may also be affected."
+      }
+    ],
+    "CVE-2003-1524": [
+      {
+        "url": "http://www.securityfocus.com/bid/8870",
+        "title": "PGPDisk Switched User Unauthorized Access Weakness",
+        "body": "It has been reported that PGPDisk may be prone to an information disclosure weakness due to unauthorized local access to a user's PGP volume.  The problem is reported to present itself when a user uses the 'switch user' function in Windows XP and PGPDisk fails to unmount allow another local user to access the mounted PGP disk.  Although unconfirmed this issue does not seem to affect network drives.Successful exploitation of this issue may allow an attacker to gain access to sensitive data.  Information obtained through this attack could be used to launch further attacks against a vulnerable user.Although unconfirmed, PGPDisk version 6.02i and prior may be affected by this issue."
+      }
+    ],
+    "CVE-2003-1529": [
+      {
+        "url": "http://www.securityfocus.com/bid/7160",
+        "title": "JWalk Application Server File Disclosure Vulnerability",
+        "body": "It has been reported that JWalk Server fails to properly sanitize web requests.By sending a malicious web request to the vulnerable server, using encoded directory traversal sequences, it is possible for a remote attacker to access sensitive resources located outside of the web root.Disclosure of sensitive system files may aid the attacker in launching further attacks against the target system."
+      }
+    ],
+    "CVE-2003-1531": [
+      {
+        "url": "http://www.securityfocus.com/bid/7214",
+        "title": "Lilikoi Software Ceilidh Cross Site Scripting Vulnerability",
+        "body": "Ceilidh does not adequately filter some HTML code thus making it prone to cross-site scripting attacks. It is possible for a remote attacker to create a malicious link containing script code which will be executed in the browser of a legitimate user.An attacker can exploit this vulnerability by manipulating URI parameters for the testcgi.exe script.This issue may be exploited to steal cookie-based authentication credentials from legitimate users of the website running the vulnerable software. The attacker may hijack the session of the legitimate by using cookie-based authentication credentials."
+      }
+    ],
+    "CVE-2003-1532": [
+      {
+        "url": "http://www.securityfocus.com/bid/6746",
+        "title": "phpMyShop compte.php SQL Injection Vulnerability",
+        "body": "phpMyShop, in some cases, does not sufficiently sanitize user-supplied input which is used when constructing SQL queries. As a result, attackers may supply malicious parameters to manipulate the structure and logic of SQL queries. This vulnerability was reported to exist in the compte.php script file. A remote attacker can exploit this vulnerability to bypass the phpMyShop authentication/registration process. "
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/309921/30/26090/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1533": [
+      {
+        "url": "http://www.securityfocus.com/bid/6594",
+        "title": "phpPass AccessControl.PHP SQL Injection Vulnerability",
+        "body": "A problem with phpPass may allow an attacker to launch a SQL injection attack. The vulnerability exists in the accesscontrol.php script included with phpPass. Due to insufficient sanitization of user-supplied input, it is possible for a remote user to inject arbitrary SQL into the database used by a vulnerable site. This may allow an attacker to view pages that would normally be restricted."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/307224/30/26300/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1534": [
+      {
+        "url": "http://www.securityfocus.com/bid/7233",
+        "title": "Justice Guestbook HTML Injection Vulnerability",
+        "body": "Justice Guestbook does not adequately filter some HTML code thus making it prone to HTML injection attacks.This issue may be exploited to steal cookie-based authentication credentials from legitimate users of the website running the vulnerable software. The attacker may hijack the session of the legitimate by using cookie-based authentication credentials. Other attacks are also possible."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/316745/30/25280/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1535": [
+      {
+        "url": "http://www.securityfocus.com/bid/7234",
+        "title": "Justice Guestbook Path Disclosure Vulnerability",
+        "body": "A path disclosure vulnerability has been reported for Guestbook. The issue occurs when a request is made to the cfooter.php3 PHP script page.Access to sensitive filesystem information may aid an attacker in launching further attacks against a target system."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/316745/30/25280/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1536": [
+      {
+        "url": "http://www.securityfocus.com/bid/7141",
+        "title": "DCP-Portal Search.PHP Cross-Site Scripting Vulnerability",
+        "body": "DCP-Portal is prone to cross-site scripting attacks.  This is due to insufficient sanitization of data passed to the 'search.php' script via URI parameters.  As a result, it is possible for a remote user to create a malicious link to a site hosting the vulnerable software which contains hostile HTML and script code.  If the link is visited, the attacker-supplied script code and HTML may be interpreted by the user's web browser.  This could allow for compromise of cookie-based credentials or other possible attacks.DCP-Portal 5.3.1 is reported to be affected.  Other versions may also be affected."
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7144",
+        "title": "DCP-Portal Calendar.php Cross Site Scripting Vulnerability",
+        "body": "It has been reported that DCP-Portal does not sufficiently filter URI parameters supplied to the DCP-Portal 'calender' script. As a result of this deficiency, it is possible for a remote attacker to create a malicious link containing script code that will be executed in the browser of a legitimate user. All code will be executed within the context of the website running DCP-Portal. This may allow for theft of cookie-based authentication credentials and other attacks.This vulnerability was reported to affect DCP-Portal version 5.3.1, it is not currently known if other versions are affected."
+      }
+    ],
+    "CVE-2003-1540": [
+      {
+        "url": "http://www.securityfocus.com/bid/7147",
+        "title": "WFChat Information Disclosure Vulnerability",
+        "body": "An information disclosure vulnerability has been reported for WFChat. The vulnerability will result in the disclosure of authentication information to a remote attacker.Information obtained in this manner may allow the attacker to launch further attacks against a vulnerable system."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/315583/30/25430/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1541": [
+      {
+        "url": "http://www.securityfocus.com/bid/7167",
+        "title": "Planetmoon Guestbook Clear Text Password Retrieval Vulnerability",
+        "body": "A vulnerability has been reported in Planetmoon Guestbook. It has been reported that remote users may be able to retrieve clear text password lists. Access to this data may allow an attacker to carry out further attacks against a target user."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/315895/30/25400/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1543": [
+      {
+        "url": "http://www.securityfocus.com/bid/7344",
+        "title": "Bajie Error Message Cross-Site Scripting Vulnerability",
+        "body": "Bajie HTTP server does not sanitize HTML and script code from error output.  Remote attackers could possibly exploit this to construct a malicious link to a vulnerable web server that contains hostile HTML and script code.  If this link is followed, the attacker-supplied code could be interpreted in the web browser of the user following the link.This issue was reported in Bajie versions 0.95zxe and 0.95zxc.  Other versions may also be affected."
+      }
+    ],
+    "CVE-2003-1545": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/316198/30/25340/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/316233/30/25340/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/316341/30/25310/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/316327/30/25340/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/bid/7191",
+        "title": "PHP-Nuke Addon Viewpage.PHP File Disclosure Vulnerability",
+        "body": "PHP-Nuke has been reported prone to a file disclosure vulnerability when using the viewpage.php addon.It has been reported that PHP-Nuke may disclose arbitrary web server readable files under certain circumstances.It should be noted that this issue reportedly affects PHP-Nuke version 6.5 when running a specific configuration, however other versions may also be affected."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/316585/30/25310/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/316209/30/25340/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/316179/30/25340/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1546": [
+      {
+        "url": "http://www.securityfocus.com/bid/7104",
+        "title": "Filebased Guestbook 'Comment' HTML Injection Vulnerability",
+        "body": "It has been reported that Filebased Guestbook is prone to HTML injection attacks. This problem occurs due to Filebased Guestbook insufficiently sanitizing user-supplied input. As a result, attackers may embed malicious script code or HTML into forum posts. When a malicious post is viewed by another user, the attacker-supplied code will be interpreted in their web browser in the security context of the site hosting the software."
+      }
+    ],
+    "CVE-2003-1547": [
+      {
+        "url": "http://www.securityfocus.com/bid/7248",
+        "title": "PHP-Nuke Block-Forums.PHP Subject HTML Injection Vulnerability",
+        "body": "The PHP-Nuke 'block-Forums.php' does not sufficiently sanitize data supplied via form fields, making it prone to HTML injection attacks.  This could allow for execution of hostile HTML and script code in the web client of a user who visits a web page that contains the malicious code."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/317230/30/25220/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/316925/30/25250/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1548": [
+      {
+        "url": "http://www.securityfocus.com/bid/7126",
+        "title": "MyAbraCadaWeb Path Disclosure Vulnerability",
+        "body": "MyABraCaDaWeb is reported to disclose path information in error messages when handling some invalid requests.  This information could be useful in further attacks against a system hosting the software."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/315317/30/25460/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1549": [
+      {
+        "url": "http://www.securityfocus.com/bid/7127",
+        "title": "MyAbraCadaWeb Search Engine Cross-Site Scripting Vulnerability",
+        "body": "A cross-site scripting vulnerability has been reported in MyABraCaDaWeb's search engine.  This could allow creation of malicious links to the vulnerable script which include hostile HTML and script code.  If such a link was visited by a web user, attacker-supplied HTML and script code could be interpreted by the user's browser."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/315317/30/25460/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1550": [
+      {
+        "url": "http://www.securityfocus.com/bid/7149",
+        "title": "XOOPS XoopsOption Information Disclosure Vulnerability",
+        "body": "XOOPS has been reported vulnerable to an information disclosure vulnerability.  According to the report, path information and other sensitive data may be output in server error messages. Information obtained in this manner may be used by an attacker to launch further attacks against a vulnerable system.  This vulnerability was reported to affect XOOPS version 2.0. It is not currently known if other versions are affected."
+      }
+    ],
+    "CVE-2003-1552": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/313819/30/25640/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/313787/30/25670/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1553": [
+      {
+        "url": "http://www.securityfocus.com/bid/7134",
+        "title": "SIPS User Information Disclosure Vulnerability",
+        "body": "It has been reported that authentication is not required to view user account information. As a result, an unauthorized remote attacker may be able to view potentially sensitive information. This may aid in launching further attacks against a target user or system."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/315504/30/25460/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1554": [
+      {
+        "url": "http://www.securityfocus.com/bid/7235",
+        "title": "ScozBook HTML Injection Vulnerability",
+        "body": "ScozBook does not adequately filter some HTML code thus making it prone to HTML injection attacks.This issue may be exploited to steal cookie-based authentication credentials from legitimate users of the website running the vulnerable software. The attacker may hijack the session of the legitimate by using cookie-based authentication credentials. Other attacks are also possible."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/316747/30/25280/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1555": [
+      {
+        "url": "http://www.securityfocus.com/bid/7236",
+        "title": "ScozBook Path Disclosure Vulnerability",
+        "body": "A path disclosure vulnerability has been reported for ScozBook. The issue occurs when a request is made to the view.php script page.Access to sensitive filesystem information may aid an attacker in launching further attacks against a target system."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/316747/30/25280/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1557": [
+      {
+        "url": "http://www.securityfocus.com/bid/6679",
+        "title": "SpamAssassin BSMTP Mode Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported for SpamAssassin. The vulnerability exists when SpamAssassin has been configured for use with BSMTP processing.The vulnerability occurs when SpamAssassin is escaping '.' characters when processing email headers. Due to insufficient bounds checking performed by the filter, it is possible for a remote attacker to trigger the buffer overflow condition and execute malicious code.It should be noted that this issue allows an attacker to write the value of the '.' character to the LSB of the value stored above the affected buffer. Under some circumstances this may be the function's saved frame pointer but the exploitability of this issue is highly volatile."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/310212/30/26030/threaded",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/309912/30/26090/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1558": [
+      {
+        "url": "http://www.securityfocus.com/bid/6635",
+        "title": "fnord Web Server Buffer Overflow Vulnerability",
+        "body": "A buffer overflow vulnerability has been reported for fnord. The vulnerability exists in the httpd.c source file and is due to insufficient bounds checking when performing CGI operations.Reportedly, a buffer is allocated a space in memory that is too small. A determined attacker is able to exploit this vulnerability by making an overly long CGI request to the web server.This will trigger the buffer overflow condition and may cause the web server to behave erratically."
+      },
+      {
+        "url": "http://www.securityfocus.com/archive/1/307400/30/26270/threaded",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1570": [
+      {
+        "url": "http://www.securityfocus.com/bid/34285",
+        "title": "IBM Tivoli Storage Manager Multiple Vulnerabilities",
+        "body": "IBM Tivoli Storage Manager is prone to multiple vulnerabilities.Attackers can exploit these issues to cause denial-of-service conditions or bypass certain security restrictions. The impact of one of the issues is unknown.These issues affect versions prior to IBM Tivoli Storage Manager 6.1."
+      }
+    ],
+    "CVE-2003-1573": [
+      {
+        "url": "http://www.securityfocus.com/bid/9230",
+        "title": "J2EE/RI Pointbase Database Remote Command Execution Vulnerability",
+        "body": "A vulnerability has been reported in the J2EE/RI (Reference Implementation) Pointbase 4.6 database that could permit remote attackers to execute arbitrary commands on a system hosting the software.  This issue may reportedly be exploited through a malicious SQL statement that will cause an executable on the host file system to be run.  Denial of service attacks and exposure of sensitive information may also be the result of successful exploitation.This vulnerability is similar in nature to the issue described in BID 8773.  The vulnerability was reported for J2EE/RI 1.4 on Windows platforms.  Other versions and releases for different platforms are also likely affected."
+      }
+    ],
+    "CVE-2003-1574": [
+      {
+        "url": "http://www.securityfocus.com/bid/14170",
+        "title": "TikiWiki Authentication Bypass Vulnerability",
+        "body": "Tikiwiki authentication may be bypassed by a malicious user.Upon entering a valid username,an arbitrary or null password, and clicking on the 'remember me' button, the application does not verify the login credentials properly and logs on that user."
+      }
+    ],
+    "CVE-2003-1577": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/313867",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1583": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/313867",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1584": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/313867",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1585": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/313867",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1586": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/313867",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1587": [
+      {
+        "url": "http://www.securityfocus.com/archive/1/313867",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1598": [
+      {
+        "url": "http://www.securityfocus.com/bid/7784",
+        "title": "Wordpress Posts SQL Injection Vulnerability",
+        "body": "Wordpress has been reported prone to an SQL injection vulnerability.    Wordpress does not properly sanitize user input that is passed to the 'posts' variable. An attacker may exploit this issue to insert SQL code into requests and have the SQL code executed by the underlying database server.     It should be noted that although this vulnerability has been reported to affect Wordpress version 0.7, other versions might also be affected."
+      }
+    ],
+    "CVE-2003-1599": [
+      {
+        "url": "http://www.securityfocus.com/bid/7785",
+        "title": "Wordpress Remote PHP File Include Vulnerability",
+        "body": "A vulnerability has been reported for Wordpress. The problem occurs due to insufficient sanitization of user-supplied URI parameters. As a result, an attacker may be capable of including a malicious remote PHP file on the target server.Successful exploitation of this vulnerability would allow an attacker to execute arbitrary PHP commands on a target server, with the privileges of Wordpress."
+      }
+    ]
+  }
+}

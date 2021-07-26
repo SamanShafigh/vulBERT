@@ -1,0 +1,1132 @@
+{
+  "year": 2005,
+  "total": 171,
+  "reference": "exchange.xforce.ibmcloud.com",
+  "reports": {
+    "CVE-2005-0050": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19101",
+        "title": "Microsoft Windows Servers License Logging service code execution",
+        "body": "Microsoft Windows could allow a remote attacker to execute arbitrary code on the system, caused by improper bounds checking in the License Logging service. The License Logging service is a tool for managing Server Client Access Licenses (CAL). A remote attacker could exploit this vulnerability to execute arbitrary code on the system. Note: By default, in Windows Server 2003, the License Logging service is disabled.For vulnerability detection:Enable the following checks in the ISS Protection platform:WinMs05kb885834UpdateFor Virtual Patch:Enable the following checks in the Dynamic ISS Protection platform:MSRPC_LLS_BoFor Manual Protection:Apply the appropriate patch for your system, as listed in Microsoft Security Bulletin MS05-010. See References."
+      }
+    ],
+    "CVE-2005-0103": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19037",
+        "title": "SquirrelMail frameset file include",
+        "body": "SquirrelMail could allow a remote attacker to include malicious Web pages, caused by improper validation of URL variables in the webmail.php script. A remote attacker could exploit this vulnerability by sending a specially-crafted URL to the webmail.php script to include arbitrary Web pages in the SquirrelMail frameset.Apply the patch for this vulnerability, as listed in SquirrelMail Security Advisory 2005-01-19. See References.For SuSE Linux:Apply the appropriate fixed packages via the SuSE FTP server or the YaST Online Update, as listed in SuSE Security Summary Report SUSE-SR:2005:014. See References.For Red Hat Linux:Refer to RHSA-2005:099-06 or RHSA-2005:135-04 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux:Refer to Gentoo Linux Security Announcement GLSA 2005-01-39 for patch, upgrade, or suggested workaround information. See References."
+      }
+    ],
+    "CVE-2005-0244": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19184",
+        "title": "PostgreSQL missing permission check security bypass",
+        "body": "PostgreSQL could allow a remote attacker to bypass security restrictions, caused by a vulnerability with a missing permissions check. A remote attacker could exploit this vulnerability to bypass security and execute arbitrary arbitrary commands on the system.Upgrade to the latest version of PostgreSQL (7.2.7, 7.3.9, 7.4.7, or 8.0.1 or later), available from the PostgreSQL FTP Web page. See References.For Conectiva Linux:Upgrade to the latest Postgresql package, as listed below. Refer to Conectiva Linux Announcement CLSA-2005:1008 for more information. See References.Conectiva Linux 10.0: 7.4.2-57056U10_1cl or laterFor Red Hat Linux:Refer to RHSA-2005:138-15 or RHSA-2005:141-06 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux:Refer to Gentoo Linux Security Announcement GLSA 2005-02-08 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-0247": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19378",
+        "title": "PostgreSQL make_select_stmt function fetch buffer overflow",
+        "body": "PostgreSQL could allow a remote attacker to execute arbitrary code, caused by a vulnerability in the make_select_stmt function. By sending a specially-crafted query containing into variables in a fetch statement, a remote attacker could overflow a buffer and execute arbitrary code on the system with user privileges.For Gentoo Linux:Upgrade to the latest version of postgresql (8.0.1-r1, 7.4.7-r1, and 7.3.9-r1 or later), as listed in GLSA 200502-19. See References.For Red Hat Linux:Upgrade to the latest postgresql package, as listed below. Refer to RHSA-2005:150-04 or RHSA-2005:141-06 for more information. See References.For Debian GNU/Linux 3.0 (woody):Upgrade to the latest version of postgresql (7.2.1-2woody8 or later), as listed in DSA-683-1. See References.For Ubuntu Linux 4.10:Upgrade to the latest linux package (7.4.5-3ubuntu0.4 or later), as listed in USN-79-1 February 10, 2005. See References.For Conectiva Linux:Upgrade to the latest Postgresql package, as listed below. Refer to Conectiva Linux Announcement CLSA-2005:1008 for more information. See References.Conectiva Linux 10.0: 7.4.2-57056U10_1cl or laterFor other distributions:Contact your vendor for upgrade or patch information."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19377",
+        "title": "PostgreSQL make_select_stmt function arbitrary buffer overflow",
+        "body": "PostgreSQL could allow a remote attacker to execute arbitrary code, caused by a vulnerability in the make_select_stmt function. By sending a specially-crafted query containing arbitrary variables in a SQL statement, a remote attacker could overflow a buffer and execute arbitrary code on the system with user privileges.For Gentoo Linux:Upgrade to the latest version of postgresql (8.0.1-r1, 7.4.7-r1, and 7.3.9-r1 or later), as listed in GLSA 200502-19. See References.For Red Hat Linux:Upgrade to the latest postgresql package, as listed below. Refer to RHSA-2005:150-04 or RHSA-2005:141-06 for more information. See References.For Debian GNU/Linux 3.0 (woody):Upgrade to the latest version of postgresql (7.2.1-2woody8 or later), as listed in DSA-683-1. See References.For Ubuntu Linux 4.10:Upgrade to the latest linux package (7.4.5-3ubuntu0.4 or later), as listed in USN-79-1 February 10, 2005. See References.For Conectiva Linux:Upgrade to the latest Postgresql package, as listed below. Refer to Conectiva Linux Announcement CLSA-2005:1008 for more information. See References.Conectiva Linux 10.0: 7.4.2-57056U10_1cl or laterFor other distributions:Contact your vendor for upgrade or patch information."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19376",
+        "title": "PostgreSQL make_select_stmt function buffer overflow",
+        "body": "PostgreSQL could allow a remote attacker to execute arbitrary code, caused by a vulnerability in the make_select_stmt function. By sending a specially-crafted query containing into variables in a SQL statement, a remote attacker could overflow a buffer and execute arbitrary code on the system with user privileges.For Gentoo Linux:Upgrade to the latest version of postgresql (8.0.1-r1, 7.4.7-r1, and 7.3.9-r1 or later), as listed in GLSA 200502-19. See References.For Red Hat Linux:Upgrade to the latest postgresql package, as listed below. Refer to RHSA-2005:150-04 or RHSA-2005:141-06 for more information. See References.For Debian GNU/Linux 3.0 (woody):Upgrade to the latest version of postgresql (7.2.1-2woody8 or later), as listed in DSA-683-1. See References.For Ubuntu Linux 4.10:Upgrade to the latest linux package (7.4.5-3ubuntu0.4 or later), as listed in USN-79-1 February 10, 2005. See References.For Conectiva Linux:Upgrade to the latest Postgresql package, as listed below. Refer to Conectiva Linux Announcement CLSA-2005:1008 for more information. See References.Conectiva Linux 10.0: 7.4.2-57056U10_1cl or laterFor other distributions:Contact your vendor for upgrade or patch information."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19375",
+        "title": "PostgreSQL read_sql_construct function buffer overflow",
+        "body": "PostgreSQL could allow a remote attacker to execute arbitrary code, caused by a vulnerability in the read_sql_construct function. By sending a specially-crafted query containing input variables in a SQL statement, a remote attacker could overflow a buffer and execute arbitrary code on the system with user privileges.For Gentoo Linux:Upgrade to the latest version of postgresql (8.0.1-r1, 7.4.7-r1, and 7.3.9-r1 or later), as listed in GLSA 200502-19. See References.For Red Hat Linux:Upgrade to the latest postgresql package, as listed below. Refer to RHSA-2005:150-04 or RHSA-2005:141-06 for more information. See References.For Debian GNU/Linux 3.0 (woody):Upgrade to the latest version of postgresql (7.2.1-2woody8 or later), as listed in DSA-683-1. See References.For Ubuntu Linux 4.10:Upgrade to the latest linux package (7.4.5-3ubuntu0.4 or later), as listed in USN-79-1 February 10, 2005. See References.Upgrade to the latest version of postgresql, as listed below. Refer to SUSE Security Announcement SUSE-SA:2005:027 for more information. See References.X86 Platform:SUSE Linux 9.3: 8.0.1-6 or laterSUSE Linux 9.2: 7.4.7-0.3 or laterSUSE Linux 9.1: 7.4.7-0.5 or laterSUSE Linux 9.0: 7.3.9-7 or laterSUSE Linux 8.2: 7.3.9-6 or laterx86-64 Platform:SUSE Linux 9.3: 8.0.1-6 or laterSUSE Linux 9.2: 7.4.7-0.3 or laterSUSE Linux 9.1: 7.4.7-0.5 or laterSUSE Linux 9.0: 7.3.9-7 or laterFor Conectiva Linux:Upgrade to the latest Postgresql package, as listed below. Refer to Conectiva Linux Announcement CLSA-2005:1008 for more information. See References.Conectiva Linux 10.0: 7.4.2-57056U10_1cl or laterFor other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-0413": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/39348",
+        "title": "MyPHP Forum member.php SQL injection",
+        "body": "MyPHP Forum is vulnerable to SQL injection. A remote attacker could send specially-crafted SQL statements to the member.php script using the member parameter, which could allow the attacker to view, add, modify or delete information in the back-end database.No remedy available as of September 1, 2014."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19272",
+        "title": "myPHP Forum multiple SQL injection",
+        "body": "myPHP Forum is vulnerable to SQL injection. If magic_quotes_gpc is disabled, a remote attacker can send a specially-crafted URL request to the forum.php, member.php, forgot.php and include.php scripts containing SQL code in the fid, parameter to obtain sensitive information from the backend database, including hashed passwords.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-0477": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19399",
+        "title": "Invision Power Board SML code cross-site scripting",
+        "body": "Invision Power Board is vulnerable to cross-site scripting, caused by improper validation of user-supplied input with Standard Meta Language (SML) codes within a forum post or signature. A remote attacker could create a malicious URL link containing embedded script, which would be executed in the victim's Web browser within the security context of the hosting site, once the link is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.Upgrade to the latest version of Invision Power Board, available from the Invision Power Board Web site. See References."
+      }
+    ],
+    "CVE-2005-0485": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19359",
+        "title": "paNews comment.php script cross-site scripting",
+        "body": "paNews is vulnerable to cross-site scripting. A remote attacker could create a malicious URL link to the comments.php script containing malicious code, which would be executed in the victim's Web browser within the security context of the hosting site, once the link is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-0492": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19946",
+        "title": "Adobe Reader and Acrobat root page node count denial of service",
+        "body": "Adobe Reader is vulnerable to a denial of service attack, caused by a vulnerability when handling an invalid count value in the root page node. An attacker could exploit this vulnerability and cause Adobe to crash by creating a specially-crafted PDF file containing an invalid count value within the root page node.For Adobe Reader 7.0:Upgrade to the latest version (7.0.1 or later), available from the Adobe Download Web page. See References.For Adobe Reader prior to 7.0:Upgrade to the latest version (7.0 or later), available from the Adobe Download Web page. See References.For Adobe Acrobat 7.0:Upgrade to the latest version (7.0.1 or later), available from the Adobe Download Web page. See References.For Adobe Acrobat prior to 7.0:Upgrade to the latest version (7.0 or later), available from the Adobe Download Web page. See References."
+      }
+    ],
+    "CVE-2005-0543": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19462",
+        "title": "phpMyAdmin multiple .php scripts cross-site scripting",
+        "body": "phpMyAdmin is vulnerable to cross-site scripting. If register_globals is enabled, a remote attacker could send a specially-crafted URL request to the select_server.lib.php script containing embedded code in the strServer, cfg[BgcolorOne] or strServerChoice parameter, to the display_tbl_links.lib.php script containing embedded code in the bgcolor or row_no parameter, to the theme_left.css.php script containing embedded code in the left_font_family parameter, or to the theme_right.css.php script containing embedded code in the right_font_family parameter, which would be executed in the victim's Web browser within the security context of the hosting site, once the link is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.Upgrade to the latest version of phpMyAdmin (2.6.1-pl1 or later), available from the phpMyAdmin Download Web page. See References.For Gentoo Linux:Upgrade to the latest version of phpMyAdmin (2.6.1_p2-r1 or later), as listed in GLSA200503-07. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-0679": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19630",
+        "title": "Tell A Friend script_root file include",
+        "body": "Tell A Friend could allow a remote attacker to include malicious PHP files. A remote attacker could send a specially-crafted URL to the inc/tell_a_friend.php script that uses the script_root parameter to specify a malicious file from a remote system, which would allow the attacker to execute code on the vulnerable system.Upgrade to the latest version of Tell A Friend (2.7 or later), available from Tell A Friend Web site. See References."
+      }
+    ],
+    "CVE-2005-0720": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19616",
+        "title": "mcNews skinfile parameter PHP file include",
+        "body": "mcNews could allow a remote attacker to include malicious PHP files. If the register_globals option is enabled, a remote attacker could send a specially-crafted URL to the header.php script that uses the skinfile parameter to specify a malicious file from the local system, which would allow the attacker to execute code on the vulnerable system.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-0748": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19651",
+        "title": "WEBinsta Mailing Manager inc/initdb.php file include",
+        "body": "WEBinsta Mailing Manager could allow a remote attacker to include malicious PHP files. If the register_globals option is enabled, a remote attacker could send a specially-crafted URL to the inc/initdb.php script using the absolute_path parameter to specify a malicious file from a remote or local system, which would allow the attacker to execute code on the vulnerable system.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-0803": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19727",
+        "title": "Microsoft Windows 2000 GDI32.DLL denial of service",
+        "body": "Microsoft Windows is vulnerable to a denial of service attack, caused by a buffer overflow in the GDI32.DLL GetEnhMetaFilePaletteEntries() API function. By sending specially-crafted EMF files to a victim as an email attachment and tricking the victim into opening the attachment or by hosting it on a Web site and persuading the victim to visit the Web site, a remote attacker can cause a denial of service.Apply the appropriate patch for your system, as listed in Microsoft Security Bulletin MS05-053. See References."
+      }
+    ],
+    "CVE-2005-0844": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19791",
+        "title": "Nortel Contivity VPN password disclosure",
+        "body": "Nortel Contivity VPN (Virtual Private Networking) Client could allow a local attacker to obtain sensitive information. The VPN client stores the VPN password within the Windows registry in encoded form and within the process memory in plain text. If Username and Password Authentication or Group Security Authentication is being used, a local attacker, with access to the Extranet.exe process memory, could exploit this vulnerability to obtain the user password and group password.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-0904": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19819",
+        "title": "Microsoft Windows Remote Desktop \"TSShutdn.exe\" command denial of service",
+        "body": "Microsoft Windows Remote Desktop running on Windows XP SP1 is vulnerable to a denial of service attack. The Remote Desktop fails to properly check the 'Force shutdown from a remote system' user rights. A remote authenticated attacker could exploit this vulnerability by initiating the 'TSShutdn.exe' command to cause the service to shutdown.Apply the hotfix for this vulnerability, as listed in Microsoft Article ID: 889323. See References."
+      }
+    ],
+    "CVE-2005-1017": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19928",
+        "title": "MaxWebPortal events_functions.asp SQL injection",
+        "body": "MaxWebPortal is vulnerable to SQL injection caused by improper validation of user-supplied input. A remote attacker could send a specially-crafted URL request to the events_functions.asp script containing SQL commands in the EVENT_ID parameter which would allow the attacker to obtain sensitive information and add, modify or delete information in the backend database.Upgrade to the latest version of MaxWebPortal (1.36 or later), available from the MaxWebPortal Web site. See References."
+      }
+    ],
+    "CVE-2005-1020": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19990",
+        "title": "Cisco IOS message log to SSH session denial of service",
+        "body": "Cisco devices running Cisco Internetworking Operating System Software (IOS) are vulnerable to a denial of service attack. If the IOS device has been configured as an SSH (Secure Shell) version 2 server, and the logging of messages is directed to an established SSH session (using the terminal monitor command), while the SSH session to the device terminates when the SSH server is sending data to the client, the attacker could cause the device to reload. An attacker could repeat exploitation of this vulnerability to cause a sustained denial of service. Note: It is reported that this vulnerability only effects SSH protocol version 2.Upgrade to the latest fixed Cisco IOS version, as listed in Cisco Security Advisory 2005 April 06 1600 UTC (GMT). See References."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19989",
+        "title": "Cisco IOS SSH send command denial of service",
+        "body": "Cisco devices running Cisco Internetworking Operating System Software (IOS) are vulnerable to a denial of service attack. If the IOS device has been configured as an SSH (Secure Shell) version 2 server, and a new SSH session is in the authentication phase while a logged-in user uses the send command, the attacker could cause the device to reload. An attacker could repeat exploitation of this vulnerability to cause a sustained denial of service. Note: It is reported that this vulnerability only effects SSH protocol version 2.Upgrade to the latest fixed Cisco IOS version, as listed in Cisco Security Advisory 2005 April 06 1600 UTC (GMT). See References."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19987",
+        "title": "Cisco IOS SSHv2 TACACS+ command authentication denial of service",
+        "body": "Cisco devices running Cisco Internetworking Operating System Software (IOS) are vulnerable to a denial of service attack. If the IOS device has been configured as an SSH (Secure Shell) version 2 server, and has been configured to authenticate the user to a TACACS+ server using a command authentication login that involves the use of a domain name within the account username, the attacker could cause the device to reload. An attacker could repeat exploitation of this vulnerability to cause a sustained denial of service. Note: It is reported that this vulnerability only effects SSH protocol version 2.Upgrade to the latest fixed Cisco IOS version, as listed in Cisco Security Advisory 2005 April 06 1600 UTC (GMT). See References."
+      }
+    ],
+    "CVE-2005-1021": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/19991",
+        "title": "Cisco IOS memory leak denial of service",
+        "body": "Cisco devices running Cisco Internetworking Operating System Software (IOS) are vulnerable to a denial of service attack. If the IOS device has been configured to authenticate SSH (Secure Shell) users to a TACACS+ server and the login fails due to the use of an invalid username or password, a memory leak would result, allowing a remote attacker to deplete the CPU resources. An attacker could repeat exploitation of this vulnerability to cause a sustained denial of service. Note: It is reported that this vulnerability effects both SSH protocol versions 1 and 2.Upgrade to the latest fixed Cisco IOS version, as listed in Cisco Security Advisory 2005 April 06 1600 UTC (GMT). See References."
+      }
+    ],
+    "CVE-2005-1126": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/20114",
+        "title": "FreeBSD ifconf function information disclosure",
+        "body": "FreeBSD could allow a local attacker to obtain sensitive information caused by a vulnerability in clearing the ifcon() function when generating lists of network interfaces. A local attacker could exploit this vulnerability to obtain various sensitive information from previously cached kernel memory.Upgrade to the latest version of FreeBSD (RELENG_5, 5.4-STABLE, RELENG_5_4, 5.4-RELEASE-p2, RELENG_5_3, 5.3-RELEASE-p9, RELENG_4, 4.11-STABLE, RELENG_4_11, 4.11-RELEASE-p3, and RELENG_4_10 or 4.10-RELEASE-p8 or later dated after 2005-04-15 security branch), as listed in FreeBSD Security Advisory FreeBSD-SA-05:04.ifconf. See References.— OR—Apply the patch for this vulnerability, as listed in FreeBSD Security Advisory FreeBSD-SA-05:04.ifconf. See References."
+      }
+    ],
+    "CVE-2005-1398": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/44766",
+        "title": "PHPCart phpcart.php data manipulation",
+        "body": "PHPCart is vulnerable to data manipulation attacks, caused by improper validation of user-supplied input to the phpcart.php script. A remote attacker could exploit this vulnerability using the amount and handling_cart parameters to modify shopping cart item prices during checkout.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-1425": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/20314",
+        "title": "Multiple Uapplication products information disclosure",
+        "body": "Multiple Uapplication products, such as Uguestbook, Ublog, and Uphotogallery could allow a remote attacker to obtain sensitive information. A remote attacker could send a specially-crafted URL to obtain the database which includes the administrative password. In addition, a remote authenticated attacker could use this vulnerability to invoke the Uphotogallery edit_image.asp script to upload arbitrary files on the system.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-1426": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/20314",
+        "title": "Multiple Uapplication products information disclosure",
+        "body": "Multiple Uapplication products, such as Uguestbook, Ublog, and Uphotogallery could allow a remote attacker to obtain sensitive information. A remote attacker could send a specially-crafted URL to obtain the database which includes the administrative password. In addition, a remote authenticated attacker could use this vulnerability to invoke the Uphotogallery edit_image.asp script to upload arbitrary files on the system.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-1486": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/20384",
+        "title": "FishCart multiple cross-site scripting",
+        "body": "FishCart is vulnerable to cross-site scripting caused by improper validation of user-supplied input. A remote attacker could embed malicious script in a URL request in multiple scripts such as display.php and upstracking.php. Once the link is clicked, it would be executed in the victim's Web browser within the security context of the hosting site. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.Upgrade to the latest version of FishCart (3.2R or later), available from the FishCart Web site. See References."
+      }
+    ],
+    "CVE-2005-1487": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/20386",
+        "title": "FishCart multiple SQL injection",
+        "body": "FishCart is vulnerable to SQL injection. A remote attacker could send a specially-crafted SQL statement to the display.php and upstnt.php scripts which would allow the attacker to add, modify or delete data in the backend database.Upgrade to the latest version of FishCart (3.2R or later), available from the FishCart Web site. See References."
+      }
+    ],
+    "CVE-2005-1500": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/20439",
+        "title": "MyBloggie SQL injection",
+        "body": "MyBloggie is vulnerable to SQL injection. A remote attacker could send a specially-crafted SQL statement to multiple parameters which would allow the attacker to add, modify or delete data in the backend database.Apply the appropriate MyBloggie patch, available from the MyBloggie Web site Forum. See References."
+      }
+    ],
+    "CVE-2005-1689": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/21055",
+        "title": "Kerberos KDC krb5_recvauth code execution",
+        "body": "The MIT Kerberos Key Distribution Center (KDC) could allow an unauthenticated remote attacker to execute arbitrary code on the system, caused by a double free vulnerability in the krb5_recvauth() function. An attacker could exploit this vulnerability using unspecified attack vectors to execute arbitrary code with the privileges of the application calling the krb5_recvauth() function. This vulnerability could be leveraged to compromise the entire Kerberos realm.Upgrade to the latest version of MIT Kerberos 5 (krb5-1.2.7 or later), as listed in MIT krb5 Security Advisory 2005-003. See References.For Debian GNU/Linux 3.1 (Sarge):Upgrade to the latest version of krb5 (1.3.6-2sarge2 or later), as listed in DSA-757-1. See References.For Gentoo Linux:Upgrade to the latest version of mit-krb (5-1.4.1-r1 or later), as listed in Gentoo Linux Security Announcement GLSA 200507-11. See References.For Conectiva Linux 9.0 and 10.0:Upgrade to the latest version of krb5 (1.4.2 or later) when it becomes available, as listed in Conectiva Linux Security Announcement CLSA-2005:993. See References.For Red Hat Linux:Refer to RHSA-2005:562-15 for patch, upgrade, or suggested workaround information. See References.— OR —Apply the patch for this vulnerability, as listed in MIT krb5 Security Advisory 2005-002. See References.For Ubuntu Linux:Refer to USN-224-1 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-1925": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23099",
+        "title": "TikiWiki tiki-user_preferences.php script allows directory traversal",
+        "body": "Tiki CMS/Groupware (TikiWiki) could allow a remote attacker to traverse directories on the Web server. A remote attacker could send a specially-crafted request to the tiki-user_preferences.php script using the language parameter to call the include() function and containing \"dot dot\" sequences (/../) to traverse directories and view arbitrary files on the system.Upgrade to the latest version of TikiWiki (version TikiWiki 1.9.1 or later) available from the TikiWiki Download Web page. See References."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23095",
+        "title": "TikiWiki tiki-editpage.php script allows directory traversal",
+        "body": "Tiki CMS/Groupware (TikiWiki) could allow a remote attacker to traverse directories. A remote attacker could send a specially-crafted request to the tiki-editpage.php script using the suck_url parameter containing \"dot dot\" sequences (/../) to traverse directories and view arbitrary files on the system.Upgrade to the latest version of TikiWiki (version TikiWiki 1.9.1 or later) available from the TikiWiki Download Web page. See References."
+      }
+    ],
+    "CVE-2005-1965": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/20973",
+        "title": "Siteframe LOCAL_PATH file include",
+        "body": "Siteframe could allow a remote attacker to include malicious PHP files caused by improper validation of user-supplied input in the LOCAL_PATH parameter. A remote attacker could send a specially-crafted URL request to the LOCAL_PATH parameter from a remote location to include a malicious file which would enable the attacker to execute arbitrary code on the vulnerable system.Upgrade to the latest version of Siteframe (3.2.3 or later), available from the Siteframe Web site. See References."
+      }
+    ],
+    "CVE-2005-1996": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/21018",
+        "title": "Bitrix Site Manager _SERVER[DOCUMENT_ROOT] PHP file include",
+        "body": "Bitrix Site Manager could allow a remote attacker to include malicious PHP files caused by improper validation of user-supplied input in the _SERVER[DOCUMENT_ROOT] parameter in the admin/index.php script. A remote attacker could send a specially-crafted URL to the admin/index.php script using the _SERVER[DOCUMENT_ROOT] parameter to include a malicious file from a remote system which would enable the attacker to execute arbitrary code on the vulnerable system.Upgrade to the latest version of Bitrix Site Manager (4.0.9 or later), available from the Bitrix Site Manager Web site. See References."
+      }
+    ],
+    "CVE-2005-2087": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/21193",
+        "title": "Microsoft Internet Explorer javaprxy.dll buffer overflow",
+        "body": "The JVIEW Profiler (Javaprxy.dll) COM object in Microsoft Internet Explorer is vulnerable to a heap-based buffer overflow. By persuading a victim to visit a malicious Web page that instantiates the JVIEW Profiler COM object as an ActiveX control, a remote attacker could overflow a buffer and execute arbitrary code on the system or cause the victim's Web browser to crash.Apply the appropriate patch for your system, as listed in the latest Microsoft Security Bulletin. See References.— OR —Use Microsoft Automatic Update if it is supported by your operating system. The original bulletin issued by Microsoft has been superseded.For Virtual Patch:Enable the following checks in the Dynamic ISS Protection platform:HTML_IE_Javaprxy_Heap_Corruption"
+      }
+    ],
+    "CVE-2005-2127": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/34754",
+        "title": "Microsoft Internet Explorer MSHtmlPopupWindow object denial of service",
+        "body": "Microsoft Internet Explorer is vulnerable to a denial of service, caused by improper handling of the MSHtmlPopupWindow object (mshtml.dll). By persuading a victim to visit a specially-crafted Web page, a remote attacker could cause the victim's browser to crash.No remedy available as of September 1, 2014."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/21895",
+        "title": "Microsoft Windows Msdds.dll object command execution",
+        "body": "Microsoft Windows could allow a remote or local attacker to execute arbitrary code. When instantiating the Microsoft DDS Library Shape Control (Msdds.dll) object, or other COM objects, as ActiveX controls, a memory corruption error can occur. A remote attacker could exploit this vulnerability by creating a malicious Web page and hosting it on a Web site or by sending it to a victim as an HTML email. The attacker could execute arbitrary code on the system and take complete control over the victim's system or cause Internet Explorer to crash when the victim opens the Web page.Apply the appropriate patch for your system, as listed in Microsoft Security Bulletin MS05-052. See References.For other distributions:Apply the appropriate update for your system. See References."
+      }
+    ],
+    "CVE-2005-2340": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24054",
+        "title": "Apple QuickTime JPEG image buffer overflow",
+        "body": "Apple QuickTime is vulnerable to a heap-based buffer overflow. By creating a malicious JPEG image, a remote attacker could overflow a buffer and execute arbitrary code on the system, once the malicious image is viewed in QuickTime.Upgrade to the latest version of QuickTime (7.0.4 later), available from the Apple Security Updates Web page. See References."
+      }
+    ],
+    "CVE-2005-2344": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24063",
+        "title": "BlackBerry Enterprise Server Attachment Service PNG buffer overflow",
+        "body": "Research in Motion (RIM) BlackBerry Enterprise Server is vulnerable to a heap-based buffer overflow, caused by improper handling of malformed PNG images. By creating a PNG image, and sending it to a BlackBerry handheld device user as an email attachment, a remote attacker could overflow a buffer and execute arbitrary code on the system or cause the BlackBerry Attachment Service to crash.Upgrade to BlackBerry Enterprise Server version 4.0 Service Pack 3 or later. Refer to BlackBerry Support Knowledge Base Article KB-04756 for more information. See References."
+      }
+    ],
+    "CVE-2005-2371": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24321",
+        "title": "Oracle Critical Patch Update - January 2006",
+        "body": "The Oracle Critical Patch Update dated January 2006 is not installed, which could allow an attacker to exploit multiple vulnerabilities. Refer to the risk matrix from the Oracle Critical Patch Update - January 2006 for details.Refer to Oracle Critical Patch Update - January 2006 for patch, upgrade, or suggested workaround information. See References."
+      }
+    ],
+    "CVE-2005-2378": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24321",
+        "title": "Oracle Critical Patch Update - January 2006",
+        "body": "The Oracle Critical Patch Update dated January 2006 is not installed, which could allow an attacker to exploit multiple vulnerabilities. Refer to the risk matrix from the Oracle Critical Patch Update - January 2006 for details.Refer to Oracle Critical Patch Update - January 2006 for patch, upgrade, or suggested workaround information. See References."
+      }
+    ],
+    "CVE-2005-2454": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/29660",
+        "title": "IBM Lotus Notes \"notes\" directory insecure permission",
+        "body": "IBM Lotus Notes could allow a local attacker to gain elevated privileges on the system, caused by insecure permissions on the \"notes\" directory and related subdirectories, which assign \"Full Control\" to the \"Everyone\" group. A local attacker could exploit this vulnerability to add, modify, or delete application files and possibly execute arbitrary commands with SYSTEM privileges.Upgrade to the latest version of Lotus Notes (7.0.2 or later), available from the IBM Web site. See References."
+      }
+    ],
+    "CVE-2005-2492": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/22218",
+        "title": "Linux kernel raw_sendmsg function information disclosure",
+        "body": "Linux kernel could allow a local attacker to obtain sensitive information caused by a vulnerability in the raw_sendmsg() function. A local attacker could use this vulnerability to read kernel memory contents to obtain sensitive information or possibly modify various hardware to cause a denial of service.For Red Hat Linux:Refer to RHSA-2005:514-46 for patch, upgrade, or suggested workaround information. See References.For Ubuntu Linux:Refer to USN-178-1 for patch, upgrade, or suggested workaround information. See References.For SUSE Linux:Refer to SUSE Security Announcement SUSE-SA:2005:068 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-2495": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/22244",
+        "title": "X.Org pixmap buffer overflow",
+        "body": "X.Org is vulnerable to a heap-based buffer overflow in the pixmap memory allocation. By sending a large pixmap, a local attacker could overflow a buffer and execute arbitrary code on the system with elevated privileges. Note: It is reported that XFree86 versions. 4.1.x through 4.5.x, X Windows System (X11) version 6.x as well as all versions of Avaya Modular Messaging Message Storage Server (MSS), Avaya Message Networking (all versions) and Avaya Intuity LX (all versions) are vulnerable to this as well.For Gentoo Linux:Upgrade to the latest version of Xorg-x11 (6.8.2-r3 or later), as listed in GLSA 200509-07. See References.For Red Hat Linux 2.1 (AS, ES, WS and Advanced Workstation):Upgrade to the latest version of XFree86 (4.1.0-73.EL or later). Refer to RHSA-2005:329-12 for more information. See References.For Red Hat Linux (Xfree86):Refer to RHSA-2005:501-20 or RHSA-2005:329-12 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux 4.0 (AS, ES, WS and Desktop):Upgrade to the latest version of Xorg-x11 (6.8.2-1.EL.13.16 or later). Refer to RHSA-2005:396-9 for more information. See References.For Debian GNU/Linux:Upgrade to the latest version of XFfree86 as listed below. Refer to Debian/GNU Security Advisory DSA-816-1 for more information. See References.Debian/GNU 3.0 (woody7): 4.1.0-16woody7 or laterDebian/GNU 3.1 (sarge): 4.3.0.dfsg.1-14sarge1 or laterFor Ubuntu Linux:Refer to USN-182-1 for patch, upgrade, or suggested workaround information. See References.For SUSE Linux:Refer to SUSE Security Announcement SUSE-SA:2005:056 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-2618": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24639",
+        "title": "IBM Lotus Notes htmsr.dll HTML speed reader URL link buffer overflow",
+        "body": "IBM Lotus Notes is vulnerable to multiple stack-based buffer overflows in HTML speed reader (htmsr.dll). By sending a malicious email containing an overly long http://, ftp:// or // URL or an overly long link to a local file, a remote attacker could overflow a buffer and execute arbitrary code on the system once the victim clicks the vulnerable link. Note: This vulnerability also affects Verity KeyView SDK.Upgrade to the latest version of IBM Lotus Notes (6.5.5 or later) or (7.0.1 or later), available from the IBM Software Support Web site. See References.For Verity KeyView SDK:Upgrade to the latest version of KeyView SDK (9.2.0 or later), available from the Verity Web site. See Referneces."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24638",
+        "title": "IBM Lotus Notes tarrdr.dll TAR archive filename buffer overflow",
+        "body": "IBM Lotus Notes is vulnerable to a stack-based buffer overflow in tarrdr.dll. By creating a malicious TAR archive containing a compressed file with an overly long file name, a remote attacker could overflow a buffer and execute arbitrary code on the system once the file is extracted from within the Notes attachment viewer. Note: This vulnerability also affects Verity KeyView SDK.Upgrade to the latest version of IBM Lotus Notes (6.5.5 or later) or (7.0.1 or later), available from the IBM Software Support Web site. See References.For Verity KeyView SDK:Upgrade to the latest version of KeyView SDK (9.2.0 or later), available from the Verity Web site. See Referneces."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24636",
+        "title": "IBM Lotus Notes uudrdr.dll UUE filename buffer overflow",
+        "body": "IBM Lotus Notes isvulnerable to a stack-based buffer overflow in uudrdr.dll. By creating a malicious UUE file containing an encoded file with an overly long file name, a remote attacker could overflow a buffer and execute arbitrary code on the system once the file is opened from within the Notes attachment viewer. Note: This vulnerability also affects Verity KeyView SDK.Upgrade to the latest version of IBM Lotus Notes (6.5.5 or later) or (7.0.1 or later), available from the IBM Software Support Web site. See References.For Verity KeyView SDK:Upgrade to the latest version of KeyView SDK (9.2.0 or later), available from the Verity Web site. See Referneces."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24635",
+        "title": "IBM Lotus Notes kvarcve.dll ZIP archive filename buffer overflow",
+        "body": "IBM Lotus Notes is vulnerable to a stack-based buffer overflow in kvarcve.dll. By creating a malicious ZIP archive containing a compressed file with an overly long file name, a remote attacker could overflow a buffer and execute arbitrary code on the system once the file is extracted from within the Notes attachment viewer. Note: This vulnerability also affects Verity KeyView SDKUpgrade to the latest version of IBM Lotus Notes (6.5.5 or later) or (7.0.1 or later), available from the IBM Software Support Web site. See References.For Verity KeyView SDK:Upgrade to the latest version of KeyView SDK (9.2.0 or later), available from the Verity Web site. See Referneces."
+      }
+    ],
+    "CVE-2005-2619": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24637",
+        "title": "IBM Lotus Notes kvarcve.dll compressed file preview directory traversal",
+        "body": "IBM Lotus Notes could allow a remote attacker to traverse directories and delete arbitrary files on a victim's system. A remote attacker could create a malicious ZIP, UUE or TAR file containing a compressed file with \"dot dot\" sequences (../) in the file name, which would allow the attacker to traverse directories and delete arbitrary files on the victim's system, once the victim previews the compressed file from within the Notes attachment viewer. Note: This vulnerability also affects Verity KeyView SDK.Upgrade to the latest version of IBM Lotus Notes (6.5.5 or later) or (7.0.1 or later), available from the IBM Software Support Web site. See References.For Verity KeyView SDK:Upgrade to the latest version of KeyView SDK (9.2.0 or later), available from the Verity Web site. See Referneces."
+      }
+    ],
+    "CVE-2005-2703": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/22376",
+        "title": "Mozilla XMLHttpRequest spoofing",
+        "body": "Mozilla Suite and Firefox could allow a remote attacker to spoof a XMLHttpRequest object caused by a vulnerability in the processing of headers. A remote attacker could exploit this vulnerability by adding illegal and malformed headers to spoof an XMLHttpRequest object. Note: It may be possible for an attacker, that is connected through a proxy, to use this vulnerability to bypass the same-origin restriction on XMLHttpRequests and obtain sensitive information.For Firefox:Upgrade to the latest version of Firefox (1.0.7 or later), available from the Mozilla Firefox Download Web page. See References.For Mozilla:Upgrade to the latest version of Mozilla (1.7.12 or later), available from the Mozilla Suite Download Web page. See References.For Red Hat Linux Firefox 4.0 (AS, ES, WS and Desktop):Upgrade to the latest Firefox package (1.0.7-1.4.1 or later), as listed in RHSA-2005:785-9. See References.For Red Hat Linux Mozilla:Upgrade to the latest Mozilla package, as listed below. Refer to RHSA-2005:789-11 for more information. See References.Red Hat Linux 2.1 AS, ES, WS and Advanced Workstation: 1.7.12-1.1.2.2 or laterRed Hat Linux 3.0 AS, ES, WS and Desktop: 1.7.12-1.1.3.2 or laterRed Hat Linux 4.0 AS, ES, WS and Desktop: 1.7.12-1.4.1 or laterFor Red Hat Linux Thunderbird:Refer to RHSA-2005:791-8 for patch, upgrade, or suggested workaround information. See References.For Debian GNU/Linux (Thunderbird):Refer to DSA-868-1 for patch, upgrade, or suggested workaround information. See References.For Debian GNU/Linux (Mozilla):Refer to DSA-866-1 for patch, upgrade, or suggested workaround information. See References.For Debian GNU/Linux (Firefox):Refer to DSA-838-1 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux:Refer to Gentoo Linux Security Announcement GLSA 2005-09-11 for patch, upgrade, or suggested workaround information. See References.For Ubuntu Linux:Refer to USN-186-1, USN-186-2, USN-155-3 and USN-200-1 for patch, upgrade, or suggested workaround information. See References.For SUSE Linux:Refer to SUSE Security Announcement SUSE-SA:2005:058 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-2709": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23040",
+        "title": "Linux kernel sysctl interface denial of service",
+        "body": "Linux kernel is vulnerable to a denial of service caused by a vulnerability in the sysctl interface when unregistering interfaces in /proc/sys/net/ipv4/conf/. A local attacker could exploit this vulnerability to cause a denial of service condition.Upgrade to the latest version of Linux Kernel (2.6.14.1 or later), available from The Linux Kernel Archives Web page. See References.For Debian GNU/Linux:Refer to DSA-1018-2 or DSA-1017-1 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux:Refer to RHSA-2006:0101-9, RHSA-2006:0140-9, RHSA-2006:0190-5, or RHSA-2006:0191-9 for patch, upgrade, or suggested workaround information. See References.For Ubuntu Linux:Refer to USN-219-1 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-2792": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/22103",
+        "title": "phpLDAPadmin welcome.php file include",
+        "body": "phpLDAPadmin could allow a remote attacker to include malicious PHP files. If register_globals is enabled, a remote attacker could send a specially-crafted URL request to the welcome.php script using the custom_welcome_page parameter to specify a malicious file from a local or remote resource which would allow the attacker to view arbitrary files or execute code on the vulnerable system.Upgrade to the latest version of phpLDAPadmin (0.9.7/alpha6 or later), available from the SourceForge.net Web site. See References."
+      }
+    ],
+    "CVE-2005-2806": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/22058",
+        "title": "BNBT Easy Tracker client.cpp script denial of service",
+        "body": "BNBT Easy Tracker is vulnerable to a denial of service attack. A remote attacker can send a specially-crafted HTTP request to the client.cpp file in the //grab headers section to cause the BNBT server to stop responding to requests.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-2856": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/28787",
+        "title": "ZipTV unacev2.dll ACE archive buffer overflow",
+        "body": "The TZipTV component in ZipTV is vulnerable to a stack-based buffer overflow caused by improper bounds checking of file names by the UNACEV2.DLL file. By creating a malicious ACE archive containing an overly long file name, a remote attacker could overflow a buffer and execute arbitrary code on the system, once the malicious ACE file is extracted.No remedy available as of September 1, 2014."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/27763",
+        "title": "BitZipper UNACEV2.DLL ACE archive buffer overflow",
+        "body": "BitZipper is vulnerable to a stack-based buffer overflow caused by improper bounds checking of file names by the UNACEV2.DLL file. By creating a malicious ACE archive containing an overly long file name, a remote attacker could overflow a buffer and execute arbitrary code on the system, once the malicious ACE file is extracted.Upgrade to the latest version of BitZipper (6.03 or later), available from the BitZipper Web site. See References."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/26982",
+        "title": "AutoMate unacev2.dll ACE archive buffer overflow",
+        "body": "AutoMate is vulnerable to a stack-based buffer overflow caused by improper bounds checking of file names by the UNACEV2.DLL file. By creating a malicious ACE archive containing an overly long file name, a remote attacker could overflow a buffer and execute arbitrary code on the system, once the malicious ACE file is extracted.No remedy available as of May 2007."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/26736",
+        "title": "Rising Antivirus unacev2.dll ACE archive buffer overflow",
+        "body": "Rising Antivirus 2006 is vulnerable to a stack-based buffer overflow caused by improper bounds checking of file names by the UNACEV2.DLL file. By creating a malicious ACE archive containing an overly long file name, a remote attacker could overflow a buffer and execute arbitrary code on the system, once the malicious ACE file is extracted.Upgrade to the latest version of Rising Antivirus 2006 (18.29.12 or later), available to customers via online update. See References."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/26480",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/26479",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/26447",
+        "title": "Filzip unacev2.dll ACE archive buffer overflow",
+        "body": "Filzip is vulnerable to a stack-based buffer overflow caused by improper bounds checking of file names by the UNACEV2.DLL file. By creating a malicious ACE archive containing an overly long file name, a remote attacker could overflow a buffer and execute arbitrary code on the system, once the malicious ACE file is extracted.Upgrade to the latest versions of Filzip, available from the Filzip Web site. See References."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/26385",
+        "title": "UltimateZip unacev2.dll ACE archive buffer overflow",
+        "body": "UltimateZip is vulnerable to a stack-based buffer overflow caused by improper bounds checking of file names by the UNACEV2.DLL file. By creating a malicious ACE archive containing an overly long file name, a remote attacker could overflow a buffer and execute arbitrary code on the system, once the malicious ACE file is extracted.No remedy available as of November 2008."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/26315",
+        "title": "WhereIsIt unacev2.dll ACE archive buffer overflow",
+        "body": "WhereIsIt is vulnerable to a stack-based buffer overflow caused by improper bounds checking of file names by the UNACEV2.DLL file. By creating a malicious ACE archive containing an overly long file name, a remote attacker could overflow a buffer and execute arbitrary code on the system, once the malicious ACE file is extracted.Upgrade to the latest version of WhereIsIt (3.73.505 or later), available from the Where Is It Web site. See References."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/26302",
+        "title": "Anti-Trojan unacev2.dll ACE file buffer overflow",
+        "body": "Anti-Trojan is vulnerable to a stack-based buffer overflow caused by improper bounds checking of file names by the UNACEV2.DLL file. By creating a malicious ACE archive containing an overly long file name, a remote attacker could overflow a buffer and execute arbitrary code on the system, once the malicious ACE file is scanned. Note: In order to exploit this vulnerability, the \"Search in archive files\" option must be enabled.No remedy available as of May 2007.Note: This product is no longer being supported."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/26272",
+        "title": "PowerArchiver unacev2.dll ACE archive buffer overflow",
+        "body": "PowerArchiver is vulnerable to a buffer overflow caused by improper bounds checking of file names by the UNACEV2.DLL file. By creating a malicious ACE archive containing an overly long file name, a remote attacker could overflow a buffer and execute arbitrary code on the system, once the malicious ACE file is extracted.Upgrade to the latest version of PowerArchiver (9.61 or later), available from the PowerArchiver Web site. See References."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/26168",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/26142",
+        "title": "WinHKI unacev2.dll ACE archive buffer overflow",
+        "body": "WinHKI is vulnerable to a buffer overflow, caused by improper bounds checking of file names by the UNACEV2.DLL file. By creating a malicious ACE archive containing an overly long file name, a remote attacker could overflow a buffer and execute arbitrary code on the system, once the malicious ACE file is extracted.Upgrade to the latest version of WinHKI (1.68 or later), available from the WinHKI Web site. See References."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/26116",
+        "title": "Servant Salamander unacev2.dll ACE archive buffer overflow",
+        "body": "Servant Salamander is vulnerable to a buffer overflow, caused by improper bounds checking of file names by the UNACEV2.DLL file. By creating a malicious ACE archive containing an overly long file name, a remote attacker could overflow a buffer and execute arbitrary code on the system, once the malicious ACE file is extracted.Upgrade to the latest version of Servant Salamander (2.5 RC 1 or later), available from the Servant Salamander Web page. See References."
+      }
+    ],
+    "CVE-2005-2919": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/22308",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2005-2922": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/25409",
+        "title": "RealNetworks RealPlayer and RealOne Player chunked Transfer-Encoding buffer overflow",
+        "body": "Multiple RealNetworks RealPlayer and RealOne Player versions are vulnerable to a heap-based buffer overflow, caused by improper handling of chunked Transfer-Encoded data. By creating a specially-crafted Web page containing embedded object tags that launch an affected version of RealPlayer or RealOne Player, a remote attacker could overflow a buffer and execute arbitrary code on the victim's system, if the victim could be persuaded to visit the malicious page.Refer to the RealNetworks Customer Support - Real Security Updates Web page for upgrade information. See References.For Red Hat Linux (Helixplayer):Refer to RHSA-2005:788-3 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (Realplayer):Refer to RHSA-2005:762-12 for patch, upgrade, or suggested workaround information. See References.For SUSE Linux:Refer to SUSE Security Announcement SUSE-SA:2006:018 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-2929": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23119",
+        "title": "Lynx lynxcgi: URI command execute",
+        "body": "Lynx could allow a remote attacker to execute arbitrary commands caused by a vulnerability in the lynxcgi, lynxexec or lynxprog URI handlers. A remote attacker could send a specially-crafted request containing arbitrary commands to the lynxcgi, lynxexec or lynxprog URI handlers that would be executed once the victim clicks the link.Upgrade to the latest version of Lynx (2.8.6dev.15 or later), available from the Lynx Web site. See References.For Red Hat Linux:Refer to RHSA-2005:839-3 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux:Refer to Gentoo Linux Security Announcement GLSA 2005-11-09 for patch, upgrade, or suggested workaround information. See References.For OpenPKG:Refer to OpenPKG Security Advisory OpenPKG-SA-2005.026 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-2932": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/36110",
+        "title": "CheckPoint ZoneAlarm ACL privilege escalation",
+        "body": "CheckPoint ZoneAlarm could allow a local attacker to gain elevated privileges, caused by improper restrictions on installed files by the Access Control List (ACL). By replacing files, an attacker could exploit this vulnerability to bypass security restrictions or execute arbitrary code with SYSTEM privileges, once the system is restarted.Upgrade to the latest version of Check Point ZoneAlarm (7.0.362 or later), available from the Check Point ZoneAlarm Service and Support Web site. See References."
+      }
+    ],
+    "CVE-2005-3051": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/30438",
+        "title": "Turbo Searcher ARJ buffer overflow",
+        "body": "Turbo Searcher is vulnerable to a stack-based buffer overflow, caused by improper bounds checking by the 7-Zip ARJ plugin when performing a search in a directory. By sending an ARJ archive with an overly long ARJ block, a remote attacker could overflow a buffer and execute arbitrary code on the system if the attacker could persuade a victim to perform a search in a directory. Note: Successful exploitation requires that the Quick Search option is disabled and the Search in compressed file option is enabled.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-3058": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24626",
+        "title": "Fortinet FortiGate Web filter URL bypass",
+        "body": "Multiple Fortinet FortiGate security appliances running FortiOS could allow certain specially-crafted URLs to bypass the Web filter. A malicious user could create a malformed HTTP request to bypass the URL blocking feature and gain access to prohibited Web sites.Upgrade to the latest version of Fortinet FortiGate (3.0 GA or later), available from the Fortinet FortiGate Web site. See References."
+      }
+    ],
+    "CVE-2005-3185": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/22721",
+        "title": "Multiple vendors wget/cURL NTLM buffer username buffer overflow",
+        "body": "Multiple vendors using wget or cURL are vulnerable to a stack-based buffer overflow caused by improper bounds checking with information sent to the memcpy() function. If NT Lan Manager (NTLM) authentication is enabled and sending a long NTLM username, a remote attacker could overflow a buffer and execute arbitrary code on the system with user privileges. Note: It is also reported that an attacker could exploit this vulnerability by sending a HTTP 302 REDIRECT command to the connecting client.For wget:Upgrade to the latest version of wget (1.10.2 or later), available from the wget Download Web page. See References.For cURL:Apply the patch for this vulnerability, as listed in Project cURL Security Advisory dated October 13 2005.As a workaround, ensure the NTLM support is disabled in wget and cURL.For Debian GNU/Linux:Refer to DSA-919-2 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (curl):Refer to RHSA-2005:807-6 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (wget):Refer to RHSA-2005:812-5 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux:Refer to Gentoo Linux Security Announcement GLSA 2005-10-19 for patch, upgrade, or suggested workaround information. See References.For Ubuntu Linux:Refer to USN-205-1 for patch, upgrade, or suggested workaround information. See References.For SUSE Linux:Apply the updates for this vulnerability, as listed in SUSE Security Announcement SUSE-SA:2005:063. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-3191": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23444",
+        "title": "Xpdf DCTStream::readBaselineSOF() heap buffer overflow",
+        "body": "Xpdf is vulnerable to a heap-based buffer overflow in the DCTStream::readBaselineSOF() function. By creating a malicious PDF file with overly large numComps value, a remote attacker could overflow a buffer to cause a denial of service and possibly execute arbitrary code on the system with privileges of the Xpdf process. Exploitation of this vulnerability would require the attacker to deliver the malicious PDF file to a potential victim, either by hosting the file on a Web site or sending it to the victim as an email attachment, and then the victim would have to open the file using Xpdf. Note: This vulnerability affects multiple vendor applications that use the Xpdf code base.Upgrade to the latest version of Xpdf (3.01pl1 or later), available from the Xpdf Web site. See References.For Debian GNU/Linux:Refer to DSA-962-1, DSA-961-1, DSA-950-1, DSA-940-1, DSA-938-1, DSA-937-1, DSA-936-1, DSA-932-1, and DSA-931-1 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (teTex):Refer to RHSA-2006:0160-14 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (xpdf):Refer to RHSA-2005:840-10 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (gpdf):Refer to RHSA-2005:867-5 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (kdegraphics):Refer to RHSA-2005:868-4 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (CUPS):Refer to RHSA-2005:878-4 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux (KPdf and Kword):Refer to Gentoo Linux Security Announcement GLSA 2006-01-02 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux (Xpdf, GPdf, CUPS, Poppler):Refer to Gentoo Linux Security Announcement GLSA 2005-12-08 for patch, upgrade, or suggested workaround information. See References.For Ubuntu Linux:Refer to USN-227-1 for patch, upgrade, or suggested workaround information. See References.For SUSE Linux:Refer to SUSE Security Announcement SUSE-SA:2006:001 for patch, upgrade, or suggested workaround information. See References.For Sun Solaris (gpdf):Refer to Sun Alert ID: 102972 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23443",
+        "title": "Xpdf DCTStream::readProgressiveSOF() heap buffer overflow",
+        "body": "Xpdf is vulnerable to a heap-based buffer overflow in the DCTStream::readProgressiveSOF() function. By creating a malicious PDF file with overly large numComps value, a remote attacker could overflow a buffer to cause a denial of service and possibly execute arbitrary code on the system with privileges of the Xpdf process. Exploitation of this vulnerability would require the attacker to deliver the malicious PDF file to a potential victim, either by hosting the file on a Web site or sending it to the victim as an email attachment, and then the victim would have to open the file using Xpdf. Note: This vulnerability affects multiple vendor applications that use the Xpdf code base.Upgrade to the latest version of Xpdf (3.01pl1 or later), available from the Xpdf Web site. See References.For Debian GNU/Linux:Refer to DSA-962-1, DSA-961-1, DSA-950-1, DSA-940-1, DSA-938-1, DSA-937-1, DSA-936-1, DSA-932-1, and DSA-931-1 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (teTex):Refer to RHSA-2006:0160-14 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (xpdf):Refer to RHSA-2005:840-10 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (gpdf):Refer to RHSA-2005:867-5 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (kdegraphics):Refer to RHSA-2005:868-4 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (CUPS):Refer to RHSA-2005:878-4 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux (KPdf and Kword):Refer to Gentoo Linux Security Announcement GLSA 2006-01-02 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux (Xpdf, GPdf, CUPS, Poppler):Refer to Gentoo Linux Security Announcement GLSA 2005-12-08 for patch, upgrade, or suggested workaround information. See References.For Ubuntu Linux:Refer to USN-227-1 for patch, upgrade, or suggested workaround information. See References.For SUSE Linux:Refer to SUSE Security Announcement SUSE-SA:2006:001 for patch, upgrade, or suggested workaround information. See References.For Sun Solaris (gpdf):Refer to Sun Alert ID: 102972 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-3192": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23442",
+        "title": "Xpdf StreamPredictor() heap buffer overflow",
+        "body": "Xpdf is vulnerable to a heap-based buffer overflow in the StreamPredictor::StreamPredictor() function. By creating a malicious PDF file with overly large numComps value, a remote attacker could overflow a buffer to cause a denial of service and possibly execute arbitrary code on the system with privileges of the Xpdf process. Exploitation of this vulnerability would require the attacker to deliver the malicious PDF file to a potential victim, either by hosting the file on a Web site or sending it to the victim as an email attachment, and then the victim would have to open the file using Xpdf. Note: This vulnerability affects multiple vendor applications that use the Xpdf code base.Upgrade to the latest version of Xpdf (3.01pl1 or later), available from the Xpdf Web site. See References.For Debian GNU/Linux:Refer to DSA-962-1, DSA-961-1, DSA-950-1, DSA-940-1, DSA-937-1, DSA-936-1, DSA-932-1, and DSA-931-1 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (teTex):Refer to RHSA-2006:0160-14 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (xpdf):Refer to RHSA-2005:840-10 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (gpdf):Refer to RHSA-2005:867-5 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (kdegraphics):Refer to RHSA-2005:868-4 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (CUPS):Refer to RHSA-2005:878-4 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux (KPdf and Kword):Refer to Gentoo Linux Security Announcement GLSA 2006-01-02 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux (Xpdf, GPdf, CUPS, Poppler):Refer to Gentoo Linux Security Announcement GLSA 2005-12-08 for patch, upgrade, or suggested workaround information. See References.For Ubuntu Linux:Refer to USN-227-1 for patch, upgrade, or suggested workaround information. See References.For SUSE Linux:Refer to SUSE Security Announcement SUSE-SA:2006:001 for patch, upgrade, or suggested workaround information. See References.For Sun Solaris (gpdf):Refer to Sun Alert ID: 102972 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-3193": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23441",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2005-3205": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/22539",
+        "title": "Oracle iSQL*Plus cross-site scripting",
+        "body": "Oracle Database is vulnerable to cross-site scripting in the iSQL *Plus web interface. A remote attacker could create a malicious URL link to the isqlplus script containing embedded code which, once the link is clicked, would be executed in the victim's Web browser within the security context of the hosting site. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.Refer to Oracle Critical Patch Update - July 2005, for patch, upgrade or suggested workaround information. See References."
+      }
+    ],
+    "CVE-2005-3265": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/22848",
+        "title": "Skype URI buffer overflow",
+        "body": "Skype is vulnerable to a buffer overflow, caused by a vulnerability with Skype specific URI types (callto:// and skype://). A remote attacker could create a specially-crafted link which, once the link is clicked, could overflow a buffer and possibly execute arbitrary code on the system.Upgrade to the latest version of Skype for Windows (1.4.*.84 or later), available from the Skype Web site. See References."
+      }
+    ],
+    "CVE-2005-3267": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/22850",
+        "title": "Skype client UDP buffer overflow",
+        "body": "Skype is vulnerable to a heap-based buffer overflow. A remote attacker could send a specially-crafted UDP packet to cause a heap-based overflow. A remote attacker could exploit this vulnerability to cause the Skype client to crash and possibly execute arbitrary code on the system. It is also reported that Skype is vulnerable to a specially-crafted TCP packet exploit that also results in execution of arbitrary code.For Skype for Windows:Upgrade to the latest version of Skype for Windows (1.4.*.84 or later), available from the Skype Web site. See References.For Skype for Mac OS X:Upgrade to the latest version of Skype for Mac OS X (1.3.*.17 or later), available from the Skype Web site. See References.For Skype for Linux:Upgrade to the latest version of Skype for Linux (1.2.*.18 or later), available from the Skype Web site. See References.For Skype for Pocket PC:Upgrade to the latest version of Skype for Pocket PC (1.1.0.20 or later), available from the Skype Web site. See References."
+      }
+    ],
+    "CVE-2005-3269": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24311",
+        "title": "Red Hat Directory and Certificate Server Management Console buffer overflow",
+        "body": "Multiple vendors including the Red Hat Directory Server and Red Hat Certificate Server (formerly known as Netscape Directory and Certificate Server) are vulnerable to a stack-based buffer overflow in the help.cgi script in the HTTP administrative interface. By sending a specially-crafted HTTP request to the Admin pages of the Management Console, a remote attacker could overflow a buffer and cause the Admin server to crash. A local attacker could exploit this vulnerability to gain root privileges on Unix-based systems. Note: This vulnerability also affects Sun Java System Directory Server, Sun ONE Directory Server and Sun ONE Administration Server.For Red Hat Directory Server:Upgrade to the latest version of Red Hat Directory Server (7.1 SP1 or later), available from the Red Hat Network. See References.For Red Hat Certificate Server:Upgrade to the latest version of Red Hat Certificate Server (7.1 SP1 or later), when it becomes available from the Red Hat Network. See References.For Solaris:Refer to Sun Alert: 228419 for patch, upgrade or suggested workaround information. See References."
+      }
+    ],
+    "CVE-2005-3314": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23114",
+        "title": "Novell NetMail IMAP multiple buffer overflows",
+        "body": "Novell NetMail is vulnerable to multiple unspecified buffer overflows in the IMAP server. It may be possible for a remote attacker to exploit this vulnerability to cause a denial of service or execute arbitrary code on the system with elevated privileges.For Novell NetMail for Linux:Apply the 3.52e FTF 1 patch, as listed in Novell Technical Information Document TID2972665. See References.For Novell NetMail for Windows:Apply the 3.52e FTF 1 patch, as listed in Novell Technical Information Document TID2972673. See References.For Novell NetMail for NetWare:Apply the 3.52e FTF 1 patch, as listed in Novell Technical Information Document TID2972672. See References."
+      }
+    ],
+    "CVE-2005-3330": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/22874",
+        "title": "Snoopy _httpsrequest() function allows command injection",
+        "body": "Snoopy could allow a remote attacker to inject arbitrary shell commands. A remote attacker could embed arbitrary shell commands in the fetch() function or the submit() function that would be executed without validation when the '_httpsrequest()' function is called. The malicious shell commands could then be executed within the security context of the hosting site. Note: MagpieRSS is also vulnerable to this command injection vulnerability.Upgrade to the lastest version of Snoopy (1.2.1 or later), available from the SourceForge.net Web site. See References.For MagpieRSS:Update to version (0.72 or later), available from the SourceForge.net Web site. See References.For Ampache:Upgrade to the latest version (3.3.1.5 or later), available from the Ampache Web site. See References.For Jinzora:Upgrade to the latest version (2.3.6 or later), available from the Jinzora Web site. See References."
+      }
+    ],
+    "CVE-2005-3347": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23107",
+        "title": "phpSysInfo register_globals data manipulation",
+        "body": "phpSysInfo could allow an attacker to manipulate data, execute arbitrary HTML and script code, or include arbitrary files from local resources. Certain arrays used in the register_globals emulation layer could be overwritten by a remote attacker. A remote attacker could exploit this vulnerability to manipulate data, execute arbitrary HTML and script code, or include arbitrary files from local resources.Upgrade to the latest version of phpSysInfo (2.4.1 or later), available from the phpSysInfo Web site. See References.For Debian GNU/Linux:Refer to DSA-899-1 and DSA-898-1 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux:Refer to Gentoo Linux Security Announcement GLSA 2005-11-18 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-3348": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23107",
+        "title": "phpSysInfo register_globals data manipulation",
+        "body": "phpSysInfo could allow an attacker to manipulate data, execute arbitrary HTML and script code, or include arbitrary files from local resources. Certain arrays used in the register_globals emulation layer could be overwritten by a remote attacker. A remote attacker could exploit this vulnerability to manipulate data, execute arbitrary HTML and script code, or include arbitrary files from local resources.Upgrade to the latest version of phpSysInfo (2.4.1 or later), available from the phpSysInfo Web site. See References.For Debian GNU/Linux:Refer to DSA-899-1 and DSA-898-1 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux:Refer to Gentoo Linux Security Announcement GLSA 2005-11-18 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-3354": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23028",
+        "title": "Sylpheed LDIF_get_line() function could allow execution of code",
+        "body": "Sylpheed could allow a remote attacker to execute arbitrary code on the system, caused by a buffer overflow. A remote attacker could send a specially-crafted file to the ldif_get_line() function in ldif.c to overflow a buffer and possibly cause a denial of service. If the victim can be tricked into importing the malicious LDIF file into the address book, it is possible for the attacker to execute arbitrary code on the system.Sylpheed Version 1.0.x:Upgrade to version 1.0.6 (or later) available from the Slypheed Download Upgrade for v1.0 Web site. See References.Sylpheed Version 2.0.x:Upgrade to version 2.0.4 (or later) available from the Slypheed Download Upgrade for v2.0 Web site. See References.For Sylpheed Development:Upgrade to version 2.1.6 (or later) available from the Sylpheed Web site. See References.For Debian GNU/Linux:Refer to DSA-908-1 and DSA-906-1 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux:Refer to Gentoo Linux Security Announcement GLSA 2005-11-13 for patch, upgrade, or suggested workaround information. See References."
+      }
+    ],
+    "CVE-2005-3365": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/39447",
+        "title": "DCP Portal index.php SQL injection",
+        "body": "DCP Portal is vulnerable to SQL injection. A remote attacker could send specially-crafted SQL statements to the index.php script using the cid parameter, which could allow the attacker to view, add, modify or delete information in the back-end database.No remedy available as of September 1, 2014."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/22855",
+        "title": "DCP-Portal multiple PHP scripts allow SQL injection",
+        "body": "DCP-Portal is vulnerable to SQL injection. If magic_quotes_gpc is disabled, a remote attacker could embed malicious SQL code in a specially-crafted request to the index.php script, the forum.php script, the index.php script, the register.php script using the name variable, the lostpassword.php script using the email variable and to the calendar.php script using the year variable, which would allow the attacker to add, modify or delete data in the back-end database.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-3548": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/40000",
+        "title": "Invision Power Board (IP.Board) Task Manager directory traversal",
+        "body": "Invision Power Board (IP.Board) could allow a remote attacker to traverse directories on the system. An attacker could send a specially-crafted URL request to the Task Manager containing \"dot dot\" sequences (/../) in the \"Task PHP File To Run\" field to view arbitrary files outside the Web root directory.Upgrade to the latest version of Invision Power Board (2.1.3 or later), available from the Invision Power Services Web site. See References."
+      }
+    ],
+    "CVE-2005-3552": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23009",
+        "title": "PHPKIT Guestbook cross-site scripting",
+        "body": "PHPKIT is vulnerable to cross-site scripting. A remote attacker could create a specially-crafted script in the Guestbook script using the Homepage field which, once the Guestbook is viewed, would be executed in the victim's Web browser within the security context of the host. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials and other sensitive information.No remedy available as of September 1, 2014."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23008",
+        "title": "PHPKIT imcenter.php cross-site scripting",
+        "body": "PHPKIT is vulnerable to cross-site scripting. A remote attacker could create a specially-crafted URL request to the imcenter.php script which, once the link is clicked, would be executed in the victim's Web browser within the security context of the host. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials and other sensitive information.No remedy available as of September 1, 2014."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23007",
+        "title": "PHPKIT HTML tags cross-site scripting",
+        "body": "PHPKIT is vulnerable to cross-site scripting. A remote attacker could create a specially-crafted forum post containing a malicious code in the HTML title or the logo's img alt attribute which, once the message is viewed, would be executed in the victim's Web browser within the security context of the host. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials and other sensitive information.No remedy available as of September 1, 2014."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23006",
+        "title": "PHPKIT referer cross-site scripting",
+        "body": "PHPKIT is vulnerable to cross-site scripting. A remote attacker could create a specially-crafted URL request with the Referer set to some malicious script code which would be included in the administrative back-end. An attacker could use this vulnerability to steal the administrator's cookie-based authentication credentials and other sensitive information.No remedy available as of September 1, 2014."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23004",
+        "title": "PHPKIT admin/admin.php cross-site scripting",
+        "body": "PHPKIT is vulnerable to cross-site scripting. If register_globals is enabled, a remote attacker could create a specially-crafted URL request to the admin/admin.php script which, once the link is clicked, would be executed in the victim's Web browser within the security context of the host. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials and other sensitive information.No remedy available as of September 1, 2014."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23003",
+        "title": "PHPKIT login/profile.php and login/userinfo.php cross-site scripting",
+        "body": "PHPKIT is vulnerable to cross-site scripting. A remote attacker could create a specially-crafted URL request to the login/profile.php and login/userinfo.php scripts which, once the link is clicked, would be executed in the victim's Web browser within the security context of the host. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials and other sensitive information.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-3553": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23013",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23010",
+        "title": "PHPKIT login/userinfo.php SQL injection",
+        "body": "PHPKIT is vulnerable to SQL injection. If magic_quotes_gpc is disabled, a remote attacker could exploit this vulnerability by passing malicious SQL commands to the login/userinfo.php script which would allow the attacker to obtain sensitive information and add, modify or delete information in the back-end database.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-3554": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23015",
+        "title": "PHPKIT eval() function code execution",
+        "body": "PHPKIT could allow a remote attacker to execute arbitrary code caused by a vulnerability in the eval() function. If register_globals is enabled, a remote attacker could exploit this vulnerability and execute arbitrary code on the target system.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-3567": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/22989",
+        "title": "IBM Tivoli Directory Server slapd authentication bypass",
+        "body": "IBM Tivoli Directory Server could allow a remote attacker to bypass authentication and modify directory information, caused by an unspecified vulnerability in the slapd daemon.For IBM Tivoli Directory Server 5.2.0:Apply the appropriate patch for this vulnerability, as listed in IBM APAR IO02697. See References.For IBM Tivoli Directory Server 5.2.0.3-TIV-ITDS-IF0001 or earlier:Apply the appropriate patch for this vulnerability, as listed in IBM Reference 4010820. See References.For IBM Tivoli Directory Server 5.2.0.3-TIV-ITDS-IF0007:Apply the appropriate patch for this vulnerability, as listed in IBM Reference 4010821. See References.For IBM Tivoli Directory Server 5.2.0.3-TIV-ITDS-LA0011:Contact IBM Tivoli Support.For IBM Tivoli Directory Server 6.0.0:Apply the appropriate patch for this vulnerability, as listed in IBM APAR IO02714. See References.For IBM Tivoli Directory Server 6.0.0.1-TIV-ITDS-IF0001:Apply the appropriate patch for this vulnerability, as listed in IBM Reference 4010819. See References."
+      }
+    ],
+    "CVE-2005-3591": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23022",
+        "title": "Adobe Macromedia Flash Player ActionDefineFunction buffer overflow",
+        "body": "Macromedia Flash is vulnerable to a denial of service, caused by a buffer overflow in the ActionDefineFunction. A remote attacker could create a malicious SWF file containing a specially-crafted DoAction tag to overflow a buffer and cause a victim's Flash Player to crash, once the malicious SWF file is loaded.Upgrade to the latest version of Macromedia Flash Player (8.0.22.0 or later), available from the Adobe Web site. See References.For Red Hat Linux:Refer to RHSA-2005:835-5 for patch, upgrade, or suggested workaround information. See References."
+      }
+    ],
+    "CVE-2005-3624": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24022",
+        "title": "Xpdf CCITTFaxStream::CCITTFaxStream() buffer overflow",
+        "body": "Xpdf is vulnerable to multiple heap-based buffer overflows in the CCITTFaxStream::CCITTFaxStream(). By creating a malicious PDF file with overly large or negative integer parameters, a remote attacker could overflow a buffer to cause a denial of service and possibly execute arbitrary code on the system with privileges of the Xpdf process. Exploitation of this vulnerability would require the attacker to deliver the malicious PDF file to a potential victim, either by hosting the file on a Web site or sending it to the victim as an email attachment, and then the victim would have to open the file using Xpdf. Note: This vulnerability affects multiple vendor applications that use the Xpdf code base.Upgrade to the latest version of Xpdf (3.01pl1 or later), available from the Xpdf Web site. See References.For Debian GNU/Linux:Refer to DSA-962-1, DSA-961-1, DSA-950-1, DSA-940-1, DSA-938-1, DSA-937-1, DSA-936-1, DSA-932-1, and DSA-931-1 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (teTex):Refer to RHSA-2006:0160-14 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (CUPS):Refer to RHSA-2006:0163-2 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (gpdf):Refer to RHSA-2006:0177-5 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (xpdf):Refer to RHSA-2005:840-10 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (kdegraphics):Refer to RHSA-2005:868-4 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux (KPdf and Kword):Refer to Gentoo Linux Security Announcement GLSA 2006-01-02 for patch, upgrade, or suggested workaround information. See References.For Ubuntu Linux:Refer to USN-236-1 and USN-236-2 for patch, upgrade, or suggested workaround information. See References.For SUSE Linux:Refer to SUSE Security Announcement SUSE-SA:2006:001 for patch, upgrade, or suggested workaround information. See References.For Sun Solaris (gpdf):Refer to Sun Alert ID: 102972 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-3625": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24023",
+        "title": "Xpdf CCITTFaxDecode and DCTDecode streams denial of service",
+        "body": "Xpdf is vulnerable to a denial of service attack, caused by an infinite loop condition that can occur when a CCITTFaxDecode or DCTDecode stream ends unexpectedly. A remote attacker could exploit this vulnerability via a malicious PDF file to cause the consumption of all available CPU resources on a victim's system. Note: This vulnerability affects multiple vendor applications that use the Xpdf code base.Upgrade to the latest version of Xpdf (3.01pl1 or later), available from the Xpdf Web site. See References.For Debian GNU/Linux:Refer to DSA-962-1, DSA-961-1, DSA-950-1, DSA-940-1, DSA-938-1, DSA-937-1, DSA-936-1, DSA-932-1, and DSA-931-1 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (teTex):Refer to RHSA-2006:0160-14 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (CUPS):Refer to RHSA-2006:0163-2 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (gpdf):Refer to RHSA-2006:0177-5 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (xpdf):Refer to RHSA-2005:840-10 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (kdegraphics):Refer to RHSA-2005:868-4 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux (KPdf and Kword):Refer to Gentoo Linux Security Announcement GLSA 2006-01-02 for patch, upgrade, or suggested workaround information. See References.For Ubuntu Linux:Refer to USN-236-1 and USN-236-2 for patch, upgrade, or suggested workaround information. See References.For SUSE Linux:Refer to SUSE Security Announcement SUSE-SA:2006:001 for patch, upgrade, or suggested workaround information. See References.For Sun Solaris (gpdf):Refer to Sun Alert ID: 102972 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-3626": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24026",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2005-3627": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24025",
+        "title": "Xpdf DCTStream::readScanInfo() buffer overflow",
+        "body": "Xpdf is vulnerable to a heap-based buffer overflow in the DCTStream::readScanInfo() function. By creating a malicious PDF file with overly large numComps (number of components) value, a remote attacker could overflow a buffer to cause a denial of service and possibly execute arbitrary code on the system with privileges of the Xpdf process. Exploitation of this vulnerability would require the attacker to deliver the malicious PDF file to a potential victim, either by hosting the file on a Web site or sending it to the victim as an email attachment, and then the victim would have to open the file using Xpdf. Note: This vulnerability affects multiple vendor applications that use the Xpdf code base.Upgrade to the latest version of Xpdf (3.01pl1 or later), available from the Xpdf Web site. See References.For Debian GNU/Linux:Refer to DSA-962-1, DSA-961-1, DSA-950-1, DSA-940-1, DSA-938-1, DSA-937-1, DSA-936-1, DSA-932-1, and DSA-931-1 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (teTex):Refer to RHSA-2006:0160-14 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (CUPS):Refer to RHSA-2006:0163-2 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (gpdf):Refer to RHSA-2006:0177-5 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (xpdf):Refer to RHSA-2005:840-10 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (kdegraphics):Refer to RHSA-2005:868-4 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux (KPdf and Kword):Refer to Gentoo Linux Security Announcement GLSA 2006-01-02 for patch, upgrade, or suggested workaround information. See References.For Ubuntu Linux:Refer to USN-236-1 and USN-236-2 for patch, upgrade, or suggested workaround information. See References.For SUSE Linux:Refer to SUSE Security Announcement SUSE-SA:2006:001 for patch, upgrade, or suggested workaround information. See References.For Sun Solaris (gpdf):Refer to Sun Alert ID: 102972 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24024",
+        "title": "Xpdf DCTStream::readHuffmanTables() buffer overflow",
+        "body": "Xpdf is vulnerable to a heap-based buffer overflow in the DCTStream::readHuffmanTables() function. By creating a malicious PDF file with overly large numComps (number of components) value, a remote attacker could overflow a buffer to cause a denial of service and possibly execute arbitrary code on the system with privileges of the Xpdf process. Exploitation of this vulnerability would require the attacker to deliver the malicious PDF file to a potential victim, either by hosting the file on a Web site or sending it to the victim as an email attachment, and then the victim would have to open the file using Xpdf. Note: This vulnerability affects multiple vendor applications that use the Xpdf code base.Upgrade to the latest version of Xpdf (3.01pl1 or later), available from the Xpdf Web site. See References.For Debian GNU/Linux:Refer to DSA-962-1, DSA-961-1, DSA-950-1, DSA-940-1, DSA-938-1, DSA-937-1, DSA-936-1, DSA-932-1, and DSA-931-1 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (teTex):Refer to RHSA-2006:0160-14 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (CUPS):Refer to RHSA-2006:0163-2 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (gpdf):Refer to RHSA-2006:0177-5 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (xpdf):Refer to RHSA-2005:840-10 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux (kdegraphics):Refer to RHSA-2005:868-4 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux (KPdf and Kword):Refer to Gentoo Linux Security Announcement GLSA 2006-01-02 for patch, upgrade, or suggested workaround information. See References.For Ubuntu Linux:Refer to USN-236-1 and USN-236-2 for patch, upgrade, or suggested workaround information. See References.For SUSE Linux:Refer to SUSE Security Announcement SUSE-SA:2006:001 for patch, upgrade, or suggested workaround information. See References.For Sun Solaris (gpdf):Refer to Sun Alert ID: 102972 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-3640": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23101",
+        "title": "FTGate4 Groupware IMAP buffer overflow",
+        "body": "FTGate4 is vulnerable to a buffer overflow in the IMAP server caused by improper validation of certain user-supplied commands. A remote attacker could exploit this vulnerability by sending a specially-crafted request to the IMAP server to cause the server to crash and possibly execute arbitrary code with elevated privileges.Upgrade to the latest version of FTGate4 (4.4.005 or later), available from the FTGate4 Web site. See References."
+      }
+    ],
+    "CVE-2005-3645": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23043",
+        "title": "phpAdsNew multiple .php scripts path disclosure",
+        "body": "phpAdsNew could allow a remote attacker to view path information. A remote attacker could send a specially-crafted URL request to the create.php script to disclose the full installation path. If the display_errors setting is enabled, multiple other scripts will also disclose the full installation path and possibly other information.Upgrade to the latest version of phpAdsNews (2.0.11-pr1 or later), available from SourceForge.net. See References."
+      }
+    ],
+    "CVE-2005-3646": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23044",
+        "title": "phpAdsNew logout.php SQL injection",
+        "body": "phpAdsNew is vulnerable to SQL injection. If the magic_quotes_gpc setting is disabled, a remote attacker could send specially-crafted SQL commands to the logout.php script in lib-sessions.inc.php which would allow the attacker to obtain sensitive information and add, modify or delete information in the back-end database.Upgrade to the latest version of phpAdsNews (2.0.11-pr1 or later), available from SourceForge.net. See References."
+      }
+    ],
+    "CVE-2005-3650": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23063",
+        "title": "Sony First4Internet XCP CodeSupport.ocx ActiveX code execution",
+        "body": "Sony First4Internet Extended Copy Protection (XCP) CodeSupport ActiveX control could allow a remote attacker to execute arbitrary code on systems that have executed the First4Internet XCP uninstallation application. When XCP DRM software is removed by visiting the vendor's Web site, the CodeSupport.ocx ActiveX control is installed and marked safe-for-scripting on the user's system. By creating a malicious Web site, a remote attacker could execute arbitrary commands on systems that have the vulnerable ActiveX control installed, if the attacker could convince affected users to visit the Web site.Apply the patch for this vulnerability, available from the Sony First4Internet Web site. See References."
+      }
+    ],
+    "CVE-2005-3653": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24269",
+        "title": "Computer Associates (CA) iGateway Content-Length buffer overflow",
+        "body": "Computer Associates iGateway is vulnerable to a heap-based buffer overflow, caused by improper handling of negative HTTP Content-Length values. By sending a specially-crafted HTTP request with an overly long URI and a negative Content-Length header to port 5250, a remote attacker could overflow a buffer and execute arbitrary code on the system with SYSTEM level privileges.Upgrade to the latest version of iGateway (4.0.051230 or later), available from the Computer Associates Web site. See References."
+      }
+    ],
+    "CVE-2005-3658": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24175",
+        "title": "EMC Legato Networker nsrd.exe buffer overflow",
+        "body": "EMC Legato NetWorker is vulnerable to a heap-based buffer overflow in the nsrd.exe service. By sending a specially-crafted RPC request to RPC program number 390109, a remote attacker could overflow a buffer and execute arbitrary code on the system. Note: This vulnerability also affects Sun StorEdge Enterprise Backup Software (EBS).Refer to EMC Legato - Technical Product Alert - January 16, 2006 for upgrade and hot-fix information. See References.For Sun StorEdge Enterprise Backup Software (EBS):Refer to Sun Alert ID: 102148 for patch information. See References."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24174",
+        "title": "EMC Legato Networker nsrexecd.exe buffer overflow",
+        "body": "EMC Legato NetWorker is vulnerable to a heap-based buffer overflow in the nsrexecd.exe service. By sending a specially-crafted RPC request to RPC program number 390113, a remote attacker could overflow a buffer and execute arbitrary code on the system. Note: This vulnerability also affects Sun StorEdge Enterprise Backup Software (EBS).Refer to EMC Legato - Technical Product Alert - January 16, 2006 for upgrade and hot-fix information. See References.For Sun StorEdge Enterprise Backup Software (EBS):Refer to Sun Alert ID: 102148 for patch information. See References."
+      }
+    ],
+    "CVE-2005-3659": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24173",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2005-3678": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23041",
+        "title": "Google Talk email notification denial of service",
+        "body": "Google Talk is vulnerable to a denial of service attack, caused by improper handling of email notifications without a sender address. A remote attacker could send multiple invalid email messages to cause a looping error message and a denial of service against the victim's Google Talk client.Google Talk users will automatically be upgraded to version 1.0.0.76, which is not vulnerable to this condition."
+      }
+    ],
+    "CVE-2005-3709": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24058",
+        "title": "Apple QuickTime TGA integer underflow",
+        "body": "Apple's QuickTime Player is vulnerable to an integer underflow, caused by improper handling of malformed TGA images. A remote attacker could exploit this vulnerability using a malicious TGA image to execute arbitrary code or cause a denial of service.Upgrade to the latest version of QuickTime (7.0.4 later), available from the Apple Security Updates Web page. See References."
+      }
+    ],
+    "CVE-2005-3710": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24059",
+        "title": "Apple QuickTime TIFF image integer overflow",
+        "body": "Apple's QuickTime Player is vulnerable to multiple integer overflows, caused by improper handling of malformed TIFF images. A remote attacker could exploit this vulnerability using a malicious TIFF image to execute arbitrary code or cause a denial of service.Upgrade to the latest version of QuickTime (7.0.4 later), available from the Apple Security Updates Web page. See References."
+      }
+    ],
+    "CVE-2005-3711": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24059",
+        "title": "Apple QuickTime TIFF image integer overflow",
+        "body": "Apple's QuickTime Player is vulnerable to multiple integer overflows, caused by improper handling of malformed TIFF images. A remote attacker could exploit this vulnerability using a malicious TIFF image to execute arbitrary code or cause a denial of service.Upgrade to the latest version of QuickTime (7.0.4 later), available from the Apple Security Updates Web page. See References."
+      }
+    ],
+    "CVE-2005-3712": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/25029",
+        "title": "Apple Mac OS X rsync buffer overflow",
+        "body": "Mac OS X and Mac OS X Server are vulnerable to a heap-based buffer overflow. By sending a request with extended attributes enabled to the rsync server, a remote authenticated attacker could overflow a buffer and execute arbitrary code on the system or cause the application to crash.Apply Security Update 2006-001, available from the Apple Security Update 2006-001. See References."
+      }
+    ],
+    "CVE-2005-3713": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24060",
+        "title": "Apple QuickTime GIF image buffer overflow",
+        "body": "Apple's QuickTime Player is vulnerable to a heap-based buffer overflow, caused by improper bounds checking of the Netscape Navigator Application Extension Block in a GIF image. By creating a malicious GIF image, a remote attacker could overflow a buffer and execute arbitrary code on the system or cause a denial of service, once the malicious image is viewed in QuickTime.Upgrade to the latest version of QuickTime (7.0.4 later), available from the Apple Security Updates Web page. See References."
+      }
+    ],
+    "CVE-2005-3724": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23092",
+        "title": "Zyxel P2000 UDP obtain information",
+        "body": "Zyxel P2000W could allow a remote attacker to obtain sensitive information caused by a vulnerability on an undocumented UDP port. A remote attacker could connect to the phone using UDP port 9090 and obtain sensitive information including MAC address and software version.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-3817": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23208",
+        "title": "Softbiz Web Hosting Directory Script multiple SQL injections",
+        "body": "Softbiz Web Host Directory Script is vulnerable to SQL injection. A remote attacker could send a specially-crafted request to the search_result.php, browsecats.php, review.php, or email.php scripts containing embedded SQL commands in the cid, sbres_id and h_id parameters which would allow the attacker to add, modify, or delete data in the back-end database, and possibly execute arbitrary code on the system.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-3845": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23213",
+        "title": "EZ Invoice invoices.php SQL injection",
+        "body": "EZ Invoice (EZI) is vulnerable to SQL injection. A remote attacker could send a specially-crafted request to the invoices.php script containing embedded SQL commands in the i parameter which would allow the attacker to add, modify, or delete data in the back-end database, and possibly execute arbitrary code on the system.Upgrade to the latest version of EZ Invoice (version 2.1 or later), available from the EZ Invoice Web site. See References."
+      }
+    ],
+    "CVE-2005-3863": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23233",
+        "title": "ktools kkstrtext.h buffer overflow",
+        "body": "ktools is vulnerable to a buffer overflow in the kkstrtext.h module. A remote attacker could exploit this vulnerability to execute arbitrary code on a victim's system with the privileges of the targeted application using the ktools library.For Debian GNU/Linux (Motor):Refer to DSA-1083-1 for patch, upgrade, or suggested workaround information. See References.For Debian GNU/Linux (Centericq):Refer to DSA-1088-1 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux:Refer to Gentoo Linux Security Announcement GLSA 2005-12-11 for patch, upgrade, or suggested workaround information. See References.For Gentoo Linux (Motor):Refer to Gentoo Linux Security Announcement GLSA 200608-27 for patch, upgrade, or suggested workaround information. See References."
+      }
+    ],
+    "CVE-2005-3955": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/27337",
+        "title": "Jaws magpie_slashbox.php cross-site scripting",
+        "body": "Jaws is vulnerable to cross-site scripting, caused by improper validation of user-supplied input by the magpie_slashbox.php script. A remote attacker could exploit this vulnerability using 'rss_url' parameter to execute script in a victim's Web browser within the security context of the hosting Web site, allowing the attacker to steal the victim's cookie-based authentication credentials.Upgrade to the latest version of Jaws (0.6.3 or later), available from the Jaws Web site. See References."
+      }
+    ],
+    "CVE-2005-3996": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23510",
+        "title": "Zen Cart admin/password_forgotten.php SQL injection",
+        "body": "Zen Cart is vulnerable to SQL injection. A remote attacker could send a specially-crafted SQL statement to the admin/password_forgotten.php script using the admin_email parameter which would allow the attacker to add, modify or delete information in the back-end database.Upgrade to the latest version of Zen Cart (1.2.7d or later), available form the Zen Cart Web site. See References."
+      }
+    ],
+    "CVE-2005-4011": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/27362",
+        "title": "PHP Event Calendar calendar.php SQL injection",
+        "body": "PHP Event Calendar is vulnerable to SQL injection. A remote attacker could send specially-crafted SQL statements to the calendar.php script using the 'id' parameter, which could allow the attacker to view, add, modify, or delete information in the back-end database.No remedy available as of September 1, 2014."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23312",
+        "title": "ltwCalendar calendar.php SQL injection",
+        "body": "ltwCalendar is vulnerable to SQL injection. A remote attacker could send specially-crafted SQL statements to the calendar.php script using the id parameter to add, modify, or delete data from the database.Upgrade to the latest version of ltwCalendar (4.2.1 or later), available from the codewalkers.com Web site. See References."
+      }
+    ],
+    "CVE-2005-4040": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23418",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2005-4058": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23484",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2005-4060": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23466",
+        "title": "rwAuction Pro search.asp cross-site scripting",
+        "body": "rwAuctionPro is vulnerable to cross-site scripting. A remote attacker could create a specially-crafted URL request for the search.asp script containing malicious code in the searchtxt parameter which, once the link is clicked, would be executed in the victim's Web browser within the security context of the hosting site. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials or take actions as the victim.Upgrade to the latest version of rwAuctionPro (5.0 or later), available from the RainWorx Web site. See References."
+      }
+    ],
+    "CVE-2005-4066": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23497",
+        "title": "Total Commander WCX_FTP.INI weak account information encryption",
+        "body": "Total Commander uses a weak encryption algorithm to store FTP usernames and passwords in the WCX_FTP.INI file. A local attacker could exploit this vulnerability to decrypt the recovered passwords and gain unauthorized access to remote FTP servers. Note: It has been reported that this vulnerability is actively being exploited by the W32.Gudeb worm.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-4071": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23514",
+        "title": "Magic Forum Personal view_forum.cfm SQL injection",
+        "body": "Magic Forum Personal is vulnerable to SQL injection. A remote attacker could send specially-crafted SQL statements to the view_forum.cfm script using the ForumID, Thread or ThreadID parameters which would allow the attacker to add, modify or delete information in the back-end database.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-4195": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/42169",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23547",
+        "title": "Scout Portal SQL injection",
+        "body": "Scout Portal is vulnerable to SQL injection. A remote attacker could exploit this vulnerability by sending specially-crafted SQL statements within malicious URL requests which would allow the attacker to add, modify or delete information in the back-end database.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-4198": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23548",
+        "title": "Netref index.php SQL injection",
+        "body": "Netref is vulnerable to SQL injection. A remote attacker could send a specially-crafted SQL statement to the index.php script using the cat parameter which would allow the attacker to add, modify or delete information in the back-end database.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-4209": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23551",
+        "title": "MDaemon Worldclient subject denial of service",
+        "body": "MDaemon is vulnerable to a denial of service. A remote attacker could send a specially-crafted email containing JavaScript tags in the subject line to cause a denial of service against the victim's Web mail client inbox, if the victim is using the default 'LookOut' theme.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-4217": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23561",
+        "title": "Apple Mac OS X Perl bypass security",
+        "body": "Apple Mac OS X could allow a remote attacker to bypass security restrictions, caused by a vulnerability in the Perl binary included with Mac OS X. A remote attacker could exploit this vulnerability to bypass security restrictions on certain Perl applications.Apply the patch for this vulnerability (Security Update 2006-001 Mac OS X 10.4.5), available from the Apple Mac OS X Web site. See References."
+      }
+    ],
+    "CVE-2005-4268": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23855",
+        "title": "GNU cpio file size buffer overflow",
+        "body": "GNU cpio on 64-bit platforms is vulnerable to a buffer overflow. By creating a cpio archive with size of more than eight digits, a local attacker could overflow a buffer and cause a denial of service or execute arbitrary code on the system with elevated privileges.For Mandrivalinux:Refer to Mandriva Security Advisory MDKSA-2005:237 for upgrade information. See References.For Ubuntu Linux:Refer to USN-234-1 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2005-4348": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23713",
+        "title": "Fetchmail NULL pointer dereference denial of service",
+        "body": "Fetchmail is vulnerable to a denial of service attack, caused by a NULL pointer dereference when Fetchmail is configured for multidrop mode. A remote attacker, using a malicious mail server, could send a specially-crafted message without headers to cause affected Fetchmail clients to crash.Upgrade to the latest version of Fetchmail (6.3.1 or later) or (6.2.5.5 or later), available from the Fetchmail Web site. See References.For Debian GNU/Linux:Refer to DSA-939-1 for patch, upgrade, or suggested workaround information. See References.For Apple Mac OS X:Apply Apple Security Update 2006-004, available from the Apple Web site. See References.For Ubuntu Linux:Refer to USN-233-1 for patch, upgrade, or suggested workaround information. See References.For Red Hat Linux:Refer to RHSA-2007:0018-10 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for patch or upgrade information."
+      }
+    ],
+    "CVE-2005-4380": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23814",
+        "title": "Bitweaver multiple parameters allow SQL injection",
+        "body": "Bitweaver is vulnerable to SQL injection. A remote attacker could send specially-crafted SQL statements to various scripts using the sort_mode, post_id or blog_id parameter, which could allow the attacker to add, modify, or delete information in the back-end database.Upgrade to the current version of Bitweaver (version 1.2 or later) available from the Bitweaver web site. See References."
+      }
+    ],
+    "CVE-2005-4382": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23818",
+        "title": "Community Enterprise multiple parameters allow SQL injection",
+        "body": "CitySoft's Community Enterprise is vulnerable to SQL injection. A remote attacker could send specially-crafted SQL statements using the nodeID, pageID, ID, parentid, or documentFormatId parameter, which could allow the attacker to add, modify, or delete information in the back-end database.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-4500": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24055",
+        "title": "MusicBox show and type parameters SQL injection",
+        "body": "MusicBox is vulnerable to SQL injection. A remote attacker could send specially-crafted SQL statements to various scripts using the show or type parameter, which could allow the attacker to add, modify, or delete information in the back-end database.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-4515": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23840",
+        "title": "WebDB search module SQL injection",
+        "body": "WebDB is vulnerable to SQL injection. A remote attacker could send specially-crafted SQL statements to the search module using various parameters, which could allow the attacker to add, modify or delete information in the back-end database.WebDB has implemented a server side fix for this vulnerability."
+      }
+    ],
+    "CVE-2005-4560": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23846",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2005-4573": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/23861",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2005-4600": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/36736",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2005-4617": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/24358",
+        "title": "cSupport tickets.php SQL injection",
+        "body": "cSupport is vulnerable to SQL injection. A remote attacker could send specially-crafted SQL statements to the tickets.php script using the pg parameter, which could allow the attacker to add, modify, or delete information in the back-end database.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-4711": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/22352",
+        "title": "Land Down Under Referer HTTP header SQL injection",
+        "body": "Land Down Under (LDU) is vulnerable to SQL injection. If the magic_quotes_gpc is disabled, a remote attacker could send a specially-crafted URL request to the Referer HTTP header in various scripts which would allow the attacker to add, modify or delete user information in the backend database.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-4838": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/36467",
+        "title": "Apache Tomcat functions.jsp cross-site scripting",
+        "body": "Apache Tomcat is vulnerable to cross-site scripting, caused by improper validation of user-supplied input by the functions.jsp test script. If the test script is deployed, a remote attacker could exploit this vulnerability using the foo parameter in a specially-crafted URL to execute script in a victim's Web browser within the security context of the hosting Web site, once the URL is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-4840": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/34755",
+        "title": "Microsoft Internet Explorer Outlook Express Address Book object denial of service",
+        "body": "Microsoft Internet Explorer is vulnerable to a denial of service, caused by improper handling of the Outlook Express Address Book object. By persuading a victim to visit a specially-crafted Web page, a remote attacker could cause the victim's browser to crash.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-4848": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/35241",
+        "title": "BlackBerry Enterprise Server decompression algorithm buffer overflow",
+        "body": "BlackBerry Enterprise Server is vulnerable to a buffer overflow, caused by improper bounds checking by the decompression algorithm. By sending specially-crafted data packets, a remote attacker could overflow a buffer and execute arbitrary code on the system with SYSTEM or root privileges or cause a denial of service.Refer to Blackberry Security Advisory KB04075 for patch, upgrade, or suggested workaround information. See References."
+      }
+    ],
+    "CVE-2005-4863": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/17615",
+        "title": "IBM DB2 DB2FMP buffer overflow",
+        "body": "IBM DB2 Universal Database versions 7.x and 8.x running on Unix platforms are vulnerable to a buffer overflow in the DB2FMP process. A local attacker could supply a long command string to overflow the buffer and execute arbitrary code on the server.For IBM DB2 7.x:Apply the DB2 Version 7 FixPak 13, when it becomes available from the IBM DB2 version 7 FixPaks Download Web page. See References.For IBM DB2 8.x:Apply the DB2 Version 8 FixPak 6a or 7a, available from the IBM DB2 version 8 FixPaks Download Web page. See References."
+      }
+    ],
+    "CVE-2005-4864": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/17616",
+        "title": "IBM DB2 DB2LPORT buffer overflow",
+        "body": "IBM DB2 Universal Database versions 7.x and 8.x running on Unix platforms are vulnerable to a buffer overflow in certain DB2 UDB binaries. By supplying a long DB2LPORT environment variable, a local attacker could overflow the buffer and execute arbitrary code on the server with root privileges or cause a segmentation fault.For IBM DB2 7.x:Apply the DB2 Version 7 FixPak 13, when it becomes available from the IBM DB2 version 7 FixPaks Download Web page. See References.For IBM DB2 8.x:Apply the DB2 Version 8 FixPak 6a or 7a, available from the IBM DB2 version 8 FixPaks Download Web page. See References."
+      }
+    ],
+    "CVE-2005-4865": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/17611",
+        "title": "IBM DB2 long library name buffer overflow",
+        "body": "IBM DB2 Universal Database is vulnerable to a stack-based buffer overflow, caused by improper bounds of library names. A remote attacker could supply a long library name to overflow a buffer and execute arbitrary code on the system.For IBM DB2 7.x:Apply the DB2 Version 7 FixPak 13, when it becomes available from the IBM DB2 version 7 FixPaks Download Web page. See References.For IBM DB2 8.x:Apply the DB2 Version 8 FixPak 6a or 7a, available from the IBM DB2 version 8 FixPaks Download Web page. See References."
+      }
+    ],
+    "CVE-2005-4866": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/17613",
+        "title": "IBM DB2 JDBC listener buffer overflow",
+        "body": "IBM DB2 Universal Database is vulnerable to a buffer overflow in the JDBC listener (db2jd). If db2jd listener is enabled, a remote attacker could exploit this vulnerability to overflow the buffer and execute arbitrary code on the system with privileges of the user running db2jd listener.For IBM DB2 7.x:Apply the DB2 Version 7 FixPak 13, when it becomes available from the IBM DB2 version 7 FixPaks Download Web page. See References.For IBM DB2 8.x:Apply the DB2 Version 8 FixPak 6a or 7a, available from the IBM DB2 version 8 FixPaks Download Web page. See References."
+      }
+    ],
+    "CVE-2005-4867": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/17612",
+        "title": "IBM DB2 satadmin.satencrypt buffer overflow",
+        "body": "IBM DB2 Universal Database is vulnerable to a buffer overflow in the satadmin.satencrypt satellite user-defined function (UDF). If a satellite is running and the satadmin.satencrypt UDF exists, which by default it does not, a remote authenticated attacker could exploit this vulnerability to overflow a buffer and execute arbitrary code on the server.For IBM DB2 7.x:Apply the DB2 Version 7 FixPak 13, when it becomes available from the IBM DB2 version 7 FixPaks Download Web page. See References.For IBM DB2 8.x:Apply the DB2 Version 8 FixPak 6a or 7a, available from the IBM DB2 version 8 FixPaks Download Web page. See References."
+      }
+    ],
+    "CVE-2005-4868": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/17605",
+        "title": "IBM DB2 Everyone Group gain unauthorized access",
+        "body": "IBM DB2 Universal Database versions 7.x and 8.x running on Microsoft Windows could allow a remote attacker, with Everyone Group privileges, to gain unauthorized access to certain DB2 resources.For IBM DB2 7.x:Apply the DB2 Version 7 FixPak 13, when it becomes available from the IBM DB2 version 7 FixPaks Download Web page. See References.For IBM DB2 8.x:Apply the DB2 Version 8 FixPak 7a, available from the IBM DB2 version 8 FixPaks Download Web page. See References."
+      }
+    ],
+    "CVE-2005-4870": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/17617",
+        "title": "IBM DB2 XML Extender UDF buffer overflow",
+        "body": "IBM DB2 Universal Database is vulnerable to a stack-based buffer overflow in certain XML Extender UDF's (User-Defined Functions). If XML extender functionality is enabled, a remote attacker could supply a long parameter to overflow the buffer and execute arbitrary code on the server with elevated privileges.For IBM DB2 7.x:Apply the DB2 Version 7 FixPak 13, when it becomes available from the IBM DB2 version 7 FixPaks Download Web page. See References.For IBM DB2 8.x:Apply the DB2 Version 8 FixPak 6a or 7a, available from the IBM DB2 version 8 FixPaks Download Web page. See References."
+      }
+    ],
+    "CVE-2005-4871": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/18761",
+        "title": "IBM DB2 XML functions allow an attacker to read or write to files",
+        "body": "IBM DB2 could allow a remote attacker to read/write to files on the system, caused by a vulnerability in the XMLFileFromVarchar, XMLFileFromClob, XMLVarcharFromFile, and XMLClobFromFile functions. If a file is already currently in existence, the original could be overwritten with new information since the permissions of the account that is currently running the DB2 is used and not of the current user. A remote attacker could exploit this vulnerability to read/write to files on the system, including creating executable binaries on the system and creating a library then load the library via 'CALL'.Apply the appropriate patch for your system, as listed in NGSSoftware Insight Security Research Advisory #NISR05012005I. See References."
+      }
+    ],
+    "CVE-2005-4873": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/41497",
+        "title": "phpcups PHP module for CUPS multiple function parameters buffer overflows",
+        "body": "phpcups PHP module for CUPS is vulnerable to multiple stack-based buffer overflows. By using unknown attack vectors related to overly long function parameters, a remote attacker could overflow a buffer and execute arbitrary code on the system.Upgrade to the latest version of phpcups PHP module (1.2-current or later), available from the CUPS STR #1102. See References."
+      }
+    ],
+    "CVE-2005-4874": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/41553",
+        "title": "Mozilla XMLHttpRequest information disclosure",
+        "body": "Mozilla could allow a remote attacker to obtain sensitive information, caused by the supporting of the HTTP TRACE method by the XMLHttpRequest object. By sending a specially-crafted request using a Max-Forwards: 0\" header, a remote attacker could exploit this vulnerability to obtain the local or proxy authentication passwords.Upgrade to the latest version of Mozilla (1.7.13 or later), available from the Mozilla Web site. See References."
+      }
+    ],
+    "CVE-2005-4875": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/42457",
+        "title": "TYPO3 debug script information disclosure",
+        "body": "TYPO3 could allow a remote attacker to obtain sensitive information, caused by an error in the debug script. By executing the debug script, an attacker could obtain system information derived from the phpinfo function.Refer to TYPO3-20050725-1 for patch, upgrade or suggested workaround information. See References."
+      }
+    ],
+    "CVE-2005-4876": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/44689",
+        "title": "Openfire username cross-site scripting",
+        "body": "Openfire (formerly Wildfire) is vulnerable to cross-site scripting, caused by improper validation of user-supplied input by the login.jsp script in the admin console. A remote attacker could exploit this vulnerability using the username parameter in a specially-crafted URL to execute script in a victim's Web browser within the security context of the hosting Web site, once the URL is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.Upgrade to the latest version of Openfire (2.3.0 beta 2 or later), available from the Ignite Realtime Web site. See References."
+      }
+    ],
+    "CVE-2005-4877": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/44690",
+        "title": "Openfire Javascript events cross-site scripting",
+        "body": "Openfire (formerly Wildfire) is vulnerable to cross-site scripting, caused by improper validation of user-supplied input by the login.jsp script in the admin console. A remote attacker could exploit this vulnerability using Javascript events in the username parameter or in a specially-crafted URL to execute script in a victim's Web browser within the security context of the hosting Web site, once the URL is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.Upgrade to the latest version of Openfire (2.3.0 beta 2 or later), available from the Ignite Realtime Web site. See References."
+      }
+    ],
+    "CVE-2005-4878": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/48848",
+        "title": "ACID and BASE sig[1] cross-site scripting",
+        "body": "Analysis Console for Intrusion Databases (ACID) and Basic Analysis and Security Engine (BASE) are vulnerable to cross-site scripting, caused by improper validation of user-supplied input by the acid_qry_main.php and base_qry_main.php scripts. A remote attacker could exploit this vulnerability using the sig[1] parameter in a specially-crafted URL to execute script in a victim's Web browser within the security context of the hosting Web site, once the URL is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.Upgrade to the latest version of BASE (1.2.1 or later), available from the BASE Web site. See References."
+      }
+    ],
+    "CVE-2005-4879": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/43562",
+        "title": "Jax Guestbook jax_guestbook.php cross-site scripting",
+        "body": "Jax Guestbook is vulnerable to cross-site scripting, caused by improper validation of user-supplied input by the jax_guestbook.php script. A remote attacker could exploit this vulnerability using the gmt_ofs or language parameter in a specially-crafted URL to execute script in a victim's Web browser within the security context of the hosting Web site, once the URL is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2005-4886": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/56614",
+        "title": "Linux Kernel selinux_parse_skb_ipv6 denial of service",
+        "body": "Linux Kernel is vulnerable to a denial of service, caused by an error in the selinux_parse_skb_ipv6 function. A remote attacker could exploit this vulnerability using attack vectors related to an incorrect call to the ipv6_skip_exthdr function to cause the kernel to OOPS.Apply the patch for this vulnerability, available from the Linux Kernel GIT Repository. See References."
+      }
+    ],
+    "CVE-2005-4889": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/59426",
+        "title": "RPM setgid privilege escalation",
+        "body": "RPM Package Manager could allow a local attacker to gain elevated privileges on the system, caused by the improper resetting of the metadata within an executable file during file deletion in an RPM package removal by fsm.c.. By creating hardlinks to a vulnerable setuid or setgid file, a local attacker could exploit this vulnerability to gain elevated privileges on the system.Apply the appropriate updates for your system. See References."
+      }
+    ]
+  }
+}

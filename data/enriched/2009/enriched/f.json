@@ -1,0 +1,2120 @@
+{
+  "year": 2009,
+  "total": 163,
+  "reference": "security.gentoo.org",
+  "reports": {
+    "CVE-2009-0023": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-03.xml",
+        "title": "APR Utility Library: Multiple vulnerabilities — GLSA 200907-03",
+        "subTitle": "Multiple vulnerabilities in the Apache Portable Runtime Utility Library might enable remote attackers to cause a Denial of Service or disclose sensitive information.",
+        "background": "The Apache Portable Runtime Utility Library (aka apr-util) provides an interface to functionality such as XML parsing, string matching and databases connections.",
+        "body": "Multiple vulnerabilities have been discovered in the APR Utility Library:",
+        "extra": "A remote attacker could exploit these vulnerabilities to cause a Denial of Service (crash or memory exhaustion) via an Apache HTTP server running mod_dav or mod_dav_svn, or using several configuration files. Additionally, a remote attacker could disclose sensitive information or cause a Denial of Service by sending a specially crafted input. NOTE: Only big-endian architectures such as PPC and HPPA are affected by the latter flaw.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0037": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200903-21.xml",
+        "title": "cURL: Arbitrary file access — GLSA 200903-21",
+        "subTitle": "A vulnerability in cURL may allow for arbitrary file access.",
+        "background": "cURL is a command line tool for transferring files with URL syntax, supporting numerous protocols.",
+        "body": "David Kierznowski reported that the redirect implementation accepts arbitrary Location values when CURLOPT_FOLLOWLOCATION is enabled.",
+        "extra": "A remote attacker could possibly exploit this vulnerability to make remote HTTP servers trigger arbitrary requests to intranet servers and read or overwrite arbitrary files via a redirect to a file: URL, or, if the libssh2 USE flag is enabled, execute arbitrary commands via a redirect to an scp: URL.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0040": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200903-28.xml",
+        "title": "libpng: Multiple vulnerabilities — GLSA 200903-28",
+        "subTitle": "Multiple vulnerabilities were found in libpng, which might result in the execution of arbitrary code",
+        "background": "libpng is the official PNG reference library used to read, write and manipulate PNG images.",
+        "body": "Multiple vulnerabilities were discovered in libpng:",
+        "extra": "A remote attacker may execute arbitrary code with the privileges of the user opening a specially crafted PNG file by exploiting the erroneous out-of-memory handling. An attacker may also exploit the png_check_keyword() error to set arbitrary memory locations to 0, if the application allows overlong, user-controlled keywords when writing PNG files. The png_handle_tEXT() vulnerability may be exploited by an attacker to potentially consume all memory on a users system when a specially crafted PNG file is opened.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201209-25.xml",
+        "title": "VMware Player, Server, Workstation: Multiple vulnerabilities — GLSA 201209-25",
+        "subTitle": "Multiple vulnerabilities have been found in VMware Player, Server, and Workstation, allowing remote and local attackers to conduct several attacks, including privilege escalation, remote execution of arbitrary code, and a Denial of Service.",
+        "background": "VMware Player, Server, and Workstation allow emulation of a complete PC on a PC without the usual performance overhead of most emulators.",
+        "body": "Multiple vulnerabilities have been discovered in VMware Player, Server, and Workstation. Please review the CVE identifiers referenced below for details.",
+        "extra": "Local users may be able to gain escalated privileges, cause a Denial of Service, or gain sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0041": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200905-01.xml",
+        "title": "Asterisk: Multiple vulnerabilities — GLSA 200905-01",
+        "subTitle": "Multiple vulnerabilities have been found in Asterisk allowing for Denial of Service and username disclosure.",
+        "background": "Asterisk is an open source telephony engine and toolkit.",
+        "body": "Multiple vulnerabilities have been discovered in the IAX2 channel driver when performing the 3-way handshake (CVE-2008-1897), when handling a large number of POKE requests (CVE-2008-3263), when handling authentication attempts (CVE-2008-5558) and when handling firmware download (FWDOWNL) requests (CVE-2008-3264). Asterisk does also not correctly handle SIP INVITE messages that lack a \"From\" header (CVE-2008-2119), and responds differently to a failed login attempt depending on whether the user account exists (CVE-2008-3903, CVE-2009-0041).",
+        "extra": "Remote unauthenticated attackers could send specially crafted data to Asterisk, possibly resulting in a Denial of Service via a daemon crash, call-number exhaustion, CPU or traffic consumption. Remote unauthenticated attackers could furthermore enumerate valid usernames to facilitate brute force login attempts.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0135": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200903-34.xml",
+        "title": "Amarok: User-assisted execution of arbitrary code — GLSA 200903-34",
+        "subTitle": "Multiple vulnerabilities in Amarok might allow for user-assisted execution of arbitrary code.",
+        "background": "Amarok is an advanced music player.",
+        "body": "Tobias Klein has discovered multiple vulnerabilities in Amarok:",
+        "extra": "A remote attacker could entice a user to open a specially crafted Audible Audio (.aa) file with a large \"nlen\" or \"vlen\" tag value to execute arbitrary code or cause a Denial of Service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0136": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200903-34.xml",
+        "title": "Amarok: User-assisted execution of arbitrary code — GLSA 200903-34",
+        "subTitle": "Multiple vulnerabilities in Amarok might allow for user-assisted execution of arbitrary code.",
+        "background": "Amarok is an advanced music player.",
+        "body": "Tobias Klein has discovered multiple vulnerabilities in Amarok:",
+        "extra": "A remote attacker could entice a user to open a specially crafted Audible Audio (.aa) file with a large \"nlen\" or \"vlen\" tag value to execute arbitrary code or cause a Denial of Service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0146": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-20.xml",
+        "title": "CUPS: Multiple vulnerabilities — GLSA 200904-20",
+        "subTitle": "Multiple errors in CUPS might allow for the remote execution of arbitrary code or DNS rebinding attacks.",
+        "background": "CUPS, the Common Unix Printing System, is a full-featured print server.",
+        "body": "The following issues were reported in CUPS:",
+        "extra": "A remote attacker might send or entice a user to send a specially crafted print job to CUPS, possibly resulting in the execution of arbitrary code with the privileges of the configured CUPS user -- by default this is \"lp\", or a Denial of Service. Furthermore, the web interface could be used to conduct DNS rebinding attacks.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0147": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-20.xml",
+        "title": "CUPS: Multiple vulnerabilities — GLSA 200904-20",
+        "subTitle": "Multiple errors in CUPS might allow for the remote execution of arbitrary code or DNS rebinding attacks.",
+        "background": "CUPS, the Common Unix Printing System, is a full-featured print server.",
+        "body": "The following issues were reported in CUPS:",
+        "extra": "A remote attacker might send or entice a user to send a specially crafted print job to CUPS, possibly resulting in the execution of arbitrary code with the privileges of the configured CUPS user -- by default this is \"lp\", or a Denial of Service. Furthermore, the web interface could be used to conduct DNS rebinding attacks.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0148": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200905-02.xml",
+        "title": "Cscope: User-assisted execution of arbitrary code — GLSA 200905-02",
+        "subTitle": "Multiple vulnerabilities in Cscope might allow for the remote execution of arbitrary code.",
+        "background": "Cscope is a developer's tool for browsing source code.",
+        "body": "James Peach of Apple discovered a stack-based buffer overflow in cscope's handling of long file system paths (CVE-2009-0148). Multiple stack-based buffer overflows were reported in the putstring function when processing an overly long function name or symbol in a source code file (CVE-2009-1577).",
+        "extra": "A remote attacker could entice a user to open a specially crafted source file, possibly resulting in the remote execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0163": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-20.xml",
+        "title": "CUPS: Multiple vulnerabilities — GLSA 200904-20",
+        "subTitle": "Multiple errors in CUPS might allow for the remote execution of arbitrary code or DNS rebinding attacks.",
+        "background": "CUPS, the Common Unix Printing System, is a full-featured print server.",
+        "body": "The following issues were reported in CUPS:",
+        "extra": "A remote attacker might send or entice a user to send a specially crafted print job to CUPS, possibly resulting in the execution of arbitrary code with the privileges of the configured CUPS user -- by default this is \"lp\", or a Denial of Service. Furthermore, the web interface could be used to conduct DNS rebinding attacks.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0164": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-20.xml",
+        "title": "CUPS: Multiple vulnerabilities — GLSA 200904-20",
+        "subTitle": "Multiple errors in CUPS might allow for the remote execution of arbitrary code or DNS rebinding attacks.",
+        "background": "CUPS, the Common Unix Printing System, is a full-featured print server.",
+        "body": "The following issues were reported in CUPS:",
+        "extra": "A remote attacker might send or entice a user to send a specially crafted print job to CUPS, possibly resulting in the execution of arbitrary code with the privileges of the configured CUPS user -- by default this is \"lp\", or a Denial of Service. Furthermore, the web interface could be used to conduct DNS rebinding attacks.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0166": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-20.xml",
+        "title": "CUPS: Multiple vulnerabilities — GLSA 200904-20",
+        "subTitle": "Multiple errors in CUPS might allow for the remote execution of arbitrary code or DNS rebinding attacks.",
+        "background": "CUPS, the Common Unix Printing System, is a full-featured print server.",
+        "body": "The following issues were reported in CUPS:",
+        "extra": "A remote attacker might send or entice a user to send a specially crafted print job to CUPS, possibly resulting in the execution of arbitrary code with the privileges of the configured CUPS user -- by default this is \"lp\", or a Denial of Service. Furthermore, the web interface could be used to conduct DNS rebinding attacks.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0186": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-16.xml",
+        "title": "libsndfile: User-assisted execution of arbitrary code — GLSA 200904-16",
+        "subTitle": "A buffer overflow vulnerability in libsndfile might allow remote attackers to execute arbitrary code.",
+        "background": "libsndfile is a C library for reading and writing files containing sampled sound.",
+        "body": "Alin Rad Pop from Secunia Research reported an integer overflow when processing CAF description chunks, leading to a heap-based buffer overflow.",
+        "extra": "A remote attacker could entice a user to open a specially crafted CAF file, resulting in the remote execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0193": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-17.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200904-17",
+        "subTitle": "Adobe Reader is vulnerable to execution of arbitrary code.",
+        "background": "Adobe Reader (formerly Adobe Acrobat Reader) is a closed-source PDF reader.",
+        "body": "Multiple vulnerabilities have been discovered in Adobe Reader:",
+        "extra": "",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0196": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201412-17.xml",
+        "title": "GPL Ghostscript: Multiple vulnerabilities — GLSA 201412-17",
+        "subTitle": "Multiple vulnerabilities have been found in GPL Ghostscript, the worst of which may allow execution of arbitrary code.",
+        "background": "Ghostscript is an interpreter for the PostScript language and for PDF.",
+        "body": "Multiple vulnerabilities have been discovered in GPL Ghostscript. Please review the CVE identifiers referenced below for details.",
+        "extra": "A context-dependent attacker could entice a user to open a specially crafted PostScript file or PDF using GPL Ghostscript, possibly resulting in execution of arbitrary code with the privileges of the process or a Denial of Service condition.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0198": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-06.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200907-06",
+        "subTitle": "Adobe Reader is vulnerable to remote code execution via crafted PDF files.",
+        "background": "Adobe Reader is a PDF reader released by Adobe.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Reader:",
+        "extra": "A remote attacker could entice a user to open a specially crafted document, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0241": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200903-22.xml",
+        "title": "Ganglia: Execution of arbitrary code — GLSA 200903-22",
+        "subTitle": "A buffer-overflow in Ganglia's gmetad might lead to the execution of arbitrary code.",
+        "background": "Ganglia is a scalable distributed monitoring system for clusters and grids.",
+        "body": "Spike Spiegel reported a stack-based buffer overflow in the process_path() function when processing overly long pathnames in gmetad/server.c.",
+        "extra": "A remote attacker could send a specially crafted request to the gmetad service leading to the execution of arbitrary code or a Denial of Service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0282": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-08.xml",
+        "title": "Multiple Ralink wireless drivers: Execution of arbitrary code — GLSA 200907-08",
+        "subTitle": "An integer overflow in multiple Ralink wireless drivers might lead to the execution of arbitrary code with elevated privileges.",
+        "background": "All listed packages are external kernel modules that provide drivers for multiple Ralink devices. ralink-rt61 is released by ralinktech.com, the other packages by the rt2x00.serialmonkey.com project.",
+        "body": "Aviv reported an integer overflow in multiple Ralink wireless card drivers when processing a probe request packet with a long SSID, possibly related to an integer signedness error.",
+        "extra": "A physically proximate attacker could send specially crafted packets to a user who has wireless networking enabled, possibly resulting in the execution of arbitrary code with root privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0360": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200903-39.xml",
+        "title": "pam_krb5: Privilege escalation — GLSA 200903-39",
+        "subTitle": "Two vulnerabilities in pam_krb5 might allow local users to elevate their privileges or overwrite arbitrary files.",
+        "background": "pam_krb5 is a a Kerberos v5 PAM module.",
+        "body": "The following vulnerabilities were discovered:",
+        "extra": "A local attacker could set an environment variable to point to a specially crafted Kerberos configuration file and launch a PAM-based setuid application to elevate privileges, or change ownership and overwrite arbitrary files.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0361": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200903-39.xml",
+        "title": "pam_krb5: Privilege escalation — GLSA 200903-39",
+        "subTitle": "Two vulnerabilities in pam_krb5 might allow local users to elevate their privileges or overwrite arbitrary files.",
+        "background": "pam_krb5 is a a Kerberos v5 PAM module.",
+        "body": "The following vulnerabilities were discovered:",
+        "extra": "A local attacker could set an environment variable to point to a specially crafted Kerberos configuration file and launch a PAM-based setuid application to elevate privileges, or change ownership and overwrite arbitrary files.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0368": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200908-01.xml",
+        "title": "OpenSC: Multiple vulnerabilities — GLSA 200908-01",
+        "subTitle": "Multiple vulnerabilities were found in OpenSC.",
+        "background": "OpenSC provides a set of libraries and utilities to access smart cards.",
+        "body": "Multiple vulnerabilities were found in OpenSC:",
+        "extra": "The first vulnerabilty allows physically proximate attackers to bypass intended PIN requirements and read private data objects. The second vulnerability allows attackers to read the cleartext form of messages that were intended to be encrypted.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0386": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-11.xml",
+        "title": "GStreamer plug-ins: User-assisted execution of arbitrary code — GLSA 200907-11",
+        "subTitle": "Multiple vulnerabilities in multiple GStreamer plug-ins might allow for the execution of arbitrary code.",
+        "background": "The GStreamer plug-ins provide decoders to the GStreamer open source media framework.",
+        "body": "Multiple vulnerabilities have been reported in several GStreamer plug-ins:",
+        "extra": "A remote attacker could entice a user or automated system using a GStreamer plug-in to process a specially crafted file, resulting in the execution of arbitrary code or a Denial of Service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0387": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-11.xml",
+        "title": "GStreamer plug-ins: User-assisted execution of arbitrary code — GLSA 200907-11",
+        "subTitle": "Multiple vulnerabilities in multiple GStreamer plug-ins might allow for the execution of arbitrary code.",
+        "background": "The GStreamer plug-ins provide decoders to the GStreamer open source media framework.",
+        "body": "Multiple vulnerabilities have been reported in several GStreamer plug-ins:",
+        "extra": "A remote attacker could entice a user or automated system using a GStreamer plug-in to process a specially crafted file, resulting in the execution of arbitrary code or a Denial of Service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0397": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-11.xml",
+        "title": "GStreamer plug-ins: User-assisted execution of arbitrary code — GLSA 200907-11",
+        "subTitle": "Multiple vulnerabilities in multiple GStreamer plug-ins might allow for the execution of arbitrary code.",
+        "background": "The GStreamer plug-ins provide decoders to the GStreamer open source media framework.",
+        "body": "Multiple vulnerabilities have been reported in several GStreamer plug-ins:",
+        "extra": "A remote attacker could entice a user or automated system using a GStreamer plug-in to process a specially crafted file, resulting in the execution of arbitrary code or a Denial of Service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0414": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-11.xml",
+        "title": "Tor: Multiple vulnerabilities — GLSA 200904-11",
+        "subTitle": "Multiple vulnerabilities in Tor might allow for heap corruption, Denial of Service, escalation of privileges and information disclosure.",
+        "background": "Tor is an implementation of second generation Onion Routing, a connection-oriented anonymizing communication service.",
+        "body": "A local attacker could escalate privileges by leveraging unintended supplementary group memberships of the Tor process. A remote attacker could exploit these vulnerabilities to cause a heap corruption with unknown impact and attack vectors, to cause a Denial of Service via CPU consuption or daemon crash, and to weaken anonymity provided by the service.",
+        "extra": "There is no known workaround at this time.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0478": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200903-38.xml",
+        "title": "Squid: Multiple Denial of Service vulnerabilities — GLSA 200903-38",
+        "subTitle": "Multiple vulnerabilities have been found in Squid which allow for remote Denial of Service attacks.",
+        "background": "Squid is a full-featured web proxy cache.",
+        "body": "The issues allows for Denial of Service attacks against the service via an HTTP request with an invalid version number and other specially crafted requests.",
+        "extra": "There is no known workaround at this time.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0509": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-06.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200907-06",
+        "subTitle": "Adobe Reader is vulnerable to remote code execution via crafted PDF files.",
+        "background": "Adobe Reader is a PDF reader released by Adobe.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Reader:",
+        "extra": "A remote attacker could entice a user to open a specially crafted document, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0510": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-06.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200907-06",
+        "subTitle": "Adobe Reader is vulnerable to remote code execution via crafted PDF files.",
+        "background": "Adobe Reader is a PDF reader released by Adobe.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Reader:",
+        "extra": "A remote attacker could entice a user to open a specially crafted document, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0511": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-06.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200907-06",
+        "subTitle": "Adobe Reader is vulnerable to remote code execution via crafted PDF files.",
+        "background": "Adobe Reader is a PDF reader released by Adobe.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Reader:",
+        "extra": "A remote attacker could entice a user to open a specially crafted document, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0512": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-06.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200907-06",
+        "subTitle": "Adobe Reader is vulnerable to remote code execution via crafted PDF files.",
+        "background": "Adobe Reader is a PDF reader released by Adobe.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Reader:",
+        "extra": "A remote attacker could entice a user to open a specially crafted document, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0519": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200903-23.xml",
+        "title": "Adobe Flash Player: Multiple vulnerabilities — GLSA 200903-23",
+        "subTitle": "Multiple vulnerabilities have been identified, the worst of which allow arbitrary code execution on a user's system via a malicious Flash file.",
+        "background": "The Adobe Flash Player is a renderer for the popular SWF file format, which is commonly used to provide interactive websites, digital experiences and mobile content.",
+        "body": "Multiple vulnerabilities have been discovered in Adobe Flash Player:",
+        "extra": "A remote attacker could entice a user to open a specially crafted SWF file, possibly resulting in the execution of arbitrary code with the privileges of the user or a Denial of Service (crash). Furthermore a remote attacker could gain access to sensitive information, disclose memory contents by enticing a user to open a specially crafted PDF file inside a Flash application, modify the victim's clipboard or render it temporarily unusable, persuade a user into uploading or downloading files, bypass security restrictions with the assistance of the user to gain access to camera and microphone, conduct Cross-Site Scripting and HTTP Header Splitting attacks, bypass the \"non-root domain policy\" of Flash, and gain escalated privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0520": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200903-23.xml",
+        "title": "Adobe Flash Player: Multiple vulnerabilities — GLSA 200903-23",
+        "subTitle": "Multiple vulnerabilities have been identified, the worst of which allow arbitrary code execution on a user's system via a malicious Flash file.",
+        "background": "The Adobe Flash Player is a renderer for the popular SWF file format, which is commonly used to provide interactive websites, digital experiences and mobile content.",
+        "body": "Multiple vulnerabilities have been discovered in Adobe Flash Player:",
+        "extra": "A remote attacker could entice a user to open a specially crafted SWF file, possibly resulting in the execution of arbitrary code with the privileges of the user or a Denial of Service (crash). Furthermore a remote attacker could gain access to sensitive information, disclose memory contents by enticing a user to open a specially crafted PDF file inside a Flash application, modify the victim's clipboard or render it temporarily unusable, persuade a user into uploading or downloading files, bypass security restrictions with the assistance of the user to gain access to camera and microphone, conduct Cross-Site Scripting and HTTP Header Splitting attacks, bypass the \"non-root domain policy\" of Flash, and gain escalated privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0521": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200903-23.xml",
+        "title": "Adobe Flash Player: Multiple vulnerabilities — GLSA 200903-23",
+        "subTitle": "Multiple vulnerabilities have been identified, the worst of which allow arbitrary code execution on a user's system via a malicious Flash file.",
+        "background": "The Adobe Flash Player is a renderer for the popular SWF file format, which is commonly used to provide interactive websites, digital experiences and mobile content.",
+        "body": "Multiple vulnerabilities have been discovered in Adobe Flash Player:",
+        "extra": "A remote attacker could entice a user to open a specially crafted SWF file, possibly resulting in the execution of arbitrary code with the privileges of the user or a Denial of Service (crash). Furthermore a remote attacker could gain access to sensitive information, disclose memory contents by enticing a user to open a specially crafted PDF file inside a Flash application, modify the victim's clipboard or render it temporarily unusable, persuade a user into uploading or downloading files, bypass security restrictions with the assistance of the user to gain access to camera and microphone, conduct Cross-Site Scripting and HTTP Header Splitting attacks, bypass the \"non-root domain policy\" of Flash, and gain escalated privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0542": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200903-27.xml",
+        "title": "ProFTPD: Multiple vulnerabilities — GLSA 200903-27",
+        "subTitle": "Two vulnerabilities in ProFTPD might allow for SQL injection attacks.",
+        "background": "ProFTPD is an advanced and very configurable FTP server.",
+        "body": "The following vulnerabilities were reported:",
+        "extra": "A remote attacker could send specially crafted requests to the server, possibly resulting in the execution of arbitrary SQL statements.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0543": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200903-27.xml",
+        "title": "ProFTPD: Multiple vulnerabilities — GLSA 200903-27",
+        "subTitle": "Two vulnerabilities in ProFTPD might allow for SQL injection attacks.",
+        "background": "ProFTPD is an advanced and very configurable FTP server.",
+        "body": "The following vulnerabilities were reported:",
+        "extra": "A remote attacker could send specially crafted requests to the server, possibly resulting in the execution of arbitrary SQL statements.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0581": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-19.xml",
+        "title": "LittleCMS: Multiple vulnerabilities — GLSA 200904-19",
+        "subTitle": "Multiple errors in LittleCMS allow for attacks including the remote execution of arbitrary code.",
+        "background": "LittleCMS, or short lcms, is a color management system for working with ICC profiles. It is used by many applications including GIMP and Firefox.",
+        "body": "RedHat reported a null-pointer dereference flaw while processing monochrome ICC profiles (CVE-2009-0793).",
+        "extra": "Chris Evans of Google discovered the following vulnerabilities:",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0586": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-11.xml",
+        "title": "GStreamer plug-ins: User-assisted execution of arbitrary code — GLSA 200907-11",
+        "subTitle": "Multiple vulnerabilities in multiple GStreamer plug-ins might allow for the execution of arbitrary code.",
+        "background": "The GStreamer plug-ins provide decoders to the GStreamer open source media framework.",
+        "body": "Multiple vulnerabilities have been reported in several GStreamer plug-ins:",
+        "extra": "A remote attacker could entice a user or automated system using a GStreamer plug-in to process a specially crafted file, resulting in the execution of arbitrary code or a Denial of Service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0658": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-17.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200904-17",
+        "subTitle": "Adobe Reader is vulnerable to execution of arbitrary code.",
+        "background": "Adobe Reader (formerly Adobe Acrobat Reader) is a closed-source PDF reader.",
+        "body": "Multiple vulnerabilities have been discovered in Adobe Reader:",
+        "extra": "",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0688": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-09.xml",
+        "title": "Cyrus-SASL: Execution of arbitrary code — GLSA 200907-09",
+        "subTitle": "A buffer overflow in Cyrus-SASL might allow for the execution of arbitrary code in applications or daemons that authenticate using SASL.",
+        "background": "Cyrus-SASL is an implementation of the Simple Authentication and Security Layer.",
+        "body": "James Ralston reported that in certain situations, Cyrus-SASL does not properly terminate strings which can result in buffer overflows when performing Base64 encoding.",
+        "extra": "A remote unauthenticated user might send specially crafted packets to a daemon using Cyrus-SASL, possibly resulting in the execution of arbitrary code with the privileges of the user running the daemon or a Denial of Service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0692": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-12.xml",
+        "title": "ISC DHCP: dhcpclient Remote execution of arbitrary code — GLSA 200907-12",
+        "subTitle": "A buffer overflow in dhclient as included in the ISC DHCP implementation allows for the remote execution of arbitrary code with root privileges.",
+        "background": "ISC DHCP is the reference implementation of the Dynamic Host Configuration Protocol as specified in RFC 2131.",
+        "body": "The Mandriva Linux Engineering Team has reported a stack-based buffer overflow in the subnet-mask handling of dhclient.",
+        "extra": "A remote attacker might set up a rogue DHCP server in a victim's local network, possibly leading to the execution of arbitrary code with root privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0723": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-19.xml",
+        "title": "LittleCMS: Multiple vulnerabilities — GLSA 200904-19",
+        "subTitle": "Multiple errors in LittleCMS allow for attacks including the remote execution of arbitrary code.",
+        "background": "LittleCMS, or short lcms, is a color management system for working with ICC profiles. It is used by many applications including GIMP and Firefox.",
+        "body": "RedHat reported a null-pointer dereference flaw while processing monochrome ICC profiles (CVE-2009-0793).",
+        "extra": "Chris Evans of Google discovered the following vulnerabilities:",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0733": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-19.xml",
+        "title": "LittleCMS: Multiple vulnerabilities — GLSA 200904-19",
+        "subTitle": "Multiple errors in LittleCMS allow for attacks including the remote execution of arbitrary code.",
+        "background": "LittleCMS, or short lcms, is a color management system for working with ICC profiles. It is used by many applications including GIMP and Firefox.",
+        "body": "RedHat reported a null-pointer dereference flaw while processing monochrome ICC profiles (CVE-2009-0793).",
+        "extra": "Chris Evans of Google discovered the following vulnerabilities:",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0792": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201412-17.xml",
+        "title": "GPL Ghostscript: Multiple vulnerabilities — GLSA 201412-17",
+        "subTitle": "Multiple vulnerabilities have been found in GPL Ghostscript, the worst of which may allow execution of arbitrary code.",
+        "background": "Ghostscript is an interpreter for the PostScript language and for PDF.",
+        "body": "Multiple vulnerabilities have been discovered in GPL Ghostscript. Please review the CVE identifiers referenced below for details.",
+        "extra": "A context-dependent attacker could entice a user to open a specially crafted PostScript file or PDF using GPL Ghostscript, possibly resulting in execution of arbitrary code with the privileges of the process or a Denial of Service condition.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0793": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-19.xml",
+        "title": "LittleCMS: Multiple vulnerabilities — GLSA 200904-19",
+        "subTitle": "Multiple errors in LittleCMS allow for attacks including the remote execution of arbitrary code.",
+        "background": "LittleCMS, or short lcms, is a color management system for working with ICC profiles. It is used by many applications including GIMP and Firefox.",
+        "body": "RedHat reported a null-pointer dereference flaw while processing monochrome ICC profiles (CVE-2009-0793).",
+        "extra": "Chris Evans of Google discovered the following vulnerabilities:",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0844": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-09.xml",
+        "title": "MIT Kerberos 5: Multiple vulnerabilities — GLSA 200904-09",
+        "subTitle": "Multiple vulnerabilities in MIT Kerberos 5 might allow remote unauthenticated users to execute arbitrary code with root privileges.",
+        "background": "MIT Kerberos 5 is a suite of applications that implement the Kerberos network protocol. kadmind is the MIT Kerberos 5 administration daemon, KDC is the Key Distribution Center.",
+        "body": "Multiple vulnerabilities have been reported in MIT Kerberos 5:",
+        "extra": "A remote unauthenticated attacker could exploit the first vulnerability to cause a Denial of Service or, in unlikely circumstances, execute arbitrary code on the host running krb5kdc or kadmind with root privileges and compromise the Kerberos key database. Exploitation of the other vulnerabilities might lead to a Denial of Service in kadmind, krb5kdc, or other daemons performing authorization against Kerberos that utilize GSS-API or an information disclosure.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0845": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-09.xml",
+        "title": "MIT Kerberos 5: Multiple vulnerabilities — GLSA 200904-09",
+        "subTitle": "Multiple vulnerabilities in MIT Kerberos 5 might allow remote unauthenticated users to execute arbitrary code with root privileges.",
+        "background": "MIT Kerberos 5 is a suite of applications that implement the Kerberos network protocol. kadmind is the MIT Kerberos 5 administration daemon, KDC is the Key Distribution Center.",
+        "body": "Multiple vulnerabilities have been reported in MIT Kerberos 5:",
+        "extra": "A remote unauthenticated attacker could exploit the first vulnerability to cause a Denial of Service or, in unlikely circumstances, execute arbitrary code on the host running krb5kdc or kadmind with root privileges and compromise the Kerberos key database. Exploitation of the other vulnerabilities might lead to a Denial of Service in kadmind, krb5kdc, or other daemons performing authorization against Kerberos that utilize GSS-API or an information disclosure.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0846": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-09.xml",
+        "title": "MIT Kerberos 5: Multiple vulnerabilities — GLSA 200904-09",
+        "subTitle": "Multiple vulnerabilities in MIT Kerberos 5 might allow remote unauthenticated users to execute arbitrary code with root privileges.",
+        "background": "MIT Kerberos 5 is a suite of applications that implement the Kerberos network protocol. kadmind is the MIT Kerberos 5 administration daemon, KDC is the Key Distribution Center.",
+        "body": "Multiple vulnerabilities have been reported in MIT Kerberos 5:",
+        "extra": "A remote unauthenticated attacker could exploit the first vulnerability to cause a Denial of Service or, in unlikely circumstances, execute arbitrary code on the host running krb5kdc or kadmind with root privileges and compromise the Kerberos key database. Exploitation of the other vulnerabilities might lead to a Denial of Service in kadmind, krb5kdc, or other daemons performing authorization against Kerberos that utilize GSS-API or an information disclosure.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0847": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-09.xml",
+        "title": "MIT Kerberos 5: Multiple vulnerabilities — GLSA 200904-09",
+        "subTitle": "Multiple vulnerabilities in MIT Kerberos 5 might allow remote unauthenticated users to execute arbitrary code with root privileges.",
+        "background": "MIT Kerberos 5 is a suite of applications that implement the Kerberos network protocol. kadmind is the MIT Kerberos 5 administration daemon, KDC is the Key Distribution Center.",
+        "body": "Multiple vulnerabilities have been reported in MIT Kerberos 5:",
+        "extra": "A remote unauthenticated attacker could exploit the first vulnerability to cause a Denial of Service or, in unlikely circumstances, execute arbitrary code on the host running krb5kdc or kadmind with root privileges and compromise the Kerberos key database. Exploitation of the other vulnerabilities might lead to a Denial of Service in kadmind, krb5kdc, or other daemons performing authorization against Kerberos that utilize GSS-API or an information disclosure.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0888": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-06.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200907-06",
+        "subTitle": "Adobe Reader is vulnerable to remote code execution via crafted PDF files.",
+        "background": "Adobe Reader is a PDF reader released by Adobe.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Reader:",
+        "extra": "A remote attacker could entice a user to open a specially crafted document, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0889": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-06.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200907-06",
+        "subTitle": "Adobe Reader is vulnerable to remote code execution via crafted PDF files.",
+        "background": "Adobe Reader is a PDF reader released by Adobe.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Reader:",
+        "extra": "A remote attacker could entice a user to open a specially crafted document, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0909": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201209-25.xml",
+        "title": "VMware Player, Server, Workstation: Multiple vulnerabilities — GLSA 201209-25",
+        "subTitle": "Multiple vulnerabilities have been found in VMware Player, Server, and Workstation, allowing remote and local attackers to conduct several attacks, including privilege escalation, remote execution of arbitrary code, and a Denial of Service.",
+        "background": "VMware Player, Server, and Workstation allow emulation of a complete PC on a PC without the usual performance overhead of most emulators.",
+        "body": "Multiple vulnerabilities have been discovered in VMware Player, Server, and Workstation. Please review the CVE identifiers referenced below for details.",
+        "extra": "Local users may be able to gain escalated privileges, cause a Denial of Service, or gain sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0910": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201209-25.xml",
+        "title": "VMware Player, Server, Workstation: Multiple vulnerabilities — GLSA 201209-25",
+        "subTitle": "Multiple vulnerabilities have been found in VMware Player, Server, and Workstation, allowing remote and local attackers to conduct several attacks, including privilege escalation, remote execution of arbitrary code, and a Denial of Service.",
+        "background": "VMware Player, Server, and Workstation allow emulation of a complete PC on a PC without the usual performance overhead of most emulators.",
+        "body": "Multiple vulnerabilities have been discovered in VMware Player, Server, and Workstation. Please review the CVE identifiers referenced below for details.",
+        "extra": "Local users may be able to gain escalated privileges, cause a Denial of Service, or gain sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0914": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200903-30.xml",
+        "title": "Opera: Multiple vulnerabilities — GLSA 200903-30",
+        "subTitle": "Multiple vulnerabilities were found in Opera, the worst of which allow for the execution of arbitrary code.",
+        "background": "Opera is a fast web browser that is available free of charge.",
+        "body": "Multiple vulnerabilities were discovered in Opera:",
+        "extra": "A remote attacker could entice a user to open a specially crafted JPEG image to cause a Denial of Service or execute arbitrary code, to process an overly long file:// URL or to open a specially crafted web page to execute arbitrary code. He could also read existing subscriptions and force subscriptions to arbitrary feed URLs, as well as inject arbitrary web script or HTML via built-in XSLT templates.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0927": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-17.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200904-17",
+        "subTitle": "Adobe Reader is vulnerable to execution of arbitrary code.",
+        "background": "Adobe Reader (formerly Adobe Acrobat Reader) is a closed-source PDF reader.",
+        "body": "Multiple vulnerabilities have been discovered in Adobe Reader:",
+        "extra": "",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0928": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-17.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200904-17",
+        "subTitle": "Adobe Reader is vulnerable to execution of arbitrary code.",
+        "background": "Adobe Reader (formerly Adobe Acrobat Reader) is a closed-source PDF reader.",
+        "body": "Multiple vulnerabilities have been discovered in Adobe Reader:",
+        "extra": "",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-0946": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200905-05.xml",
+        "title": "FreeType: Multiple vulnerabilities — GLSA 200905-05",
+        "subTitle": "Multiple integer overflows in FreeType might allow for the remote execution of arbitrary code or a Denial of Service.",
+        "background": "FreeType is a high-quality and portable font engine.",
+        "body": "Tavis Ormandy reported multiple integer overflows in the cff_charset_compute_cids() function in cff/cffload.c, sfnt/tccmap.c and the ft_smooth_render_generic() function in smooth/ftsmooth.c, possibly leading to heap or stack-based buffer overflows.",
+        "extra": "A remote attacker could entice a user or automated system to open a specially crafted font file, possibly resulting in the execution of arbitrary code with the privileges of the user running the application, or a Denial of Service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1061": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-17.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200904-17",
+        "subTitle": "Adobe Reader is vulnerable to execution of arbitrary code.",
+        "background": "Adobe Reader (formerly Adobe Acrobat Reader) is a closed-source PDF reader.",
+        "body": "Multiple vulnerabilities have been discovered in Adobe Reader:",
+        "extra": "",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1062": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-17.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200904-17",
+        "subTitle": "Adobe Reader is vulnerable to execution of arbitrary code.",
+        "background": "Adobe Reader (formerly Adobe Acrobat Reader) is a closed-source PDF reader.",
+        "body": "Multiple vulnerabilities have been discovered in Adobe Reader:",
+        "extra": "",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1095": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1096": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1097": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1098": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1099": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1102": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1106": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1144": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200904-07.xml",
+        "title": "Xpdf: Untrusted search path — GLSA 200904-07",
+        "subTitle": "A vulnerability in Xpdf might allow local attackers to execute arbitrary code.",
+        "background": "Xpdf is a PDF file viewer that runs under the X Window System.",
+        "body": "Erik Wallin reported that Gentoo's Xpdf attempts to read the \"xpdfrc\" file from the current working directory if it cannot find a \".xpdfrc\" file in the user's home directory. This is caused by a missing definition of the SYSTEM_XPDFRC macro when compiling a repackaged version of Xpdf.",
+        "extra": "A local attacker could entice a user to run \"xpdf\" from a directory containing a specially crafted \"xpdfrc\" file, resulting in the execution of arbitrary code when attempting to, e.g., print a file.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1150": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200906-03.xml",
+        "title": "phpMyAdmin: Multiple vulnerabilities — GLSA 200906-03",
+        "subTitle": "Multiple errors in phpMyAdmin might allow the remote execution of arbitrary code or a Cross-Site Scripting attack.",
+        "background": "phpMyAdmin is a web-based management tool for MySQL databases.",
+        "body": "Multiple vulnerabilities have been reported in phpMyAdmin:",
+        "extra": "A remote unauthorized attacker could exploit the first vulnerability to execute arbitrary code with the privileges of the user running phpMyAdmin and conduct Cross-Site Scripting attacks using the second vulnerability.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1151": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200906-03.xml",
+        "title": "phpMyAdmin: Multiple vulnerabilities — GLSA 200906-03",
+        "subTitle": "Multiple errors in phpMyAdmin might allow the remote execution of arbitrary code or a Cross-Site Scripting attack.",
+        "background": "phpMyAdmin is a web-based management tool for MySQL databases.",
+        "body": "Multiple vulnerabilities have been reported in phpMyAdmin:",
+        "extra": "A remote unauthorized attacker could exploit the first vulnerability to execute arbitrary code with the privileges of the user running phpMyAdmin and conduct Cross-Site Scripting attacks using the second vulnerability.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1191": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-04.xml",
+        "title": "Apache: Multiple vulnerabilities — GLSA 200907-04",
+        "subTitle": "Multiple vulnerabilities in the Apache HTTP daemon allow for local privilege escalation, information disclosure or Denial of Service attacks.",
+        "background": "The Apache HTTP server is one of the most popular web servers on the Internet.",
+        "body": "Multiple vulnerabilities have been discovered in the Apache HTTP server:",
+        "extra": "A local attacker could circumvent restrictions put up by the server administrator and execute arbitrary commands with the privileges of the user running the Apache server. A remote attacker could send multiple requests to a server with the AJP proxy module, possibly resulting in the disclosure of a request intended for another client, or cause a Denial of Service by sending specially crafted requests to servers running mod_proxy_http or mod_deflate.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1250": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201101-05.xml",
+        "title": "OpenAFS: Arbitrary code execution — GLSA 201101-05",
+        "subTitle": "The cache manager of OpenAFS contains several bugs resulting in remote execution of arbitrary code.",
+        "background": "OpenAFS is a distributed file system.",
+        "body": "Two vulnerabilities were discovered:",
+        "extra": "The vulnerabilities might allow remote unauthenticated attackers to cause a Denial of Service (system crash) and possibly execute arbitrary code.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1251": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201101-05.xml",
+        "title": "OpenAFS: Arbitrary code execution — GLSA 201101-05",
+        "subTitle": "The cache manager of OpenAFS contains several bugs resulting in remote execution of arbitrary code.",
+        "background": "OpenAFS is a distributed file system.",
+        "body": "Two vulnerabilities were discovered:",
+        "extra": "The vulnerabilities might allow remote unauthenticated attackers to cause a Denial of Service (system crash) and possibly execute arbitrary code.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1284": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201206-28.xml",
+        "title": "TeX Live: Multiple vulnerabilities — GLSA 201206-28",
+        "subTitle": "Multiple vulnerabilities were found in texlive-core, allowing attackers to execute arbitrary code.",
+        "background": "TeX Live is a complete TeX distribution.",
+        "body": "Multiple vulnerabilities have been discovered in texlive-core. Please review the CVE identifiers referenced below for details.",
+        "extra": "These vulnerabilities might allow user-assisted remote attackers to execute arbitrary code via a specially-crafted DVI file, or cause a Denial of Service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1377": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200912-01.xml",
+        "title": "OpenSSL: Multiple vulnerabilities — GLSA 200912-01",
+        "subTitle": "Multiple vulnerabilities in OpenSSL might allow remote attackers to conduct multiple attacks, including the injection of arbitrary data into encrypted byte streams.",
+        "background": "OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general purpose cryptography library.",
+        "body": "Multiple vulnerabilities have been reported in OpenSSL:",
+        "extra": "A remote unauthenticated attacker, acting as a Man in the Middle, could inject arbitrary plain text into a TLS session, possibly leading to the ability to send requests as if authenticated as the victim. A remote attacker could furthermore send specially crafted DTLS packages to a service using OpenSSL for DTLS support, possibly resulting in a Denial of Service. Also, a remote attacker might be able to create rogue certificates, facilitated by a MD2 collision. NOTE: The amount of computation needed for this attack is still very large.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1378": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200912-01.xml",
+        "title": "OpenSSL: Multiple vulnerabilities — GLSA 200912-01",
+        "subTitle": "Multiple vulnerabilities in OpenSSL might allow remote attackers to conduct multiple attacks, including the injection of arbitrary data into encrypted byte streams.",
+        "background": "OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general purpose cryptography library.",
+        "body": "Multiple vulnerabilities have been reported in OpenSSL:",
+        "extra": "A remote unauthenticated attacker, acting as a Man in the Middle, could inject arbitrary plain text into a TLS session, possibly leading to the ability to send requests as if authenticated as the victim. A remote attacker could furthermore send specially crafted DTLS packages to a service using OpenSSL for DTLS support, possibly resulting in a Denial of Service. Also, a remote attacker might be able to create rogue certificates, facilitated by a MD2 collision. NOTE: The amount of computation needed for this attack is still very large.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1379": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200912-01.xml",
+        "title": "OpenSSL: Multiple vulnerabilities — GLSA 200912-01",
+        "subTitle": "Multiple vulnerabilities in OpenSSL might allow remote attackers to conduct multiple attacks, including the injection of arbitrary data into encrypted byte streams.",
+        "background": "OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general purpose cryptography library.",
+        "body": "Multiple vulnerabilities have been reported in OpenSSL:",
+        "extra": "A remote unauthenticated attacker, acting as a Man in the Middle, could inject arbitrary plain text into a TLS session, possibly leading to the ability to send requests as if authenticated as the victim. A remote attacker could furthermore send specially crafted DTLS packages to a service using OpenSSL for DTLS support, possibly resulting in a Denial of Service. Also, a remote attacker might be able to create rogue certificates, facilitated by a MD2 collision. NOTE: The amount of computation needed for this attack is still very large.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1387": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200912-01.xml",
+        "title": "OpenSSL: Multiple vulnerabilities — GLSA 200912-01",
+        "subTitle": "Multiple vulnerabilities in OpenSSL might allow remote attackers to conduct multiple attacks, including the injection of arbitrary data into encrypted byte streams.",
+        "background": "OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general purpose cryptography library.",
+        "body": "Multiple vulnerabilities have been reported in OpenSSL:",
+        "extra": "A remote unauthenticated attacker, acting as a Man in the Middle, could inject arbitrary plain text into a TLS session, possibly leading to the ability to send requests as if authenticated as the victim. A remote attacker could furthermore send specially crafted DTLS packages to a service using OpenSSL for DTLS support, possibly resulting in a Denial of Service. Also, a remote attacker might be able to create rogue certificates, facilitated by a MD2 collision. NOTE: The amount of computation needed for this attack is still very large.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1391": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200908-07.xml",
+        "title": "Perl Compress::Raw modules: Denial of service — GLSA 200908-07",
+        "subTitle": "An off-by-one error in Compress::Raw::Zlib and Compress::Raw::Bzip2 might lead to a Denial of Service.",
+        "background": "Compress::Raw::Zlib and Compress::Raw::Bzip2 are Perl low-level interfaces to the zlib and bzip2 compression libraries.",
+        "body": "Leo Bergolth reported an off-by-one error in the inflate() function in Zlib.xs of Compress::Raw::Zlib, possibly leading to a heap-based buffer overflow (CVE-2009-1391).",
+        "extra": "Paul Marquess discovered a similar vulnerability in the bzinflate() function in Bzip2.xs of Compress::Raw::Bzip2 (CVE-2009-1884).",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1416": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200905-04.xml",
+        "title": "GnuTLS: Multiple vulnerabilities — GLSA 200905-04",
+        "subTitle": "Multiple vulnerabilities in GnuTLS might result in a Denial of Service, spoofing or the generation of invalid keys.",
+        "background": "GnuTLS is an Open Source implementation of the TLS 1.0 and SSL 3.0 protocols.",
+        "body": "The following vulnerabilities were found in GnuTLS:",
+        "extra": "A remote attacker could entice a user or automated system to process a specially crafted DSA certificate, possibly resulting in a Denial of Service condition. NOTE: This issue might have other unspecified impact including the execution of arbitrary code. Furthermore, a remote attacker could spoof signatures on certificates and the \"gnutls-cli\" application can be tricked into accepting an invalid certificate.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1417": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200905-04.xml",
+        "title": "GnuTLS: Multiple vulnerabilities — GLSA 200905-04",
+        "subTitle": "Multiple vulnerabilities in GnuTLS might result in a Denial of Service, spoofing or the generation of invalid keys.",
+        "background": "GnuTLS is an Open Source implementation of the TLS 1.0 and SSL 3.0 protocols.",
+        "body": "The following vulnerabilities were found in GnuTLS:",
+        "extra": "A remote attacker could entice a user or automated system to process a specially crafted DSA certificate, possibly resulting in a Denial of Service condition. NOTE: This issue might have other unspecified impact including the execution of arbitrary code. Furthermore, a remote attacker could spoof signatures on certificates and the \"gnutls-cli\" application can be tricked into accepting an invalid certificate.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1438": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-07.xml",
+        "title": "ModPlug: User-assisted execution of arbitrary code — GLSA 200907-07",
+        "subTitle": "ModPlug contains several buffer overflows that could lead to the execution of arbitrary code.",
+        "background": "ModPlug is a library for playing MOD-like music.",
+        "body": "Two vulnerabilities have been reported in ModPlug:",
+        "extra": "The GStreamer Bad plug-ins (gst-plugins-bad) before 0.10.11 built a vulnerable copy of ModPlug.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1492": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-06.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200907-06",
+        "subTitle": "Adobe Reader is vulnerable to remote code execution via crafted PDF files.",
+        "background": "Adobe Reader is a PDF reader released by Adobe.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Reader:",
+        "extra": "A remote attacker could entice a user to open a specially crafted document, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1493": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-06.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200907-06",
+        "subTitle": "Adobe Reader is vulnerable to remote code execution via crafted PDF files.",
+        "background": "Adobe Reader is a PDF reader released by Adobe.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Reader:",
+        "extra": "A remote attacker could entice a user to open a specially crafted document, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1513": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-07.xml",
+        "title": "ModPlug: User-assisted execution of arbitrary code — GLSA 200907-07",
+        "subTitle": "ModPlug contains several buffer overflows that could lead to the execution of arbitrary code.",
+        "background": "ModPlug is a library for playing MOD-like music.",
+        "body": "Two vulnerabilities have been reported in ModPlug:",
+        "extra": "The GStreamer Bad plug-ins (gst-plugins-bad) before 0.10.11 built a vulnerable copy of ModPlug.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1570": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201209-23.xml",
+        "title": "GIMP: Multiple vulnerabilities — GLSA 201209-23",
+        "subTitle": "Multiple vulnerabilities have been found in GIMP, the worst of which allow execution of arbitrary code or Denial of Service.",
+        "background": "GIMP is the GNU Image Manipulation Program.",
+        "body": "Multiple vulnerabilities have been discovered in GIMP. Please review the CVE identifiers referenced below for details.",
+        "extra": "A remote attacker could possibly execute arbitrary code with the privileges of the process or cause a Denial of Service condition.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1577": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200905-02.xml",
+        "title": "Cscope: User-assisted execution of arbitrary code — GLSA 200905-02",
+        "subTitle": "Multiple vulnerabilities in Cscope might allow for the remote execution of arbitrary code.",
+        "background": "Cscope is a developer's tool for browsing source code.",
+        "body": "James Peach of Apple discovered a stack-based buffer overflow in cscope's handling of long file system paths (CVE-2009-0148). Multiple stack-based buffer overflows were reported in the putstring function when processing an overly long function name or symbol in a source code file (CVE-2009-1577).",
+        "extra": "A remote attacker could entice a user to open a specially crafted source file, possibly resulting in the remote execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1603": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200908-01.xml",
+        "title": "OpenSC: Multiple vulnerabilities — GLSA 200908-01",
+        "subTitle": "Multiple vulnerabilities were found in OpenSC.",
+        "background": "OpenSC provides a set of libraries and utilities to access smart cards.",
+        "body": "Multiple vulnerabilities were found in OpenSC:",
+        "extra": "The first vulnerabilty allows physically proximate attackers to bypass intended PIN requirements and read private data objects. The second vulnerability allows attackers to read the cleartext form of messages that were intended to be encrypted.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1632": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200905-03.xml",
+        "title": "IPSec Tools: Denial of service — GLSA 200905-03",
+        "subTitle": "Multiple errors in the IPSec Tools racoon daemon might allow remote attackers to cause a Denial of Service.",
+        "background": "The IPSec Tools are a port of KAME's IPsec utilities to the Linux-2.6 IPsec implementation. They include racoon, an Internet Key Exchange daemon for automatically keying IPsec connections.",
+        "body": "The following vulnerabilities have been found in the racoon daemon as shipped with IPSec Tools:",
+        "extra": "A remote attacker could send specially crafted fragmented ISAKMP packets without a payload or exploit vectors related to X.509 certificate authentication and NAT traversal, possibly resulting in a crash of the racoon daemon.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1760": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-14.xml",
+        "title": "Rasterbar libtorrent: Directory traversal — GLSA 200907-14",
+        "subTitle": "A directory traversal vulnerability in Rasterbar libtorrent might allow a remote attacker to overwrite arbitrary files.",
+        "background": "Rasterbar libtorrent is a C++ BitTorrent implementation focusing on efficiency and scalability. Deluge is a BitTorrent client that ships a copy of libtorrent.",
+        "body": "census reported a directory traversal vulnerability in src/torrent_info.cpp that can be triggered via .torrent files.",
+        "extra": "A remote attacker could entice a user or automated system using Rasterbar libtorrent to load a specially crafted BitTorrent file to create or overwrite arbitrary files using dot dot sequences in filenames.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1788": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200905-09.xml",
+        "title": "libsndfile: User-assisted execution of arbitrary code — GLSA 200905-09",
+        "subTitle": "Multiple heap-based buffer overflow vulnerabilities in libsndfile might allow remote attackers to execute arbitrary code.",
+        "background": "libsndfile is a C library for reading and writing files containing sampled sound.",
+        "body": "The following vulnerabilities have been found in libsndfile:",
+        "extra": "A remote attacker could entice a user to open a specially crafted AIFF or VOC file in a program using libsndfile, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1791": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200905-09.xml",
+        "title": "libsndfile: User-assisted execution of arbitrary code — GLSA 200905-09",
+        "subTitle": "Multiple heap-based buffer overflow vulnerabilities in libsndfile might allow remote attackers to execute arbitrary code.",
+        "background": "libsndfile is a C library for reading and writing files containing sampled sound.",
+        "body": "The following vulnerabilities have been found in libsndfile:",
+        "extra": "A remote attacker could entice a user to open a specially crafted AIFF or VOC file in a program using libsndfile, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1855": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-06.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200907-06",
+        "subTitle": "Adobe Reader is vulnerable to remote code execution via crafted PDF files.",
+        "background": "Adobe Reader is a PDF reader released by Adobe.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Reader:",
+        "extra": "A remote attacker could entice a user to open a specially crafted document, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1856": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-06.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200907-06",
+        "subTitle": "Adobe Reader is vulnerable to remote code execution via crafted PDF files.",
+        "background": "Adobe Reader is a PDF reader released by Adobe.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Reader:",
+        "extra": "A remote attacker could entice a user to open a specially crafted document, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1857": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-06.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200907-06",
+        "subTitle": "Adobe Reader is vulnerable to remote code execution via crafted PDF files.",
+        "background": "Adobe Reader is a PDF reader released by Adobe.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Reader:",
+        "extra": "A remote attacker could entice a user to open a specially crafted document, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1858": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-06.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200907-06",
+        "subTitle": "Adobe Reader is vulnerable to remote code execution via crafted PDF files.",
+        "background": "Adobe Reader is a PDF reader released by Adobe.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Reader:",
+        "extra": "A remote attacker could entice a user to open a specially crafted document, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1859": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-06.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200907-06",
+        "subTitle": "Adobe Reader is vulnerable to remote code execution via crafted PDF files.",
+        "background": "Adobe Reader is a PDF reader released by Adobe.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Reader:",
+        "extra": "A remote attacker could entice a user to open a specially crafted document, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1861": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-06.xml",
+        "title": "Adobe Reader: User-assisted execution of arbitrary code — GLSA 200907-06",
+        "subTitle": "Adobe Reader is vulnerable to remote code execution via crafted PDF files.",
+        "background": "Adobe Reader is a PDF reader released by Adobe.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Reader:",
+        "extra": "A remote attacker could entice a user to open a specially crafted document, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1862": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200908-04.xml",
+        "title": "Adobe products: Multiple vulnerabilities — GLSA 200908-04",
+        "subTitle": "Multiple vulnerabilities in Adobe Reader and Adobe Flash Player allow for attacks including the remote execution of arbitrary code.",
+        "background": "Adobe Flash Player is a closed-source playback software for Flash SWF files. Adobe Reader is a closed-source PDF reader that plays Flash content as well.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Flash Player:",
+        "extra": "A remote attacker could entice a user to open a specially crafted PDF file or web site containing Adobe Flash (SWF) contents, possibly resulting in the execution of arbitrary code with the privileges of the user running the application, or a Denial of Service (application crash). Furthermore, a remote attacker could trick a user into clicking a button on a dialog by supplying a specially crafted SWF file and disclose sensitive information by exploiting a sandbox issue.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1863": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200908-04.xml",
+        "title": "Adobe products: Multiple vulnerabilities — GLSA 200908-04",
+        "subTitle": "Multiple vulnerabilities in Adobe Reader and Adobe Flash Player allow for attacks including the remote execution of arbitrary code.",
+        "background": "Adobe Flash Player is a closed-source playback software for Flash SWF files. Adobe Reader is a closed-source PDF reader that plays Flash content as well.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Flash Player:",
+        "extra": "A remote attacker could entice a user to open a specially crafted PDF file or web site containing Adobe Flash (SWF) contents, possibly resulting in the execution of arbitrary code with the privileges of the user running the application, or a Denial of Service (application crash). Furthermore, a remote attacker could trick a user into clicking a button on a dialog by supplying a specially crafted SWF file and disclose sensitive information by exploiting a sandbox issue.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1864": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200908-04.xml",
+        "title": "Adobe products: Multiple vulnerabilities — GLSA 200908-04",
+        "subTitle": "Multiple vulnerabilities in Adobe Reader and Adobe Flash Player allow for attacks including the remote execution of arbitrary code.",
+        "background": "Adobe Flash Player is a closed-source playback software for Flash SWF files. Adobe Reader is a closed-source PDF reader that plays Flash content as well.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Flash Player:",
+        "extra": "A remote attacker could entice a user to open a specially crafted PDF file or web site containing Adobe Flash (SWF) contents, possibly resulting in the execution of arbitrary code with the privileges of the user running the application, or a Denial of Service (application crash). Furthermore, a remote attacker could trick a user into clicking a button on a dialog by supplying a specially crafted SWF file and disclose sensitive information by exploiting a sandbox issue.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1866": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200908-04.xml",
+        "title": "Adobe products: Multiple vulnerabilities — GLSA 200908-04",
+        "subTitle": "Multiple vulnerabilities in Adobe Reader and Adobe Flash Player allow for attacks including the remote execution of arbitrary code.",
+        "background": "Adobe Flash Player is a closed-source playback software for Flash SWF files. Adobe Reader is a closed-source PDF reader that plays Flash content as well.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Flash Player:",
+        "extra": "A remote attacker could entice a user to open a specially crafted PDF file or web site containing Adobe Flash (SWF) contents, possibly resulting in the execution of arbitrary code with the privileges of the user running the application, or a Denial of Service (application crash). Furthermore, a remote attacker could trick a user into clicking a button on a dialog by supplying a specially crafted SWF file and disclose sensitive information by exploiting a sandbox issue.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1868": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200908-04.xml",
+        "title": "Adobe products: Multiple vulnerabilities — GLSA 200908-04",
+        "subTitle": "Multiple vulnerabilities in Adobe Reader and Adobe Flash Player allow for attacks including the remote execution of arbitrary code.",
+        "background": "Adobe Flash Player is a closed-source playback software for Flash SWF files. Adobe Reader is a closed-source PDF reader that plays Flash content as well.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Flash Player:",
+        "extra": "A remote attacker could entice a user to open a specially crafted PDF file or web site containing Adobe Flash (SWF) contents, possibly resulting in the execution of arbitrary code with the privileges of the user running the application, or a Denial of Service (application crash). Furthermore, a remote attacker could trick a user into clicking a button on a dialog by supplying a specially crafted SWF file and disclose sensitive information by exploiting a sandbox issue.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1869": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200908-04.xml",
+        "title": "Adobe products: Multiple vulnerabilities — GLSA 200908-04",
+        "subTitle": "Multiple vulnerabilities in Adobe Reader and Adobe Flash Player allow for attacks including the remote execution of arbitrary code.",
+        "background": "Adobe Flash Player is a closed-source playback software for Flash SWF files. Adobe Reader is a closed-source PDF reader that plays Flash content as well.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Flash Player:",
+        "extra": "A remote attacker could entice a user to open a specially crafted PDF file or web site containing Adobe Flash (SWF) contents, possibly resulting in the execution of arbitrary code with the privileges of the user running the application, or a Denial of Service (application crash). Furthermore, a remote attacker could trick a user into clicking a button on a dialog by supplying a specially crafted SWF file and disclose sensitive information by exploiting a sandbox issue.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1870": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200908-04.xml",
+        "title": "Adobe products: Multiple vulnerabilities — GLSA 200908-04",
+        "subTitle": "Multiple vulnerabilities in Adobe Reader and Adobe Flash Player allow for attacks including the remote execution of arbitrary code.",
+        "background": "Adobe Flash Player is a closed-source playback software for Flash SWF files. Adobe Reader is a closed-source PDF reader that plays Flash content as well.",
+        "body": "Multiple vulnerabilities have been reported in Adobe Flash Player:",
+        "extra": "A remote attacker could entice a user to open a specially crafted PDF file or web site containing Adobe Flash (SWF) contents, possibly resulting in the execution of arbitrary code with the privileges of the user running the application, or a Denial of Service (application crash). Furthermore, a remote attacker could trick a user into clicking a button on a dialog by supplying a specially crafted SWF file and disclose sensitive information by exploiting a sandbox issue.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1882": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201311-10.xml",
+        "title": "GraphicsMagick: Multiple vulnerabilities — GLSA 201311-10",
+        "subTitle": "Multiple vulnerabilities have been found in GraphicsMagick, allowing remote attackers to execute arbitrary code or cause a Denial of Service condition.",
+        "background": "GraphicsMagick is the Swiss army knife of image processing.",
+        "body": "Multiple vulnerabilities have been discovered in GraphicsMagick. Please review the CVE identifiers referenced below for details.",
+        "extra": "A remote attacker could entice a user to open a specially-crafted image file, potentially resulting in arbitrary code execution or a Denial of Service condition.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1884": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200908-07.xml",
+        "title": "Perl Compress::Raw modules: Denial of service — GLSA 200908-07",
+        "subTitle": "An off-by-one error in Compress::Raw::Zlib and Compress::Raw::Bzip2 might lead to a Denial of Service.",
+        "background": "Compress::Raw::Zlib and Compress::Raw::Bzip2 are Perl low-level interfaces to the zlib and bzip2 compression libraries.",
+        "body": "Leo Bergolth reported an off-by-one error in the inflate() function in Zlib.xs of Compress::Raw::Zlib, possibly leading to a heap-based buffer overflow (CVE-2009-1391).",
+        "extra": "Paul Marquess discovered a similar vulnerability in the bzinflate() function in Bzip2.xs of Compress::Raw::Bzip2 (CVE-2009-1884).",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1890": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-04.xml",
+        "title": "Apache: Multiple vulnerabilities — GLSA 200907-04",
+        "subTitle": "Multiple vulnerabilities in the Apache HTTP daemon allow for local privilege escalation, information disclosure or Denial of Service attacks.",
+        "background": "The Apache HTTP server is one of the most popular web servers on the Internet.",
+        "body": "Multiple vulnerabilities have been discovered in the Apache HTTP server:",
+        "extra": "A local attacker could circumvent restrictions put up by the server administrator and execute arbitrary commands with the privileges of the user running the Apache server. A remote attacker could send multiple requests to a server with the AJP proxy module, possibly resulting in the disclosure of a request intended for another client, or cause a Denial of Service by sending specially crafted requests to servers running mod_proxy_http or mod_deflate.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1891": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-04.xml",
+        "title": "Apache: Multiple vulnerabilities — GLSA 200907-04",
+        "subTitle": "Multiple vulnerabilities in the Apache HTTP daemon allow for local privilege escalation, information disclosure or Denial of Service attacks.",
+        "background": "The Apache HTTP server is one of the most popular web servers on the Internet.",
+        "body": "Multiple vulnerabilities have been discovered in the Apache HTTP server:",
+        "extra": "A local attacker could circumvent restrictions put up by the server administrator and execute arbitrary commands with the privileges of the user running the Apache server. A remote attacker could send multiple requests to a server with the AJP proxy module, possibly resulting in the disclosure of a request intended for another client, or cause a Denial of Service by sending specially crafted requests to servers running mod_proxy_http or mod_deflate.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1902": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-02.xml",
+        "title": "ModSecurity: Denial of service — GLSA 200907-02",
+        "subTitle": "Two vulnerabilities in ModSecurity might lead to a Denial of Service.",
+        "background": "ModSecurity is a popular web application firewall for the Apache HTTP server.",
+        "body": "Multiple vulnerabilities were discovered in ModSecurity:",
+        "extra": "A remote attacker might send requests containing specially crafted multipart data or send certain requests to access a PDF file, possibly resulting in a Denial of Service (crash) of the Apache HTTP daemon. NOTE: The PDF XSS protection is not enabled by default.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1904": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200906-02.xml",
+        "title": "Ruby: Denial of service — GLSA 200906-02",
+        "subTitle": "A flaw in the Ruby standard library might allow remote attackers to cause a Denial of Service attack.",
+        "background": "Ruby is an interpreted object-oriented programming language. The elaborate standard library includes the \"BigDecimal\" class.",
+        "body": "Tadayoshi Funaba reported that BigDecimal in ext/bigdecimal/bigdecimal.c does not properly handle string arguments containing overly long numbers.",
+        "extra": "A remote attacker could exploit this issue to remotely cause a Denial of Service attack.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1932": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-11.xml",
+        "title": "GStreamer plug-ins: User-assisted execution of arbitrary code — GLSA 200907-11",
+        "subTitle": "Multiple vulnerabilities in multiple GStreamer plug-ins might allow for the execution of arbitrary code.",
+        "background": "The GStreamer plug-ins provide decoders to the GStreamer open source media framework.",
+        "body": "Multiple vulnerabilities have been reported in several GStreamer plug-ins:",
+        "extra": "A remote attacker could entice a user or automated system using a GStreamer plug-in to process a specially crafted file, resulting in the execution of arbitrary code or a Denial of Service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-1956": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-03.xml",
+        "title": "APR Utility Library: Multiple vulnerabilities — GLSA 200907-03",
+        "subTitle": "Multiple vulnerabilities in the Apache Portable Runtime Utility Library might enable remote attackers to cause a Denial of Service or disclose sensitive information.",
+        "background": "The Apache Portable Runtime Utility Library (aka apr-util) provides an interface to functionality such as XML parsing, string matching and databases connections.",
+        "body": "Multiple vulnerabilities have been discovered in the APR Utility Library:",
+        "extra": "A remote attacker could exploit these vulnerabilities to cause a Denial of Service (crash or memory exhaustion) via an Apache HTTP server running mod_dav or mod_dav_svn, or using several configuration files. Additionally, a remote attacker could disclose sensitive information or cause a Denial of Service by sending a specially crafted input. NOTE: Only big-endian architectures such as PPC and HPPA are affected by the latter flaw.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-2042": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200906-01.xml",
+        "title": "libpng: Information disclosure — GLSA 200906-01",
+        "subTitle": "A vulnerability has been discovered in libpng that allows for information disclosure.",
+        "background": "libpng is the official PNG reference library used to read, write and manipulate PNG images.",
+        "body": "Jeff Phillips discovered that libpng does not properly parse 1-bit interlaced images with width values that are not divisible by 8, which causes libpng to include uninitialized bits in certain rows of a PNG file.",
+        "extra": "A remote attacker might entice a user to open a specially crafted PNG file, possibly resulting in the disclosure of sensitive memory portions.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-2108": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-05.xml",
+        "title": "git: git-daemon Denial of service — GLSA 200907-05",
+        "subTitle": "An error in git-daemon might lead to a Denial of Service via resource consumption.",
+        "background": "git - the stupid content tracker, the revision control system used by the Linux kernel team.",
+        "body": "Shawn O. Pearce reported that git-daemon runs into an infinite loop when handling requests that contain unrecognized arguments.",
+        "extra": "A remote unauthenticated attacker could send a specially crafted request to git-daemon, possibly leading to a Denial of Service (CPU consumption).",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-2285": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200908-03.xml",
+        "title": "libTIFF: User-assisted execution of arbitrary code — GLSA 200908-03",
+        "subTitle": "Multiple boundary checking vulnerabilities in libTIFF may allow for the remote execution of arbitrary code.",
+        "background": "libTIFF provides support for reading and manipulating TIFF (Tagged Image File Format) images.",
+        "body": "Two vulnerabilities have been reported in libTIFF:",
+        "extra": "A remote attacker could entice a user to open a specially crafted TIFF file with an application making use of libTIFF or the tiff2rgba and rgb2ycbcr tools, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-2288": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200907-15.xml",
+        "title": "Nagios: Execution of arbitrary code — GLSA 200907-15",
+        "subTitle": "Multiple vulnerabilities in Nagios may lead to the execution of arbitrary code.",
+        "background": "Nagios is an open source host, service and network monitoring program.",
+        "body": "Multiple vulnerabilities have been reported in Nagios:",
+        "extra": "A remote authenticated or unauthenticated attacker may exploit these vulnerabilities to execute arbitrary commands or elevate privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-2347": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200908-03.xml",
+        "title": "libTIFF: User-assisted execution of arbitrary code — GLSA 200908-03",
+        "subTitle": "Multiple boundary checking vulnerabilities in libTIFF may allow for the remote execution of arbitrary code.",
+        "background": "libTIFF provides support for reading and manipulating TIFF (Tagged Image File Format) images.",
+        "body": "Two vulnerabilities have been reported in libTIFF:",
+        "extra": "A remote attacker could entice a user to open a specially crafted TIFF file with an application making use of libTIFF or the tiff2rgba and rgb2ycbcr tools, possibly resulting in the execution of arbitrary code with the privileges of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201209-02.xml",
+        "title": "libTIFF: Multiple vulnerabilities — GLSA 201209-02",
+        "subTitle": "Multiple vulnerabilities in libTIFF could result in execution of arbitrary code or Denial of Service.",
+        "background": "libTIFF provides support for reading and manipulating TIFF (Tagged Image File Format) images.",
+        "body": "Multiple vulnerabilities have been discovered in libTIFF. Please review the CVE identifiers referenced below for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted TIFF file with an application making use of libTIFF, possibly resulting in execution of arbitrary code with the privileges of the user running the application or a Denial of Service condition.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-2409": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200912-01.xml",
+        "title": "OpenSSL: Multiple vulnerabilities — GLSA 200912-01",
+        "subTitle": "Multiple vulnerabilities in OpenSSL might allow remote attackers to conduct multiple attacks, including the injection of arbitrary data into encrypted byte streams.",
+        "background": "OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general purpose cryptography library.",
+        "body": "Multiple vulnerabilities have been reported in OpenSSL:",
+        "extra": "A remote unauthenticated attacker, acting as a Man in the Middle, could inject arbitrary plain text into a TLS session, possibly leading to the ability to send requests as if authenticated as the victim. A remote attacker could furthermore send specially crafted DTLS packages to a service using OpenSSL for DTLS support, possibly resulting in a Denial of Service. Also, a remote attacker might be able to create rogue certificates, facilitated by a MD2 collision. NOTE: The amount of computation needed for this attack is still very large.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-2475": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-2476": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-2670": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-2672": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-2673": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-2674": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-2675": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-2689": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-2690": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-2718": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-2719": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3553": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201207-10.xml",
+        "title": "CUPS: Multiple vulnerabilities — GLSA 201207-10",
+        "subTitle": "Multiple vulnerabilities have been found in CUPS, some of which may allow execution of arbitrary code or local privilege escalation.",
+        "background": "CUPS, the Common Unix Printing System, is a full-featured print server.",
+        "body": "Multiple vulnerabilities have been discovered in CUPS. Please review the CVE identifiers referenced below for details.",
+        "extra": "A remote attacker may be able to execute arbitrary code using specially crafted streams, IPP requests or files, or cause a Denial of Service (daemon crash or hang). A local attacker may be able to gain escalated privileges or overwrite arbitrary files. Furthermore, a remote attacker may be able to obtain sensitive information from the CUPS process or hijack a CUPS administrator authentication request.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3728": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3733": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201209-25.xml",
+        "title": "VMware Player, Server, Workstation: Multiple vulnerabilities — GLSA 201209-25",
+        "subTitle": "Multiple vulnerabilities have been found in VMware Player, Server, and Workstation, allowing remote and local attackers to conduct several attacks, including privilege escalation, remote execution of arbitrary code, and a Denial of Service.",
+        "background": "VMware Player, Server, and Workstation allow emulation of a complete PC on a PC without the usual performance overhead of most emulators.",
+        "body": "Multiple vulnerabilities have been discovered in VMware Player, Server, and Workstation. Please review the CVE identifiers referenced below for details.",
+        "extra": "Local users may be able to gain escalated privileges, cause a Denial of Service, or gain sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3743": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201412-17.xml",
+        "title": "GPL Ghostscript: Multiple vulnerabilities — GLSA 201412-17",
+        "subTitle": "Multiple vulnerabilities have been found in GPL Ghostscript, the worst of which may allow execution of arbitrary code.",
+        "background": "Ghostscript is an interpreter for the PostScript language and for PDF.",
+        "body": "Multiple vulnerabilities have been discovered in GPL Ghostscript. Please review the CVE identifiers referenced below for details.",
+        "extra": "A context-dependent attacker could entice a user to open a specially crafted PostScript file or PDF using GPL Ghostscript, possibly resulting in execution of arbitrary code with the privileges of the process or a Denial of Service condition.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3793": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201101-09.xml",
+        "title": "Adobe Flash Player: Multiple vulnerabilities — GLSA 201101-09",
+        "subTitle": "Multiple vulnerabilities in Adobe Flash Player might allow remote attackers to execute arbitrary code or cause a Denial of Service.",
+        "background": "The Adobe Flash Player is a renderer for the SWF file format, which is commonly used to provide interactive websites.",
+        "body": "Multiple vulnerabilities were discovered in Adobe Flash Player. For further information please consult the CVE entries and the Adobe Security Bulletins referenced below.",
+        "extra": "A remote attacker could entice a user to open a specially crafted SWF file, possibly resulting in the execution of arbitrary code with the privileges of the user running the application, or a Denial of Service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3865": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3866": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3867": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3868": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3869": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3871": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3873": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3874": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3875": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3876": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3877": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3880": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3881": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3882": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3883": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-02.xml",
+        "title": "Sun JDK/JRE: Multiple vulnerabilities — GLSA 200911-02",
+        "subTitle": "Multiple vulnerabilities in the Sun JDK and JRE allow for several attacks, including the remote execution of arbitrary code.",
+        "background": "The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment (JRE) provide the Sun Java platform.",
+        "body": "Multiple vulnerabilities have been reported in the Sun Java implementation. Please review the CVE identifiers referenced below and the associated Sun Alerts for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted JAR archive, applet, or Java Web Start application, possibly resulting in the execution of arbitrary code with the privileges of the user running the application. Furthermore, a remote attacker could cause a Denial of Service affecting multiple services via several vectors, disclose information and memory contents, write or execute local files, conduct session hijacking attacks via GIFAR files, steal cookies, bypass the same-origin policy, load untrusted JAR files, establish network connections to arbitrary hosts and posts via several vectors, modify the list of supported graphics configurations, bypass HMAC-based authentication systems, escalate privileges via several vectors and cause applet code to be executed with older, possibly vulnerable versions of the JRE.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3896": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201203-22.xml",
+        "title": "nginx: Multiple vulnerabilities — GLSA 201203-22",
+        "subTitle": "Multiple vulnerabilities have been found in nginx, the worst of which may allow execution of arbitrary code.",
+        "background": "nginx is a robust, small, and high performance HTTP and reverse proxy server.",
+        "body": "Multiple vulnerabilities have been found in nginx:",
+        "extra": "A remote attacker could possibly execute arbitrary code with the privileges of the nginx process, cause a Denial of Service condition, create or overwrite arbitrary files, or obtain sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3898": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201203-22.xml",
+        "title": "nginx: Multiple vulnerabilities — GLSA 201203-22",
+        "subTitle": "Multiple vulnerabilities have been found in nginx, the worst of which may allow execution of arbitrary code.",
+        "background": "nginx is a robust, small, and high performance HTTP and reverse proxy server.",
+        "body": "Multiple vulnerabilities have been found in nginx:",
+        "extra": "A remote attacker could possibly execute arbitrary code with the privileges of the nginx process, cause a Denial of Service condition, create or overwrite arbitrary files, or obtain sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-3909": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201209-23.xml",
+        "title": "GIMP: Multiple vulnerabilities — GLSA 201209-23",
+        "subTitle": "Multiple vulnerabilities have been found in GIMP, the worst of which allow execution of arbitrary code or Denial of Service.",
+        "background": "GIMP is the GNU Image Manipulation Program.",
+        "body": "Multiple vulnerabilities have been discovered in GIMP. Please review the CVE identifiers referenced below for details.",
+        "extra": "A remote attacker could possibly execute arbitrary code with the privileges of the process or cause a Denial of Service condition.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-4025": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200911-06.xml",
+        "title": "PEAR Net_Traceroute: Command injection — GLSA 200911-06",
+        "subTitle": "An input sanitation error in PEAR Net_Traceroute might allow remote attackers to execute arbitrary commands.",
+        "background": "PEAR Net_Traceroute is an OS independent wrapper class for executing traceroute calls from PHP.",
+        "body": "Pasquale Imperato reported that the $host parameter to the traceroute() function in Traceroute.php is not properly sanitized before being passed to exec().",
+        "extra": "A remote attacker could exploit this vulnerability when user input is passed directly to PEAR Net_Traceroute in a PHP script, possibly resulting in the remote execution of arbitrary shell commands with the privileges of the user running the affected PHP script.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-4270": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201412-17.xml",
+        "title": "GPL Ghostscript: Multiple vulnerabilities — GLSA 201412-17",
+        "subTitle": "Multiple vulnerabilities have been found in GPL Ghostscript, the worst of which may allow execution of arbitrary code.",
+        "background": "Ghostscript is an interpreter for the PostScript language and for PDF.",
+        "body": "Multiple vulnerabilities have been discovered in GPL Ghostscript. Please review the CVE identifiers referenced below for details.",
+        "extra": "A context-dependent attacker could entice a user to open a specially crafted PostScript file or PDF using GPL Ghostscript, possibly resulting in execution of arbitrary code with the privileges of the process or a Denial of Service condition.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-4565": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201206-30.xml",
+        "title": "sendmail: X.509 NULL spoofing vulnerability — GLSA 201206-30",
+        "subTitle": "An error in the hostname matching in sendmail might enable remote attackers to conduct man-in-the-middle attacks.",
+        "background": "sendmail is a widely-used Mail Transport Agent (MTA).",
+        "body": "A vulnerability has been discovered in sendmail. Please review the CVE identifier referenced below for details.",
+        "extra": "A remote attacker might employ a specially crafted certificate to conduct man-in-the-middle attacks on SSL connections made using sendmail.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-4880": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201011-01.xml",
+        "title": "GNU C library: Multiple vulnerabilities — GLSA 201011-01",
+        "subTitle": "Multiple vulnerabilities were found in glibc, the worst of which allowing local attackers to execute arbitrary code as root.",
+        "background": "The GNU C library is the standard C library used by Gentoo Linux systems.",
+        "body": "Multiple vulnerabilities were found in glibc, amongst others the widely-known recent LD_AUDIT and $ORIGIN issues. For further information please consult the CVE entries referenced below.",
+        "extra": "A local attacker could execute arbitrary code as root, cause a Denial of Service, or gain privileges. Additionally, a user-assisted remote attacker could cause the execution of arbitrary code, and a context-dependent attacker could cause a Denial of Service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-4881": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201011-01.xml",
+        "title": "GNU C library: Multiple vulnerabilities — GLSA 201011-01",
+        "subTitle": "Multiple vulnerabilities were found in glibc, the worst of which allowing local attackers to execute arbitrary code as root.",
+        "background": "The GNU C library is the standard C library used by Gentoo Linux systems.",
+        "body": "Multiple vulnerabilities were found in glibc, amongst others the widely-known recent LD_AUDIT and $ORIGIN issues. For further information please consult the CVE entries referenced below.",
+        "extra": "A local attacker could execute arbitrary code as root, cause a Denial of Service, or gain privileges. Additionally, a user-assisted remote attacker could cause the execution of arbitrary code, and a context-dependent attacker could cause a Denial of Service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-4893": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201006-21.xml",
+        "title": "UnrealIRCd: Multiple vulnerabilities — GLSA 201006-21",
+        "subTitle": "Multiple vulnerabilities in UnrealIRCd might allow remote attackers to compromise the \"unrealircd\" account, or cause a Denial of Service.",
+        "background": "UnrealIRCd is an Internet Relay Chat (IRC) daemon.",
+        "body": "Multiple vulnerabilities have been reported in UnrealIRCd:",
+        "extra": "A remote attacker could exploit these vulnerabilities to cause the execution of arbitrary commands with the privileges of the user running UnrealIRCd, or a Denial of Service condition. NOTE: By default UnrealIRCd on Gentoo is run with the privileges of the \"unrealircd\" user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-4897": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201412-17.xml",
+        "title": "GPL Ghostscript: Multiple vulnerabilities — GLSA 201412-17",
+        "subTitle": "Multiple vulnerabilities have been found in GPL Ghostscript, the worst of which may allow execution of arbitrary code.",
+        "background": "Ghostscript is an interpreter for the PostScript language and for PDF.",
+        "body": "Multiple vulnerabilities have been discovered in GPL Ghostscript. Please review the CVE identifiers referenced below for details.",
+        "extra": "A context-dependent attacker could entice a user to open a specially crafted PostScript file or PDF using GPL Ghostscript, possibly resulting in execution of arbitrary code with the privileges of the process or a Denial of Service condition.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-5018": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201101-01.xml",
+        "title": "gif2png: User-assisted execution of arbitrary code — GLSA 201101-01",
+        "subTitle": "gif2png contains a stack overflow vulnerability when parsing command line arguments.",
+        "background": "gif2png is a command line program that converts image files from the Graphics Interchange Format (GIF) format to the Portable Network Graphics (PNG) format.",
+        "body": "gif2png contains a command line parsing vulnerability that may result in a stack overflow due to an unexpectedly long input filename.",
+        "extra": "A remote attacker could entice a user to open a specially crafted image, possibly resulting in the execution of arbitrary code with the privileges of the user running the application, or a Denial of Service. Note that applications relying on gif2png to process images can also trigger the vulnerability.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2009-5022": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-201209-02.xml",
+        "title": "libTIFF: Multiple vulnerabilities — GLSA 201209-02",
+        "subTitle": "Multiple vulnerabilities in libTIFF could result in execution of arbitrary code or Denial of Service.",
+        "background": "libTIFF provides support for reading and manipulating TIFF (Tagged Image File Format) images.",
+        "body": "Multiple vulnerabilities have been discovered in libTIFF. Please review the CVE identifiers referenced below for details.",
+        "extra": "A remote attacker could entice a user to open a specially crafted TIFF file with an application making use of libTIFF, possibly resulting in execution of arbitrary code with the privileges of the user running the application or a Denial of Service condition.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ]
+  }
+}

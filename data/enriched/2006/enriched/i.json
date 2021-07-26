@@ -1,0 +1,206 @@
+{
+  "year": 2006,
+  "total": 29,
+  "reference": "bugzilla.redhat.com",
+  "reports": {
+    "CVE-2006-0038": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=186295",
+        "title": "CVE-2006-0038 netfilters do_replace() overflow",
+        "description": "netfilter's do_replace() can overflow on addition within SMP_ALIGN() and/or onmultiplication by NR_CPUS, resulting in a buffer overflow on thecopy_from_user(). In practice, the overflow on addition is triggerable on allsystems, whereas the multiplication one might require much physical memory to bepresent due to the check above. Either is sufficient to overwrite arbitraryamounts of kernel memory.Found by Solar Designer during security audit of OpenVZ.orgOn http://www.securityfocus.com/bid/17178/info this is marked as a remote bufferoverflow. This is wrong. You need CAP_NET_ADMIN rights and Solar Designer writes:The SecurityFocus vuldb entry is wrong. The vulnerability is not remotelyexploitable. It is local only and the bug is only security relevant on systemswhich use certain virtualization solutions such as OpenVZ (with certain settingsallowing VPS root to configure iptables) and presumably linux-vserver (althoughI did not check the latter).It is not security relevant on stock kernels or on most of the distributionvendors' kernels.This bug has been fixed in the 2.6.16 mainline kernel (actually 2.6.16-rc3 to bemore precise):http://www.kernel.org/git/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=ee4bb818ae35f68d1f848eae0a7b150a38eb4168"
+      }
+    ],
+    "CVE-2006-0208": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=178028",
+        "title": "CVE-2006-0208 PHP Cross Site Scripting (XSS) flaw",
+        "description": "PHP 5.1.2 has been released:http://www.php.net/release_5_1_2.phpThe release announcement mentions this security fix: * Possible cross-site scripting problems in certain error conditions.The problem exists in the way PHP displays error messages. This issue is onlyexploitable when 'display_errors' and 'html_errors' are both set to 'On' in thePHP configuration file. When a HTML error message was being generated, theoutput was not properly sanitized, which could allow an attacker to insertarbitrary HTML, thus allowing a XSS attack.This issue is only exploitable if 'html_errors' is on, which the configurationfile cleary states should not be used on production machines.I have verified this flaw exists in the PHP 4.3 and 5.1 branches."
+      }
+    ],
+    "CVE-2006-0301": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=179046",
+        "title": "CVE-2006-0301 PDF splash handling heap overflow",
+        "description": "PDF splash handling heap overflowDirk Mueller told vendor-sec about a buffer overflow issue in the xpdfcodebase when handling splash images.This issue also affects RHEL3This issue also affects RHEL2.1"
+      }
+    ],
+    "CVE-2006-0481": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=179455",
+        "title": "CVE-2006-0481 libpng heap based buffer overflow",
+        "description": "libpng heap based buffer overflowThere is a heap based buffer overflow in libpng 1.2.7 only. Upstreamhas a note with the release for 1.2.8 that fixes a crash when aprogram tries to strip alpha channels out of the image (calling thepng_set_strip_alpha() function during libpng initialization).It should be noted that this particular libpng feature is only used bytetex and xemacs within RHEL4, limiting the potential damage theoverflow can cause."
+      }
+    ],
+    "CVE-2006-0747": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=183676",
+        "title": "CVE-2006-0747 Freetype integer underflow (CVE-2006-2661)",
+        "description": "Freetype integer underflowWhile fuzzing some pdf files a few weeks back, I ended up finding aninteger underflow in freetype2. Upstream did commit some fixes, sothis issue is somewhat public.1.ttf will generate this error.Patches:http://cvs.savannah.gnu.org/viewcvs/freetype/freetype2/src/pshinter/pshglob.c?r1=1.30&r2=1.31&makepatch=1&diff_format=hhttp://cvs.savannah.gnu.org/viewcvs/freetype/freetype2/src/cff/cffload.c?r1=1.73&r2=1.74&makepatch=1&diff_format=hhttp://cvs.savannah.gnu.org/viewcvs/freetype/freetype2/src/type1/t1load.c?r1=1.104&r2=1.105&makepatch=1&diff_format=hThe problem is the number of blue values needs to be even. If a fontfile claims it's odd, freetype2 doesn't handle it well.The crash is seen in src/pshinter/pshglob.c:psh_blues_set_zones_0()What was basically happening is since read_count is an unsignedinteger, and is decremented by 2, it is possible to cause an integerunderflow by ensuring the value of read_count is an odd number. Onceread_count underflows, the loop starts dumping garbage onto the heap.Normally I wouldn't think this is exploitable as it should crashbefore anything exciting can happen, most graphical applications aremulti-threaded, so this does worry me. At the very least this issueis a denial of service bug.The 2.ttf file in the testcase will also trigger a NULL pointerdereference, which I'm not considering a secuirty issue. The patch ishere:http://cvs.savannah.gnu.org/viewcvs/freetype/freetype2/src/base/ftutil.c?r1=1.17&r2=1.18&makepatch=1&diff_format=hThis issue also affects RHEL3This issue also affects RHEL2.1"
+      }
+    ],
+    "CVE-2006-1522": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=188466",
+        "title": "CVE-2006-1522 DoS/bug in keyring code (security/keys/)",
+        "description": "There is a bug in the keyring code by which user can cause an invalid memoryreference and OOPS the kernel. I have verified it against 2.6.16.1 and it lookslike its still in 2.6.17-rc1. This can allow any user to oops the kernel and DOSthe machine.The bug exists in the sys_add_key function of the key (keyring) code. The codecan easily be demonstrated by using the userland keyctl tool. Simply by creatinga user key then adding another key to that user key:[testing@host tmp]$ keyctl showSession Keyring-3 lswrv---------- 500 -1 keyring: _uid_ses.50040 lswrv---------- 500 -1 \\_ keyring: _uid.500[testing@host tmp]$ keyctl add user key-name key-val @s41[testing@host tmp]$ keyctl showSession Keyring-3 lswrv---------- 500 -1 keyring: _uid_ses.50040 lswrv---------- 500 -1 \\_ keyring: _uid.50041 lswrv---------- 500 500 \\_ user: key-name[testing@drwlinux tmp]$ keyctl add user crash-me foobar 41Segmentation fault"
+      }
+    ],
+    "CVE-2006-1528": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=168791",
+        "title": "CVE-2006-1528 Possible local crash by dio/mmap sg driver",
+        "description": "The following commit was made upstream:http://linux.bkbits.net:8080/linux-2.6/cset@43220081yu9ClBQNuqSSnW_9amW7iQThis was to fix a flaw that meant that a local? user could attempt a dio/mmapand cause a sg driver oops, based on this message:http://marc.theaimsgroup.com/?l=linux-scsi&m=112540053711489&w=2This may affect RHEL4, it needs a quick sanity check."
+      }
+    ],
+    "CVE-2006-1861": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=190593",
+        "title": "CVE-2006-1861 freetype multiple integer overflows (CVE-2006-3467)",
+        "description": "Several integer overflow bugs in freetype have been fixed in CVS. The detailsare below.The descriptions are the CVS commit messages. That patch for each particularcomment is keyed off it's # identifier.* Integer overflow #2 * src/bdf/bdflib.c (ERRMSG4): New macro. (_bdf_parse_glyphs): Handle invalid BBX values. * include/freetype/fterrdef.h (FT_Err_Bbx_Too_Big): New error macro. #3 * src/sfnt/ttcmap.c (tt_face_build_cmaps): Handle invalid offset correctly. #4 * src/cff/cfftypes.h (CFF_CharsetRec): Add `max_cid' member. * src/cff/cffload.c (cff_charset_load): Set `charset->max_cid'. * src/cff/cffgload.c (cff_slot_load): Change type of third parameter to `FT_UInt'. Check range of `glyph_index'. * src/cff/cffgload.h: Updated. #6 * src/bdf/bdflib.c: fixed a problem with large encodings. Again, this patch comes from Debian libfreetype6 for 2.1.10 !"
+      },
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=190593#c8",
+        "title": "CVE-2006-1861 freetype multiple integer overflows (CVE-2006-3467)",
+        "description": "Several integer overflow bugs in freetype have been fixed in CVS. The detailsare below.The descriptions are the CVS commit messages. That patch for each particularcomment is keyed off it's # identifier.* Integer overflow #2 * src/bdf/bdflib.c (ERRMSG4): New macro. (_bdf_parse_glyphs): Handle invalid BBX values. * include/freetype/fterrdef.h (FT_Err_Bbx_Too_Big): New error macro. #3 * src/sfnt/ttcmap.c (tt_face_build_cmaps): Handle invalid offset correctly. #4 * src/cff/cfftypes.h (CFF_CharsetRec): Add `max_cid' member. * src/cff/cffload.c (cff_charset_load): Set `charset->max_cid'. * src/cff/cffgload.c (cff_slot_load): Change type of third parameter to `FT_UInt'. Check range of `glyph_index'. * src/cff/cffgload.h: Updated. #6 * src/bdf/bdflib.c: fixed a problem with large encodings. Again, this patch comes from Debian libfreetype6 for 2.1.10 !"
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=502565",
+        "title": "CVE-2006-1861 CVE-2007-2754 Multiple freetype1 vulnerabilities [Fedora rawhide]",
+        "description": "This is an automatically created tracking bug! It was created to ensure that one or more security vulnerabilities are fixed in all affected branches.For comments that are specific to the vulnerability please use bugs filed against \"Security Response\" product referenced in \"Blocks\" field.bug #484437: CVE-2006-1861 freetype: multiple integer overflow vulnerabilitiesbug #240200: CVE-2007-2754 freetype integer overflow"
+      }
+    ],
+    "CVE-2006-1865": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=189282",
+        "title": "Beagle command line injection",
+        "description": "Beagle command line injectionChris Evans discovered that while indexing, Beagle will build certaincommand lines in an insecure manner. When Beagle executes externalhelper applications, it is possible to cause beagle to executearbitrary commands as the user running beagle."
+      }
+    ],
+    "CVE-2006-2026": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=189933",
+        "title": "CVE-2006-2024 multiple libtiff issues (CVE-2006-2025, CVE-2006-2026)",
+        "description": "Created attachment 128227 [details]Patch extracted from upstream CVS"
+      }
+    ],
+    "CVE-2006-2661": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=183676",
+        "title": "CVE-2006-0747 Freetype integer underflow (CVE-2006-2661)",
+        "description": "Freetype integer underflowWhile fuzzing some pdf files a few weeks back, I ended up finding aninteger underflow in freetype2. Upstream did commit some fixes, sothis issue is somewhat public.1.ttf will generate this error.Patches:http://cvs.savannah.gnu.org/viewcvs/freetype/freetype2/src/pshinter/pshglob.c?r1=1.30&r2=1.31&makepatch=1&diff_format=hhttp://cvs.savannah.gnu.org/viewcvs/freetype/freetype2/src/cff/cffload.c?r1=1.73&r2=1.74&makepatch=1&diff_format=hhttp://cvs.savannah.gnu.org/viewcvs/freetype/freetype2/src/type1/t1load.c?r1=1.104&r2=1.105&makepatch=1&diff_format=hThe problem is the number of blue values needs to be even. If a fontfile claims it's odd, freetype2 doesn't handle it well.The crash is seen in src/pshinter/pshglob.c:psh_blues_set_zones_0()What was basically happening is since read_count is an unsignedinteger, and is decremented by 2, it is possible to cause an integerunderflow by ensuring the value of read_count is an odd number. Onceread_count underflows, the loop starts dumping garbage onto the heap.Normally I wouldn't think this is exploitable as it should crashbefore anything exciting can happen, most graphical applications aremulti-threaded, so this does worry me. At the very least this issueis a denial of service bug.The 2.ttf file in the testcase will also trigger a NULL pointerdereference, which I'm not considering a secuirty issue. The patch ishere:http://cvs.savannah.gnu.org/viewcvs/freetype/freetype2/src/base/ftutil.c?r1=1.17&r2=1.18&makepatch=1&diff_format=hThis issue also affects RHEL3This issue also affects RHEL2.1"
+      }
+    ],
+    "CVE-2006-2934": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=197387",
+        "title": "CVE-2006-2934 SCTP netfilter DoS with chunkless packets",
+        "description": "When a packet without any chunks is received, the newconntrack variable insctp_packet contains an out of bounds value that is used to look up an pointerfrom the array of timeouts, which is then dereferenced, resulting in a crash.Problem noticed by George A. Theall <theall@tenablesecurity.com>"
+      }
+    ],
+    "CVE-2006-2936": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=197610",
+        "title": "CVE-2006-2936 Possible DoS in write routine of ftdi_sio driver",
+        "description": "Patch from Ian Abbott <abbotti@mev.co.uk>This patch limits the amount of outstanding 'write' data that can be queued upfor the ftdi_sio driver, to prevent userspace DoS attacks (or simple accidents)that use up all the system memory by writing lots of data to the serial port.http://www.kernel.org/git/?p=linux/kernel/git/gregkh/patches.git;a=blob;h=4b4d9cfea17618b80d3ac785b701faeaf60141f1;hb=396eb2aac550ec55856c6843ef9017e800c3d656;f=usb/usb-serial-ftdi_sio-prevent-userspace-dos.patch"
+      }
+    ],
+    "CVE-2006-3467": [
+      {
+        "url": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=190593",
+        "title": "CVE-2006-1861 freetype multiple integer overflows (CVE-2006-3467)",
+        "description": "Several integer overflow bugs in freetype have been fixed in CVS. The detailsare below.The descriptions are the CVS commit messages. That patch for each particularcomment is keyed off it's # identifier.* Integer overflow #2 * src/bdf/bdflib.c (ERRMSG4): New macro. (_bdf_parse_glyphs): Handle invalid BBX values. * include/freetype/fterrdef.h (FT_Err_Bbx_Too_Big): New error macro. #3 * src/sfnt/ttcmap.c (tt_face_build_cmaps): Handle invalid offset correctly. #4 * src/cff/cfftypes.h (CFF_CharsetRec): Add `max_cid' member. * src/cff/cffload.c (cff_charset_load): Set `charset->max_cid'. * src/cff/cffgload.c (cff_slot_load): Change type of third parameter to `FT_UInt'. Check range of `glyph_index'. * src/cff/cffgload.h: Updated. #6 * src/bdf/bdflib.c: fixed a problem with large encodings. Again, this patch comes from Debian libfreetype6 for 2.1.10 !"
+      }
+    ],
+    "CVE-2006-4146": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=204841",
+        "title": "CVE-2006-4146 GDB buffer overflow",
+        "description": "Will Drewry of the Google Security Team discovered multiple buffer overflows inGDB's DWARF handling code. His advisory is below:The GNU Debugger (GDB) Multiple Vulnerabilities-----------------------------------------------Summary-------Multiple vulnerabilities have been discovered in the GNU debugger that allowfor the execution of arbitrary code.Background----------GDB is the GNU Project Debugger. It is described on its project page[http://www.gnu.org/software/gdb/] as allowing \"you to see what is going on`inside' another program while it executes -- or what another program was doingat the moment it crashed.\"DWARF is a information format standard used to represent debugging informationfor a specific binary. While the first version was originally used in ELF, ELFlater moved to STABS. In more recent years, DWARF version 2.0 has beenreintroduced into ELF binaries. More information can be found athttp://dwarf.freestandards.org.Impact------A successful exploit would result in the execution of arbitrary code on theloading of a specially crafted executable.This a viable mechanism for an attacker to escape restricted environments bypiggybacking exploit code on seeming harmless files often used for debugging.In the worst case, this could allow for privilege escalation.Workaround----------Do not use GDB on untrusted files that may have DWARF(2) debugging information,e.g. binaries and core files. There is no way to verify if an untrusted fileis safe to debug without investigating the debugging symbols manually.Discussion----------Will Drewry <wad@google.com> of the Google Security Team has found multipleexploitable vulnerabilities in the DWARF and DWARF2 code. Initially,Tavis Ormandy <taviso@google.com>, also of the Google Security Team,discovered a crash condition in GDB related to DWARF2 debugging information.This discovery led to the further exploration of the condition, and thediscovery of the security implications.The DWARF specification allows location description blocks containing a list ofoperations to be used to determine the final real address for some debuggingsymbol. GDB evaluates these operations on an unchecked stack buffer of size 64.This allows for any location block (DW_FORM_block) with more than 64 operationsto overwrite the current stack frame with arbitrary user-supplied data. Thisbehavior occurs in both dwarfread.c and dwarfread2.c.Patch-----The following patch will work as a quick fix to the problem:==== begin patch ====diff -Naur gdb-6.5.orig/gdb/dwarf2read.c gdb-6.5/gdb/dwarf2read.c--- gdb-6.5.orig/gdb/dwarf2read.c 2006-05-13 16:46:38.000000000 +0100+++ gdb-6.5/gdb/dwarf2read.c 2006-08-14 21:37:33.000000000 +0100@@ -8855,6 +8855,17 @@ dwarf_stack_op_name (op)); return (stack[stacki]); }++ /* Enforce maximum stack depth of 63 to avoid ++stacki writing+ outside of the given size. Also enforce minimum > 0.+ -- wad@google.com 14 Aug 2006 */+ if (stacki >= sizeof(stack)/sizeof(*stack) - 1)+ internal_error (__FILE__, __LINE__,+ _(\"location description stack too deep: %d\"),+ stacki);+ if (stacki <= 0)+ internal_error (__FILE__, __LINE__,+ _(\"location description stack too shallow\")); } return (stack[stacki]); }diff -Naur gdb-6.5.orig/gdb/dwarfread.c gdb-6.5/gdb/dwarfread.c--- gdb-6.5.orig/gdb/dwarfread.c 2005-12-17 22:33:59.000000000 +0000+++ gdb-6.5/gdb/dwarfread.c 2006-08-14 21:37:30.000000000 +0100@@ -2224,6 +2224,17 @@ stacki--; break; }++ /* Enforce maximum stack depth of 63 to avoid ++stacki writing+ outside of the given size. Also enforce minimum > 0.+ -- wad@google.com 14 Aug 2006 */+ if (stacki >= sizeof(stack)/sizeof(*stack) - 1)+ internal_error (__FILE__, __LINE__,+ _(\"location description stack too deep: %d\"),+ stacki);+ if (stacki <= 0)+ internal_error (__FILE__, __LINE__,+ _(\"location description stack too shallow\")); } return (stack[stacki]); }==== end patch ===="
+      }
+    ],
+    "CVE-2006-4262": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=203645",
+        "title": "CVE-2006-4262 cscope: multiple buffer overflows",
+        "description": "Will Drewry of the Google Security Team discovered several minor buffer overflowflaws in cscope. His advisory is below:cscope Multiple Vulnerabilities-------------------------------Summary-------Multiple vulnerabilities have been discovered in cscope that allowfor the execution of arbitrary code.Background---------->From cscope.sourceforge.net: cscope is a developer's tool for browsing source code. It has an impeccable Unix pedigree, having been originally developed at Bell Labs back in the days of the PDP-11. Cscope was part of the official AT&T Unix distribution for many years, and has been used to manage projects involving 20 million lines of code!Impact------A successful exploit would resulting the execution of arbitrary codeimmediately after executing cscope. In some environments, cscope may beexecuted automatically on start up of the user's text editor or IDE.Workaround----------When using cscope,- ensure that there are no unexpected `cscope.files'.- ensure that any source trees do not have full paths that exceed 250 characters or look particularly out of place.- ensure that any source trees do not have directory or file names with embedded newline or `$' characters.Discussion----------Multiple exploitable stack buffer overflows have been found in cscope due tothe unchecked use of strcpy() and *scanf():* Use of fscanf() and sscanf() without enforced field maximum widths during file list parsingThis results in an exploitable condition which may be triggered in a number ofways:- specially crafted cscope.files may be placed in a shared working directory- specially crafted directory and file names in a source tree, or archive.In the first case, an attacker may leave a `cscope.files' file in a directorywhere the victim is likely to run cscope. This is particularly dangerousbecause some text editors will automatically execute it cscope on start-up.In the second case, an attacker may modify a shared source tree or supply aprepackaged source archive with specially crafted file and directory names. Thevictim would then need to run cscope over a list of this source tree's files.If the resulting list contained any specially crafted paths, and it wouldresultin an overflow condition. As with the first case, some editors willautomatically generate this file list and execute cscope on it. This wouldresult in the attack occurring in the background, unbeknownst to the victim.In both cases, the resulting file list will have a path to a file that exceeds250 characters. E.g., $ bash -c 'D=$(ruby -e \"print \\\"A\\\" * 255;\"); for i in $(seq 1 15); do mkdir $D; cd $D; touch A; done;' $ find ./ -type f > cscope.files $ cscope* Multiple unchecked uses of strcpy() during path variable expansioncscope allows users to specify limited arguments in addition to files in the`cscope.files' file list. When using the `-I' option, the subsequent paths willhave variable expansion performed prior to use. The '~' character isexpanded to the caller's `HOME' environment variable, and any occurrence of the`$' character followed by a string will be expanded to the value of thatparticular environment variable. e.g., \"-I $SHELL\" may become \"-I /bin/bash\".These cases result in two separate crash conditions due to the uncheckeduse of strcpy().Tilde expansion may result in a stack buffer overflow if and only if thevictim's `HOME' environment variable is changed to exceed the maximum allocatedspace for expansion: $ export HOME=$(ruby -e \"print 'A'*2048\") $ echo \"-I~/foo.c\" > cscope.files $ cscopeHowever, general environment variable expansion is much more dangerous. Thisattack allows a similar attack to the *scanf() attacks which can be triggeredusing similar mechanisms. A specially crafted file list will result in theexecution of arbitrary code. The difference is that maximum field widthchecking does not mitigate this attack. The specially crafted directory andfile names may contain environment variable references which expand to muchlonger strings than the environment variable's name.Because of this, more knowledge of the victim's environment is required inorder to create an effective exploit. However, some assumptions can be madeabout common environment variables, such as `SHELL' and `LS_COLORS', thatmake this attack viable. # This directory may exist in a given source tree: $ mkdir '^J-I$LS_COLORS' $ touch '^J-I$LS_COLORS/payload_here' # The end user may run this to build a filelist $ find ./ -type -f > cscope.files $ cscope(Note, ^J represents the key combination \"Ctrl+j\".)* Unchecked use of strcpy() during command line argument parsingThis results in a command line based overflow attack. The impact of thisattack is minimal given that cscope is not normally run setuid, and theattacker would need to have some control over the call to cscope. The overflowoccurs when cscope strcpy()s the `reffile` argument value over the staticallyallocated stack buffer for `reffile'. $ cscope -f `ruby -e 'print \"A\"*500'`"
+      }
+    ],
+    "CVE-2006-4535": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=204460",
+        "title": "CVE-2006-4535 Regression with fix for SCTP abort issue",
+        "description": "From Sridhar Samudrala:With the recent fix, the callers of sctp_primitive_ABORT() need to create anABORT chunk and pass it as an argument rather than msghdr that was passed earlier.This is a regression with bug 202122 (CVE-2006-3745)."
+      }
+    ],
+    "CVE-2006-4811": [
+      {
+        "url": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=210742",
+        "title": "CVE-2006-4811 qt integer overflow",
+        "description": "An interger overflow flaw was found in the way qt handles certain pixmaxrequests. This flaw can lead to arbitrary data being written onto the heap,possibly resulting in arbitrary code execution withing applications using qt(such as knoqueror and kmail)"
+      }
+    ],
+    "CVE-2006-4924": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=207955",
+        "title": "CVE-2006-4924 openssh DoS",
+        "description": "Tavis Ormandy of the Google Security Team discovered a denial of service attackon the openssh sshd daemon when ssh protocol version 1 is enabled. This flawwill cause the openssh server to consume a large quantity of the CPU until thespecified timeout is reached.The upstream patches can be found here:http://www.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/deattack.c.diff?r1=1.29&r2=1.30&sortby=date&f=hhttp://www.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/packet.c.diff?r1=1.143&r2=1.144&sortby=date&f=hhttp://www.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/deattack.h.diff?r1=1.9&r2=1.10&sortby=date&f=h"
+      }
+    ],
+    "CVE-2006-5456": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=210921",
+        "title": "CVE-2006-5456 Overflows in GraphicsMagick and ImageMagick's DCM and PALM handling routines",
+        "description": "Description of problem:M. Joonas Pihlaja discovered security flaws in GraphicsMagick that also affectImageMagick -- one possible buffer overflow in coders/dcm.c:ReadDCMImage() andthree possible heap overflows in coders/palm.c:ReadPALMImage(). Debian project includes a fix for GraphicsMagick1.1.7 among other changes in their patch.Version-Release number of selected component (if applicable):How reproducible:Potentially exploitable by maliciously crafted image.Fix:I attach the relevant part of the debian patch. It doesn't apply againstImageMagick without modifications, because GraphicMagics project uses differentcoding style. The patch needs to be reviewed and eventually needs to be rewritten."
+      }
+    ],
+    "CVE-2006-5815": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=214820",
+        "title": "CVE-2006-5815: proftpd unspecified vulnerability",
+        "description": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-5815Very little information available at the moment."
+      }
+    ],
+    "CVE-2006-6106": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=218602",
+        "title": "CVE-2006-6106 Multiple problems in net/bluetooth/cmtp/capi.c",
+        "description": "From Al Viro:Handling of incoming packet in net/bluetooth/cmtp/capi.c: case CAPI_FUNCTION_GET_SERIAL_NUMBER: controller = CAPIMSG_U32(skb->data, CAPI_MSG_BASELEN + 12); if (!info && ctrl) { memset(ctrl->serial, 0, CAPI_SERIAL_LEN); strncpy(ctrl->serial, skb->data + CAPI_MSG_BASELEN + 17, skb->data[CAPI_MSG_BASELEN + 16]); } break;The \"->serial\" is \"unsigned char[8]\" and no checks are done on\"skb->data[CAPI_MSG_BASELEN + 16]\" incoming packet.This could mess with \"struct capi_ctr\" from include/linux/isdn/capilli.h andgive a posibility to overwrite \"struct proc_dir_entry *procent;\".The \"case CAPI_FUNCTION_GET_MANUFACTURER:\" in the same place is dealing withsame problem."
+      }
+    ],
+    "CVE-2006-6303": [
+      {
+        "url": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=218287",
+        "title": "CVE-2006-6303 ruby's cgi.rb vulnerable infinite loop DoS",
+        "description": "Description of problem:JVN#84798830 described a problem in cgi.rb, which results in infinite loop aftercertain HTTP request. While the original advisory is in Japan, you might want totranslate it with Babelfish. Anyways, it doesn't contain any useful information.The upstream corrected the problem immediately in CVS and even released a newpackage with patchlevel of 2.Version-Release number of selected component (if applicable):All supported versions (RHEL 2.1 to 5, and both FC 5 and FC 6) seem to containthe vulnerable code.How reproducible:No reproducer.Additional info:The translated JVN avdisory:http://babelfish.altavista.com/babelfish/trurl_pagecontent?lp=ja_en&trurl=http%3a%2f%2fwww.ipa.go.jp%2fsecurity%2fvuln%2fdocuments%2f2006%2fJVN_84798830_Ruby.html"
+      }
+    ],
+    "CVE-2006-7108": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=177331",
+        "title": "CVE-2006-7108 login omits pam_acct_mgmt & pam_chauthtok when authentication is skipped.",
+        "description": "Description of problem:login omits pam_acct_mgmt & chauth_tok when authentication is skipped.Authentication may be skipped, for example, during krlogin because Kerberosalready took care of it. The problem with skipping pam_acct_mgmt is that itallows users to use the system when maybe they should not be allowed, such thatif they have a Kerberos ticket, the other checks do not apply.If a user had to use password authentication, pam_acct_mgmt may reject the userfor several reasons: not allowed to use the system at this time, not allowed touse this system, user's account has been disabled, etc. Why should these testsbe skipped just because the user has a ticket?Same with pam_chauthtok: the user may have a valid ticket, but if their passwordhas expired, they need to enter a new one right now.Version-Release number of selected component (if applicable):util-linux-2.12a-16.EL4.12How reproducible:100%Steps to Reproduce:1.2.3. Actual results:Expected results:Additional info:Here is a patch:****************** 634,650 **** fprintf(stderr,_(\"\\nLogin incorrect\\n\")); pam_end(pamh, retcode); exit(0); } retcode = pam_acct_mgmt(pamh, 0); if(retcode == PAM_NEW_AUTHTOK_REQD) { retcode = pam_chauthtok(pamh, PAM_CHANGE_EXPIRED_AUTHTOK); } PAM_FAIL_CHECK;- } /* * Grab the user information out of the password file for future usage * First get the username that we are actually using, though.--- 634,650 ---- fprintf(stderr,_(\"\\nLogin incorrect\\n\")); pam_end(pamh, retcode);1 exit(0); }+ } retcode = pam_acct_mgmt(pamh, 0); if(retcode == PAM_NEW_AUTHTOK_REQD) { retcode = pam_chauthtok(pamh, PAM_CHANGE_EXPIRED_AUTHTOK); } PAM_FAIL_CHECK; /* * Grab the user information out of the password file for future usage * First get the username that we are actually using, though."
+      }
+    ],
+    "CVE-2006-7225": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=384761",
+        "title": "CVE-2006-7225 pcre miscalculation of memory requirements for malformed Posix character class",
+        "description": "From pcre changelog, version 6.7:18. A valid (though odd) pattern that looked like a POSIX character class but used an invalid character after [ (for example [[,abc,]]) caused pcre_compile() to give the error \"Failed: internal error: code overflow\" or in some cases to crash with a glibc free() error. This could even happen if the pattern terminated after [[ but there just happened to be a sequence of letters, a binary zero, and a closing ] in the memory that followed.Acknowledgements:Red Hat would like to thank Ludwig Nussel for reporting this issue."
+      }
+    ],
+    "CVE-2006-7228": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=383371",
+        "title": "CVE-2006-7228 pcre integer overflow",
+        "description": "CVE-2006-7224 initially described several integer overflows in pcre, alldescribed here:http://scary.beasts.org/security/CESA-2007-006.htmlThis id should be used to describe issue #2 in that advisory:3) More possible integer overflow trouble.pcre_compile:--- if (min == 0) { length++; if (max > 0) length += (max - 1) * (duplength + 3 + 2*LINK_SIZE); }... else { length += (min - 1) * duplength; if (max > min) /* Need this test as max=-1 means no limit */ length += (max - min) * (duplength + 3 + 2*LINK_SIZE) - (2 + 2*LINK_SIZE); }---In both these cases, I see no reason why a malicious regexp pattern couldn'tcause an integer overflow by using large min / max / duplength values. This willreally mess up the critical \"length\" value."
+      }
+    ],
+    "CVE-2006-7230": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=384801",
+        "title": "CVE-2006-7230 pcre miscalculation of memory requirements if options are changed during pattern compilation",
+        "description": "From pcre changelog, version 7.0:4. Fixed a major bug that caused incorrect computation of the amount of memory required for a compiled pattern when options that changed within the pattern affected the logic of the preliminary scan that determines the length. The relevant options are -x, and -i in UTF-8 mode. The result was that the computed length was too small. The symptoms of this bug were either the PCRE error \"internal error: code overflow\" from pcre_compile(), or a glibc crash with a message such as \"pcretest: free(): invalid next size (fast)\". Examples of patterns that provoked this bug (shown in pcretest format) are: /(?-x: )/x /(?x)(?-x: \\s*#\\s*)/ /((?i)[\\x{c0}])/8 /(?i:[\\x{c0}])/8 HOWEVER: Change 17 below makes this fix obsolete as the memory computation is now done differently.Acknowledgements:Red Hat would like to thank Ludwig Nussel for reporting this issue."
+      }
+    ]
+  }
+}

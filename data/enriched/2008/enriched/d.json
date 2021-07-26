@@ -1,0 +1,28 @@
+{
+  "year": 2008,
+  "total": 3,
+  "reference": "github.com",
+  "reports": {
+    "CVE-2008-5189": [
+      {
+        "url": "http://github.com/rails/rails/commit/7282ed863ca7e6f928bae9162c9a63a98775a19d",
+        "title": "Sanitize the URLs passed to redirect_to to prevent a potential respon…",
+        "body": "…se spliCGI.rb and mongrel don't do any sanitization of the contents of HTTP headers"
+      }
+    ],
+    "CVE-2008-5619": [
+      {
+        "url": "https://github.com/PHPMailer/PHPMailer/commit/8beacc646acb67c995aea10ac5585970efc7355a",
+        "title": "Add security notices",
+        "body": ""
+      }
+    ],
+    "CVE-2008-7316": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/124d3b7041f9a0ca7c43a6293e1cae4576c32fd5",
+        "title": "fix writev regression: pan hanging unkillable and un-straceable",
+        "body": "Frederik Himpe reported an unkillable and un-straceable pan process.Zero length iovecs can go into an infinite loop in writev, because theiovec iterator does not always advance over them.The sequence required to trigger this is not trivial. I think itrequires that a zero-length iovec be followed by a non-zero-length iovecwhich causes a pagefault in the atomic usercopy. This causes the writevcode to drop back into single-segment copy mode, which then tries tocopy the 0 bytes of the zero-length iovec; a zero length copy looks likea failure though, so it loops.Put a test into iov_iter_advance to catch zero-length iovecs. We couldjust put the test in the fallback path, but I feel it is more robust toskip over zero-length iovecs throughout the code (iovec iterator may beused in filesystems too, so it should be robust).Signed-off-by: Nick Piggin <npiggin@suse.de>Signed-off-by: Ingo Molnar <mingo@elte.hu>Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ]
+  }
+}

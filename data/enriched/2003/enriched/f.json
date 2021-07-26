@@ -1,0 +1,20 @@
+{
+  "year": 2003,
+  "total": 1,
+  "reference": "security.gentoo.org",
+  "reports": {
+    "CVE-2003-0792": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200403-10.xml",
+        "title": "Fetchmail 6.2.5 fixes a remote DoS — GLSA 200403-10",
+        "subTitle": "Fetchmail versions 6.2.4 and earlier can be crashed by sending a specially-crafted email to a fetchmail user.", 
+        "background": "Fetchmail is a utility that retrieves and forwards mail from remote systems using IMAP, POP, and other protocols.",
+        "body": "Fetchmail versions 6.2.4 and earlier can be crashed by sending a specially-crafted email to a fetchmail user. This problem occurs because Fetchmail does not properly allocate memory for long lines in an incoming email.",
+        "extra": "Fetchmail users who receive a malicious email may have their fetchmail program crash.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,298 @@
+{
+  "year": 2013,
+  "total": 33,
+  "reference": "kb.cert.org",
+  "reports": {
+    "CVE-2013-0107": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/275219",
+        "title": "Foxit Advanced PDF Editor 3 contains a stack buffer overrun vulnerability",
+        "overview": "Foxit Advanced PDF Editor 3, and possibly earlier versions, contains a stack buffer overrun vulnerability.",
+        "description": "Foxit Advanced PDF Editor 3, and possibly earlier versions, contains a stack buffer overrun vulnerability that may be exploited by an attacker that is able to successfully reconstruct the security cookie protecting the return address on the stack.",
+        "impact": "An unauthenticated attacker may be able to execute arbitrary code or cause a denial-of-service."
+      }
+    ],
+    "CVE-2013-0109": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/957036",
+        "title": "NVIDIA Windows video card drivers contain multiple vulnerabilities",
+        "overview": "NVIDIA video card drivers contain multiple vulnerabilities.",
+        "description": "The NVIDIA security advisory states:CVE-2013-0109: NVIDIA Display Driver Service VulnerabilityDue to an issue identified with the NVIDIA driver, a malicious actor could – by forcing exceptions and overwriting memory –potentially escalate privileges to gain administrative control of a system. The vulnerability is associated with the NVIDIA Display Driver service, and affects NVIDIA drivers for Windows operating systems (Windows XP/Windows Vista/Windows 7/Windows 8 - 32 & 64-bit) starting with the Release 173 drivers.CVE-2013-0110: NVIDIA Stereoscopic 3D Driver Service VulnerabilityNVIDIA has verified an issue with the NVIDIA Stereoscopic 3D Driver Service (nvSCPAPISvr.exe), which could allow a malicious actor to potentially escalate privileges locally by inserting an executable file in the path of the affected service. The specific issue identified was that the service used an unquoted service path, containing at least one whitespace.CVE-2013-0111: NVIDIA Update Service Daemon VulnerabilityNVIDIA has verified an issue with the NVIDIA Update Service Daemon (daemonu.exe), which could allow a malicious actor to potentially escalate privileges locally by inserting an executable file in the path of the affected service. The specific issue identified was that the service used an unquoted service path, containing at least one whitespace.The vulnerabilities are present in NVIDIA drivers starting with driver version 173.01 and are resolved in driver releases starting with version 311.00 (for Release 310) and version 307.78 (for Release 304).Additional details may be found on the NVIDIA support page.",
+        "impact": "A local authenticated attacker may be able to escalate privileges or cause a denial of service."
+      }
+    ],
+    "CVE-2013-0113": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/248449",
+        "title": "Nuance PDF viewing products contain multiple vulnerabilities",
+        "overview": "Nuance PDF viewing products contain multiple memory-corruption vulnerabilities, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Nuance provides two similar PDF viewing products called PDF Reader and PDF Viewer Plus. Both of these products contain multiple exploitable memory-corruption vulnerabilities. We have found that both Nuance PDF Reader 7.0 and PDF Viewer Plus 7.1 are affected.",
+        "impact": "By convincing a user to view a specially crafted PDF document, an attacker may be able to execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2013-0120": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/160460",
+        "title": "Dell PowerConnect 6248P series switch denial of service vulnerability",
+        "overview": "Dell PowerConnect 6248P series switches contain a denial of service vulnerability when parsing malformed requests.",
+        "description": "Dell PowerConnect 6248P series switches contain a denial of service vulnerability when parsing malformed requests which could cause the switch to crash and become unavailable.",
+        "impact": "An authenticated attacker can cause the Dell PowerConnect 6248P series switch to crash and become unavailable."
+      }
+    ],
+    "CVE-2013-0122": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/131263",
+        "title": "avast! Mobile Security Android application denial-of-service vulnerability",
+        "overview": "avast! Mobile Security Android application version 2.0.3587, and possibly earlier versions, contains a denial-of-service vulnerability.",
+        "description": "avast! Mobile Security (version 2.0.3587) crashes if an Intent is sent to com.avast.android.mobilesecurity.app.scanner.DeleteFileActivity with no arguments. Upon receiving the malformed intent the application will crash with the following message.“Unfortunately, avast! Mobile Security has stopped.”The logcat log contains a message confirming that the application has crashed.“I/ActivityManager( 175): Process com.avast.android.mobilesecurity (pid 6596) has died.”This results in a malicious application being able to disable the avast! Mobile Security software.",
+        "impact": "A malicious application installed on the phone may be able to disable the avast! Mobile Security software."
+      }
+    ],
+    "CVE-2013-0123": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/406596",
+        "title": "Askiaweb survey application contains multiple vulnerabilities",
+        "overview": "The Askiaweb survey application contains multiple vulnerabilities.",
+        "description": "The Askiaweb survey application contains multiple vulnerabilities.CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') - CVE-2013-0123The administration interface for the Askia web survey application (http://www.askia.com/askiaweb) is vulnerable to SQL injection (blind, time-based) on 2 different parameters :https://[application]/WebProd/pages/pgHistory.asp [nHistoryId parameter]https://[application]/WebProd/pages/pgadmin.asp [OrderBy parameter]CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') - CVE-2013-0124The administration interface is vulnerable to XSS on the following URLs and parameters :https://[application]/WebProd/cgi-bin/AskiaExt.dll [Number parameter]https://[application]/WebProd/cgi-bin/AskiaExt.dll [UpdatePage parameter]The CVSS scores below apply to CVE-2013-0123.",
+        "impact": "An attacker with access to the Askiaweb survey application web interface can conduct a cross-site scripting or SQL injection attack, which could be used to result in information leakage, privilege escalation, and/or denial of service."
+      }
+    ],
+    "CVE-2013-0124": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/406596",
+        "title": "Askiaweb survey application contains multiple vulnerabilities",
+        "overview": "The Askiaweb survey application contains multiple vulnerabilities.",
+        "description": "The Askiaweb survey application contains multiple vulnerabilities.CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') - CVE-2013-0123The administration interface for the Askia web survey application (http://www.askia.com/askiaweb) is vulnerable to SQL injection (blind, time-based) on 2 different parameters :https://[application]/WebProd/pages/pgHistory.asp [nHistoryId parameter]https://[application]/WebProd/pages/pgadmin.asp [OrderBy parameter]CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') - CVE-2013-0124The administration interface is vulnerable to XSS on the following URLs and parameters :https://[application]/WebProd/cgi-bin/AskiaExt.dll [Number parameter]https://[application]/WebProd/cgi-bin/AskiaExt.dll [UpdatePage parameter]The CVSS scores below apply to CVE-2013-0123.",
+        "impact": "An attacker with access to the Askiaweb survey application web interface can conduct a cross-site scripting or SQL injection attack, which could be used to result in information leakage, privilege escalation, and/or denial of service."
+      }
+    ],
+    "CVE-2013-0125": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/418923",
+        "title": "C2 WebResource web interface XSS vulnerability",
+        "overview": "The C2 WebResource web interface contains a XSS vulnerability.",
+        "description": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')The C2 WebResource web interface is vulnerable to XSS on the following URL and parameter:https://c2webresource/fileview.asp?File=<script>alert(document.cookie)</script>",
+        "impact": "An attacker with access to the C2 WebResource web interface can conduct a cross-site scripting attack, which may be used to result in information leakage, privilege escalation, and/or denial of service."
+      }
+    ],
+    "CVE-2013-0126": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/278204",
+        "title": "Verizon Fios Actiontec model MI424WR-GEN3I router vulnerable to cross-site request forgery",
+        "overview": "The Verizon FIOS Actiontec router model MI424WR-GEN3I is susceptible to cross-site request forgery attacks. (CWE-352)",
+        "description": "The Verizon FIOS Actiontec router model MI424WR-GEN3I is susceptible to cross-site request forgery attacks. (CWE-352) A remote attacker that is able to trick a user into clicking a malicious link while logged into the router may be able to compromise the router.",
+        "impact": "A remote unauthenticated attacker that is able to trick a user into clicking a malicious link while they are logged into the router may be able to compromise the router."
+      }
+    ],
+    "CVE-2013-0127": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/912420",
+        "title": "IBM Notes runs arbitrary JAVA and Javascript in emails",
+        "overview": "IBM Notes parses arbitrary JAVA and Javascript code by default when viewing emails.",
+        "description": "The n.runs AG security advisory states:Notes 8.5.3 does not filter <applet> tags inside HTML emails. This can be used to load arbitrary Java applets from remote sources (making it an information disclosure as well as this can be used to trigger an HTTP request once the mail is previewed/opened).Additional details may be found in the full n.runs AG security advisory. It should also be noted that the IBM JRE that comes with the latest patched version of IBM Notes is IBM JRE 6 SR12 while IBM JRE 6 SR13 has been released and includes many security related fixes.",
+        "impact": "A remote unauthenticated attack may be able to execute arbitrary code in the context of the user viewing emails within IBM Notes."
+      }
+    ],
+    "CVE-2013-0129": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/311644",
+        "title": "pd-admin contains cross-site scripting vulnerabilities",
+        "overview": "pd-admin, a web interface for users of hosting providers, is susceptible to cross-site scripting (XSS) vulnerabilities.",
+        "description": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') pd-admin, contains cross-site scripting (XSS) vulnerabilities.The vulnerability report provided by Thomas Roth states:Reflective cross-site scriptingWhen pasting the string below into the 'Create new directory' textfield (found under 'WebFTP' -> 'Overview'), the error page will include the attacker supplied JavaScript code.\"><script>alert(\"XSS\");</script>Stored cross-site scriptingWhen storing the string below as the body for an e-mail autoresponder, every time someone tries to change the text of the autoresponder, the attacker supplied JavaScript code will execute. By tricking a (higher privileged) support contact into looking at it, the attacker might be able to steal the support contact's session cookie.</textarea><script>alert(\"XSS\");</script>",
+        "impact": "An attacker may be able to exploit the cross-site scripting vulnerability to result in information leakage, privilege escalation, and/or denial of service on the host computer."
+      }
+    ],
+    "CVE-2013-0130": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/370868",
+        "title": "CoreFTP contains a buffer overflow vulnerability",
+        "overview": "CoreFTP contains a buffer overflow when parsing long directory names.",
+        "description": "CoreFTP is susceptible to a buffer overflow when parsing long directory names from a malicious FTP server. The LIST, VIEW, commands are vulnerable to a denial of service and the DELE command has been reported to be vulnerable to code execution.",
+        "impact": "A user that is tricked into visiting a malicious FTP server and deleting a directory with a long name may allow arbitrary code to run on the user's computer."
+      }
+    ],
+    "CVE-2013-0131": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/771620",
+        "title": "NVIDIA UNIX GPU driver ARGB cursor buffer overflow in \"NoScanout\" mode",
+        "overview": "NVIDIA UNIX video drivers contain a buffer overflow vulnerability when run in NoScanout mode.",
+        "description": "The NVIDIA security advisory states:NVIDIA UNIX GPU Driver ARGB Cursor Buffer Overflow in \"NoScanout\" Mode.When the NVIDIA driver for the X Window System is operated in \"NoScanout\" mode, and an X client installs an ARGB cursor that is larger than the expected size (64x64 or 256x256, depending on the driver version), the driver will overflow a buffer. This can cause a denial of service (e.g., an X server segmentation fault), or could be exploited to achieve arbitrary code execution. Because the X server runs as setuid root in many configurations, an attacker could potentially use this vulnerability in those configurations to gain root privileges.To install an ARGB cursor, an application would require a connection to a running X server. Normally, X servers are configured to only accept authenticated connections from the local host, but some X servers may be configured to more permissively allow connections, and/or to allow connections over a network.\"NoScanout\" mode is enabled implicitly on NVIDIA products which lack display output connectors, and can be enabled explicitly on some other configurations with the X configuration option:Option \"UseDisplayDevice\" \"none\"NVIDIA GPU drivers for OSes other than Linux, FreeBSD, VMware ESX, and Solaris are not affected.This vulnerability has been present since NVIDIA driver version 195.22. The overflow is fixed in 304.88, 310.44, 313.30, and all drivers newer than those versions.NVIDIA recommends that users upgrade to a fixed driver version, or disable NoScanout mode, where possible.This vulnerability was identified by NVIDIA. There are no known reports of exploits of this vulnerability in the wild.Additional details may be found in the full NVIDIA security advisory.",
+        "impact": "A local authenticated attacker may be able to exploit this vulnerability to gain privilege escalation to the root user."
+      }
+    ],
+    "CVE-2013-0132": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/310500",
+        "title": "Plesk Panel 11.0.9 privilege escalation vulnerabilities",
+        "overview": "Plesk Panel 11.0.9 and possibly earlier versions contains multiple privilege escalation vulnerabilities.",
+        "description": "Plesk Panel contains multiple privilege escalation vulnerabilities which may allow an attacker to run arbitrary code as the root user. Special-case rules in Plesk's custom version of Apache suexec allow execution of arbitrary code as an arbitrary user id above a certain minimum value. In addition, several administrative or system accounts have a user ID above this minimum.Plesk's /usr/sbin/suexec binary (the binary may be present in additional locations, always with suexec in the filename) always allows the binary 'cgi-wrapper', bypassing restrictions on the ownership of the file to be called. Since cgi-wrapper's function is to execute a PHP script based on environment variables (and suexec does not sanitize these environment variables) this allows execution of arbitrary PHP code with a user id above a minimum user ID value that is hardcoded in the suid binary. CVE-2013-0132The program /usr/local/psa/admin/sbin/wrapper allows the user psaadm to execute various administrative scripts with root privileges. Some of these scripts call external programs without specifying the full path. By specifying a malicious PATH environment variable, an attacker can cause the administrative scripts to call his own program instead of the intended system program. CVE-2013-0133The CVSS scores below apply to CVE-2013-0133.",
+        "impact": "An authenticated attacker maybe be able to escalate their privileges to root allowing them to run arbitrary code as the root user."
+      }
+    ],
+    "CVE-2013-0134": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/557252",
+        "title": "AirDroid web interface XSS vulnerability",
+        "overview": "AirDroid web interface contains a XSS vulnerability.",
+        "description": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')The AirDroid web interface fails to sanitize malicious code within a text message on the target phone causing the script to be executed on the host computer.",
+        "impact": "An attacker with access to the phone being controlled by AirDroid can send a text message with malicious code. When this message is viewed on the AirDroid web interface an attacker can conduct a cross-site scripting attack, which may be used to result in information leakage, privilege escalation, and/or denial of service on the host computer."
+      }
+    ],
+    "CVE-2013-0135": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/183692",
+        "title": "PHP Address Book sqli vulnerability",
+        "overview": "PHP Address Book web application is vulnerable to multiple sqli injection vulnerabilities.",
+        "description": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')PHP Address Book 8.2.5 and possibly older versions fail to sanitize input from multiple functions. http://www.example.com/addressbook/register/checklogin.php?username={insert}&password=passhttp://www.example.com/addressbook/register/admin_index.php?q={insert}http://www.example.com/addressbook/register/delete_user.php?id={insert}http://www.example.com/addressbook/register/edit_user.php?id={insert}Additional information on vulnerable functions can be found at Acadion Security advisory.",
+        "impact": "A remote unauthenticated attacker may be able to run a subset of SQL commands against the back-end database."
+      }
+    ],
+    "CVE-2013-0136": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/701572",
+        "title": "Mutiny Appliance contains multiple directory traversal vulnerabilities",
+        "overview": "Mutiny appliance contains multiple directory traversal (CWE-22) vulnerabilities.",
+        "description": "The Mutiny appliance commands for UPLOAD, DELETE, CUT and COPY are all vulnerable to directory traversal attacks. Additional details may be found in the Rapid7 blog post entitled, \"New 1day Exploits: Mutiny Vulnerabilities\".",
+        "impact": "An authenticated remote attacker may be able to upload, delete, and move files on the system with root privileges."
+      }
+    ],
+    "CVE-2013-0137": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/AAMN-98MU7H",
+        "title": "Digital Alert Systems DASDEC and Monroe Electronics R189 One-Net firmware exposes private root SSH key",
+        "overview": "Digital Alert Systems DASDEC and Monroe Electronics One-Net E189 Emergency Alert System (EAS) devices exposed a shared private root SSH key in publicly available firmware images. An attacker with SSH access to a device could use the key to log in with root privileges.",
+        "description": "The Digital Alert Systems DASDEC-I and DASDEC-II and Monroe Electronics R189 One-Net/R189SE One-NetSE are Linux-based EAS encoder/decoder (ENDEC) devices that are used to broadcast EAS messages over digital and analog channels. IOActive has reported several security issues affecting these devices. The most severe of these issues is the public disclosure of the default private root SSH key. The less severe issues could also contribute to an attacker's ability to compromise a vulnerable device.Compromised root SSH key (CVE-2013-0137)Publicly available firmware images for these devices included a private root SSH key that was authorized to log in to the devices (CWE-798, CWE-321). The fingerprint for the compromised SSH key is 0c:89:49:f7:62:d2:98:f0:27:75:ad:e9:72:2c:68:c3. Although this key is not hard-coded, it may be impractical for less technical users to manually disable or change they key prior to firmware version 2.0-2.Predictable session IDIOActive reports that the administrative web server uses a predictable, monotonically increasing session ID. This finding is based on running the web server in a test environment. Testing on a variety of firmware versions on devices both at the factory and in the field, Monroe Electronics could not reproduce this finding.Log information disclosureLogs available via the web server provide a variety of information about the configuration, operation, and status of the device (CWE-532). Some of the log information is public and may be required by regulation.Predictable password generationThe dasdec_mkuser script generates passwords in a deterministic way (CWE-341), however these passwords are not for administrative access, and the script is not used for general user account configuration.Default passwordLike many similar devices, the DASDEC and One-Net ENDECs use default administrative credentials. Some sites fail to change the default administrative password and allow unrestricted internet access.",
+        "impact": "An attacker with the private key and SSH access can log in to a device with root privileges.Predictable session IDs could allow an attacker to take control of an existing administrative web session.Predictable and unchanged default passwords can allow an attacker to log in to a device, possibly with root privileges. Devices exposed to the internet are at particularly high risk, for example, see Secure EAS Codecs Prevent Zombie Attacks and US-CERT Alert TA13-175A.Logs may disclose configuration information that can benefit an attacker."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/AAMN-98MUK2",
+        "title": "Digital Alert Systems DASDEC and Monroe Electronics R189 One-Net firmware exposes private root SSH key",
+        "overview": "Digital Alert Systems DASDEC and Monroe Electronics One-Net E189 Emergency Alert System (EAS) devices exposed a shared private root SSH key in publicly available firmware images. An attacker with SSH access to a device could use the key to log in with root privileges.",
+        "description": "The Digital Alert Systems DASDEC-I and DASDEC-II and Monroe Electronics R189 One-Net/R189SE One-NetSE are Linux-based EAS encoder/decoder (ENDEC) devices that are used to broadcast EAS messages over digital and analog channels. IOActive has reported several security issues affecting these devices. The most severe of these issues is the public disclosure of the default private root SSH key. The less severe issues could also contribute to an attacker's ability to compromise a vulnerable device.Compromised root SSH key (CVE-2013-0137)Publicly available firmware images for these devices included a private root SSH key that was authorized to log in to the devices (CWE-798, CWE-321). The fingerprint for the compromised SSH key is 0c:89:49:f7:62:d2:98:f0:27:75:ad:e9:72:2c:68:c3. Although this key is not hard-coded, it may be impractical for less technical users to manually disable or change they key prior to firmware version 2.0-2.Predictable session IDIOActive reports that the administrative web server uses a predictable, monotonically increasing session ID. This finding is based on running the web server in a test environment. Testing on a variety of firmware versions on devices both at the factory and in the field, Monroe Electronics could not reproduce this finding.Log information disclosureLogs available via the web server provide a variety of information about the configuration, operation, and status of the device (CWE-532). Some of the log information is public and may be required by regulation.Predictable password generationThe dasdec_mkuser script generates passwords in a deterministic way (CWE-341), however these passwords are not for administrative access, and the script is not used for general user account configuration.Default passwordLike many similar devices, the DASDEC and One-Net ENDECs use default administrative credentials. Some sites fail to change the default administrative password and allow unrestricted internet access.",
+        "impact": "An attacker with the private key and SSH access can log in to a device with root privileges.Predictable session IDs could allow an attacker to take control of an existing administrative web session.Predictable and unchanged default passwords can allow an attacker to log in to a device, possibly with root privileges. Devices exposed to the internet are at particularly high risk, for example, see Secure EAS Codecs Prevent Zombie Attacks and US-CERT Alert TA13-175A.Logs may disclose configuration information that can benefit an attacker."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/662676",
+        "title": "Digital Alert Systems DASDEC and Monroe Electronics R189 One-Net firmware exposes private root SSH key",
+        "overview": "Digital Alert Systems DASDEC and Monroe Electronics One-Net E189 Emergency Alert System (EAS) devices exposed a shared private root SSH key in publicly available firmware images. An attacker with SSH access to a device could use the key to log in with root privileges.",
+        "description": "The Digital Alert Systems DASDEC-I and DASDEC-II and Monroe Electronics R189 One-Net/R189SE One-NetSE are Linux-based EAS encoder/decoder (ENDEC) devices that are used to broadcast EAS messages over digital and analog channels. IOActive has reported several security issues affecting these devices. The most severe of these issues is the public disclosure of the default private root SSH key. The less severe issues could also contribute to an attacker's ability to compromise a vulnerable device.Compromised root SSH key (CVE-2013-0137)Publicly available firmware images for these devices included a private root SSH key that was authorized to log in to the devices (CWE-798, CWE-321). The fingerprint for the compromised SSH key is 0c:89:49:f7:62:d2:98:f0:27:75:ad:e9:72:2c:68:c3. Although this key is not hard-coded, it may be impractical for less technical users to manually disable or change they key prior to firmware version 2.0-2.Predictable session IDIOActive reports that the administrative web server uses a predictable, monotonically increasing session ID. This finding is based on running the web server in a test environment. Testing on a variety of firmware versions on devices both at the factory and in the field, Monroe Electronics could not reproduce this finding.Log information disclosureLogs available via the web server provide a variety of information about the configuration, operation, and status of the device (CWE-532). Some of the log information is public and may be required by regulation.Predictable password generationThe dasdec_mkuser script generates passwords in a deterministic way (CWE-341), however these passwords are not for administrative access, and the script is not used for general user account configuration.Default passwordLike many similar devices, the DASDEC and One-Net ENDECs use default administrative credentials. Some sites fail to change the default administrative password and allow unrestricted internet access.",
+        "impact": "An attacker with the private key and SSH access can log in to a device with root privileges.Predictable session IDs could allow an attacker to take control of an existing administrative web session.Predictable and unchanged default passwords can allow an attacker to log in to a device, possibly with root privileges. Devices exposed to the internet are at particularly high risk, for example, see Secure EAS Codecs Prevent Zombie Attacks and US-CERT Alert TA13-175A.Logs may disclose configuration information that can benefit an attacker."
+      }
+    ],
+    "CVE-2013-0140": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/209131",
+        "title": "McAfee ePolicy Orchestrator 4.6.4 and earlier pre-authenticated SQL injection and directory path traversal vulnerabilities",
+        "overview": "McAfee ePolicy Orchestrator 4.6.4 and earlier contains a pre-authenticated sql injection and directory path traversal vulnerability which could allow an attacker to inject malicious code into the system.",
+        "description": "McAfee ePolicy Orchestrator 4.6.4 and earlier contains a pre-authenticated sql injection and directory path traversal vulnerability:Server-side pre-Authenticated SQL Injection within the Agent-Handler component (Agent-Server communication channel).The attack is performed by registering a rogue Agent to the ePolicy Orchestrator server, and sending a crafted HTTP request to the ePolicy Orchestrator server. Successful attacks allow remote attackers to retrieve sensitive information from the ePo database (such as administrative domain credentials), to create additional web console administrator accounts, and to perform remote code execution with SYSTEM privilege. CVE-2013-0140Server-side pre-Authenticated Directory Path Traversal within File upload process.The attack is performed by registering a rogue Agent to the ePolicy Orchestrator server, and sending a crafted HTTP request to the ePolicy Orchestrator server. Successful attacks allow remote attackers to upload unrestricted file content. A typical scenario would be to store malicious files under /Software/ folder, to make them available for download from the ePolicy Orchestrator server. CVE-2013-0141The CVSS scores below apply to CVE-2013-0140.",
+        "impact": "An attacker with network access to the McAfee ePolicy Orchestrator Agent-Handler (port tcp/443 by default) could upload arbitrary files under the ePolicy Orchestrator installation folder, gain read and write access to ePolicy Orchestrator database, or run arbitrary code on the ePolicy Orchestrator system."
+      }
+    ],
+    "CVE-2013-0141": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/209131",
+        "title": "McAfee ePolicy Orchestrator 4.6.4 and earlier pre-authenticated SQL injection and directory path traversal vulnerabilities",
+        "overview": "McAfee ePolicy Orchestrator 4.6.4 and earlier contains a pre-authenticated sql injection and directory path traversal vulnerability which could allow an attacker to inject malicious code into the system.",
+        "description": "McAfee ePolicy Orchestrator 4.6.4 and earlier contains a pre-authenticated sql injection and directory path traversal vulnerability:Server-side pre-Authenticated SQL Injection within the Agent-Handler component (Agent-Server communication channel).The attack is performed by registering a rogue Agent to the ePolicy Orchestrator server, and sending a crafted HTTP request to the ePolicy Orchestrator server. Successful attacks allow remote attackers to retrieve sensitive information from the ePo database (such as administrative domain credentials), to create additional web console administrator accounts, and to perform remote code execution with SYSTEM privilege. CVE-2013-0140Server-side pre-Authenticated Directory Path Traversal within File upload process.The attack is performed by registering a rogue Agent to the ePolicy Orchestrator server, and sending a crafted HTTP request to the ePolicy Orchestrator server. Successful attacks allow remote attackers to upload unrestricted file content. A typical scenario would be to store malicious files under /Software/ folder, to make them available for download from the ePolicy Orchestrator server. CVE-2013-0141The CVSS scores below apply to CVE-2013-0140.",
+        "impact": "An attacker with network access to the McAfee ePolicy Orchestrator Agent-Handler (port tcp/443 by default) could upload arbitrary files under the ePolicy Orchestrator installation folder, gain read and write access to ePolicy Orchestrator database, or run arbitrary code on the ePolicy Orchestrator system."
+      }
+    ],
+    "CVE-2013-0143": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/927644",
+        "title": "QNAP VioStor NVR firmware version 4.0.3 and QNAP NAS multiple vulnerabilities",
+        "overview": "QNAP VioStor NVR firmware version 4.0.3 and possibly earlier versions and QNAP NAS contains multiple vulnerabilities which may allow an attacker to perform administrative functions against the hosted server.",
+        "description": "QNAP VioStor NVR firmware version 4.0.3 and possibly earlier versions and QNAP NAS with the Surveillance Station Pro activated contains multiple vulnerabilities which may allow an attacker to perform administrative functions against the hosted server.CWE-284: Improper Access Control CVE-2013-0142VioStor NVR firmware version 4.0.3 and possibly earlier versions and QNAP NAS with the Surveillance Station Pro activated contains a hardcoded guest account and password which can be leveraged to login to the webserver. It has been reported that it is not possible to view or administer the guest account using the web interface.CWE-77: Improper Neutralization of Special Elements used in a Command CVE-2013-0143VioStor NVR firmware version 4.0.3 and possibly earlier versions and QNAP NAS with the Surveillance Station Pro activated contains scripts which could allow any user e.g. guest users to execute scripts which run with administrative privileges. It is possible to execute code on the webserver using the ping function.Example: http://[server-ip]/cgi-bin/pingping.cgi?ping_ip=1;whoamiCWE-352: Cross-Site Request Forgery (CSRF). CVE-2013-0144VioStor NVR firmware version 4.0.3 and possibly earlier versions contains a cross-site request forgery vulnerability could allow an attacker to add a new administrative account to the server by tricking an administrator to click on a malicious link while they are currently logged into the webserver.Example: http://[server-ip]/cgi-bin/create_user.cgi?OK=&function=USER&subfun=NEW&USERNAME=&NAME=attacker&PASSWD=12345&VERIFY=12345&create_user_list=admin&PTZ1=on&Audio1=on&PTZ2=on&Audio2=on&PTZ3=on&Audio3=on&PTZ4=on&Audio4=onThe CVSS scores below apply to CVE-2013-0143.",
+        "impact": "An authenticated (via known credentials or hardcoded guest account) attacker may be able to execute arbitrary commands or add administrative accounts to the server."
+      }
+    ],
+    "CVE-2013-0144": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/927644",
+        "title": "QNAP VioStor NVR firmware version 4.0.3 and QNAP NAS multiple vulnerabilities",
+        "overview": "QNAP VioStor NVR firmware version 4.0.3 and possibly earlier versions and QNAP NAS contains multiple vulnerabilities which may allow an attacker to perform administrative functions against the hosted server.",
+        "description": "QNAP VioStor NVR firmware version 4.0.3 and possibly earlier versions and QNAP NAS with the Surveillance Station Pro activated contains multiple vulnerabilities which may allow an attacker to perform administrative functions against the hosted server.CWE-284: Improper Access Control CVE-2013-0142VioStor NVR firmware version 4.0.3 and possibly earlier versions and QNAP NAS with the Surveillance Station Pro activated contains a hardcoded guest account and password which can be leveraged to login to the webserver. It has been reported that it is not possible to view or administer the guest account using the web interface.CWE-77: Improper Neutralization of Special Elements used in a Command CVE-2013-0143VioStor NVR firmware version 4.0.3 and possibly earlier versions and QNAP NAS with the Surveillance Station Pro activated contains scripts which could allow any user e.g. guest users to execute scripts which run with administrative privileges. It is possible to execute code on the webserver using the ping function.Example: http://[server-ip]/cgi-bin/pingping.cgi?ping_ip=1;whoamiCWE-352: Cross-Site Request Forgery (CSRF). CVE-2013-0144VioStor NVR firmware version 4.0.3 and possibly earlier versions contains a cross-site request forgery vulnerability could allow an attacker to add a new administrative account to the server by tricking an administrator to click on a malicious link while they are currently logged into the webserver.Example: http://[server-ip]/cgi-bin/create_user.cgi?OK=&function=USER&subfun=NEW&USERNAME=&NAME=attacker&PASSWD=12345&VERIFY=12345&create_user_list=admin&PTZ1=on&Audio1=on&PTZ2=on&Audio2=on&PTZ3=on&Audio3=on&PTZ4=on&Audio4=onThe CVSS scores below apply to CVE-2013-0143.",
+        "impact": "An authenticated (via known credentials or hardcoded guest account) attacker may be able to execute arbitrary commands or add administrative accounts to the server."
+      }
+    ],
+    "CVE-2013-0145": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/127108",
+        "title": "Serva32 2.1.0 TFTPD service buffer overflow vulnerability",
+        "overview": "Serva32 2.1.0 TFTPD service contains a buffer overflow vulnerability.",
+        "description": "The Serva32 2.1.0 TFTPD service contains a buffer overflow vulnerability when parsing large read requests. When the application reads in a large buffer the application crashes.",
+        "impact": "An unauthenticated attacker can pass large read requests against the application causing it to crash."
+      }
+    ],
+    "CVE-2013-0148": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/900031",
+        "title": "Faircom c-treeACE database weak obfuscation algorithm vulnerability",
+        "overview": "Faircom c-treeACE provides a weak obfuscation algorithm (CWE-327) that may be unobfuscated without knowledge of a key or password. The algorithm was formerly called Faircom Standard Encryption but is now called Data Camouflage.",
+        "description": "Faircom c-treeACE provides a weak obfuscation algorithm that may be unobfuscated without knowledge of a key or password. Faircom formerly described this algorithm as follows:FairCom Standard EncryptionUsing our standard proprietary encryption algorithm provides the means to add an extra level of confidentiality to an application’s data. FairCom designed its proprietary encryption algorithm for speed and efficiency, focusing on minimizing performance loss.The encryption algorithm is proprietary to FairCom Corporation and the details are not released in any way to increase the difficulty of reverse-engineering the process. While reverse-engineering is a violation of the licensing agreement, it remains a remote possibility, and FairCom does everything possible to limit the potential exposure of the FairCom algorithms.This Standard File Encryption is not intended as a replacement for OS or other security systems, however, as a supplement to existing security. Standard File Encryption is suitable for most needs with excellent security vs. performance tradeoffs.Faircom has come up with a new branding called \"Data Camouflage\" so it will be less likely to be confused with standard encryption algorithms, such as, AES. Faircom describes the \"Data Camouflage\" algorithm as follows:Data CamouflageUsing our Data Camouflage technique provides the means to add an extra level of confidentiality to an application’s data. FairCom designed this approach to mask the file on the disk without sacrificing speed and efficiency, focusing on minimizing performance loss.Data Camouflage is not intended as a replacement for OS or other security systems, however, as a supplement to existing security. It is suitable for most needs with excellent security vs. performance tradeoffs. With this approach, you can protect data on disk from unauthorized inspection, but any c-treeACE client can access the protected files. To avoid this, the Advanced File Encryption option includes the ability to have hidden keys. Proper implementation of user access controls within c-treeACE is also recommend to prevent unauthorized access to data, even it not masked with the Data Camouflage feature.An attacker that is able to obtain a c-treeACE database that is obfuscated using the Data Camouflage algorithm (formerly Faircom Standard Encryption) may be able to unobfuscate the database by moving it to a trial install of c-treeACE, deleting the .fcs configuration files and replacing the .fcs files with the default files from the trial. This will allow the attacker to authenticate to the database with default ADMIN/ADMIN credentials and view the contents of the obfuscated database.",
+        "impact": "An attacker that is able to obtain a database that uses the Data Camouflage algorithm (formerly Faircom Standard Encryption) may be able to unobfuscate the contents of the database."
+      }
+    ],
+    "CVE-2013-0156": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/628463",
+        "title": "Ruby on Rails 3.0 and 2.3 JSON Parser vulnerability",
+        "overview": "The Ruby on Rails 3.0 and 2.3 JSON parser contain a vulnerability that may result in arbitrary code execution.",
+        "description": "The Ruby on Rails advisory states:There is a vulnerability in the JSON code for Ruby on Rails which allows attackers to bypass authentication systems, inject arbitrary SQL, inject and execute arbitrary code, or perform a DoS attack on a Rails application. This vulnerability has been assigned the CVE identifier CVE-2013-0333.Versions Affected: 2.3.x, 3.0.xNot Affected: 3.1.x, 3.2.x, applications using the yajl gem.Fixed Versions: 3.0.20, 2.3.16Impact- ------The JSON Parsing code in Rails 2.3 and 3.0 support multiple parsing backends. One of the backends involves transforming the JSON into YAML, and passing that through the YAML parser. Using a specially crafted payload attackers can trick the backend into decoding a subset of YAML.All users running an affected application should upgrade or use the workaround immediately.Note: This is a separate vulnerability to CVE-2013-0156, if you are running a 2.3 or 3.0 application you must still take action to protect your application. Additional details may be found in the full Ruby on Rails advisory.",
+        "impact": "An unauthenticated attacker using a specifically crafted payload may be able to trick the Ruby on Rails backend into executing arbitrary code."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/380039",
+        "title": "Ruby on Rails Action Pack framework insecurely typecasts YAML and Symbol XML parameters",
+        "overview": "The Ruby on Rails Action Pack framework is susceptible to authentication bypass, SQL injection, arbitrary code execution, or denial of service.",
+        "description": "The Ruby on Rails advisory states:\"Multiple vulnerabilities in parameter parsing in Action PackThere are multiple weaknesses in the parameter parsing code for Ruby on Rails which allows attackers to bypass authentication systems, inject arbitrary SQL, inject and execute arbitrary code, or perform a DoS attack on a Rails application. This vulnerability has been assigned the CVE identifier CVE-2013-0156.Versions Affected: ALL versionsNot affected: NONEFixed Versions: 3.2.11, 3.1.10, 3.0.19, 2.3.15Impact------The parameter parsing code of Ruby on Rails allows applications to automatically cast values from strings to certain data types. Unfortunately the type casting code supported certain conversions which were not suitable for performing on user-provided data including creating Symbols and parsing YAML. These unsuitable conversions can be used by an attacker to compromise a Rails application.Due to the critical nature of this vulnerability, and the fact that portions of it have been disclosed publicly, all users running an affected release should either upgrade or use one of the work arounds *immediately*.Releases--------The 3.2.11, 3.1.10, 3.0.19 and 2.3.15 releases are available at the normal locations.\"Additional details are available in the full advisory. Exploit code for this vulnerability is publicly available.",
+        "impact": "A Ruby on Rails application that uses Action Pack is susceptible to authentication bypass, SQL injection, arbitrary code execution or denial of service."
+      }
+    ],
+    "CVE-2013-0166": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/737740",
+        "title": "Fiery Network Controllers for Xerox DocuColor 242/252/260 Printer/Copier use a vulnerable version of OpenSSL",
+        "overview": "Fiery Network Controllers for Xerox DocuColor 242/252/260 Printer/Copier use a vulnerable version of OpenSSL (0.9.8o).",
+        "description": "Fiery Network Controllers for Xerox DocuColor 242/252/260 Printer/Copier uses OpenSSL for SSL/TLS encryption. The version of OpenSSL that comes with the Fiery Network Controllers for Xerox DocuColor 242/252/260 Printer/Copier is 0.9.8o that is out of date and known to be vulnerable.",
+        "impact": "A remote attacker may be able to cause a denial of service or possibly run arbitrary code."
+      }
+    ],
+    "CVE-2013-0169": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/737740",
+        "title": "Fiery Network Controllers for Xerox DocuColor 242/252/260 Printer/Copier use a vulnerable version of OpenSSL",
+        "overview": "Fiery Network Controllers for Xerox DocuColor 242/252/260 Printer/Copier use a vulnerable version of OpenSSL (0.9.8o).",
+        "description": "Fiery Network Controllers for Xerox DocuColor 242/252/260 Printer/Copier uses OpenSSL for SSL/TLS encryption. The version of OpenSSL that comes with the Fiery Network Controllers for Xerox DocuColor 242/252/260 Printer/Copier is 0.9.8o that is out of date and known to be vulnerable.",
+        "impact": "A remote attacker may be able to cause a denial of service or possibly run arbitrary code."
+      }
+    ],
+    "CVE-2013-0422": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/625617",
+        "title": "Java 7 fails to restrict access to privileged code",
+        "overview": "Java 7 Update 10 and earlier versions of Java 7 contain a vulnerability that can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The Oracle Java Runtime Environment (JRE) 1.7 allows users to run Java applications in a browser or as standalone programs. Oracle has made the JRE available for multiple operating systems. OpenJDK is an open-source implementation of the Java platform, and the IcedTea project aims to make it easier to deploy OpenJDK, including a web browser plugin.The Java JRE plug-in provides its own Security Manager. Typically, a web applet runs with a security manager provided by the browser or Java Web Start plugin. Oracle's document states, \"If there is a security manager already installed, this method first calls the security manager's checkPermission method with a RuntimePermission(\"setSecurityManager\") permission to ensure it's safe to replace the existing security manager. This may result in throwing a SecurityException\". By leveraging the a vulnerability in the Java Management Extensions (JMX) MBean components, unprivileged Java code can access restricted classes. By using that vulnerability in conjunction with a second vulnerability involving recursive use of the Reflection API via the invokeWithArguments method of the MethodHandle class, an untrusted Java applet can escalate its privileges by calling the the setSecurityManager() function to allow full privileges, without requiring code signing. Oracle Java 7 update 10 and earlier Java 7 versions are affected. OpenJDK 7, and subsequently IcedTea, are also affected. The invokeWithArguments method was introduced with Java 7, so therefore Java 6 is not affected.This vulnerability is being attacked in the wild, and is reported to be incorporated into exploit kits. Exploit code for this vulnerability is also publicly available. We have confirmed that Oracle Java 7 installed on Windows, OS X, and Linux platforms are affected. Other platforms that use Oracle Java 7 may also be affected.",
+        "impact": "By convincing a user to visit a specially crafted HTML document, a remote attacker may be able to execute arbitrary code on a vulnerable system. Note that applications that use the Internet Explorer web content rendering components, such as Microsoft Office or Windows Desktop Search, may also be used as an attack vector for this vulnerability."
+      }
+    ],
+    "CVE-2013-0538": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/912420",
+        "title": "IBM Notes runs arbitrary JAVA and Javascript in emails",
+        "overview": "IBM Notes parses arbitrary JAVA and Javascript code by default when viewing emails.",
+        "description": "The n.runs AG security advisory states:Notes 8.5.3 does not filter <applet> tags inside HTML emails. This can be used to load arbitrary Java applets from remote sources (making it an information disclosure as well as this can be used to trigger an HTTP request once the mail is previewed/opened).Additional details may be found in the full n.runs AG security advisory. It should also be noted that the IBM JRE that comes with the latest patched version of IBM Notes is IBM JRE 6 SR12 while IBM JRE 6 SR13 has been released and includes many security related fixes.",
+        "impact": "A remote unauthenticated attack may be able to execute arbitrary code in the context of the user viewing emails within IBM Notes."
+      }
+    ],
+    "CVE-2013-1493": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/688246",
+        "title": "Oracle Java contains multiple vulnerabilities",
+        "overview": "Oracle Java 7 Update 15, Java 6 Update 41, Java 5.0 Update 40, and earlier versions contain a vulnerability that can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The Oracle Java Runtime Environment (JRE) allows users to run Java applications in a browser or as standalone programs. Oracle has made the JRE available for multiple operating systems. OpenJDK is an open-source implementation of the Java platform, and the IcedTea project aims to make it easier to deploy OpenJDK, including a web browser plugin. Additional details of the vulnerability can be found at FireEye Malware Intelligence Lab blog post. This vulnerability is reportedly being exploited in the wild.",
+        "impact": "By convincing a user to visit a specially crafted HTML document, a remote attacker may be able to execute arbitrary code on a vulnerable system. Note that applications that use the Internet Explorer web content rendering components, such as Microsoft Office or Windows Desktop Search, may also be used as an attack vector for these vulnerabilities."
+      }
+    ]
+  }
+}

@@ -1,0 +1,646 @@
+{
+  "year": 2006,
+  "total": 99,
+  "reference": "ubuntu.com",
+  "reports": {
+    "CVE-2006-0038": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-302-1",
+        "title": "USN-302-1: Linux kernel vulnerabilities",
+        "body": "An integer overflow was discovered in the do_replace() function. Alocal user process with the CAP_NET_ADMIN capability could exploitthis to execute arbitrary commands with full root privileges.However, none of Ubuntu's supported packages use this capability withany non-root user, so this only affects you if you use some thirdparty software like the OpenVZ virtualization system. (CVE-2006-0038)"
+      }
+    ],
+    "CVE-2006-0301": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-249-1",
+        "title": "USN-249-1: xpdf/poppler/kpdf vulnerabilities",
+        "body": "The splash image handler in xpdf did not check the validity ofcoordinates. By tricking a user into opening a specially crafted PDFfile, an attacker could exploit this to trigger a buffer overflowwhich could lead to arbitrary code execution with the privileges ofthe user.The poppler library and kpdf also contain xpdf code, and thus areaffected by the same vulnerability."
+      }
+    ],
+    "CVE-2006-0454": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-250-1",
+        "title": "USN-250-1: Linux kernel vulnerability",
+        "body": "Herbert Xu discovered a remote Denial of Service vulnerability in theICMP packet handler. In some situations a memory allocation wasreleased twice, which led to memory corruption. A remote attackercould exploit this to crash the machine."
+      }
+    ],
+    "CVE-2006-0744": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-302-1",
+        "title": "USN-302-1: Linux kernel vulnerabilities",
+        "body": "On EMT64 CPUs, the kernel did not properly handle uncanonical returnaddresses. A local user could exploit this to trigger a kernel crash.(CVE-2006-0744)"
+      }
+    ],
+    "CVE-2006-0996": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-320-1",
+        "title": "USN-320-1: PHP vulnerabilities",
+        "body": "The phpinfo() PHP function did not properly sanitize long strings. Aremote attacker could use this to perform cross-site scripting attacksagainst sites that have publicly-available PHP scripts that callphpinfo(). Please note that it is not recommended to publicly exposephpinfo(). (CVE-2006-0996)"
+      }
+    ],
+    "CVE-2006-1056": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-302-1",
+        "title": "USN-302-1: Linux kernel vulnerabilities",
+        "body": "Jan Beulich discovered an information leak in the handling ofregisters for the numeric coprocessor when running on AMD processors.This allowed processes to see the coprocessor execution state ofother processes, which could reveal sensitive data in the case ofcryptographic computations. (CVE-2006-1056)"
+      }
+    ],
+    "CVE-2006-1522": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-302-1",
+        "title": "USN-302-1: Linux kernel vulnerabilities",
+        "body": "Marcel Holtmann discovered that the sys_add_key() did not check thata new user key is added to a proper keyring. By attempting to add akey to a normal user key (which is not a keyring), a local attackercould exploit this to crash the kernel. (CVE-2006-1522)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-302-1",
+        "title": "USN-302-1: Linux kernel vulnerabilities",
+        "body": "Marcel Holtmann discovered that the sys_add_key() did not check thata new user key is added to a proper keyring. By attempting to add akey to a normal user key (which is not a keyring), a local attackercould exploit this to crash the kernel. (CVE-2006-1522)"
+      }
+    ],
+    "CVE-2006-1528": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-302-1",
+        "title": "USN-302-1: Linux kernel vulnerabilities",
+        "body": "The SCSI I/O driver did not correctly handle the VM_IO flag for memorymapped pages used for data transfer. A local user could exploit thisto cause a kernel crash. (CVE-2006-1528)"
+      }
+    ],
+    "CVE-2006-1857": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-302-1",
+        "title": "USN-302-1: Linux kernel vulnerabilities",
+        "body": "The SCTP driver did not properly verify certain parameters whenreceiving a HB-ACK chunk. By sending a specially crafted packet to anSCTP socket, a remote attacker could exploit this to trigger a bufferoverflow, which could lead to a crash or possibly even arbitrary codeexecution. (CVE-2006-1857)"
+      }
+    ],
+    "CVE-2006-1858": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-302-1",
+        "title": "USN-302-1: Linux kernel vulnerabilities",
+        "body": "The sctp_walk_params() function in the SCTP driver incorrectly usedrounded values for bounds checking instead of the precise values. Bysending a specially crafted packet to an SCTP socket, a remoteattacker could exploit this to crash the kernel. (CVE-2006-1858)"
+      }
+    ],
+    "CVE-2006-1991": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-320-1",
+        "title": "USN-320-1: PHP vulnerabilities",
+        "body": "The substr_compare() function did not sufficiently check the validityof the 'offset' argument. A script which passes untrusted user-definedvalues to this parameter could be exploited to crash the PHPinterpreter. (CVE-2006-1991)"
+      }
+    ],
+    "CVE-2006-2198": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-313-1",
+        "title": "USN-313-1: OpenOffice.org vulnerabilities",
+        "body": "It was possible to embed Basic macros in documents in a way thatOpenOffice.org would not ask for confirmation about executing them. Bytricking a user into opening a malicious document, this could beexploited to run arbitrary Basic code (including local file access andmodification) with the user's privileges. (CVE-2006-2198)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-313-2",
+        "title": "USN-313-2: OpenOffice.org vulnerabilities",
+        "body": "It was possible to embed Basic macros in documents in a way that OpenOffice.org would not ask for confirmation about executing them. By tricking a user into opening a malicious document, this could be exploited to run arbitrary Basic code (including local file access and modification) with the user's privileges. (CVE-2006-2198)"
+      }
+    ],
+    "CVE-2006-2200": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-309-1",
+        "title": "USN-309-1: libmms vulnerability",
+        "body": "Several buffer overflows were found in libmms. By tricking a user intoopening a specially crafted remote multimedia stream with anapplication using libmms, a remote attacker could overwrite anarbitrary memory portion with zeros, thereby crashing the program.In Ubuntu 5.10, this affects the GStreamer MMS plugin(gstreamer0.8-mms). Other Ubuntu releases do not support this library."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-315-1",
+        "title": "USN-315-1: libmms, xine-lib vulnerabilities",
+        "body": "Matthias Hopf discovered several buffer overflows in libmms. Bytricking a user into opening a specially crafted remote multimediastream with an application using libmms, a remote attacker couldexploit this to execute arbitrary code with the user's privileges.The Xine library contains an embedded copy of libmms, and thus needsthe same security update."
+      }
+    ],
+    "CVE-2006-2451": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-311-1",
+        "title": "USN-311-1: Linux kernel vulnerabilities",
+        "body": "A design flaw was discovered in the prctl(PR_SET_DUMPABLE, ...) systemcall, which allowed a local user to have core dumps created in adirectory he could not normally write to. This could be exploited todrain available disk space on system partitions, or, under somecircumstances, to execute arbitrary code with full root privileges.This flaw only affects Ubuntu 6.06 LTS. (CVE-2006-2451)"
+      }
+    ],
+    "CVE-2006-2788": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-361-1",
+        "title": "USN-361-1: Mozilla vulnerabilities",
+        "body": "Various flaws have been reported that allow an attacker to executearbitrary code with user privileges by tricking the user into openinga malicious URL. (CVE-2006-2788, CVE-2006-3805, CVE-2006-3806,CVE-2006-3807, CVE-2006-3809, CVE-2006-3811, CVE-2006-4565,CVE-2006-4568, CVE-2006-4571)"
+      }
+    ],
+    "CVE-2006-2894": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-536-1",
+        "title": "USN-536-1: Thunderbird vulnerabilities",
+        "body": "Flaws were discovered in the file upload form control. By trickinga user into opening a malicious web page, an attacker could forcearbitrary files from the user's computer to be uploaded without theirconsent. (CVE-2006-2894, CVE-2007-3511)"
+      }
+    ],
+    "CVE-2006-2934": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-331-1",
+        "title": "USN-331-1: Linux kernel vulnerabilities",
+        "body": "A Denial of service vulnerability was reported in iptables' SCTPconntrack module. On computers which use this iptables module, aremote attacker could expoit this to trigger a kernel crash.(CVE-2006-2934)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-346-1",
+        "title": "USN-346-1: Linux kernel vulnerabilities",
+        "body": "A Denial of service vulnerability was reported in iptables' SCTPconntrack module. On computers which use this iptables module, aremote attacker could expoit this to trigger a kernel crash.(CVE-2006-2934)"
+      }
+    ],
+    "CVE-2006-2936": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-331-1",
+        "title": "USN-331-1: Linux kernel vulnerabilities",
+        "body": "The ftdi_sio driver for serial USB ports did not limit the amount ofpending data to be written. A local user could exploit this to drainall available kernel memory and thus render the system unusable.(CVE-2006-2936)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-346-1",
+        "title": "USN-346-1: Linux kernel vulnerabilities",
+        "body": "The ftdi_sio driver for serial USB ports did not limit the amount ofpending data to be written. A local user could exploit this to drainall available kernel memory and thus render the system unusable.(CVE-2006-2936)"
+      }
+    ],
+    "CVE-2006-2937": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-353-1",
+        "title": "USN-353-1: openssl vulnerabilities",
+        "body": "Dr. Henson of the OpenSSL core team and Open Network Securitydiscovered a mishandled error condition in the ASN.1 parser. Bysending specially crafted packet data, a remote attacker could exploitthis to trigger an infinite loop, which would render the serviceunusable and consume all available system memory. (CVE-2006-2937)"
+      }
+    ],
+    "CVE-2006-2940": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-353-1",
+        "title": "USN-353-1: openssl vulnerabilities",
+        "body": "Certain types of public key could take disproportionate amounts oftime to process. The library now limits the maximum key exponent sizeto avoid Denial of Service attacks. (CVE-2006-2940)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-353-2",
+        "title": "USN-353-2: OpenSSL vulnerability",
+        "body": "USN-353-1 fixed several vulnerabilities in OpenSSL. However, Mark JCox noticed that the applied patch for CVE-2006-2940 was flawed. Thisupdate corrects that patch."
+      }
+    ],
+    "CVE-2006-3011": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-320-1",
+        "title": "USN-320-1: PHP vulnerabilities",
+        "body": "This update also fixes various bugs which allowed local scriptsto bypass open_basedir and 'safe mode' restrictions by passing specialarguments to tempnam() (CVE-2006-1494, CVE-2006-2660), copy()(CVE-2006-1608), the curl module (CVE-2006-2563), or error_log()(CVE-2006-3011)."
+      }
+    ],
+    "CVE-2006-3083": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-334-1",
+        "title": "USN-334-1: krb5 vulnerabilities",
+        "body": "Michael Calmer and Marcus Meissner discovered that several krb5 toolsdid not check the return values from setuid() system calls. On systemsthat have configured user process limits, it may be possible for anattacker to cause setuid() to fail via resource starvation. In thatsituation, the tools will not reduce their privilege levels, and willcontinue operation as the root user.By default, Ubuntu does not ship with user process limits.Please note that these packages are not officially supported by Ubuntu(they are in the 'universe' component of the archive)."
+      }
+    ],
+    "CVE-2006-3084": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-334-1",
+        "title": "USN-334-1: krb5 vulnerabilities",
+        "body": "Michael Calmer and Marcus Meissner discovered that several krb5 toolsdid not check the return values from setuid() system calls. On systemsthat have configured user process limits, it may be possible for anattacker to cause setuid() to fail via resource starvation. In thatsituation, the tools will not reduce their privilege levels, and willcontinue operation as the root user.By default, Ubuntu does not ship with user process limits.Please note that these packages are not officially supported by Ubuntu(they are in the 'universe' component of the archive)."
+      }
+    ],
+    "CVE-2006-3117": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-313-1",
+        "title": "USN-313-1: OpenOffice.org vulnerabilities",
+        "body": "A buffer overflow has been found in the XML parser. By tricking a userinto opening a specially crafted XML file with OpenOffice.org, thiscould be exploited to execute arbitrary code with the user'sprivileges. (CVE-2006-3117)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-313-2",
+        "title": "USN-313-2: OpenOffice.org vulnerabilities",
+        "body": "A buffer overflow has been found in the XML parser. By tricking a user into opening a specially crafted XML file with OpenOffice.org, this could be exploited to execute arbitrary code with the user's privileges. (CVE-2006-3117)"
+      }
+    ],
+    "CVE-2006-3121": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-335-1",
+        "title": "USN-335-1: heartbeat vulnerability",
+        "body": "Yan Rong Ge discovered that heartbeat did not sufficiently verify somepacket input data, which could lead to an out-of-boundary memoryaccess. A remote attacker could exploit this to crash the daemon(Denial of Service)."
+      }
+    ],
+    "CVE-2006-3459": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-330-1",
+        "title": "USN-330-1: tiff vulnerabilities",
+        "body": "Tavis Ormandy discovered that the TIFF library did not sufficientlycheck handled images for validity. By tricking an user or an automatedsystem into processing a specially crafted TIFF image, an attackercould exploit these weaknesses to execute arbitrary code with thetarget application's privileges.This library is used in many client and server applications, thus youshould reboot your computer after the upgrade to ensure that allrunning programs use the new version of the library."
+      }
+    ],
+    "CVE-2006-3460": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-330-1",
+        "title": "USN-330-1: tiff vulnerabilities",
+        "body": "Tavis Ormandy discovered that the TIFF library did not sufficientlycheck handled images for validity. By tricking an user or an automatedsystem into processing a specially crafted TIFF image, an attackercould exploit these weaknesses to execute arbitrary code with thetarget application's privileges.This library is used in many client and server applications, thus youshould reboot your computer after the upgrade to ensure that allrunning programs use the new version of the library."
+      }
+    ],
+    "CVE-2006-3462": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-330-1",
+        "title": "USN-330-1: tiff vulnerabilities",
+        "body": "Tavis Ormandy discovered that the TIFF library did not sufficientlycheck handled images for validity. By tricking an user or an automatedsystem into processing a specially crafted TIFF image, an attackercould exploit these weaknesses to execute arbitrary code with thetarget application's privileges.This library is used in many client and server applications, thus youshould reboot your computer after the upgrade to ensure that allrunning programs use the new version of the library."
+      }
+    ],
+    "CVE-2006-3463": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-330-1",
+        "title": "USN-330-1: tiff vulnerabilities",
+        "body": "Tavis Ormandy discovered that the TIFF library did not sufficientlycheck handled images for validity. By tricking an user or an automatedsystem into processing a specially crafted TIFF image, an attackercould exploit these weaknesses to execute arbitrary code with thetarget application's privileges.This library is used in many client and server applications, thus youshould reboot your computer after the upgrade to ensure that allrunning programs use the new version of the library."
+      }
+    ],
+    "CVE-2006-3464": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-330-1",
+        "title": "USN-330-1: tiff vulnerabilities",
+        "body": "Tavis Ormandy discovered that the TIFF library did not sufficientlycheck handled images for validity. By tricking an user or an automatedsystem into processing a specially crafted TIFF image, an attackercould exploit these weaknesses to execute arbitrary code with thetarget application's privileges.This library is used in many client and server applications, thus youshould reboot your computer after the upgrade to ensure that allrunning programs use the new version of the library."
+      }
+    ],
+    "CVE-2006-3467": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-324-1",
+        "title": "USN-324-1: freetype vulnerability",
+        "body": "An integer overflow has been discovered in the FreeType library. Bytricking a user into installing and/or opening a specially craftedfont file, these could be exploited to execute arbitrary code with theprivileges of that user."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-341-1",
+        "title": "USN-341-1: libxfont vulnerability",
+        "body": "An integer overflow has been discovered in X.org's font handlinglibrary. By using a specially crafted font file, this could beexploited to crash the X server or execute arbitrary code with rootprivileges."
+      }
+    ],
+    "CVE-2006-3600": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-318-1",
+        "title": "USN-318-1: libtunepimp vulnerability",
+        "body": "Kevin Kofler discovered several buffer overflows in the tag parser. Bytricking a user into opening a specially crafted tagged multimediafile (such as .ogg or .mp3 music) with an application that useslibtunepimp, this could be exploited to execute arbitrary code withthe user's privileges.This particularly affects the KDE applications 'Amarok' and 'Juk'."
+      }
+    ],
+    "CVE-2006-3738": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-353-1",
+        "title": "USN-353-1: openssl vulnerabilities",
+        "body": "Tavis Ormandy and Will Drewry of the Google Security Team discovered abuffer overflow in the SSL_get_shared_ciphers() function. By sendingspecially crafted packets to applications that use this function (likeExim, MySQL, or the openssl command line tool), a remote attackercould exploit this to execute arbitrary code with the server'sprivileges. (CVE-2006-3738)"
+      }
+    ],
+    "CVE-2006-3744": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-340-1",
+        "title": "USN-340-1: imagemagick vulnerabilities",
+        "body": "Tavis Ormandy discovered several buffer overflows in imagemagick's SunRaster and XCF (Gimp) image decoders. By tricking a user or automatedsystem into processing a specially crafted image, this could beexploited to execute arbitrary code with the users' privileges."
+      }
+    ],
+    "CVE-2006-3747": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-328-1",
+        "title": "USN-328-1: Apache vulnerability",
+        "body": "Mark Dowd discovered an off-by-one buffer overflow in the mod_rewritemodule's ldap scheme handling. On systems which activate\"RewriteEngine on\", a remote attacker could exploit certain rewriterules to crash Apache, or potentially even execute arbitrary code(this has not been verified).\"RewriteEngine on\" is disabled by default. Systems which have thisdirective disabled are not affected at all."
+      }
+    ],
+    "CVE-2006-3806": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-350-1",
+        "title": "USN-350-1: Thunderbird vulnerabilities",
+        "body": "Various flaws have been reported that allow an attacker to executearbitrary code with user privileges by tricking the user into openinga malicious email containing JavaScript. Please note that JavaScriptis disabled by default for emails, and it is not recommended to enableit. (CVE-2006-3113, CVE-2006-3802, CVE-2006-3803, CVE-2006-3805,CVE-2006-3806, CVE-2006-3807, CVE-2006-3809, CVE-2006-3810,CVE-2006-3811, CVE-2006-3812, CVE-2006-4253, CVE-2006-4565,CVE-2006-4566, CVE-2006-4571)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-361-1",
+        "title": "USN-361-1: Mozilla vulnerabilities",
+        "body": "Various flaws have been reported that allow an attacker to executearbitrary code with user privileges by tricking the user into openinga malicious URL. (CVE-2006-2788, CVE-2006-3805, CVE-2006-3806,CVE-2006-3807, CVE-2006-3809, CVE-2006-3811, CVE-2006-4565,CVE-2006-4568, CVE-2006-4571)"
+      }
+    ],
+    "CVE-2006-3815": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-326-1",
+        "title": "USN-326-1: heartbeat vulnerability",
+        "body": "Yan Rong Ge discovered that heartbeat did not set proper permissionsfor an allocated shared memory segment. A local attacker could exploitthis to render the heartbeat service unavailable (Denial ofService)."
+      }
+    ],
+    "CVE-2006-4145": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-346-1",
+        "title": "USN-346-1: Linux kernel vulnerabilities",
+        "body": "The UDF file system does not handle extends larger than 1 GB, but didnot check for this restriction on truncating files. A local user couldexploit this to crash the kernel. (CVE-2006-4145)"
+      }
+    ],
+    "CVE-2006-4146": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-356-1",
+        "title": "USN-356-1: gdb vulnerability",
+        "body": "Will Drewry, of the Google Security Team, discovered buffer overflowsin GDB's DWARF processing. This would allow an attacker to executearbitrary code with user privileges by tricking the user into usingGDB to load an executable that contained malicious debugginginformation."
+      }
+    ],
+    "CVE-2006-4227": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-338-1",
+        "title": "USN-338-1: MySQL vulnerabilities",
+        "body": "Dmitri Lenev discovered that arguments of setuid SQL functions wereevaluated in the security context of the functions' definer instead ofits caller. An authenticated user with the privilege to call such afunction could exploit this to execute arbitrary statements with theprivileges of the definer of that function. (CVE-2006-4227)"
+      }
+    ],
+    "CVE-2006-4253": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-350-1",
+        "title": "USN-350-1: Thunderbird vulnerabilities",
+        "body": "Various flaws have been reported that allow an attacker to executearbitrary code with user privileges by tricking the user into openinga malicious email containing JavaScript. Please note that JavaScriptis disabled by default for emails, and it is not recommended to enableit. (CVE-2006-3113, CVE-2006-3802, CVE-2006-3803, CVE-2006-3805,CVE-2006-3806, CVE-2006-3807, CVE-2006-3809, CVE-2006-3810,CVE-2006-3811, CVE-2006-3812, CVE-2006-4253, CVE-2006-4565,CVE-2006-4566, CVE-2006-4571)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-351-1",
+        "title": "USN-351-1: firefox vulnerabilities",
+        "body": "Various flaws have been reported that allow an attacker to executearbitrary code with user privileges by tricking the user into openinga malicious web page containing JavaScript. (CVE-2006-4253,CVE-2006-4565, CVE-2006-4566, CVE-2006-4568, CVE-2006-4569CVE-2006-4571)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-352-1",
+        "title": "USN-352-1: Thunderbird vulnerabilities",
+        "body": "Various flaws have been reported that allow an attacker to executearbitrary code with user privileges by tricking the user into openinga malicious email containing JavaScript. Please note that JavaScriptis disabled by default for emails, and it is not recommended to enableit. (CVE-2006-4253, CVE-2006-4565, CVE-2006-4566, CVE-2006-4571)"
+      }
+    ],
+    "CVE-2006-4339": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-339-1",
+        "title": "USN-339-1: OpenSSL vulnerability",
+        "body": "Philip Mackenzie, Marius Schilder, Jason Waddle and Ben Laurie ofGoogle Security discovered that the OpenSSL library did notsufficiently check the padding of PKCS #1 v1.5 signatures if theexponent of the public key is 3 (which is widely used for CAs). Thiscould be exploited to forge signatures without the need of the secretkey."
+      }
+    ],
+    "CVE-2006-4340": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-350-1",
+        "title": "USN-350-1: Thunderbird vulnerabilities",
+        "body": "The NSS library did not sufficiently check the padding of PKCS #1 v1.5signatures if the exponent of the public key is 3 (which is widelyused for CAs). This could be exploited to forge valid signatureswithout the need of the secret key. (CVE-2006-4340)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-351-1",
+        "title": "USN-351-1: firefox vulnerabilities",
+        "body": "The NSS library did not sufficiently check the padding of PKCS #1 v1.5signatures if the exponent of the public key is 3 (which is widelyused for CAs). This could be exploited to forge valid signatureswithout the need of the secret key. (CVE-2006-4340)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-352-1",
+        "title": "USN-352-1: Thunderbird vulnerabilities",
+        "body": "The NSS library did not sufficiently check the padding of PKCS #1 v1.5signatures if the exponent of the public key is 3 (which is widelyused for CAs). This could be exploited to forge valid signatureswithout the need of the secret key. (CVE-2006-4340)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-361-1",
+        "title": "USN-361-1: Mozilla vulnerabilities",
+        "body": "The NSS library did not sufficiently check the padding of PKCS #1 v1.5signatures if the exponent of the public key is 3 (which is widelyused for CAs). This could be exploited to forge valid signatureswithout the need of the secret key. (CVE-2006-4340)"
+      }
+    ],
+    "CVE-2006-4343": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-353-1",
+        "title": "USN-353-1: openssl vulnerabilities",
+        "body": "Tavis Ormandy and Will Drewry of the Google Security Team reportedthat the get_server_hello() function did not sufficiently check theclient's session certificate. This could be exploited to crash clientsby remote attackers sending specially crafted SSL responses.(CVE-2006-4343)"
+      }
+    ],
+    "CVE-2006-4482": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-342-1",
+        "title": "USN-342-1: PHP vulnerabilities",
+        "body": "On 64 bit systems the str_repeat() and wordwrap() functions did notproperly check buffer boundaries. Depending on the application, thiscould potentially be exploited to execute arbitrary code with theapplications' privileges. This only affects the amd64 and sparcplatforms. (CVE-2006-4482)"
+      }
+    ],
+    "CVE-2006-4486": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-362-1",
+        "title": "USN-362-1: PHP vulnerabilities",
+        "body": "An integer overflow was discovered in the PHP memory allocationhandling. On 64-bit platforms, the \"memory_limit\" setting was notenforced correctly. A remote attacker could exploit this to cause aDenial of Service attack through memory exhaustion. (CVE-2006-4486)"
+      }
+    ],
+    "CVE-2006-4514": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-391-1",
+        "title": "USN-391-1: libgsf vulnerability",
+        "body": "A heap overflow was discovered in the OLE processing code in libgsf. Ifa user were tricked into opening a specially crafted OLE document, anattacker could execute arbitrary code with the user's privileges."
+      }
+    ],
+    "CVE-2006-4519": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-494-1",
+        "title": "USN-494-1: Gimp vulnerability",
+        "body": "Sean Larsson discovered multiple integer overflows in Gimp. By trickinga user into opening a specially crafted DICOM, PNM, PSD, PSP, RAS, XBM,or XWD image, a remote attacker could exploit this to execute arbitrarycode with the user's privileges."
+      }
+    ],
+    "CVE-2006-4535": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-347-1",
+        "title": "USN-347-1: Linux kernel vulnerabilities",
+        "body": "Sridhar Samudrala discovered a local Denial of Service vulnerabilityin the handling of SCTP sockets. By opening such a socket with aspecial SO_LINGER value, a local attacker could exploit this to crashthe kernel. (CVE-2006-4535)"
+      }
+    ],
+    "CVE-2006-4565": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-350-1",
+        "title": "USN-350-1: Thunderbird vulnerabilities",
+        "body": "Various flaws have been reported that allow an attacker to executearbitrary code with user privileges by tricking the user into openinga malicious email containing JavaScript. Please note that JavaScriptis disabled by default for emails, and it is not recommended to enableit. (CVE-2006-3113, CVE-2006-3802, CVE-2006-3803, CVE-2006-3805,CVE-2006-3806, CVE-2006-3807, CVE-2006-3809, CVE-2006-3810,CVE-2006-3811, CVE-2006-3812, CVE-2006-4253, CVE-2006-4565,CVE-2006-4566, CVE-2006-4571)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-351-1",
+        "title": "USN-351-1: firefox vulnerabilities",
+        "body": "Various flaws have been reported that allow an attacker to executearbitrary code with user privileges by tricking the user into openinga malicious web page containing JavaScript. (CVE-2006-4253,CVE-2006-4565, CVE-2006-4566, CVE-2006-4568, CVE-2006-4569CVE-2006-4571)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-352-1",
+        "title": "USN-352-1: Thunderbird vulnerabilities",
+        "body": "Various flaws have been reported that allow an attacker to executearbitrary code with user privileges by tricking the user into openinga malicious email containing JavaScript. Please note that JavaScriptis disabled by default for emails, and it is not recommended to enableit. (CVE-2006-4253, CVE-2006-4565, CVE-2006-4566, CVE-2006-4571)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-361-1",
+        "title": "USN-361-1: Mozilla vulnerabilities",
+        "body": "Various flaws have been reported that allow an attacker to executearbitrary code with user privileges by tricking the user into openinga malicious URL. (CVE-2006-2788, CVE-2006-3805, CVE-2006-3806,CVE-2006-3807, CVE-2006-3809, CVE-2006-3811, CVE-2006-4565,CVE-2006-4568, CVE-2006-4571)"
+      }
+    ],
+    "CVE-2006-4568": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-351-1",
+        "title": "USN-351-1: firefox vulnerabilities",
+        "body": "Various flaws have been reported that allow an attacker to executearbitrary code with user privileges by tricking the user into openinga malicious web page containing JavaScript. (CVE-2006-4253,CVE-2006-4565, CVE-2006-4566, CVE-2006-4568, CVE-2006-4569CVE-2006-4571)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-361-1",
+        "title": "USN-361-1: Mozilla vulnerabilities",
+        "body": "Various flaws have been reported that allow an attacker to executearbitrary code with user privileges by tricking the user into openinga malicious URL. (CVE-2006-2788, CVE-2006-3805, CVE-2006-3806,CVE-2006-3807, CVE-2006-3809, CVE-2006-3811, CVE-2006-4565,CVE-2006-4568, CVE-2006-4571)"
+      }
+    ],
+    "CVE-2006-4572": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-395-1",
+        "title": "USN-395-1: Linux kernel vulnerabilities",
+        "body": "Mark Dowd discovered that the netfilter iptables module did notcorrecly handle fragmented packets. By sending specially craftedpackets, a remote attacker could exploit this to bypass firewallrules. This has only be fixed for Ubuntu 6.10; the corresponding fixfor Ubuntu 5.10 and 6.06 will follow soon. (CVE-2006-4572)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-416-1",
+        "title": "USN-416-1: Linux kernel vulnerabilities",
+        "body": "Mark Dowd discovered that the netfilter iptables module did notcorrecly handle fragmented IPv6 packets. By sending specially craftedpackets, a remote attacker could exploit this to bypass firewallrules. This has has already been fixed for Ubuntu 6.10 in USN-395-1;this is the corresponding fix for Ubuntu 6.06.(CVE-2006-4572)"
+      }
+    ],
+    "CVE-2006-4811": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-368-1",
+        "title": "USN-368-1: Qt vulnerability",
+        "body": "An integer overflow was discovered in Qt's image loader. By processinga specially crafted image with an application that uses this library(like Konqueror), a remote attacker could exploit this to executearbitrary code with the application's privileges."
+      }
+    ],
+    "CVE-2006-4812": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-362-1",
+        "title": "USN-362-1: PHP vulnerabilities",
+        "body": "Stefan Esser discovered that the ecalloc() function in the Zend enginedid not check for integer overflows. This particularly affected theunserialize() function. In applications which unserialize untrusteduser-defined data, this could be exploited to execute arbitrary codewith the application's privileges. (CVE-2006-4812)"
+      }
+    ],
+    "CVE-2006-4814": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-416-1",
+        "title": "USN-416-1: Linux kernel vulnerabilities",
+        "body": "Doug Chapman discovered an improper lock handling in the mincore()function. A local attacker could exploit this to cause an eternal hangin the kernel, rendering the machine unusable. (CVE-2006-4814)"
+      }
+    ],
+    "CVE-2006-4924": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-355-1",
+        "title": "USN-355-1: openssh vulnerabilities",
+        "body": "Tavis Ormandy discovered that the SSH daemon did not properly handleauthentication packets with duplicated blocks. By sending speciallycrafted packets, a remote attacker could exploit this to cause the sshdaemon to drain all available CPU resources until the login grace timeexpired. (CVE-2006-4924)"
+      }
+    ],
+    "CVE-2006-5456": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-372-1",
+        "title": "USN-372-1: imagemagick vulnerability",
+        "body": "M. Joonas Pihlaja discovered that ImageMagick did not sufficientlyverify the validity of PALM and DCM images. When processing aspecially crafted image with an application that uses imagemagick,this could be exploited to execute arbitrary code with theapplication's privileges."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-422-1",
+        "title": "USN-422-1: ImageMagick vulnerabilities",
+        "body": "Vladimir Nadvornik discovered that the fix for CVE-2006-5456, releasedin USN-372-1, did not correctly solve the original flaw in PALM imagehandling. By tricking a user into processing a specially crafted imagewith an application that uses imagemagick, an attacker could executearbitrary code with the user's privileges."
+      }
+    ],
+    "CVE-2006-5467": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-371-1",
+        "title": "USN-371-1: Ruby vulnerability",
+        "body": "An error was found in Ruby's CGI library that did not correctly checkfor the end of multipart MIME requests. Using a crafted HTTP request, aremote user could cause a denial of service, where Ruby CGI applicationswould end up in a loop, monopolizing a CPU."
+      }
+    ],
+    "CVE-2006-5619": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-395-1",
+        "title": "USN-395-1: Linux kernel vulnerabilities",
+        "body": "James Morris discovered that the ip6fl_get_n() function incorrectlyhandled flow labels. A local attacker could exploit this to crash thekernel. (CVE-2006-5619)"
+      }
+    ],
+    "CVE-2006-5757": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-416-1",
+        "title": "USN-416-1: Linux kernel vulnerabilities",
+        "body": "A race condition was found in the grow_buffers() function. By mountinga specially crafted ISO9660 or NTFS file system, a local attackercould exploit this to trigger an infinite loop in the kernel,rendering the machine unusable. (CVE-2006-5757)"
+      }
+    ],
+    "CVE-2006-5779": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-384-1",
+        "title": "USN-384-1: OpenLDAP vulnerability",
+        "body": "Evgeny Legerov discovered that the OpenLDAP libraries did not correctlytruncate authcid names. This situation would trigger an assert andabort the program using the libraries. A remote attacker could sendspecially crafted bind requests that would lead to an LDAP server denialof service."
+      }
+    ],
+    "CVE-2006-5793": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-383-1",
+        "title": "USN-383-1: libpng vulnerability",
+        "body": "Tavis Ormandy discovered that libpng did not correctly calculate thesize of sPLT structures when reading an image. By tricking a user or anautomated system into processing a specially crafted PNG file, anattacker could exploit this weakness to crash the application using thelibrary."
+      }
+    ],
+    "CVE-2006-5864": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-390-1",
+        "title": "USN-390-1: evince vulnerability",
+        "body": "A buffer overflow was discovered in the PostScript processor included inevince. By tricking a user into opening a specially crafted PS file, anattacker could crash evince or execute arbitrary code with the user'sprivileges."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-390-2",
+        "title": "USN-390-2: evince vulnerability",
+        "body": "USN-390-1 fixed a vulnerability in evince. The original fix did notfully solve the problem, allowing for a denial of service in certainsituations.Original advisory details:A buffer overflow was discovered in the PostScript processor included in evince. By tricking a user into opening a specially crafted PS file, an attacker could crash evince or execute arbitrary code with the user's privileges."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-390-3",
+        "title": "USN-390-3: evince-gtk vulnerability",
+        "body": "USN-390-2 fixed vulnerabilities in evince. This update provides thecorresponding update for evince-gtk.Original advisory details:A buffer overflow was discovered in the PostScript processor included in evince. By tricking a user into opening a specially crafted PS file, an attacker could crash evince or execute arbitrary code with the user's privileges."
+      }
+    ],
+    "CVE-2006-5867": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-405-1",
+        "title": "USN-405-1: fetchmail vulnerability",
+        "body": "It was discovered that fetchmail did not correctly require TLSnegotiation in certain situations. This would result in a user'sunencrypted password being sent across the network.If fetchmail has been configured to use the \"sslproto tls1\",\"sslcertck\", or \"sslfingerprint\" options with a server that does notcorrectly support TLS negotiation, this update may cause fetchmail to(correctly) abort authentication."
+      }
+    ],
+    "CVE-2006-5870": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-406-1",
+        "title": "USN-406-1: OpenOffice.org vulnerability",
+        "body": "An integer overflow was discovered in OpenOffice.org's handling of WMFfiles. If a user were tricked into opening a specially crafted WMFfile, an attacker could execute arbitrary code with user privileges."
+      }
+    ],
+    "CVE-2006-6058": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-574-1",
+        "title": "USN-574-1: Linux kernel vulnerabilities",
+        "body": "The minix filesystem did not properly validate certain filesystemvalues. If a local attacker could trick the system into attemptingto mount a corrupted minix filesystem, the kernel could be made tohang for long periods of time, resulting in a denial of service.This was only vulnerable in Ubuntu 7.04 and 7.10. (CVE-2006-6058)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-558-1",
+        "title": "USN-558-1: Linux kernel vulnerabilities",
+        "body": "The minix filesystem did not properly validate certain filesystem values.If a local attacker could trick the system into attempting to mount acorrupted minix filesystem, the kernel could be made to hang for longperiods of time, resulting in a denial of service. (CVE-2006-6058)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-578-1",
+        "title": "USN-578-1: Linux kernel vulnerabilities",
+        "body": "The minix filesystem did not properly validate certain filesystemvalues. If a local attacker could trick the system into attemptingto mount a corrupted minix filesystem, the kernel could be made tohang for long periods of time, resulting in a denial of service.(CVE-2006-6058)"
+      }
+    ],
+    "CVE-2006-6106": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-416-1",
+        "title": "USN-416-1: Linux kernel vulnerabilities",
+        "body": "Marcel Holtman discovered several buffer overflows in the Bluetoothdriver. By sending Bluetooth packets with specially crafted CAPImessages, a remote attacker could exploit these to crash the kernel.(CVE-2006-6106)"
+      }
+    ],
+    "CVE-2006-6303": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-394-1",
+        "title": "USN-394-1: Ruby vulnerability",
+        "body": "An error was found in Ruby's CGI library that did not correctly quotethe boundary of multipart MIME requests. Using a crafted HTTP request,a remote user could cause a denial of service, where Ruby CGIapplications would end up in a loop, monopolizing a CPU."
+      }
+    ],
+    "CVE-2006-6501": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-398-1",
+        "title": "USN-398-1: Firefox vulnerabilities",
+        "body": "Various flaws have been reported that allow an attacker to executearbitrary code with user privileges by tricking the user into openinga malicious web page containing JavaScript or SVG. (CVE-2006-6497,CVE-2006-6498, CVE-2006-6499, CVE-2006-6501, CVE-2006-6502,CVE-2006-6504)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-398-2",
+        "title": "USN-398-2: Firefox vulnerabilities",
+        "body": "Various flaws have been reported that allow an attacker to executearbitrary code with user privileges by tricking the user into openinga malicious web page containing JavaScript or SVG. (CVE-2006-6497,CVE-2006-6498, CVE-2006-6499, CVE-2006-6501, CVE-2006-6502,CVE-2006-6504)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-400-1",
+        "title": "USN-400-1: Thunderbird vulnerabilities",
+        "body": "Various flaws have been reported that allow an attacker to executearbitrary code with user privileges or bypass internal XSS protectionsby tricking the user into opening a malicious email containingJavaScript. Please note that JavaScript is disabled by default foremails, and it is not recommended to enable it. (CVE-2006-6497,CVE-2006-6498, CVE-2006-6499, CVE-2006-6501, CVE-2006-6502,CVE-2006-6503)"
+      }
+    ],
+    "CVE-2006-6504": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-398-1",
+        "title": "USN-398-1: Firefox vulnerabilities",
+        "body": "Various flaws have been reported that allow an attacker to executearbitrary code with user privileges by tricking the user into openinga malicious web page containing JavaScript or SVG. (CVE-2006-6497,CVE-2006-6498, CVE-2006-6499, CVE-2006-6501, CVE-2006-6502,CVE-2006-6504)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-398-2",
+        "title": "USN-398-2: Firefox vulnerabilities",
+        "body": "Various flaws have been reported that allow an attacker to executearbitrary code with user privileges by tricking the user into openinga malicious web page containing JavaScript or SVG. (CVE-2006-6497,CVE-2006-6498, CVE-2006-6499, CVE-2006-6501, CVE-2006-6502,CVE-2006-6504)"
+      }
+    ],
+    "CVE-2006-7229": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-578-1",
+        "title": "USN-578-1: Linux kernel vulnerabilities",
+        "body": "Alexander Schulze discovered that the skge driver does not properlyuse the spin_lock and spin_unlock functions. Remote attackers couldexploit this by sending a flood of network traffic and cause a denialof service (crash). (CVE-2006-7229)"
+      }
+    ],
+    "CVE-2006-7232": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-588-1",
+        "title": "USN-588-1: MySQL vulnerabilities",
+        "body": "Masaaki Hirose discovered that MySQL could be made to dereferencea NULL pointer. An authenticated user could cause a denial of service(application crash) via an EXPLAIN SELECT FROM on the INFORMATION_SCHEMAtable. This issue only affects Ubuntu 6.06 and 6.10. (CVE-2006-7232)"
+      }
+    ]
+  }
+}

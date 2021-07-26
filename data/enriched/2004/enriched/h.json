@@ -1,0 +1,217 @@
+{
+  "year": 2004,
+  "total": 24,
+  "reference": "kb.cert.org",
+  "reports": {
+    "CVE-2004-0119": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/638548",
+        "title": "Microsoft Windows SSP interface fails to properly validate value used during authentication protocol selection",
+        "overview": "A remotely exploitable vulnerability in Microsoft's Negotiate Security Software Provider (SSP) interface could permit an attacker to execute arbitrary code on the system.",
+        "description": "Microsoft's Negotiate Security Software Provider (SSP) interface contains a buffer overflow during the processing of data sent for authentication protocol selection. A unathenticated remote attacker could send a malicious request to the SSP service to exploit this vulnerability. The following systems are affected:Windows XPWindows Server 2003Windows 2000Systems running Internet Information Services (IIS)"
+      }
+    ],
+    "CVE-2004-0123": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/255924",
+        "title": "Microsoft Windows ASN.1 library contains a memory management vulnerability",
+        "overview": "Microsoft's ASN.1 library contains a memory management error that could be exploited by a remote attacker to cause a denial-of-service situation, or execute arbitrary code.",
+        "description": "Microsoft's ASN.1 library contains a memory management error, potentially a \"double-free\" condition. By sending a crafted request, an attacker may be able to exploit this vulnerability to corrupt memory or execute arbitrary code. This vulnerability affects the following systems:Windows XPWindows Server 2003Windows NT 4.0Windows 2000Windows 98, 98 SE, ME"
+      }
+    ],
+    "CVE-2004-0203": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/948750",
+        "title": "Microsoft Outlook Web Access contains vulnerability in HTML redirection query",
+        "overview": "A cross-site scripting vulnerability in Microsoft Exchange 5.5 Outlook Web Access (OWA) could allow an attacker to execute arbitrary scripting code in the victim's browser.",
+        "description": "Outlook Web Access (OWA) is a component of Microsoft Exchange. By using OWA, a server that is running Exchange Server can also function as a website that lets authorized users read or send email messages, manage their calendar, or perform other mail functions over the Internet by using a web browser. A cross-site scripting vulnerability exists in the way OWA validates user input provided to an HTML redirection query. By convincing a user to click on a specially crafted URL within an email message, an attacker could cause arbitrary scripting code to be executed in the victim's browser. If executed, the script would have all privileges of the OWA user, including access to and manipulation of messages and folders on the server."
+      }
+    ],
+    "CVE-2004-0220": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/223273",
+        "title": "Integer underflow vulnerability in isakmpd \"Certificate Request Payload\" handling",
+        "overview": "A vulnerability exists in the isakmpd that could allow a remote attacker to cause a denial of service.",
+        "description": "The OpenBSD isakmpd establishes security associations for encrypted and authenticated (IPsec) network traffic. It implements the Internet Security Association and Key Management Protocol (ISAKMP) and Internet Key Exchange (IKE) protocol. An integer underflow error exists in isakmpd's handling of certain \"Certificate Request Payloads\". An ISAKMP packet with a malformed Certificate Request Payload can trigger this error, resulting in failed allocation of a large amount of memory and subsequent crash of the isakmpd service."
+      }
+    ],
+    "CVE-2004-0244": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/810062",
+        "title": "Cisco 6000/6500/7600 series systems fail to properly process layer 2 frames",
+        "overview": "Cisco 6000/6500/7600 series systems with Multilayer Switch Feature Card 2 (MSFC2) fail to properly process layer 2 frames.",
+        "description": "Cisco 6000/6500/7600 series systems with MSFC2 contain a vulnerability in the way layer 2 frames are processed in software. By sending a specially crafted layer 2 frame that is inconsistent with the length of the encapsulated layer 3 packet, an attacker could cause the system to freeze or reset. This vulnerability only affects systems with specific hardware/software configurations.According to the Cisco Advisory, the following systems are affected:Cisco 6000/6500/7600 series systems with MSFC2 and a FlexWAN or OSM moduleCisco 6000/6500/7600 series systems with MSFC2 that are running 12.1(8b)E14 are affected even if they do not have a FlexWAN or OSM module.Note: Cisco 6000/6500/7600 series systems with a Supervisor 720 are not affected by this vulnerability.The Cisco Advisory also mentions that affected systems may be running native or hybrid code. Hybrid is a term used to refer to a configuration where CatOS is running on the Supervisor Engine and Cisco IOS is running on the MSFC. Native code is a term used to refer to a configuration where a single IOS image runs on both the Supervisor and the MSFC."
+      }
+    ],
+    "CVE-2004-0273": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/514734",
+        "title": "Multiple Real media players fail to properly validate RMP files",
+        "overview": "Multiple Real media players fail to properly validate RealJukebox Metadata Package (RMP) files which may permit an attacker to download and execute arbitrary code on the user's system.",
+        "description": "RealNetworks Real media players are multimedia applications that allow users to view local and remote audio/video content. These players support multiple media types including RealJukebox Metadata Package (RMP) files. There is a vulnerability in the way Real players validate RMP files. This flaw could be used by an attacker to download and execute arbitrary code on the user's system by creating a specially crafted RMP file.According to RealNetworks Security Advisory, this vulnerability affects the following products:RealOne PlayerRealOne Player v2 (all language versions, all platforms)RealOne Enterprise Desktop or RealPlayer Enterprise (all versions, standalone and as configured by the RealOne Desktop Manager or RealPlayer Enterprise Manager)"
+      }
+    ],
+    "CVE-2004-0368": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/179804",
+        "title": "Common Desktop Environment (CDE) dtlogin XDMCP parser improperly deallocates memory",
+        "overview": "A \"double-free\" vulnerability in the CDE dtlogin program could allow a remote attacker to execute arbitrary code or cause a denial of service on a vulnerable system.",
+        "description": "The Common Desktop Environment (CDE) is an integrated graphical user interface that runs on UNIX and Linux operating systems. The dtlogin program contains a \"double-free\" vulnerability that can be triggered by a specially crafted X Display Manager Control Protocol (XDMCP) packet.",
+        "impact": "Depending on configuration, operating system, and platform architecture, an unauthenticated, remote attacker could execute arbitrary code, read sensitive information, or cause a denial of service."
+      }
+    ],
+    "CVE-2004-0574": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/203126",
+        "title": "Microsoft IIS contains vulnerability in NNTP service",
+        "overview": "A vulnerability in the NNTP component of Microsoft IIS may allow a remote attacker to compromise the affected system.",
+        "description": "The Network News Transport Protocol (NNTP) is a protocol for the distribution, inquiry, retrieval, and posting of news articles over a network. Microsoft's Internet Information Services (IIS) provides support for a number of protocols, including NNTP. In addition to the original protocol specification in IETF RFC977, a number of standard extensions to NNTP are specified in RFC2980. One of these, the XPAT command, is used to retrieve specific headers from specific articles, based on pattern matching on the contents of the header. Several related flaws exist in the way the NNTP component handles the parsing and translation of user-supplied search patterns. These flaws result in a vulnerability that could be exploited by an attacker with the ability to send a specially crafted message to the affected server.",
+        "impact": "A remote unauthenticated attacker may be able to execute code of their choosing with administrative privileges on the affected system."
+      }
+    ],
+    "CVE-2004-0637": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/316206",
+        "title": "Oracle Database Server contains several vulnerabilities",
+        "overview": "Several vulnerabilities exist in the Oracle Database Server and Listener. According the the Oracle Security Alert, exploitation of these vulnerabilities would require the attacker to have network access, but not a valid user account on the vulnerable system.",
+        "description": "Oracle Database 10g Release 1 version 10.1.0.2, Oracle9i Database Server Release 2 versions 9.2.0.4 and 9.2.0.5, Oracle9i Database Server Release 1 versions 9.0.1.4, 9.0.1.5 and 9.0.4, and Oracle8i Database Server Release 3 version 8.1.7.4 contain multiple vulnerabilities in the in the Database Server and Listener. In order to exploit these vulnerabilities an attacker would need to have network access to the vulnerable systems.",
+        "impact": "The complete impact of this vulnerabilities is not clear. Oracle has rated this issue as High. For more information about Oracle's severity ratings please see:http://otn.oracle.com/deploy/security/pdf/oracle_severity_ratings.pdf"
+      }
+    ],
+    "CVE-2004-0657": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/584606",
+        "title": "NTP service vulnerable to internal overflow if date / time offset is greater than 34 years",
+        "overview": "NTP (Network TIme Protocol) contains an integer overflow vulnerability that may lead to clients receiving an incorrect date/time offset.",
+        "description": "NTP (Network Time Protocol) is a method by which client machines can synchronize the local date and time with a reference server. The server will miscalculate the offset reply, if it receives a request from an NTP client containing a date that is more or less than 34 years of the server's date.This offset is a 64-bit value, with 32 bits representing whole seconds, and 32 bits representing fractions of a second . The 34-year limit is imposed by the use of a 32-bit signed integer.The NTP server performs a series of calculations, accounting for transmission delay and computing time, resulting in a value which represents the difference between the NTP server time and the requesting machine's time. The packet sent back to the client is a date/time offset, which is then used to update the client's date/time.",
+        "impact": "Clients making requests of an NTP server and supplying a date/time that is more than 34 years in the future (or past) from the NTP server date/time will receive an incorrect date/time offset from the server, resulting in an incorrect date/time on the client. There is no known impact to the NTP server."
+      }
+    ],
+    "CVE-2004-0772": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/350792",
+        "title": "MIT Kerberos krb524d insecurely deallocates memory (double-free)",
+        "overview": "The MIT Kerberos krb524d daemon does not securely deallocate heap memory when handling an error condition, resulting in a double-free vulnerability. An unauthenticated, remote attacker could execute arbitrary code on a system running krb524d, which in many cases is also a Kerberos Distribution Center (KDC). The compromise of a KDC system can lead to the compromise of an entire Kerberos realm. An attacker may also be able to cause a denial of service on a system running krb524d.",
+        "description": "As described on the MIT Kerberos web site: \"Kerberos is a network authentication protocol. It is designed to provide strong authentication for client/server applications by using secret-key cryptography.\" MIT Kerberos code is used in network applications from a variety of different vendors and is included in many UNIX and Linux distributions.The MIT Kerberos krb524d daemon converts Kerberos 5 service tickets into Kerberos 4 service tickets. There is a double-free vulnerability in krb524d that can be triggered during the conversion of a cross-realm ticket. From MITKRB5-SA-2004-002:The patch (introduced in krb5-1.2.8 and present in all subsequentreleases) for disabling krb4 cross-realm authentication in krb524dintroduced a double-free vulnerability. If handle_classic_v4() deniesthe conversion of a cross-realm ticket, v5tkt->enc_part2 gets freedbut not nulled, so do_connection() double-frees many things when itsubsequently calls krb5_free_ticket().",
+        "impact": "An unauthenticated, remote attacker to could execute arbitrary code on a system running krb524d. In many cases, this system also operates a KDC, so this vulnerability could allow an attacker to gain the master secret for a Kerberos realm, leading to compromise of the entire realm. An attacker may also be able to crash a system running krb524d, causing a denial of service."
+      }
+    ],
+    "CVE-2004-0840": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/394792",
+        "title": "Microsoft Windows SMTP component vulnerable to remote code execution",
+        "overview": "A vulnerability in the mail handling service in some versions of Microsoft Windows could allow a remote attacker to compromise the affected system.",
+        "description": "The Simple Mail Transfer Protocol (SMTP) is the most common protocol for the delivery of electronic mail between systems on the Internet. Some versions of Microsoft Windows support the ability to act as an SMTP server. The ability to interact with the Domain Name System (DNS) is critical for an SMTP server to deliver mail to a remote user (e.g., user@example.com). A buffer management flaw exists in the way that the SMTP service handles DNS responses. A remote attacker with the ability to craft DNS response messages could exploit this vulnerability to compromise the affected system.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with administrative privileges on an affected system."
+      }
+    ],
+    "CVE-2004-0847": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/283646",
+        "title": "Microsoft ASP.NET fails to perform proper canonicalization",
+        "overview": "Microsoft ASP.NET contains a canonicalization vulnerability that may allow a remote unauthenticated attacker to gain access to secure contents.",
+        "description": "Microsoft ASP.NET is a programming framework for creating web applications. The canonicalization routine used by ASP.NET fails to correctly parse URLs.",
+        "impact": "Depending on the contents of the web site, an attacker may take a variety of actions. For example, a remote unauthenticated attacker may be able to access secure web site contents by using a specially crafted URL."
+      }
+    ],
+    "CVE-2004-0978": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/673134",
+        "title": "Microsoft MSN \"Hrtbeat.ocx\" ActiveX control contains unspecified vulnerability",
+        "overview": "A vulnerability exists in the Microsoft MSN \"Hrtbeat.ocx\" ActiveX control.",
+        "description": "ActiveX is a technology that allows programmers to create reusable software components that can be incorporated into applications to extend their functionality. Microsoft Internet Explorer provides support for the ActiveX technology. There is a vulnerability in the Microsoft MSN \"Hrtbeat.ocx\" ActiveX control. This control provides support for online gaming when visiting MSN related sites. The following information is provided in MS04-038:This update sets the kill bit for the Hrtbeat.ocx ActiveX control. This control implements support for online gaming in MSN related sites. Internet Explorer no longer supports this control. This control has been found to contain a security vulnerability. To help protect customers who have this control installed, this update prevents the control from running or from being reintroduced onto users’ systems by setting the kill bit for the control. For more information about kill bits, see Microsoft Knowledge Base Article 240797.For information on preventing ActiveX controls from running in Internet Explorer, please refer to the Microsoft article \"How to Stop an ActiveX Control from Running in Internet Explorer.\"",
+        "impact": "The impact of this vulnerability is not known. In the case of a buffer overflow, a remote attacker could execute arbitrary code with the privileges of the user running Internet Explorer. The attacker may also be able to cause a denial of service."
+      }
+    ],
+    "CVE-2004-1029": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/760344",
+        "title": "Sun Java Plug-in fails to restrict access to private Java packages",
+        "overview": "There is a vulnerability in the Sun Java Plug-in that could allow a malicious Java applet to bypass restrictions for untrusted applets.",
+        "description": "The Java Plug-in is part of the Java 2 Runtime Environment (JRE) and establishes a framework for displaying Java applets within a web browser. There is a vulnerability in the Java Plug-in security framework that could allow a malicious applet to bypass restrictions for accessing private Java packages. Java's built-in security framework is designed to prevent access to private Java packages that are used internally by the Java Virtual Machine (JVM). When a Java applet attempts to access one of these packages, an AccessControlException will be thrown indicating that the requested access is denied. However, a flaw in the security framework fails to prevent such access to these private Java packages via JavaScript code.",
+        "impact": "By convincing a victim to download and run a malicious Java applet, an intruder could read, write, and modify files on the system with privileges of the victim.The reporter notes that some private Java packages contain classes that allow direct access to memory or provide methods that can modify private fields of Java objects. This could allow an intruder to disable the Java security manager."
+      }
+    ],
+    "CVE-2004-1363": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/316206",
+        "title": "Oracle Database Server contains several vulnerabilities",
+        "overview": "Several vulnerabilities exist in the Oracle Database Server and Listener. According the the Oracle Security Alert, exploitation of these vulnerabilities would require the attacker to have network access, but not a valid user account on the vulnerable system.",
+        "description": "Oracle Database 10g Release 1 version 10.1.0.2, Oracle9i Database Server Release 2 versions 9.2.0.4 and 9.2.0.5, Oracle9i Database Server Release 1 versions 9.0.1.4, 9.0.1.5 and 9.0.4, and Oracle8i Database Server Release 3 version 8.1.7.4 contain multiple vulnerabilities in the in the Database Server and Listener. In order to exploit these vulnerabilities an attacker would need to have network access to the vulnerable systems.",
+        "impact": "The complete impact of this vulnerabilities is not clear. Oracle has rated this issue as High. For more information about Oracle's severity ratings please see:http://otn.oracle.com/deploy/security/pdf/oracle_severity_ratings.pdf"
+      }
+    ],
+    "CVE-2004-1364": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/316206",
+        "title": "Oracle Database Server contains several vulnerabilities",
+        "overview": "Several vulnerabilities exist in the Oracle Database Server and Listener. According the the Oracle Security Alert, exploitation of these vulnerabilities would require the attacker to have network access, but not a valid user account on the vulnerable system.",
+        "description": "Oracle Database 10g Release 1 version 10.1.0.2, Oracle9i Database Server Release 2 versions 9.2.0.4 and 9.2.0.5, Oracle9i Database Server Release 1 versions 9.0.1.4, 9.0.1.5 and 9.0.4, and Oracle8i Database Server Release 3 version 8.1.7.4 contain multiple vulnerabilities in the in the Database Server and Listener. In order to exploit these vulnerabilities an attacker would need to have network access to the vulnerable systems.",
+        "impact": "The complete impact of this vulnerabilities is not clear. Oracle has rated this issue as High. For more information about Oracle's severity ratings please see:http://otn.oracle.com/deploy/security/pdf/oracle_severity_ratings.pdf"
+      }
+    ],
+    "CVE-2004-1367": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/316206",
+        "title": "Oracle Database Server contains several vulnerabilities",
+        "overview": "Several vulnerabilities exist in the Oracle Database Server and Listener. According the the Oracle Security Alert, exploitation of these vulnerabilities would require the attacker to have network access, but not a valid user account on the vulnerable system.",
+        "description": "Oracle Database 10g Release 1 version 10.1.0.2, Oracle9i Database Server Release 2 versions 9.2.0.4 and 9.2.0.5, Oracle9i Database Server Release 1 versions 9.0.1.4, 9.0.1.5 and 9.0.4, and Oracle8i Database Server Release 3 version 8.1.7.4 contain multiple vulnerabilities in the in the Database Server and Listener. In order to exploit these vulnerabilities an attacker would need to have network access to the vulnerable systems.",
+        "impact": "The complete impact of this vulnerabilities is not clear. Oracle has rated this issue as High. For more information about Oracle's severity ratings please see:http://otn.oracle.com/deploy/security/pdf/oracle_severity_ratings.pdf"
+      }
+    ],
+    "CVE-2004-1371": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/316206",
+        "title": "Oracle Database Server contains several vulnerabilities",
+        "overview": "Several vulnerabilities exist in the Oracle Database Server and Listener. According the the Oracle Security Alert, exploitation of these vulnerabilities would require the attacker to have network access, but not a valid user account on the vulnerable system.",
+        "description": "Oracle Database 10g Release 1 version 10.1.0.2, Oracle9i Database Server Release 2 versions 9.2.0.4 and 9.2.0.5, Oracle9i Database Server Release 1 versions 9.0.1.4, 9.0.1.5 and 9.0.4, and Oracle8i Database Server Release 3 version 8.1.7.4 contain multiple vulnerabilities in the in the Database Server and Listener. In order to exploit these vulnerabilities an attacker would need to have network access to the vulnerable systems.",
+        "impact": "The complete impact of this vulnerabilities is not clear. Oracle has rated this issue as High. For more information about Oracle's severity ratings please see:http://otn.oracle.com/deploy/security/pdf/oracle_severity_ratings.pdf"
+      }
+    ],
+    "CVE-2004-1759": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/721092",
+        "title": "Cisco IBM Director agent does not properly handle arbitrary TCP packets to port 14247/tcp",
+        "overview": "Cisco IBM Director agent does not properly handle arbitrary TCP packets to port 14247/tcp.",
+        "description": "Cisco voice products (e.g. CallManager, IP Interactive Voice Response, IP Call Center Express) that run on IBM servers install IBM Director agent to provide administrative management. There is a flaw in the way the IBM Director agent (twgipc.exe) handles arbitrary TCP packets to port 14247/tcp. A remote attacker could cause a denial-of-service condition by sending arbitrary TCP packets to the IBM Director agent on port 14247/tcp. This vulnerability could be exploited by port scanning an affected system.",
+        "impact": "A remote attacker could cause the IBM Director Agent to consume 100% of the CPU until the server is rebooted."
+      }
+    ],
+    "CVE-2004-1760": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/602734",
+        "title": "Cisco default install of IBM Director agent fails to authenticate users for remote administration",
+        "overview": "Cisco IBM Director agent fails to authenticate users for remote administration.",
+        "description": "Cisco voice products (e.g. CallManager, IP Interactive Voice Response, IP Call Center Express) that run on IBM servers install IBM Director agent to provide administrative management. The default installation of the IBM Director agent does not require authentication for performing remote administration.",
+        "impact": "A remote attacker could perform administrative functions without authenticating."
+      }
+    ],
+    "CVE-2004-1767": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/702526",
+        "title": "Sun Solaris allows unprivileged local user to load arbitrary kernel modules",
+        "overview": "Sun Solaris allows an unprivileged local user to load arbitrary kernel modules.",
+        "description": "Sun Solaris supports loadable kernel modules (LKMs). LKMs are pieces of code that can be dynamically loaded and unloaded into the kernel. Sun Solaris contains a vulnerability that could allow an unprivileged local user to load arbitrary kernel modules.",
+        "impact": "A local user could gain root privileges by loading arbitrary kernel modules."
+      }
+    ],
+    "CVE-2004-2320": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/867593",
+        "title": "Web servers enable HTTP TRACE method by default",
+        "overview": "The HTTP TRACE method returns the contents of client HTTP requests in the entity-body of the TRACE response. Attackers could leverage this behavior to access sensitive information, such as cookies or authentication data, contained in the HTTP headers of the request.",
+        "description": "The HTTP TRACE method asks a web server to echo the contents of the request back to the client for debugging purposes. The HTTP TRACE method is described in the HTTP 1.1 standard (RFC 2616, section 9.8):9.8 TRACE The TRACE method is used to invoke a remote, application-layer loop- back of the request message. The final recipient of the request SHOULD reflect the message received back to the client as the entity-body of a 200 (OK) response. ... If the request is valid, the response SHOULD contain the entire request message in the entity-body, with a Content-Type of \"message/http\". Responses to this method MUST NOT be cached.As defined above, the complete request, including HTTP headers, is returned in the entity-body of a TRACE response. Using features that provide client-side HTTP protocol support, such as XMLHTTP ActiveX or XMLDOM scripting objects, a web site can cause browsers to issue TRACE requests. The site can read the TRACE response, including sensitive header information such as cookies or authentication data.When combined with cross-domain browser vulnerabilities (VU#244729, VU#711843, VU#728563), HTTP TRACE and client-side HTTP support can be leveraged by attackers to read sensitive header information from third-party domains. This technique has been termed \"Cross-Site Tracing,\" or XST, in a report published by WhiteHat Security. As noted in the report, the technique can be used to bypass the HttpOnly cookie attribute introduced in Microsoft Internet Explorer 6.0 SP1. HttpOnly blocks script access to the cookie property (document.cookie), but does not prevent a scripting object from reading the cookie out of an HTTP TRACE response.",
+        "impact": "Attackers may abuse HTTP TRACE functionality to gain access to information in HTTP headers such as cookies and authentication data. In the presence of other cross-domain vulnerabilities in web browsers, sensitive header information could be read from any domains that support the HTTP TRACE method."
+      }
+    ],
+    "CVE-2004-2761": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/836068",
+        "title": "MD5 vulnerable to collision attacks",
+        "overview": "Weaknesses in the MD5 algorithm allow for collisions in output. As a result, attackers can generate cryptographic tokens or other data that illegitimately appear to be authentic.",
+        "description": "A secure cryptographic hash algorithm is one that generates a unique identifier of a fixed size (known as a \"digest\" or simply \"hash\") for a block of data of arbitrary size. The MD5 algorithm is a standard, widely used example of such an algorithm and is defined in IETF RFC 1321. One of the requirements of secure cryptographic hash algorithms is that it be extremely unlikely for two different inputs to the algorithm to generate the same digest. This property is generally referred to as collision resistance and cases where an algorithm generates the same digest for two different blocks of data are known as collisions.Cryptanalytic research published in 1996 described a weakness in the MD5 algorithm that could result in collision attacks, at least in principle. Further research published in 2004 demonstrated the practical ability for an attacker to generate collisions and in 2005 the ability for an attacker to generate colliding x.509 certificates was demonstrated. In 2008, researchers demonstrated the practical vulnerability of Public Key Infrastructures (PKI) to such attacks, including the construction of an SSL certificate that allows an attacker to impersonate a trusted root Certificate Authority (CA). Most operating systems bundle a collection of trusted CA certificates, including some that use the MD5 signing algorithm, providing obvious targets for attackers to spoof.",
+        "impact": "An attacker can construct forged data in a variety of forms that will cause software using the MD5 algorithm to incorrectly identify it as trustworthy. Because the underlying vulnerability occurs in a cryptographic primitive, specific exploitation scenarios vary widely depending on the nature of the data the attacker has the ability to spoof and how it is validated by software. In a particularly egregious vulnerability scenario, a victim user may be mislead into supplying sensitive information to a malicious website believing that it is authentic based on an apparently valid signed SSL certificate."
+      }
+    ]
+  }
+}

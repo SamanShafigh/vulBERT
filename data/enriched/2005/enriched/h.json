@@ -1,0 +1,303 @@
+{
+  "year": 2005,
+  "total": 34,
+  "reference": "kb.cert.org",
+  "reports": {
+    "CVE-2005-0050": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/130433",
+        "title": "Microsoft License Logging Service buffer overflow",
+        "overview": "A vulnerability in a component of some server versions of Microsoft Windows could allow a remote attacker to execute code on a vulnerable system.",
+        "description": "Microsoft's License Logging Service (LLS) assists in the management of licenses for some Microsoft server products. An error in the way that the LLS handles an unchecked buffer results in a vulnerability. An attacker with the ability to send a specially-crafted message to the LLS could exploit this vulnerability to execute code of their choosing or cause a denial of service. The specific nature of the message exploiting this vulnerability is not known.Microsoft reports that, for some affected versions of Windows, only authenticated users or programs on the local network can establish a connection to the LLS and exploit the vulnerability. These versions areWindows 2000 Server Service Pack 4Windows Server 2003Windows Small Business Server 2003 and Small Business Server 2000 running on Windows 2000 Server Service Pack 4For other affected versions of Windows, any unauthenticated remote attacker may be able to connect to the LLS and exploit the vulnerability. Microsoft also notes that LLS is disabled by default in Windows Server 2003 and will not be included in future versions of the Windows operating system.",
+        "impact": "On affected versions of Windows NT and Windows 2000 Server, a remote attacker may be able to execute arbitrary code with Local System privileges on a vulnerable system. Microsoft reports that exploitation of this vulnerability on Windows Server 2003 systems causes the License Logging Service to crash, resulting in a denial of service on that platform."
+      }
+    ],
+    "CVE-2005-0116": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/272296",
+        "title": "AWStats fails to properly filter user-supplied input",
+        "overview": "A lack of input validation in AWStats may allow a remote attacker to execute arbitrary commands.",
+        "description": "AWStats is a Perl CGI script that collects and graphically displays statistics from web, FTP, and mail servers. The configdir parameter, within the awstats.pl Perl script, is supplied user-controlled data and then passed as a parameter to the Perl routine open(). A lack of input validation on the configdir parameter may allow an attacker to compromise a vulnerable server. If an attacker supplies this parameter with arbitrary commands prefixed with the '|' character, those commands will be executed on the server.Please note that according to public reports, this vulnerability is being actively exploited.",
+        "impact": "If a remote attacker supplies AWStats with specially crafted input, that attacker may be able to execute arbitrary commands with the privileges of the attacked server process, in most cases user nobody."
+      }
+    ],
+    "CVE-2005-0211": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/886006",
+        "title": "Squid vulnerable to buffer overflow via an overly long WCCP message",
+        "overview": "The Squid web proxy cache is vulnerable to a buffer overflow when handing overly long web cache communications protocol (WCCP) messages. Such messages could crash the Squid process and produce a denial of service condition.",
+        "description": "Squid functions as a web proxy and cache application for number of protocols. It supports WCCP to enable communications between routers and web caches. A recvfrom() call in the WCCP handling routines accepts more data than the buffer size may be able to handle. An attacker may be able to crash the Squid process by sending an overly-long WCCP message.",
+        "impact": "A remote unauthenticated attacker may be able to crash the Squid process and create a denial of service condition. Sites not using WCCP, which is disabled by default, are not affected."
+      }
+    ],
+    "CVE-2005-0560": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/275193",
+        "title": "Microsoft Exchange Server contains unchecked buffer in SMTP extended verb handling",
+        "overview": "A vulnerability in some versions of Microsoft's Exchange Server may allow a remote attacker to execute arbitrary code on an affected server.",
+        "description": "Microsoft's Exchange Server supports a number of protocols for handling email, including the Simple Mail Transfer Protocol (SMTP) and SMTP extended verbs as defined by RFC2821. A buffer overflow error exists in the way that Exchange Server 2003 and Exchange 2000 Server handle a particular, but unspecified SMTP extended verb. This error results in a vulnerability that could allow a remote attacker to execute arbitrary code or cause a denial of service. According to Microsoft, this vulnerability could be exploited by:On Exchange 2000, any anonymous user who could connect to an SMTP port on the Exchange Server and issue a specially crafted extended verb request.On Exchange 2003, the level of authentication required to exploit this vulnerability is typically only granted to other Exchange Servers within the same organization. In this case, the attacker would have to connect to an SMTP port on the Exchange Server with the authority of another Exchange Server within the same organization and issue a specially crafted extended verb request.NOTE: We are aware of publicly available exploit code for this vulnerability and have received reports of successful compromise of vulnerable systems.",
+        "impact": "Remote attackers may be able to cause a denial of service or execute code of their choosing on an affected system, depending on the version of Exchange Server being used. In the case of code execution, the code would be run with the privileges of the Exchange Server, typically Local System."
+      }
+    ],
+    "CVE-2005-0803": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/134756",
+        "title": "Microsoft Windows buffer overflow in Enhanced Metafile rendering API",
+        "overview": "Microsoft Windows Enhanced Metafile Format image rendering routines contain a buffer overflow flaw that may allow an attacker to cause a denial-of-service condition.",
+        "description": "Microsoft describes the Enhanced Metafile Format (EMF) as the following:An EMF image is a 32-bit format that can contain both vector information and bitmap information. This format is an improvement over the Windows Metafile Format and contains extended features. For more information about image types and formats, see Microsoft Knowledge Base Article 320314. Additional information about these file formats is also available at the MSDN Library Web Site.The Microsoft Windows EMF rendering routines may fail to properly check a buffer length, possibly resulting in a crash of the affected application or in the application failing to respond. Any program that uses these routines to render a specially-crafted image file is vulnerable to the issue.Proof of concept code related to this issue is known to be available at this time.",
+        "impact": "A remote, unauthenticated attacker may cause an affected application to stop responding or crash."
+      }
+    ],
+    "CVE-2005-1155": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/973309",
+        "title": "Mozilla may execute JavaScript with elevated privileges when defined in site icon tag",
+        "overview": "Mozilla may execute JavaScript contained within a site icon tag with elevated privileges. This may allow an attacker to execute arbitrary commands on a vulnerable system.",
+        "description": "XPCOMXPCOM is a cross-platform component object model similar to Microsoft COM or CORBA. XPCOM provides the following features to software developers:Component managementFile abstractionObject message passingMemory ManagementXPConnectXPConnect enables simple interoperation between XPCOM and JavaScript. XPConnect allows JavaScript to access and manipulate XPCOM objects. It also allows JavaScript objects to present XPCOM compliant interfaces to be called by XPCOM objects.ChromeThe Mozilla user interface components outside of the content area are created using chrome. This includes toolbars, menu bars, progress bars, and window title bars. Chrome provides content, locale, and skin information for the user interface.Chrome scriptChrome scripts have elevated privileges. Because of the extra privileges, they can perform actions that web scripts cannot. Chrome scripts also do not prompt for permission before executing potentially dangerous commands, such as creating or calling XPCOM components.Site iconsA site icon is an icon associated with a particular web site or page. This icon may appear in the address bar or bookmarks of the web browser. A web page can specify a site icon by using the <LINK REL=\"icon\"> or <LINK REL=\"shortcut icon\"> HTML tags.The problemMozilla executes script within a LINK tag that specifies a site icon. This script is treated as a chrome script and is therefore granted extra privileges. By granting UniversalXPConnect privileges to itself, a chrome script can gain unrestricted access to browser APIs using XPConnect. A script with these privileges may create and execute arbitrary files on the local filesystem.",
+        "impact": "By convincing a user to view an HTML document (e.g., a web page), an attacker could execute arbitrary commands or code with the privileges of the user. The attacker could take any action as the user. If the user has administrative privileges, the attacker could take complete control of the user's system.We have received reports of active exploitation of this vulnerability."
+      }
+    ],
+    "CVE-2005-1689": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/623332",
+        "title": "MIT Kerberos 5 contains double free vulnerability in \"krb5_recvauth()\" function",
+        "overview": "An unauthenticated attacker can cause krb5_recvauth() function to free a block of memory twice, possibly leading to arbitrary code execution.",
+        "description": "Kerberos is a network authentication system that uses a trusted third party (a KDC) to authenticate clients and servers to each other. It is designed to provide strong authentication for client/server applications by using secret-key cryptography. MIT Kerberos code is used in network applications from a variety of different vendors and is included in many UNIX and Linux distributions.MIT krb5 Security Advisory 2005-003 issued 2005 July 12, available from <http://web.mit.edu/kerberos/www/advisories/MITKRB5-SA-2005-003-recvauth.txt> states:The krb5_recvauth() function can free previously freed memory under some error conditions. This vulnerability may allow an unauthenticated remote attacker to execute arbitrary code. Exploitation of this vulnerability on a Kerberos Key Distribution Center (KDC) host can result in compromise of an entire Kerberos realm. No exploit code is known to exist at this time. Exploitation of double-free vulnerabilities is believed to be difficult.",
+        "impact": "An unauthenticated attacker may be able to execute arbitrary code in the context of a program calling krb5_recvauth(). This includes the kpropd program which typically runs on slave Key Distribution Center (KDC) hosts, potentially leading to compromise of an entire Kerberos realm. For more information please see the MIT krb5 Security Advisory 2005-003."
+      }
+    ],
+    "CVE-2005-1790": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/887861",
+        "title": "Microsoft Internet Explorer vulnerable to code execution via mismatched DOM objects",
+        "overview": "Microsoft Internet Explorer fails to properly handle requests to mismatched DOM objects, which may allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft Internet Explorer does not properly handle requests to mismatched DOM objects, such as the window() object. When an HTML document references a DOM object in a specially crafted manner, Internet Explorer can crash in a way that allows an attacker to execute arbitrary shell code.Note: Proof of concept code is publicly available. This vulnerability is being actively exploited to spread malicious software such as Win32/Delf.DH and Troj/Clunky-B.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page, an HTML email message, or an HTML email attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause IE (or the program using the WebBrowser control) to crash."
+      }
+    ],
+    "CVE-2005-2087": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/939605",
+        "title": "JVIEW Profiler (javaprxy.dll) COM object contains an unspecified vulnerability",
+        "overview": "The JVIEW Profiler COM object contains an unspecified vulnerability, which may allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft COMMicrosoft COM is a technology that allows programmers to create reusable software components that can be incorporated into applications to extend their functionality. Microsoft COM includes COM+, Distributed COM (DCOM), and ActiveX Controls.ActiveX controlsActiveX controls are COM objects that are designed to be used in Internet Explorer. A web page can make use of an ActiveX control through the use of the OBJECT tag.JVIEW ProfilerThe JVIEW Profiler is a COM object provided by javaprxy.dll, which is an interface to the debugger in the Microsoft Java Virtual Machine.The ProblemInternet Explorer will attempt to instantiate any COM object that is referenced by a web page. COM objects that are not ActiveX controls may cause unexpected results, such as crashing Internet Explorer. The JVIEW Profiler COM object crashes in a way that can be exploited to execute arbitrary code on a vulnerable system.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message), an attacker could execute arbitrary code with the privileges of the user. The attacker could also cause IE (or the program using the WebBrowser control) to crash.Proof of concept code is publicly available."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/959049",
+        "title": "Multiple COM objects cause memory corruption in Microsoft Internet Explorer",
+        "overview": "Microsoft Internet Explorer (IE) allows instantiation of COM objects not designed for use in the browser, which may allow a remote attacker to execute arbitrary code or crash IE.",
+        "description": "Microsoft COMMicrosoft COM is a technology that allows programmers to create reusable software components that can be incorporated into applications to extend their functionality. Microsoft COM includes COM+, Distributed COM (DCOM), and ActiveX Controls.ActiveX controlsActiveX controls are COM objects that have visual elements. ActiveX controls are traditionally designed to be used in Internet Explorer. A web page can make use of an ActiveX control in various ways, such as by referencing its Class Identifier (CLSID) in an HTML OBJECT tag.The ProblemInternet Explorer will attempt to instantiate any COM object that is referenced by a web page. Certain COM objects that are not designed for use in Internet Explorer may cause unexpected results, such as executing arbitrary code or crashing the browser.Exploit code for these vulnerabilities are publicly available.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page, an HTML email message, or an email attachment), an attacker could execute arbitrary code with the privileges of the user. The attacker could also cause IE (or the program using the WebBrowser control) to crash."
+      }
+    ],
+    "CVE-2005-2127": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/740372",
+        "title": "Microsoft DDS Library Shape Control (msdds.dll) COM object contains an unspecified vulnerability",
+        "overview": "Microsoft DDS Library Shape Control COM object contains an unspecified vulnerability, which may allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft COMMicrosoft COM is a technology that allows programmers to create reusable software components that can be incorporated into applications to extend their functionality. Microsoft COM includes COM+, Distributed COM (DCOM), and ActiveX Controls.ActiveX controlsActiveX controls are COM objects that are designed to be used in Internet Explorer. A web page can make use of an ActiveX control through the use of the OBJECT tag.Microsoft DDS Library Shape ControlThe Microsoft DDS Library Shape Control is a COM object provided by msdds.dll, which comes with various Microsoft products such as Visual Studio .NET and Microsoft Office.The ProblemInternet Explorer will attempt to instantiate any COM object that is referenced by a web page. COM objects that are not ActiveX controls may cause unexpected results, such as crashing Internet Explorer. We are tracking this issue as VU#680526. The Microsoft DDS Library Shape Control COM object crashes in a way that can be exploited to execute arbitrary code on a vulnerable system.Through limited local testing, it appears that systems with Visual Studio .NET 2002 are vulnerable to the public exploit code. msdds.dll versions 7.0.6064.9112 and 7.0.9466.0 are vulnerable, but version 7.10.3077.0 does not appear to be vulnerable. Although Office XP does provide a vulnerable version of msdds.dll, the default install does not provide the required msvcp70.dll and msvcr70.dll files for the COM object to be to be used by Internet Explorer.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause IE (or the program using the WebBrowser control) to crash.Proof of concept code is publicly available."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/959049",
+        "title": "Multiple COM objects cause memory corruption in Microsoft Internet Explorer",
+        "overview": "Microsoft Internet Explorer (IE) allows instantiation of COM objects not designed for use in the browser, which may allow a remote attacker to execute arbitrary code or crash IE.",
+        "description": "Microsoft COMMicrosoft COM is a technology that allows programmers to create reusable software components that can be incorporated into applications to extend their functionality. Microsoft COM includes COM+, Distributed COM (DCOM), and ActiveX Controls.ActiveX controlsActiveX controls are COM objects that have visual elements. ActiveX controls are traditionally designed to be used in Internet Explorer. A web page can make use of an ActiveX control in various ways, such as by referencing its Class Identifier (CLSID) in an HTML OBJECT tag.The ProblemInternet Explorer will attempt to instantiate any COM object that is referenced by a web page. Certain COM objects that are not designed for use in Internet Explorer may cause unexpected results, such as executing arbitrary code or crashing the browser.Exploit code for these vulnerabilities are publicly available.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page, an HTML email message, or an email attachment), an attacker could execute arbitrary code with the privileges of the user. The attacker could also cause IE (or the program using the WebBrowser control) to crash."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/898241",
+        "title": "Microsoft BlnMgr Proxy (blnmgrps.dll) COM object fails to implement required methods",
+        "overview": "The Microsoft BlnMgr Proxy COM object fails to implement the methods required by the IDispatch interface, which may allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft COMMicrosoft COM is a technology that allows programmers to create reusable software components that can be incorporated into applications to extend their functionality. Microsoft COM includes COM+, Distributed COM (DCOM), and ActiveX Controls.Internet ExplorerInternet Explorer will attempt to instantiate a COM object or ActiveX control that is referenced by an OBJECT tag in an HTML document.BlnMgr Proxy COM objectThe BlnMgr Proxy COM object is provided by blnmgrps.dll, which comes with various Microsoft products such as Microsoft Office.The ProblemThe BlnMgr Proxy COM object provides the IDispatch interface, but it does not implement the required methods of GetTypeInfoCount, GetTypeInfo, GetIDsOfNames, or Invoke. When Internet Explorer attempts to instantiate the BlnMgr Proxy COM object, IE will crash because the methods required by the IDispatch interface are not present. The crash occurs in a way that can be exploited to execute arbitrary code on a vulnerable system. The CLSID for this COM object is: {F27CE930-4CA3-11D1-AFF2-006097C9A284}.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause IE (or the program using the WebBrowser control) to crash."
+      }
+    ],
+    "CVE-2005-2340": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/629845",
+        "title": "Apple QuickTime image handling buffer overflow",
+        "overview": "Apple QuickTime contains a heap-based buffer overflow that may allow an attacker to execute arbitrary code or cause a denial-of-service condition.",
+        "description": "Apple QuickTime fails to properly validate QuickTime Images (QTIF), potentially allowing a heap-based buffer overflow to occur. If a remote attacker supplies a vulnerable Apple QuickTime installation with a specially crafted QTIF image, that attacker may be able to trigger the buffer overflow. In addition, this issue may also be exploitable via specially crafted PICT and JPEG images. Note that this issue affects QuickTime installations on both Apple Mac and Microsoft Windows operating systems.",
+        "impact": "A remote unauthenticated attacker may be able to execute arbitrary code or cause a denial-of-service condition, if they can persuade a user to access a specially crafted QTIF image."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/687201",
+        "title": "Apple QuickTime and iTunes QTIF image buffer overflow",
+        "overview": "Apple QuickTime contains a heap-based buffer overflow that may allow an attacker to execute arbitrary code or cause a denial-of-service condition.",
+        "description": "Apple QuickTime fails to properly validate QuickTime Images (QTIF), potentially allowing a heap-based buffer overflow to occur. If a remote attacker supplies a vulnerable Apple QuickTime installation with a specially crafted QTIF image, that attacker may be able to trigger the buffer overflow. This issue affects QuickTime installations on both Apple Mac and Microsoft Windows operating systems.Note that since QuickTime is a component of Apple iTunes, iTunes installations are also affected by this vulnerability.",
+        "impact": "A remote unauthenticated attacker may be able to execute arbitrary code or cause a denial-of-service condition, if they can persuade a user to access a specially crafted QTIF image."
+      }
+    ],
+    "CVE-2005-2341": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/570768",
+        "title": "Research in Motion (RIM) BlackBerry Attachment Service does not properly handle TIFF image files",
+        "overview": "The Research in Motion (RIM) BlackBerry Attachment Service contains a vulnerability in the way the service handles TIFF files. By causing the service to render a specially crafted TIFF file and convincing a user to view the file on a BlackBerry Handheld device, an attacker could cause a denial of service to the Attachment Service.",
+        "description": "The BlackBerry Attachment Service is a component of the BlackBerry Enterprise Server (BES). The BlackBerry Attachment Service renders certain types of files sent as email attachments for display on BlackBerry Handhelds and other BlackBerry client devices. A heap overflow vulnerability in the way the service renders TIFF format image files could allow an attacker supplying a specially crafted TIFF file to cause the service to stop functioning. A user must view the attacker-supplied attachment on a BlackBerry Handheld in order to trigger the vulnerability.From RIM Technical Knowledge Center article KB-04757:There is no impact on any other services (for example, sending and receiving messages, making phone calls, browsing the Internet, and running handheld applications to access a corporate network).The Attachment Service automatically restarts immediately or within a specified time period (the default is 25 minutes). The administrator can restart the Attachment Service at any time.",
+        "impact": "By supplying a specially crafted TIFF image as an email attachment and convincing a user to view the image on a BlackBerry Handheld, a remote, unauthenticated attacker could cause a denial of service to the Blackberry Attachment Service. A denial of service may only affect some users, and the Attachment Service may start new threads immediately or after a specified time period (25 minutes by default)."
+      }
+    ],
+    "CVE-2005-2344": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/646976",
+        "title": "Research in Motion (RIM) BlackBerry Attachment Service does not properly handle PNG image files",
+        "overview": "The Research in Motion (RIM) BlackBerry Attachment Service contains a vulnerability in the way the service handles PNG files. By causing the service to render a specially crafted PNG file and convincing a user to view the file on a BlackBerry Handheld device, an attacker could execute arbitrary code or cause a denial of service to the Attachment Service.",
+        "description": "The BlackBerry Attachment Service is a component of the BlackBerry Enterprise Server (BES). The BlackBerry Attachment Service renders certain types of files sent as email attachments for display on BlackBerry Handhelds and other BlackBerry client devices. A vulnerability in the way the service renders Portable Network Graphic (PNG) format image files could allow an attacker supplying a specially crafted PNG file to execute arbitrary code or cause the service to stop functioning. A user must view the attacker-supplied attachment on a BlackBerry Handheld in order to trigger the vulnerability.The underlying vulnerability may be related to the way PNG uses zlib.",
+        "impact": "By supplying a specially crafted PNG image as an email attachment and convincing a user to view the image on a BlackBerry Handheld, a remote, unauthenticated attacker could execute arbitrary code or cause a denial of service to the Blackberry Attachment Service. The attacker may be able to take control of a vulnerable system.A denial of service may only affect some users, and the Attachment Service may start new threads immediately or after a specified time period (25 minutes by default)."
+      }
+    ],
+    "CVE-2005-2454": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/383092",
+        "title": "IBM Lotus Notes sets insecure default permissions on program data",
+        "overview": "IBM Lotus Notes sets insecure default permissions on the Notes directory. This vulnerability may allow a local attacker to gain unintended access to Lotus Notes program data.",
+        "description": "IBM Lotus Notes installs numerous program files and program data in a special directory known as the Notes directory. According to IBM Technote #21246773:By default, beginning with Notes 6.5.4 and affecting 6.5.5, 7.0 and 7.0.1, \"Full Control\" access (read/write/execute) to the Notes program and data directory is granted to the Windows group \"Everyone\".",
+        "impact": "A local attacker may be able to gain unintended access to Lotus Notes program data."
+      }
+    ],
+    "CVE-2005-2495": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/102441",
+        "title": "Multiple X servers fail to properly allocate memory for large pixmaps",
+        "overview": "Multiple X Window System servers contain a pixmap memory allocation flaw that may allow local users to execute code with elevated privileges.",
+        "description": "Multiple X Window System server applications share code that may contain a flaw in the memory allocation for large pixmaps. The affected products include the X.Org and XFree86 X server applications, possibly among others.An integer overflow condition may result in a memory allocation request returning an allocated region that is incorrectly sized. The client may then be able to use the XDrawPoint() and XGetImage() functions to read and write to arbitrary locations in the X server's address space.",
+        "impact": "A malicious local authenticated attacker may be able to execute arbitrary code with the privileges of the X server."
+      }
+    ],
+    "CVE-2005-2618": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/884076",
+        "title": "IBM Lotus Notes ZIP file handling buffer overflow",
+        "overview": "IBM Lotus Notes contains a buffer overflow when handling a ZIP file with a large file name. This could allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "IBM Lotus Notes is an integrated client application that provides functionality including email, calendar, instant messaging, and collaboration. Notes has the ability to extract ZIP archive files. The method for extracting ZIP files contains a buffer overflow vulnerability. The vulnerable code is executed when a user clicks the View option after selecting a ZIP file.",
+        "impact": "By convincing a user to view a specially crafted ZIP file, a remote attacker may be able to execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2005-2922": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/172489",
+        "title": "RealNetworks products fail to properly handle chunked data",
+        "overview": "Numerous RealNetworks products do not properly handle chunked data. This vulnerability may allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "RealNetworks RealPlayerRealNetworks RealPlayer is a multimedia application that allows users to view local and remote audio/video content. Chunked EncodingChunked encoding is a means to transfer variable-sized units of data (called chunks) from a web client to a web server. The ProblemNumerous RealNetworks products fail to properly handle file chunks allowing a buffer overflow to occur. By persuading a user to access a RealPlayer file hosted on a malicious server, a remote attacker may be able to execute arbitrary code.ConsiderationsA complete list of affected software is available in the RealNetwork Security Update for March 2006.",
+        "impact": "By convincing a user to open RealPlayer file hosted on a malicious server, a remote unauthenticated attacker can execute arbitrary code."
+      }
+    ],
+    "CVE-2005-3265": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/930345",
+        "title": "Skype URI handling routine contains a buffer overflow",
+        "overview": "A buffer overflow in Skype may allow a remote attacker to execute code on a vulnerable system.",
+        "description": "Skype software provides telephone service over IP networks. There is a buffer overflow in the routines that handle Skype-specific URIs (callto:// or skype://). The buffer overflow may stem from an input validation error in the Delphi routine SysUtils.WideFmtStr(...). For more information, please see Skype Security Bulletin SKYPE-SB/2005-002 and Delphi Bug Report 4744.",
+        "impact": "A remote attacker may be able to execute arbitrary code if they can persuade a user to access a Skype-specific URI with a vulnerable Skype installation."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/668193",
+        "title": "Skype VCARD handling routine contains a buffer overflow",
+        "overview": "A buffer overflow in the way Skype handles imported VCARDs may allow a remote attacker to execute code on a vulnerable system.",
+        "description": "Skype software provides telephone service over IP networks. Skype fails to properly validate imported VCARDs, allowing a buffer overflow to occur. The buffer overflow may stem from an input validation error in the Delphi routine SysUtils.WideFmtStr(...). For more information, please see Skype Security Bulletin SKYPE-SB/2005-002 and Delphi Bug Report 4744.",
+        "impact": "A remote attacker may be able to execute arbitrary code if they can persuade a user to import a specially crafted VCARD with a Skype-specific URI with a vulnerable Skype installation."
+      }
+    ],
+    "CVE-2005-3267": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/905177",
+        "title": "Skype vulnerable to heap-based buffer overflow",
+        "overview": "A heap-based buffer overflow in Skype may allow a remote attacker to execute arbitrary code or cause a denial-of-service condition.",
+        "description": "Skype software provides telephone service over IP networks. Skype contains a buffer overflow in a routine that parses incoming network traffic. The issue exists because Skype relies on user-controlled data to determine the size of buffers used to handle incoming packets. This may allow a remote attacker to manipulate memory allocation routines to create an under-sized buffer. When data is copied to this buffer, a heap-based buffer overflow may occur. For more information, please refer to Skype Security Bulletin SKYPE-SB/2005-003.",
+        "impact": "A remote attacker may be able to overwrite heap memory causing the Skype process to crash or cause unpredictable behavior. In addition, public reports claim this vulnerability can be used to execute arbitrary code."
+      }
+    ],
+    "CVE-2005-3567": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/194753",
+        "title": "IBM Tivoli Directory Server may allow unauthorized access",
+        "overview": "IBM Tivoli Directory Server may allow unauthorized access to change, modify, and/or delete directory data under certain circumstances.",
+        "description": "The IBM Tivoli Directory Server product is described as:IBM Tivoli Directory Server provides a powerful Lightweight Directory Access Protocol (LDAP) identity infrastructure that is the foundation for deploying comprehensive identity management applications and advanced software architectures like Web services.The Tivoli Directory Server may allow unauthorized access enabling attackers to manipulate directory data that they should not be able to access or change. Additional details about the underlying cause of the vulnerability are not available.",
+        "impact": "An attacker may be able to access, delete, modify, or change directory data."
+      }
+    ],
+    "CVE-2005-3650": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/312073",
+        "title": "First4Internet CodeSupport ActiveX controls incorrectly marked 'safe for scripting'",
+        "overview": "An ActiveX control used to uninstall XCP Digital Rights Management (DRM) software made by First 4 Internet and distributed on some Sony BMG audio CDs is marked \"Safe for scripting\"",
+        "description": "XCP Digital Rights Management (DRM) software by First 4 Internet, which is distributed by some Sony BMG audio CDs. The XCP copy protection software uses \"rootkit\" technology to hide certain files from the user. A problem has been reported in an ActiveX control used to uninstall this software.It has been reported that upon submitting a request to uninstall the DRM software, the user will receive via email a link to a Sony BMG web page. This page will attempt to install an ActiveX control when it is displayed in Internet Explorer. This ActiveX control is marked \"Safe for scripting,\" which means that any web page may be able to utilize the control and its methods. Some of the methods provided by this control appear to present security problems, as they may allow an attacker to download and execute arbitrary code.",
+        "impact": "It has been reported the ActiveX control used to uninstall XCP DRM software may allow remote attackers to download and execute arbitrary code on vulnerable systems. The ActiveX control will only execute code that is packaged in a certain file format."
+      }
+    ],
+    "CVE-2005-3710": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/150753",
+        "title": "Apple QuickTime TIFF image \"StripByteCounts\" integer overflow",
+        "overview": "Apple QuickTime contains an integer overflow vulnerability in the handling of TIFF images, which may allow a remote unauthenticated attacker to execute arbitrary code or cause a denial of service on a vulnerable system.",
+        "description": "Apple's QuickTime Player is multimedia software that allows users to view local and remote audio, video, and image content. QuickTime contains an integer overflow vulnerability in code that handles the StripByteCounts tag in Tagged Image File Format (TIFF) images.This vulnerability may be triggered by using the QuickTime Player or an application that uses the QuickTime plug-in, such as a web browser.Note that this issue affects QuickTime installations on both Apple Mac and Windows operating systems.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or cause a denial of service if the user is persuaded to view a specially crafted TIFF file."
+      }
+    ],
+    "CVE-2005-3713": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/913449",
+        "title": "Apple QuickTime fails to properly handle corrupt GIF images",
+        "overview": "Apple's QuickTime is a player for files and streaming media in a variety of different formats. A flaw in QuickTime's handling of files in the Graphics Interchange Format (GIF) could allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "A heap overflow exists in the way QuickTime handles the Netscape Navigator Application Extension Block of a GIF image. A specially crafted GIF image can allow attackers to execute arbitrary code of their choosing with the privileges of the user running QuickTime.Note that this issue affects QuickTime installations on both Apple Mac OS X and Microsoft Windows operating systems.",
+        "impact": "An attacker with the ability to supply a maliciously crafted GIF file (.gif) could execute arbitrary code on a vulnerable system. The attacker-supplied code would be executed with the privileges of the QuickTime user opening the malicious file. The crafted GIF image may be supplied on a webpage or in email, or by some other means designed to encourage the victim to invoke QuickTime on the exploit image."
+      }
+    ],
+    "CVE-2005-3962": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/948385",
+        "title": "Perl contains an integer sign error in format string processing",
+        "overview": "The Perl interpreter contains a flaw that may increase the impact of format string vulnerabilities in programs written in Perl.",
+        "description": "Perl is a programming language used in many applications and commonly used for web applications. The Perl interpreter, which interprets and executes Perl programs, contains an integer sign error in its format string processing for formatted I/O.",
+        "impact": "An attacker may leverage this vulnerability to increase the impact a format string vulnerability in a Perl program. This vulnerability in the Perl interpreter is not directly exploitable."
+      }
+    ],
+    "CVE-2005-4069": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/928689",
+        "title": "SunnComm MediaMax privilege elevation vulnerability",
+        "overview": "SunnComm MediaMax contains a privilege elevation vulnerability, which may allow a user with limited rights to execute code with elevated privileges.",
+        "description": "SunnComm MediaMaxSunnComm MediaMax is copy protection software that is automatically installed by some audio CDs. Sony BMG has provided a list of titles that include MediaMax version 5 software. A device driver is Included with the MediaMax software, which prevents the CD from being copied. The user must be a member of the Windows \"Administrators\" or \"Power Users\" group for the software to install. Note that the driver and part of the software is installed before the End User License Agreement (EULA) is presented to the user.The problemThe MediaMax software is installed with file permissions that are not restrictive enough. The MediaMax software is located in \"\\Program Files\\Common Files\\SunnComm Shared.\" The MediaMax installer grants \"Full Control\" file permissions to \"Everyone,\" which means that any user of the system may replace the MediaMax software with arbitrary code. The next time a CD that contains MediaMax is launched, this code will run with the privileges of the user that is logged on. If the user who launches the MediaMax CD has administrative privileges, then the attacker-supplied code will also run with administrative privileges.",
+        "impact": "This vulnerability may give a user with access to the filesystem the ability to execute arbitrary code with elevated privileges."
+      }
+    ],
+    "CVE-2005-4092": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/921193",
+        "title": "Apple QuickTime fails to properly handle corrupt media files",
+        "overview": "Apple QuickTime contains a heap overflow vulnerability in the handling of media files which may allow a remote unauthenticated attacker to execute arbitrary code or cause a denial of service on a vulnerable system.",
+        "description": "Apple's QuickTime Player is multimedia software that allows users to view local and remote audio, video, and image content. Quicktime contains a heap overflow vulnerability in code that handles the stsd atom of a media file.This vulnerability may be triggered by using the QuickTime Player or an application that uses the QuickTime plug-in, such as a web browser.Note that this issue affects QuickTime installations on both Apple Mac and Windows operating systems.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or cause a denial of service if the user is persuaded to view a specially crafted media file."
+      }
+    ],
+    "CVE-2005-4459": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/856689",
+        "title": "VMware NAT Service vulnerable to buffer overflow via FTP PORT/EPRT commands",
+        "overview": "The VMware NAT Service used in multiple VMware products contains a buffer overflow in the way it handles FTP PORT and EPRT commands. An attacker could execute arbitrary code with the privileges of the NAT service or cause a denial of service.",
+        "description": "VMware virtualization software provides Network Address Translation (NAT) for guest systems to access networks. The VMware NAT Service does not adequately validate parameters to the PORT and EPRT commands. As a result, specially crafted PORT or EPRT commands can trigger a buffer overflow. VMware Workstation, GSX Server, ACE, and Player products for Windows, Linux, and Solaris host platforms are affected. Additional information is available in VMware Knowledge Base Answer ID 2000.To exploit this vulnerability, an attacker would need to convince a user to run code provided by the attacker on a VMware guest/virtual system. The attacker could then cross the boundary of the guest system and run arbitrary code within the context of the NAT process on the VMware host system. This attack vector may be of particular concern to users who intentionally run untrusted code in VMware environments. An attacker could also exploit this vulnerability remotely if the VMware NAT Service is configured to forward connections to guest/virtual systems. By default, the VMware NAT Service is not configured to forward connections, and in either scenario it may be necessary for the attacker to connect to an FTP server in order to issue crafted PORT or EPRT commands.",
+        "impact": "An attacker could execute arbitrary code with the privileges of the VMware NAT Service (Local System on Windows platforms, root on Linux platforms) or cause a denial of service."
+      }
+    ],
+    "CVE-2005-4560": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/181038",
+        "title": "Microsoft Windows Metafile handler SETABORTPROC GDI Escape vulnerability",
+        "overview": "Microsoft Windows is vulnerable to remote code execution via an error in handling files using the Windows Metafile image format. Exploit code has been publicly posted and used to successfully attack fully-patched Windows XP SP2 systems. However, other versions of the Windows operating system also may be at risk.",
+        "description": "Windows Graphic Display Interface (GDI)Windows GDI is an interface that \"enables applications to use graphics and formatted text on both the video display and the printer.\" GDI functions can be used to draw lines, text, curves, and other graphical elements.GDI Escape functionThe GDI Escape function allows an application to access capabilities of a device that are not directly available through GDI. For example, a print job can be cancelled via a GDI Escape call.Windows Metafile (WMF)Microsoft Windows Metafile (WMF) format images are graphical files that can contain both vector and bitmap-based picture information. WMF files contain a sequence of GDI function calls. The image is created by executing the GDI functions.The problemCertain GDI functions can have unexpected security implications. According to the MSDN document Security Considerations: GDI:Bitmaps, metafiles, and fonts are complex structures that could become corrupted. It is good practice to try to ensure that these items are uncorrupted and from a trustworthy source.Current public exploits use the SETABORTPROC GDI Escape function to execute arbitrary code when viewed. The SETABORTPROC GDI Escape is obsolete, and is provided only for compatibility with 16-bit versions of Windows. Other GDI functions, in particular the GDI Escape functions, may also have similar vulnerabilities.The public exploits currently use the Windows Picture and Fax Viewer (SHIMGVW.DLL) as an attack vector. However, please note that disabling the Windows Picture and Fax Viewer will not eliminate this vulnerability. Limited testing has shown that any application that makes the SetWinMetaFileBits GDI function call may be used to trigger the SETABORTPROC GDI Escape on Windows NT, Windows 2000, Windows XP, and Windows Server 2003. The GDI implementation of Windows 98 and Windows Me appears to be different in that the PlayMetaFile GDI function seems to trigger the SETABORTPROC GDI Escape.Any application that can open a file with the associated program for that file type, such as one that uses ShellExecute, can be used as an attack vector. Most email clients can be used as an attack vector for this vulnerability in this way. Windows Picture and Fax Viewer is the application that is associated with WMF and other graphic files by default on Windows XP and Windows Server 2003.Internet Explorer is a common attack vector for this vulnerability because, in its default configuration, it can automatically launch the Windows Picture and Fax Viewer as the result of viewing a web page. Google Desktop Search (GDS) can also trigger the vulnerability if a malicious WMF file is placed in a location that is indexed. Other content indexing software may also be vulnerable.The following diagram illustrates several attack vectors for this vulnerability:",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code if the user is persuaded to view a specially crafted Windows Metafile."
+      }
+    ],
+    "CVE-2005-4882": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/632633",
+        "title": "Wyse Simple Imager (WSI) includes vulnerable versions of TFTPD32",
+        "overview": "Wyse Simple Imager (WSI) includes older versions version of TFTPD32 that contains publicly known vulnerabilities. An attacker could exploit these vulnerabilities to potentially execute arbitrary code on the system running WSI and TFTPD32.",
+        "description": "Wyse Simple Imager (WSI) is a component of Wyse Device Manager (WDM, formerly known as Wyse Rapport). WSI includes TFTPD32 as the TFTP service to load firmware images on client devices. The versions of TFTPD32 contains several known vulnerabilities. The following list of TFTPD32 vulnerabilities is based on public information:CVE-2002-2226 Buffer overflow in tftpd of TFTP32 2.21 and earlier allows remote attackers to execute arbitrary code via a long filename argument.CVE-2002-2237 tftp32 TFTP server 2.21 and earlier allows remote attackers to cause a denial of service via a GET request with a DOS device name such as com1 or aux.CVE-2002-2353 tftpd32 2.50 and 2.50.2 allows remote attackers to read or write arbitrary files via a full pathname in GET and PUT requests.CVE-2006-0328 Format string vulnerability in Tftpd32 2.81 allows remote attackers to cause a denial of service via format string specifiers in a filename in a (1) GET or (2) SEND request.CVE-2006-6141 Buffer overflow in Tftpd32 3.01 allows remote attackers to cause a denial of service via a long GET or PUT request, which is not properly handled when the request is displayed in the title of the gauge window.OSVDB ID: 12898 Tftpd32 contains a flaw that may allow a remote denial of service. The issue is triggered when the server receives a TFTP request with a long filename, and will result in loss of availability for the service.",
+        "impact": "An attacker with network access to TFTPD32 could execute arbitrary code or cause a denial of service on a vulnerable system."
+      }
+    ]
+  }
+}

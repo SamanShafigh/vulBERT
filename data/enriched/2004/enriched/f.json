@@ -1,0 +1,70 @@
+{
+  "year": 2004,
+  "total": 5,
+  "reference": "security.gentoo.org",
+  "reports": {
+    "CVE-2004-0234": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200405-02.xml",
+        "title": "Multiple vulnerabilities in LHa — GLSA 200405-02",
+        "subTitle": "Two stack-based buffer overflows and two directory traversal problems have been found in LHa. These vulnerabilities can be used to execute arbitrary code or as a denial of service attack.", 
+        "background": "LHa is a console-based program for packing and unpacking LHarc archives.",
+        "body": "Ulf Harnhammar found two stack overflows and two directory traversal vulnerabilities in LHa version 1.14 and 1.17. A stack overflow occurs when testing or extracting archives containing long file or directory names. Furthermore, LHa doesn't contain sufficient protection against relative or absolute archive paths.",
+        "extra": "The stack overflows can be exploited to execute arbitrary code with the rights of the user testing or extracting the archive. The directory traversal vulnerabilities can be used to overwrite files in the filesystem with the rights of the user extracting the archive, potentially leading to denial of service or privilege escalation. Since LHa is often interfaced to other software like an email virus scanner, this attack can be used remotely.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-0398": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200405-13.xml",
+        "title": "neon heap-based buffer overflow — GLSA 200405-13",
+        "subTitle": "A vulnerability potentially allowing remote execution of arbitrary code has been discovered in the neon library.", 
+        "background": "neon provides an HTTP and WebDAV client library.",
+        "body": "Stefan Esser discovered a vulnerability in the code of the neon library : if a malicious date string is passed to the ne_rfc1036_parse() function, it can trigger a string overflow into static heap variables.",
+        "extra": "Depending on the application linked against libneon and when connected to a malicious WebDAV server, this vulnerability could allow execution of arbitrary code with the rights of the user running that application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200405-15.xml",
+        "title": "cadaver heap-based buffer overflow — GLSA 200405-15",
+        "subTitle": "There is a heap-based buffer overflow vulnerability in the neon library used in cadaver, possibly leading to execution of arbitrary code when connected to a malicious server.", 
+        "background": "cadaver is a command-line WebDAV client.",
+        "body": "Stefan Esser discovered a vulnerability in the code of the neon library (see GLSA 200405-13). This library is also included in cadaver.",
+        "extra": "When connected to a malicious WebDAV server, this vulnerability could allow remote execution of arbitrary code with the rights of the user running cadaver.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-0416": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200406-06.xml",
+        "title": "CVS: additional DoS and arbitrary code execution vulnerabilities — GLSA 200406-06",
+        "subTitle": "Several serious new vulnerabilities have been found in CVS, which may allow an attacker to remotely compromise a CVS server.", 
+        "background": "CVS (Concurrent Versions System) is an open-source network-transparent version control system. It contains both a client utility and a server.",
+        "body": "A team audit of the CVS source code performed by Stefan Esser and Sebastian Krahmer resulted in the discovery of several remotely exploitable vulnerabilities including:",
+        "extra": "An attacker could use these vulnerabilities to cause a Denial of Service or execute arbitrary code with the permissions of the user running cvs.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-0434": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200405-23.xml",
+        "title": "Heimdal: Kerberos 4 buffer overflow in kadmin — GLSA 200405-23",
+        "subTitle": "A possible buffer overflow in the Kerberos 4 component of Heimdal has been discovered.", 
+        "background": "Heimdal is a free implementation of Kerberos.",
+        "body": "A buffer overflow was discovered in kadmind, a server for administrative access to the Kerberos database.",
+        "extra": "By sending a specially formatted message to kadmind, a remote attacker may be able to crash kadmind causing a denial of service, or execute arbitrary code with the permissions of the kadmind process.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "year": 2002,
+  "total": 9,
+  "references": {
+    "securityfocus.com": 291,
+    "docs.microsoft.com": 35,
+    "exchange.xforce.ibmcloud.com": 105,
+    "kb.cert.org": 28,
+    "debian.org": 21,
+    "securitytracker.com": 28,
+    "gentoo.org": 1,
+    "bugzilla.redhat.com": 3,
+    "bugzilla.mozilla.org": 7,
+    "mozilla.org": 2,
+    "github.com": 1,
+    "ubuntu.com": 1
+  },
+  "reports": [
+    {
+      "cveId": "CVE-2001-0775",
+      "types": [
+        "CWE-119"
+      ],
+      "body": "Buffer overflow in xloadimage 4.1 (aka xli 1.16 and 1.17) in Linux allows remote attackers to execute arbitrary code via a FACES format image containing a long (1) Firstname or (2) Lastname field.",
+      "impact": 6.4,
+      "published_date": "2001-10-18T04:00Z",
+      "nvd": "https://nvd.nist.gov/vuln/detail/CVE-2001-0775",
+      "cve": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-0775",
+      "references": [
+        {
+          "hostname": "securityfocus.com",
+          "url": "http://www.securityfocus.com/archive/1/195823",
+          "enriched": true,
+          "symbol": "a"
+        },
+        {
+          "hostname": "securityfocus.com",
+          "url": "http://www.securityfocus.com/bid/3006",
+          "enriched": true,
+          "symbol": "a"
+        },
+        {
+          "hostname": "gentoo.org",
+          "url": "http://www.gentoo.org/security/en/glsa/glsa-200503-05.xml",
+          "enriched": false,
+          "symbol": "v"
+        },
+        {
+          "hostname": "debian.org",
+          "url": "http://www.debian.org/security/2005/dsa-695",
+          "enriched": true,
+          "symbol": "e"
+        },
+        {
+          "hostname": "debian.org",
+          "url": "http://www.debian.org/security/2001/dsa-069",
+          "enriched": true,
+          "symbol": "e"
+        }
+      ]
+    },
+    {
+      "cveId": "CVE-2002-2260",
+      "types": [
+        "CWE-79"
+      ],
+      "body": "Cross-site scripting (XSS) vulnerability in the quips feature in Mozilla Bugzilla 2.10 through 2.17 allows remote attackers to inject arbitrary web script or HTML via the \"show all quips\" page.",
+      "impact": 2.9,
+      "published_date": "2002-12-31T05:00Z",
+      "nvd": "https://nvd.nist.gov/vuln/detail/CVE-2002-2260",
+      "cve": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2260",
+      "references": [
+        {
+          "hostname": "bugzilla.mozilla.org",
+          "url": "http://bugzilla.mozilla.org/show_bug.cgi?id=179329",
+          "enriched": false,
+          "symbol": "n"
+        },
+        {
+          "hostname": "debian.org",
+          "url": "http://www.debian.org/security/2002/dsa-218",
+          "enriched": true,
+          "symbol": "e"
+        },
+        {
+          "hostname": "securityfocus.com",
+          "url": "http://www.securityfocus.com/bid/6257",
+          "enriched": true,
+          "symbol": "a"
+        },
+        {
+          "hostname": "exchange.xforce.ibmcloud.com",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/10707",
+          "enriched": true,
+          "symbol": "b"
+        }
+      ]
+    },
+    {
+      "cveId": "CVE-2002-2300",
+      "types": [
+        "CWE-119"
+      ],
+      "body": "Buffer overflow in ftpd 5.4 in 3Com NBX 4.0.17 or ftpd 5.4.2 in 3Com NBX 4.1.4 allows remote attackers to cause a denial of service (crash) via a long CEL command.",
+      "impact": 6.4,
+      "published_date": "2002-12-31T05:00Z",
+      "nvd": "https://nvd.nist.gov/vuln/detail/CVE-2002-2300",
+      "cve": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2300",
+      "references": [
+        {
+          "hostname": "kb.cert.org",
+          "url": "http://www.kb.cert.org/vuls/id/317417",
+          "enriched": true,
+          "symbol": "h"
+        },
+        {
+          "hostname": "securityfocus.com",
+          "url": "http://www.securityfocus.com/bid/6297",
+          "enriched": true,
+          "symbol": "a"
+        },
+        {
+          "hostname": "securitytracker.com",
+          "url": "http://securitytracker.com/id?1005732",
+          "enriched": true,
+          "symbol": "c"
+        },
+        {
+          "hostname": "securitytracker.com",
+          "url": "http://securitytracker.com/id?1006760",
+          "enriched": false,
+          "symbol": "c",
+          "error": true
+        },
+        {
+          "hostname": "exchange.xforce.ibmcloud.com",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/10739",
+          "enriched": true,
+          "symbol": "b"
+        }
+      ]
+    },
+    {
+      "cveId": "CVE-2002-2314",
+      "types": [
+        "CWE-20"
+      ],
+      "body": "Mozilla 1.0 allows remote attackers to steal cookies from other domains via a javascript: URL with a leading \"//\" and ending in a newline, which causes the host/path check to fail.",
+      "impact": 2.9,
+      "published_date": "2002-12-31T05:00Z",
+      "nvd": "https://nvd.nist.gov/vuln/detail/CVE-2002-2314",
+      "cve": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2314",
+      "references": [
+        {
+          "hostname": "bugzilla.mozilla.org",
+          "url": "http://bugzilla.mozilla.org/show_bug.cgi?id=152725",
+          "enriched": false,
+          "symbol": "n"
+        },
+        {
+          "hostname": "mozilla.org",
+          "url": "http://www.mozilla.org/releases/mozilla1.0.1/security-fixes-1.0.1.html",
+          "enriched": false,
+          "symbol": "o"
+        },
+        {
+          "hostname": "securityfocus.com",
+          "url": "http://www.securityfocus.com/bid/5293",
+          "enriched": true,
+          "symbol": "a"
+        }
+      ]
+    },
+    {
+      "cveId": "CVE-2002-2338",
+      "types": [
+        "CWE-20"
+      ],
+      "body": "The POP3 mail client in Mozilla 1.0 and earlier, and Netscape Communicator 4.7 and earlier, allows remote attackers to cause a denial of service (no new mail) via a mail message containing a dot (.) at a newline, which is interpreted as the end of the message.",
+      "impact": 2.9,
+      "published_date": "2002-12-31T05:00Z",
+      "nvd": "https://nvd.nist.gov/vuln/detail/CVE-2002-2338",
+      "cve": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2338",
+      "references": [
+        {
+          "hostname": "securityfocus.com",
+          "url": "http://www.securityfocus.com/archive/1/276946",
+          "enriched": true,
+          "symbol": "a"
+        },
+        {
+          "hostname": "bugzilla.mozilla.org",
+          "url": "http://bugzilla.mozilla.org/show_bug.cgi?id=144228",
+          "enriched": false,
+          "symbol": "n"
+        },
+        {
+          "hostname": "mozilla.org",
+          "url": "http://mozilla.org/releases/mozilla1.0.1/security-fixes-1.0.1.html",
+          "enriched": false,
+          "symbol": "o"
+        },
+        {
+          "hostname": "securityfocus.com",
+          "url": "http://www.securityfocus.com/bid/5002",
+          "enriched": true,
+          "symbol": "a"
+        }
+      ]
+    },
+    {
+      "cveId": "CVE-2002-2359",
+      "types": [
+        "CWE-79"
+      ],
+      "body": "Cross-site scripting (XSS) vulnerability in the FTP view feature in Mozilla 1.0 allows remote attackers to inject arbitrary web script or HTML via the title tag of an ftp URL.",
+      "impact": 2.9,
+      "published_date": "2002-12-31T05:00Z",
+      "nvd": "https://nvd.nist.gov/vuln/detail/CVE-2002-2359",
+      "cve": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2359",
+      "references": [
+        {
+          "hostname": "bugzilla.mozilla.org",
+          "url": "http://bugzilla.mozilla.org/show_bug.cgi?id=154030",
+          "enriched": false,
+          "symbol": "n"
+        },
+        {
+          "hostname": "securityfocus.com",
+          "url": "http://www.securityfocus.com/bid/5403",
+          "enriched": true,
+          "symbol": "a"
+        }
+      ]
+    },
+    {
+      "cveId": "CVE-2002-2435",
+      "types": [
+        "CWE-200"
+      ],
+      "body": "The Cascading Style Sheets (CSS) implementation in Microsoft Internet Explorer 8.0 and earlier does not properly handle the :visited pseudo-class, which allows remote attackers to obtain sensitive information about visited web pages via a crafted HTML document, a related issue to CVE-2010-2264.",
+      "impact": 2.9,
+      "published_date": "2011-12-07T19:55Z",
+      "nvd": "https://nvd.nist.gov/vuln/detail/CVE-2002-2435",
+      "cve": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2435",
+      "references": [
+        {
+          "hostname": "bugzilla.mozilla.org",
+          "url": "http://bugzilla.mozilla.org/show_bug.cgi?id=147777",
+          "enriched": false,
+          "symbol": "n"
+        },
+        {
+          "hostname": "exchange.xforce.ibmcloud.com",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/71817",
+          "enriched": true,
+          "symbol": "b"
+        }
+      ]
+    },
+    {
+      "cveId": "CVE-2002-2436",
+      "types": [
+        "CWE-200"
+      ],
+      "body": "The Cascading Style Sheets (CSS) implementation in Mozilla Firefox before 4.0, Thunderbird before 3.3, and SeaMonkey before 2.1 does not properly handle the :visited pseudo-class, which allows remote attackers to obtain sensitive information about visited web pages via a crafted HTML document, a related issue to CVE-2010-2264.",
+      "impact": 2.9,
+      "published_date": "2011-12-07T19:55Z",
+      "nvd": "https://nvd.nist.gov/vuln/detail/CVE-2002-2436",
+      "cve": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2436",
+      "references": [
+        {
+          "hostname": "bugzilla.mozilla.org",
+          "url": "http://bugzilla.mozilla.org/show_bug.cgi?id=147777",
+          "enriched": false,
+          "symbol": "n"
+        },
+        {
+          "hostname": "exchange.xforce.ibmcloud.com",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/71816",
+          "enriched": true,
+          "symbol": "b"
+        }
+      ]
+    },
+    {
+      "cveId": "CVE-2002-2437",
+      "types": [
+        "CWE-264"
+      ],
+      "body": "The JavaScript implementation in Mozilla Firefox before 4.0, Thunderbird before 3.3, and SeaMonkey before 2.1 does not properly restrict the set of values contained in the object returned by the getComputedStyle method, which allows remote attackers to obtain sensitive information about visited web pages by calling this method.",
+      "impact": 2.9,
+      "published_date": "2011-12-07T19:55Z",
+      "nvd": "https://nvd.nist.gov/vuln/detail/CVE-2002-2437",
+      "cve": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2437",
+      "references": [
+        {
+          "hostname": "bugzilla.mozilla.org",
+          "url": "http://bugzilla.mozilla.org/show_bug.cgi?id=147777",
+          "enriched": false,
+          "symbol": "n"
+        }
+      ]
+    }
+  ]
+}

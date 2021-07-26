@@ -1,0 +1,2107 @@
+{
+  "year": 2007,
+  "total": 326,
+  "reference": "debian.org",
+  "reports": {
+    "CVE-2007-0002": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1268",
+        "title": "",
+        "body": "iDefense reported several integer overflow bugs in libwpd, a libraryfor handling WordPerfect documents. Attackers were able to exploitthese with carefully crafted Word Perfect files that could cause anapplication linked with libwpd to crash or possibly execute arbitrary code.For the stable distribution (sarge) these problems have been fixed inversion 0.8.1-1sarge1.For the testing distribution (etch) these problems have been fixed inversion 0.8.7-6.For the unstable distribution (sid) these problems have been fixed inversion 0.8.7-6.We recommend that you upgrade your libwpd package."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1270",
+        "title": "",
+        "body": "iDefense reported several integer overflow bugs in libwpd, a library for handling WordPerfect documents that is included in OpenOffice.org. Attackers are able to exploit these with carefully crafted WordPerfect files that could cause an application linked with libwpd to crash or possibly execute arbitrary code."
+      }
+    ],
+    "CVE-2007-0005": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1286",
+        "title": "",
+        "body": "Daniel Roethlisberger discovered two buffer overflows in the cm4040 driver for the Omnikey CardMan 4040 device. A local user or malicious device could exploit this to execute arbitrary code in kernel space."
+      }
+    ],
+    "CVE-2007-0008": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1336",
+        "title": "",
+        "body": "It was discovered that a buffer overflow in the NSS code allows the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-0009": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1336",
+        "title": "",
+        "body": "It was discovered that a buffer overflow in the NSS code allows the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-0175": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1568",
+        "title": "",
+        "body": "\"unsticky\" discovered that b2evolution, a blog engine, performs insufficientinput sanitising, allowing for cross site scripting.For the stable distribution (etch), this problem has been fixed inversion 0.9.2-3+etch1.For the unstable distribution (sid), this problem has been fixed inversion 0.9.2-4.We recommend that you upgrade your b2evolution package."
+      }
+    ],
+    "CVE-2007-0235": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1255",
+        "title": "",
+        "body": "Liu Qishuai discovered that the GNOME gtop library performs insufficientsanitising when parsing the system's /proc table, which may lead tothe execution of arbitrary code.For the stable distribution (sarge) this problem has been fixed inversion 2.6.0-4sarge1.For the upcoming stable distribution (etch) this problem has beenfixed in version 2.14.4-3.For the unstable distribution (sid) this problem has been fixed inversion 2.14.4-3.We recommend that you upgrade your libgtop2 packages."
+      }
+    ],
+    "CVE-2007-0238": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1270",
+        "title": "",
+        "body": "Next Generation Security discovered that the StarCalc parser in OpenOffice.org contains an easily exploitable stack overflow that could be used by a specially crafted document to execute arbitrary code."
+      }
+    ],
+    "CVE-2007-0245": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1307",
+        "title": "",
+        "body": "John Heasman discovered a heap overflow in the routines of OpenOffice.orgthat parse RTF files. A specially crafted RTF file could cause thefilter to overwrite data on the heap, which may lead to the executionof arbitrary code.For the old stable distribution (sarge) this problem has been fixed inversion 1.1.3-9sarge7.For the stable distribution (etch) this problem has been fixed inversion 2.0.4.dfsg.2-7etch1.For the unstable distribution (sid) this problem has been fixed inversion 2.2.1~rc1-1.We recommend that you upgrade your openoffice.org packages."
+      }
+    ],
+    "CVE-2007-0778": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1336",
+        "title": "",
+        "body": "It was discovered that the page cache calculates hashes in an insecure manner."
+      }
+    ],
+    "CVE-2007-0898": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1263",
+        "title": "",
+        "body": "It was discovered that a directory traversal vulnerability in the MIME header parser may lead to denial of service."
+      }
+    ],
+    "CVE-2007-0957": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1276",
+        "title": "",
+        "body": "iDefense discovered that a buffer overflow in the logging code of the KDC and the administration daemon might lead to arbitrary code execution."
+      }
+    ],
+    "CVE-2007-0981": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1336",
+        "title": "",
+        "body": "It was discovered that Firefox handles URI with a null byte in the hostname insecurely."
+      }
+    ],
+    "CVE-2007-0994": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1336",
+        "title": "",
+        "body": "It was discovered that a regression in the Javascript engine allows the execution of Javascript with elevated privileges."
+      }
+    ],
+    "CVE-2007-0995": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1336",
+        "title": "",
+        "body": "It was discovered that incorrect parsing of invalid HTML characters allows the bypass of content filters."
+      }
+    ],
+    "CVE-2007-1218": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1272",
+        "title": "",
+        "body": "Moritz Jodeit discovered an off-by-one buffer overflow in tcpdump, apowerful tool for network monitoring and data acquisition, which allowsdenial of service.For the stable distribution (sarge) this problem has been fixed inversion 3.8.3-5sarge2.For the upcoming stable distribution (etch) this problem has been fixedin version 3.9.5-2.For the unstable distribution (sid) this problem has been fixed inversion 3.9.5-2.We recommend that you upgrade your tcpdump package."
+      }
+    ],
+    "CVE-2007-1246": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1536",
+        "title": "",
+        "body": "The DMO_VideoDecoder_Open function does not set the biSize before use in a memcpy, which allows user-assisted remote attackers to cause a buffer overflow and possibly execute arbitrary code (applies to sarge only)."
+      }
+    ],
+    "CVE-2007-1262": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1290",
+        "title": "",
+        "body": "It was discovered that the webmail package Squirrelmail performsinsufficient sanitising inside the HTML filter, which allows theinjection of arbitrary web script code during the display of HTMLemail messages.For the oldstable distribution (sarge) this problem has been fixed inversion 2:1.4.4-11.For the stable distribution (etch) this problem has been fixed inversion 2:1.4.9a-2.For the unstable distribution (sid) this problem has been fixed inversion 2:1.4.10a-1.We recommend that you upgrade your squirrelmail package."
+      }
+    ],
+    "CVE-2007-1320": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1284",
+        "title": "",
+        "body": "Tavis Ormandy discovered that a memory management routine of the Cirrus video driver performs insufficient bounds checking, which might allow the execution of arbitrary code through a heap overflow."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1384",
+        "title": "",
+        "body": "Multiple heap-based buffer overflows in the Cirrus VGA extension, provided by QEMU, may allow local users to execute arbitrary code via bitblt heap overflow."
+      }
+    ],
+    "CVE-2007-1351": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1294",
+        "title": "",
+        "body": "Greg MacManus discovered an integer overflow in the font handling, which might lead to denial of service or local privilege escalation."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1454",
+        "title": "",
+        "body": "Greg MacManus discovered an integer overflow in the font handling oflibfreetype, a FreeType 2 font engine, which might lead to denial ofservice or possibly the execution of arbitrary code if a user is trickedinto opening a malformed font.For the old stable distribution (sarge) this problem will be fixedsoon.For the stable distribution (etch), this problem has been fixed inversion 2.2.1-5+etch2.For the unstable distribution (sid), this problem has been fixed inversion 2.3.5-1.We recommend that you upgrade your freetype packages."
+      }
+    ],
+    "CVE-2007-1362": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1300",
+        "title": "",
+        "body": "Nicolas Derouet discovered that Iceape performs insufficient validation of cookies, which could lead to denial of service."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1306",
+        "title": "",
+        "body": "Nicolas Derouet discovered that Xulrunner performs insufficient validation of cookies, which could lead to denial of service."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1308",
+        "title": "",
+        "body": "Nicolas Derouet discovered that Iceweasel performs insufficient validation of cookies, which could lead to denial of service."
+      }
+    ],
+    "CVE-2007-1466": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1268",
+        "title": "",
+        "body": "iDefense reported several integer overflow bugs in libwpd, a libraryfor handling WordPerfect documents. Attackers were able to exploitthese with carefully crafted Word Perfect files that could cause anapplication linked with libwpd to crash or possibly execute arbitrary code.For the stable distribution (sarge) these problems have been fixed inversion 0.8.1-1sarge1.For the testing distribution (etch) these problems have been fixed inversion 0.8.7-6.For the unstable distribution (sid) these problems have been fixed inversion 0.8.7-6.We recommend that you upgrade your libwpd package."
+      }
+    ],
+    "CVE-2007-1536": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1274",
+        "title": "",
+        "body": "An integer underflow bug has been found in the file_printf function infile, a tool to determine file types based analysis of file content.The bug could allow an attacker to execute arbitrary code by inducing alocal user to examine a specially crafted file that triggers a bufferoverflow.For the stable distribution (sarge), this problem has been fixed inversion 4.12-1sarge1.For the upcoming stable distribution (etch), this problem has been fixed inversion 4.17-5etch1.For the unstable distribution (sid), this problem has been fixed in4.20-1.We recommend that you upgrade your file package."
+      }
+    ],
+    "CVE-2007-1592": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1286",
+        "title": "",
+        "body": "Masayuki Nakagawa discovered that flow labels were inadvertently being shared between listening sockets and child sockets. This defect can be exploited by local users to cause a DoS (Oops)."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1304",
+        "title": "",
+        "body": "Masayuki Nakagawa discovered that flow labels were inadvertently being shared between listening sockets and child sockets. This defect can be exploited by local users to cause a DoS (Oops)."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1503",
+        "title": "",
+        "body": "Masayuki Nakagawa discovered that flow labels were inadvertently being shared between listening sockets and child sockets. This defect can be exploited by local users to cause a DoS (Oops)."
+      }
+    ],
+    "CVE-2007-1659": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1399",
+        "title": "",
+        "body": "Unmatched \\Q\\E sequences with orphan \\E codes can cause the compiled regex to become desynchronized, resulting in corrupt bytecode that may result in multiple exploitable conditions."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1570",
+        "title": "",
+        "body": "Andrews Salomon reported that kazehakase, a GTK+-based web browser thatallows pluggable rendering engines, contained an embedded copy of thePCRE library in its source tree which was compiled in and used in preferenceto the system-wide version of this library.The PCRE library has been updated to fix the security issues reportedagainst it in previous Debian Security Advisories. This update ensures thatkazehakase uses that supported library, and not its own embedded andinsecure version.For the stable distribution (etch), this problem has been fixed in version0.4.2-1etch1.We recommend that you upgrade your kazehakase package."
+      }
+    ],
+    "CVE-2007-1660": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1399",
+        "title": "",
+        "body": "Multiple forms of character classes had their sizes miscalculated on initial passes, resulting in too little memory being allocated."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1570",
+        "title": "",
+        "body": "Andrews Salomon reported that kazehakase, a GTK+-based web browser thatallows pluggable rendering engines, contained an embedded copy of thePCRE library in its source tree which was compiled in and used in preferenceto the system-wide version of this library.The PCRE library has been updated to fix the security issues reportedagainst it in previous Debian Security Advisories. This update ensures thatkazehakase uses that supported library, and not its own embedded andinsecure version.For the stable distribution (etch), this problem has been fixed in version0.4.2-1etch1.We recommend that you upgrade your kazehakase package."
+      }
+    ],
+    "CVE-2007-1667": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1294",
+        "title": "",
+        "body": "Sami Leides discovered an integer overflow in the libx11 library which might lead to the execution of arbitrary code. This update introduces tighter sanity checking of input passed to XCreateImage(). To cope with this an updated rdesktop package is delivered along with this security update. Another application reported to break is the proprietary Opera browser, which isn't part of Debian. The vendor has released updated packages, though."
+      },
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1858",
+        "title": "",
+        "body": "Multiple integer overflows in XInitImage function in xwd.c for ImageMagick, allow user-assisted remote attackers to cause a denial of service (crash) or obtain sensitive information via crafted images with large or negative values that trigger a buffer overflow. It only affects the oldstable distribution (etch)."
+      }
+    ],
+    "CVE-2007-1797": [
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1858",
+        "title": "",
+        "body": "Multiple integer overflows allow remote attackers to execute arbitrary code via a crafted DCM image, or the colors or comments field in a crafted XWD image. It only affects the oldstable distribution (etch)."
+      }
+    ],
+    "CVE-2007-1860": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1312",
+        "title": "",
+        "body": "It was discovered that the Apache 1.3 connector for the Tomcat Javaservlet engine decoded request URLs multiple times, which can leadto information disclosure.For the oldstable distribution (sarge) this problem has been fixed inversion 1.2.5-2sarge1. An updated package for powerpc is not yetavailable due to problems with the build host. It will be providedlater.For the stable distribution (etch) this problem has been fixed inversion 1.2.18-3etch1.For the unstable distribution (sid) this problem has been fixed inversion 1.2.23-1.We recommend that you upgrade your libapache-mod-jk package."
+      }
+    ],
+    "CVE-2007-1861": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1289",
+        "title": "",
+        "body": "Jaco Kroon reported a bug in which NETLINK_FIB_LOOKUP packages were incorrectly routed back to the kernel resulting in an infinite recursion condition. Local users can exploit this behavior to cause a DoS (crash)."
+      }
+    ],
+    "CVE-2007-1864": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1330",
+        "title": "",
+        "body": "It was discovered that a buffer overflow in the xmlrpc extension allows the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1331",
+        "title": "",
+        "body": "It was discovered that a buffer overflow in the xmlrpc extension allows the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-1893": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1285",
+        "title": "",
+        "body": "WordPress 2.1.2, and probably earlier, allows remote authenticated users with the contributor role to bypass intended access restrictions and invoke the publish_posts functionality, which can be used to publish a previously saved post."
+      }
+    ],
+    "CVE-2007-1897": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1285",
+        "title": "",
+        "body": "SQL injection vulnerability in xmlrpc.php in WordPress 2.1.2, and probably earlier, allows remote authenticated users to execute arbitrary SQL commands via a string parameter value in an XML RPC mt.setPostCategories method call, related to the post_id variable."
+      }
+    ],
+    "CVE-2007-1995": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1293",
+        "title": "",
+        "body": "Paul Jakma discovered that specially crafted UPDATE messages cantrigger an out of boundary read that can result in a system crash ofquagga, the BGP/OSPF/RIP routing daemon.For the old stable distribution (sarge) this problem has been fixed inversion 0.98.3-7.4.For the stable distribution (etch) this problem has been fixed inversion 0.99.5-5etch2.For the unstable distribution (sid) this problem has been fixed inversion 0.99.6-5.We recommend that you upgrade your quagga package."
+      }
+    ],
+    "CVE-2007-2029": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1281",
+        "title": "",
+        "body": "It was discovered that a file descriptor leak in the PDF handler may lead to denial of service."
+      }
+    ],
+    "CVE-2007-2052": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1551",
+        "title": "",
+        "body": "Piotr Engelking discovered that the strxfrm() function of the locale module miscalculates the length of an internal buffer, which may result in a minor information disclosure."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1620",
+        "title": "",
+        "body": "Piotr Engelking discovered that the strxfrm() function of the locale module miscalculates the length of an internal buffer, which may result in a minor information disclosure."
+      }
+    ],
+    "CVE-2007-2138": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1309",
+        "title": "",
+        "body": "It was discovered that the PostgreSQL database performs insufficientvalidation of variables passed to privileged SQL statements, so calledsecurity definers, which could lead to SQL privilege escalation.The oldstable distribution (sarge) doesn't contain PostgreSQL 8.1.For the stable distribution (etch) this problem has been fixed inversion 8.1.9-0etch1.For the unstable distribution (sid) this problem has been fixed inversion 8.1.9-1.We recommend that you upgrade your PostgreSQL packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1311",
+        "title": "",
+        "body": "It was discovered that the PostgreSQL database performs insufficientvalidation of variables passed to privileged SQL statement calledsecurity definers, which could lead to SQL privilege escalation.For the oldstable distribution (sarge) this problem has been fixed inversion 7.4.7-6sarge5. A powerpc build is not yet available due toproblems with the build host. It will be provided later.For the stable distribution (etch) this problem has been fixed inversion 7.4.17-0etch1.For the unstable distribution (sid) this problem has been fixed inversion 7.4.17-1.We recommend that you upgrade your PostgreSQL packages."
+      }
+    ],
+    "CVE-2007-2172": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1356",
+        "title": "",
+        "body": "Thomas Graf reported a typo in the DECnet protocol handler that could be used by a local attacker to overrun an array via crafted packets, potentially resulting in a Denial of Service (system crash). A similar issue exists in the IPV4 protocol handler and will be fixed in a subsequent update."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1363",
+        "title": "",
+        "body": "Thomas Graf reported a typo in the IPv4 protocol handler that could be used by a local attacker to overrun an array via crafted packets, potentially resulting in a Denial of Service (system crash). The DECnet counterpart of this issue was already fixed in DSA-1356."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1503",
+        "title": "",
+        "body": "Thomas Graf reported a typo in the DECnet protocol handler that could be used by a local attacker to overrun an array via crafted packets, potentially resulting in a Denial of Service (system crash). A similar issue exists in the IPV4 protocol handler and will be fixed in a subsequent update."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1504",
+        "title": "",
+        "body": "Thomas Graf reported a typo in the DECnet protocol handler that could be used by a local attacker to overrun an array via crafted packets, potentially resulting in a Denial of Service (system crash). A similar issue exists in the IPV4 protocol handler and will be fixed in a subsequent update."
+      }
+    ],
+    "CVE-2007-2292": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1396",
+        "title": "",
+        "body": "Stefano Di Paola discovered that insufficient validation of user names used in Digest authentication on a web site allows HTTP response splitting attacks."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1401",
+        "title": "",
+        "body": "Stefano Di Paola discovered that insufficient validation of user names used in Digest authentication on a web site allows HTTP response splitting attacks."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1392",
+        "title": "",
+        "body": "Stefano Di Paola discovered that insufficient validation of user names used in Digest authentication on a web site allows HTTP response splitting attacks."
+      }
+    ],
+    "CVE-2007-2356": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1301",
+        "title": "",
+        "body": "A buffer overflow has been identified in Gimp's SUNRAS plugin inversions prior to 2.2.15. This bug could allow an attacker to executearbitrary code on the victim's computer by inducing the victim to open aspecially crafted RAS file.For the stable distribution (etch), this problem has been fixed inversion 2.2.13-1etch1.For the old stable distribution (sarge), this problem has been fixed inversion 2.2.6-1sarge2.For the unstable and testing distributions (sid and lenny,respectively), this problem has been fixed in version 2.2.14-2.We recommend that you upgrade your gimp package."
+      }
+    ],
+    "CVE-2007-2446": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1291",
+        "title": "",
+        "body": "Various bugs in Samba's NDR parsing can allow a user to send specially crafted MS-RPC requests that will overwrite the heap space with user defined data."
+      }
+    ],
+    "CVE-2007-2450": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1468",
+        "title": "",
+        "body": "It was discovered that the Manager and Host Manager web applications performed insufficient input sanitising, which could lead to cross site scripting."
+      }
+    ],
+    "CVE-2007-2459": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1498",
+        "title": "",
+        "body": "It was discovered that libimager-perl, a Perl extension for generating 24-bit images,did not correctly handle 8-bit compressed images, which couldallow the execution of arbitrary code.For the stable distribution (etch), this problem has been fixed in version0.50-1etch1.We recommend that you upgrade your libimager-perl package."
+      }
+    ],
+    "CVE-2007-2509": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1295",
+        "title": "",
+        "body": "It was discovered that missing input sanitising inside the ftp extension permits an attacker to execute arbitrary FTP commands. This requires the attacker to already have access to the FTP server."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1296",
+        "title": "",
+        "body": "It was discovered that the ftp extension of PHP, a server-side,HTML-embedded scripting language performs insufficient input sanitising,which permits an attacker to execute arbitrary FTP commands. Thisrequires the attacker to already have access to the FTP server.For the oldstable distribution (sarge) this problem has been fixedin version 4.3.10-21.For the stable distribution (etch) this problem has been fixedin version 4.4.4-8+etch3.For the unstable distribution (sid) this problem won't be fixed, as php4will be removed from sid; thus you are strongly advised to migrate tophp5 if you prefer to follow the unstable distribution.We recommend that you upgrade your PHP packages. Packages for the Sparcarchitectures are not yet available, due to problems on the build host. Theywill be provided later."
+      }
+    ],
+    "CVE-2007-2510": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1295",
+        "title": "",
+        "body": "It was discovered that a buffer overflow in the SOAP extension permits the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-2524": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1298",
+        "title": "",
+        "body": "It was discovered that the Open Ticket Request System performsinsufficient input sanitising for the Subaction parameter, which allowsthe injection of arbitrary web script code.The oldstable distribution (sarge) doesn't include otrs2.For the stable distribution (etch) this problem has been fixed inversion 2.0.4p01-18.The unstable distribution (sid) isn't affected by this problem.We recommend that you upgrade your otrs2 package."
+      }
+    ],
+    "CVE-2007-2583": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1413",
+        "title": "",
+        "body": "The in_decimal::set function in item_cmpfunc.cc in MySQLbefore 5.0.40 allows context-dependent attackers to cause adenial of service (crash) via a crafted IF clause that resultsin a divide-by-zero error and a NULL pointer dereference.(Affects source version 5.0.32.)"
+      }
+    ],
+    "CVE-2007-2798": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1323",
+        "title": "",
+        "body": "It was discovered that a buffer overflow in the Kerberos administration daemon may lead to the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-2799": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1343",
+        "title": "",
+        "body": "Colin Percival discovered an integer overflow in file, a file typeclassification tool, which may lead to the execution of arbitrary code.For the oldstable distribution (sarge) this problem has been fixed inversion 4.12-1sarge2.For the stable distribution (etch) this problem has been fixed inversion 4.17-5etch2.For the unstable distribution (sid) this problem has been fixed inversion 4.21-1.We recommend that you upgrade your file package."
+      }
+    ],
+    "CVE-2007-2834": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1375",
+        "title": "",
+        "body": "A heap overflow vulnerability has been discovered in the TIFF parsingcode of the OpenOffice.org suite. The parser uses untrusted valuesfrom the TIFF file to calculate the number of bytes of memory toallocate. A specially crafted TIFF image could trigger an integeroverflow and subsequently a buffer overflow that could cause theexecution of arbitrary code.For the old stable distribution (sarge) this problem has been fixed inversion 1.1.3-9sarge8.For the stable distribution (etch) this problem has been fixed inversion 2.0.4.dfsg.2-7etch2.For the unstable distribution (sid) this problem has been fixed inversion 2.2.1-9.For the experimental distribution this problem has been fixed inversion 2.3.0~src680m224-1.We recommend that you upgrade your openoffice.org packages."
+      }
+    ],
+    "CVE-2007-2836": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1324",
+        "title": "",
+        "body": "Kazuhiro Nishiyama found a vulnerability in hiki, a Wiki engine writtenin Ruby, which could allow a remote attacker to delete arbitrary fileswhich are writable to the Hiki user, via a specially crafted sessionparameter.For the stable distribution (etch), this problem has been fixed in version0.8.6-1etch1.For the unstable distribution (sid) this problem has been fixed in version0.8.7-1.We recommend that you upgrade your hiki package."
+      }
+    ],
+    "CVE-2007-2867": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1300",
+        "title": "",
+        "body": "Boris Zbarsky, Eli Friedman, Georgi Guninski, Jesse Ruderman, Martijn Wargers and Olli Pettay discovered crashes in the layout engine, which might allow the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1306",
+        "title": "",
+        "body": "Boris Zbarsky, Eli Friedman, Georgi Guninski, Jesse Ruderman, Martijn Wargers and Olli Pettay discovered crashes in the layout engine, which might allow the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1308",
+        "title": "",
+        "body": "Boris Zbarsky, Eli Friedman, Georgi Guninski, Jesse Ruderman, Martijn Wargers and Olli Pettay discovered crashes in the layout engine, which might allow the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1305",
+        "title": "",
+        "body": "Boris Zbarsky, Eli Friedman, Georgi Guninski, Jesse Ruderman, Martijn Wargers and Olli Pettay discovered crashes in the layout engine, which might allow the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-2868": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1300",
+        "title": "",
+        "body": "Brendan Eich, Igor Bukanov, Jesse Ruderman, moz_bug_r_a4 and Wladimir Palant discovered crashes in the javascript engine, which might allow the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1306",
+        "title": "",
+        "body": "Brendan Eich, Igor Bukanov, Jesse Ruderman, moz_bug_r_a4 and Wladimir Palant discovered crashes in the Javascript engine, which might allow the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1308",
+        "title": "",
+        "body": "Brendan Eich, Igor Bukanov, Jesse Ruderman, moz_bug_r_a4 and Wladimir Palant discovered crashes in the javascript engine, which might allow the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1305",
+        "title": "",
+        "body": "Brendan Eich, Igor Bukanov, Jesse Ruderman, moz_bug_r_a4 and Wladimir Palant discovered crashes in the Javascript engine, which might allow the execution of arbitrary code. Generally, enabling Javascript in Icedove is not recommended."
+      }
+    ],
+    "CVE-2007-2875": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1363",
+        "title": "",
+        "body": "iDefense reported a potential integer underflow in the cpuset filesystem which may permit local attackers to gain access to sensitive kernel memory. This vulnerability is only exploitable if the cpuset filesystem is mounted."
+      }
+    ],
+    "CVE-2007-2893": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1351",
+        "title": "",
+        "body": "Tavis Ormandy discovered that bochs, a highly portable IA-32 PC emulator,is vulnerable to a buffer overflow in the emulated NE2000 network devicedriver, which may lead to privilege escalation.For the oldstable distribution (sarge) this problem has been fixed inversion 2.1.1+20041109-3sarge1.For the stable distribution (etch) this problem has been fixed inversion 2.3-2etch1.For the unstable distribution (sid) this problem has been fixed inversion 2.3+20070705-1.We recommend that you upgrade your bochs packages."
+      }
+    ],
+    "CVE-2007-3104": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1428",
+        "title": "",
+        "body": "Eric Sandeen provided a backport of Tejun Heo's fix for a local denial of service vulnerability in sysfs. Under memory pressure, a dentry structure maybe reclaimed resulting in a bad pointer dereference causing an oops during a readdir."
+      }
+    ],
+    "CVE-2007-3105": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1363",
+        "title": "",
+        "body": "The PaX Team discovered a potential buffer overflow in the random number generator which may permit local users to cause a denial of service or gain additional privileges. This issue is not believed to effect default Debian installations where only root has sufficient privileges to exploit it."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1504",
+        "title": "",
+        "body": "The PaX Team discovered a potential buffer overflow in the random number generator which may permit local users to cause a denial of service or gain additional privileges. This issue is not believed to effect default Debian installations where only root has sufficient privileges to exploit it."
+      }
+    ],
+    "CVE-2007-3106": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1471",
+        "title": "",
+        "body": "Several vulnerabilities were found in the Vorbis General AudioCompression Codec, which may lead to denial of service or theexecution of arbitrary code, if a user is tricked into openinga malformed Ogg Audio file with an application linked againstlibvorbis.For the old stable distribution (sarge), these problems have been fixedin version 1.1.0-2.For the stable distribution (etch), these problems have been fixed inversion 1.1.2.dfsg-1.3.For the unstable distribution (sid), these problems have been fixed inversion 1.2.0.dfsg-1.We recommend that you upgrade your libvorbis packages."
+      }
+    ],
+    "CVE-2007-3114": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1319",
+        "title": "",
+        "body": "It was discovered that malformed DNS requests can trigger memory leaks, allowing denial of service."
+      }
+    ],
+    "CVE-2007-3115": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1319",
+        "title": "",
+        "body": "It was discovered that malformed DNS requests can trigger memory leaks, allowing denial of service."
+      }
+    ],
+    "CVE-2007-3116": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1319",
+        "title": "",
+        "body": "It was discovered that malformed DNS requests can trigger memory leaks, allowing denial of service."
+      }
+    ],
+    "CVE-2007-3278": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1460",
+        "title": "",
+        "body": "It was discovered that the DBLink module performed insufficient credential validation. This issue is also tracked as CVE-2007-6601, since the initial upstream fix was incomplete."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1463",
+        "title": "",
+        "body": "It was discovered that the DBLink module performed insufficient credential validation. This issue is also tracked as CVE-2007-6601, since the initial upstream fix was incomplete."
+      }
+    ],
+    "CVE-2007-3382": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1447",
+        "title": "",
+        "body": "It was discovered that single quotes (') in cookies were treated as a delimiter, which could lead to an information leak."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1453",
+        "title": "",
+        "body": "It was discovered that single quotes (') in cookies were treated as a delimiter, which could lead to an information leak."
+      }
+    ],
+    "CVE-2007-3385": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1447",
+        "title": "",
+        "body": "It was discovered that the character sequence \\\" in cookies was handled incorrectly, which could lead to an information leak."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1453",
+        "title": "",
+        "body": "It was discovered that the character sequence \\\" in cookies was handled incorrectly, which could lead to an information leak."
+      }
+    ],
+    "CVE-2007-3386": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1447",
+        "title": "",
+        "body": "It was discovered that the host manager servlet performed insufficient input validation, which could lead to a cross-site scripting attack."
+      }
+    ],
+    "CVE-2007-3387": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1347",
+        "title": "",
+        "body": "It was discovered that an integer overflow in the xpdf PDF viewer may leadto the execution of arbitrary code if a malformed PDF file is opened.For the oldstable distribution (sarge) this problem has been fixed inversion 3.00-13.7.For the stable distribution (etch) this problem has been fixed inversion 3.01-9etch1.For the unstable distribution (sid) this problem will be fixed soon.We recommend that you upgrade your xpdf packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1348",
+        "title": "",
+        "body": "It was discovered that an integer overflow in the xpdf PDF viewer may leadto the execution of arbitrary code if a malformed PDF file is opened.poppler includes a copy of the xpdf code and required an update as well.The oldstable distribution (sarge) doesn't include poppler.For the stable distribution (etch) this problem has been fixed inversion 0.4.5-5.1etch1.For the unstable distribution (sid) this problem will be fixed soon.We recommend that you upgrade your poppler packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1349",
+        "title": "",
+        "body": "It was discovered that an integer overflow in the xpdf PDF viewer may leadto the execution of arbitrary code if a malformed PDF file is opened.libextractor includes a copy of the xpdf code and required an updateas well.For the oldstable distribution (sarge) this problem has been fixed inversion 0.4.2-2sarge6.The stable distribution (etch) isn't affected by this problem.The unstable distribution (sid) isn't affected by this problem.We recommend that you upgrade your libextractor packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1350",
+        "title": "",
+        "body": "It was discovered that an integer overflow in the xpdf PDF viewer may leadto the execution of arbitrary code if a malformed PDF file is opened.tetex-bin includes a copy of the xpdf code and required an update aswell.For the oldstable distribution (sarge) this problem has been fixed inversion 2.0.2-30sarge5.The package from the stable distribution (etch) links dynamicallyagainst libpoppler and doesn't require a separate update.The package from the unstable distribution (sid) links dynamicallyagainst libpoppler and doesn't require a separate update.We recommend that you upgrade your tetex-bin packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1352",
+        "title": "",
+        "body": "It was discovered that an integer overflow in the xpdf PDF viewer may leadto the execution of arbitrary code if a malformed PDF file is opened.pdfkit.framework includes a copy of the xpdf code and required an updateas well.For the oldstable distribution (sarge) this problem has been fixed inversion 0.8-2sarge4.The package from the stable distribution (etch) links dynamicallyagainst libpoppler and doesn't require a separate update.The package from the unstable distribution (sid) links dynamicallyagainst libpoppler and doesn't require a separate update.We recommend that you upgrade your pdfkit.framework packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1355",
+        "title": "",
+        "body": "It was discovered that an integer overflow in the xpdf PDF viewer may leadto the execution of arbitrary code if a malformed PDF file is opened.kpdf includes a copy of the xpdf code and required an update as well.For the oldstable distribution (sarge) this problem has been fixed inversion 3.3.2-2sarge5.For the stable distribution (etch) this problem has been fixed inversion 3.5.5-3etch1.For the unstable distribution (sid) this problem has been fixed inversion 3.5.7-3.We recommend that you upgrade your kpdf packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1354",
+        "title": "",
+        "body": "It was discovered that an integer overflow in xpdf PDF viewer may leadto the execution of arbitrary code if a malformed PDF file is opened.gpdf includes a copy of the xpdf code and requires an update as well.For the oldstable distribution (sarge) this problem has been fixed inversion 2.8.2-1.2sarge6.The stable distribution (etch) no longer contains gpdf.The unstable distribution (sid) no longer contains gpdf.We recommend that you upgrade your gpdf packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1357",
+        "title": "",
+        "body": "It was discovered that an integer overflow in the xpdf PDF viewer may leadto the execution of arbitrary code if a malformed PDF file is opened.koffice includes a copy of the xpdf code and required an update as well.The oldstable distribution (sarge) will be fixed later.For the stable distribution (etch) this problem has been fixed inversion 1.6.1-2etch1.For the unstable distribution (sid) this problem has been fixed inversion 1.6.3-2.We recommend that you upgrade your koffice packages."
+      }
+    ],
+    "CVE-2007-3476": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1613",
+        "title": "",
+        "body": "An array indexing error in libgd's GIF handling could induce a denial of service (crash with heap corruption) if exceptionally large color index values are supplied in a maliciously crafted GIF image file."
+      }
+    ],
+    "CVE-2007-3477": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1613",
+        "title": "",
+        "body": "The imagearc() and imagefilledarc() routines in libgd allow an attacker in control of the parameters used to specify the degrees of arc for those drawing functions to perform a denial of service attack (excessive CPU consumption)."
+      }
+    ],
+    "CVE-2007-3642": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1356",
+        "title": "",
+        "body": "Zhongling Wen reported an issue in nf_conntrack_h323 where the lack of range checking may lead to NULL pointer dereferences. Remote attackers could exploit this to create a DoS condition (system crash)."
+      }
+    ],
+    "CVE-2007-3656": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1337",
+        "title": "",
+        "body": "Michal Zalewski discovered that same-origin policies for wyciwyg:// documents are insufficiently enforced."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1338",
+        "title": "",
+        "body": "Michal Zalewski discovered that same-origin policies for wyciwyg:// documents are insufficiently enforced."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1339",
+        "title": "",
+        "body": "Michal Zalewski discovered that same-origin policies for wyciwyg:// documents are insufficiently enforced."
+      }
+    ],
+    "CVE-2007-3731": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1378",
+        "title": "",
+        "body": "Evan Teran discovered a potential local denial of service (oops) in the handling of PTRACE_SETREGS and PTRACE_SINGLESTEP requests."
+      }
+    ],
+    "CVE-2007-3739": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1378",
+        "title": "",
+        "body": "Adam Litke reported a potential local denial of service (oops) on powerpc platforms resulting from unchecked VMA expansion into address space reserved for hugetlb pages."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1504",
+        "title": "",
+        "body": "Adam Litke reported a potential local denial of service (oops) on powerpc platforms resulting from unchecked VMA expansion into address space reserved for hugetlb pages."
+      }
+    ],
+    "CVE-2007-3740": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1378",
+        "title": "",
+        "body": "Matt Keenan reported that CIFS filesystems with CAP_UNIX enabled were not honoring a process' umask which may lead to unintentionally relaxed permissions."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1504",
+        "title": "",
+        "body": "Steve French reported that CIFS filesystems with CAP_UNIX enabled were not honoring a process' umask which may lead to unintentionally relaxed permissions."
+      }
+    ],
+    "CVE-2007-3780": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1413",
+        "title": "",
+        "body": "MySQL could be made to overflow a signed char duringauthentication. Remote attackers could use specially craftedauthentication requests to cause a denial ofservice. (Upstream source versions 4.1.11a and 5.0.32affected.)"
+      }
+    ],
+    "CVE-2007-3782": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1413",
+        "title": "",
+        "body": "Phil Anderton discovered that MySQL did not properly verifyaccess privileges when accessing external tables. As a result,authenticated users could exploit this to obtain UPDATEprivileges to external tables. (Affects source version5.0.32.)"
+      }
+    ],
+    "CVE-2007-3798": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1353",
+        "title": "",
+        "body": "It was discovered that an integer overflow in the BGP dissector of tcpdump,a powerful tool for network monitoring and data acquisition, may lead tothe execution of arbitrary code.For the oldstable distribution (sarge) this problem has been fixed inversion 3.8.3-5sarge3.For the stable distribution (etch) this problem has been fixed inversion 3.9.5-2etch1.For the unstable distribution (sid) this problem has been fixed inversion 3.9.5-3.We recommend that you upgrade your tcpdump package."
+      }
+    ],
+    "CVE-2007-3799": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1444",
+        "title": "",
+        "body": "It was discovered that the session_start() function allowed the insertion of attributes into the session cookie."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1578",
+        "title": "",
+        "body": "The session_start function allows remote attackers to insert arbitrary attributes into the session cookie via special characters in a cookie that is obtained from various parameters."
+      }
+    ],
+    "CVE-2007-3806": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1578",
+        "title": "",
+        "body": "A denial of service was possible through a malicious script abusing the glob() function."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1572",
+        "title": "",
+        "body": "The glob function allows context-dependent attackers to cause a denial of service and possibly execute arbitrary code via an invalid value of the flags parameter."
+      }
+    ],
+    "CVE-2007-3851": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1356",
+        "title": "",
+        "body": "Dave Airlie reported that Intel 965 and above chipsets have relocated their batch buffer security bits. Local X server users may exploit this to write user data to arbitrary physical memory addresses."
+      }
+    ],
+    "CVE-2007-3912": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1527",
+        "title": "",
+        "body": "Thomas de Grenier de Latour discovered that the checkrestart tool in thedebian-goodies suite of utilities, allowed local users to gain privilegesvia shell metacharacters in the name of the executable file for a runningprocess.For the old stable distribution (sarge), this problem has been fixed inversion 0.24+sarge1.For the stable distribution (etch), this problem has been fixed inversion 0.27+etch1.For the unstable distribution (sid), this problem has been fixed inversion 0.34.We recommend that you upgrade your debian-goodies package."
+      }
+    ],
+    "CVE-2007-3913": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1369",
+        "title": "",
+        "body": "Sumit I. Siddharth discovered that Gforge, a collaborative developmenttool performs insufficient input sanitising, which allows SQL injection. For the oldstable distribution (sarge) this problem has been fixed inversion 3.1-31sarge2.For the stable distribution (etch) this problem has been fixed inversion 4.5.14-22etch1.For the unstable distribution (sid) this problem will be fixed soon.We recommend that you upgrade your gforge package."
+      }
+    ],
+    "CVE-2007-3918": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1383",
+        "title": "",
+        "body": "It was discovered that a cross site scripting vulnerability in GForge,a collaborative development tool, allows remote attackers to injectarbitrary web script or HTML in the context of a logged in user's session.For the oldstable distribution (sarge) this problem has been fixed inversion 3.1-31sarge3.For the stable distribution (etch) this problem has been fixed inversion 4.5.14-22etch2.For the unstable distribution (sid) this problem has been fixed inversion 4.6.99+svn6094-1.We recommend that you upgrade your gforge package."
+      }
+    ],
+    "CVE-2007-3996": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1613",
+        "title": "",
+        "body": "Multiple integer overflows exist in libgd's image resizing and creation routines; these weaknesses allow an attacker in control of the parameters passed to those routines to induce a crash or execute arbitrary code with the privileges of the user running an application or interpreter linked against libgd2."
+      }
+    ],
+    "CVE-2007-3998": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1444",
+        "title": "",
+        "body": "Mattias Bengtsson and Philip Olausson discovered that a programming error in the implementation of the wordwrap() function allowed denial of service through an infinite loop."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1578",
+        "title": "",
+        "body": "Certain maliciously constructed input to the wordwrap() function could lead to a denial of service attack."
+      }
+    ],
+    "CVE-2007-3999": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1367",
+        "title": "",
+        "body": "It was discovered that a buffer overflow of the RPC library of the MITKerberos reference implementation allows the execution of arbitrary code.The oldstable distribution (sarge) is not affected by this problem.For the stable distribution (etch) this problem has been fixed inversion 1.4.4-7etch3.For the unstable distribution (sid) this problem has been fixed inversion 1.6.dfsg.1-7.We recommend that you upgrade your Kerberos packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1368",
+        "title": "",
+        "body": "It was discovered that a buffer overflow of the library for secure RPCcommunication over the rpcsec_gss protocol allows the execution ofarbitrary code.The oldstable distribution (sarge) doesn't contain librpcsecgss.For the stable distribution (etch) this problem has been fixed inversion 0.14-2etch1.For the unstable distribution (sid) this problem will be fixed soon.We recommend that you upgrade your librpcsecgss packages."
+      }
+    ],
+    "CVE-2007-4033": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1390",
+        "title": "",
+        "body": "Hamid Ebadi discovered a buffer overflow in theintT1_Env_GetCompletePath routine in t1lib, a Type 1 font rasterizerlibrary. This flaw could allow an attacker to crash an applicationusing the t1lib shared libraries, and potentially execute arbitrary codewithin such an application's security context.For the old stable distribution (sarge), this problem has been fixed inversion 5.0.2-3sarge1.For the stable distribution (etch), this problem has been fixed inversion 5.1.0-2etch1.We recommend that you upgrade your t1lib package."
+      }
+    ],
+    "CVE-2007-4066": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1471",
+        "title": "",
+        "body": "Several vulnerabilities were found in the Vorbis General AudioCompression Codec, which may lead to denial of service or theexecution of arbitrary code, if a user is tricked into openinga malformed Ogg Audio file with an application linked againstlibvorbis.For the old stable distribution (sarge), these problems have been fixedin version 1.1.0-2.For the stable distribution (etch), these problems have been fixed inversion 1.1.2.dfsg-1.3.For the unstable distribution (sid), these problems have been fixed inversion 1.2.0.dfsg-1.We recommend that you upgrade your libvorbis packages."
+      }
+    ],
+    "CVE-2007-4137": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1426",
+        "title": "",
+        "body": "Dirk Müller discovered an off-by-one buffer overflow in the Unicode handling, which might lead to the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-4311": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1503",
+        "title": "",
+        "body": "PaX team discovered an issue in the random driver where a defect in the reseeding code leads to a reduction in entropy."
+      }
+    ],
+    "CVE-2007-4337": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1683",
+        "title": "",
+        "body": "Multiple buffer overflows involving HTTP header and playlist parsinghave been discovered in streamripper (CVE-2007-4337, CVE-2008-4829).For the stable distribution (etch), these problems have been fixed inversion 1.61.27-1+etch1.For the unstable distribution (sid) and the testing distribution(lenny), these problems have been fixed in version 1.63.5-2.We recommend that you upgrade your streamripper package."
+      }
+    ],
+    "CVE-2007-4351": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1407",
+        "title": "",
+        "body": "Alin Rad Pop discovered that the Common UNIX Printing System isvulnerable to an off-by-one buffer overflow in the code to process IPPpackets, which may lead to the execution of arbitrary code.The cupsys version in the old stable distribution (sarge) is notvulnerable to arbitrary code execution.For the stable distribution (etch), this problem has been fixed inversion 1.2.7-4etch1. Updated packages for the arm architecture will beprovided later.We recommend that you upgrade your cupsys packages."
+      }
+    ],
+    "CVE-2007-4476": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1438",
+        "title": "",
+        "body": "A stack-based buffer overflow in the file name checking code may lead to arbitrary code execution when processing maliciously crafted archives."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1566",
+        "title": "",
+        "body": "Dmitry Levin discovered a vulnerability in path handling code used bythe cpio archive utility. The weakness could enable a denial ofservice (crash) or potentially the execution of arbitrary code if avulnerable version of cpio is used to extract or to list the contentsof a maliciously crafted archive.For the stable distribution (etch), these problems have been fixed inversion 2.6-18.1+etch1.For the unstable distribution (sid), these problems have been fixed inversion 2.9-5.We recommend that you upgrade your cpio packages."
+      }
+    ],
+    "CVE-2007-4542": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1539",
+        "title": "",
+        "body": "Lack of input sanitizing and output escaping in the CGI mapserver's template handling and error reporting routines leads to cross-site scripting vulnerabilities."
+      }
+    ],
+    "CVE-2007-4560": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1366",
+        "title": "",
+        "body": "It was discovered that clamav-milter performs insufficient input sanitising, resulting in the execution of arbitrary shell commands."
+      }
+    ],
+    "CVE-2007-4568": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1385",
+        "title": "",
+        "body": "Sean Larsson discovered that two code paths inside the X Font Serverhandle integer values insecurely, which may lead to the execution ofarbitrary code.For the oldstable distribution (sarge) this problem has been fixed inversion 4.3.0.dfsg.1-14sarge5 of xfree86. Packages for m68k are notyet available. They will be provided later.For the stable distribution (etch) this problem has been fixed inversion 1.0.1-7.For the unstable distribution (sid) this problem has been fixed inversion 1.0.5-1.We recommend that you upgrade your xfs packages."
+      }
+    ],
+    "CVE-2007-4569": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1376",
+        "title": "",
+        "body": "iKees Huijgen discovered that under certain circumstances KDM, an Xsession manager for KDE, could be tricked intoallowing user logins without a password.For the old stable distribution (sarge), this problem was not present.For the stable distribution (etch), this problem has been fixed in version4:3.5.5a.dfsg.1-6etch1.We recommend that you upgrade your kdebase package."
+      }
+    ],
+    "CVE-2007-4572": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1409",
+        "title": "",
+        "body": "Samba developers discovered that nmbd could be made to overrun a buffer during the processing of GETDC logon server requests. When samba is configured as a Primary or Backup Domain Controller, a remote attacker could send malicious logon requests and possibly cause a denial of service."
+      }
+    ],
+    "CVE-2007-4573": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1381",
+        "title": "",
+        "body": "Wojciech Purczynski discovered a vulnerability that can be exploited by a local user to obtain superuser privileges on x86_64 systems. This resulted from improper clearing of the high bits of registers during ia32 system call emulation. This vulnerability is relevant to the Debian amd64 port as well as users of the i386 port who run the amd64 linux-image flavour."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1378",
+        "title": "",
+        "body": "Wojciech Purczynski discovered a vulnerability that can be exploited by a local user to obtain superuser privileges on x86_64 systems. This resulted from improper clearing of the high bits of registers during ia32 system call emulation. This vulnerability is relevant to the Debian amd64 port as well as users of the i386 port who run the amd64 linux-image flavour."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1504",
+        "title": "",
+        "body": "Wojciech Purczynski discovered a vulnerability that can be exploited by a local user to obtain superuser privileges on x86_64 systems. This resulted from improper clearing of the high bits of registers during ia32 system call emulation. This vulnerability is relevant to the Debian amd64 port as well as users of the i386 port who run the amd64 linux-image flavour."
+      }
+    ],
+    "CVE-2007-4575": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1419",
+        "title": "",
+        "body": "A vulnerability has been discovered in HSQLDB, the default databaseengine shipped with OpenOffice.org. This could result in theexecution of arbitrary Java code embedded in a OpenOffice.org databasedocument with the user's privilege. This update requires an update ofboth openoffice.org and hsqldb.The old stable distribution (sarge) is not affected by this problem.For the stable distribution (etch) this problem has been fixed inversion 2.0.4.dfsg.2-7etch4 of OpenOffice.org and in version1.8.0.7-1etch1 of hsqldb.For the unstable distribution (sid) this problem has been fixed inversion 2.3.1-1 of OpenOffice.org and in version 1.8.0.9-2 of hsqldb.For the experimental distribution this problem has been fixed inversion 2.3.1~rc1-1 of OpenOffice.org and in version 1.8.0.9-1 ofhsqldb.We recommend that you upgrade your OpenOffice.org and hsqldb packages."
+      }
+    ],
+    "CVE-2007-4619": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1469",
+        "title": "",
+        "body": "Sean de Regge and Greg Linares discovered multiple heap and stack basedbuffer overflows in FLAC, the Free Lossless Audio Codec, which couldlead to the execution of arbitrary code.For the old stable distribution (sarge), these problems have beenfixed in version 1.1.1-5sarge1.For the stable distribution (etch), these problems have been fixed inversion 1.1.2-8.For the unstable distribution (sid), these problems have been fixed inversion 1.2.1-1.We recommend that you upgrade your flac packages."
+      }
+    ],
+    "CVE-2007-4629": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1539",
+        "title": "",
+        "body": "Missing bounds checking in mapserver's template handling leads to a stack-based buffer overrun vulnerability, allowing a remote attacker to execute arbitrary code with the privileges of the CGI or httpd user."
+      }
+    ],
+    "CVE-2007-4650": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1404",
+        "title": "",
+        "body": "Nicklous Roberts discovered that the Reupload module of Gallery 2, a webbased photo management application, allowed unauthorized users to editGallery's data file.The oldstable distribution (sarge) does not contain a gallery2 package.The previous gallery package is not affected by this vulnerability.For the stable distribution (etch) this problem has been fixed inversion 2.1.2-2.0.etch.1.For the unstable distribution (sid) this problem has been fixed inversion 2.2.3-1.We recommend that you upgrade your gallery2 package."
+      }
+    ],
+    "CVE-2007-4656": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1518",
+        "title": "",
+        "body": "Micha Lenk discovered that backup-manager, a command-line backup tool,sends the password as a command line argument when calling a FTP client,which may allow a local attacker to read this password (which providesaccess to all backed-up files) from the process listing.For the old stable distribution (sarge), this problem has been fixed inversion 0.5.7-1sarge2.For the stable distribution (etch), this problem has been fixed in version0.7.5-4.For the unstable distribution (sid), this problem has been fixed in version0.7.6-3.We recommend that you upgrade your backup-manager package."
+      }
+    ],
+    "CVE-2007-4657": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1444",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1578",
+        "title": "",
+        "body": "Large len values of the stspn() or strcspn() functions could allow an attacker to trigger integer overflows to expose memory or cause denial of service."
+      }
+    ],
+    "CVE-2007-4660": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1444",
+        "title": "",
+        "body": "Gerhard Wagner discovered an integer overflow inside the chunk_split() function."
+      }
+    ],
+    "CVE-2007-4662": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1444",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2007-4664": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1529",
+        "title": "",
+        "body": "Multiple security problems have been discovered in the Firebird database,which may lead to the execution of arbitrary code or denial of service.This Debian security advisory is a bit unusual. While it's normallyour strict policy to backport security bugfixes to older releases, thisturned out to be infeasible for Firebird 1.5 due to large infrastructuralchanges necessary to fix these issues. As a consequence security supportfor Firebird 1.5 is hereby discontinued, leaving two options toadministrators running a Firebird database: Administrators running Firebird in a completely internal setup with trusted users could leave it unchanged. Everyone else should upgrade to the firebird2.0 packages available at backports.org. Version 2.0.3.12981.ds1-6~bpo40+1 fixes all known issues. Please refer to the general backports.org documentation to add the packages to your package management configuration. These packages are backported to run with Debian stable. Since firebird2.0 is not a drop-in replacement for firebird2 (which is the source package name for the Firebird 1.5 packages) these updates are not released through security.debian.org. Corrections for potential future security problems affecting Debian stable will be released through backports.org as well. Arrangements have been made to ensure that Firebird in the upcoming Debian 5.0 release will be supportable with regular backported security bugfixes again.For a more detailed description of the security problems, please referto the entries in the Debian Bug Tracking System referenced above andthe following URLs:http://www.firebirdsql.org/rlsnotes/Firebird-2.0-ReleaseNotes.pdfhttp://www.firebirdsql.org/rlsnotes/Firebird-2.0.1-ReleaseNotes.pdfhttp://www.firebirdsql.org/rlsnotes/Firebird-2.0.2-ReleaseNotes.pdf"
+      }
+    ],
+    "CVE-2007-4665": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1529",
+        "title": "",
+        "body": "Multiple security problems have been discovered in the Firebird database,which may lead to the execution of arbitrary code or denial of service.This Debian security advisory is a bit unusual. While it's normallyour strict policy to backport security bugfixes to older releases, thisturned out to be infeasible for Firebird 1.5 due to large infrastructuralchanges necessary to fix these issues. As a consequence security supportfor Firebird 1.5 is hereby discontinued, leaving two options toadministrators running a Firebird database: Administrators running Firebird in a completely internal setup with trusted users could leave it unchanged. Everyone else should upgrade to the firebird2.0 packages available at backports.org. Version 2.0.3.12981.ds1-6~bpo40+1 fixes all known issues. Please refer to the general backports.org documentation to add the packages to your package management configuration. These packages are backported to run with Debian stable. Since firebird2.0 is not a drop-in replacement for firebird2 (which is the source package name for the Firebird 1.5 packages) these updates are not released through security.debian.org. Corrections for potential future security problems affecting Debian stable will be released through backports.org as well. Arrangements have been made to ensure that Firebird in the upcoming Debian 5.0 release will be supportable with regular backported security bugfixes again.For a more detailed description of the security problems, please referto the entries in the Debian Bug Tracking System referenced above andthe following URLs:http://www.firebirdsql.org/rlsnotes/Firebird-2.0-ReleaseNotes.pdfhttp://www.firebirdsql.org/rlsnotes/Firebird-2.0.1-ReleaseNotes.pdfhttp://www.firebirdsql.org/rlsnotes/Firebird-2.0.2-ReleaseNotes.pdf"
+      }
+    ],
+    "CVE-2007-4666": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1529",
+        "title": "",
+        "body": "Multiple security problems have been discovered in the Firebird database,which may lead to the execution of arbitrary code or denial of service.This Debian security advisory is a bit unusual. While it's normallyour strict policy to backport security bugfixes to older releases, thisturned out to be infeasible for Firebird 1.5 due to large infrastructuralchanges necessary to fix these issues. As a consequence security supportfor Firebird 1.5 is hereby discontinued, leaving two options toadministrators running a Firebird database: Administrators running Firebird in a completely internal setup with trusted users could leave it unchanged. Everyone else should upgrade to the firebird2.0 packages available at backports.org. Version 2.0.3.12981.ds1-6~bpo40+1 fixes all known issues. Please refer to the general backports.org documentation to add the packages to your package management configuration. These packages are backported to run with Debian stable. Since firebird2.0 is not a drop-in replacement for firebird2 (which is the source package name for the Firebird 1.5 packages) these updates are not released through security.debian.org. Corrections for potential future security problems affecting Debian stable will be released through backports.org as well. Arrangements have been made to ensure that Firebird in the upcoming Debian 5.0 release will be supportable with regular backported security bugfixes again.For a more detailed description of the security problems, please referto the entries in the Debian Bug Tracking System referenced above andthe following URLs:http://www.firebirdsql.org/rlsnotes/Firebird-2.0-ReleaseNotes.pdfhttp://www.firebirdsql.org/rlsnotes/Firebird-2.0.1-ReleaseNotes.pdfhttp://www.firebirdsql.org/rlsnotes/Firebird-2.0.2-ReleaseNotes.pdf"
+      }
+    ],
+    "CVE-2007-4668": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1529",
+        "title": "",
+        "body": "Multiple security problems have been discovered in the Firebird database,which may lead to the execution of arbitrary code or denial of service.This Debian security advisory is a bit unusual. While it's normallyour strict policy to backport security bugfixes to older releases, thisturned out to be infeasible for Firebird 1.5 due to large infrastructuralchanges necessary to fix these issues. As a consequence security supportfor Firebird 1.5 is hereby discontinued, leaving two options toadministrators running a Firebird database: Administrators running Firebird in a completely internal setup with trusted users could leave it unchanged. Everyone else should upgrade to the firebird2.0 packages available at backports.org. Version 2.0.3.12981.ds1-6~bpo40+1 fixes all known issues. Please refer to the general backports.org documentation to add the packages to your package management configuration. These packages are backported to run with Debian stable. Since firebird2.0 is not a drop-in replacement for firebird2 (which is the source package name for the Firebird 1.5 packages) these updates are not released through security.debian.org. Corrections for potential future security problems affecting Debian stable will be released through backports.org as well. Arrangements have been made to ensure that Firebird in the upcoming Debian 5.0 release will be supportable with regular backported security bugfixes again.For a more detailed description of the security problems, please referto the entries in the Debian Bug Tracking System referenced above andthe following URLs:http://www.firebirdsql.org/rlsnotes/Firebird-2.0-ReleaseNotes.pdfhttp://www.firebirdsql.org/rlsnotes/Firebird-2.0.1-ReleaseNotes.pdfhttp://www.firebirdsql.org/rlsnotes/Firebird-2.0.2-ReleaseNotes.pdf"
+      }
+    ],
+    "CVE-2007-4669": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1529",
+        "title": "",
+        "body": "Multiple security problems have been discovered in the Firebird database,which may lead to the execution of arbitrary code or denial of service.This Debian security advisory is a bit unusual. While it's normallyour strict policy to backport security bugfixes to older releases, thisturned out to be infeasible for Firebird 1.5 due to large infrastructuralchanges necessary to fix these issues. As a consequence security supportfor Firebird 1.5 is hereby discontinued, leaving two options toadministrators running a Firebird database: Administrators running Firebird in a completely internal setup with trusted users could leave it unchanged. Everyone else should upgrade to the firebird2.0 packages available at backports.org. Version 2.0.3.12981.ds1-6~bpo40+1 fixes all known issues. Please refer to the general backports.org documentation to add the packages to your package management configuration. These packages are backported to run with Debian stable. Since firebird2.0 is not a drop-in replacement for firebird2 (which is the source package name for the Firebird 1.5 packages) these updates are not released through security.debian.org. Corrections for potential future security problems affecting Debian stable will be released through backports.org as well. Arrangements have been made to ensure that Firebird in the upcoming Debian 5.0 release will be supportable with regular backported security bugfixes again.For a more detailed description of the security problems, please referto the entries in the Debian Bug Tracking System referenced above andthe following URLs:http://www.firebirdsql.org/rlsnotes/Firebird-2.0-ReleaseNotes.pdfhttp://www.firebirdsql.org/rlsnotes/Firebird-2.0.1-ReleaseNotes.pdfhttp://www.firebirdsql.org/rlsnotes/Firebird-2.0.2-ReleaseNotes.pdf"
+      }
+    ],
+    "CVE-2007-4730": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1372",
+        "title": "",
+        "body": "Aaron Plattner discovered a buffer overflow in the Composite extensionof the X.org X server, which can lead to local privilege escalation.The oldstable distribution (sarge) is not affected by this problem.For the stable distribution (etch) this problem has been fixed inversion 1.1.1-21etch1.For the unstable distribution (sid) this problem will be fixed soon.We recommend that you upgrade your xorg-server packages."
+      }
+    ],
+    "CVE-2007-4739": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1394",
+        "title": "",
+        "body": "It was discovered that reprepro, a tool to create a repository of Debianpackages, only checks the validity of known signatures when updatingfrom a remote site, and thus does not reject packages with only unknownsignatures. This allows an attacker to bypass this authenticationmechanism.The oldstable distribution (sarge) is not affected by this problem.For the stable distribution (etch) this problem has been fixed inversion 1.3.1+1-1.For the unstable distribution (sid) this problem has been fixed inversion 2.2.4-1.We recommend that you upgrade your reprepro package."
+      }
+    ],
+    "CVE-2007-4743": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1387",
+        "title": "",
+        "body": "It has been discovered that the original patch for a buffer overflow insvc_auth_gss.c in the RPCSEC_GSS RPC library in MIT Kerberos 5(CVE-2007-3999,DSA-1368-1) was insufficient to protect from arbitrarycode execution in some environments.The old stable distribution (sarge) does not contain a librpcsecgsspackage.For the stable distribution (etch), this problem has been fixed inversion 0.14-2etch3.For the unstable distribution (sid), this problem has been fixed inversion 0.14-4.We recommend that you upgrade your librpcsecgss package."
+      }
+    ],
+    "CVE-2007-4752": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1576",
+        "title": "",
+        "body": "The recently announced vulnerability in Debian's openssl package(DSA-1571-1, CVE-2008-0166) indirectly affects OpenSSH. As a result,all user and host keys generated using broken versions of the opensslpackage must be considered untrustworthy, even after the openssl updatehas been applied.1. Install the security updates This update contains a dependency on the openssl update and will automatically install a corrected version of the libssl0.9.8 package, and a new package openssh-blacklist. Once the update is applied, weak user keys will be automatically rejected where possible (though they cannot be detected in all cases). If you are using such keys for user authentication, they will immediately stop working and will need to be replaced (see step 3). OpenSSH host keys can be automatically regenerated when the OpenSSH security update is applied. The update will prompt for confirmation before taking this step.2. Update OpenSSH known_hosts files The regeneration of host keys will cause a warning to be displayed when connecting to the system using SSH until the host key is updated in the known_hosts file. The warning will look like this:@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!Someone could be eavesdropping on you right now (man-in-the-middle attack)!It is also possible that the RSA host key has just been changed. In this case, the host key has simply been changed, and you should update the relevant known_hosts file as indicated in the error message. It is recommended that you use a trustworthy channel to exchange the server key. It is found in the file /etc/ssh/ssh_host_rsa_key.pub on the server; it's fingerprint can be printed using the command: ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key.pub In addition to user-specific known_hosts files, there may be a system-wide known hosts file /etc/ssh/ssh_known_hosts. This is file is used both by the ssh client and by sshd for the hosts.equiv functionality. This file needs to be updated as well.3. Check all OpenSSH user keys The safest course of action is to regenerate all OpenSSH user keys, except where it can be established to a high degree of certainty that the key was generated on an unaffected system. Check whether your key is affected by running the ssh-vulnkey tool, included in the security update. By default, ssh-vulnkey will check the standard location for user keys (~/.ssh/id_rsa, ~/.ssh/id_dsa and ~/.ssh/identity), your authorized_keys file (~/.ssh/authorized_keys and ~/.ssh/authorized_keys2), and the system's host keys (/etc/ssh/ssh_host_dsa_key and /etc/ssh/ssh_host_rsa_key). To check all your own keys, assuming they are in the standard locations (~/.ssh/id_rsa, ~/.ssh/id_dsa, or ~/.ssh/identity): ssh-vulnkey To check all keys on your system: sudo ssh-vulnkey -a To check a key in a non-standard location: ssh-vulnkey /path/to/key If ssh-vulnkey says \"Unknown (no blacklist information)\", then it has no information about whether that key is affected. In this case, you can examine the modification time (mtime) of the file using \"ls -l\". Keys generated before September 2006 are not affected. Keep in mind that, although unlikely, backup procedures may have changed the file date back in time (or the system clock may have been incorrectly set). If in doubt, generate a new key and remove the old one from any servers.4. Regenerate any affected user keys OpenSSH keys used for user authentication must be manually regenerated, including those which may have since been transferred to a different system after being generated. New keys can be generated using ssh-keygen, e.g.: $ ssh-keygen Generating public/private rsa key pair. Enter file in which to save the key (/home/user/.ssh/id_rsa): Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /home/user/.ssh/id_rsa. Your public key has been saved in /home/user/.ssh/id_rsa.pub. The key fingerprint is: 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 user@host5. Update authorized_keys files (if necessary) Once the user keys have been regenerated, the relevant public keys must be propagated to any authorized_keys files (and authorized_keys2 files, if applicable) on remote systems. Be sure to delete the lines containing old keys from those files.In addition to countermeasures to mitigate the randomness vulnerability,this OpenSSH update fixes several other vulnerabilities:CVE-2008-1483: Timo Juhani Lindfors discovered that, when using X11 forwarding, the SSH client selects an X11 forwarding port without ensuring that it can be bound on all address families. If the system is configured with IPv6 (even if it does not have working IPv6 connectivity), this could allow a local attacker on the remote server to hijack X11 forwarding.CVE-2007-4752: Jan Pechanec discovered that ssh falls back to creating a trusted X11 cookie if creating an untrusted cookie fails, potentially exposing the local display to a malicious remote server when using X11 forwarding.For the stable distribution (etch), these problems have been fixed inversion 4.3p2-9etch1. Currently, only a subset of all supportedarchitectures have been built; further updates will be provided whenthey become available.For the unstable distribution (sid) and the testing distribution(lenny), these problems have been fixed in version 4.7p1-9.We recommend that you upgrade your openssh packages and take themeasures indicated above."
+      }
+    ],
+    "CVE-2007-4766": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1399",
+        "title": "",
+        "body": "Multiple integer overflows in the processing of escape sequences could result in heap overflows or out of bounds reads/writes."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1570",
+        "title": "",
+        "body": "Andrews Salomon reported that kazehakase, a GTK+-based web browser thatallows pluggable rendering engines, contained an embedded copy of thePCRE library in its source tree which was compiled in and used in preferenceto the system-wide version of this library.The PCRE library has been updated to fix the security issues reportedagainst it in previous Debian Security Advisories. This update ensures thatkazehakase uses that supported library, and not its own embedded andinsecure version.For the stable distribution (etch), this problem has been fixed in version0.4.2-1etch1.We recommend that you upgrade your kazehakase package."
+      }
+    ],
+    "CVE-2007-4768": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1399",
+        "title": "",
+        "body": "Character classes containing a lone unicode sequence were incorrectly optimised, resulting in a heap overflow."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1570",
+        "title": "",
+        "body": "Andrews Salomon reported that kazehakase, a GTK+-based web browser thatallows pluggable rendering engines, contained an embedded copy of thePCRE library in its source tree which was compiled in and used in preferenceto the system-wide version of this library.The PCRE library has been updated to fix the security issues reportedagainst it in previous Debian Security Advisories. This update ensures thatkazehakase uses that supported library, and not its own embedded andinsecure version.For the stable distribution (etch), this problem has been fixed in version0.4.2-1etch1.We recommend that you upgrade your kazehakase package."
+      }
+    ],
+    "CVE-2007-4769": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1460",
+        "title": "",
+        "body": "Tavis Ormandy and Will Drewry discovered that a bug in the handling of back-references inside the regular expressions engine could lead to an out of bounds read, resulting in a crash. This constitutes only a security problem if an application using PostgreSQL processes regular expressions from untrusted sources."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1463",
+        "title": "",
+        "body": "Tavis Ormandy and Will Drewry discovered that a bug in the handling of back-references inside the regular expressions engine could lead to an out of bounds read, resulting in a crash. This constitutes only a security problem if an application using PostgreSQL processes regular expressions from untrusted sources."
+      }
+    ],
+    "CVE-2007-4770": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1511",
+        "title": "",
+        "body": "Several local vulnerabilities have been discovered in libicu,International Components for Unicode, The Common Vulnerabilities andExposures project identifies the following problems: CVE-2007-4770 libicu in International Components for Unicode (ICU) 3.8.1 and earlier attempts to process backreferences to the nonexistent capture group zero (aka \\0), which might allow context-dependent attackers to read from, or write to, out-of-bounds memory locations, related to corruption of REStackFrames. CVE-2007-4771 Heap-based buffer overflow in the doInterval function in regexcmp.cpp in libicu in International Components for Unicode (ICU) 3.8.1 and earlier allows context-dependent attackers to cause a denial of service (memory consumption) and possibly have unspecified other impact via a regular expression that writes a large amount of data to the backtracking stack. For the stable distribution (etch), these problems have been fixed inversion 3.6-2etch1.For the unstable distribution (sid), these problems have been fixed inversion 3.8-6.We recommend that you upgrade your libicu package."
+      }
+    ],
+    "CVE-2007-4771": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1511",
+        "title": "",
+        "body": "Several local vulnerabilities have been discovered in libicu,International Components for Unicode, The Common Vulnerabilities andExposures project identifies the following problems: CVE-2007-4770 libicu in International Components for Unicode (ICU) 3.8.1 and earlier attempts to process backreferences to the nonexistent capture group zero (aka \\0), which might allow context-dependent attackers to read from, or write to, out-of-bounds memory locations, related to corruption of REStackFrames. CVE-2007-4771 Heap-based buffer overflow in the doInterval function in regexcmp.cpp in libicu in International Components for Unicode (ICU) 3.8.1 and earlier allows context-dependent attackers to cause a denial of service (memory consumption) and possibly have unspecified other impact via a regular expression that writes a large amount of data to the backtracking stack. For the stable distribution (etch), these problems have been fixed inversion 3.6-2etch1.For the unstable distribution (sid), these problems have been fixed inversion 3.8-6.We recommend that you upgrade your libicu package."
+      }
+    ],
+    "CVE-2007-4772": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1460",
+        "title": "",
+        "body": "Tavis Ormandy and Will Drewry discovered that the optimizer for regular expression could be tricked into an infinite loop, resulting in denial of service. This constitutes only a security problem if an application using PostgreSQL processes regular expressions from untrusted sources."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1463",
+        "title": "",
+        "body": "Tavis Ormandy and Will Drewry discovered that the optimizer for regular expression could be tricked into an infinite loop, resulting in denial of service. This constitutes only a security problem if an application using PostgreSQL processes regular expressions from untrusted sources."
+      }
+    ],
+    "CVE-2007-4849": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1378",
+        "title": "",
+        "body": "Michael Stone reported an issue with the JFFS2 filesystem. Legacy modes for inodes that were created with POSIX ACL support enabled were not being written out to the medium, resulting in incorrect permissions upon remount."
+      }
+    ],
+    "CVE-2007-4965": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1551",
+        "title": "",
+        "body": "It was discovered that several integer overflows in the imageop module may lead to the execution of arbitrary code, if a user is tricked into processing malformed images. This issue is also tracked as CVE-2008-1679 due to an initially incomplete patch."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1620",
+        "title": "",
+        "body": "It was discovered that several integer overflows in the imageop module may lead to the execution of arbitrary code, if a user is tricked into processing malformed images. This issue is also tracked as CVE-2008-1679 due to an initially incomplete patch."
+      }
+    ],
+    "CVE-2007-4974": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1442",
+        "title": "",
+        "body": "Rubert Buchholz discovered that libsndfile, a library for reading /writing audio files, performs insufficient boundary checks whenprocessing FLAC files, which might lead to the execution of arbitrarycode.The old stable distribution (sarge) is not affected by this problem.For the stable distribution (etch), this problem has been fixed inversion 1.0.16-2.We recommend that you upgrade your libsndfile packages."
+      }
+    ],
+    "CVE-2007-4985": [
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1858",
+        "title": "",
+        "body": "A crafted image file can trigger an infinite loop in the ReadDCMImage function or in the ReadXCFImage function. It only affects the oldstable distribution (etch)."
+      }
+    ],
+    "CVE-2007-4986": [
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1858",
+        "title": "",
+        "body": "Multiple integer overflows allow context-dependent attackers to execute arbitrary code via a crafted .dcm, .dib, .xbm, .xcf, or .xwd image file, which triggers a heap-based buffer overflow. It only affects the oldstable distribution (etch)."
+      }
+    ],
+    "CVE-2007-4987": [
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1858",
+        "title": "",
+        "body": "Off-by-one error allows context-dependent attackers to execute arbitrary code via a crafted image file, which triggers the writing of a '\\0' character to an out-of-bounds address. It affects only the oldstable distribution (etch)."
+      }
+    ],
+    "CVE-2007-4988": [
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1858",
+        "title": "",
+        "body": "A sign extension error allows context-dependent attackers to execute arbitrary code via a crafted width value in an image file, which triggers an integer overflow and a heap-based buffer overflow. It affects only the oldstable distribution (etch)."
+      }
+    ],
+    "CVE-2007-4993": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1384",
+        "title": "",
+        "body": "By use of a specially crafted grub configuration file a domU user may be able to execute arbitrary code upon the dom0 when pygrub is being used."
+      }
+    ],
+    "CVE-2007-4995": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1571",
+        "title": "",
+        "body": "Luciano Bello discovered that the random number generator in Debian'sopenssl package is predictable. This is caused by an incorrectDebian-specific change to the openssl package (CVE-2008-0166). As aresult, cryptographic key material may be guessable.This is a Debian-specific vulnerability which does not affect otheroperating systems which are not based on Debian. However, other systemscan be indirectly affected if weak keys are imported into them.It is strongly recommended that all cryptographic key material which hasbeen generated by OpenSSL versions starting with 0.9.8c-1 on Debiansystems is recreated from scratch. Furthermore, all DSA keys ever usedon affected Debian systems for signing or authentication purposes shouldbe considered compromised; the Digital Signature Algorithm relies on asecret random value used during signature generation.The first vulnerable version, 0.9.8c-1, was uploaded to the unstabledistribution on 2006-09-17, and has since that date propagated to the testing andcurrent stable (etch) distributions. The old stable distribution(sarge) is not affected.Affected keys include SSH keys, OpenVPN keys, DNSSEC keys, and keymaterial for use in X.509 certificates and session keys used in SSL/TLSconnections. Keys generated with GnuPG or GNUTLS are not affected,though.A detector for known weak key material will be published at: http://security.debian.org/project/extra/dowkd/dowkd.pl.gz (OpenPGP signature)Instructions how to implement key rollover for various packages will bepublished at: https://www.debian.org/security/key-rollover/This web site will be continuously updated to reflect new and updatedinstructions on key rollovers for packages using SSL certificates.Popular packages not affected will also be listed.In addition to this critical change, two other vulnerabilities have beenfixed in the openssl package which were originally scheduled for releasewith the next etch point release: OpenSSL's DTLS (Datagram TLS,basically SSL over UDP) implementation did not actually implement theDTLS specification, but a potentially much weaker protocol, andcontained a vulnerability permitting arbitrary code execution(CVE-2007-4995). A side channel attack in the integer multiplicationroutines is also addressed (CVE-2007-3108).For the stable distribution (etch), these problems have been fixed inversion 0.9.8c-4etch3.For the unstable distribution (sid) and the testing distribution(lenny), these problems have been fixed in version 0.9.8g-9.We recommend that you upgrade your openssl package and subsequentlyregenerate any cryptographic material, as outlined above."
+      }
+    ],
+    "CVE-2007-4997": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1428",
+        "title": "",
+        "body": "Chris Evans discovered an issue with certain drivers that make use of the Linux kernel's ieee80211 layer. A remote user could generate a malicious 802.11 frame that could result in a denial of service (crash). The ipw2100 driver is known to be affected by this issue, while the ipw2200 is believed not to be."
+      }
+    ],
+    "CVE-2007-5034": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1380",
+        "title": "",
+        "body": "Kalle Olavi Niemitalo discovered that elinks, an advanced text-mode WWWbrowser, sent HTTP POST data in cleartext when using an HTTPS proxy serverpotentially allowing private information to be disclosed.For the stable distribution (etch), this problem has been fixed in version0.11.1-1.2etch1.For the unstable distribution (sid), this problem has been fixed in version0.11.1-1.5.We recommend that you upgrade your elinks package."
+      }
+    ],
+    "CVE-2007-5037": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1440",
+        "title": "",
+        "body": "It was discovered that a buffer overflow in the filename processing ofthe inotify-tools, a command-line interface to inotify, may lead tothe execution of arbitrary code. This only affects the internallibrary and none of the frontend tools shipped in Debian.The old stable distribution (sarge) does not provide inotify-tools.For the stable distribution (etch), this problem has been fixed inversion 3.3-2.For the unstable distribution (sid), this problem has been fixed inversion 3.11-1.We recommend that you upgrade your inotify-tools package."
+      }
+    ],
+    "CVE-2007-5051": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1559",
+        "title": "",
+        "body": "It was discovered that phpGedView, an application to provide online accessto genealogical data, performed insufficient input sanitising on someparameters, making it vulnerable to cross site scripting.For the stable distribution (etch), this problem has been fixed in version4.0.2.dfsg-3.For the unstable distribution (sid), this problem has been fixed in version4.1.e+4.1.1-2.We recommend that you upgrade your phpgedview package."
+      }
+    ],
+    "CVE-2007-5093": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1381",
+        "title": "",
+        "body": "Alex Smith discovered an issue with the pwc driver for certain webcam devices. If the device is removed while a userspace application has it open, the driver will wait for userspace to close the device, resulting in a blocked USB subsystem. This issue is of low security impact as it requires the attacker to either have physical access to the system or to convince users with local access to remove the device on their behalf."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1503",
+        "title": "",
+        "body": "Alex Smith discovered an issue with the pwc driver for certain webcam devices. If the device is removed while a userspace application has it open, the driver will wait for userspace to close the device, resulting in a blocked USB subsystem. This issue is of low security impact as it requires the attacker to either have physical access to the system or to convince a user with local access to remove the device on their behalf."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1504",
+        "title": "",
+        "body": "Alex Smith discovered an issue with the pwc driver for certain webcam devices. If the device is removed while a userspace application has it open, the driver will wait for userspace to close the device, resulting in a blocked USB subsystem. This issue is of low security impact as it requires the attacker to either have physical access to the system or to convince a user with local access to remove the device on their behalf."
+      }
+    ],
+    "CVE-2007-5116": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1400",
+        "title": "",
+        "body": "Will Drewry and Tavis Ormandy of the Google Security Team havediscovered a UTF-8 related heap overflow in Perl's regular expressioncompiler, probably allowing attackers to execute arbitrary code bycompiling specially crafted regular expressions.For the old stable distribution (sarge), this problem has been fixed inversion 5.8.4-8sarge6.For the stable distribution (etch), this problem has been fixed inversion 5.8.8-7etch1.For the unstable distribution (sid), this problem will be fixed soon.Some architectures are missing from this DSA; these updates will bereleased once they are available.We recommend that you upgrade your perl package."
+      }
+    ],
+    "CVE-2007-5135": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1379",
+        "title": "",
+        "body": "An off-by-one error has been identified in the SSL_get_shared_ciphers()routine in the libssl library from OpenSSL, an implementation of SecureSocket Layer cryptographic libraries and utilities. This error couldallow an attacker to crash an application making use of OpenSSL's libssllibrary, or potentially execute arbitrary code in the security contextof the user running such an application.For the old stable distribution (sarge), this problem has been fixed in version0.9.7e-3sarge5.For the stable distribution (etch), this problem has been fixed inversion 0.9.8c-4etch1.For the unstable and testing distributions (sid and lenny, respectively),this problem has been fixed in version 0.9.8e-9.We recommend that you upgrade your openssl packages."
+      }
+    ],
+    "CVE-2007-5137": [
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1743",
+        "title": "",
+        "body": "It was discovered that libtk-img is prone to a buffer overflow viaspecially crafted multi-frame interlaced GIF files."
+      }
+    ],
+    "CVE-2007-5162": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1410",
+        "title": "",
+        "body": "It was discovered that the Ruby HTTP(S) module performs insufficient validation of SSL certificates, which may lead to man-in-the-middle attacks."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1411",
+        "title": "",
+        "body": "It was discovered that the Ruby HTTP(S) module performs insufficient validation of SSL certificates, which may lead to man-in-the-middle attacks."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1412",
+        "title": "",
+        "body": "It was discovered that the Ruby HTTP(S) module performs insufficient validation of SSL certificates, which may lead to man-in-the-middle attacks."
+      }
+    ],
+    "CVE-2007-5197": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1397",
+        "title": "",
+        "body": "An integer overflow in the BigInteger data type implementation has beendiscovered in the free .NET runtime Mono.The oldstable distribution (sarge) doesn't contain mono.For the stable distribution (etch) this problem has been fixed inversion 1.2.2.1-1etch1. A powerpc build will be provided later.The unstable distribution (sid) will be fixed soon.We recommend that you upgrade your mono packages."
+      }
+    ],
+    "CVE-2007-5198": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1495",
+        "title": "",
+        "body": "A buffer overflow has been discovered in the parser for HTTP Location headers (present in the check_http module)."
+      }
+    ],
+    "CVE-2007-5208": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1462",
+        "title": "",
+        "body": "Kees Cook discovered that the hpssd tool of the HP Linux Printing andImaging System (HPLIP) performs insufficient input sanitising of shellmeta characters, which may result in local privilege escalation tothe hplip user.The old stable distribution (sarge) is not affected by this problem.For the stable distribution (etch), this problem has been fixed inversion 1.6.10-3etch1.For the unstable distribution (sid), this problem has been fixed inversion 1.6.10-4.3.We recommend that you upgrade your hplip packages."
+      }
+    ],
+    "CVE-2007-5269": [
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1750",
+        "title": "",
+        "body": "Certain chunk handlers allow attackers to cause a denial of service (crash) via crafted pCAL, sCAL, tEXt, iTXt, and ztXT chunking in PNG images, which trigger out-of-bounds read operations."
+      }
+    ],
+    "CVE-2007-5300": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1452",
+        "title": "",
+        "body": "k1tk4t discovered that wzdftpd, a portable, modular, small and efficientftp server, did not correctly handle the receipt of long usernames. Thiscould allow remote users to cause the daemon to exit.For the old stable distribution (sarge), this problem has been fixed inversion 0.5.2-1.1sarge3.For the stable distribution (etch), this problem has been fixed in version0.8.1-2etch1.For the unstable distribution (sid), this problem has been fixed in version0.8.2-2.1.We recommend that you upgrade your wzdftpd package."
+      }
+    ],
+    "CVE-2007-5301": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1538",
+        "title": "",
+        "body": "Erik Sjölund discovered a buffer overflow vulnerability in the OggVorbis input plugin of the alsaplayer audio playback application.Successful exploitation of this vulnerability through the opening of amaliciously crafted Vorbis file could lead to the execution ofarbitrary code.For the stable distribution (etch), the problem has been fixed inversion 0.99.76-9+etch1.For the unstable distribution (sid), the problem was fixed in version0.99.80~rc4-1.We recommend that you upgrade your alsaplayer packages."
+      }
+    ],
+    "CVE-2007-5337": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1396",
+        "title": "",
+        "body": "Georgi Guninski discovered the insecure handling of smb:// and sftp:// URI schemes may lead to information disclosure. This vulnerability is only exploitable if Gnome-VFS support is present on the system."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1401",
+        "title": "",
+        "body": "Georgi Guninski discovered the insecure handling of smb:// and sftp:// URI schemes may lead to information disclosure. This vulnerability is only exploitable if Gnome-VFS support is present on the system."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1392",
+        "title": "",
+        "body": "Georgi Guninski discovered the insecure handling of smb:// and sftp:// URI schemes may lead to information disclosure. This vulnerability is only exploitable if Gnome-VFS support is present on the system."
+      }
+    ],
+    "CVE-2007-5338": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1396",
+        "title": "",
+        "body": "moz_bug_r_a4 discovered that the protection scheme offered by XPCNativeWrappers could be bypassed, which might allow privilege escalation."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1401",
+        "title": "",
+        "body": "moz_bug_r_a4 discovered that the protection scheme offered by XPCNativeWrappers could be bypassed, which might allow privilege escalation."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1392",
+        "title": "",
+        "body": "moz_bug_r_a4 discovered that the protection scheme offered by XPCNativeWrappers could be bypassed, which might allow privilege escalation."
+      }
+    ],
+    "CVE-2007-5339": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1396",
+        "title": "",
+        "body": "L. David Baron, Boris Zbarsky, Georgi Guninski, Paul Nickerson, Olli Pettay, Jesse Ruderman, Vladimir Sukhoy, Daniel Veditz, and Martijn Wargers discovered crashes in the layout engine, which might allow the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1401",
+        "title": "",
+        "body": "L. David Baron, Boris Zbarsky, Georgi Guninski, Paul Nickerson, Olli Pettay, Jesse Ruderman, Vladimir Sukhoy, Daniel Veditz, and Martijn Wargers discovered crashes in the layout engine, which might allow the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1391",
+        "title": "",
+        "body": "L. David Baron, Boris Zbarsky, Georgi Guninski, Paul Nickerson, Olli Pettay, Jesse Ruderman, Vladimir Sukhoy, Daniel Veditz, and Martijn Wargers discovered crashes in the layout engine, which might allow the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1392",
+        "title": "",
+        "body": "L. David Baron, Boris Zbarsky, Georgi Guninski, Paul Nickerson, Olli Pettay, Jesse Ruderman, Vladimir Sukhoy, Daniel Veditz, and Martijn Wargers discovered crashes in the layout engine, which might allow the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-5340": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1396",
+        "title": "",
+        "body": "Igor Bukanov, Eli Friedman, and Jesse Ruderman discovered crashes in the JavaScript engine, which might allow the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1401",
+        "title": "",
+        "body": "Igor Bukanov, Eli Friedman, and Jesse Ruderman discovered crashes in the JavaScript engine, which might allow the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1391",
+        "title": "",
+        "body": "Igor Bukanov, Eli Friedman, and Jesse Ruderman discovered crashes in the JavaScript engine, which might allow the execution of arbitrary code. Generally, enabling Javascript in Icedove is not recommended."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1392",
+        "title": "",
+        "body": "Igor Bukanov, Eli Friedman, and Jesse Ruderman discovered crashes in the JavaScript engine, which might allow the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-5342": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1447",
+        "title": "",
+        "body": "It was discovered that the JULI logging component did not restrict its target path, resulting in potential denial of service through file overwrites."
+      }
+    ],
+    "CVE-2007-5365": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1388",
+        "title": "",
+        "body": "The patch used to correct the DHCP server buffer overflow in DSA-1388-1was incomplete and did not adequately resolve the problem. This updateto the previous advisory makes updated packages based on anewer version of the patch available.For completeness, please find below the original advisory:It was discovered that dhcp, a DHCP server for automatic IP address assignment,didn't correctly allocate space for network replies. This could potentiallyallow a malicious DHCP client to execute arbitrary code upon the DHCP server.For the stable distribution (etch), this problem has been fixed inversion 2.0pl5-19.5etch2.For the unstable distribution (sid), this problem will be fixed shortly.Updates to the old stable version (sarge) are pending.We recommend that you upgrade your dhcp packages."
+      }
+    ],
+    "CVE-2007-5373": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1517",
+        "title": "",
+        "body": "Don Armstrong discovered that ldapscripts, a suite of tools to manipulateuser accounts in LDAP, sends the password as a command line argument whencalling LDAP programs, which may allow a local attacker to read this passwordfrom the process listing.The old stable distribution (sarge) does not contain an ldapscripts package.For the stable distribution (etch), this problem has been fixed in version1.4-2etch1.For the unstable distribution (sid), this problem has been fixed in version1.7.1-2.We recommend that you upgrade your ldapscripts package."
+      }
+    ],
+    "CVE-2007-5378": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1415",
+        "title": "",
+        "body": "It was discovered that Tk, a cross-platform graphical toolkit for Tcl,performs insufficient input validation in the code used to load GIFimages, which may lead to the execution of arbitrary code.For the old stable distribution (sarge), this problem has been fixedin version 8.4.9-1sarge1.For the stable distribution (etch), this problem has been fixed inversion 8.4.12-1etch1.We recommend that you upgrade your tk8.4 packages. Updated packages forsparc will be provided later."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1416",
+        "title": "",
+        "body": "It was discovered that Tk, a cross-platform graphical toolkit for Tcl,performs insufficient input validation in the code used to load GIFimages, which may lead to the execution of arbitrary code.Due to the technical limitation in the Debian archive scripts the updatefor the old stable distribution (sarge) cannot be released in sync withthe update for the stable distribution. It will be provided in the nextdays.For the stable distribution (etch), this problem has been fixed inversion 8.3.5-6etch1.We recommend that you upgrade your tk8.3 packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2009/dsa-1743",
+        "title": "",
+        "body": "It was discovered that libtk-img is prone to a buffer overflow viaspecially crafted GIF files with certain subimage sizes."
+      }
+    ],
+    "CVE-2007-5386": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1403",
+        "title": "",
+        "body": "phpMyAdmin, when accessed by a browser that does not URL-encode requests, allows remote attackers to inject arbitrary web script or HTML via the query string."
+      }
+    ],
+    "CVE-2007-5392": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1480",
+        "title": "",
+        "body": "Alin Rad Pop discovered several buffer overflows in the Poppler PDFlibrary, which could allow the execution of arbitrary code if amalformed PDF file is opened.The old stable distribution (sarge) doesn't contain poppler.For the stable distribution (etch), these problems have been fixed inversion 0.4.5-5.1etch2.We recommend that you upgrade your poppler packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1509",
+        "title": "",
+        "body": "Integer overflow in the DCTStream::reset method in xpdf/Stream.cc inXpdf 3.02p11 allows remote attackers to execute arbitrary code via acrafted PDF file, resulting in a heap-based buffer overflow."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1537",
+        "title": "",
+        "body": "An integer overflow vulnerability in DCT stream handling could allow an attacker to overflow a heap buffer, enabling the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-5393": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1408",
+        "title": "",
+        "body": "Alin Rad Pop discovered a buffer overflow in kpdf, which could allowthe execution of arbitrary code if a malformed PDF file is displayed.The old stable distribution (sarge) will be fixed later.For the stable distribution (etch), this problem has been fixed inversion 4:3.5.5-3etch2. Builds for arm and sparc are not yet available.We recommend that you upgrade your kdegraphics packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1480",
+        "title": "",
+        "body": "Alin Rad Pop discovered several buffer overflows in the Poppler PDFlibrary, which could allow the execution of arbitrary code if amalformed PDF file is opened.The old stable distribution (sarge) doesn't contain poppler.For the stable distribution (etch), these problems have been fixed inversion 0.4.5-5.1etch2.We recommend that you upgrade your poppler packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1509",
+        "title": "",
+        "body": "Heap-based buffer overflow in the CCITTFaxStream::lookChar method inxpdf/Stream.cc in Xpdf 3.02p11 allows remote attackers to executearbitrary code via a PDF file that contains a crafted CCITTFaxDecodefilter."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1537",
+        "title": "",
+        "body": "A buffer overflow vulnerability in xpdf's CCITT image compression handlers allows overflow on the heap, allowing an attacker to execute arbitrary code by supplying a maliciously crafted CCITTFaxDecode filter."
+      }
+    ],
+    "CVE-2007-5395": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1432",
+        "title": "",
+        "body": "Alin Rad Pop discovered that link-grammar, Carnegie Mellon University'slink grammar parser for English, performed insufficient validation withinits tokenizer, which could allow a malicious input file to executearbitrary code.For the old stable distribution (sarge), this package is not present.For the stable distribution (etch), this problem has been fixed in version4.2.2-4etch1.For the unstable distribution (sid), this problem has been fixed in version4.2.5-1.We recommend that you upgrade your link-grammar package."
+      }
+    ],
+    "CVE-2007-5398": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1409",
+        "title": "",
+        "body": "Alin Rad Pop of Secunia Research discovered that nmbd did not properly check the length of netbios packets. When samba is configured as a WINS server, a remote attacker could send multiple crafted requests resulting in the execution of arbitrary code with root privileges."
+      }
+    ],
+    "CVE-2007-5461": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1447",
+        "title": "",
+        "body": "It was discovered that the WebDAV servlet is vulnerable to absolute path traversal."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1453",
+        "title": "",
+        "body": "It was discovered that the WebDAV servlet is vulnerable to absolute path traversal."
+      }
+    ],
+    "CVE-2007-5491": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1423",
+        "title": "",
+        "body": "A directory traversal vulnerability in the translation module allows remote authenticated users to chmod arbitrary files to 0777 via .. sequences in the lang parameter."
+      }
+    ],
+    "CVE-2007-5492": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1423",
+        "title": "",
+        "body": "A static code injection vulnerability in the translation module allows a remote authenticated user to execute arbitrary PHP code via the value parameter."
+      }
+    ],
+    "CVE-2007-5497": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1422",
+        "title": "",
+        "body": "Rafal Wojtczuk of McAfee AVERT Research discovered that e2fsprogs, theext2 file system utilities and libraries, contained multipleinteger overflows in memory allocations, based on sizes taken directlyfrom filesystem information. These could result in heap-basedoverflows potentially allowing the execution of arbitrary code.For the stable distribution (etch), this problem has been fixed in version1.39+1.40-WIP-2006.11.14+dfsg-2etch1.For the unstable distribution (sid), this problem will be fixed shortly.We recommend that you upgrade your e2fsprogs package."
+      }
+    ],
+    "CVE-2007-5503": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1542",
+        "title": "",
+        "body": "Peter Valchev (Google Security) discovered a series of integeroverflow weaknesses in Cairo, a vector graphics rendering library usedby many other applications. If an application uses cairo to render amaliciously crafted PNG image, the vulnerability allows the executionof arbitrary code.For the stable distribution (etch), these problems have been fixed inversion 1.2.4-4.1+etch1.For the unstable distribution (sid), these problems have been fixed inversion 1.4.10-1.1.We recommend that you upgrade your libcairo packages."
+      }
+    ],
+    "CVE-2007-5589": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1403",
+        "title": "",
+        "body": "phpMyAdmin allows a remote attacker to inject arbitrary web script or HTML in the context of a logged in user's session (cross site scripting)."
+      }
+    ],
+    "CVE-2007-5623": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1495",
+        "title": "",
+        "body": "A buffer overflow has been discovered in the check_snmp module."
+      }
+    ],
+    "CVE-2007-5692": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1423",
+        "title": "",
+        "body": "Multiple cross site scripting flaws allow remote attackers to inject arbitrary script or HTML fragments into several scripts."
+      }
+    ],
+    "CVE-2007-5693": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1423",
+        "title": "",
+        "body": "An eval injection vulnerability in the translation module allows remote authenticated users to execute arbitrary PHP code via the edit parameter in an upd cmd action."
+      }
+    ],
+    "CVE-2007-5694": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1423",
+        "title": "",
+        "body": "A path traversal vulnerability in the translation module allows remote authenticated users to read arbitrary files via an absolute path in the dir parameter."
+      }
+    ],
+    "CVE-2007-5707": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1541",
+        "title": "",
+        "body": "Thomas Sesselmann discovered that slapd could be crashed by a malformed modify requests."
+      }
+    ],
+    "CVE-2007-5708": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1541",
+        "title": "",
+        "body": "Toby Blade discovered that incorrect memory handling in slapo-pcache could lead to denial of service through crafted search requests."
+      }
+    ],
+    "CVE-2007-5712": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1640",
+        "title": "",
+        "body": "Simon Willison discovered that in Django, a Python web framework, thefeature to retain HTTP POST data during user reauthentication alloweda remote attacker to perform unauthorized modification of data throughcross site request forgery. This is possible regardless of the Djangoplugin to prevent cross site request forgery being enabled. The CommonVulnerabilities and Exposures project identifies this issue asCVE-2008-3909.In this update the affected feature is disabled; this is in accordancewith upstream's preferred solution for this situation.This update takes the opportunity to also include a relatively minordenial of service attack in the internationalisation framework, knownas CVE-2007-5712.For the stable distribution (etch), these problems have been fixed inversion 0.95.1-1etch2.For the unstable distribution (sid), these problems have been fixed inversion 1.0-1.We recommend that you upgrade your python-django package."
+      }
+    ],
+    "CVE-2007-5728": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1693",
+        "title": "",
+        "body": "Cross-site scripting vulnerability allows remote attackers to inject arbitrary web script or HTML via PHP_SELF."
+      }
+    ],
+    "CVE-2007-5729": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1284",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2007-5730": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1284",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2007-5741": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1405",
+        "title": "",
+        "body": "It was discovered that Plone, a web content management system, allowsremote attackers to execute arbitrary code via specially crafted webbrowser cookies.The oldstable distribution (sarge) is not affected by this problem.For the stable distribution (etch) this problem has been fixed inversion 2.5.1-4etch3.For the unstable distribution (sid) this problem has been fixed inversion 2.5.2-3.We recommend that you upgrade your zope-cmfplone package."
+      }
+    ],
+    "CVE-2007-5742": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1421",
+        "title": "",
+        "body": "A vulnerability has been discovered in Battle for Wesnoth that allowsremote attackers to read arbitrary files the user running the clienthas access to on the machine running the game client.For the old stable distribution (sarge) this problem has been fixed inversion 0.9.0-7.For the stable distribution (etch) this problem has been fixed inversion 1.2-3.For the stable backports distribution (etch-backports) this problemhas been fixed in version 1.2.8-1~bpo40+1.For the unstable distribution (sid) this problem has been fixed inversion 1.2.8-1.For the experimental distribution this problem has been fixed inversion 1.3.12-1.We recommend that you upgrade your wesnoth package."
+      }
+    ],
+    "CVE-2007-5745": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1547",
+        "title": "",
+        "body": "Several bugs have been discovered in the way OpenOffice.org parses Quattro Pro files that may lead to a overflow in the heap potentially leading to the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-5746": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1547",
+        "title": "",
+        "body": "Specially crafted EMF files can trigger a buffer overflow in the heap that may lead to the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-5747": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1547",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2007-5770": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1410",
+        "title": "",
+        "body": "It was discovered that the Ruby modules for FTP, Telnet, IMAP, POP and SMTP perform insufficient validation of SSL certificates, which may lead to man-in-the-middle attacks."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1411",
+        "title": "",
+        "body": "It was discovered that the Ruby modules for FTP, Telnet, IMAP, POP and SMTP perform insufficient validation of SSL certificates, which may lead to man-in-the-middle attacks."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1412",
+        "title": "",
+        "body": "It was discovered that the Ruby modules for FTP, Telnet, IMAP, POP and SMTP perform insufficient validation of SSL certificates, which may lead to man-in-the-middle attacks."
+      }
+    ],
+    "CVE-2007-5824": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1597",
+        "title": "",
+        "body": "Insufficient validation and bounds checking of the Authorization: HTTP header enables a heap buffer overflow, potentially enabling the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-5837": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1477",
+        "title": "",
+        "body": "Duncan Gilmore discovered that yarssr, an RSS aggregator and reader,performs insufficient input sanitising, which could result in theexecution of arbitrary shell commands if a malformed feed is read.Due to a technical limitation of the archive management scripts, thefix for the old stable distribution (sarge) needs to be postponedby a few days.For the stable distribution (etch), this problem has been fixed inversion 0.2.2-1etch1.We recommend that you upgrade your yarssr packages."
+      }
+    ],
+    "CVE-2007-5846": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1483",
+        "title": "",
+        "body": "The SNMP agent (snmp_agent.c) in net-snmp before 5.4.1 allows remoteattackers to cause a denial of service (CPU and memory consumption)via a GETBULK request with a large max-repeaters value.For the stable distribution (etch), this problem has been fixed inversion 5.2.3-7etch2.For the unstable and testing distributions (sid and lenny,respectively), this problem has been fixed in version 5.4.1~dfsg-2.We recommend that you upgrade your net-snmp package."
+      }
+    ],
+    "CVE-2007-5849": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1437",
+        "title": "",
+        "body": "Wei Wang discovered that an buffer overflow in the SNMP backend may lead to the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-5899": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1444",
+        "title": "",
+        "body": "It was discovered that the output_add_rewrite_var() function could leak session ID information, resulting in information disclosure."
+      }
+    ],
+    "CVE-2007-5904": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1428",
+        "title": "",
+        "body": "Przemyslaw Wegrzyn discovered an issue in the CIFS filesystem that could allow a malicious server to cause a denial of service (crash) by overflowing a buffer."
+      }
+    ],
+    "CVE-2007-5925": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1413",
+        "title": "",
+        "body": "The convert_search_mode_to_innobase function in ha_innodb.ccin the InnoDB engine in MySQL 5.1.23-BK and earlier allowsremote authenticated users to cause a denial of service(database crash) via a certain CONTAINS operation on anindexed column, which triggers an assertion error. (Affectssource version 5.0.32.)"
+      }
+    ],
+    "CVE-2007-5947": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1424",
+        "title": "",
+        "body": "Jesse Ruderman and Petko D. Petkov discovered that the URI handler for JAR archives allows cross-site scripting."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1425",
+        "title": "",
+        "body": "Jesse Ruderman and Petko D. Petkov discovered that the URI handler for JAR archives allows cross-site scripting."
+      }
+    ],
+    "CVE-2007-5958": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1466",
+        "title": "",
+        "body": "It was discovered that error messages of security policy file handling may lead to a minor information leak disclosing the existence of files otherwise inaccessible to the user."
+      }
+    ],
+    "CVE-2007-5960": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1424",
+        "title": "",
+        "body": "Gregory Fleischer discovered a race condition in the handling of the window.location property, which might lead to cross-site request forgery."
+      },
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1425",
+        "title": "",
+        "body": "Gregory Fleischer discovered a race condition in the handling of the window.location property, which might lead to cross-site request forgery."
+      }
+    ],
+    "CVE-2007-5966": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1436",
+        "title": "",
+        "body": "Warren Togami discovered an issue in the hrtimer subsystem that allows a local user to cause a DoS (soft lockup) by requesting a timer sleep for a long period of time leading to an integer overflow."
+      }
+    ],
+    "CVE-2007-5969": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1451",
+        "title": "",
+        "body": "It was discovered that symbolic links were handled insecurely during the creation of tables with DATA DIRECTORY or INDEX DIRECTORY statements, which might lead to denial of service by overwriting data. This is only exploitable by authenticated users."
+      }
+    ],
+    "CVE-2007-6015": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1427",
+        "title": "",
+        "body": "Alin Rad Pop discovered that Samba, a LanManager-like file and printer serverfor Unix, is vulnerable to a buffer overflow in the nmbd code which handlesGETDC mailslot requests, which might lead to the execution of arbitrary code.For the old stable distribution (sarge), this problem has been fixed in version3.0.14a-3sarge11. Packages for m68k will be provided later.For the stable distribution (etch), this problem has been fixed in version3.0.24-6etch9.For the unstable distribution (sid), this problem will be fixed soon.We recommend that you upgrade your samba packages."
+      }
+    ],
+    "CVE-2007-6018": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1470",
+        "title": "",
+        "body": "Ulf Härnhammar discovered that the HTML filter of the Horde webapplication framework performed insufficient input sanitising, whichmay lead to the deletion of emails if a user is tricked into viewinga malformed email inside the Imp client.This update also provides backported bugfixes to the cross-sitescripting filter and the user management API from the latest Horderelease 3.1.6.The old stable distribution (sarge) is not affected. An update toEtch is recommended, though.For the stable distribution (etch), this problem has been fixed inversion 3.1.3-4etch2.We recommend that you upgrade your horde3 package."
+      }
+    ],
+    "CVE-2007-6035": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1418",
+        "title": "",
+        "body": "It was discovered that Cacti, a tool to monitor systems and networks,performs insufficient input sanitising, which allows SQL injection.For the oldstable distribution (sarge) this problem has been fixed inversion 0.8.6c-7sarge5.For the stable distribution (etch) this problem has been fixed inversion 0.8.6i-3.2.For the unstable distribution (sid) this problem has been fixed inversion 0.8.7a-1.We recommend that you upgrade your cacti package."
+      }
+    ],
+    "CVE-2007-6063": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1436",
+        "title": "",
+        "body": "Venustech AD-LAB discovered a buffer overflow in the isdn ioctl handling, exploitable by a local user."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1503",
+        "title": "",
+        "body": "Venustech AD-LAB discovered a a buffer overflow in the isdn ioctl handling, exploitable by a local user."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1504",
+        "title": "",
+        "body": "Venustech AD-LAB discovered a a buffer overflow in the isdn ioctl handling, exploitable by a local user."
+      }
+    ],
+    "CVE-2007-6067": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1460",
+        "title": "",
+        "body": "Tavis Ormandy and Will Drewry discovered that the optimizer for regular expression could be tricked massive resource consumption. This constitutes only a security problem if an application using PostgreSQL processes regular expressions from untrusted sources."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1463",
+        "title": "",
+        "body": "Tavis Ormandy and Will Drewry discovered that the optimizer for regular expression could be tricked massive resource consumption. This constitutes only a security problem if an application using PostgreSQL processes regular expressions from untrusted sources."
+      }
+    ],
+    "CVE-2007-6110": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1429",
+        "title": "",
+        "body": "Michael Skibbe discovered that htdig, a WWW search system for an intranetor small internet, did not adequately quote values submitted to the searchscript, allowing remote attackers to inject arbitrary script or HTMLinto specially crafted links.For the old stable distribution (sarge), this problem was not present.For the stable distribution (etch), this problem has been fixed in version1:3.2.0b6-3.1etch1.For the unstable distribution (sid), this problem has been fixed in version1:3.2.0b6-4.We recommend that you upgrade your htdig package."
+      }
+    ],
+    "CVE-2007-6114": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1414",
+        "title": "",
+        "body": "Stefan Esser discovered a buffer overflow in the SSL dissector. Fabiodds discovered a buffer overflow in the iSeries trace dissector."
+      }
+    ],
+    "CVE-2007-6120": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1414",
+        "title": "",
+        "body": "The Bluetooth SDP dissector could be tricked into an endless loop."
+      }
+    ],
+    "CVE-2007-6121": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1414",
+        "title": "",
+        "body": "The RPC portmap dissector could be tricked into dereferencing a NULL pointer."
+      }
+    ],
+    "CVE-2007-6151": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1479",
+        "title": "",
+        "body": "ADLAB discovered a possible memory overrun in the ISDN subsystem that may permit a local user to overwrite kernel memory by issuing ioctls with unterminated data."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1503",
+        "title": "",
+        "body": "ADLAB discovered a possible memory overrun in the ISDN subsystem that may permit a local user to overwrite kernel memory by issuing ioctls with unterminated data."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1504",
+        "title": "",
+        "body": "ADLAB discovered a possible memory overrun in the ISDN subsystem that may permit a local user to overwrite kernel memory by issuing ioctls with unterminated data."
+      }
+    ],
+    "CVE-2007-6170": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1417",
+        "title": "",
+        "body": "Tilghman Lesher discovered that the logging engine of Asterisk, a freesoftware PBX and telephony toolkit, performs insufficient sanitising ofcall-related data, which may lead to SQL injection.For the old stable distribution (sarge), this problem has been fixedin version 1:1.0.7.dfsg.1-2sarge6.For the stable distribution (etch), this problem has been fixed inversion 1:1.2.13~dfsg-2etch2. Updated packages for ia64 will be providedlater.We recommend that you upgrade your asterisk packages."
+      }
+    ],
+    "CVE-2007-6205": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1528",
+        "title": "",
+        "body": "Peter Hüwe and Hanno Böck discovered that Serendipity, a weblog manager,did not properly sanitise input to several scripts which allowedcross site scripting.The old stable distribution (sarge) does not contain a serendipity package.For the stable distribution (etch), this problem has been fixed in version1.0.4-1+etch1.For the unstable distribution (sid), this problem has been fixed inversion 1.3-1.We recommend that you upgrade your serendipity package."
+      }
+    ],
+    "CVE-2007-6206": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1436",
+        "title": "",
+        "body": "Blake Frantz discovered that when a core file owned by a non-root user exists, and a root-owned process dumps core over it, the core file retains its original ownership. This could be used by a local user to gain access to sensitive information."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1503",
+        "title": "",
+        "body": "Blake Frantz discovered that when a core file owned by a non-root user exists, and a root-owned process dumps core over it, the core file retains its original ownership. This could be used by a local user to gain access to sensitive information."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1504",
+        "title": "",
+        "body": "Blake Frantz discovered that when a core file owned by a non-root user exists, and a root-owned process dumps core over it, the core file retains its original ownership. This could be used by a local user to gain access to sensitive information."
+      }
+    ],
+    "CVE-2007-6239": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1482",
+        "title": "",
+        "body": "It was discovered that malformed cache update replies against the SquidWWW proxy cache could lead to the exhaustion of system memory, resultingin potential denial of service.For the old stable distribution (sarge), the update cannot currentlybe processed on the buildd security network due to a bug in the archivemanagement script. This will be resolved soon. An update for i386is temporarily available at https://people.debian.org/~jmm/squid/.For the stable distribution (etch), this problem has been fixed inversion 2.6.5-6etch1.We recommend that you upgrade your squid packages."
+      }
+    ],
+    "CVE-2007-6277": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1469",
+        "title": "",
+        "body": "Sean de Regge and Greg Linares discovered multiple heap and stack basedbuffer overflows in FLAC, the Free Lossless Audio Codec, which couldlead to the execution of arbitrary code.For the old stable distribution (sarge), these problems have beenfixed in version 1.1.1-5sarge1.For the stable distribution (etch), these problems have been fixed inversion 1.1.2-8.For the unstable distribution (sid), these problems have been fixed inversion 1.2.1-1.We recommend that you upgrade your flac packages."
+      }
+    ],
+    "CVE-2007-6284": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1461",
+        "title": "",
+        "body": "Brad Fitzpatrick discovered that the UTF-8 decoding functions of libxml2,the GNOME XML library, validate UTF-8 correctness insufficiently, whichmay lead to denial of service by forcing libxml2 into an infinite loop.For the old stable distribution (sarge), this problem has been fixed inversion 2.6.16-7sarge1.For the stable distribution (etch), this problem has been fixed inversion 2.6.27.dfsg-2.For the unstable distribution (sid), this problem will be fixed soon.We recommend that you upgrade your libxml2 packages."
+      }
+    ],
+    "CVE-2007-6335": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1435",
+        "title": "",
+        "body": "It was discovered that an integer overflow in the decompression code for MEW archives may lead to the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-6336": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1435",
+        "title": "",
+        "body": "It was discovered that on off-by-one in the MS-ZIP decompression code may lead to the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-6341": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1515",
+        "title": "",
+        "body": "Several remote vulnerabilities have been discovered in libnet-dns-perl.The Common Vulnerabilities and Exposures project identifies thefollowing problems:It was discovered that libnet-dns-perl generates very weak transactionIDs when sending queries (CVE-2007-3377). This update switchestransaction ID generation to the Perl random generator, makingprediction attacks more difficult.Compression loops in domain names resulted in an infinite loop in thedomain name expander written in Perl (CVE-2007-3409). The Debianpackage uses an expander written in C by default, but this vulnerabilityhas been addressed nevertheless.Decoding malformed A records could lead to a crash (via an uncaughtPerl exception) of certain applications using libnet-dns-perl(CVE-2007-6341).For the old stable distribution (sarge), these problems have been fixed inversion 0.48-1sarge1.For the stable distribution (etch), these problems have been fixed inversion 0.59-1etch1.We recommend that you upgrade your libnet-dns-perl package."
+      }
+    ],
+    "CVE-2007-6350": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1473",
+        "title": "",
+        "body": "Joachim Breitner discovered that Subversion support in scponly isinherently insecure, allowing execution of arbitrary commands. Furtherinvestigation showed that rsync and Unison support suffer from similarissues. This set of issues has been assigned CVE-2007-6350.In addition, it was discovered that it was possible to invoke scpwith certain options that may lead to the execution of arbitrary commands(CVE-2007-6415).This update removes Subversion, rsync and Unison support from thescponly package, and prevents scp from being invoked with the dangerousoptions.For the old stable distribution (sarge), these problems have been fixedin version 4.0-1sarge2.For the stable distribution (etch), these problems have been fixed inversion 4.6-1etch1.The unstable distribution (sid) will be fixed soon.We recommend that you upgrade your scponly package."
+      }
+    ],
+    "CVE-2007-6352": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1487",
+        "title": "",
+        "body": "Victor Stinner discovered an integer overflow, which may result in denial of service or potentially the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-6353": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1474",
+        "title": "",
+        "body": "Meder Kydyraliev discovered an integer overflow in the thumbnailhandling of libexif, the EXIF/IPTC metadata manipulation library, whichcould result in the execution of arbitrary code.The old stable distribution (sarge) doesn't contain exiv2 packages.For the stable distribution (etch), this problem has been fixed inversion 0.10-1.5.We recommend that you upgrade your exiv2 packages."
+      }
+    ],
+    "CVE-2007-6355": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1533",
+        "title": "",
+        "body": "Flawed data validation could lead to integer overflows, causing other invalid memory accesses, also with the potential for memory corruption or arbitrary code execution."
+      }
+    ],
+    "CVE-2007-6356": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1533",
+        "title": "",
+        "body": "Cyclical EXIF image file directory (IFD) references could cause a denial of service (infinite loop)."
+      }
+    ],
+    "CVE-2007-6381": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1439",
+        "title": "",
+        "body": "Henning Pingel discovered that TYPO3, a web content management framework,performs insufficient input sanitising, making it vulnerable to SQLinjection by logged-in backend users.The old stable distribution (sarge) doesn't contain typo3-src.For the stable distribution (etch), this problem has been fixed inversion 4.0.2+debian-4.For the unstable distribution (sid) and for the testing distribution(lenny), this problem has been fixed in version 4.1.5-1.We recommend that you upgrade your typo3-src packages."
+      }
+    ],
+    "CVE-2007-6415": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1473",
+        "title": "",
+        "body": "Joachim Breitner discovered that Subversion support in scponly isinherently insecure, allowing execution of arbitrary commands. Furtherinvestigation showed that rsync and Unison support suffer from similarissues. This set of issues has been assigned CVE-2007-6350.In addition, it was discovered that it was possible to invoke scpwith certain options that may lead to the execution of arbitrary commands(CVE-2007-6415).This update removes Subversion, rsync and Unison support from thescponly package, and prevents scp from being invoked with the dangerousoptions.For the old stable distribution (sarge), these problems have been fixedin version 4.0-1sarge2.For the stable distribution (etch), these problems have been fixed inversion 4.6-1etch1.The unstable distribution (sid) will be fixed soon.We recommend that you upgrade your scponly package."
+      }
+    ],
+    "CVE-2007-6417": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1436",
+        "title": "",
+        "body": "Hugh Dickins discovered an issue in the tmpfs filesystem where, under a rare circumstance, a kernel page may be improperly cleared, leaking sensitive kernel memory to userspace or resulting in a DoS (crash)."
+      }
+    ],
+    "CVE-2007-6418": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1501",
+        "title": "",
+        "body": "Tobias Grützmacher discovered that a Debian-provided CRON script in dspam,a statistical spam filter, included a database password on the command line.This allowed a local attacker to read the contents of the dspam database,such as emails.The old stable distribution (sarge) does not contain the dspam package.For the stable distribution (etch), this problem has been fixed in version3.6.8-5etch1.For the unstable distribution (sid), this problem has been fixed in version3.6.8-5.1.We recommend that you upgrade your dspam package."
+      }
+    ],
+    "CVE-2007-6427": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1466",
+        "title": "",
+        "body": "regenrecht discovered that missing input sanitising within the XInput-Misc extension may lead to local privilege escalation."
+      }
+    ],
+    "CVE-2007-6429": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1466",
+        "title": "",
+        "body": "regenrecht discovered that integer overflows in the EVI and MIT-SHM extensions may lead to local privilege escalation."
+      }
+    ],
+    "CVE-2007-6430": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1525",
+        "title": "",
+        "body": "Tilghman Lesher discovered that database-based registrations are insufficiently validated. This only affects setups, which are configured to run without a password and only host-based authentication."
+      }
+    ],
+    "CVE-2007-6437": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1464",
+        "title": "",
+        "body": "Oriol Carreras discovered that syslog-ng, a next generation loggingdaemon can be tricked into dereferencing a NULL pointer throughmalformed timestamps, which can lead to denial of service and thedisguise of an subsequent attack, which would otherwise be logged.The old stable distribution (sarge) is not affected.For the stable distribution (etch), this problem has been fixed inversion 2.0.0-1etch1.For the unstable distribution (sid), this problem has been fixed inversion 2.0.6-1.We recommend that you upgrade your syslog-ng package."
+      }
+    ],
+    "CVE-2007-6451": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1446",
+        "title": "",
+        "body": "The CIP dissector could be tricked into excessive memory allocation."
+      }
+    ],
+    "CVE-2007-6454": [
+      {
+        "url": "http://www.debian.org/security/2007/dsa-1441",
+        "title": "",
+        "body": "Luigi Auriemma discovered that PeerCast, a P2P audio and video streamingserver, is vulnerable to a heap overflow in the HTTP server code, whichallows remote attackers to cause a denial of service and possibly executearbitrary code via a long SOURCE request.The old stable distribution (sarge) does not contain peercast.For the stable distribution (etch), this problem has been fixed inversion 0.1217.toots.20060314-1etch0.For the unstable distribution (sid), this problem has been fixed inversion 0.1218+svn20071220+2.We recommend that you upgrade your peercast packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1583",
+        "title": "",
+        "body": "Luigi Auriemma discovered that PeerCast is vulnerable to a heap overflow in the HTTP server code, which allows remote attackers to cause a denial of service and possibly execute arbitrary code via a long SOURCE request."
+      }
+    ],
+    "CVE-2007-6562": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1443",
+        "title": "",
+        "body": "It was discovered that several buffer overflows in tcpreen, a tool formonitoring a TCP connection, may lead to denial of service.The old stable distribution (sarge) doesn't contain tcpreen.For the stable distribution (etch), this problem has been fixed inversion 1.4.3-0.1etch1.For the unstable distribution (sid), this problem has been fixed inversion 1.4.3-0.3.We recommend that you upgrade your tcpreen package."
+      }
+    ],
+    "CVE-2007-6598": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1457",
+        "title": "",
+        "body": "It was discovered that Dovecot, a POP3 and IMAP server, only when usedwith LDAP authentication and base contains variables, could allowa user to log in to the account of another user with the same password.The old stable distribution (sarge) is not affected.For the stable distribution (etch), this problem has been fixed inversion 1.0.rc15-2etch3.For the unstable distribution (sid), this problem has been fixed inversion 1.0.10-1.We recommend that you upgrade your dovecot packages."
+      }
+    ],
+    "CVE-2007-6600": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1460",
+        "title": "",
+        "body": "Functions in index expressions could lead to privilege escalation. For a more in depth explanation please see the upstream announce available at http://www.postgresql.org/about/news.905."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1463",
+        "title": "",
+        "body": "Functions in index expressions could lead to privilege escalation. For a more in depth explanation please see the upstream announce available at http://www.postgresql.org/about/news.905."
+      }
+    ],
+    "CVE-2007-6601": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1460",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1463",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2007-6611": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1467",
+        "title": "",
+        "body": "Multiple cross site scripting issues allowed a remote attacker to insert malicious HTML or web script into Mantis web pages."
+      }
+    ],
+    "CVE-2007-6681": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1543",
+        "title": "",
+        "body": "A buffer overflow vulnerability in subtitle handling allows an attacker to execute arbitrary code through the opening of a maliciously crafted MicroDVD, SSA or Vplayer file."
+      }
+    ],
+    "CVE-2007-6694": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1503",
+        "title": "",
+        "body": "Cyrill Gorcunov reported a NULL pointer dereference in code specific to the CHRP PowerPC platforms. Local users could exploit this issue to achieve a Denial of Service (DoS)."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1504",
+        "title": "",
+        "body": "Cyrill Gorcunov reported a NULL pointer dereference in code specific to the CHRP PowerPC platforms. Local users could exploit this issue to achieve a Denial of Service (DoS)."
+      },
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1565",
+        "title": "",
+        "body": "Cyrill Gorcunov reported a NULL pointer dereference in code specific to the CHRP PowerPC platforms. Local users could exploit this issue to achieve a Denial of Service (DoS)."
+      }
+    ],
+    "CVE-2007-6697": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1493",
+        "title": "",
+        "body": "Gynvael Coldwind discovered a buffer overflow in GIF image parsing, which could result in denial of service and potentially the execution of arbitrary code."
+      }
+    ],
+    "CVE-2007-6698": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1541",
+        "title": "",
+        "body": "It was discovered that a programming error in the interface to the BDB storage backend could lead to denial of service through crafted modify requests."
+      }
+    ],
+    "CVE-2007-6712": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1588",
+        "title": "",
+        "body": "Johannes Bauer discovered an integer overflow condition in the hrtimer subsystem on 64-bit systems. This can be exploited by local users to trigger a denial of service (DoS) by causing the kernel to execute an infinite loop."
+      }
+    ]
+  }
+}

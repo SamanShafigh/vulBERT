@@ -1,0 +1,28 @@
+{
+  "year": 2002,
+  "total": 3,
+  "reference": "bugzilla.redhat.com",
+  "reports": {
+    "CVE-2001-1387": [
+      {
+        "url": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=50500",
+        "title": "iptables-save saves --reject-with icmp-host-prohibited as --reject-with tcp-reset",
+        "description": "From Bugzilla Helper:User-Agent: Mozilla/4.0 (compatible; MSIE 5.5; Windows 98)Description of problem:The redhat iptables initialization routines depend on iptables-save and iptables-restore. iptables-save does not save the rules defined correctly. Specifically, so far as I can tell, every instance of a rule that contains reject-with icmp-host-prohibited is always changed to --reject-with tcp-reset.This is true even on rules which do not contain -p tcp.How reproducible:AlwaysSteps to Reproduce:1. Create a ruleset that contains a rule that includes -j REJECT --reject-with icmp-host-prohibited. A specific example:iptables -A INPUT -s 199.74.152.254/32 -j REJECT --reject-with icmp-host-prohibited2. iptables -L -vto verify that the rule was entered correctly.3. issue iptables-save | less4. Behold!Actual Results: The rule was saved with the clause:--reject-with tcp-resetExpected Results: The rule should have been saved with -j REJECT --reject-with icmp-host-prohibitedAdditional info:IMHO, this is a security issue. Before kernel 2.4.3 was released, warnings were issued that breakins could occur because iptables allowed \"RELATED\" bugs to be tracked. Here we have not only this but but another bug (which I encountered) where rules savd with iptables-save were not restored because of the fact that --log-prefix with a space in the string would cause the rule to fail to restore. This is at least that severe - rules will be restored wrong and some rules may not be restored at all. Warnings should once again be issued that iptables should not be used."
+      }
+    ],
+    "CVE-2002-2439": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2002-2439",
+        "title": "CVE-2002-2439 gcc: Integer overflow can occur during the computation of the memory region size for new[] operator",
+        "description": "It was reported that C++ new[] operator was previously missing integer overflow / wrap around checks for its arguments. If an application compiled with gcc accepted untrusted input for memory allocation and was missing application-level checks for integer overflows of arguments, provided to the new[] operator, an attacker could use this flaw to cause the memory region, allocated in the end for the new[] operator statement, it to be smaller than truly required, possibly leading to heap-based buffer overflows.Upstream bug report:[1] http://gcc.gnu.org/bugzilla/show_bug.cgi?id=19351Upstream patches:[2] http://gcc.gnu.org/ml/gcc-patches/2012-06/msg01689.html[3] http://gcc.gnu.org/ml/gcc-patches/2012-08/msg01416.htmlReferences:[4] http://gcc.gnu.org/bugzilla/show_bug.cgi?id=35790[5] http://cert.uni-stuttgart.de/ticker/advisories/calloc.html"
+      }
+    ],
+    "CVE-2002-2443": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=962531",
+        "title": "CVE-2002-2443 krb5: UDP ping-pong flaw in kpasswd",
+        "description": "A flaw in certain programs that handle UDP traffic was discovered and assigned the name CVE-1999-0103 (that CVE specifically mentions echo and chargen as vulnerable). In 2002, a Nessus plugin was included [1] that reference this CVE name, but was for the kpasswd service. Until recently, this issue had not been reported upstream. This issue has since been reported upstream [2] and is now fixed [3].If a malicious remote user were to spoof their IP address to that of another server running kadmind with the password change port (kpasswd, port 464), or to the target server's IP address itself), kpasswd will pass UDP packets to the spoofed address and reply each time. This can be used to consume bandwidth and CPU on the affected servers running kadmind.This should be fixed in the for krb5-1.11.3 release.[1] http://marc.info/?l=nessus&m=102418951803893&w=2[2] http://krbdev.mit.edu/rt/Ticket/Display.html?id=7637[3] https://github.com/krb5/krb5/commit/cf1a0c411b2668c57c41e9c4efd15ba17b6b322c"
+      }
+    ]
+  }
+}

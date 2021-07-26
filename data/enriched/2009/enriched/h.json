@@ -1,0 +1,562 @@
+{
+  "year": 2009,
+  "total": 65,
+  "reference": "kb.cert.org",
+  "reports": {
+    "CVE-2009-0040": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/649212",
+        "title": "libpng fails to properly initialize element pointers",
+        "overview": "Libpng contains a vulnerability in the way element pointers are handled.",
+        "description": "A vulnerability in the way libpng handles element pointers may result in uninitialized element pointers. This vulnerability is due to an off-by-one error introduced in multiple functions in libpng-0.89c. According to the PNG Development Group:If the application runs out of memory during the loop, some of the element pointers will be uninitialized. Libpng will then longjmp to a cleanup process that attempts to free all of the elements in the array, including the uninitialized ones. This behavior could be forced by a malevolent input.Note that this issue affects all versions of libpng prior to libpng-1.0.43 and libpng-1.2.35.",
+        "impact": "This vulnerability could allow an unauthenticated, remote attacker to execute arbitrary code or cause a denial of service."
+      }
+    ],
+    "CVE-2009-0210": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/337569",
+        "title": "AREVA e-terrahabitat SCADA systems vulnerabilities",
+        "overview": "AREVA e-terrahabitat contains multiple vulnerabilities.",
+        "description": "AREVA e-terrahabitat is a core component of the Energy Management system that provides real-time data and process management services. e-terrahabitat contains vulnerabilities, including a buffer overflow. For more information on these issues AREVA customers should review the following issues in AREVA T&D Security Bulletin - ATD-08-002:PD28578 Buffer Overflow Vulnerability in e-terrahabitat MLF applicationPD32018 Denial of Service Vulnerability in e-terrahabitat WebFGServer applicationPD32020 Denial of Service Vulnerability in e-terrahabitat WebFGServer applicationPD32021 Denial of Service Vulnerability in e-terrahabitat NETIO applicationPD32022 Privilege Escalation in e-terrahabitat WebFGServer applicationNote that these issues affect versions 5.7 and earlier.",
+        "impact": "An unauthenticated attacker may be able to gain access with the privileges of the e-terrahabitat account or an administrator account and execute arbitrary commands, or cause a vulnerable system to crash."
+      }
+    ],
+    "CVE-2009-0215": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/340420",
+        "title": "IBM Access Support ActiveX control stack buffer overflow",
+        "overview": "The IBM Access Support ActiveX control contains a stack buffer overflow, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The IBM Access Support ActiveX control has the ability to collect system information, such as make, model, serial number, OS version, etc. This control is available on the IBM / Lenovo web site, and also may come pre-installed on IBM and Lenovo computer systems. The IBM Access Support ActiveX control, which is provided by IbmEgath.dll, contains a stack buffer overflow in the GetXMLValue() method. We have confirmed that version 3.20.284.0 is vulnerable. Other versions may also contain the flaw.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause Internet Explorer (or the program using the WebBrowser control) to crash."
+      }
+    ],
+    "CVE-2009-0234": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/319331",
+        "title": "Microsoft Windows DNS Server response validation vulnerability",
+        "overview": "The Microsoft Windows DNS server contains a response validation vulnerability. If successfully exploited, this vulnerability may allow an attacker to poison the affected DNS server's cache.",
+        "description": "The Domain Name System (DNS) is responsible for translating host names to IP addresses (and vice versa) and is critical for the normal operation of internet-connected systems.Per Microsoft Security Bulletin MS09-008:A response validation vulnerability exists in Windows DNS Server. The vulnerability could allow an unauthenticated remote attacker to send specially crafted queries to a DNS server so as to allow greater predictability of transaction IDs used by the DNS server and thus to redirect Internet traffic from legitimate locations.",
+        "impact": "An attacker may be able to insert arbitrary values in the DNS cache. An attacker with the ability to conduct a successful attack can cause a nameserver's clients to contact the incorrect, and possibly malicious, hosts for particular services. Consequently, web traffic, email, and other important network data can be redirected to systems under the attacker's control."
+      }
+    ],
+    "CVE-2009-0305": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/131100",
+        "title": "RIM BlackBerry Application Web Loader ActiveX stack buffer overflow",
+        "overview": "The RIM BlackBerry Application Web Loader ActiveX control contains a stack buffer overflow, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The RIM BlackBerry Application Web Loader is an ActiveX control that is used to load applications onto a BlackBerry device using a PC and Internet Explorer. After the BlackBerry Application Web Loader ActiveX control is used to load software onto a BlackBerry device, the ActiveX control remains on the PC. The ActiveX control is marked \"Safe for Scripting\" and is scriptable by web pages in any domain. The BlackBerry Application Web Loader ActiveX control, which is provided by AxLoader.ocx or AxLoader.dll, contains stack buffer overflows in the load() and loadJad() methods.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause Internet Explorer (or the program using the WebBrowser control) to crash."
+      }
+    ],
+    "CVE-2009-0472": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/882619",
+        "title": "Rockwell Automation ControlLogix 1756-ENBT/A EtherNet/IP Bridge cross-site scripting vulnerability",
+        "overview": "The Rockwell ControlLogix 1756-ENBT/A EtherNet/IP Bridge web interface contains a cross-site scripting vulnerability that may allow an attacker to spoof data or redirect end user's to other sites.",
+        "description": "The Rockwell Logix Automation ControlLogix 1756-ENBT/A EtherNet/IP Bridge uses a web interface to display log files and status information. This web interface contains multiple cross-site scripting vulnerabilities. To exploit these issues, an attacker would need to convince an operator to open on a specially crafted URL.",
+        "impact": "An attacker may be able to execute arbitrary javascript in an operator's browser. This script could be used to spoof data or redirect an operator's web browser to other sites."
+      }
+    ],
+    "CVE-2009-0474": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/124059",
+        "title": "GoAhead WebServer information disclosure and authentication bypass vulnerabilities",
+        "overview": "GoAhead WebServer contains vulnerabilities that may allow an attacker to view source files containing sensitive information or bypass authentication. The information disclosure vulnerability was previously published as VU#975041.",
+        "description": "GoAhead WebServer contains vulnerabilities handling file requests. By sending the web server a specially crafted URL, an attacker may be able to view the source files containing sensitive information or bypass authentication. GoAhead WebServer has a history of source file disclosure vulnerabilities.",
+        "impact": "An attacker may be able to view any file on the web server, including files that contain sensitive information like usernames and passwords. An attacker may also be able to bypass authentication for protected files."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/RGII-7MWKZ3",
+        "title": "GoAhead WebServer information disclosure and authentication bypass vulnerabilities",
+        "overview": "GoAhead WebServer contains vulnerabilities that may allow an attacker to view source files containing sensitive information or bypass authentication. The information disclosure vulnerability was previously published as VU#975041.",
+        "description": "GoAhead WebServer contains vulnerabilities handling file requests. By sending the web server a specially crafted URL, an attacker may be able to view the source files containing sensitive information or bypass authentication. GoAhead WebServer has a history of source file disclosure vulnerabilities.",
+        "impact": "An attacker may be able to view any file on the web server, including files that contain sensitive information like usernames and passwords. An attacker may also be able to bypass authentication for protected files."
+      }
+    ],
+    "CVE-2009-0556": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/627331",
+        "title": "Microsoft Office PowerPoint code execution vulnerability",
+        "overview": "Microsoft PowerPoint contains a vulnerability. If exploited, this vulnerability could allow an attacker to execute code.",
+        "description": "Microsoft Powerpoint is a component of Microsoft Office. Per Microsoft Security Advisory 969136: The vulnerability is caused when Microsoft Office PowerPoint accesses an invalid object in memory when parsing a specially crafted PowerPoint file. This creates a condition that allows the attacker to execute arbitrary code.The advisory also states that Microsoft Office 2000, Microsoft Office XP, Microsoft Office 2003, and Microsoft Office 2004 for Mac are affected.",
+        "impact": "A remote attacker may be able to execute code with the privileges of the user running PowerPoint."
+      }
+    ],
+    "CVE-2009-0658": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/905281",
+        "title": "Adobe Reader and Acrobat JBIG2 buffer overflow vulnerability",
+        "overview": "Adobe Reader and Acrobat contain a buffer overflow vulnerability that may allow an attacker to execute arbitrary code.",
+        "description": "Adobe Acrobat Reader is software designed to view Portable Document Format (PDF) files. Adobe also distributes the Adobe Acrobat Plug-In to allow users to view PDF files inside of a web browser. Adobe Reader and Acrobat contain a buffer overflow vulnerability in the handling of JBIG2 streams.Exploit code for this vulnerability is publicly available.",
+        "impact": "By convincing a user to open a malicious PDF file, an attacker may be able to execute code or cause a vulnerable PDF viewer to crash. The PDF could be emailed as an attachment or hosted on a website."
+      }
+    ],
+    "CVE-2009-0688": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/238019",
+        "title": "Cyrus SASL library buffer overflow vulnerability",
+        "overview": "The Cyrus SASL library contains a buffer overflow vulnerability that could allow an attacker to execute code or cause a vulnerable program to crash.",
+        "description": "SASL (Simple Authentication and Security Layer) is a method for adding authentication support to various protocols. SASL is commonly used by mail servers to request authentication from clients and by clients to authenticate to servers.The sasl_encode64() function converts a string into base64. The Cyrus SASL library contains buffer overflows that occur because of unsafe use of the sasl_encode64() function.",
+        "impact": "A remote attacker might be able to execute code, or cause any programs relying on SASL to crash or be unavailable."
+      }
+    ],
+    "CVE-2009-0690": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/251793",
+        "title": "Foxit Reader contains multiple vulnerabilities in the processing of JPX data",
+        "overview": "Foxit Reader contains multiple vulnerabilities that may allow an attacker to execute arbitrary code.",
+        "description": "Foxit Reader is software designed to view Portable Document Format (PDF) files. Foxit Reader contains multiple vulnerabilities in the handling of JPX (JPEG2000) streams. These vulnerabilities may result in memory corruption.Note: Foxit Reader does not contain the ability to decode JPEG2000 data by default. The JPEG2000 / JBIG Decoder add-on must be installed for Foxit Reader to be vulnerable. When Foxit Reader encounters a PDF document that has JPEG2000 or JBIG data, the user will automatically be prompted to install the add-on, however.",
+        "impact": "By convincing a user to open a malicious PDF file, an attacker may be able to execute code or cause a vulnerable PDF viewer to crash. The PDF could be emailed as an attachment or hosted on a website."
+      }
+    ],
+    "CVE-2009-0691": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/251793",
+        "title": "Foxit Reader contains multiple vulnerabilities in the processing of JPX data",
+        "overview": "Foxit Reader contains multiple vulnerabilities that may allow an attacker to execute arbitrary code.",
+        "description": "Foxit Reader is software designed to view Portable Document Format (PDF) files. Foxit Reader contains multiple vulnerabilities in the handling of JPX (JPEG2000) streams. These vulnerabilities may result in memory corruption.Note: Foxit Reader does not contain the ability to decode JPEG2000 data by default. The JPEG2000 / JBIG Decoder add-on must be installed for Foxit Reader to be vulnerable. When Foxit Reader encounters a PDF document that has JPEG2000 or JBIG data, the user will automatically be prompted to install the add-on, however.",
+        "impact": "By convincing a user to open a malicious PDF file, an attacker may be able to execute code or cause a vulnerable PDF viewer to crash. The PDF could be emailed as an attachment or hosted on a website."
+      }
+    ],
+    "CVE-2009-0692": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/410676",
+        "title": "ISC DHCP dhclient stack buffer overflow",
+        "overview": "The ISC DHCP dhclient application contains a stack buffer overflow, which may allow a remote, unauthenticated attacker to execute arbitrary code with root privileges.",
+        "description": "As described in RFC 2131, \"The Dynamic Host Configuration Protocol (DHCP) provides a framework for passing configuration information to hosts on a TCP/IP network.\" ISC DHCP is a reference implementation of the DHCP protocol, including a DHCP server, client, and relay agent.The ISC DHCP client code (dhclient) contains a stack buffer overflow in the script_write_params() method. dhclient fails to check the length of the server-supplied subnet-mask option before copying it into a buffer. According to ISC, the following versions are affected:DHCP 4.1 (all versions)DHCP 4.0 (all versions)DHCP 3.1 (all versions)DHCP 3.0 (all versions)DHCP 2.0 (all versions)",
+        "impact": "A rogue DHCP server may be able to execute arbitrary code with root privileges on a vulnerable client system."
+      }
+    ],
+    "CVE-2009-0693": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/654545",
+        "title": "Wyse Device Manager (WDM) HServer and HAgent contain multiple vulnerabilities",
+        "overview": "Wyse Device Manager (WDM) Server and HAgent contain several vulnerabilities. An attacker with network access to WDM components could execute arbitrary code on vulnerable systems.",
+        "description": "Wyse Device Manager (WDM, formerly known as Wyse Rapport) manages thin clients. Part of the server component (HServer) is implemented as an ISAPI filter on the Microsoft Windows Internet Information Server (IIS) platform. The client component (HAgent) runs as a service on Microsoft Windows systems.WDM components contain several vulnerabilities:HServer (hserver.dll) User-Agent header stack buffer overflow andHAgent (hagent.exe) heap overflow (both overflows are CVE-2009-0693)HAgent does not authenticate commands (CVE-2009-0695)The first two issues are implementation defects. The third issue is caused by the lack of adequate cryptographic authentication and authorization.",
+        "impact": "An attacker with network access to WDM components could execute arbitrary code on a vulnerable system. The attacker could also execute unauthenticated management commands on a system running HAgent."
+      }
+    ],
+    "CVE-2009-0695": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/654545",
+        "title": "Wyse Device Manager (WDM) HServer and HAgent contain multiple vulnerabilities",
+        "overview": "Wyse Device Manager (WDM) Server and HAgent contain several vulnerabilities. An attacker with network access to WDM components could execute arbitrary code on vulnerable systems.",
+        "description": "Wyse Device Manager (WDM, formerly known as Wyse Rapport) manages thin clients. Part of the server component (HServer) is implemented as an ISAPI filter on the Microsoft Windows Internet Information Server (IIS) platform. The client component (HAgent) runs as a service on Microsoft Windows systems.WDM components contain several vulnerabilities:HServer (hserver.dll) User-Agent header stack buffer overflow andHAgent (hagent.exe) heap overflow (both overflows are CVE-2009-0693)HAgent does not authenticate commands (CVE-2009-0695)The first two issues are implementation defects. The third issue is caused by the lack of adequate cryptographic authentication and authorization.",
+        "impact": "An attacker with network access to WDM components could execute arbitrary code on a vulnerable system. The attacker could also execute unauthenticated management commands on a system running HAgent."
+      }
+    ],
+    "CVE-2009-0799": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/196617",
+        "title": "Xpdf and poppler contain multiple vulnerabilities in the processing of JBIG2 data",
+        "overview": "Xpdf and poppler contain multiple vulnerabilities, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Xpdf is an open source viewer for Portable Document Format (PDF) files. Several PDF viewing applications and libraries, such as poppler, are based on the Xpdf code. Xpdf contains multiple vulnerabilities related to the handling of PDF files that contain JBIG2 data. The vulnerabilities include, but are not limited to, a buffer overflow, an integer overflow, a null pointer dereference, and an infinite loop.",
+        "impact": "By convincing a user to open a malicious PDF file, an attacker may be able to execute code or cause a vulnerable PDF viewer to crash. The PDF could be emailed as an attachment or hosted on a website."
+      }
+    ],
+    "CVE-2009-0800": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/196617",
+        "title": "Xpdf and poppler contain multiple vulnerabilities in the processing of JBIG2 data",
+        "overview": "Xpdf and poppler contain multiple vulnerabilities, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Xpdf is an open source viewer for Portable Document Format (PDF) files. Several PDF viewing applications and libraries, such as poppler, are based on the Xpdf code. Xpdf contains multiple vulnerabilities related to the handling of PDF files that contain JBIG2 data. The vulnerabilities include, but are not limited to, a buffer overflow, an integer overflow, a null pointer dereference, and an infinite loop.",
+        "impact": "By convincing a user to open a malicious PDF file, an attacker may be able to execute code or cause a vulnerable PDF viewer to crash. The PDF could be emailed as an attachment or hosted on a website."
+      }
+    ],
+    "CVE-2009-0801": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/435052",
+        "title": "Intercepting proxy servers may incorrectly rely on HTTP headers to make connections",
+        "overview": "Proxy servers running in interception mode (\"transparent\" proxies) that make connection decisions based on HTTP header values may be used by an attacker to relay connections.",
+        "description": "HTTP Host Headers are defined in RFC 2616 and are often used to by web servers to allow multiple websites to share a single IP address.From RFC 2616:A \"host\" without any trailing port information implies the default port for the service requested (e.g., \"80\" for an HTTP URL). For example, a request on the origin server for <http://www.w3.org/pub/WWW/> would properly include: GET /pub/WWW/ HTTP/1.1 Host: www.w3.orgA client MUST include a Host header field in all HTTP/1.1 request messages . If the requested URI does not include an Internet host name for the service being requested, then the Host header field MUST be given with an empty value. An HTTP/1.1 proxy MUST ensure that any request message it forwards does contain an appropriate Host header field that identifies the service being requested by the proxy. All Internet-based HTTP/1.1 servers MUST respond with a 400 (Bad Request) status code to any HTTP/1.1 request message which lacks a Host header field.Transparent proxy servers intercept and redirect network connections without user interaction or browser configuration. Some transparent intercepting proxy implementations make connection decisions based on the HTTP host-header value. Browser plugins (Flash, Java, etc) may enforce access controls on active content by limiting communication to the site or domain that the content originated from. An attacker may be able to forge HTTP host-header (or other HTTP headers) via active content. A proxy server running in intercepting (\"transparent\") mode that makes connection decisions based on HTTP header values instead of source and destination IP addresses is vulnerable due the ability of a remote attacker to forge these values.To successfully exploit this issue, an attacker would need to either convince a user to visit a web page with malicious active content or be able to load the active content in an otherwise trusted site. Note that this vulnerability only affects proxy servers that run in transparent mode and browser same origin policies prevent attackers from re-using authentication credentials (cookies, etc) to obtain further access. This issue does not apply to proxy servers running in reverse mode.More information about this issue can be found in the Socket Capable Browser Plugins Result In Transparent Proxy Abuse paper.",
+        "impact": "An attacker may be able to make full connections to any website or resource that the proxy can connect to. These sites may include internal resources such as intranet sites that would not usually be exposed to the Internet."
+      }
+    ],
+    "CVE-2009-0802": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/435052",
+        "title": "Intercepting proxy servers may incorrectly rely on HTTP headers to make connections",
+        "overview": "Proxy servers running in interception mode (\"transparent\" proxies) that make connection decisions based on HTTP header values may be used by an attacker to relay connections.",
+        "description": "HTTP Host Headers are defined in RFC 2616 and are often used to by web servers to allow multiple websites to share a single IP address.From RFC 2616:A \"host\" without any trailing port information implies the default port for the service requested (e.g., \"80\" for an HTTP URL). For example, a request on the origin server for <http://www.w3.org/pub/WWW/> would properly include: GET /pub/WWW/ HTTP/1.1 Host: www.w3.orgA client MUST include a Host header field in all HTTP/1.1 request messages . If the requested URI does not include an Internet host name for the service being requested, then the Host header field MUST be given with an empty value. An HTTP/1.1 proxy MUST ensure that any request message it forwards does contain an appropriate Host header field that identifies the service being requested by the proxy. All Internet-based HTTP/1.1 servers MUST respond with a 400 (Bad Request) status code to any HTTP/1.1 request message which lacks a Host header field.Transparent proxy servers intercept and redirect network connections without user interaction or browser configuration. Some transparent intercepting proxy implementations make connection decisions based on the HTTP host-header value. Browser plugins (Flash, Java, etc) may enforce access controls on active content by limiting communication to the site or domain that the content originated from. An attacker may be able to forge HTTP host-header (or other HTTP headers) via active content. A proxy server running in intercepting (\"transparent\") mode that makes connection decisions based on HTTP header values instead of source and destination IP addresses is vulnerable due the ability of a remote attacker to forge these values.To successfully exploit this issue, an attacker would need to either convince a user to visit a web page with malicious active content or be able to load the active content in an otherwise trusted site. Note that this vulnerability only affects proxy servers that run in transparent mode and browser same origin policies prevent attackers from re-using authentication credentials (cookies, etc) to obtain further access. This issue does not apply to proxy servers running in reverse mode.More information about this issue can be found in the Socket Capable Browser Plugins Result In Transparent Proxy Abuse paper.",
+        "impact": "An attacker may be able to make full connections to any website or resource that the proxy can connect to. These sites may include internal resources such as intranet sites that would not usually be exposed to the Internet."
+      }
+    ],
+    "CVE-2009-0803": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/435052",
+        "title": "Intercepting proxy servers may incorrectly rely on HTTP headers to make connections",
+        "overview": "Proxy servers running in interception mode (\"transparent\" proxies) that make connection decisions based on HTTP header values may be used by an attacker to relay connections.",
+        "description": "HTTP Host Headers are defined in RFC 2616 and are often used to by web servers to allow multiple websites to share a single IP address.From RFC 2616:A \"host\" without any trailing port information implies the default port for the service requested (e.g., \"80\" for an HTTP URL). For example, a request on the origin server for <http://www.w3.org/pub/WWW/> would properly include: GET /pub/WWW/ HTTP/1.1 Host: www.w3.orgA client MUST include a Host header field in all HTTP/1.1 request messages . If the requested URI does not include an Internet host name for the service being requested, then the Host header field MUST be given with an empty value. An HTTP/1.1 proxy MUST ensure that any request message it forwards does contain an appropriate Host header field that identifies the service being requested by the proxy. All Internet-based HTTP/1.1 servers MUST respond with a 400 (Bad Request) status code to any HTTP/1.1 request message which lacks a Host header field.Transparent proxy servers intercept and redirect network connections without user interaction or browser configuration. Some transparent intercepting proxy implementations make connection decisions based on the HTTP host-header value. Browser plugins (Flash, Java, etc) may enforce access controls on active content by limiting communication to the site or domain that the content originated from. An attacker may be able to forge HTTP host-header (or other HTTP headers) via active content. A proxy server running in intercepting (\"transparent\") mode that makes connection decisions based on HTTP header values instead of source and destination IP addresses is vulnerable due the ability of a remote attacker to forge these values.To successfully exploit this issue, an attacker would need to either convince a user to visit a web page with malicious active content or be able to load the active content in an otherwise trusted site. Note that this vulnerability only affects proxy servers that run in transparent mode and browser same origin policies prevent attackers from re-using authentication credentials (cookies, etc) to obtain further access. This issue does not apply to proxy servers running in reverse mode.More information about this issue can be found in the Socket Capable Browser Plugins Result In Transparent Proxy Abuse paper.",
+        "impact": "An attacker may be able to make full connections to any website or resource that the proxy can connect to. These sites may include internal resources such as intranet sites that would not usually be exposed to the Internet."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/MAPG-7M6SM7",
+        "title": "Intercepting proxy servers may incorrectly rely on HTTP headers to make connections",
+        "overview": "Proxy servers running in interception mode (\"transparent\" proxies) that make connection decisions based on HTTP header values may be used by an attacker to relay connections.",
+        "description": "HTTP Host Headers are defined in RFC 2616 and are often used to by web servers to allow multiple websites to share a single IP address.From RFC 2616:A \"host\" without any trailing port information implies the default port for the service requested (e.g., \"80\" for an HTTP URL). For example, a request on the origin server for <http://www.w3.org/pub/WWW/> would properly include: GET /pub/WWW/ HTTP/1.1 Host: www.w3.orgA client MUST include a Host header field in all HTTP/1.1 request messages . If the requested URI does not include an Internet host name for the service being requested, then the Host header field MUST be given with an empty value. An HTTP/1.1 proxy MUST ensure that any request message it forwards does contain an appropriate Host header field that identifies the service being requested by the proxy. All Internet-based HTTP/1.1 servers MUST respond with a 400 (Bad Request) status code to any HTTP/1.1 request message which lacks a Host header field.Transparent proxy servers intercept and redirect network connections without user interaction or browser configuration. Some transparent intercepting proxy implementations make connection decisions based on the HTTP host-header value. Browser plugins (Flash, Java, etc) may enforce access controls on active content by limiting communication to the site or domain that the content originated from. An attacker may be able to forge HTTP host-header (or other HTTP headers) via active content. A proxy server running in intercepting (\"transparent\") mode that makes connection decisions based on HTTP header values instead of source and destination IP addresses is vulnerable due the ability of a remote attacker to forge these values.To successfully exploit this issue, an attacker would need to either convince a user to visit a web page with malicious active content or be able to load the active content in an otherwise trusted site. Note that this vulnerability only affects proxy servers that run in transparent mode and browser same origin policies prevent attackers from re-using authentication credentials (cookies, etc) to obtain further access. This issue does not apply to proxy servers running in reverse mode.More information about this issue can be found in the Socket Capable Browser Plugins Result In Transparent Proxy Abuse paper.",
+        "impact": "An attacker may be able to make full connections to any website or resource that the proxy can connect to. These sites may include internal resources such as intranet sites that would not usually be exposed to the Internet."
+      }
+    ],
+    "CVE-2009-0804": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/435052",
+        "title": "Intercepting proxy servers may incorrectly rely on HTTP headers to make connections",
+        "overview": "Proxy servers running in interception mode (\"transparent\" proxies) that make connection decisions based on HTTP header values may be used by an attacker to relay connections.",
+        "description": "HTTP Host Headers are defined in RFC 2616 and are often used to by web servers to allow multiple websites to share a single IP address.From RFC 2616:A \"host\" without any trailing port information implies the default port for the service requested (e.g., \"80\" for an HTTP URL). For example, a request on the origin server for <http://www.w3.org/pub/WWW/> would properly include: GET /pub/WWW/ HTTP/1.1 Host: www.w3.orgA client MUST include a Host header field in all HTTP/1.1 request messages . If the requested URI does not include an Internet host name for the service being requested, then the Host header field MUST be given with an empty value. An HTTP/1.1 proxy MUST ensure that any request message it forwards does contain an appropriate Host header field that identifies the service being requested by the proxy. All Internet-based HTTP/1.1 servers MUST respond with a 400 (Bad Request) status code to any HTTP/1.1 request message which lacks a Host header field.Transparent proxy servers intercept and redirect network connections without user interaction or browser configuration. Some transparent intercepting proxy implementations make connection decisions based on the HTTP host-header value. Browser plugins (Flash, Java, etc) may enforce access controls on active content by limiting communication to the site or domain that the content originated from. An attacker may be able to forge HTTP host-header (or other HTTP headers) via active content. A proxy server running in intercepting (\"transparent\") mode that makes connection decisions based on HTTP header values instead of source and destination IP addresses is vulnerable due the ability of a remote attacker to forge these values.To successfully exploit this issue, an attacker would need to either convince a user to visit a web page with malicious active content or be able to load the active content in an otherwise trusted site. Note that this vulnerability only affects proxy servers that run in transparent mode and browser same origin policies prevent attackers from re-using authentication credentials (cookies, etc) to obtain further access. This issue does not apply to proxy servers running in reverse mode.More information about this issue can be found in the Socket Capable Browser Plugins Result In Transparent Proxy Abuse paper.",
+        "impact": "An attacker may be able to make full connections to any website or resource that the proxy can connect to. These sites may include internal resources such as intranet sites that would not usually be exposed to the Internet."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/MAPG-7N9GN8",
+        "title": "Intercepting proxy servers may incorrectly rely on HTTP headers to make connections",
+        "overview": "Proxy servers running in interception mode (\"transparent\" proxies) that make connection decisions based on HTTP header values may be used by an attacker to relay connections.",
+        "description": "HTTP Host Headers are defined in RFC 2616 and are often used to by web servers to allow multiple websites to share a single IP address.From RFC 2616:A \"host\" without any trailing port information implies the default port for the service requested (e.g., \"80\" for an HTTP URL). For example, a request on the origin server for <http://www.w3.org/pub/WWW/> would properly include: GET /pub/WWW/ HTTP/1.1 Host: www.w3.orgA client MUST include a Host header field in all HTTP/1.1 request messages . If the requested URI does not include an Internet host name for the service being requested, then the Host header field MUST be given with an empty value. An HTTP/1.1 proxy MUST ensure that any request message it forwards does contain an appropriate Host header field that identifies the service being requested by the proxy. All Internet-based HTTP/1.1 servers MUST respond with a 400 (Bad Request) status code to any HTTP/1.1 request message which lacks a Host header field.Transparent proxy servers intercept and redirect network connections without user interaction or browser configuration. Some transparent intercepting proxy implementations make connection decisions based on the HTTP host-header value. Browser plugins (Flash, Java, etc) may enforce access controls on active content by limiting communication to the site or domain that the content originated from. An attacker may be able to forge HTTP host-header (or other HTTP headers) via active content. A proxy server running in intercepting (\"transparent\") mode that makes connection decisions based on HTTP header values instead of source and destination IP addresses is vulnerable due the ability of a remote attacker to forge these values.To successfully exploit this issue, an attacker would need to either convince a user to visit a web page with malicious active content or be able to load the active content in an otherwise trusted site. Note that this vulnerability only affects proxy servers that run in transparent mode and browser same origin policies prevent attackers from re-using authentication credentials (cookies, etc) to obtain further access. This issue does not apply to proxy servers running in reverse mode.More information about this issue can be found in the Socket Capable Browser Plugins Result In Transparent Proxy Abuse paper.",
+        "impact": "An attacker may be able to make full connections to any website or resource that the proxy can connect to. These sites may include internal resources such as intranet sites that would not usually be exposed to the Internet."
+      }
+    ],
+    "CVE-2009-0844": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/662091"
+      }
+    ],
+    "CVE-2009-0845": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/662091"
+      }
+    ],
+    "CVE-2009-0846": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/662091"
+      }
+    ],
+    "CVE-2009-0847": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/662091"
+      }
+    ],
+    "CVE-2009-0917": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/RGII-7Q4GBJ",
+        "title": "PTK contains multiple vulnerabilities",
+        "overview": "The PTK sleuthkit interface contains multiple vulnerabilities. If exploited, these vulnerabilities may allow an attacker to gain elevated privileges or conduct XSS attacks.",
+        "description": "PTK is an interface to the sleuthkit forensic tools that uses Apache, PHP and MySQL. PTK versions 1.0.0 to 1.0.4 contain multiple vulnerabilities. These vulnerabilities may be triggered remotely or during the inspection of local HTML files that are rendered in web browsers.",
+        "impact": "A remote unauthenticated attacker may be able to execute arbitrary javascript or run commands in the context of the Apache web server."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/845747",
+        "title": "PTK contains multiple vulnerabilities",
+        "overview": "The PTK sleuthkit interface contains multiple vulnerabilities. If exploited, these vulnerabilities may allow an attacker to gain elevated privileges or conduct XSS attacks.",
+        "description": "PTK is an interface to the sleuthkit forensic tools that uses Apache, PHP and MySQL. PTK versions 1.0.0 to 1.0.4 contain multiple vulnerabilities. These vulnerabilities may be triggered remotely or during the inspection of local HTML files that are rendered in web browsers.",
+        "impact": "A remote unauthenticated attacker may be able to execute arbitrary javascript or run commands in the context of the Apache web server."
+      }
+    ],
+    "CVE-2009-1179": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/196617",
+        "title": "Xpdf and poppler contain multiple vulnerabilities in the processing of JBIG2 data",
+        "overview": "Xpdf and poppler contain multiple vulnerabilities, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Xpdf is an open source viewer for Portable Document Format (PDF) files. Several PDF viewing applications and libraries, such as poppler, are based on the Xpdf code. Xpdf contains multiple vulnerabilities related to the handling of PDF files that contain JBIG2 data. The vulnerabilities include, but are not limited to, a buffer overflow, an integer overflow, a null pointer dereference, and an infinite loop.",
+        "impact": "By convincing a user to open a malicious PDF file, an attacker may be able to execute code or cause a vulnerable PDF viewer to crash. The PDF could be emailed as an attachment or hosted on a website."
+      }
+    ],
+    "CVE-2009-1180": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/196617",
+        "title": "Xpdf and poppler contain multiple vulnerabilities in the processing of JBIG2 data",
+        "overview": "Xpdf and poppler contain multiple vulnerabilities, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Xpdf is an open source viewer for Portable Document Format (PDF) files. Several PDF viewing applications and libraries, such as poppler, are based on the Xpdf code. Xpdf contains multiple vulnerabilities related to the handling of PDF files that contain JBIG2 data. The vulnerabilities include, but are not limited to, a buffer overflow, an integer overflow, a null pointer dereference, and an infinite loop.",
+        "impact": "By convincing a user to open a malicious PDF file, an attacker may be able to execute code or cause a vulnerable PDF viewer to crash. The PDF could be emailed as an attachment or hosted on a website."
+      }
+    ],
+    "CVE-2009-1181": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/196617",
+        "title": "Xpdf and poppler contain multiple vulnerabilities in the processing of JBIG2 data",
+        "overview": "Xpdf and poppler contain multiple vulnerabilities, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Xpdf is an open source viewer for Portable Document Format (PDF) files. Several PDF viewing applications and libraries, such as poppler, are based on the Xpdf code. Xpdf contains multiple vulnerabilities related to the handling of PDF files that contain JBIG2 data. The vulnerabilities include, but are not limited to, a buffer overflow, an integer overflow, a null pointer dereference, and an infinite loop.",
+        "impact": "By convincing a user to open a malicious PDF file, an attacker may be able to execute code or cause a vulnerable PDF viewer to crash. The PDF could be emailed as an attachment or hosted on a website."
+      }
+    ],
+    "CVE-2009-1182": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/196617",
+        "title": "Xpdf and poppler contain multiple vulnerabilities in the processing of JBIG2 data",
+        "overview": "Xpdf and poppler contain multiple vulnerabilities, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Xpdf is an open source viewer for Portable Document Format (PDF) files. Several PDF viewing applications and libraries, such as poppler, are based on the Xpdf code. Xpdf contains multiple vulnerabilities related to the handling of PDF files that contain JBIG2 data. The vulnerabilities include, but are not limited to, a buffer overflow, an integer overflow, a null pointer dereference, and an infinite loop.",
+        "impact": "By convincing a user to open a malicious PDF file, an attacker may be able to execute code or cause a vulnerable PDF viewer to crash. The PDF could be emailed as an attachment or hosted on a website."
+      }
+    ],
+    "CVE-2009-1183": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/196617",
+        "title": "Xpdf and poppler contain multiple vulnerabilities in the processing of JBIG2 data",
+        "overview": "Xpdf and poppler contain multiple vulnerabilities, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Xpdf is an open source viewer for Portable Document Format (PDF) files. Several PDF viewing applications and libraries, such as poppler, are based on the Xpdf code. Xpdf contains multiple vulnerabilities related to the handling of PDF files that contain JBIG2 data. The vulnerabilities include, but are not limited to, a buffer overflow, an integer overflow, a null pointer dereference, and an infinite loop.",
+        "impact": "By convincing a user to open a malicious PDF file, an attacker may be able to execute code or cause a vulnerable PDF viewer to crash. The PDF could be emailed as an attachment or hosted on a website."
+      }
+    ],
+    "CVE-2009-1187": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/196617",
+        "title": "Xpdf and poppler contain multiple vulnerabilities in the processing of JBIG2 data",
+        "overview": "Xpdf and poppler contain multiple vulnerabilities, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Xpdf is an open source viewer for Portable Document Format (PDF) files. Several PDF viewing applications and libraries, such as poppler, are based on the Xpdf code. Xpdf contains multiple vulnerabilities related to the handling of PDF files that contain JBIG2 data. The vulnerabilities include, but are not limited to, a buffer overflow, an integer overflow, a null pointer dereference, and an infinite loop.",
+        "impact": "By convincing a user to open a malicious PDF file, an attacker may be able to execute code or cause a vulnerable PDF viewer to crash. The PDF could be emailed as an attachment or hosted on a website."
+      }
+    ],
+    "CVE-2009-1188": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/196617",
+        "title": "Xpdf and poppler contain multiple vulnerabilities in the processing of JBIG2 data",
+        "overview": "Xpdf and poppler contain multiple vulnerabilities, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Xpdf is an open source viewer for Portable Document Format (PDF) files. Several PDF viewing applications and libraries, such as poppler, are based on the Xpdf code. Xpdf contains multiple vulnerabilities related to the handling of PDF files that contain JBIG2 data. The vulnerabilities include, but are not limited to, a buffer overflow, an integer overflow, a null pointer dereference, and an infinite loop.",
+        "impact": "By convincing a user to open a malicious PDF file, an attacker may be able to execute code or cause a vulnerable PDF viewer to crash. The PDF could be emailed as an attachment or hosted on a website."
+      }
+    ],
+    "CVE-2009-1252": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/853097",
+        "title": "ntpd autokey stack buffer overflow",
+        "overview": "ntpd contains a stack buffer overflow, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system or create a denial of service.",
+        "description": "NTP (Network Time Protocol) is a method by which client machines can synchronize the local date and time with a reference server. ntpd, which is the NTP daemon, contains a stack buffer overflow when it is compiled with OpenSSL support. The vulnerability is caused by the use of sprintf() in the crypto_recv() function in ntpd/ntp_crypto.c. The vulnerable code is reachable if ntpd is configured to use autokey. This vulnerable configuration is indicated by a crypto pw password line in the ntp.conf file, where password is the password that has been configured.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the ntpd daemon."
+      }
+    ],
+    "CVE-2009-1492": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/970180",
+        "title": "Adobe Reader and Acrobat customDictionaryOpen() and getAnnots() JavaScript vulnerabilities",
+        "overview": "Adobe Reader and Acrobat contain vulnerabilities in the customDictionaryOpen() and getAnnots() JavaScript methods.",
+        "description": "Adobe Reader and the Adobe Acrobat family of software is designed to create, view, and edit Portable Document Format (PDF) files. Adobe Reader is widely deployed, and the Acrobat Reader Plug-In displays PDF inside a web browser.Adobe Reader and Acrobat support JavaScript. The JavaScript methods customDictionaryOpen() (CVE-2009-1493) and getAnnots() (CVE-2009-1492) do not safely handle specially crafted arguments and can be manipulated to execute arbitrary code. Publicly available exploit code claims to work on Adobe Reader 9.1 and 8.1.4 on GNU/Linux. Limited testing shows that Adobe Reader and Acrobat on and Microsoft Windows platforms crash when parsing a PDF file that contains a specially crafted getAnnots() call. As of 2009-04-29 we have not confirmed the reported customDictionaryOpen() vulnerability.Adobe Security Advisory APSA09-02 states that the getAnnots() vulnerability affects Adobe Reader and Acrobat for Microsoft Windows, Apple Mac OS X, and UNIX, while the customDictionaryOpen() vulnerability appears to only affect Adobe Reader for UNIX.",
+        "impact": "By convincing a user to open a specially crafted PDF file, an attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2009-1493": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/970180",
+        "title": "Adobe Reader and Acrobat customDictionaryOpen() and getAnnots() JavaScript vulnerabilities",
+        "overview": "Adobe Reader and Acrobat contain vulnerabilities in the customDictionaryOpen() and getAnnots() JavaScript methods.",
+        "description": "Adobe Reader and the Adobe Acrobat family of software is designed to create, view, and edit Portable Document Format (PDF) files. Adobe Reader is widely deployed, and the Acrobat Reader Plug-In displays PDF inside a web browser.Adobe Reader and Acrobat support JavaScript. The JavaScript methods customDictionaryOpen() (CVE-2009-1493) and getAnnots() (CVE-2009-1492) do not safely handle specially crafted arguments and can be manipulated to execute arbitrary code. Publicly available exploit code claims to work on Adobe Reader 9.1 and 8.1.4 on GNU/Linux. Limited testing shows that Adobe Reader and Acrobat on and Microsoft Windows platforms crash when parsing a PDF file that contains a specially crafted getAnnots() call. As of 2009-04-29 we have not confirmed the reported customDictionaryOpen() vulnerability.Adobe Security Advisory APSA09-02 states that the getAnnots() vulnerability affects Adobe Reader and Acrobat for Microsoft Windows, Apple Mac OS X, and UNIX, while the customDictionaryOpen() vulnerability appears to only affect Adobe Reader for UNIX.",
+        "impact": "By convincing a user to open a specially crafted PDF file, an attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2009-1523": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/402580",
+        "title": "Jetty HTTP server directory traversal vulnerability",
+        "overview": "A vulnerability in the Jetty HTTP server could allow a remote attacker to gain access to files outside of the normal document tree.",
+        "description": "Jetty provides an HTTP server, HTTP client, and javax.servlet container. An error in the way canonical paths are interpreted in the HTTP server's URI handler results in a directory traversal vulnerability. This vulnerability affects all versions of Jetty up to and including jetty 6.1.16 and 7.0.0.M2. In order for a system to be vulnerable, it must either be using the DefaultServlet with support for aliases explicitly enabled or the ResourceHandler class to serve static content. The vendor reports that systems running Jetty on Unix-like operating systems must also contain a directory name ending a '?' character in the web application or document root in order to be vulnerable.",
+        "impact": "A remote attacker can access files outside of the web application or document root by supplying a crafted URL to an vulnerable system."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/CRDY-7RKQCY",
+        "title": "Jetty HTTP server directory traversal vulnerability",
+        "overview": "A vulnerability in the Jetty HTTP server could allow a remote attacker to gain access to files outside of the normal document tree.",
+        "description": "Jetty provides an HTTP server, HTTP client, and javax.servlet container. An error in the way canonical paths are interpreted in the HTTP server's URI handler results in a directory traversal vulnerability. This vulnerability affects all versions of Jetty up to and including jetty 6.1.16 and 7.0.0.M2. In order for a system to be vulnerable, it must either be using the DefaultServlet with support for aliases explicitly enabled or the ResourceHandler class to serve static content. The vendor reports that systems running Jetty on Unix-like operating systems must also contain a directory name ending a '?' character in the web application or document root in order to be vulnerable.",
+        "impact": "A remote attacker can access files outside of the web application or document root by supplying a crafted URL to an vulnerable system."
+      }
+    ],
+    "CVE-2009-1797": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/166739",
+        "title": "APC Network Management Card web interface vulnerable to cross-site scripting and cross-site request forgery",
+        "overview": "The web management interface for the APC Network Monitoring Card (NMC) used in various APC devices contains cross-site scripting (XSS) and cross-site request forgery (CSRF/XSRF) vulnerabilities. By convincing a victim to load a specially crafted URL while authenticated to an NMC, an attacker could obtain credentials or perform certain actions as the victim, including turning off the NMC-based device and any systems attached to it.",
+        "description": "Some APC uninterruptible power supplies (UPS) support remote network management using several types of Network Monitoring Card (NMC).The NMC web management interface does not adequately filter user-supplied data before that data is included in dynamically generated web pages, creating cross-site scripting (XSS) vulnerabilities. One XSS vulnerability occurs in the /Forms/login1?login_username field (CVE-2009-4406). There may be other XSS vulnerabilities in the NMC web management interface (CVE-2009-1798).The web interface also fails to adequately authenticate some requests, creating cross-site request forgery (CSRF/XSRF) vulnerabilities (CVE-2009-1797).",
+        "impact": "By convincing a victim to load a specially crafted URL while authenticated to an NMC, an attacker could obtain user credentials or perform certain actions as that user. It is possible to exploit the XSS vulnerabilities to obtain cookies and other page content, so an attacker could obtain administrative credentials. If the attacker were able to access the NMC directly, the attacker would have complete control and could reconfigure the UPS or turn it off, thereby turning off any systems connected to the UPS. Exploiting the CSRF vulnerabilities could allow an attacker to take certain actions via the web interface, including turning off the UPS and any connected systems."
+      }
+    ],
+    "CVE-2009-1798": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/166739",
+        "title": "APC Network Management Card web interface vulnerable to cross-site scripting and cross-site request forgery",
+        "overview": "The web management interface for the APC Network Monitoring Card (NMC) used in various APC devices contains cross-site scripting (XSS) and cross-site request forgery (CSRF/XSRF) vulnerabilities. By convincing a victim to load a specially crafted URL while authenticated to an NMC, an attacker could obtain credentials or perform certain actions as the victim, including turning off the NMC-based device and any systems attached to it.",
+        "description": "Some APC uninterruptible power supplies (UPS) support remote network management using several types of Network Monitoring Card (NMC).The NMC web management interface does not adequately filter user-supplied data before that data is included in dynamically generated web pages, creating cross-site scripting (XSS) vulnerabilities. One XSS vulnerability occurs in the /Forms/login1?login_username field (CVE-2009-4406). There may be other XSS vulnerabilities in the NMC web management interface (CVE-2009-1798).The web interface also fails to adequately authenticate some requests, creating cross-site request forgery (CSRF/XSRF) vulnerabilities (CVE-2009-1797).",
+        "impact": "By convincing a victim to load a specially crafted URL while authenticated to an NMC, an attacker could obtain user credentials or perform certain actions as that user. It is possible to exploit the XSS vulnerabilities to obtain cookies and other page content, so an attacker could obtain administrative credentials. If the attacker were able to access the NMC directly, the attacker would have complete control and could reconfigure the UPS or turn it off, thereby turning off any systems connected to the UPS. Exploiting the CSRF vulnerabilities could allow an attacker to take certain actions via the web interface, including turning off the UPS and any connected systems."
+      }
+    ],
+    "CVE-2009-1861": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/568153",
+        "title": "Adobe Reader contains multiple vulnerabilities in the processing of JPX data",
+        "overview": "Adobe Reader and Acrobat contain multiple vulnerabilities that may allow an attacker to execute arbitrary code.",
+        "description": "Adobe Acrobat Reader is software designed to view Portable Document Format (PDF) files. Adobe also distributes the Adobe Acrobat Plug-In to allow users to view PDF files inside of a web browser. Adobe Reader and Acrobat contain multiple vulnerabilities in the handling of JPX (JPEG2000) streams. These vulnerabilities may result in heap memory corruption.",
+        "impact": "By convincing a user to open a malicious PDF file, an attacker may be able to execute code or cause a vulnerable PDF viewer to crash. The PDF could be emailed as an attachment or hosted on a website."
+      }
+    ],
+    "CVE-2009-1862": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/259425",
+        "title": "Adobe Flash vulnerability affects Flash Player and other Adobe products",
+        "overview": "Adobe Flash contains a vulnerability that may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system. Adobe Flash Player, Reader, Acrobat, and other products that include Flash support are affected.",
+        "description": "Adobe Flash is a widely deployed multimedia platform typically used to provide content in web sites. Adobe Flash Player, Reader, Acrobat, and other Adobe products include Flash support.Adobe Flash Player contains a code execution vulnerability. An attacker may be able to trigger this vulnerability by convincing a user to open a specially crafted Flash (SWF) file. The SWF file could be hosted or embedded in a web page or contained in a Portable Document Format (PDF) file. If an attacker can take control of a website or web server, trusted sites may exploit this vulnerability.This vulnerability affects Adobe Flash versions 9.0.159.0 and 10.0.22.87 and earlier 9.x and 10.x versions. Adobe Reader 9, Acrobat 9, and other Adobe products (including Photoshop CS3, PhotoShop Lightroom, Freehand MX, Fireworks) provide Flash support independent of Flash Player. As of 2009-07-22, Adobe Reader 9.1.2 includes Flash 9.0.155.0, which is likely vulnerable to issues addressed by Flash 9.0.159.0 (APSB09-01).This vulnerability is being actively exploited.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), PDF file, Microsoft Office document, or any other document that supports embedded SWF content, an attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2009-2477": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/443060",
+        "title": "Mozilla Firefox 3.5 TraceMonkey JavaScript engine uninitialized memory vulnerability",
+        "overview": "Mozilla Firefox's javascript engine contains a vulnerability that may allow an attacker to execute code.",
+        "description": "Mozilla Firefox version 3.5 contains a vulnerability in the TraceMonkey components of Firefox's JavaScript engine.Per Mozilla Bug Bug 503286:\"This is a JS engine bug dealing with deep bailing not properly restoring the return value from the result of the (fast native) escape function. We then try to do something with the uninitialized memory and crash in the interpreter.\"Note that proof of concept code that demonstrates issue this is publicly available.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or cause Firefox to crash."
+      }
+    ],
+    "CVE-2009-2627": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/485961",
+        "title": "Acer AcerCtrls.APlunch ActiveX Control fails to properly restrict access to methods",
+        "overview": "The Acer AcerCtrls.APlunch ActiveX control contains methods that can allow a remote, unauthenticated attacker to run arbitrary commands on a vulnerable system.",
+        "description": "The Acer AcerCtrls.APlunch ActiveX control is provided by acerctrl.ocx. It contains a method called Run(), which takes two parameters: Drive and FileName. Although the control is not inherently marked as safe for scripting via the IObjectSafety interface, it may be distributed with the appropriate Implemented Categories registry key to make it safe for scripting. This means that a web page in Internet Explorer can call the Run() method of the control.Note that this vulnerability is similar to but not the same issue as VU#221700. This control has different parameters and uses a different CLSID that is not included in the killbits provided with Microsoft Security Bulletin MS07-027.",
+        "impact": "By convincing a victim to view an HTML document (web page, HTML email, or email attachment), an attacker could run arbitrary commands with the privileges of the user running IE."
+      }
+    ],
+    "CVE-2009-2628": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/444513",
+        "title": "VMware VMnc AVI video codec image height heap overflow",
+        "overview": "The VMware VMnc video codec fails to properly handle the image height value in AVI files, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Several VMware products include the ability to create and play movies of running virtual machines. The codec used in these movies is called VMnc, which is based on the VNC RFB protocol. The VMnc decoder is provided by the file vmnc.dll. The VMnc codec fails to properly handle video content with a specified height of less than 8 pixels. This flaw can lead to heap memory corruption. The vulnerable code in vmnc.dll may be reached via Windows applications that supports the DirectShow API.",
+        "impact": "By convincing a user to parse a specially crafted VMnc codec AVI file, a remote, unauthenticated attacker may be able to execute arbitrary code on a vulnerable system. This may occur as the result of several actions, including playing an AVI file with Windows Media Player, viewing a web page that uses the Windows Media Player ActiveX control or plug-in, or even simply by selecting an AVI file in Windows Explorer."
+      }
+    ],
+    "CVE-2009-2629": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/180065",
+        "title": "Nginx ngx_http_parse_complex_uri() buffer underflow vulnerability",
+        "overview": "A vulnerability in the nginx web server may allow remote attackers to execute arbitrary code on an affected system.",
+        "description": "nginx is an HTTP server and mail proxy server that is available for a number of different platforms. A buffer underflow vulnerability exists in the ngx_http_parse_complex_uri() function when handling specially crafted URIs. Exploitation of this vulnerability would cause the nginx server to write data contained in the URI to heap memory before the allocated buffer.",
+        "impact": "As with a number of other web servers, nginx is designed to operate with a single privileged master process and multiple unprivileged worker processes handling specific requests. A remote, unauthenticated attacker may be able to execute arbitrary code in the context of the worker process or cause the worker process to crash, resulting in a denial of service."
+      }
+    ],
+    "CVE-2009-2631": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/261869",
+        "title": "Clientless SSL VPN products break web browser domain-based security models",
+        "overview": "Clientless SSL VPN products from multiple vendors operate in a way that breaks fundamental browser security mechanisms. An attacker could use these devices to bypass authentication or conduct other web-based attacks.",
+        "description": "Web browsers enforce the same origin policy to prevent one site's active content (such as JavaScript) from accessing or modifying another site's data. For instance, active content hosted at http://<example.com>/page1.html can access DOM objects on http://<example.com>/page2.html, but cannot access objects hosted at http://<example.net>/page.html. Many clientless SSL VPN products retrieve content from different sites, then present that content as coming from the SSL VPN, effectively circumventing browser same origin restrictions.Clientless SSL VPNs provide browser-based access to internal and external resources without the need to install a traditional VPN client. Typically, these web VPNs are used to access intranet sites (such as an internal webmail server), but many have more capabilities, such as providing access to internal fileshares and remote desktop capabilities. To connect to a VPN, a web browser is used to authenticate to the web VPN, then the web VPN retrieves and presents the content from the requested pages.Web VPN servers interact with clients using a process similar to what is described below:The user presents credentials to the web VPN using a web browser. The authentication can be done through username and password submission, or can involve multi-factor authentication.The web VPN authenticates the user and assigns an ID to the session, which is sent to the user's browser in the form of a cookie.The user can then browse internal resources, such as a webmail server or intranet webserver. URLs as viewed by the user's web browser may be similar to https://<webvpnserver>/www.intranet.example.com.As the web VPN retrieves web pages, it rewrites hyperlinks so that they are accessible through the web VPN. For example, a link to http://<www.intranet.example.com>/mail.html becomes https://<webvpnserver>/www.intranet.example.com/mail.html. Cookies set by the requested webserver may be converted into globally unique cookies before being passed to the user's browser, which prevents collision between two identically named cookies from different requested domains. For example, a sessionid cookie set by intranet.example.com could be renamed to intranet.example.com_sessionid before it is sent from the web VPN to the user's browser . Additionally, the web VPN may replace references to specific HTML DOM objects, such as document.cookie. These DOM objects may be replaced with script that returns the value for that DOM object as if it had been accessed in the context of the requested site's domain. If an attacker constructs a page that obfuscates the document.cookie element in such a way as to avoid being rewritten by the web VPN, then the document.cookie object in the returned page will represent all of the user's cookies for the web VPN domain. Included in this document.cookie are the web VPN session ID cookie itself and any globally unique cookies set by sites requested through the web VPN. The attacker may then use these cookies to hijack the user's VPN session and any other sessions accessed through the web VPN that rely on cookies for session identification.Additionally, an attacker could construct a page with two frames: one hidden and one that displays a legitimate intranet site. The hidden frame could log all keys pressed in the second, benign frame and submit these keypresses as parameters to a XMLHttpRequest GET to the attacker's site, rewritten in web VPN syntax.Note that if the VPN server is allowed to connect to arbitrary Internet sites, these vulnerabilities can be exploited by any site on the Internet.",
+        "impact": "By convincing a user to view a specially crafted web page, a remote attacker may be able to obtain VPN session tokens and read or modify content (including cookies, script, or HTML content) from any site accessed through the clientless SSL VPN. This effectively eliminates same origin policy restrictions in all browsers. For example, the attacker may be able to capture keystrokes while a user is interacting with a web page. Because all content runs at the privilege level of the web VPN domain, mechanisms to provide domain-based content restrictions, such as Internet Explorer security zones and the Firefox add-on NoScript, may be bypassed. For additional information about impacts, please see CERT Advisory CA-2000-02."
+      }
+    ],
+    "CVE-2009-2993": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/257117",
+        "title": "Adobe Acrobat and Reader contain vulnerabilities in multiple Document Object JavaScript methods",
+        "overview": "A vulnerability in the way Adobe Acrobat and Reader enforce privileges on JavaScript in PDF files could allow arbitrary files to be written to the local file system of an affected system.",
+        "description": "Adobe Reader and the Adobe Acrobat family of software are designed to create, view, and edit Portable Document Format (PDF) files. Adobe Reader is widely deployed, and the Acrobat Reader Plug-In displays PDF inside a web browser.Adobe Reader and Acrobat support JavaScript. According to the JavaScript for Acrobat API reference, certain methods are designed to be unavailable or have security restrictions in a non-privileged context. As a result, it should not be possible to call these methods from non-privileged events, such as page open or mouse-up.Adobe Acrobat and Reader fail to enforce the Privileged Context and Safe Path restrictions on certain JavaScript methods. This failure results in a vulnerability that allows methods that accept a cPath parameter to write to an arbitrary file extension and arbitrary path rather than those intended to be limited by the Safe Path restriction.",
+        "impact": "By convincing a user to open a specially crafted PDF file, an attacker may be able to execute certain privileged JavaScript methods that can be used to create arbitrary files and folders on an affected system, subject to the normal permissions of the victim user."
+      }
+    ],
+    "CVE-2009-3103": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/135940",
+        "title": "Windows SMB version 2 vulnerability",
+        "overview": "Microsoft Windows Vista and Server 2008 do not correctly parse SMB version 2 messages.This vulnerability could allow an attacker to execute arbitrary code.",
+        "description": "The Server Message Block version 2 (SMBv2) protocol is the successor to the original SMB protocol. SMBv2 is available in Windows Vista, Server 2008 and Windows 7 release candidates. Windows Vista and Server 2008 fail to properly process fails to properly parse the headers for the Negotiate Protocol Request portion of an SMBv2 message.",
+        "impact": "An attacker may be able to execute arbitrary code or cause a vulnerable system to crash."
+      }
+    ],
+    "CVE-2009-3672": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/515749",
+        "title": "Microsoft Internet Explorer CSS style element vulnerability",
+        "overview": "Microsoft Internet Explorer (IE) does not safely reference CSS style elements. Using a specially crafted HTML page, an attacker can cause IE to crash and potentially execute arbitrary code.",
+        "description": "IE contains a vulnerability in the way it references CSS style elements. Processing a specially crafted HTML page could cause IE to access an invalid memory location and crash. Using heap-spraying techniques, an attacker could leverage the crash to execute arbitrary code.Please see Microsoft Security Advisory (977981).",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message), an attacker could execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2009-3735": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/MAPG-7QPKL3",
+        "title": "Panda Security ActiveScan fails to properly validate downloaded software",
+        "overview": "Panda ActiveScan fails to properly validate downloaded software, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Panda ActiveScan is an online scanner that is reported to detect malware, vulnerabilities, and unknown threats. Panda ActiveScan, which is available as an ActiveX control for Internet Explorer browsers and as an NSAPI plug-in for other browsers, includes an installer component (as2stubie.dll) for downloading and installing the remaining components of the ActiveScan product (as2guiie.cab).The Panda ActiveScan installer fails to validate the digital signature of downloaded components. The location of the components to download can also be specified by an attacker.",
+        "impact": "By convincing a victim to view an HTML document (web page, HTML email, or email attachment), an attacker could run arbitrary code with the privileges of the user running the application."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/869993",
+        "title": "Panda Security ActiveScan fails to properly validate downloaded software",
+        "overview": "Panda ActiveScan fails to properly validate downloaded software, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Panda ActiveScan is an online scanner that is reported to detect malware, vulnerabilities, and unknown threats. Panda ActiveScan, which is available as an ActiveX control for Internet Explorer browsers and as an NSAPI plug-in for other browsers, includes an installer component (as2stubie.dll) for downloading and installing the remaining components of the ActiveScan product (as2guiie.cab).The Panda ActiveScan installer fails to validate the digital signature of downloaded components. The location of the components to download can also be specified by an attacker.",
+        "impact": "By convincing a victim to view an HTML document (web page, HTML email, or email attachment), an attacker could run arbitrary code with the privileges of the user running the application."
+      }
+    ],
+    "CVE-2009-3737": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/174089",
+        "title": "Oracle Siebel Option Pack for IE ActiveX control memory initialization vulnerability",
+        "overview": "The Oracle Siebel Option Pack for IE ActiveX control fails to properly initialize memory, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Siebel Option Pack for IE is an ActiveX control that is provided by Oracle Siebel Customer Relationship Management (CRM) software. The Siebel Option Pack for IE ActiveX control is provided by a number of different DLLs with file names beginning with ieop_aom. This ActiveX control fails to properly initialize memory that is used by the NewBusObj() method.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2009-3742": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/750796",
+        "title": "Liferay Portal p_p_id parameter vulnerable to persistent cross-site scripting",
+        "overview": "Liferay Portal is vulnerable to persistent cross-site scripting via the p_p_id parameter, which can allow a remote, unauthenticated attacker to execute arbitrary script in the context of the portal administrator.",
+        "description": "Liferay Portal is a web portal that can provide Java applets that adhere to the JSR 168 portlet specification. Liferay is available as a free community-supported version and also a commercial enterprise version. Liferay Portal fails to properly sanitize data that is provided by the p_p_id parameter, which can be provided without authentication as part of an HTTP GET request. The provided data is placed into a database, where it can be displayed to an administrator in another page, such as the Plugins Configuration section of the Control Panel. This allows for persistent cross-site scripting (XSS).",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary script in the context of the portal administrator."
+      }
+    ],
+    "CVE-2009-3743": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/JALR-87YGN8",
+        "title": "Ghostscript Heap Corruption in TrueType bytecode interpreter",
+        "overview": "The TrueType bytecode interpreter which is a part of Ghostscript is prone to heap corruption.",
+        "description": "Ghostscript includes a TrueType bytecode interpreter which is prone to an off by one bug which causes heap corruption. Further details can be found in the Ghostscript Bug #691044, Ghostscript r10602 commit statement and Toucan System's TSSA-2010-01 advisory.",
+        "impact": "An attacker may use a specially crafted document with a malformed TrueType font to cause a denial of service condition or execute arbitrary code."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/644319",
+        "title": "Ghostscript Heap Corruption in TrueType bytecode interpreter",
+        "overview": "The TrueType bytecode interpreter which is a part of Ghostscript is prone to heap corruption.",
+        "description": "Ghostscript includes a TrueType bytecode interpreter which is prone to an off by one bug which causes heap corruption. Further details can be found in the Ghostscript Bug #691044, Ghostscript r10602 commit statement and Toucan System's TSSA-2010-01 advisory.",
+        "impact": "An attacker may use a specially crafted document with a malformed TrueType font to cause a denial of service condition or execute arbitrary code."
+      }
+    ],
+    "CVE-2009-3829": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/676492",
+        "title": "Wireshark Endace ERF unsigned integer wrap vulnerability",
+        "overview": "Wireshark contains an unsigned integer wrap vulnerability that may occur when parsing Endace Extensible Record Format (ERF) files.",
+        "description": "Wireshark is a protocol analyzer that can open or import previously saved files. When processing an Endace ERF file an unsigned integer wrap vulnerability may cause Wireshark to allocate a very large buffer. To exploit this issue, an attacker would have to convince a user to open a crafted ERF file using Wireshark.This issue also affects Tshark, the console version of Wireshark.",
+        "impact": "A remote attacker can cause Wireshark to crash. It may be possible, although unlikely, for an attacker to execute arbitrary code. Exploiting the vulnerability could result in a NULL pointer dereference, which can lead to code execution on certain platforms."
+      }
+    ],
+    "CVE-2009-3958": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/773545",
+        "title": "NOS Microsystems Adobe getPlus Helper ActiveX control stack buffer overflows",
+        "overview": "The NOS Microsystems Adobe getPlus Helper ActiveX control contains stack buffer overflows, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "NOS Microsystems getPlus is download management software that is used to install Adobe Reader and Flash on Windows systems. The getPlus Helper ActiveX control, which is provided by gp.ocx, contains stack buffer overflows in several initialization parameters.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2009-4211": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/433821",
+        "title": "DISA UNIX SRR scripts execute untrusted programs as root",
+        "overview": "The Defense Information Systems Agency (DISA) UNIX Security Readiness Review (SRR) scripts find(1) and execute (-exec) various programs to obtain version information. The SRR scripts are designed to be run as root. An attacker who can write a file under the root file system may be able to exploit this vulnerability to execute arbitrary code with root privileges.",
+        "description": "DISA provides SRR scripts to help perform security reviews of various operating systems and applications. The UNIX SRR scripts check versions of various programs by searching the root file system and executing programs with options to display version information. The scripts generally use find(1) with the -exec expression primary. The scripts execute programs based on file name. If an attacker can place a file with an appropriate name on the file system, that file will be executed by the SRR script. The SRR scripts are designed to be run with root privileges.",
+        "impact": "An attacker who is able to write a file under the root file system (most likely, but not necessarily a local user) can execute arbitrary code with root privileges."
+      }
+    ],
+    "CVE-2009-4324": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/508357",
+        "title": "Adobe Acrobat and Reader contain a use-after-free vulnerability in the JavaScript Doc.media.newPlayer method",
+        "overview": "The Doc.media.newPlayer method in Adobe Acrobat and Reader contains a use-after-free vulnerability, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Adobe Reader and the Adobe Acrobat family of software are designed to create, view, and edit Portable Document Format (PDF) files. Adobe Reader is widely deployed, and the Acrobat Reader Plug-In displays PDF inside a web browser.Adobe Reader and Acrobat support JavaScript. The newplayer() method of the Doc.media object contains a use-after-free vulnerability, which can result in an exploitable memory access violation. This vulnerability is currently being exploited in the wild. Exploit code for this vulnerability is publicly available.",
+        "impact": "By convincing a user to open a malicious PDF file, an attacker may be able to execute code or cause a vulnerable PDF viewer to crash. The PDF could be emailed as an attachment or hosted on a website."
+      }
+    ],
+    "CVE-2009-4462": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/181737",
+        "title": "IntelliCom NetBiter Config HICP hostname buffer overflow",
+        "overview": "The IntelliCom NetBiter Config HICP configuration utility has a buffer overflow vulnerability that can be triggered by a specially crafted hostname (hn) value. An attacker with network access could exploit this vulnerability to execute arbitrary code with the privileges of the user running NetBiter Config.",
+        "description": "IntelliCom NetBiter devices are based on HMS Anybus technology. The HMS HICP protocol (3250/udp) provides a way to configure network settings for NetBiter and possibly other Anybus-based devices. The NetBiter Config HICP configuration utility (NetbiterConfig.exe) has a buffer overflow vulnerability that can be triggered by a specially crafted hostname (hn) value. Further details are available in the original post by Rubén Santamarta.",
+        "impact": "An attacker with network access could exploit this vulnerability to execute arbitrary code with the privileges of the user running NetBiter Config."
+      }
+    ]
+  }
+}

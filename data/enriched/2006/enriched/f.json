@@ -1,0 +1,1160 @@
+{
+  "year": 2006,
+  "total": 93,
+  "reference": "security.gentoo.org",
+  "reports": {
+    "CVE-2006-0481": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200812-15.xml",
+        "title": "POV-Ray: User-assisted execution of arbitrary code — GLSA 200812-15",
+        "subTitle": "POV-Ray includes a version of libpng that might allow for the execution of arbitrary code when reading a specially crafted PNG file",
+        "background": "POV-Ray is a well known open-source ray tracer.",
+        "body": "POV-Ray uses a statically linked copy of libpng to view and output PNG files. The version shipped with POV-Ray is vulnerable to CVE-2008-3964, CVE-2008-1382, CVE-2006-3334, CVE-2006-0481, CVE-2004-0768. A bug in POV-Ray's build system caused it to load the old version when your installed copy of libpng was >=media-libs/libpng-1.2.10.",
+        "extra": "An attacker could entice a user to load a specially crafted PNG file as a texture, resulting in the execution of arbitrary code with the permissions of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-0996": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200605-08.xml",
+        "title": "PHP: Multiple vulnerabilities — GLSA 200605-08",
+        "subTitle": "PHP is affected by multiple issues, including a buffer overflow in wordwrap() which may lead to execution of arbitrary code.",
+        "background": "PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.",
+        "body": "Several vulnerabilities were discovered on PHP4 and PHP5 by Infigo, Tonu Samuel and Maksymilian Arciemowicz. These included a buffer overflow in the wordwrap() function, restriction bypasses in the copy() and tempname() functions, a cross-site scripting issue in the phpinfo() function, a potential crash in the substr_compare() function and a memory leak in the non-binary-safe html_entity_decode() function.",
+        "extra": "Remote attackers might be able to exploit these issues in PHP applications making use of the affected functions, potentially resulting in the execution of arbitrary code, Denial of Service, execution of scripted contents in the context of the affected site, security bypass or information leak.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-1148": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200603-17.xml",
+        "title": "PeerCast: Buffer overflow — GLSA 200603-17",
+        "subTitle": "PeerCast is vulnerable to a buffer overflow that may lead to the execution of arbitrary code.",
+        "background": "PeerCast is a Peer to Peer broadcasting technology for listening to radio and watching video on the Internet.",
+        "body": "INFIGO discovered a problem in the URL handling code. Buffers that are allocated on the stack can be overflowed inside of nextCGIarg() function.",
+        "extra": "By sending a specially crafted request to the HTTP server, a remote attacker can cause a stack overflow, resulting in the execution of arbitrary code.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-1834": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200606-01.xml",
+        "title": "Opera: Buffer overflow — GLSA 200606-01",
+        "subTitle": "Opera contains an integer signedness error resulting in a buffer overflow which may allow a remote attacker to execute arbitrary code.",
+        "background": "Opera is a multi-platform web browser.",
+        "body": "SEC Consult has discovered a buffer overflow in the code processing style sheet attributes. It is caused by an integer signedness error in a length check followed by a call to a string function. It seems to be hard to exploit this buffer overflow to execute arbitrary code because of the very large amount memory that has to be copied.",
+        "extra": "A remote attacker can entice a user to visit a web page containing a specially crafted style sheet attribute that will crash the user's browser and maybe lead to the execution of arbitrary code.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-1861": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200607-02.xml",
+        "title": "FreeType: Multiple integer overflows — GLSA 200607-02",
+        "subTitle": "Multiple remotely exploitable buffer overflows have been discovered in FreeType, resulting in the execution of arbitrary code.",
+        "background": "FreeType is a portable font engine.",
+        "body": "Multiple integer overflows exist in a variety of files (bdf/bdflib.c, sfnt/ttcmap.c, cff/cffgload.c, base/ftmac.c).",
+        "extra": "A remote attacker could exploit these buffer overflows by enticing a user to load a specially crafted font, which could result in the execution of arbitrary code.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-1991": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200605-08.xml",
+        "title": "PHP: Multiple vulnerabilities — GLSA 200605-08",
+        "subTitle": "PHP is affected by multiple issues, including a buffer overflow in wordwrap() which may lead to execution of arbitrary code.",
+        "background": "PHP is a widely-used general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.",
+        "body": "Several vulnerabilities were discovered on PHP4 and PHP5 by Infigo, Tonu Samuel and Maksymilian Arciemowicz. These included a buffer overflow in the wordwrap() function, restriction bypasses in the copy() and tempname() functions, a cross-site scripting issue in the phpinfo() function, a potential crash in the substr_compare() function and a memory leak in the non-binary-safe html_entity_decode() function.",
+        "extra": "Remote attackers might be able to exploit these issues in PHP applications making use of the affected functions, potentially resulting in the execution of arbitrary code, Denial of Service, execution of scripted contents in the context of the affected site, security bypass or information leak.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-2198": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200607-12.xml",
+        "title": "OpenOffice.org: Multiple vulnerabilities — GLSA 200607-12",
+        "subTitle": "OpenOffice.org is affected by three security vulnerabilities which can be exploited to allow the execution of arbitrary code by a remote attacker.",
+        "background": "OpenOffice.org is an open source office productivity suite, including word processing, spreadsheet, presentation, drawing, data charting, formula editing, and file conversion facilities.",
+        "body": "Internal security audits by OpenOffice.org have discovered three security vulnerabilities related to Java applets, macros and the XML file format parser.",
+        "extra": "An attacker might exploit these vulnerabilities to escape the Java sandbox, execute arbitrary code or BASIC code with the permissions of the user running OpenOffice.org.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-2200": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200607-07.xml",
+        "title": "xine-lib: Buffer overflow — GLSA 200607-07",
+        "subTitle": "A buffer overflow has been found in the libmms library shipped with xine-lib, potentially resulting in the execution of arbitrary code.",
+        "background": "xine-lib is the core library of xine, a multimedia player.",
+        "body": "There is a stack based overflow in the libmms library included with xine-lib which can be triggered by malicious use of the send_command, string_utf16, get_data and get_media_packet functions.",
+        "extra": "A remote attacker could design a malicious media file that would trigger the overflow, potentially resulting in the execution of arbitrary code.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-2656": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200607-03.xml",
+        "title": "libTIFF: Multiple buffer overflows — GLSA 200607-03",
+        "subTitle": "libTIFF contains buffer overflows that could result in arbitrary code execution.",
+        "background": "libTIFF provides support for reading and manipulating TIFF images.",
+        "body": "A buffer overflow has been found in the t2p_write_pdf_string function in tiff2pdf, which can been triggered with a TIFF file containing a DocumentName tag with UTF-8 characters. An additional buffer overflow has been found in the handling of the parameters in tiffsplit.",
+        "extra": "A remote attacker could entice a user to load a specially crafted TIFF file, resulting in the possible execution of arbitrary code.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-2937": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200610-11.xml",
+        "title": "OpenSSL: Multiple vulnerabilities — GLSA 200610-11",
+        "subTitle": "OpenSSL contains multiple vulnerabilities including the possible remote execution of arbitrary code.",
+        "background": "OpenSSL is a toolkit implementing the Secure Sockets Layer, Transport Layer Security protocols and a general-purpose cryptography library.",
+        "body": "Tavis Ormandy and Will Drewry, both of the Google Security Team, discovered that the SSL_get_shared_ciphers() function contains a buffer overflow vulnerability, and that the SSLv2 client code contains a flaw leading to a crash. Additionally Dr. Stephen N. Henson found that the ASN.1 handler contains two Denial of Service vulnerabilities: while parsing an invalid ASN.1 structure and while handling certain types of public key.",
+        "extra": "An attacker could trigger the buffer overflow vulnerability by sending a malicious suite of ciphers to an application using the vulnerable function, and thus execute arbitrary code with the rights of the user running the application. An attacker could also consume CPU and/or memory by exploiting the Denial of Service vulnerabilities. Finally a malicious server could crash a SSLv2 client through the SSLv2 vulnerability.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-2940": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200610-11.xml",
+        "title": "OpenSSL: Multiple vulnerabilities — GLSA 200610-11",
+        "subTitle": "OpenSSL contains multiple vulnerabilities including the possible remote execution of arbitrary code.",
+        "background": "OpenSSL is a toolkit implementing the Secure Sockets Layer, Transport Layer Security protocols and a general-purpose cryptography library.",
+        "body": "Tavis Ormandy and Will Drewry, both of the Google Security Team, discovered that the SSL_get_shared_ciphers() function contains a buffer overflow vulnerability, and that the SSLv2 client code contains a flaw leading to a crash. Additionally Dr. Stephen N. Henson found that the ASN.1 handler contains two Denial of Service vulnerabilities: while parsing an invalid ASN.1 structure and while handling certain types of public key.",
+        "extra": "An attacker could trigger the buffer overflow vulnerability by sending a malicious suite of ciphers to an application using the vulnerable function, and thus execute arbitrary code with the rights of the user running the application. An attacker could also consume CPU and/or memory by exploiting the Denial of Service vulnerabilities. Finally a malicious server could crash a SSLv2 client through the SSLv2 vulnerability.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-3083": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200608-21.xml",
+        "title": "Heimdal: Multiple local privilege escalation vulnerabilities — GLSA 200608-21",
+        "subTitle": "Certain Heimdal components, ftpd and rcp, are vulnerable to a local privilege escalation.",
+        "background": "Heimdal is a free implementation of Kerberos 5.",
+        "body": "The ftpd and rcp applications provided by Heimdal fail to check the return value of calls to seteuid().",
+        "extra": "A local attacker could exploit this vulnerability to execute arbitrary code with elevated privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-3084": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200608-21.xml",
+        "title": "Heimdal: Multiple local privilege escalation vulnerabilities — GLSA 200608-21",
+        "subTitle": "Certain Heimdal components, ftpd and rcp, are vulnerable to a local privilege escalation.",
+        "background": "Heimdal is a free implementation of Kerberos 5.",
+        "body": "The ftpd and rcp applications provided by Heimdal fail to check the return value of calls to seteuid().",
+        "extra": "A local attacker could exploit this vulnerability to execute arbitrary code with elevated privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-3117": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200607-12.xml",
+        "title": "OpenOffice.org: Multiple vulnerabilities — GLSA 200607-12",
+        "subTitle": "OpenOffice.org is affected by three security vulnerabilities which can be exploited to allow the execution of arbitrary code by a remote attacker.",
+        "background": "OpenOffice.org is an open source office productivity suite, including word processing, spreadsheet, presentation, drawing, data charting, formula editing, and file conversion facilities.",
+        "body": "Internal security audits by OpenOffice.org have discovered three security vulnerabilities related to Java applets, macros and the XML file format parser.",
+        "extra": "An attacker might exploit these vulnerabilities to escape the Java sandbox, execute arbitrary code or BASIC code with the permissions of the user running OpenOffice.org.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-3121": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200608-23.xml",
+        "title": "Heartbeat: Denial of service — GLSA 200608-23",
+        "subTitle": "Heartbeat is vulnerable to a Denial of Service which can be triggered by a remote attacker without authentication.",
+        "background": "Heartbeat is a component of the High-Availability Linux project. It is used to perform death-of-node detection, communications and cluster management.",
+        "body": "Yan Rong Ge discovered that the peel_netstring() function in cl_netstring.c does not validate the \"length\" parameter of user input, which can lead to an out-of-bounds memory access when processing certain Heartbeat messages (CVE-2006-3121). Furthermore an unspecified local DoS issue was fixed (CVE-2006-3815).",
+        "extra": "By sending a malicious UDP Heartbeat message, even before authentication, a remote attacker can crash the master control process of the cluster.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-3467": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200609-04.xml",
+        "title": "LibXfont: Multiple integer overflows — GLSA 200609-04",
+        "subTitle": "A buffer overflow was discovered in the PCF font parser, potentially resulting in the execution of arbitrary code.",
+        "background": "libXfont is the X.Org Xfont library, some parts are based on the FreeType code base.",
+        "body": "Several integer overflows have been found in the PCF font parser.",
+        "extra": "A local attacker could possibly execute arbitrary code or crash the Xserver by enticing a user to load a specially crafted PCF font file.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-3581": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200607-13.xml",
+        "title": "Audacious: Multiple heap and buffer overflows — GLSA 200607-13",
+        "subTitle": "The adplug library included in Audacious is vulnerable to various overflows that could result in the execution of arbitrary code.",
+        "background": "Audacious is a media player that has been forked from Beep Media Player.",
+        "body": "Luigi Auriemma has found that the adplug library fails to verify the size of the destination buffers in the unpacking instructions, resulting in various possible heap and buffer overflows.",
+        "extra": "An attacker can entice a user to load a specially crafted media file, resulting in a crash or possible execution of arbitrary code.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200609-06.xml",
+        "title": "AdPlug: Multiple vulnerabilities — GLSA 200609-06",
+        "subTitle": "Multiple heap and buffer overflows exist in AdPlug.",
+        "background": "AdPlug is a free, cross-platform, and hardware-independent AdLib sound player library.",
+        "body": "AdPlug is vulnerable to buffer and heap overflows when processing the following types of files: CFF, MTK, DMO, U6M, DTM, and S3M.",
+        "extra": "By enticing a user to load a specially crafted file, an attacker could execute arbitrary code with the privileges of the user running AdPlug.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-3582": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200607-13.xml",
+        "title": "Audacious: Multiple heap and buffer overflows — GLSA 200607-13",
+        "subTitle": "The adplug library included in Audacious is vulnerable to various overflows that could result in the execution of arbitrary code.",
+        "background": "Audacious is a media player that has been forked from Beep Media Player.",
+        "body": "Luigi Auriemma has found that the adplug library fails to verify the size of the destination buffers in the unpacking instructions, resulting in various possible heap and buffer overflows.",
+        "extra": "An attacker can entice a user to load a specially crafted media file, resulting in a crash or possible execution of arbitrary code.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200609-06.xml",
+        "title": "AdPlug: Multiple vulnerabilities — GLSA 200609-06",
+        "subTitle": "Multiple heap and buffer overflows exist in AdPlug.",
+        "background": "AdPlug is a free, cross-platform, and hardware-independent AdLib sound player library.",
+        "body": "AdPlug is vulnerable to buffer and heap overflows when processing the following types of files: CFF, MTK, DMO, U6M, DTM, and S3M.",
+        "extra": "By enticing a user to load a specially crafted file, an attacker could execute arbitrary code with the privileges of the user running AdPlug.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-3600": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200607-11.xml",
+        "title": "TunePimp: Buffer overflow — GLSA 200607-11",
+        "subTitle": "A vulnerability in TunePimp has been reported which could lead to the execution of arbitrary code.",
+        "background": "The TunePimp library (also referred to as libtunepimp) is a development library geared towards developers who wish to create MusicBrainz enabled tagging applications.",
+        "body": "Kevin Kofler has reported a vulnerability where three stack variables are allocated with 255, 255 and 100 bytes respectively, yet 256 bytes are read into each. This could lead to buffer overflows.",
+        "extra": "Running an affected version of TunePimp could lead to the execution of arbitrary code by a remote attacker.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-3627": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200607-09.xml",
+        "title": "Wireshark: Multiple vulnerabilities — GLSA 200607-09",
+        "subTitle": "Wireshark (formerly known as Ethereal) is vulnerable to several security issues, potentially allowing the execution of arbitrary code by a remote attacker.",
+        "background": "Wireshark, formerly known as Ethereal, is a popular network protocol analyzer.",
+        "body": "Wireshark dissectors have been found vulnerable to a large number of exploits, including off-by-one errors, buffer overflows, format string overflows and an infinite loop.",
+        "extra": "Running an affected version of Wireshark or Ethereal could allow for a remote attacker to execute arbitrary code on the user's computer by sending specially crafted packets.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-3630": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200607-09.xml",
+        "title": "Wireshark: Multiple vulnerabilities — GLSA 200607-09",
+        "subTitle": "Wireshark (formerly known as Ethereal) is vulnerable to several security issues, potentially allowing the execution of arbitrary code by a remote attacker.",
+        "background": "Wireshark, formerly known as Ethereal, is a popular network protocol analyzer.",
+        "body": "Wireshark dissectors have been found vulnerable to a large number of exploits, including off-by-one errors, buffer overflows, format string overflows and an infinite loop.",
+        "extra": "Running an affected version of Wireshark or Ethereal could allow for a remote attacker to execute arbitrary code on the user's computer by sending specially crafted packets.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-3631": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200607-09.xml",
+        "title": "Wireshark: Multiple vulnerabilities — GLSA 200607-09",
+        "subTitle": "Wireshark (formerly known as Ethereal) is vulnerable to several security issues, potentially allowing the execution of arbitrary code by a remote attacker.",
+        "background": "Wireshark, formerly known as Ethereal, is a popular network protocol analyzer.",
+        "body": "Wireshark dissectors have been found vulnerable to a large number of exploits, including off-by-one errors, buffer overflows, format string overflows and an infinite loop.",
+        "extra": "Running an affected version of Wireshark or Ethereal could allow for a remote attacker to execute arbitrary code on the user's computer by sending specially crafted packets.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-3632": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200607-09.xml",
+        "title": "Wireshark: Multiple vulnerabilities — GLSA 200607-09",
+        "subTitle": "Wireshark (formerly known as Ethereal) is vulnerable to several security issues, potentially allowing the execution of arbitrary code by a remote attacker.",
+        "background": "Wireshark, formerly known as Ethereal, is a popular network protocol analyzer.",
+        "body": "Wireshark dissectors have been found vulnerable to a large number of exploits, including off-by-one errors, buffer overflows, format string overflows and an infinite loop.",
+        "extra": "Running an affected version of Wireshark or Ethereal could allow for a remote attacker to execute arbitrary code on the user's computer by sending specially crafted packets.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-3738": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200610-11.xml",
+        "title": "OpenSSL: Multiple vulnerabilities — GLSA 200610-11",
+        "subTitle": "OpenSSL contains multiple vulnerabilities including the possible remote execution of arbitrary code.",
+        "background": "OpenSSL is a toolkit implementing the Secure Sockets Layer, Transport Layer Security protocols and a general-purpose cryptography library.",
+        "body": "Tavis Ormandy and Will Drewry, both of the Google Security Team, discovered that the SSL_get_shared_ciphers() function contains a buffer overflow vulnerability, and that the SSLv2 client code contains a flaw leading to a crash. Additionally Dr. Stephen N. Henson found that the ASN.1 handler contains two Denial of Service vulnerabilities: while parsing an invalid ASN.1 structure and while handling certain types of public key.",
+        "extra": "An attacker could trigger the buffer overflow vulnerability by sending a malicious suite of ciphers to an application using the vulnerable function, and thus execute arbitrary code with the rights of the user running the application. An attacker could also consume CPU and/or memory by exploiting the Denial of Service vulnerabilities. Finally a malicious server could crash a SSLv2 client through the SSLv2 vulnerability.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-3744": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200609-14.xml",
+        "title": "ImageMagick: Multiple Vulnerabilities — GLSA 200609-14",
+        "subTitle": "Multiple buffer overflows have been discovered in ImageMagick, which could potentially result in the execution of arbitrary code.",
+        "background": "ImageMagick is a free software suite to manipulate, convert, and create many image formats.",
+        "body": "Tavis Ormandy of the Google Security Team discovered a stack and heap buffer overflow in the GIMP XCF Image decoder and multiple heap and integer overflows in the SUN bitmap decoder. Damian Put discovered a heap overflow in the SGI image decoder.",
+        "extra": "An attacker may be able to create a specially crafted image that, when processed with ImageMagick, executes arbitrary code with the privileges of the executing user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-3747": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200608-01.xml",
+        "title": "Apache: Off-by-one flaw in mod_rewrite — GLSA 200608-01",
+        "subTitle": "A flaw in mod_rewrite could result in a Denial of Service or the execution of arbitrary code.",
+        "background": "The Apache HTTP server is one of the most popular web servers on the Internet. The Apache module mod_rewrite provides a rule-based engine to rewrite requested URLs on the fly.",
+        "body": "An off-by-one flaw has been found in Apache's mod_rewrite module by Mark Dowd of McAfee Avert Labs. This flaw is exploitable depending on the types of rewrite rules being used.",
+        "extra": "A remote attacker could exploit the flaw to cause a Denial of Service or execution of arbitrary code. Note that Gentoo Linux is not vulnerable in the default configuration.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-3806": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200608-02.xml",
+        "title": "Mozilla SeaMonkey: Multiple vulnerabilities — GLSA 200608-02",
+        "subTitle": "The Mozilla Foundation has reported numerous security vulnerabilities related to Mozilla SeaMonkey.",
+        "background": "The Mozilla SeaMonkey project is a community effort to deliver production-quality releases of code derived from the application formerly known as \"Mozilla Application Suite\".",
+        "body": "The following vulnerabilities have been reported:",
+        "extra": "A user can be enticed to open specially crafted URLs, visit webpages containing malicious JavaScript or execute a specially crafted script. These events could lead to the execution of arbitrary code, or the installation of malware on the user's computer.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200608-04.xml",
+        "title": "Mozilla Thunderbird: Multiple vulnerabilities — GLSA 200608-04",
+        "subTitle": "The Mozilla Foundation has reported numerous security vulnerabilities related to Mozilla Thunderbird.",
+        "background": "The Mozilla Thunderbird mail client is a redesign of the Mozilla Mail component. The goal is to produce a cross-platform stand-alone mail application using XUL (XML User Interface Language).",
+        "body": "The following vulnerabilities have been reported:",
+        "extra": "A user can be enticed to open specially crafted URLs, visit webpages containing malicious JavaScript or execute a specially crafted script. These events could lead to the execution of arbitrary code, or the installation of malware on the user's computer.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-3815": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200608-23.xml",
+        "title": "Heartbeat: Denial of service — GLSA 200608-23",
+        "subTitle": "Heartbeat is vulnerable to a Denial of Service which can be triggered by a remote attacker without authentication.",
+        "background": "Heartbeat is a component of the High-Availability Linux project. It is used to perform death-of-node detection, communications and cluster management.",
+        "body": "Yan Rong Ge discovered that the peel_netstring() function in cl_netstring.c does not validate the \"length\" parameter of user input, which can lead to an out-of-bounds memory access when processing certain Heartbeat messages (CVE-2006-3121). Furthermore an unspecified local DoS issue was fixed (CVE-2006-3815).",
+        "extra": "By sending a malicious UDP Heartbeat message, even before authentication, a remote attacker can crash the master control process of the cluster.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-4018": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200608-13.xml",
+        "title": "ClamAV: Heap buffer overflow — GLSA 200608-13",
+        "subTitle": "ClamAV is vulnerable to a heap-based buffer overflow resulting in a Denial of Service and potentially remote execution of arbitrary code.",
+        "background": "ClamAV is a GPL virus scanner.",
+        "body": "Damian Put has discovered a boundary error in the pefromupx() function used by the UPX extraction module, which unpacks PE Windows executable files. Both the \"clamscan\" command-line utility and the \"clamd\" daemon are affected.",
+        "extra": "By sending a malicious attachment to a mail server running ClamAV, a remote attacker can cause a Denial of Service and potentially the execution of arbitrary code with the permissions of the user running ClamAV.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-4146": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200711-23.xml",
+        "title": "VMware Workstation and Player: Multiple vulnerabilities — GLSA 200711-23",
+        "subTitle": "VMware guest operating systems might be able to execute arbitrary code with elevated privileges on the host operating system through multiple flaws.",
+        "background": "VMware Workstation is a virtual machine for developers and system administrators. VMware Player is a freeware virtualization software that can run guests produced by other VMware products.",
+        "body": "Multiple vulnerabilities have been discovered in several VMware products. Neel Mehta and Ryan Smith (IBM ISS X-Force) discovered that the DHCP server contains an integer overflow vulnerability (CVE-2007-0062), an integer underflow vulnerability (CVE-2007-0063) and another error when handling malformed packets (CVE-2007-0061), leading to stack-based buffer overflows or stack corruption. Rafal Wojtczvk (McAfee) discovered two unspecified errors that allow authenticated users with administrative or login privileges on a guest operating system to corrupt memory or cause a Denial of Service (CVE-2007-4496, CVE-2007-4497). Another unspecified vulnerability related to untrusted virtual machine images was discovered (CVE-2007-5617).",
+        "extra": "VMware products also shipped code copies of software with several vulnerabilities: Samba (GLSA-200705-15), BIND (GLSA-200702-06), MIT Kerberos 5 (GLSA-200707-11), Vixie Cron (GLSA-200704-11), shadow (GLSA-200606-02), OpenLDAP (CVE-2006-4600), PAM (CVE-2004-0813, CVE-2007-1716), GCC (CVE-2006-3619) and GDB (CVE-2006-4146).",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-4253": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200609-19.xml",
+        "title": "Mozilla Firefox: Multiple vulnerabilities — GLSA 200609-19",
+        "subTitle": "The Mozilla Foundation has reported numerous vulnerabilities in Mozilla Firefox, including one that may allow execution of arbitrary code.",
+        "background": "Mozilla Firefox is a redesign of the Mozilla Navigator component. The goal is to produce a cross-platform, stand-alone browser application.",
+        "body": "A number of vulnerabilities were found and fixed in Mozilla Firefox. For details please consult the references below.",
+        "extra": "The most severe vulnerability involves enticing a user to visit a malicious website, crashing the browser and executing arbitrary code with the rights of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200610-01.xml",
+        "title": "Mozilla Thunderbird: Multiple vulnerabilities — GLSA 200610-01",
+        "subTitle": "The Mozilla Foundation has reported multiple security vulnerabilities related to Mozilla Thunderbird.",
+        "background": "The Mozilla Thunderbird mail client is a redesign of the Mozilla Mail component.",
+        "body": "A number of vulnerabilities have been found and fixed in Mozilla Thunderbird. For details please consult the references below.",
+        "extra": "The most severe vulnerabilities might lead to the execution of arbitrary code with the rights of the user running the application. Other vulnerabilities include program crashes and the acceptance of forged certificates.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200610-04.xml",
+        "title": "Seamonkey: Multiple vulnerabilities — GLSA 200610-04",
+        "subTitle": "The Seamonkey project has reported multiple security vulnerabilities in the application.",
+        "background": "The SeaMonkey project is a community effort to deliver production-quality releases of code derived from the application formerly known as 'Mozilla Application Suite'.",
+        "body": "A number of vulnerabilities have been found and fixed in Seamonkey. For details please consult the references below.",
+        "extra": "The most severe vulnerability involves enticing a user to visit a malicious website, crashing the application and executing arbitrary code with the rights of the user running Seamonkey.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-4262": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200610-08.xml",
+        "title": "Cscope: Multiple buffer overflows — GLSA 200610-08",
+        "subTitle": "Cscope is vulnerable to multiple buffer overflows that could lead to the execution of arbitrary code.",
+        "background": "Cscope is a developer's tool for browsing source code.",
+        "body": "Unchecked use of strcpy() and *scanf() leads to several buffer overflows.",
+        "extra": "A user could be enticed to open a carefully crafted file which would allow the attacker to execute arbitrary code with the permissions of the user running Cscope.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-4299": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200609-16.xml",
+        "title": "Tikiwiki: Arbitrary command execution — GLSA 200609-16",
+        "subTitle": "Tikiwiki contains a cross-site scripting (XSS) vulnerability as well as a second vulnerability which may allow remote execution of arbitrary code.",
+        "background": "Tikiwiki is a web-based groupware and content management system, developed with PHP, ADOdb and Smarty.",
+        "body": "A vulnerability in jhot.php allows for an unrestricted file upload to the img/wiki/ directory. Additionally, an XSS exists in the highlight parameter of tiki-searchindex.php.",
+        "extra": "An attacker could execute arbitrary code with the rights of the user running the web server by uploading a file and executing it via a filepath parameter. The XSS could be exploited to inject and execute malicious script code or to steal cookie-based authentication credentials, potentially compromising the victim's browser.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-4333": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200608-26.xml",
+        "title": "Wireshark: Multiple vulnerabilities — GLSA 200608-26",
+        "subTitle": "Wireshark is vulnerable to several security issues that may lead to a Denial of Service and/or the execution of arbitrary code.",
+        "background": "Wireshark is a feature-rich network protocol analyzer.",
+        "body": "The following vulnerabilities have been discovered in Wireshark. Firstly, if the IPsec ESP parser is used it is susceptible to off-by-one errors, this parser is disabled by default; secondly, the SCSI dissector is vulnerable to an unspecified crash; and finally, the Q.2931 dissector of the SSCOP payload may use all the available memory if a port range is configured. By default, no port ranges are configured.",
+        "extra": "An attacker might be able to exploit these vulnerabilities, resulting in a crash or the execution of arbitrary code with the permissions of the user running Wireshark, possibly the root user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-4339": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200609-05.xml",
+        "title": "OpenSSL, AMD64 x86 emulation base libraries: RSA signature forgery — GLSA 200609-05",
+        "subTitle": "OpenSSL fails to properly validate PKCS #1 v1.5 signatures.",
+        "background": "OpenSSL is a toolkit implementing the Secure Sockets Layer, Transport Layer Security protocols and a general-purpose cryptography library. The x86 emulation base libraries for AMD64 contain a vulnerable version of OpenSSL.",
+        "body": "Daniel Bleichenbacher discovered that it might be possible to forge signatures signed by RSA keys with the exponent of 3.",
+        "extra": "Since several CAs are using an exponent of 3 it might be possible for an attacker to create a key with a false CA signature.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200609-18.xml",
+        "title": "Opera: RSA signature forgery — GLSA 200609-18",
+        "subTitle": "Opera fails to correctly verify certain signatures.",
+        "background": "Opera is a multi-platform web browser.",
+        "body": "Opera makes use of OpenSSL, which fails to correctly verify PKCS #1 v1.5 RSA signatures signed by a key with exponent 3. Some CAs in Opera's list of trusted signers are using root certificates with exponent 3.",
+        "extra": "An attacker could forge certificates which will appear valid and signed by a trusted CA.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-4340": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200609-19.xml",
+        "title": "Mozilla Firefox: Multiple vulnerabilities — GLSA 200609-19",
+        "subTitle": "The Mozilla Foundation has reported numerous vulnerabilities in Mozilla Firefox, including one that may allow execution of arbitrary code.",
+        "background": "Mozilla Firefox is a redesign of the Mozilla Navigator component. The goal is to produce a cross-platform, stand-alone browser application.",
+        "body": "A number of vulnerabilities were found and fixed in Mozilla Firefox. For details please consult the references below.",
+        "extra": "The most severe vulnerability involves enticing a user to visit a malicious website, crashing the browser and executing arbitrary code with the rights of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200610-01.xml",
+        "title": "Mozilla Thunderbird: Multiple vulnerabilities — GLSA 200610-01",
+        "subTitle": "The Mozilla Foundation has reported multiple security vulnerabilities related to Mozilla Thunderbird.",
+        "background": "The Mozilla Thunderbird mail client is a redesign of the Mozilla Mail component.",
+        "body": "A number of vulnerabilities have been found and fixed in Mozilla Thunderbird. For details please consult the references below.",
+        "extra": "The most severe vulnerabilities might lead to the execution of arbitrary code with the rights of the user running the application. Other vulnerabilities include program crashes and the acceptance of forged certificates.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-4343": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200610-11.xml",
+        "title": "OpenSSL: Multiple vulnerabilities — GLSA 200610-11",
+        "subTitle": "OpenSSL contains multiple vulnerabilities including the possible remote execution of arbitrary code.",
+        "background": "OpenSSL is a toolkit implementing the Secure Sockets Layer, Transport Layer Security protocols and a general-purpose cryptography library.",
+        "body": "Tavis Ormandy and Will Drewry, both of the Google Security Team, discovered that the SSL_get_shared_ciphers() function contains a buffer overflow vulnerability, and that the SSLv2 client code contains a flaw leading to a crash. Additionally Dr. Stephen N. Henson found that the ASN.1 handler contains two Denial of Service vulnerabilities: while parsing an invalid ASN.1 structure and while handling certain types of public key.",
+        "extra": "An attacker could trigger the buffer overflow vulnerability by sending a malicious suite of ciphers to an application using the vulnerable function, and thus execute arbitrary code with the rights of the user running the application. An attacker could also consume CPU and/or memory by exploiting the Denial of Service vulnerabilities. Finally a malicious server could crash a SSLv2 client through the SSLv2 vulnerability.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-4514": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200612-13.xml",
+        "title": "libgsf: Buffer overflow — GLSA 200612-13",
+        "subTitle": "libgsf improperly allocates memory allowing for a heap overflow and possibly the execution of arbitrary code.",
+        "background": "The GNOME Structured File Library is an I/O library that can read and write common file types and handle structured formats that provide file-system-in-a-file semantics.",
+        "body": "\"infamous41md\" has discovered that the \"ole_init_info\" function may allocate too little memory for storing the contents of an OLE document, resulting in a heap buffer overflow.",
+        "extra": "An attacker could entice a user to open a specially crafted OLE document, and possibly execute arbitrary code with the rights of the user opening the document.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-4519": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200707-09.xml",
+        "title": "GIMP: Multiple integer overflows — GLSA 200707-09",
+        "subTitle": "Multiple vulnerabilities have been discovered in GIMP, allowing for the remote execution of arbitrary code.",
+        "background": "GIMP is the GNU Image Manipulation Program.",
+        "body": "Sean Larsson from iDefense Labs discovered multiple integer overflows in various GIMP plugins (CVE-2006-4519). Stefan Cornelius from Secunia Research discovered an integer overflow in the seek_to_and_unpack_pixeldata() function when processing PSD files (CVE-2007-2949).",
+        "extra": "A remote attacker could entice a user to open a specially crafted image file, possibly resulting in the execution of arbitrary code with the privileges of the user running GIMP.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-4565": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200609-19.xml",
+        "title": "Mozilla Firefox: Multiple vulnerabilities — GLSA 200609-19",
+        "subTitle": "The Mozilla Foundation has reported numerous vulnerabilities in Mozilla Firefox, including one that may allow execution of arbitrary code.",
+        "background": "Mozilla Firefox is a redesign of the Mozilla Navigator component. The goal is to produce a cross-platform, stand-alone browser application.",
+        "body": "A number of vulnerabilities were found and fixed in Mozilla Firefox. For details please consult the references below.",
+        "extra": "The most severe vulnerability involves enticing a user to visit a malicious website, crashing the browser and executing arbitrary code with the rights of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200610-01.xml",
+        "title": "Mozilla Thunderbird: Multiple vulnerabilities — GLSA 200610-01",
+        "subTitle": "The Mozilla Foundation has reported multiple security vulnerabilities related to Mozilla Thunderbird.",
+        "background": "The Mozilla Thunderbird mail client is a redesign of the Mozilla Mail component.",
+        "body": "A number of vulnerabilities have been found and fixed in Mozilla Thunderbird. For details please consult the references below.",
+        "extra": "The most severe vulnerabilities might lead to the execution of arbitrary code with the rights of the user running the application. Other vulnerabilities include program crashes and the acceptance of forged certificates.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200610-04.xml",
+        "title": "Seamonkey: Multiple vulnerabilities — GLSA 200610-04",
+        "subTitle": "The Seamonkey project has reported multiple security vulnerabilities in the application.",
+        "background": "The SeaMonkey project is a community effort to deliver production-quality releases of code derived from the application formerly known as 'Mozilla Application Suite'.",
+        "body": "A number of vulnerabilities have been found and fixed in Seamonkey. For details please consult the references below.",
+        "extra": "The most severe vulnerability involves enticing a user to visit a malicious website, crashing the application and executing arbitrary code with the rights of the user running Seamonkey.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-4568": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200609-19.xml",
+        "title": "Mozilla Firefox: Multiple vulnerabilities — GLSA 200609-19",
+        "subTitle": "The Mozilla Foundation has reported numerous vulnerabilities in Mozilla Firefox, including one that may allow execution of arbitrary code.",
+        "background": "Mozilla Firefox is a redesign of the Mozilla Navigator component. The goal is to produce a cross-platform, stand-alone browser application.",
+        "body": "A number of vulnerabilities were found and fixed in Mozilla Firefox. For details please consult the references below.",
+        "extra": "The most severe vulnerability involves enticing a user to visit a malicious website, crashing the browser and executing arbitrary code with the rights of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200610-04.xml",
+        "title": "Seamonkey: Multiple vulnerabilities — GLSA 200610-04",
+        "subTitle": "The Seamonkey project has reported multiple security vulnerabilities in the application.",
+        "background": "The SeaMonkey project is a community effort to deliver production-quality releases of code derived from the application formerly known as 'Mozilla Application Suite'.",
+        "body": "A number of vulnerabilities have been found and fixed in Seamonkey. For details please consult the references below.",
+        "extra": "The most severe vulnerability involves enticing a user to visit a malicious website, crashing the application and executing arbitrary code with the rights of the user running Seamonkey.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-4624": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200609-12.xml",
+        "title": "Mailman: Multiple vulnerabilities — GLSA 200609-12",
+        "subTitle": "Mailman has multiple vulnerable that can result in Denial of Service, log file injection and XSS.",
+        "background": "Mailman is a Python based mailing list server with an extensive web interface.",
+        "body": "Mailman fails to properly handle standards-breaking RFC 2231 formatted headers. Furthermore, Moritz Naumann discovered several XSS vulnerabilities and a log file injection.",
+        "extra": "An attacker could exploit these vulnerabilities to cause Mailman to stop processing mails, to inject content into the log file or to execute arbitrary scripts running in the context of the administrator or mailing list user's browser.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-4811": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200611-02.xml",
+        "title": "Qt: Integer overflow — GLSA 200611-02",
+        "subTitle": "An integer overflow flaw in the Qt pixmap handling could possibly lead to a Denial of Service or the remote execution of arbitrary code.",
+        "background": "Qt is a cross-platform GUI toolkit, which is used e.g. by KDE.",
+        "body": "An integer overflow flaw has been found in the pixmap handling of Qt.",
+        "extra": "By enticing a user to open a specially crafted pixmap image in an application using Qt, e.g. Konqueror, a remote attacker could be able to cause an application crash or the execution of arbitrary code with the rights of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200703-06.xml",
+        "title": "AMD64 x86 emulation Qt library: Integer overflow — GLSA 200703-06",
+        "subTitle": "The AMD64 x86 emulation Qt library makes use of an insecure version of the Qt library, potentially allowing for the remote execution of arbitrary code.",
+        "background": "The AMD64 x86 emulation Qt library for AMD64 emulates the x86 (32-bit) Qt library on the AMD64 (64-bit) architecture.",
+        "body": "An integer overflow flaw has been found in the pixmap handling of Qt, making the AMD64 x86 emulation Qt library vulnerable as well.",
+        "extra": "By enticing a user to open a specially crafted pixmap image in an application using the AMD64 x86 emulation Qt library, a remote attacker could cause an application crash or the remote execution of arbitrary code with the rights of the user running the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-4924": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200609-17.xml",
+        "title": "OpenSSH: Denial of service — GLSA 200609-17",
+        "subTitle": "A flaw in the OpenSSH daemon allows remote unauthenticated attackers to cause a Denial of Service.",
+        "background": "OpenSSH is a free suite of applications for the SSH protocol, developed and maintained by the OpenBSD project.",
+        "body": "Tavis Ormandy of the Google Security Team discovered a Denial of Service vulnerability in the SSH protocol version 1 CRC compensation attack detector.",
+        "extra": "A remote unauthenticated attacker may be able to trigger excessive CPU usage by sending a pathological SSH message, denying service to other legitimate users or processes.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200611-06.xml",
+        "title": "OpenSSH: Multiple Denial of Service vulnerabilities — GLSA 200611-06",
+        "subTitle": "Several Denial of Service vulnerabilities have been identified in OpenSSH.",
+        "background": "OpenSSH is a complete SSH protocol version 1.3, 1.5 and 2.0 implementation and includes sftp client and server support.",
+        "body": "Tavis Ormandy of the Google Security Team has discovered a pre-authentication vulnerability, causing sshd to spin until the login grace time has been expired. Mark Dowd found an unsafe signal handler that was vulnerable to a race condition. It has also been discovered that when GSSAPI authentication is enabled, GSSAPI will in certain cases incorrectly abort.",
+        "extra": "The pre-authentication and signal handler vulnerabilities can cause a Denial of Service in OpenSSH. The vulnerability in the GSSAPI authentication abort could be used to determine the validity of usernames on some platforms.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-5456": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200611-07.xml",
+        "title": "GraphicsMagick: PALM and DCM buffer overflows — GLSA 200611-07",
+        "subTitle": "GraphicsMagick improperly handles PALM and DCM images, potentially resulting in the execution of arbitrary code.",
+        "background": "GraphicsMagick is a collection of tools and libraries which support reading, writing, and manipulating images in many major formats.",
+        "body": "M. Joonas Pihlaja has reported that a boundary error exists within the ReadDCMImage() function of coders/dcm.c, causing the improper handling of DCM images. Pihlaja also reported that there are several boundary errors in the ReadPALMImage() function of coders/palm.c, similarly causing the improper handling of PALM images.",
+        "extra": "An attacker could entice a user to open a specially crafted DCM or PALM image with GraphicsMagick, and possibly execute arbitrary code with the privileges of the user running GraphicsMagick.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200611-19.xml",
+        "title": "ImageMagick: PALM and DCM buffer overflows — GLSA 200611-19",
+        "subTitle": "ImageMagick improperly handles PALM and DCM images, potentially resulting in the execution of arbitrary code.",
+        "background": "ImageMagick is a software suite to create, edit, and compose bitmap images, that can also read, write, and convert images in many other formats.",
+        "body": "M. Joonas Pihlaja has reported that a boundary error exists within the ReadDCMImage() function of coders/dcm.c, causing the improper handling of DCM images. Pihlaja also reported that there are several boundary errors in the ReadPALMImage() function of coders/palm.c, similarly causing the improper handling of PALM images.",
+        "extra": "An attacker could entice a user to open a specially crafted DCM or PALM image with ImageMagick, and possibly execute arbitrary code with the privileges of the user running ImageMagick.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-5467": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200611-12.xml",
+        "title": "Ruby: Denial of Service vulnerability — GLSA 200611-12",
+        "subTitle": "The Ruby cgi.rb CGI library is vulnerable to a Denial of Service attack.",
+        "background": "Ruby is a dynamic, open source programming language with a focus on simplicity and productivity.",
+        "body": "Zed Shaw, Jeremy Kemper, and Jamis Buck of the Mongrel project reported that the CGI library shipped with Ruby is vulnerable to a remote Denial of Service by an unauthenticated user.",
+        "extra": "The vulnerability can be exploited by sending the cgi.rb library an HTTP request with multipart MIME encoding that contains a malformed MIME boundary specifier beginning with \"-\" instead of \"--\". Successful exploitation of the vulnerability causes the library to go into an infinite loop waiting for additional nonexistent input.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-5702": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200611-11.xml",
+        "title": "TikiWiki: Multiple vulnerabilities — GLSA 200611-11",
+        "subTitle": "TikiWiki allows for the disclosure of MySQL database authentication credentials and for cross-site scripting attacks.",
+        "background": "TikiWiki is an open source content management system written in PHP.",
+        "body": "In numerous files TikiWiki provides an empty sort_mode parameter, causing TikiWiki to display additional information, including database authentication credentials, in certain error messages. TikiWiki also improperly sanitizes the \"url\" request variable sent to tiki-featured_link.php.",
+        "extra": "An attacker could cause a database error in various pages of a TikiWiki instance by providing an empty sort_mode request variable, and gain unauthorized access to credentials of the MySQL databases used by TikiWiki. An attacker could also entice a user to browse to a specially crafted URL that could run scripts in the scope of the user's browser.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-5703": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200611-11.xml",
+        "title": "TikiWiki: Multiple vulnerabilities — GLSA 200611-11",
+        "subTitle": "TikiWiki allows for the disclosure of MySQL database authentication credentials and for cross-site scripting attacks.",
+        "background": "TikiWiki is an open source content management system written in PHP.",
+        "body": "In numerous files TikiWiki provides an empty sort_mode parameter, causing TikiWiki to display additional information, including database authentication credentials, in certain error messages. TikiWiki also improperly sanitizes the \"url\" request variable sent to tiki-featured_link.php.",
+        "extra": "An attacker could cause a database error in various pages of a TikiWiki instance by providing an empty sort_mode request variable, and gain unauthorized access to credentials of the MySQL databases used by TikiWiki. An attacker could also entice a user to browse to a specially crafted URL that could run scripts in the scope of the user's browser.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-5779": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200611-25.xml",
+        "title": "OpenLDAP: Denial of Service vulnerability — GLSA 200611-25",
+        "subTitle": "A flaw in OpenLDAP allows remote unauthenticated attackers to cause a Denial of Service.",
+        "background": "OpenLDAP is a suite of LDAP-related applications and development tools.",
+        "body": "Evgeny Legerov has discovered that the truncation of an incoming authcid longer than 255 characters and ending with a space as the 255th character will lead to an improperly computed name length. This will trigger an assert in the libldap code.",
+        "extra": "By sending a BIND request with a specially crafted authcid parameter to an OpenLDAP service, a remote attacker can cause the service to crash.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-5793": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200611-09.xml",
+        "title": "libpng: Denial of service — GLSA 200611-09",
+        "subTitle": "A vulnerability in libpng may allow a remote attacker to crash applications that handle untrusted images.",
+        "background": "libpng is a free ANSI C library used to process and manipulate PNG images.",
+        "body": "Tavis Ormandy of the Gentoo Linux Security Audit Team discovered that a vulnerability exists in the sPLT chunk handling code of libpng, a large sPLT chunk may cause an application to attempt to read out of bounds.",
+        "extra": "A remote attacker could craft an image that when processed or viewed by an application using libpng causes the application to terminate abnormally.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-5857": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200701-16.xml",
+        "title": "Adobe Acrobat Reader: Multiple vulnerabilities — GLSA 200701-16",
+        "subTitle": "Adobe Acrobat Reader is vulnerable to remote code execution, Denial of Service, and cross-site scripting attacks.",
+        "background": "Adobe Acrobat Reader is a PDF reader released by Adobe.",
+        "body": "Adobe Acrobat Reader in stand-alone mode is vulnerable to remote code execution via heap corruption when loading a specially crafted PDF file.",
+        "extra": "The browser plugin released with Adobe Acrobat Reader (nppdf.so) does not properly handle URLs, and crashes if given a URL that is too long. The plugin does not correctly handle JavaScript, and executes JavaScript that is given as a GET variable to the URL of a PDF file. Lastly, the plugin does not properly handle the FDF, xml, xfdf AJAX request parameters following the # character in a URL, allowing for multiple cross-site scripting vulnerabilities.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-5864": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200611-20.xml",
+        "title": "GNU gv: Stack overflow — GLSA 200611-20",
+        "subTitle": "GNU gv improperly handles user-supplied data possibly allowing for the execution of arbitrary code.",
+        "background": "GNU gv is a viewer for PostScript and PDF documents.",
+        "body": "GNU gv does not properly boundary check user-supplied data before copying it into process buffers.",
+        "extra": "An attacker could entice a user to open a specially crafted document with GNU gv and execute arbitrary code with the rights of the user on the system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200703-24.xml",
+        "title": "mgv: Stack overflow in included gv code — GLSA 200703-24",
+        "subTitle": "mgv improperly handles user-supplied data possibly allowing for the execution of arbitrary code.",
+        "background": "mgv is a Postscript viewer with a Motif interface, based on Ghostview and GNU gv.",
+        "body": "mgv includes code from gv that does not properly boundary check user-supplied data before copying it into process buffers.",
+        "extra": "An attacker could entice a user to open a specially crafted Postscript document with mgv and possibly execute arbitrary code with the rights of the user running mgv.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200704-06.xml",
+        "title": "Evince: Stack overflow in included gv code — GLSA 200704-06",
+        "subTitle": "Evince improperly handles user-supplied data possibly allowing for the execution of arbitrary code.",
+        "background": "Evince is a document viewer for multiple document formats, including PostScript.",
+        "body": "Evince includes code from GNU gv that does not properly boundary check user-supplied data before copying it into process buffers.",
+        "extra": "An attacker could entice a user to open a specially crafted PostScript document with Evince and possibly execute arbitrary code with the rights of the user running Evince.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-5867": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200701-13.xml",
+        "title": "Fetchmail: Denial of Service and password disclosure — GLSA 200701-13",
+        "subTitle": "Fetchmail has been found to have numerous vulnerabilities allowing for Denial of Service and password disclosure.",
+        "background": "Fetchmail is a remote mail retrieval and forwarding utility.",
+        "body": "Neil Hoggarth has discovered that when delivering messages to a message delivery agent by means of the \"mda\" option, Fetchmail passes a NULL pointer to the ferror() and fflush() functions when refusing a message. Isaac Wilcox has discovered numerous means of plain-text password disclosure due to errors in secure connection establishment.",
+        "extra": "An attacker could deliver a message via Fetchmail to a message delivery agent configured to refuse the message, and crash the Fetchmail process. SMTP and LMTP delivery modes are not affected by this vulnerability. An attacker could also perform a Man-in-the-Middle attack, and obtain plain-text authentication credentials of users connecting to a Fetchmail process.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-5870": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200701-07.xml",
+        "title": "OpenOffice.org: EMF/WMF file handling vulnerabilities — GLSA 200701-07",
+        "subTitle": "A truncation error and integer overflows in the EMF/WMF file handling of OpenOffice.org could be exploited to execute arbitrary code.",
+        "background": "OpenOffice.org is an open source office productivity suite, including word processing, spreadsheet, presentation, drawing, data charting, formula editing, and file conversion facilities.",
+        "body": "John Heasman of NGSSoftware has discovered integer overflows in the EMR_POLYPOLYGON and EMR_POLYPOLYGON16 processing and an error within the handling of META_ESCAPE records.",
+        "extra": "An attacker could exploit these vulnerabilities to cause heap overflows and potentially execute arbitrary code with the privileges of the user running OpenOffice.org by enticing the user to open a document containing a malicious WMF/EMF file.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-5974": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200701-13.xml",
+        "title": "Fetchmail: Denial of Service and password disclosure — GLSA 200701-13",
+        "subTitle": "Fetchmail has been found to have numerous vulnerabilities allowing for Denial of Service and password disclosure.",
+        "background": "Fetchmail is a remote mail retrieval and forwarding utility.",
+        "body": "Neil Hoggarth has discovered that when delivering messages to a message delivery agent by means of the \"mda\" option, Fetchmail passes a NULL pointer to the ferror() and fflush() functions when refusing a message. Isaac Wilcox has discovered numerous means of plain-text password disclosure due to errors in secure connection establishment.",
+        "extra": "An attacker could deliver a message via Fetchmail to a message delivery agent configured to refuse the message, and crash the Fetchmail process. SMTP and LMTP delivery modes are not affected by this vulnerability. An attacker could also perform a Man-in-the-Middle attack, and obtain plain-text authentication credentials of users connecting to a Fetchmail process.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-6293": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200612-12.xml",
+        "title": "F-PROT Antivirus: Multiple vulnerabilities — GLSA 200612-12",
+        "subTitle": "F-Prot Antivirus contains a buffer overflow and other unspecified vulnerabilities, possibly allowing the remote execution of arbitrary code.",
+        "background": "F-Prot Antivirus is a FRISK Software antivirus program that can used with procmail.",
+        "body": "F-Prot Antivirus version 4.6.7 fixes a heap-based buffer overflow, an infinite loop, and other unspecified vulnerabilities.",
+        "extra": "Among other weaker impacts, a remote attacker could send an e-mail containing a malicious file that would trigger the buffer overflow vulnerability and execute arbitrary code with the privileges of the user running F-Prot, which may be the root user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-6297": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200701-05.xml",
+        "title": "KDE kfile JPEG info plugin: Denial of service — GLSA 200701-05",
+        "subTitle": "The KDE kfile JPEG info plugin of kdegraphics could enter an endless loop leading to a Denial of Service.",
+        "background": "The KDE kfile-info JPEG plugin provides meta-information about JPEG files.",
+        "body": "Marcus Meissner of the SUSE security team discovered a stack overflow vulnerability in the code processing EXIF information in the kfile JPEG info plugin.",
+        "extra": "A remote attacker could entice a user to view a specially crafted JPEG image with a KDE application like Konqueror or digiKam, leading to a Denial of Service by an infinite recursion.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-6303": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200612-21.xml",
+        "title": "Ruby: Denial of Service vulnerability — GLSA 200612-21",
+        "subTitle": "The Ruby cgi.rb CGI library is vulnerable to a Denial of Service attack.",
+        "background": "Ruby is a dynamic, open source programming language with a focus on simplicity and productivity.",
+        "body": "The read_multipart function of the CGI library shipped with Ruby (cgi.rb) does not properly check boundaries in MIME multipart content. This is a different issue than GLSA 200611-12.",
+        "extra": "The vulnerability can be exploited by sending the cgi.rb library a crafted HTTP request with multipart MIME encoding that contains a malformed MIME boundary specifier. Successful exploitation of the vulnerability causes the library to go into an infinite loop.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-6500": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200701-02.xml",
+        "title": "Mozilla Firefox: Multiple vulnerabilities — GLSA 200701-02",
+        "subTitle": "Multiple vulnerabilities have been reported in Mozilla Firefox, some of which may allow the remote execution of arbitrary code.",
+        "background": "Mozilla Firefox is a popular open-source web browser from the Mozilla Project.",
+        "body": "An anonymous researcher found evidence of memory corruption in the way Mozilla Firefox handles certain types of SVG comment DOM nodes. Additionally, Frederik Reiss discovered a heap-based buffer overflow in the conversion of a CSS cursor. Other issues with memory corruption were also fixed. Mozilla Firefox also contains less severe vulnerabilities involving JavaScript and Java.",
+        "extra": "An attacker could entice a user to view a specially crafted web page that will trigger one of the vulnerabilities, possibly leading to the execution of arbitrary code. It is also possible for an attacker to perform cross-site scripting attacks, leading to the exposure of sensitive information, like user credentials.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-6501": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200701-02.xml",
+        "title": "Mozilla Firefox: Multiple vulnerabilities — GLSA 200701-02",
+        "subTitle": "Multiple vulnerabilities have been reported in Mozilla Firefox, some of which may allow the remote execution of arbitrary code.",
+        "background": "Mozilla Firefox is a popular open-source web browser from the Mozilla Project.",
+        "body": "An anonymous researcher found evidence of memory corruption in the way Mozilla Firefox handles certain types of SVG comment DOM nodes. Additionally, Frederik Reiss discovered a heap-based buffer overflow in the conversion of a CSS cursor. Other issues with memory corruption were also fixed. Mozilla Firefox also contains less severe vulnerabilities involving JavaScript and Java.",
+        "extra": "An attacker could entice a user to view a specially crafted web page that will trigger one of the vulnerabilities, possibly leading to the execution of arbitrary code. It is also possible for an attacker to perform cross-site scripting attacks, leading to the exposure of sensitive information, like user credentials.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-6504": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200701-02.xml",
+        "title": "Mozilla Firefox: Multiple vulnerabilities — GLSA 200701-02",
+        "subTitle": "Multiple vulnerabilities have been reported in Mozilla Firefox, some of which may allow the remote execution of arbitrary code.",
+        "background": "Mozilla Firefox is a popular open-source web browser from the Mozilla Project.",
+        "body": "An anonymous researcher found evidence of memory corruption in the way Mozilla Firefox handles certain types of SVG comment DOM nodes. Additionally, Frederik Reiss discovered a heap-based buffer overflow in the conversion of a CSS cursor. Other issues with memory corruption were also fixed. Mozilla Firefox also contains less severe vulnerabilities involving JavaScript and Java.",
+        "extra": "An attacker could entice a user to view a specially crafted web page that will trigger one of the vulnerabilities, possibly leading to the execution of arbitrary code. It is also possible for an attacker to perform cross-site scripting attacks, leading to the exposure of sensitive information, like user credentials.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-6979": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200703-11.xml",
+        "title": "Amarok: User-assisted remote execution of arbitrary code — GLSA 200703-11",
+        "subTitle": "The Magnatune component shipped with Amarok is vulnerable to the injection of arbitrary shell code from a malicious Magnatune server.",
+        "background": "Amarok is an advanced music player.",
+        "body": "The Magnatune downloader doesn't quote the \"m_currentAlbumFileName\" parameter while calling the \"unzip\" shell command.",
+        "extra": "A compromised or malicious Magnatune server can remotely execute arbitrary shell code with the rights of the user running Amarok on a client that have previously registered for buying music.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-7227": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200711-30.xml",
+        "title": "PCRE: Multiple vulnerabilities — GLSA 200711-30",
+        "subTitle": "PCRE is vulnerable to multiple buffer overflow and memory corruption vulnerabilities, possibly leading to the execution of arbitrary code.",
+        "background": "PCRE is a library providing functions for Perl-compatible regular expressions.",
+        "body": "Tavis Ormandy (Google Security) discovered multiple vulnerabilities in PCRE. He reported an error when processing \"\\Q\\E\" sequences with unmatched \"\\E\" codes that can lead to the compiled bytecode being corrupted (CVE-2007-1659). PCRE does not properly calculate sizes for unspecified \"multiple forms of character class\", which triggers a buffer overflow (CVE-2007-1660). Further improper calculations of memory boundaries were reported when matching certain input bytes against regex patterns in non UTF-8 mode (CVE-2007-1661) and when searching for unmatched brackets or parentheses (CVE-2007-1662). Multiple integer overflows when processing escape sequences may lead to invalid memory read operations or potentially cause heap-based buffer overflows (CVE-2007-4766). PCRE does not properly handle \"\\P\" and \"\\P{x}\" sequences which can lead to heap-based buffer overflows or trigger the execution of infinite loops (CVE-2007-4767), PCRE is also prone to an error when optimizing character classes containing a singleton UTF-8 sequence which might lead to a heap-based buffer overflow (CVE-2007-4768).",
+        "extra": "Chris Evans also reported multiple integer overflow vulnerabilities in PCRE when processing a large number of named subpatterns (\"name_count\") or long subpattern names (\"max_name_size\") (CVE-2006-7227), and via large \"min\", \"max\", or \"duplength\" values (CVE-2006-7228) both possibly leading to buffer overflows. Another vulnerability was reported when compiling patterns where the \"-x\" or \"-i\" UTF-8 options change within the pattern, which might lead to improper memory calculations (CVE-2006-7230).",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200801-02.xml",
+        "title": "R: Multiple vulnerabilities — GLSA 200801-02",
+        "subTitle": "Multiple vulnerabilities in R could result in the execution of arbitrary code.",
+        "background": "R is a GPL licensed implementation of S, a language and environment for statistical computing and graphics. PCRE is a library providing functions for Perl-compatible regular expressions.",
+        "body": "R includes a copy of PCRE which is vulnerable to multiple buffer overflows and memory corruptions vulnerabilities (GLSA 200711-30).",
+        "extra": "An attacker could entice a user to process specially crafted regular expressions with R, which could possibly lead to the execution of arbitrary code, a Denial of Service or the disclosure of sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200801-18.xml",
+        "title": "Kazehakase: Multiple vulnerabilities — GLSA 200801-18",
+        "subTitle": "Multiple vulnerabilities in Kazehakase could result in the execution of arbitrary code.",
+        "background": "Kazehakase is a web browser based on the Gecko engine.",
+        "body": "Kazehakase includes a copy of PCRE which is vulnerable to multiple buffer overflows and memory corruptions vulnerabilities (GLSA 200711-30).",
+        "extra": "A remote attacker could entice a user to open specially crafted input (e.g bookmarks) with Kazehakase, which could possibly lead to the execution of arbitrary code, a Denial of Service or the disclosure of sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200801-19.xml",
+        "title": "GOffice: Multiple vulnerabilities — GLSA 200801-19",
+        "subTitle": "Multiple vulnerabilities in GOffice could result in the execution of arbitrary code.",
+        "background": "GOffice is a library of document-centric objects and utilities based on GTK.",
+        "body": "GOffice includes a copy of PCRE which is vulnerable to multiple buffer overflows and memory corruptions vulnerabilities (GLSA 200711-30).",
+        "extra": "An attacker could entice a user to open specially crafted documents with GOffice, which could possibly lead to the execution of arbitrary code, a Denial of Service or the disclosure of sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200805-11.xml",
+        "title": "Chicken: Multiple vulnerabilities — GLSA 200805-11",
+        "subTitle": "Multiple vulnerabilities in Chicken could result in the execution of arbitrary code.",
+        "background": "Chicken is a Scheme interpreter and native Scheme to C compiler.",
+        "body": "Chicken includes a copy of PCRE which is vulnerable to multiple buffer overflows and memory corruption vulnerabilities (GLSA 200711-30).",
+        "extra": "An attacker could entice a user to process specially crafted regular expressions with Chicken, which could possibly lead to the execution of arbitrary code, a Denial of Service or the disclosure of sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-7228": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200711-30.xml",
+        "title": "PCRE: Multiple vulnerabilities — GLSA 200711-30",
+        "subTitle": "PCRE is vulnerable to multiple buffer overflow and memory corruption vulnerabilities, possibly leading to the execution of arbitrary code.",
+        "background": "PCRE is a library providing functions for Perl-compatible regular expressions.",
+        "body": "Tavis Ormandy (Google Security) discovered multiple vulnerabilities in PCRE. He reported an error when processing \"\\Q\\E\" sequences with unmatched \"\\E\" codes that can lead to the compiled bytecode being corrupted (CVE-2007-1659). PCRE does not properly calculate sizes for unspecified \"multiple forms of character class\", which triggers a buffer overflow (CVE-2007-1660). Further improper calculations of memory boundaries were reported when matching certain input bytes against regex patterns in non UTF-8 mode (CVE-2007-1661) and when searching for unmatched brackets or parentheses (CVE-2007-1662). Multiple integer overflows when processing escape sequences may lead to invalid memory read operations or potentially cause heap-based buffer overflows (CVE-2007-4766). PCRE does not properly handle \"\\P\" and \"\\P{x}\" sequences which can lead to heap-based buffer overflows or trigger the execution of infinite loops (CVE-2007-4767), PCRE is also prone to an error when optimizing character classes containing a singleton UTF-8 sequence which might lead to a heap-based buffer overflow (CVE-2007-4768).",
+        "extra": "Chris Evans also reported multiple integer overflow vulnerabilities in PCRE when processing a large number of named subpatterns (\"name_count\") or long subpattern names (\"max_name_size\") (CVE-2006-7227), and via large \"min\", \"max\", or \"duplength\" values (CVE-2006-7228) both possibly leading to buffer overflows. Another vulnerability was reported when compiling patterns where the \"-x\" or \"-i\" UTF-8 options change within the pattern, which might lead to improper memory calculations (CVE-2006-7230).",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200801-02.xml",
+        "title": "R: Multiple vulnerabilities — GLSA 200801-02",
+        "subTitle": "Multiple vulnerabilities in R could result in the execution of arbitrary code.",
+        "background": "R is a GPL licensed implementation of S, a language and environment for statistical computing and graphics. PCRE is a library providing functions for Perl-compatible regular expressions.",
+        "body": "R includes a copy of PCRE which is vulnerable to multiple buffer overflows and memory corruptions vulnerabilities (GLSA 200711-30).",
+        "extra": "An attacker could entice a user to process specially crafted regular expressions with R, which could possibly lead to the execution of arbitrary code, a Denial of Service or the disclosure of sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200801-18.xml",
+        "title": "Kazehakase: Multiple vulnerabilities — GLSA 200801-18",
+        "subTitle": "Multiple vulnerabilities in Kazehakase could result in the execution of arbitrary code.",
+        "background": "Kazehakase is a web browser based on the Gecko engine.",
+        "body": "Kazehakase includes a copy of PCRE which is vulnerable to multiple buffer overflows and memory corruptions vulnerabilities (GLSA 200711-30).",
+        "extra": "A remote attacker could entice a user to open specially crafted input (e.g bookmarks) with Kazehakase, which could possibly lead to the execution of arbitrary code, a Denial of Service or the disclosure of sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200801-19.xml",
+        "title": "GOffice: Multiple vulnerabilities — GLSA 200801-19",
+        "subTitle": "Multiple vulnerabilities in GOffice could result in the execution of arbitrary code.",
+        "background": "GOffice is a library of document-centric objects and utilities based on GTK.",
+        "body": "GOffice includes a copy of PCRE which is vulnerable to multiple buffer overflows and memory corruptions vulnerabilities (GLSA 200711-30).",
+        "extra": "An attacker could entice a user to open specially crafted documents with GOffice, which could possibly lead to the execution of arbitrary code, a Denial of Service or the disclosure of sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200802-10.xml",
+        "title": "Python: PCRE Integer overflow — GLSA 200802-10",
+        "subTitle": "A vulnerability within Python's copy of PCRE might lead to the execution of arbitrary code.",
+        "background": "Python is an interpreted, interactive, object-oriented programming language.",
+        "body": "Python 2.3 includes a copy of PCRE which is vulnerable to an integer overflow vulnerability, leading to a buffer overflow.",
+        "extra": "An attacker could exploit the vulnerability by tricking a vulnerable Python application to compile a regular expressions, which could possibly lead to the execution of arbitrary code, a Denial of Service or the disclosure of sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200805-11.xml",
+        "title": "Chicken: Multiple vulnerabilities — GLSA 200805-11",
+        "subTitle": "Multiple vulnerabilities in Chicken could result in the execution of arbitrary code.",
+        "background": "Chicken is a Scheme interpreter and native Scheme to C compiler.",
+        "body": "Chicken includes a copy of PCRE which is vulnerable to multiple buffer overflows and memory corruption vulnerabilities (GLSA 200711-30).",
+        "extra": "An attacker could entice a user to process specially crafted regular expressions with Chicken, which could possibly lead to the execution of arbitrary code, a Denial of Service or the disclosure of sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2006-7230": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200711-30.xml",
+        "title": "PCRE: Multiple vulnerabilities — GLSA 200711-30",
+        "subTitle": "PCRE is vulnerable to multiple buffer overflow and memory corruption vulnerabilities, possibly leading to the execution of arbitrary code.",
+        "background": "PCRE is a library providing functions for Perl-compatible regular expressions.",
+        "body": "Tavis Ormandy (Google Security) discovered multiple vulnerabilities in PCRE. He reported an error when processing \"\\Q\\E\" sequences with unmatched \"\\E\" codes that can lead to the compiled bytecode being corrupted (CVE-2007-1659). PCRE does not properly calculate sizes for unspecified \"multiple forms of character class\", which triggers a buffer overflow (CVE-2007-1660). Further improper calculations of memory boundaries were reported when matching certain input bytes against regex patterns in non UTF-8 mode (CVE-2007-1661) and when searching for unmatched brackets or parentheses (CVE-2007-1662). Multiple integer overflows when processing escape sequences may lead to invalid memory read operations or potentially cause heap-based buffer overflows (CVE-2007-4766). PCRE does not properly handle \"\\P\" and \"\\P{x}\" sequences which can lead to heap-based buffer overflows or trigger the execution of infinite loops (CVE-2007-4767), PCRE is also prone to an error when optimizing character classes containing a singleton UTF-8 sequence which might lead to a heap-based buffer overflow (CVE-2007-4768).",
+        "extra": "Chris Evans also reported multiple integer overflow vulnerabilities in PCRE when processing a large number of named subpatterns (\"name_count\") or long subpattern names (\"max_name_size\") (CVE-2006-7227), and via large \"min\", \"max\", or \"duplength\" values (CVE-2006-7228) both possibly leading to buffer overflows. Another vulnerability was reported when compiling patterns where the \"-x\" or \"-i\" UTF-8 options change within the pattern, which might lead to improper memory calculations (CVE-2006-7230).",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200801-02.xml",
+        "title": "R: Multiple vulnerabilities — GLSA 200801-02",
+        "subTitle": "Multiple vulnerabilities in R could result in the execution of arbitrary code.",
+        "background": "R is a GPL licensed implementation of S, a language and environment for statistical computing and graphics. PCRE is a library providing functions for Perl-compatible regular expressions.",
+        "body": "R includes a copy of PCRE which is vulnerable to multiple buffer overflows and memory corruptions vulnerabilities (GLSA 200711-30).",
+        "extra": "An attacker could entice a user to process specially crafted regular expressions with R, which could possibly lead to the execution of arbitrary code, a Denial of Service or the disclosure of sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200801-18.xml",
+        "title": "Kazehakase: Multiple vulnerabilities — GLSA 200801-18",
+        "subTitle": "Multiple vulnerabilities in Kazehakase could result in the execution of arbitrary code.",
+        "background": "Kazehakase is a web browser based on the Gecko engine.",
+        "body": "Kazehakase includes a copy of PCRE which is vulnerable to multiple buffer overflows and memory corruptions vulnerabilities (GLSA 200711-30).",
+        "extra": "A remote attacker could entice a user to open specially crafted input (e.g bookmarks) with Kazehakase, which could possibly lead to the execution of arbitrary code, a Denial of Service or the disclosure of sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200801-19.xml",
+        "title": "GOffice: Multiple vulnerabilities — GLSA 200801-19",
+        "subTitle": "Multiple vulnerabilities in GOffice could result in the execution of arbitrary code.",
+        "background": "GOffice is a library of document-centric objects and utilities based on GTK.",
+        "body": "GOffice includes a copy of PCRE which is vulnerable to multiple buffer overflows and memory corruptions vulnerabilities (GLSA 200711-30).",
+        "extra": "An attacker could entice a user to open specially crafted documents with GOffice, which could possibly lead to the execution of arbitrary code, a Denial of Service or the disclosure of sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200805-11.xml",
+        "title": "Chicken: Multiple vulnerabilities — GLSA 200805-11",
+        "subTitle": "Multiple vulnerabilities in Chicken could result in the execution of arbitrary code.",
+        "background": "Chicken is a Scheme interpreter and native Scheme to C compiler.",
+        "body": "Chicken includes a copy of PCRE which is vulnerable to multiple buffer overflows and memory corruption vulnerabilities (GLSA 200711-30).",
+        "extra": "An attacker could entice a user to process specially crafted regular expressions with Chicken, which could possibly lead to the execution of arbitrary code, a Denial of Service or the disclosure of sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "year": 2003,
+  "total": 1,
+  "reference": "bugzilla.redhat.com",
+  "reports": {
+    "CVE-2003-0857": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=108574",
+        "title": "CAN-2003-0857 Netlink local DoS: iptables",
+        "description": "Herbert Xu discovered that a number of netlink applications do notcheck the source address of incoming packets, assuming they are comingfrom the kernel. As any local user can send unicast netlink messagesto any process on the system, this can lead to a local denial ofservice attack, or other local attacks.iptables in RHEL3 and RHEL2.1 is affected ipq_read - used for userspace to deal with packets from netfilter ipulog_read - used for userspace logging of packetsCurrently embargoed."
+      }
+    ]
+  }
+}

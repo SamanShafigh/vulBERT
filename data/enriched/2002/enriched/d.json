@@ -1,0 +1,14 @@
+{
+  "year": 2002,
+  "total": 1,
+  "reference": "github.com",
+  "reports": {
+    "CVE-2002-2443": [
+      {
+        "url": "https://github.com/krb5/krb5/commit/cf1a0c411b2668c57c41e9c4efd15ba17b6b322c",
+        "title": "Fix kpasswd UDP ping-pong [CVE-2002-2443]",
+        "body": "The kpasswd service provided by kadmind was vulnerable to a UDP\"ping-pong\" attack [CVE-2002-2443]. Don't respond to packets unlessthey pass some basic validation, and don't respond to our own errorpackets.Some authors use CVE-1999-0103 to refer to the kpasswd UDP ping-pongattack or UDP ping-pong attacks in general, but there is discussionleading toward narrowing the definition of CVE-1999-0103 to the echo,chargen, or other similar built-in inetd services.Thanks to Vincent Danen for alerting us to this issue.CVSSv2: AV:N/AC:L/Au:N/C:N/I:N/A:P/E:P/RL:O/RC:Cticket: 7637 (new)target_version: 1.11.3tags: pullup"
+      }
+    ]
+  }
+}

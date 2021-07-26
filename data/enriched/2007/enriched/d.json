@@ -1,0 +1,21 @@
+{
+  "year": 2007,
+  "total": 2,
+  "reference": "github.com",
+  "reports": {
+    "CVE-2007-6761": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/0b29669c065f60501e7289e1950fa2a618962358",
+        "title": "V4L/DVB (6751): V4L: Memory leak! Fix count in videobuf-vmalloc mmap",
+        "body": "This is pretty serious bug. map->count is never initialized after thecall to kmalloc making the count start at some random trash value. Theend result is leaking videobufs.Also, fix up the debug statements to print unsigned values.Pushed to http://ifup.org/hg/v4l-dvb tooSigned-off-by: Brandon Philips <bphilips@suse.de>Signed-off-by: Mauro Carvalho Chehab <mchehab@infradead.org>"
+      }
+    ],
+    "CVE-2007-6762": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/2a2f11c227bdf292b3a2900ad04139d301b56ac4",
+        "title": "NetLabel: correct CIPSO tag handling when adding new DOI definitions",
+        "body": "The current netlbl_cipsov4_add_common() function has two problems which arefixed with this patch. The first is an off-by-one bug where it is possibile tooverflow the doi_def->tags[] array. The second is a bug where the samedoi_def->tags[] array was not always fully initialized, which caused sporadicfailures.Signed-off-by: Paul Moore <paul.moore@hp.com>Signed-off-by: James Morris <jmorris@namei.org>"
+      }
+    ]
+  }
+}

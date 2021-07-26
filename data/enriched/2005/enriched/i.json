@@ -1,0 +1,96 @@
+{
+  "year": 2005,
+  "total": 13,
+  "reference": "bugzilla.redhat.com",
+  "reports": {
+    "CVE-2005-0449": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=152532",
+        "title": "Multiple kernel security problems: CAN-2005-0384, CAN-2005-0400, CAN-2005-0449, CAN-2005-0531(?), CAN-2005-0749, CAN-2005-0750, CAN-2005-0815",
+        "description": "At least CAN-2005-0750 from this Fedora updatehttps://www.redhat.com/archives/fedora-announce-list/2005-March/msg00075.htmlaffects us -- linux >= 2.4.6 <= 2.4.30-rc1.And I assume the ISO issues do as well."
+      }
+    ],
+    "CVE-2005-1918": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=140589",
+        "title": "CVE-2005-1918 tar archive path traversal issue",
+        "description": "There is an old path traversal issue that we've not fixed.The text of the message describing this:The tar patch \"tar-1.13.25-dots.patch\" changes....for (;;){if (p[0] == '.' && p[1] == '.' && (ISSLASH (p[2]) || !p[2]))return 1;do{if (! *p++)return 0;}while (! ISSLASH (*p));}...into...for (;;){if (p[0] == '.' && p[1] == '.' && (ISSLASH (p[2]) || !p[2]))return 1;do{if (! *p++)return 0;}while (! ISSLASH (*p));do{if (! *p++)return 0;}while ( ISSLASH (*p));}...which looks like it's an optimization, however it also changes theanswer for \"/../etc/passwd\" ... changing both do while's to just plainwhile's should fix it.This issue also affects RHEL 2.1"
+      }
+    ],
+    "CVE-2005-2492": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=166830",
+        "title": "CAN-2005-2492 sendmsg DoS",
+        "description": "Al Viro discovered in net/ipv[46]/raw.c raw_sendmsg() we have if (!inet->hdrincl) raw_probe_proto_opt(&fl, msg); err = ip_route_output_flow(&rt, &fl, sk, !(msg-.....So call sendmsg with sk->sk_protocol == IPPROTO_ICMP, msg->msg_iovlen = 1 andmsg->msg_iov[0].iov_base pointing to kernel space (.iov_len > 1). Then inraw_probe_proto_opt() we have type == msg->msg_iov[0].iov_base code ==msg->msg_iov[0].iov_base + 1 when we hit get_user(fl->fl_icmp_type, type); __get_user(fl->fl_icmp_code, code);Note that failure of the first call is ignored and we happily do the secondcall, an unchecked __get_user() which generates a memory read on the arbitraryuser-supplied address.sendmsg() will fail if iovec points to kernel memory, but it may be possible totrick ip_route_output_flow() into returning an error depending on the value of fl->fl_icmp_code. Iff we can do that, the attacker can obtain informationabout the value read from arbitrary kernel address by looking at the errorreturned by sendmsg(2).On some architectures (including x86) a 16 bit read at a user-supplied addresscould access iomem (no separate mmu context) and therefore mess with hardwarestate leading to a DoS.\"A local unprivileged user may be able to use this flaw to leak informationabout the contents of kernel memory, or on some architectures cause a denial ofservice by manipulating hardware state\""
+      }
+    ],
+    "CVE-2005-2708": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=161925",
+        "title": "CVE-2005-2708 user code panics kernel in exec.c",
+        "description": "Description of problem:user code panics kernel in exec.cVersion-Release number of selected component (if applicable):RHEL 3.0 Update 4How reproducible:EverytimeSteps to Reproduce:1.Symptom:the following code#include <stdio.h>#include <stdlib.h>#include <malloc.h>#define SIZE 1000000int main (int argc, char **argv){int i;double sum = 0.0;double t[SIZE];for (i = 0; i < SIZE; i++){ t[i] = 1.0 + 1.0*SIZE*rand()/(RAND_MAX+1.0) - RAND_MAX/2.0; }for (i = 0; i > SIZE; i++){ sum += t[i];}printf (\"Moyenne = %lf\\n\", sum);return 0;}2.compiled this waygcc -o essai essai.c3. on a node :bash -c 'ulimit -v 100; ./essai'then node panic: Actual results:tantal237 login: double fault: 0000CPU 2Pid: 3552, comm: modprobe Tainted: PRIP: 0010:[<0000000000000000>]RSP: 0000:0000000000000000 EFLAGS: 00010202RAX: 0000000000000000 RBX: 0000000000000040 RCX: 0000000000000000RDX: ffffffff80437560 RSI: 00000100bdaf7f08 RDI: ffffffff80437460RBP: 0000010080008f40 R08: 0000000000000004 R09: 00000100bde77080R10: 0000000000000000 R11: 0000000000000010 R12: 00000100e660a6c0R13: 0000010081c2b280 R14: 0000010081c2b280 R15: 0000010080008ec0FS: 0000002a95aca0a0(0000) GS:ffffffff805e79c0(0000) knlGS:00000000080c9760CS: 0010 DS: 0000 ES: 0000 CR0: 000000008005003bCR2: 0000000000000000 CR3: 00000000047a1000 CR4: 00000000000006e0Call Trace:Process modprobe (pid: 3552, stackpage=100bdaf5000)Kernel panic: Fatal exceptionExpected results:Additional info:"
+      }
+    ],
+    "CVE-2005-3183": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=159597",
+        "title": "CAN-2005-3183 Multiple bugs in libwww - one exploitable - in Library/src/HTBound.c",
+        "description": "Extensive testing of libwww's handling of multipart/byteranges content fromHTTP/1.1 servers revealed multiple logical flaws and bugs in Library/src/HTBound.cThis module parses multipart/byteranges MIME content for its component items,and is responsible for establishing and tearing down the internal libwww streamsthat handle the MIME components.I'm fairly certain that one of the bugs could be exploitable by a hostile HTTPserver, to cause an illegal memory access, and segfault, inHTBoundary_put_block(). All libwww clients are vulnerable, including the LWPPerl module.Normally, multipart/byteranges MIME content is sent in response to a partialcontent request from an HTTP/1.1 client. Apache sends multipart/byteranges MIMEcontent only in response to a request for two or more partial ranges. Apachedoes not send multipart/byterange MIME content if only one partial range isrequested, which is probably why nobody noticed this for so long. They probablydidn't realize that token usage of libwww's HTRequest_addRange() to specify asingle range will _not_ cause a multipart/byterange response from Apache. Tworanges must be added to force a multipart/byterange MIME response, and observeall the following problems with HTBound.cNote that libwww will attempt to process multipart/byteranges content even if itdid not request partial ranges from the server.HTBoundary_put_block() receives raw multipart/byteranges content, in piecemealfashion. Each invocation passes a chunk of data in 'b', with its byte countgiven in 'l'. This function is supposed to maintain internal state, look forknown MIME boundary delimiters in the stream and handle them accordingly.The most critical fault in the code can be observed when the input buffer passedto HTBoundary_put_block() terminates in the middle of a potential MIME boundarydelimiter. The following while() loop on line 52 will terminate due to inputbeing exhausted, with 'l' left at 0: while (l>0 && *me->bpos && *me->bpos==*b) l--, me->bpos++, b++;'l' will be left at 0, with 'b' pointing one byte past the end of the inputbuffer passed to this function. Then, the if() clause spanning lines 64-69 willmake multiple attempt to access a byte past the end of the input buffer.A band-aid solution would be to wrap that entire if() statement inside \"if (l>0){ ... }\". This is going to eliminate the one-off exploit. It's not going tofix anything, because the entire logic in this function is utterly broken inmultiple ways, as I've sadly discovered.Just to give one example: at line 91 we've finally parsed a delimiter boundary,so the code destroys the protocol stack that received data from the previousMIME entity:if (me->target) FREE_TARGET;Then, it creates a new stack for the new MIME entity:me->target = HTStreamStack(WWW_MIME,me->format, HTMerge(me->orig_target, 2), me->request, YES);Then, belatedly it checks if there was any data it buffered up while scanningits input looking for the boundary delimiter, and, if so, pushes the data downthe protocol stack: if (end > start) { if ((status = PUTBLOCK(start, end-start)) != HT_OK) return status; }But, guess what? This data was from the previous MIME entity and it should'vebeen sent down the old protocol stack. But it's not, and it's going to go downthe new stack. This if() statement needs to be moved up before FREE_TARGET.Furthermore, if the partial content returned by the web server contains the bytesequence \"<LF>-<CR><LF>--DELIMITER\" (the partial content ends with \"<LF>-\",which is then followed by the MIME boundary delimiter marking the end of theMIME entity, and the beginning of the next one) -- this is going to breakHTBoundary_put_block(). It will completely miss this occurence of thedelimiter. Explaining the ugly logic that's responsible for this will just taketoo much time. This entire unmaintainable mess of a function needs to bescrapped and replaced by clean code.I'm trying to contact someone who might still have access to libwww's CVSrepository (W3C appears to have stopped maintaining this software three yearsago), and try to lobby him to accept the replacement code I've developed andtested that fixes at least five major bugs in this single function.Until then, I suggest that the exploitable bug at least be fixed as an errata,by wrapping lines 64-69 inside an \"if (l>0) { ... }\". That's only going toprevent the out-of-bounds memory access. This entire code is broken, and itwon't be able to reliably handle multipart/byteranges MIME content. But atleast it won't be exploitable."
+      }
+    ],
+    "CVE-2005-3784": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=174078",
+        "title": "[RHEL4] CVE-2005-3784 auto-reap DoS",
+        "description": "The auto-reap of child processes in Linux kernel 2.6 before 2.6.15 includes processes with ptrace attached, which leads to a dangling ptrace reference and allows local users to cause a denial of service (crash).Fixed upstream byhttp://linux.bkbits.net:8080/linux-2.6/cset@437a0568g4lPMynwmUw1ajvC2ZroDg"
+      }
+    ],
+    "CVE-2005-3857": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=174337",
+        "title": "[RHEL4] CVE-2005-3857 lease printk DoS",
+        "description": "CVE-2005-3857 lease DoS The time_out_leases function in locks.c for Linux kernel before 2.6.15 allows local users to cause a denial of service (kernel log message consumption) by causing a large number of broken leases, which is recorded to the log using the printk function.fix (remove printk):http://linux.bkbits.net:8080/linux-2.6/cset@437a05c4iitlvmAoQbx7eisMxOEoswthread:http://marc.theaimsgroup.com/?l=linux-kernel&m=113175851920568&w=2Listing as moderate, but may be updated to important based on kernel teaminvestigation."
+      }
+    ],
+    "CVE-2005-4268": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=172669",
+        "title": "CVE-2005-4268 cpio large filesize buffer overflow",
+        "description": "From Bugzilla Helper:User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.7.12) Gecko/20050922 Fedora/1.0.7-1.1.fc4 Firefox/1.0.7Description of problem:The latest update to cpio is being killed after a buffer overflow is detected.Version-Release number of selected component (if applicable):cpio-2.6-8.FC4How reproducible:AlwaysSteps to Reproduce:cpio is given a large hierarchy of files and started using \"cpio -o --format=crc\" Actual Results: *** buffer overflow detected ***: cpio terminated======= Backtrace: =========/lib64/libc.so.6(__chk_fail+0x2f)[0x3a2e5dcb6f]/lib64/libc.so.6[0x3a2e5dc149]/lib64/libc.so.6(_IO_default_xsputn+0x86)[0x3a2e567b26]/lib64/libc.so.6(_IO_padn+0x62)[0x3a2e55d532]/lib64/libc.so.6(_IO_vfprintf+0xf2a)[0x3a2e541bca]/lib64/libc.so.6(__vsprintf_chk+0xa9)[0x3a2e5dc1f9]/lib64/libc.so.6(__sprintf_chk+0x80)[0x3a2e5dc130]cpio[0x40534f]cpio[0x405ab9]cpio[0x407e3f]/lib64/libc.so.6(__libc_start_main+0xef)[0x3a2e51c3cf]cpio[0x402729]======= Memory map: ========00400000-00418000 r-xp 00000000 fd:00 50430007 /bin/cpio00517000-0051a000 rw-p 00017000 fd:00 50430007 /bin/cpio0051a000-0053b000 rw-p 0051a000 00:00 0 [heap]3a2e300000-3a2e31a000 r-xp 00000000 fd:00 50003970 /lib64/ld-2.3.5.so3a2e419000-3a2e41a000 r--p 00019000 fd:00 50003970 /lib64/ld-2.3.5.so3a2e41a000-3a2e41b000 rw-p 0001a000 fd:00 50003970 /lib64/ld-2.3.5.so3a2e500000-3a2e62d000 r-xp 00000000 fd:00 50003993 /lib64/libc-2.3.5.so3a2e62d000-3a2e72c000 ---p 0012d000 fd:00 50003993 /lib64/libc-2.3.5.so3a2e72c000-3a2e730000 r--p 0012c000 fd:00 50003993 /lib64/libc-2.3.5.so3a2e730000-3a2e732000 rw-p 00130000 fd:00 50003993 /lib64/libc-2.3.5.so3a2e732000-3a2e736000 rw-p 3a2e732000 00:00 03a30800000-3a3080d000 r-xp 00000000 fd:00 50004027 /lib64/libgcc_s-4.0.1-20050727.so.13a3080d000-3a3090c000 ---p 0000d000 fd:00 50004027 /lib64/libgcc_s-4.0.1-20050727.so.13a3090c000-3a3090d000 rw-p 0000c000 fd:00 50004027 /lib64/libgcc_s-4.0.1-20050727.so.13a35c00000-3a35c14000 r-xp 00000000 fd:00 50004098 /lib64/libnsl-2.3.5.so3a35c14000-3a35d13000 ---p 00014000 fd:00 50004098 /lib64/libnsl-2.3.5.so3a35d13000-3a35d14000 r--p 00013000 fd:00 50004098 /lib64/libnsl-2.3.5.so3a35d14000-3a35d15000 rw-p 00014000 fd:00 50004098 /lib64/libnsl-2.3.5.so3a35d15000-3a35d17000 rw-p 3a35d15000 00:00 02aaaaaaab000-2aaaaaaad000 rw-p 2aaaaaaab000 00:00 02aaaaaacb000-2aaaaaace000 rw-p 2aaaaaacb000 00:00 07fffff9c0000-7fffff9d6000 rw-p 7fffff9c0000 00:00 0 [stack]ffffffffff600000-ffffffffffe00000 ---p 00000000 00:00 0 [vdso]Additional info:"
+      }
+    ],
+    "CVE-2005-4881": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=521601",
+        "title": "CVE-2005-4881 kernel: netlink: fix numerous padding memleaks",
+        "description": "Description of problem:Fix numerous padding memleaks.Missing initialization in dumped datahttp://git.kernel.org/linus/9ef1d4c7c7aca1cd436612b6ca785b726ffb8ed8Clear padding in netlink messageshttp://git.kernel.org/linus/b3563c4fbff906991a1b4ef4609f99cca2a0de6aMissing padding fields in dumped structureshttp://git.kernel.org/linus/8a47077a0b5aa2649751c46e7a27884e6686ccbf"
+      }
+    ],
+    "CVE-2005-4886": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=160117",
+        "title": "CVE-2005-4886 Fix ipv6 exthdr bug causing Oops",
+        "description": "Escalated to Bugzilla from IssueTracker[SELINUX]: Fix ipv6_skip_exthdr() invocation causing OOPS.authorHerbert Xu <herbert@gondor.apana.org.au>Mon, 25 Apr 2005 03:16:19 +0000 (20:16 -0700)committerDavid S. Miller <davem@davemloft.net>Mon, 25 Apr 2005 03:16:19 +0000 (20:16 -0700)The SELinux hooks invoke ipv6_skip_exthdr() with an incorrectlength final argument. However, the length argument turns outto be superfluous.I was just reading ipv6_skip_exthdr and it occured to me that we canget rid of len altogether. The only place where len is used is tocheck whether the skb has two bytes for ipv6_opt_hdr. This checkis done by skb_header_pointer/skb_copy_bits anyway.Now it might appear that we've made the code slower by deferringthe check to skb_copy_bits. However, this check should not triggerin the common case so this is OK."
+      }
+    ],
+    "CVE-2005-4889": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=125517",
+        "title": "CVE-2005-4889 rpm: Updates leave hardlinked copies untouched.",
+        "description": "If a malicious creates a hardlink to a buggy s-bit program the system is still compromised even after a fixed version has been installed. The attached fix removes the s-bits from files that get updated."
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=598775",
+        "title": "CVE-2010-2059 rpm: fails to drop SUID/SGID bits on package upgrade",
+        "description": "Created attachment 418879 [details]SRPM for testing this bugDescription of problem:When RPM replaces an executable, it does not clear the setuid and setgid bits of the old file. Thus, if a user made a hard link to the old executable, he/she will still be able to run it with elevated privileges. This is bad if it was replaced because it had a vulnerability. The problem seems to occur only when executables are replaced, not when they are erased.This is the same bug that was previously noted in dpkg:http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=225692Version-Release number of selected component (if applicable):rpm-4.8.0-14.fc13.x86_64How reproducible:AlwaysSteps to Reproduce:1. Rebuild the attached SRPM twice, once with -D 'rel 1' and once with -D 'rel 2'.2. mkdir /tmp/rpm-setuid-test3. rpm -i rpm-setuid-test-0-1.fc13.$(rpm -E '%{_build_arch}').rpm4. ln /usr/bin/rpm-setuid-test /tmp/rpm-setuid-test/5. rpm -U rpm-setuid-test-0-2.fc13.$(rpm -E '%{_build_arch}').rpm6. ls -l /tmp/rpm-setuid-test/rpm-setuid-testActual results:The old executable is setuid.Expected results:The old executable is not setuid."
+      }
+    ],
+    "CVE-2005-4890": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2005-4890",
+        "title": "CVE-2005-4890 coreutils: tty hijacking possible in \"su\" via TIOCSTI ioctl",
+        "description": "Quoting first paragraph from [1]:https://bugzilla.redhat.com/show_bug.cgi?id=173008for issue description:======================When starting a program via \"su - user -c program\" the user session can escape to the parent session by using the TIOCSTI ioctl to push characters into the input buffer. This allows for example a non-root session to push \"chmod 666 /etc/shadow\" or similarly bad commands into the input buffer such that after the end of the session they are executed. References:[1] https://bugzilla.redhat.com/show_bug.cgi?id=173008[2] http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=628843"
+      }
+    ]
+  }
+}

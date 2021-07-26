@@ -1,0 +1,173 @@
+{
+  "year": 2002,
+  "total": 26,
+  "reference": "debian.org",
+  "reports": {
+    "CVE-2000-0844": [
+      {
+        "url": "http://www.debian.org/security/2000/20000902",
+        "title": "",
+        "body": "Recently two problems have been found in the glibc suite, which could beused to trick setuid applications to run arbitrary code.The first problem is the way ld.so handles environment variables: Inorder to provide a safe environment for setuid applications it removescertain the environment variables that can influence applicationexecution such as LD_PRELOAD and LD_LIBRARY_PATH. Unfortunately therewas a bug that could cause ld.so to not remove them under someconditions. This would affect setuid applications if they executeanother binary without dropping privileges or cleaning up theenvironment themselves.The second problem is the locale handling in glibc. glibc checks forcharacters like `/' in the LANG and LC_* environment variables to see ifsomeone is trying to trick a program into reading arbitrary files.Unfortunately there were some logic errors in those checks which couldbe used to make a setuid application use arbitrary files for localizationsettings, which can be exploited to trick it into executing arbitrarycode.These problems have been fixed in version 2.0.7.19981211-6.3 for Debian GNU/Linux 2.1(slink) and 2.1.3-13 for Debian GNU/Linux 2.2 (potato). We recommend that you upgrade yourglibc package immediately."
+      }
+    ],
+    "CVE-2001-0136": [
+      {
+        "url": "http://www.debian.org/security/2001/dsa-029",
+        "title": "",
+        "body": "The following problems have been reported for the versionof proftpd in Debian 2.2 (potato):There is a memory leak in the SIZE command which can result in adenial of service, as reported by Wojciech Purczynski. This is only aproblem if proftpd cannot write to its scoreboard file; the defaultconfiguration of proftpd in Debian is not vulnerable.A similar memory leak affects the USER command, also as reported byWojciech Purczynski. The proftpd in Debian 2.2 is susceptible to thisvulnerability; an attacker can cause the proftpd daemon to crash byexhausting its available memory.There were some format string vulnerabilities reported by PrzemyslawFrasunek. These are not known to have exploits, but have been correctedas a precaution.All three of the above vulnerabilities have been corrected inproftpd-1.2.0pre10-2potato1. We recommend you upgrade your proftpdpackage immediately."
+      }
+    ],
+    "CVE-2001-0361": [
+      {
+        "url": "http://www.debian.org/security/2001/dsa-023",
+        "title": "",
+        "body": "People at WireX have found several potential insecure uses of temporary files in programs provided by INN2. Some of them only lead to a vulnerability to symlink attacks if the temporary directory was set to /tmp or /var/tmp, which is the case in many installations, at least in Debian packages. An attacker could overwrite any file owned by the news system administrator, i.e. owned by news.news.Michal Zalewski found an exploitable buffer overflow with regard to cancel messages and their verification. This bug did only show up if \"verifycancels\" was enabled in inn.conf which is not the default and has been disrecommended by upstream.Andi Kleen found a bug in INN2 that makes innd crash for two byte headers. There is a chance this can only be exploited with uucp.We recommend you upgrade your inn2 packages immediately."
+      },
+      {
+        "url": "http://www.debian.org/security/2001/dsa-027",
+        "title": "",
+        "body": "Versions of OpenSSH prior to 2.3.0 are vulnerable to a remote arbitrarymemory overwrite attack which may lead to a root exploit.CORE-SDI has described a problem with regards to RSA key exchange and aBleichenbacher attack to gather the session key from an ssh session.Both of these issues have been corrected in our ssh package 1.2.3-9.2.We recommend you upgrade your openssh package immediately."
+      },
+      {
+        "url": "http://www.debian.org/security/2001/dsa-086",
+        "title": "",
+        "body": "We have received reports that the \"SSH CRC-32 compensation attackdetector vulnerability\" is being actively exploited. This is the sameinteger type error previously corrected for OpenSSH in DSA-027-1.OpenSSH (the Debian ssh package) was fixed at that time, butssh-nonfree and ssh-socks were not.Though packages in the non-free section of the archive are notofficially supported by the Debian project, we are taking the unusualstep of releasing updated ssh-nonfree/ssh-socks packages for thoseusers who have not yet migrated to OpenSSH. However, we do recommendthat our users migrate to the regularly supported, DFSG-free \"ssh\"package as soon as possible. ssh 1.2.3-9.3 is the OpenSSH packageavailable in Debian 2.2r4.The fixed ssh-nonfree/ssh-socks packages are available in version1.2.27-6.2 for use with Debian 2.2 (potato) and version 1.2.27-8 foruse with the Debian unstable/testing distribution. Note that the newssh-nonfree/ssh-socks packages remove the setuid bit from the sshbinary, disabling rhosts-rsa authentication. If you need thisfunctionality, runchmod u+s /usr/bin/ssh1after installing the new package."
+      }
+    ],
+    "CVE-2001-0775": [
+      {
+        "url": "http://www.debian.org/security/2005/dsa-695",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.debian.org/security/2001/dsa-069",
+        "title": "",
+        "body": "The version of xloadimage (a graphics files viewer for X) that wasshipped in Debian GNU/Linux 2.2 has a buffer overflow in the code thathandles FACES format images. This could be exploited by an attacker bytricking someone into viewing a specially crafted image using xloadimagewhich would allow them to execute arbitrary code.This problem was fixed in version 4.1-5potato1."
+      }
+    ],
+    "CVE-2001-0819": [
+      {
+        "url": "http://www.debian.org/security/2001/dsa-060",
+        "title": "",
+        "body": "Wolfram Kleff found a problem in fetchmail: it would crash whenprocessing emails with extremely long headers. The problem wasa buffer overflow in the header parser which could be exploited.This has been fixed in version 5.3.3-1.2, and we recommend thatyou upgrade your fetchmail package immediately."
+      },
+      {
+        "url": "http://www.debian.org/security/2001/dsa-060",
+        "title": "",
+        "body": "Wolfram Kleff found a problem in fetchmail: it would crash whenprocessing emails with extremely long headers. The problem wasa buffer overflow in the header parser which could be exploited.This has been fixed in version 5.3.3-1.2, and we recommend thatyou upgrade your fetchmail package immediately."
+      }
+    ],
+    "CVE-2001-0925": [
+      {
+        "url": "http://www.debian.org/security/2001/dsa-067",
+        "title": "",
+        "body": "We have received reports that the `apache' package, as included inthe Debian `stable' distribution, is vulnerable to the `artificiallylong slash path directory listing vulnerability' as described on SecurityFocus.This vulnerability was announced to bugtraq by Dan Harkless.Quoting the SecurityFocus entry for this vulnerability: A problem in the package could allow directory indexing, and path discovery. In a default configuration, Apache enables mod_dir, mod_autoindex, and mod_negotiation. However, by placing a custom crafted request to the Apache server consisting of a long path name created artificially by using numerous slashes, this can cause these modules to misbehave, making it possible to escape the error page, and gain a listing of the directory contents. This vulnerability makes it possible for a malicious remote user to launch an information gathering attack, which could potentially result in compromise of the system. Additionally, this vulnerability affects all releases of Apache previous to 1.3.19.This problem has been fixed in apache-ssl 1.3.9-13.3 andapache 1.3.9-14. We recommend that you upgrade your packagesimmediately.Warning: The MD5Sum of the .dsc and .diff.gz file don't matchsince they were copied from the stable release afterwards, thecontent of the .diff.gz file is the same, though, checked."
+      },
+      {
+        "url": "http://www.debian.org/security/2001/dsa-067",
+        "title": "",
+        "body": "We have received reports that the `apache' package, as included inthe Debian `stable' distribution, is vulnerable to the `artificiallylong slash path directory listing vulnerability' as described on SecurityFocus.This vulnerability was announced to bugtraq by Dan Harkless.Quoting the SecurityFocus entry for this vulnerability: A problem in the package could allow directory indexing, and path discovery. In a default configuration, Apache enables mod_dir, mod_autoindex, and mod_negotiation. However, by placing a custom crafted request to the Apache server consisting of a long path name created artificially by using numerous slashes, this can cause these modules to misbehave, making it possible to escape the error page, and gain a listing of the directory contents. This vulnerability makes it possible for a malicious remote user to launch an information gathering attack, which could potentially result in compromise of the system. Additionally, this vulnerability affects all releases of Apache previous to 1.3.19.This problem has been fixed in apache-ssl 1.3.9-13.3 andapache 1.3.9-14. We recommend that you upgrade your packagesimmediately.Warning: The MD5Sum of the .dsc and .diff.gz file don't matchsince they were copied from the stable release afterwards, thecontent of the .diff.gz file is the same, though, checked."
+      }
+    ],
+    "CVE-2001-1009": [
+      {
+        "url": "http://www.debian.org/security/2001/dsa-071",
+        "title": "",
+        "body": "Salvatore Sanfilippo found two remotely exploitable problems infetchmail while doing a security audit. In both the IMAP codeand the POP3 code, the input isn't verified even though it's used to storea number in an array. Sinceno bounds checking is done this can be used by an attacker to writearbitrary data in memory. An attacker can use this if they can get a userto transfer mail from a custom IMAP or POP3 server they control.This has been fixed in version 5.3.3-3, we recommend that youupdate your fetchmail packages immediately."
+      }
+    ],
+    "CVE-2002-0083": [
+      {
+        "url": "http://www.debian.org/security/2002/dsa-119",
+        "title": "",
+        "body": "Joost Pol reports that OpenSSHversions 2.0 through 3.0.2 have an off-by-one bug in the channel allocationcode. This vulnerability can be exploited by authenticated users to gainroot privilege or by a malicious server exploiting a client with thisbug.Since Debian 2.2 (potato) shipped with OpenSSH (the \"ssh\" package)version 1.2.3, it is not vulnerable to this exploit. No fix is requiredfor Debian 2.2 (potato).The Debian unstable and testing archives do include a more recent OpenSSH(ssh) package. If you are running these pre-release distributions you shouldensure that you are running version 3.0.2p1-8, a patched version which wasadded to the unstable archive today, or a later version."
+      }
+    ],
+    "CVE-2002-0184": [
+      {
+        "url": "http://www.debian.org/security/2002/dsa-128",
+        "title": "",
+        "body": "fc found a buffer overflow in the variable expansion codeused by sudo for its prompt. Since sudo is necessarily installed suidroot a local user can use this to gain root access.This has been fixed in version 1.6.2-2.2 for the stable distributionof Debian and version 1.6.6-1 for the testing/unstable distribution.We recommend that you upgrade your sudo package immediately."
+      }
+    ],
+    "CVE-2002-1111": [
+      {
+        "url": "http://www.debian.org/security/2002/dsa-153",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.debian.org/security/2002/dsa-153",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2002-1174": [
+      {
+        "url": "http://www.debian.org/security/2002/dsa-171",
+        "title": "",
+        "body": "Stefan Esser discovered several buffer overflows and a broken boundarycheck within fetchmail. If fetchmail is running in multidrop modethese flaws can be used by remote attackers to crash it or to executearbitrary code under the user id of the user running fetchmail.Depending on the configuration this even allows a remote rootcompromise.These problems have been fixed in version 5.9.11-6.1 for bothfetchmail and fetchmail-ssl for the current stable distribution(woody), in version 5.3.3-4.2 for fetchmail for the old stabledistribution (potato) and in version 6.1.0-1 for both fetchmail andfetchmail-ssl for the unstable distribution (sid). There are nofetchmail-ssl packages for the old stable distribution (potato) andthus no updates.We recommend that you upgrade your fetchmail packages immediately."
+      }
+    ],
+    "CVE-2002-1175": [
+      {
+        "url": "http://www.debian.org/security/2002/dsa-171",
+        "title": "",
+        "body": "Stefan Esser discovered several buffer overflows and a broken boundarycheck within fetchmail. If fetchmail is running in multidrop modethese flaws can be used by remote attackers to crash it or to executearbitrary code under the user id of the user running fetchmail.Depending on the configuration this even allows a remote rootcompromise.These problems have been fixed in version 5.9.11-6.1 for bothfetchmail and fetchmail-ssl for the current stable distribution(woody), in version 5.3.3-4.2 for fetchmail for the old stabledistribution (potato) and in version 6.1.0-1 for both fetchmail andfetchmail-ssl for the unstable distribution (sid). There are nofetchmail-ssl packages for the old stable distribution (potato) andthus no updates.We recommend that you upgrade your fetchmail packages immediately."
+      }
+    ],
+    "CVE-2002-1200": [
+      {
+        "url": "http://www.debian.org/security/2002/dsa-175",
+        "title": "",
+        "body": "Balazs Scheidler discovered a problem in the way syslog-ng handles macroexpansion. When a macro is expanded a static length buffer is usedaccompanied by a counter. However, when constant characters areappended, the counter is not updated properly, leading to incorrectboundary checking. An attacker may be able to use specially craftedlog messages inserted via UDP which overflows the buffer.This problem has been fixed in version 1.5.15-1.1 for the currentstable distribution (woody), in version 1.4.0rc3-3.2 for the oldstable distribution (potato) and version 1.5.21-1 for the unstabledistribution (sid).We recommend that you upgrade your syslog-ng package immediately."
+      }
+    ],
+    "CVE-2002-1365": [
+      {
+        "url": "http://www.debian.org/security/2002/dsa-216",
+        "title": "",
+        "body": "Stefan Esser of e-matters discovered a buffer overflow in fetchmail,an SSL enabled POP3, APOP and IMAP mail gatherer/forwarder. Whenfetchmail retrieves a mail all headers that contain addresses aresearched for local addresses. If a hostname is missing, fetchmailappends it but doesn't reserve enough space for it. This heapoverflow can be used by remote attackers to crash it or to executearbitrary code with the privileges of the user running fetchmail.For the current stable distribution (woody) this problem has beenfixed in version 5.9.11-6.2 of fetchmail and fetchmail-ssl.For the old stable distribution (potato) this problem has been fixedin version 5.3.3-4.3.For the unstable distribution (sid) this problem has beenfixed in version 6.2.0-1 of fetchmail and fetchmail-ssl.We recommend that you upgrade your fetchmail packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2002/dsa-216",
+        "title": "",
+        "body": "Stefan Esser of e-matters discovered a buffer overflow in fetchmail,an SSL enabled POP3, APOP and IMAP mail gatherer/forwarder. Whenfetchmail retrieves a mail all headers that contain addresses aresearched for local addresses. If a hostname is missing, fetchmailappends it but doesn't reserve enough space for it. This heapoverflow can be used by remote attackers to crash it or to executearbitrary code with the privileges of the user running fetchmail.For the current stable distribution (woody) this problem has beenfixed in version 5.9.11-6.2 of fetchmail and fetchmail-ssl.For the old stable distribution (potato) this problem has been fixedin version 5.3.3-4.3.For the unstable distribution (sid) this problem has beenfixed in version 6.2.0-1 of fetchmail and fetchmail-ssl.We recommend that you upgrade your fetchmail packages."
+      }
+    ],
+    "CVE-2002-1401": [
+      {
+        "url": "http://www.debian.org/security/2002/dsa-165",
+        "title": "",
+        "body": "Mordred Labs and others found several vulnerabilities in PostgreSQL,an object-relational SQL database. They are inherited from severalbuffer overflows and integer overflows. Specially crafted long dateand time input, currency, repeat data and long timezone names couldcause the PostgreSQL server to crash as well as specially craftedinput data for lpad() and rpad(). More buffer/integer overflows werefound in circle_poly(), path_encode() and path_addr().Except for the last three, these problems are fixed in the upstreamrelease 7.2.2 of PostgreSQL which is the recommended version to use.Most of these problems do not exist in the version of PostgreSQL thatDebian ships in the potato release since the correspondingfunctionality is not yet implemented. However, PostgreSQL 6.5.3 isquite old and may bear more risks than we are aware of, which mayinclude further buffer overflows, and certainly include bugs thatthreaten the integrity of your data.You are strongly advised not to use this release but to upgrade yoursystem to Debian 3.0 (stable) including PostgreSQL release 7.2.1instead, where many bugs have been fixed and new features introducedto increase compatibility with the SQL standards.If you consider an upgrade, please make sure to dump the entiredatabase system using the pg_dumpall utility. Please take intoconsideration that the newer PostgreSQL is more strict in its inputhandling. This means that tests like \"foo = NULL\" which are not validwon't be accepted anymore. It also means that when using UNICODEencoding, ISO 8859-1 and ISO 8859-15 are no longer valid encodings touse when inserting data into the relation. In such a case you areadvised to convert the dump in question usingrecode latin1..utf-16.These problems have been fixed in version 7.2.1-2woody2 for thecurrent stable distribution (woody) and in version 7.2.2-2 for theunstable distribution (sid). The old stable distribution (potato) ispartially affected and we ship a fixed version 6.5.3-27.2 for it.We recommend that you upgrade your PostgreSQL packages."
+      }
+    ],
+    "CVE-2002-2260": [
+      {
+        "url": "http://www.debian.org/security/2002/dsa-218",
+        "title": "",
+        "body": "A cross site scripting vulnerability has been reported for Bugzilla, aweb-based bug tracking system. Bugzilla does not properly sanitizeany input submitted by users for use in quips. As a result, it is possible for aremote attacker to create a malicious link containing script codewhich will be executed in the browser of a legitimate user, in thecontext of the website running Bugzilla. This issue may be exploitedto steal cookie-based authentication credentials from legitimate usersof the website running the vulnerable software.This vulnerability only affects users who have the 'quips' featureenabled and who upgraded from version 2.10 which did not exist insideof Debian. The Debian package history of Bugzilla starts with 1.13and jumped to 2.13. However, users could have installed version 2.10prior to the Debian package.For the current stable distribution (woody) this problem has beenfixed in version 2.14.2-0woody3.The old stable distribution (potato) does not contain a Bugzillapackage.For the unstable distribution (sid) this problem will be fixed soon.We recommend that you upgrade your bugzilla packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2002/dsa-218",
+        "title": "",
+        "body": "A cross site scripting vulnerability has been reported for Bugzilla, aweb-based bug tracking system. Bugzilla does not properly sanitizeany input submitted by users for use in quips. As a result, it is possible for aremote attacker to create a malicious link containing script codewhich will be executed in the browser of a legitimate user, in thecontext of the website running Bugzilla. This issue may be exploitedto steal cookie-based authentication credentials from legitimate usersof the website running the vulnerable software.This vulnerability only affects users who have the 'quips' featureenabled and who upgraded from version 2.10 which did not exist insideof Debian. The Debian package history of Bugzilla starts with 1.13and jumped to 2.13. However, users could have installed version 2.10prior to the Debian package.For the current stable distribution (woody) this problem has beenfixed in version 2.14.2-0woody3.The old stable distribution (potato) does not contain a Bugzillapackage.For the unstable distribution (sid) this problem will be fixed soon.We recommend that you upgrade your bugzilla packages."
+      }
+    ],
+    "CVE-2002-2381": [
+      {
+        "url": "http://www.debian.org/security/2002/dsa-205",
+        "title": "",
+        "body": "Steve Kemp and James Antill found several buffer overflows in thegtetrinet (a multiplayer tetris-like game) package as shipped inDebian GNU/Linux 3.0, which could be abused by a malicious server.This has been fixed in upstream version 0.4.4 and release0.4.1-9woody1.1 of the Debian package."
+      }
+    ],
+    "CVE-2002-2443": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2701",
+        "title": "",
+        "body": "It was discovered that the kpasswd service running on UDP port 464could respond to response packets, creating a packet loop and a denialof service condition.For the oldstable distribution (squeeze), this problem has been fixed inversion 1.8.3+dfsg-4squeeze7.For the stable distribution (wheezy), this problem has been fixed inversion 1.10.1+dfsg-5+deb7u1.For the testing distribution (jessie), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 1.10.1+dfsg-6.We recommend that you upgrade your krb5 packages."
+      }
+    ]
+  }
+}

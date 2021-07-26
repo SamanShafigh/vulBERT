@@ -1,0 +1,91 @@
+{
+  "year": 2005,
+  "total": 14,
+  "reference": "ubuntu.com",
+  "reports": {
+    "CVE-2005-0504": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-508-1",
+        "title": "USN-508-1: Linux kernel vulnerabilities",
+        "body": "A buffer overflow was discovered in the Moxa serial driver. Localattackers could execute arbitrary code and gain root privileges.(CVE-2005-0504)"
+      }
+    ],
+    "CVE-2005-2177": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-190-1",
+        "title": "USN-190-1: SNMP vulnerability",
+        "body": "A remote Denial of Service has been discovered in the SMNP (SimpleNetwork Management Protocol) library. If a SNMP agent uses TCP socketsfor communication, a malicious SNMP server could exploit this to crashthe agent. Please note that by default SNMP uses UDP sockets."
+      }
+    ],
+    "CVE-2005-2492": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-178-1",
+        "title": "USN-178-1: Linux kernel vulnerabilities",
+        "body": "Al Viro discovered a vulnerability in the raw_sendmsg() function. By calling this function with specially crafted arguments, a local attacker could either read kernel memory contents (leading to information disclosure) or manipulate the hardware state by reading certain IO ports. This vulnerability only affects Ubuntu 5.04."
+      }
+    ],
+    "CVE-2005-2495": [
+      {
+        "url": "https://www.ubuntu.com/usn/usn-182-1/",
+        "title": "USN-182-1: X server vulnerability",
+        "body": "A local privilege escalation vulnerability has been discovered in thepixmap allocation handling of the X server. By allocating a hugepixmap, a local user could trigger an integer overflow that resultedin a memory allocation that was too small for the requested pixmap.This resulted in a buffer overflow which could eventually be exploitedto execute arbitrary code with full root privileges."
+      }
+    ],
+    "CVE-2005-2946": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-179-1",
+        "title": "USN-179-1: openssl weak default configuration",
+        "body": "The current default algorithm for creating \"message digests\"(electronic signatures) for certificates created by openssl is MD5.However, this algorithm is not deemed secure any more, and somepractical attacks have been demonstrated which could allow an attackerto forge certificates with a valid certification authority signatureeven if he does not know the secret CA signing key.Therefore all Ubuntu versions of openssl have now been changed to useSHA-1 by default. This is a more appropriate default algorithm forthe majority of use cases; however, if you still want to use MD5 asdefault, you can revert this change by changing the two instances of\"default_md = sha1\" to \"default_md = md5\" in /etc/ssl/openssl.cnf.A detailed explanation and further links can be found athttp://www.cits.rub.de/MD5Collisions/"
+      }
+    ],
+    "CVE-2005-2975": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-216-1",
+        "title": "USN-216-1: GDK vulnerabilities",
+        "body": "Additionally, specially crafted XPM images could cause an endless loopin the image loader, which could be exploited to cause applicationstrying to open that image to hang. (CVE-2005-2975)"
+      }
+    ],
+    "CVE-2005-2976": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-216-1",
+        "title": "USN-216-1: GDK vulnerabilities",
+        "body": "Two integer overflows have been discovered in the XPM image loader ofthe GDK pixbuf library. By tricking an user into opening a speciallycrafted XPM image with any Gnome desktop application that uses thislibrary, this could be exploited to execute arbitrary code with theprivileges of the user running the application."
+      }
+    ],
+    "CVE-2005-3109": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-199-1",
+        "title": "USN-199-1: Linux kernel vulnerabilities",
+        "body": "The HFS and HFS+ file system drivers did not properly verify that the file system that was attempted to be mounted really was HFS/HFS+. On machines which allow users to mount arbitrary removable devices as HFS or HFS+ with an /etc/fstab entry, this could be exploited to trigger a kernel crash."
+      }
+    ],
+    "CVE-2005-4807": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-336-1",
+        "title": "USN-336-1: binutils vulnerability",
+        "body": "A buffer overflow was discovered in gas (the GNU assembler). Bytricking an user or automated system (like a compile farm) intoassembling a specially crafted source file with gcc or gas, this couldbe exploited to execute arbitrary code with the user's privileges."
+      }
+    ],
+    "CVE-2005-4837": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-456-1",
+        "title": "USN-456-1: net-snmp vulnerability",
+        "body": "The SNMP service did not correctly handle TCP disconnects. Remotesubagents could cause a denial of service if they dropped a connectionat a specific time."
+      }
+    ],
+    "CVE-2005-2703": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-200-1",
+        "title": "USN-200-1: Thunderbird vulnerabilities",
+        "body": "A buffer overflow was discovered in the XBM image handler. By trickingan user into opening a specially crafted XBM image, an attacker couldexploit this to execute arbitrary code with the user's privileges.(CAN-2005-2701)Mats Palmgren discovered a buffer overflow in the Unicode stringparser. Unicode strings that contained \"zero-width non-joiner\"characters caused a browser crash, which could possibly even exploitedto execute arbitrary code with the user's privileges.(CAN-2005-2702)Georgi Guninski reported an integer overflow in the JavaScript engine.This could be exploited to run arbitrary code under some conditions.(CAN-2005-2705)Peter Zelezny discovered that URLs which are passed to Thunderbird on thecommand line are not correctly protected against interpretation by the shell.If Thunderbird is configured as the default handler for \"mailto:\" URLs, thiscould be exploited to execute arbitrary code with user privileges by trickingthe user into clicking on a specially crafted URL (for example, in an email orchat client). (CAN-2005-2968)This update also fixes some less critical issues which are describedat http://www.mozilla.org/security/announce/mfsa2005-58.html.(CAN-2005-2703, CAN-2005-2704, CAN-2005-2706, CAN-2005-2707)The \"enigmail\" plugin has been updated to work with the newThunderbird and Mozilla versions."
+      }
+    ],
+    "CVE-2005-3181": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-199-1",
+        "title": "USN-199-1: Linux kernel vulnerabilities",
+        "body": "A Denial of Service vulnerability was discovered in thesys_set_mempolicy() function. By calling the function with a negativefirst argument, a local attacker could cause a kernel crash.(CAN-2005-3053)A race condition was discovered in the handling of shared memorymappings with CLONE_VM. A local attacker could exploit this to cause adeadlock (Denial of Service) by triggering a core dump while waitingfor a thread which had just performed an exec() system call.(CAN-2005-3106)A race condition was found in the handling of traced processes. Whenone thread was tracing another thread that shared the same memory map,a local attacker could trigger a deadlock (Denial of Service) byforcing a core dump when the traced thread was in the TASK_TRACEDstate. (CAN-2005-3107)A vulnerability has been found in the \"ioremap\" module. By performingcertain IO mapping operations, a local attacker could either readmemory pages he has not normally access to (information leak) or causea kernel crash (Denial of Service). This only affects the amd64platform. (CAN-2005-3108)The HFS and HFS+ file system drivers did not properly verify that thefile system that was attempted to be mounted really was HFS/HFS+. Onmachines which allow users to mount arbitrary removable devices as HFSor HFS+ with an /etc/fstab entry, this could be exploited to trigger akernel crash. (CAN-2005-3109)Steve Herrel discovered a race condition in the \"ebtables\" netfiltermodule. A remote attacker could exploit this by sending speciallycrafted packets that caused a value to be modified after it hadbeen read but before it had been locked. This eventually lead to akernel crash. This only affects multiprocessor machines (SMP).(CAN-2005-3110)Robert Derr discovered a memory leak in the system call auditing code.On a kernel which has the CONFIG_AUDITSYSCALL option enabled, thisleads to memory exhaustion and eventually a Denial of Service. A localattacker could also speed this up by excessively calling system calls.This only affects customized kernels built from the kernel sourcepackages. The standard Ubuntu kernel does not have theCONFIG_AUDITSYSCALL option enabled, and is therefore not affected bythis.(http://kernel.org/git/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=829841146878e082613a49581ae252c071057c23)"
+      }
+    ]
+  }
+}

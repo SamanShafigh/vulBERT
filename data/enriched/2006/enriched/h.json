@@ -1,0 +1,1056 @@
+{
+  "year": 2006,
+  "total": 117,
+  "reference": "kb.cert.org",
+  "reports": {
+    "CVE-2006-0001": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/406236",
+        "title": "Microsoft Publisher does not adequately validate Publisher documents",
+        "overview": "Microsoft Publisher does not adequately validate Publisher documents. This results in a buffer overflow vulnerability that could allow an attacker to execute arbitrary code with the privileges of the user running Publisher.",
+        "description": "Microsoft Publisher does not adequately validate strings within Publisher documents. Based on CT12-09-2006-2, the strings may be related to font information. The inadequate validation could allow a buffer overflow to occur. This vulnerability could be triggered when a user opens a specially crafted Publisher document.",
+        "impact": "By convincing a user to open a specially crafted Publisher document, a remote, unauthenticated attacker could execute arbitrary code with the privileges of the user running Publisher."
+      }
+    ],
+    "CVE-2006-0005": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/692060",
+        "title": "Microsoft Windows Media Player plug-in buffer overflow",
+        "overview": "The Microsoft Windows Media Player plug-in for browsers other than Internet Explorer contains a buffer overflow, which may allow a remote attacker to execute arbitrary code.",
+        "description": "Windows Media PlayerWindows Media Player is a multimedia application that comes with Microsoft Windows.Windows Media Player plug-inThe Windows Media Player plug-in allows web browsers other than Internet Explorer to use Windows Media Player. The plug-in is provided by the file npdsplay.dll. A web page can make use of the Windows Media Player plug-in through use of the EMBED tag.The problemThe Windows Media Player plug-in contains a buffer overflow vulnerability.Note: Exploit code for this vulnerability is publicly available.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause the browser (or any program using the Windows Media Player plug-in) to crash."
+      }
+    ],
+    "CVE-2006-0006": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/291396",
+        "title": "Microsoft Windows Media Player vulnerable to buffer overflow in bitmap processing routine",
+        "overview": "Microsoft Windows Media Player contains a buffer overflow vulnerability that may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft Windows Media Player (WMP) is an application that ships with Microsoft Windows systems used to play various types of media files. Windows Media Player fails to properly validate bitmap image files (.bmp), potentially allowing a buffer overflow to occur. If the size field in the bitmap header is set to set to a value that is less than the actual size of the file, WMP will allocate an under-sized buffer to hold the bitmap. When data is copied to this buffer, the buffer overflow may occur. For more information, please see Microsoft Security Bulletin MS06-005. Exploit code for this vulnerability is publicly available.",
+        "impact": "By persuading a user to open a specially crafted bitmap file with Windows Media Player, an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2006-0007": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/668564",
+        "title": "Microsoft Office fails to properly handle GIF images",
+        "overview": "Microsoft Office applications fail to properly handle GIF images. This vulnerability may allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft Office applications fail to properly parse GIF images. When an Office document containing a malformed GIF image is opened with an Office application, system memory can be corrupted in a way that may allow an attacker to execute arbitrary code. More information, including a list of affected Office applications, is available in Microsoft Security Bulletin MS06-039.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2006-0008": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/739844",
+        "title": "Microsoft Windows Korean Input Method Editor vulnerability",
+        "overview": "The Microsoft Windows Korean Input Method Editor (IME) contains a privilege escalation vulnerability.",
+        "description": "According to Microsoft: An IME is a program that allows computer users to enter complex characters and symbols, such as Japanese characters, using a standard keyboard. The Microsoft Windows Korean IME contains a vulnerability that may allow an attacker to gain SYSTEM privileges. To exploit this vulnerability, the Korean IME must be installed and the attacker must have access to the Windows login screen.For more information, including a list of vulnerable systems, please refer to Microsoft Security Bulletin MS06-009.",
+        "impact": "An attacker may be able to gain SYSTEM privileges on a vulnerable system."
+      }
+    ],
+    "CVE-2006-0010": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/915930",
+        "title": "Microsoft embedded web font buffer overflow",
+        "overview": "A heap-based buffer overflow in the way Microsoft Windows processes embedded web fonts may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft Windows contains a heap-based buffer overflow in a routine that processes embedded web fonts. The overflow exists due to a lack of validation on compressed embedded web fonts. A remote attacker may be able to trigger the buffer overflow by persuading a user to access a web page or HTML email containing a specially crafted embedded web font.For more information about affected versions of Microsoft Windows, please refer to MS06-002.",
+        "impact": "A remote attacker may be able to execute arbitrary code with the privileges of the attacked user account."
+      }
+    ],
+    "CVE-2006-0020": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/312956",
+        "title": "Microsoft WMF memory corruption vulnerability",
+        "overview": "Microsoft applications fail to properly handle Windows Metafile (WMF) images potentially allowing a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The Microsoft Windows Graphics Rendering Engine supports a number of image formats including WMF images. Windows WMF processing routines do not properly handle WMF images. This may allow a remote attacker to manipulate memory management routines resulting in a buffer overflow. Note that WMF processing is used in many Windows programs including Internet Explorer and Outlook.For more information, including a list of affected versions of Internet Explorer, please see Microsoft Security Advisory 913333 and Microsoft Security Bulletin MS06-004.",
+        "impact": "By persuading a user to open a specially crafted WMF image file, an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2006-0021": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/839284",
+        "title": "Microsoft Windows TCP/IP fails to properly validate IGMP packets",
+        "overview": "Microsoft Windows implementations of the TCP/IP protocol fail to properly validate IGMP packets, leading to a denial-of-service condition.",
+        "description": "TCP and IGMPThe Transmission Control Protocol (TCP) is defined in RFC 793 as a means to provide reliable host-to-host transmission between hosts in a packet-switched computer network. The Internet Group Management Protocol version 3 (IGMPv3) is defined in RFC 3376 as a protocol to help manage multicast connections over the internet. The VulnerabilityThe Microsoft implementation of TCP/IP fails to properly handle specially crafted IGMPv3 packets, possibly leading to a denial-of-service condition. For more information, including a list of vulnerable systems, please refer to Microsoft Security Bulletin MS06-007.",
+        "impact": "By sending a specially crafted IGMPv3 packet to a vulnerable system, an unauthenticated, remote attacker could cause that system to stop responding."
+      }
+    ],
+    "CVE-2006-0023": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/953860",
+        "title": "Microsoft Windows privilege escalation vulnerability",
+        "overview": "Microsoft Windows access controls may be improperly configured potentially allowing a local attacker to gain elevated privileges on a vulnerable system.",
+        "description": "Microsoft Windows provides numerous, fine grained permissions and privileges to control access to Windows components, such as services, files, and registry entries. Recent research has uncovered insecure configurations within user accounts and groups on Microsoft Windows systems. These configurations may allow local attackers to gain access to, and manipulate system resources. The researchers have developed a model that analyzes permissions to expose privilege escalation vulnerabilities. The research focused on three particular components of the Windows architecture:ServicesWindows services may be installed and configured with unnecessary privileges. This may allow a lesser privileged user to access and change the settings for a service that runs with greater privileges. Of particular concern are the following privileges: The SERVICE_CHANGE_CONFIG access right allows a user to change the a service's configuration. This includes the executable that services launches and the user account with which a service runs as. According to Microsoft, \"Because this grants the caller the right to change the executable file that the system runs, it should be granted only to administrators.\" The SERVICE_ALL_ACCESS access right allows a user full control over a service. Files and DirectoriesAny privileges that allow the contents of a file or a directory to be modified should be granted to only trusted users. The following access rights a of particular concern:The FILE_ALL_ACCESS access right allows a user to completely control a file, including read, write and execute privileges.The FILE_APPEND_DATA access right allows a user to add data to a file.The FILE_WRITE_DATA access right allows a user to write and rewrite data to a file.Registry KeysUsers with KEY_SET_VALUE permissions can modify registry keys that specify executables, DLLs, and/or Globally Unique Identifiers (GUIDs).The WRITE_DAC access right provides the ability to modify the access control list for a resource. Users granted this right have the ability to change the way they, or other users, access a resource. This may allow attackers to grant themselves, or others arbitrary permissions over a resource.Note that these issues can affect all software that is developed for the Microsoft Windows platform. Known Windows services that have weak permissions include, but may not belimited toMicrosoft SSDP Discovery service (SSDPSRV)NetBios over TCP/IP service (NetBT) Smart Card service (SCardSvr)Universal Plug and Play Device Host service (upnphost)DNS Client service (Dnscache)DHCP Client service (Dhcp)",
+        "impact": "A local user with valid login credentials may be able gain elevated privileges on a vulnerable Windows system.We are aware of publicly available exploit code that claims to be a tool to identify vulnerable services. Installing and running this code may allow a remote attacker to gain access to a system."
+      }
+    ],
+    "CVE-2006-0025": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/608020",
+        "title": "Microsoft Windows Media Player PNG processing buffer overflow",
+        "overview": "Microsoft Windows Media Player contains a stack-based buffer overflow vulnerability that may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Windows Media PlayerWindows Media Player is a multimedia application that comes with Microsoft Windows.The ProblemWindows Media Player fails to properly validate PNG image files (.png), potentially allowing a stack-based buffer overflow to occur. For more information refer to Microsoft Security Bulletin MS06-024",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code. If the attacked user is running with administrative privileges, the attacker could take complete control of an affected system."
+      }
+    ],
+    "CVE-2006-0031": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/104302",
+        "title": "Microsoft Excel malformed record memory corruption vulnerability",
+        "overview": "Microsoft Excel contains a memory corruption vulnerability. This vulnerability may allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft Excel fails to properly validate records in data files. When a file with a malformed record is opened in Excel, system memory can be corrupted in a way that may allow an attacker to execute arbitrary code.More information is available in MS06-012.",
+        "impact": "A remote unauthenticated attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2006-0032": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/108884",
+        "title": "Microsoft Indexing Services vulnerable to cross-site scripting",
+        "overview": "Microsoft's Indexing Service does not properly validate queries. This vulnerability may allow an attacker to run client-side scripts on behalf of a user.",
+        "description": "Microsoft's Indexing Service allows users to quickly search computers and networks. This service can be used in combination with Internet Information Services (IIS) to enable IIS as a Web-based interface for the Indexing Service. A cross-site scripting vulnerability on systems running the Indexing Service may allow an attacker to run a malicious script. This script could take any action on the user's computer that the vulnerable web site is legitimately authorized to take. For more information on cross-site scripting, see the CERT Cross-Site Scripting Vulnerabilities document.Note that both IIS and the Indexing Service need to be installed and running for a system to be vulnerable.",
+        "impact": "If an attacker can trick or entice a user to follow a link, the attacker can execute script as the victim in the context of the zone in which the vulnerable server resides."
+      }
+    ],
+    "CVE-2006-0056": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/693909",
+        "title": "PAM-MySQL contains a double-free vulnerability",
+        "overview": "PAM-MySQL contains a double-free vulnerability that may allow a remote attacker to execute arbitrary code or cause a denial-of-service condition.",
+        "description": "PAM-MySQL provides a Pluggable Authentication Module (PAM) interface to a MySQL database. PAM-MySQL does not securely handle a pointer returned by the pam_get_item() routine, which results in a double-free vulnerability. The vulnerability exists if the following conditions are present:Two or more PAM modules are stacked.The PAM-MySQL module is not the first in the stack.Any of the modules preceding the PAM-MySQL module are not marked as requisite.",
+        "impact": "If a remote attacker supplies a specially crafted password to a vulnerable PAM-MySQL installation, that attacker may be able to crash the PAM-MySQL process. Note that it may be possible to exploit this vulnerability to execute arbitrary code."
+      }
+    ],
+    "CVE-2006-0269": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/545804",
+        "title": "Oracle products contain multiple vulnerabilities",
+        "overview": "Multiple vulnerabilities exist in numerous Oracle products. The severity and impacts of these vulnerabilities are varied and may include remote execution of arbitrary code, the disclosure of sensitive information, and denial-of-service conditions.",
+        "description": "Multiple vulnerabilities exist in numerous Oracle products including:\\tOracle Database 10gOracle9i DatabaseOracle8i DatabaseOracle Enterprise Manager 10g Grid ControlOracle Application Server 10gOracle9i Application ServerOracle Collaboration Suite 10gOracle9i Collaboration SuiteOracle E-Business Suite Release 11iOracle E-Business Suite Release 11.0JD Edwards EnterpriseOne, OneWorld ToolsPeopleSoft Enterprise PortalOracle WorkflowThe specific details of these vulnerabilities are unavailable. For more information concerning vulnerabilities, the conditions necessary to exploit them, and the patches Oracle has released to correct them, please refer to the Oracle Critical Patch Update for January 2006.",
+        "impact": "The complete impact of these issues varies depending on the particular application and vulnerability being attacked. Potential consequences may include the remote execution of arbitrary code, disclosure of sensitive information, and denial-of-service conditions. Database compromises may result in the disclosure of sensitive personal information, such as credit card numbers, social security numbers, and health and patient information."
+      }
+    ],
+    "CVE-2006-0270": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/545804",
+        "title": "Oracle products contain multiple vulnerabilities",
+        "overview": "Multiple vulnerabilities exist in numerous Oracle products. The severity and impacts of these vulnerabilities are varied and may include remote execution of arbitrary code, the disclosure of sensitive information, and denial-of-service conditions.",
+        "description": "Multiple vulnerabilities exist in numerous Oracle products including:\\tOracle Database 10gOracle9i DatabaseOracle8i DatabaseOracle Enterprise Manager 10g Grid ControlOracle Application Server 10gOracle9i Application ServerOracle Collaboration Suite 10gOracle9i Collaboration SuiteOracle E-Business Suite Release 11iOracle E-Business Suite Release 11.0JD Edwards EnterpriseOne, OneWorld ToolsPeopleSoft Enterprise PortalOracle WorkflowThe specific details of these vulnerabilities are unavailable. For more information concerning vulnerabilities, the conditions necessary to exploit them, and the patches Oracle has released to correct them, please refer to the Oracle Critical Patch Update for January 2006.",
+        "impact": "The complete impact of these issues varies depending on the particular application and vulnerability being attacked. Potential consequences may include the remote execution of arbitrary code, disclosure of sensitive information, and denial-of-service conditions. Database compromises may result in the disclosure of sensitive personal information, such as credit card numbers, social security numbers, and health and patient information."
+      }
+    ],
+    "CVE-2006-0323": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/231028",
+        "title": "RealNetworks products vulnerable to buffer overflow via specially crafted flash media file",
+        "overview": "Numerous RealNetworks products are vulnerable to a buffer overflow that may allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "RealNetworks RealPlayerRealNetworks RealPlayer is a multimedia application that allows users to view local and remote audio/video content. SWF File formatThe SWF file format is used by Macromedia Flash multimedia files. See the Macromedia File Format Specification FAQ for more information on the SWF file format.The ProblemNumerous RealNetworks products fail to properly validate SWF files allowing a buffer overflow to occur. By persuading a user to access a specially crafted SWF file with RealPlayer, a remote attacker may be able to execute arbitrary code.ConsiderationsA complete list of affected software is available in the RealNetwork Security Update for March 2006.",
+        "impact": "By convincing a user to open a specially crafted SWF file with RealPlayer, a remote unauthenticated attacker can execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2006-0525": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/953860",
+        "title": "Microsoft Windows privilege escalation vulnerability",
+        "overview": "Microsoft Windows access controls may be improperly configured potentially allowing a local attacker to gain elevated privileges on a vulnerable system.",
+        "description": "Microsoft Windows provides numerous, fine grained permissions and privileges to control access to Windows components, such as services, files, and registry entries. Recent research has uncovered insecure configurations within user accounts and groups on Microsoft Windows systems. These configurations may allow local attackers to gain access to, and manipulate system resources. The researchers have developed a model that analyzes permissions to expose privilege escalation vulnerabilities. The research focused on three particular components of the Windows architecture:ServicesWindows services may be installed and configured with unnecessary privileges. This may allow a lesser privileged user to access and change the settings for a service that runs with greater privileges. Of particular concern are the following privileges: The SERVICE_CHANGE_CONFIG access right allows a user to change the a service's configuration. This includes the executable that services launches and the user account with which a service runs as. According to Microsoft, \"Because this grants the caller the right to change the executable file that the system runs, it should be granted only to administrators.\" The SERVICE_ALL_ACCESS access right allows a user full control over a service. Files and DirectoriesAny privileges that allow the contents of a file or a directory to be modified should be granted to only trusted users. The following access rights a of particular concern:The FILE_ALL_ACCESS access right allows a user to completely control a file, including read, write and execute privileges.The FILE_APPEND_DATA access right allows a user to add data to a file.The FILE_WRITE_DATA access right allows a user to write and rewrite data to a file.Registry KeysUsers with KEY_SET_VALUE permissions can modify registry keys that specify executables, DLLs, and/or Globally Unique Identifiers (GUIDs).The WRITE_DAC access right provides the ability to modify the access control list for a resource. Users granted this right have the ability to change the way they, or other users, access a resource. This may allow attackers to grant themselves, or others arbitrary permissions over a resource.Note that these issues can affect all software that is developed for the Microsoft Windows platform. Known Windows services that have weak permissions include, but may not belimited toMicrosoft SSDP Discovery service (SSDPSRV)NetBios over TCP/IP service (NetBT) Smart Card service (SCardSvr)Universal Plug and Play Device Host service (upnphost)DNS Client service (Dnscache)DHCP Client service (Dhcp)",
+        "impact": "A local user with valid login credentials may be able gain elevated privileges on a vulnerable Windows system.We are aware of publicly available exploit code that claims to be a tool to identify vulnerable services. Installing and running this code may allow a remote attacker to gain access to a system."
+      }
+    ],
+    "CVE-2006-0553": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/567452",
+        "title": "PostgreSQL database privilege escalation vulnerability",
+        "overview": "PostgreSQL fails to properly recover from errors. This may allow an authenticated attacker to gain elevated privileges on a PostgreSQL database.",
+        "description": "PostgreSQL DatabasePostgreSQL is an open source database management system. The ProblemThere is a vulnerability in the way that PostgreSQL recovers from errors. According to the release notes for PostgreSQL 8.1.3: Due to inadequate validity checking, a user could exploit the special case that SET ROLE normally uses to restore the previous role setting after an error. This allowed ordinary users to acquire superuser status, for example.ConsiderationsThis issue only exists in PostgreSQL versions 8.1.0 to 8.1.2. An attacker must have valid credentials to exploit this vulnerability.",
+        "impact": "An authenticated attacker may be able to gain elevated privileges on a PostgreSQL database."
+      }
+    ],
+    "CVE-2006-0749": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/736934",
+        "title": "Mozilla products vulnerable to memory corruption via a particular sequence of HTML tags",
+        "overview": "A vulnerability in the way Mozilla products and derivative programs handle certain HTML tags could allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "A vulnerability has been discovered in the way that Mozilla and derived programs handle certain HTML tags. Mozilla Foundation Secuity Advisory 2006-18 states the following:A particular sequence of HTML tags that reliably crash Mozilla clients was reported by an anonymous researcher via TippingPoint and the Zero Day Initiative. The crash is due to memory corruption that can be exploited to run arbitrary code.Mozilla mail clients will crash on the tag sequence, but without the ability to run scripts to fill memory with the attack code it may not be possible for an attacker to exploit this crash.",
+        "impact": "A remote attacker may be able to crash a vulnerable program or run code of their choosing on an affected system. The attacker-supplied code would be executed with the permissions of the user running the vulnerable program."
+      }
+    ],
+    "CVE-2006-1173": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/146718",
+        "title": "Sendmail fails to handle malformed multipart MIME messages",
+        "overview": "Sendmail does not properly handle malformed multipart MIME messages. This vulnerability may allow a remote, unauthenticated attacker to cause a denial-of-service condition.",
+        "description": "SendmailSendmail is a widely used mail transfer agent (MTA).Mail Transfer Agents (MTA)MTAs are responsible for sending and receiving email messages over the internet. They are also referred to as mail servers or SMTP servers.The ProblemSendmail fails to properly handle malformed multipart MIME messages. This vulnerability may be triggered by sending a specially crafted message to a vulnerable Sendmail MTA.",
+        "impact": "This vulnerability will not cause the Sendmail server process to terminate. However, it may cause the Sendmail to consume a large amount of system resources. Specifically, if a system writes uniquely named core dump files, this vulnerability may cause available disk space to be filled with core dumps leading to a disruption of system operation resulting in a denial-of-service condition.Additionally, this vulnerability may cause queue runs to abort; if this situation were to occur, processing and delivery of queued messages would be prevented."
+      }
+    ],
+    "CVE-2006-1174": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/312692",
+        "title": "Shadow Utils useradd utility sets incorrect file permissions",
+        "overview": "The Shadow Utilities contain a vulnerability that may result in new user mailboxes having arbitrary permissions.",
+        "description": "The Shadow Utilities provide tools to manage user accounts.When a new mailbox is created using the useradd utility, the open() function does not receive the expected arguments while O_CREAT is present. The result of this error is that random permissions are applied to the new mailbox.",
+        "impact": "A local, unprivileged attacker may be able to gain access to newly created mailbox files."
+      }
+    ],
+    "CVE-2006-1189": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/341028",
+        "title": "Microsoft Internet Explorer fails to properly handle double-byte characters in specially crafted URLs",
+        "overview": "Microsoft Internet Explorer (IE) fails to properly handle double-byte characters in URLs, which may allow a remote, unauthenticated attacker to execute arbitrary code.",
+        "description": "IE fails to properly handle double-byte characters in URLs. When a specially crafted HTML file is opened in IE, system memory can be corrupted in a way that may allow an attacker to execute arbitrary code.",
+        "impact": "By convincing a user to access a specially crafted web page with IE, an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2006-1193": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/138188",
+        "title": "Microsoft Outlook Web Access for Exchange Server script injection vulnerability",
+        "overview": "A script injection vulnerability exists in Microsoft Exchange Server running Outlook Web Access.",
+        "description": "Microsoft Outlook Web Access (OWA) is a service of Exchange Server. OWA allows authorized users to read and send email, manage their calendar, and perform other functions on an Exchange server via the Web.Outlook Web Access fails to correctly filter script contained in an email message under certain circumstances. This results in a vulnerability that could allow an attacker to supply script that would be executed by a user using OWA to read email.",
+        "impact": "A remote attacker with the ability to supply an email message containing specially crafted script may be able to execute the script in the security context of the victim user on the client system. Microsoft states that user interaction is required to exploit this vulnerability."
+      }
+    ],
+    "CVE-2006-1249": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/570689",
+        "title": "Apple QuickTime FlashPix integer overflow",
+        "overview": "Apple QuickTime fails to properly handle FlashPix images. This vulnerability may allow a remote, unauthenticated attacker to execute arbitrary code or cause a denial of service condition.",
+        "description": "Apple's QuickTime Player is multimedia software that allows users to view local and remote audio, video, and image content. QuickTime contains an integer overflow in the code that handles FlashPix images. This vulnerability may be triggered by sending the QuickTime Player, or an application that uses the QuickTime plug-in, a specially crafted FlashPix file.Note that this issue affects QuickTime installations on both Apple Mac and Windows operating systems.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or cause a denial of service condition."
+      }
+    ],
+    "CVE-2006-1303": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/959049",
+        "title": "Multiple COM objects cause memory corruption in Microsoft Internet Explorer",
+        "overview": "Microsoft Internet Explorer (IE) allows instantiation of COM objects not designed for use in the browser, which may allow a remote attacker to execute arbitrary code or crash IE.",
+        "description": "Microsoft COMMicrosoft COM is a technology that allows programmers to create reusable software components that can be incorporated into applications to extend their functionality. Microsoft COM includes COM+, Distributed COM (DCOM), and ActiveX Controls.ActiveX controlsActiveX controls are COM objects that have visual elements. ActiveX controls are traditionally designed to be used in Internet Explorer. A web page can make use of an ActiveX control in various ways, such as by referencing its Class Identifier (CLSID) in an HTML OBJECT tag.The ProblemInternet Explorer will attempt to instantiate any COM object that is referenced by a web page. Certain COM objects that are not designed for use in Internet Explorer may cause unexpected results, such as executing arbitrary code or crashing the browser.Exploit code for these vulnerabilities are publicly available.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page, an HTML email message, or an email attachment), an attacker could execute arbitrary code with the privileges of the user. The attacker could also cause IE (or the program using the WebBrowser control) to crash."
+      }
+    ],
+    "CVE-2006-1305": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/617436",
+        "title": "Microsoft Outlook vulnerable to DoS via a malformed email message",
+        "overview": "There is a vulnerability in the way Microsoft Outlook handles malformed email messages that may allow a remote, unauthenticated attacker to cause a denial of service.",
+        "description": "Microsoft Outlook contains a vulnerability in the way that it handles certain email message headers. According to Microsoft Security Bulletin MS07-003:An attacker who successfully exploited the vulnerability could send a malformed e-mail to a user of Outlook that would cause the Outlook client to fail under certain circumstances. The Outlook client would continue to fail so long as the malformed e-mail message remained on the e-mail server. The e-mail message could be deleted by an e-mail administrator, or by the user via another e-mail client such as Outlook Web Access or Outlook Express, after which point the Outlook client would again function normally.This vulnerability affects Microsoft Outlook 2000, Outlook 2002, and Outlook 2003.",
+        "impact": "A remote, unauthenticated attacker may be able to cause a denial of service."
+      }
+    ],
+    "CVE-2006-1316": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/580036",
+        "title": "Microsoft Office fails to properly handle malformed strings",
+        "overview": "Microsoft Office fails to properly handle specially crafted strings. This vulnerability could allow a remote attacker to execute arbitrary code.",
+        "description": "Microsoft Office applications fail to properly validate strings. When an Office document containing malformed string is opened with an Office application, system memory can be corrupted in a way that may allow an attacker to execute arbitrary code. More information, including a list of affected Office applications, is available in Microsoft Security Bulletin MS06-038.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2006-1359": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/876678",
+        "title": "Microsoft Internet Explorer createTextRange() vulnerability",
+        "overview": "Microsoft Internet Explorer (IE) fails to properly handle the createTextRange() DHTML method, possibly allowing a remote, unauthenticated attacker to execute arbitrary code.",
+        "description": "DHTML, TextRanges, and the createTextRange MethodAccording to Microsoft:Dynamic HTML (DHTML) is built on an object model that extends the traditional static HTML document which enables Web authors to create more engaging and interactive Web pages.A TextRange is a DHTML object that represents text. createTextRange() is a DHTML method to generate a TextRange for a DHTML Object. The ProblemIE fails to properly handle the createTextRange() method. When this method is called for certain DHTML objects, memory may be corrupted in a way that could allow an attacker to execute arbitrary code. More information is available in Microsoft Security Bulletin MS06-013 and Microsoft Security Advisory 917077.Note that working exploit code is available for this vulnerability.",
+        "impact": "By convincing a user to open a specially crafted web page, a remote unauthenticated attacker can execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2006-1458": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/289705",
+        "title": "Apple Quicktime JPEG integer overflow",
+        "overview": "Apple QuickTime fails to properly handle JPEG images. This vulnerability may allow a remote, unauthenticated attacker to execute arbitrary code or cause a denial of service condition.",
+        "description": "Apple's QuickTime Player is multimedia software that allows users to view local and remote audio, video, and image content. QuickTime contains an integer overflow in code that handles JPEG images. This vulnerability may be triggered by sending the QuickTime Player, or an application that uses the QuickTime plug-in, a specially crafted JPEG image file. Note that this issue affects QuickTime installations on both Apple Mac and Windows operating systems.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or cause a denial of service condition."
+      }
+    ],
+    "CVE-2006-1467": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/907836",
+        "title": "Apple iTunes fails to properly parse AAC files",
+        "overview": "Apple iTunes does not properly parse AAC files. This vulnerability may allow a remote attacker to execute arbitrary code.",
+        "description": "Apple iTunesApple iTunes is a digital media player available for the Microsoft Windows and Mac OS X operating systems. Advanced Audio Coding (AAC) file formatAccording to Apple,Advanced Audio Coding (AAC) is at the core of the MPEG-4, 3GPP and 3GPP2 specifications and is the audio codec of choice for Internet, wireless and digital broadcast arenas. AAC provides audio encoding that compresses much more efficiently than older formats, such as MP3, yet delivers quality rivaling that of uncompressed CD audio.The AAC format is used in files with .M4P, .M4A, and .M4B extensions. The ProblemApple iTunes contains an integer overflow in the code used to parse AAC files. If a remote unauthenticated attacker persuades a user to access a specially crafted AAC file with iTunes, that attacker may be able to trigger the overflow.Note that this vulnerability affects iTunes for Mac OS X and Microsoft Windows. For more information refer to the Security Content for iTunes 6.0.5.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2006-1469": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/988356",
+        "title": "Apple Mac OS X vulnerable to stack-based buffer overflow via specially crafted TIFF file",
+        "overview": "Apple has reported a vulnerability in the way Mac OS X 10.4 systems handle TIFF images that could cause affected applications to crash or allow remote code execution..",
+        "description": "TIFF Image File FormatThe TIFF image file format is a widely supported file format used for storing images.IntegrationThe Safari web browser and other applications in Mac OS X versions 10.4 to 10.4.6 are capable of opening TIFF formatted images.The problem An attacker may be able to create a specially crafted TIFF image that exploits a stack based buffer overflow. If successfully exploited, this buffer overflow may result in an application crash or arbitrary code execution. Apple states that this vulnerability does not affect Mac OS X versions below 10.4.",
+        "impact": "A remote unauthenticated attacker may be able to execute arbitrary code or cause a denial of service by persuading a user to access a specially crafted TIFF image"
+      }
+    ],
+    "CVE-2006-1470": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/652196",
+        "title": "Apple Mac OS X Open Directory server vulnerable to DoS via an invalid LDAP request",
+        "overview": "Apple has reported a vulnerability in their version of OpenLDAP that is included in Apple Mac OS X and Mac OS X Server versions 10.4 to 10.4.6. If successfully exploited, this vulnerability would allow an attacker to create a denial-of-service condition.",
+        "description": "OpenLDAP is a popular open-source implementation of the Lightweight Directory Access Protocol (LDAP). The software allows LDAP-aware programs on a network to get information from a server. Apple uses OpenLDAP as a part of their Open Directory product. Apple reports that there is an assertion error in their implementation of OpenLDAP. An attacker may be able to exploit this vulnerability by sending a specially crafted invalid LDAP request to the server which triggers the assertion. The result of a successful attack would be a denial-of-service condition.Only network access to the server is required to exploit this vulnerability.",
+        "impact": "A remote unauthenticated attacker may be able to create a denial-of-service condition."
+      }
+    ],
+    "CVE-2006-1540": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/609868",
+        "title": "Microsoft Office string parsing vulnerability",
+        "overview": "Microsoft Office fails to properly parse strings. This vulnerability could allow a remote attacker to execute arbitrary code.",
+        "description": "Microsoft Office applications fail to properly parse strings. When an Office document containing malformed string is opened with an Office application, system memory can be corrupted in a way that may allow an attacker to execute arbitrary code. More information, including a list of affected Office applications, is available in Microsoft Security Bulletin MS06-038.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2006-1726": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/968814",
+        "title": "Mozilla JavaScript security bypass vulnerability",
+        "overview": "Mozilla products fail to properly enforce security restrictions in JavaScript. This vulnerability may allow a remote, unauthenticated attacker to execute arbitrary code.",
+        "description": "According to Mozilla Foundation Security Advisory 2006-28:The security check in js_ValueToFunctionObject() can be bypassed by clever use of setTimeout() and the new Firefox 1.5 array method ForEach. shutdown demonstrated how to leverage this into a privilege escalation vulnerability that would allow the installation of malware. Note that JavaScript must be enabled in order for this vulnerability to exist. JavaScript is enabled by default in the Firefox and Mozilla web browsers, but not in the Mozilla's mail client or Thunderbird. Exploitation can occur by accessing a specially crafted web page with Firefox. If JavaScript is enabled within Mozilla's mail client or Thunderbird, then this issue may be exploitable by opening a specially crafted email.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2006-1730": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/179014",
+        "title": "Mozilla CSS integer overflow vulnerability",
+        "overview": "Mozilla products contain an integer overflow that could allow a remote, unauthenticated attacker to execute arbitrary code.",
+        "description": "Cascading Style SheetsCSS is a mechanism for adding style to web documents. The problemMozilla products contain an integer overflow in the CSS letter spacing property. This may allow a remote attacker to manipulate memory allocation routines to create an undersized buffer. When data is copied to this buffer, a heap-based buffer overflow may occur. For a list of affected, products refer to Mozilla Foundation Security Advisory 2006-22.",
+        "impact": "If an attacker can persuade a user to access a specially crafted web page, that attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2006-1733": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/488774",
+        "title": "Mozilla XBL binding vulnerability",
+        "overview": "Mozilla products fail to properly restrict access to privileged XBL bindings. This vulnerability may allow a remote, unauthenticated attacker to execute arbitrary code.",
+        "description": "XBLAccording to Mozilla, XBL \"is a markup language that defines special new elements, or 'bindings' for XUL widgets (and for HTML elements ...) \".The ProblemPrivileged XBL bindings may be accessible by user controlled content in a way that could allow a remote attacker to execute arbitrary code. Specifically, the valueOf.call()and valueOf.apply() routines can be leveraged by an attacker to compile and execute arbitrary code with the privileges of the attacked XBL binding.For a list of affected products refer to Mozilla Foundation Security Advisory 2006-16.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2006-1735": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/813230",
+        "title": "Mozilla products vulnerable to privilege escalation via XBL.method.eval",
+        "overview": "A vulnerability in the way Mozilla products and derivative programs handle certain XBL methods could allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The Mozilla browser and derived products include support for the Extensible Bindings Language (XBL), a markup language that defines special new elements, or \"bindings\" for Mozilla's XML-based User interface Language (XUL) widgets and HTML elements. A vulnerability has been discovered in the way that Mozilla and derived products handle some methods of XBL bindings. Mozilla Foundation Security Advisory 2006-14 states the following:Using the eval associated with methods of an XBL binding it was possible to create JavaScript functions that would get compiled with the wrong privileges, allowing the attacker to run code of their choice with the full permission of the user running the browser. This could be used to install spyware or viruses. Note: Thunderbird shares the JavaScript engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail.",
+        "impact": "A remote attacker may be able to run code of their choosing on an affected system. The attacker-supplied code would be executed with the permissions of the user running the vulnerable program."
+      }
+    ],
+    "CVE-2006-1737": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/329500",
+        "title": "Mozilla products vulnerable to memory corruption via large regular expression in JavaScript",
+        "overview": "A vulnerability in the way the JavaScript engine of Mozilla products and derivative programs handles a large regular expression could allow a remote attacker to crash the application or execute arbitrary code on a vulnerable system.",
+        "description": "A regular expression is a special text string for describing a search pattern. The JavaScript interpreter in the Mozilla browser and derived products includes the ability to process regular expressions. An integer overflow vulnerability has been discovered in the way that some versions of these products handle and overly large regular expression. According to Mozilla Foundation Security Advisory 2006-11:As part of the Firefox 1.5 release we fixed several crash bugs to improve the stability of the product. Some of these crashes showed evidence of memory corruption that we presume could be exploited to run arbitrary code and have been applied to the Firefox 1.0.x and Mozilla Suite 1.7.x releases[...]Alden D'Souza reported a crash when using an extremely large regular expression in JavaScript. This was tracked down to a 16-bit integer overflow that could potentially cause the browser to interpret attacker supplied data as JavaScript bytecode.[...]Note: Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail.",
+        "impact": "Remote attackers may be able to crash a vulnerable program or run code of their choosing on an affected system. The attacker-supplied code would be executed with the permissions of the user running the vulnerable program."
+      }
+    ],
+    "CVE-2006-1739": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/935556",
+        "title": "Mozilla products border-rendering code vulnerability using CSS",
+        "overview": "A vulnerability in the way Mozilla products and derivative programs handle certain CSS methods could allow a remote attacker to crash the application or execute arbitrary code on a vulnerable system.",
+        "description": "The Mozilla browser and derived products include support for Content Style Sheets (CSS). A vulnerability has been discovered in the way that these products handle the CSS border-rendering function. According to Mozilla Foundation Security Advisory 2006-11:As part of the Firefox 1.5 release we fixed several crash bugs to improve the stability of the product. Some of these crashes showed evidence of memory corruption that we presume could be exploited to run arbitrary code and have been applied to the Firefox 1.0.x and Mozilla Suite 1.7.x releases.While fixing an unexploitable recursion-induced crash Bernd Mielke discovered that the CSS border-rendering code could potentially write past the end of an array....Note: Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail.",
+        "impact": "A remote attacker may be able to crash a vulnerable program or run code of their choosing on an affected system. The attacker-supplied code would be executed with the permissions of the user running the vulnerable program."
+      }
+    ],
+    "CVE-2006-1868": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/797465",
+        "title": "Oracle Advanced Replication SQL injection vulnerability",
+        "overview": "An SQL injection vulnerability in the Oracle Advanced Replication component may allow a remote attacker to execute arbitrary SQL commands on a vulnerable Oracle installation.",
+        "description": "Oracle Advanced Replication component contains a SQL injection vulnerability.The details of this vulnerability are not clear. We believe that the Advanced Replication component is accessible by users with PUBLIC privileges. Based on research into public information, we believe that this issue is Oracle vuln# DB03 in the Oracle CPU for April 2006 . However, there is not sufficient information to authoritatively relate Oracle vulnerability information to information provided by other parties. Refer to the Oracle CPU for April 2006 for more information.",
+        "impact": "A remote attacker may be able to execute SQL queries on a server, possibly with elevated privileges. As a result, attackers may be able to view or modify the contents of an Oracle database."
+      }
+    ],
+    "CVE-2006-1993": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/866300",
+        "title": "Mozilla Firefox designMode deleted object reference",
+        "overview": "Mozilla Firefox contains a deleted object reference vulnerability. This may allow a remote attacker to execute arbitrary code.",
+        "description": "Mozilla Firefox contains a vulnerability that causes a deleted object to be referenced when designMode is set to \"on.\" When Firefox attempts to use this deleted object, the browser can crash. It may be possible to execute arbitrary code by using references to deleted objects.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the user running Firefox."
+      }
+    ],
+    "CVE-2006-2111": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/783761",
+        "title": "Microsoft Windows \"MHTML\" protocol handler fails to properly handle URL redirections",
+        "overview": "Microsoft Windows \"MHTML\" protocol handler fails to properly interpret URL redirections, which may cause information disclosure.",
+        "description": "The Microsoft Windows \"MHTML\" protocol handler contains an information disclosure vulnerability in the way that it interprets URL redirections. The \"MHTML\" protocol handler fails to properly interpret HTTP server-side redirect through the \"MHTML\" protocol, which may allow Internet Explorer to bypass Internet Explorer domain restrictions.",
+        "impact": "By convincing a user to visit a specially crafted website, a remote, unauthenticated attacker may be able to access sensitive information."
+      }
+    ],
+    "CVE-2006-2198": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/170113",
+        "title": "OpenOffice.org may fail to recognize embedded Basic macros",
+        "overview": "The OpenOffice.org team has reported a vulnerability in how the 1.1 and 2.0 versions of OpenOffice.org process basic macros.",
+        "description": "A vulnerability in OpenOffice.org may allow an attacker to inject basic code into documents such that the code will be executed when the document is loaded. After the document is opened, the user will not be alerted that the macro is running. To exploit this vulnerability, an attacker would need to convince a user to open a document with a specially crafted basic macro inserted. If successful, the attacker could use the macro to access the operating system with the privileges of the user who opened the document.",
+        "impact": "A malicious basic macro could change, delete, transmit, overwrite, and read data on the affected computer. It may also be possible for an attacker to remotely execute arbitrary code."
+      }
+    ],
+    "CVE-2006-2312": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/466428",
+        "title": "Skype URI handler fails to properly parse parameters",
+        "overview": "A remote attacker could potentially retrieve files from Skype users running the Microsoft Windows version of the Skype software.",
+        "description": "Skype is an application that allows users to communicate with voice or messaging across the Internet or local area networks. Skype also features the ability for users to transfer files, send SMS messages, and send videos. In some circumstances, a Skype URL can be crafted that, if followed, initiates the transfer of a single named file to another Skype user. Skype reports that this vulnerability only affects the Windows version of the software.",
+        "impact": "If a victim user connects to the specially-crafted Skype URL, an attacker could get any file he/she chooses from the victim's computer with the privileges of the user running Skype."
+      }
+    ],
+    "CVE-2006-2369": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/117929",
+        "title": "RealVNC Server does not validate client authentication method",
+        "overview": "The RealVNC Server fails to properly authenticate clients. This may allow a remote attacker to bypass authentication and gain access to the VNC server.",
+        "description": "The Virtual Network Computing (VNC) ProtocolAccording to RealVNC, \"The VNC protocol is a simple protocol for remote access to graphical user interfaces.\"RealVNCRealVNC is an implementation of the VNC protocol. The ProblemThe RealVNC Server fails to properly authenticate clients. When a RealVNC client connects to a RealVNC server, the server provides a list of supported authentication methods. By design, the client then selects a method from the list. Due to an implementation flaw, if the client specifies that no (null) authentication should be used, the server accepts this method and authenticates the client, whether or not null authentication was offered by the server.Note that exploit code for this vulnerability is publicly available.",
+        "impact": "A remote, unauthenticated attacker could gain access to a system running RealVNC server. If the RealVNC server runs with administrative privileges, the attacker could gain complete control of the system."
+      }
+    ],
+    "CVE-2006-2372": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/257164",
+        "title": "Microsoft DHCP Client service contains a buffer overflow",
+        "overview": "Microsoft DHCP Client service contains a buffer overflow. This vulnerability may allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Dynamic Host Configuration Protocol (DHCP) As described in RFC 2131, \"The Dynamic Host Configuration Protocol (DHCP) provides a framework for passing configuration information to hosts on a TCP/IP network.\" The ProblemThe Microsoft DHCP Client service contains a buffer overflow. If a remote attacker responds to a DHCP request with a specially crafted DHCP response, that attacker may be able to trigger the buffer overflow on the requesting system.For more information refer to Microsoft Security Bulletin MS06-036.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2006-2376": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/909508",
+        "title": "Microsoft Graphics Rendering Engine fails to properly handle WMF images",
+        "overview": "Microsoft Windows Graphics Rendering Engine contains a vulnerability that may allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The Microsoft Windows Graphics Rendering Engine supports a number of image formats including Windows Metafile (WMF). An unspecified vulnerability exists in the way that the Graphics Rendering Engine included with some versions of Microsoft Windows handles WMF image files.",
+        "impact": "By persuading a user to open a specially crafted WMF image file, an attacker may be able to execute arbitrary code on an affected system. This specially crafted WMF image file could be supplied on a web page, in an email message, or by other means."
+      }
+    ],
+    "CVE-2006-2379": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/722753",
+        "title": "Microsoft IP Source Route Vulnerability",
+        "overview": "A vulnerability in Microsoft Windows could allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Source routing is a technique to determine the network route for a packet based on information supplied by the sender in the IP packet. The TCP/IP driver in some versions of Microsoft Windows contains a buffer overflow in the handling of packets with source routing information. The driver fails to validate the length of a message before it is passed to an allocated buffer. Microsoft states that IP packets containing IP source route options 131 and 137 could be used to initiate a connection with the affected components.",
+        "impact": "A remote attacker with the ability to supply a specially crafted packet may be able to execute arbitrary code on an affected system. The attacker-supplied code would be executed with kernel privileges."
+      }
+    ],
+    "CVE-2006-2382": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/136849",
+        "title": "Microsoft Internet Explorer UTF-8 decoding vulnerability",
+        "overview": "Microsoft Internet Explorer fails to properly decode UTF-8 encoded HTML. This may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "UnicodeThe Unicode character set contains more than 96,000 characters. Because of this, Unicode can be used to represent a wide range of languages.UTF-8UTF-8 (Unicode Tranlation Format 8) is a type of character encoding for Unicode character sets.The problemInternet Explorer fails to properly calculate memory sizes when decoding UTF-8 encoded characters. This can cause heap memory corruption.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page, an HTML email message, or an email attachment), an attacker could execute arbitrary code with the privileges of the user. The attacker could also cause IE (or the program using the MSHTML component) to crash."
+      }
+    ],
+    "CVE-2006-2389": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/409316",
+        "title": "Microsoft Office fails to properly handle document properties",
+        "overview": "Microsoft Office contains a buffer overflow when handling specially crafted document properties. This vulnerability could allow a remote attacker to execute arbitrary code.",
+        "description": "Microsoft Office applications fail to properly validate property fields resulting in a buffer overflow. When an Office document containing malformed a property field is opened with an Office application, system memory can be corrupted in a way that may allow an attacker to execute arbitrary code. Property fields include, but are not limited to document title, subject, and author. More information, including a list of affected Office applications, is available in Microsoft Security Bulletin MS06-038.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2006-2407": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/477960",
+        "title": "WeOnlyDo! Software wodSSHServer ActiveX component fails to properly validate key exchange algorithm strings",
+        "overview": "The WeOnlyDo! Software wodSSHServer ActiveX component fails to properly validate the length of key exchange algorithm strings. This may allow a remote, unauthenticated attacker to execute arbitrary code.",
+        "description": "wodSSHServer ActiveX component According to the wodSSHServer ActiveX component website:wodSSHServer is an SSH Server ActiveX component (but also Telnet Server ActiveX as well) that will give you ability to easily add SSH2 (and SFTP) server capabilities to your application, as well as old TELNET server protocol. The Problem wodSSHServer does not validate key exchange algorithm strings supplied by a client. If a client sends a specially crafted key exchange algorithm string to a vulnerable wodSSHServer installation, that attacker may be able to trigger the overflow.Any application that uses the wodSSHServer ActiveX Component may be affected by this vulnerability. Known instances of this are freeSSHd and freeFTPd, but there may be others.Note that working exploit code for this vulnerability is publicly available.",
+        "impact": "A remote attacker may be able to execute arbitrary code on the server using the wodSSHServer ActiveX component. If that server is running with administrative privileges, the attacker could gain complete control of the system."
+      }
+    ],
+    "CVE-2006-2775": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/243153",
+        "title": "Mozilla may associate persisted XUL attributes with an incorrect URL",
+        "overview": "Mozilla can allow persisted XUL attributes to associate with the wrong URL. This may allow a remote attacker to execute arbitrary code.",
+        "description": "XULXUL is an XML-based user interface language, which is used by Mozilla.Persisted XULXUL elements with the persist attribute maintain their values after the window is closed. These values are stored in the localstore.rdf file.The problemSome persisted XUL attributes can be associated with the wrong URL. Mozilla Firefox and Thunderbird are reported to be vulnerable.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page, an HTML email message, or an HTML email attachment), an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2006-2779": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/466673",
+        "title": "Mozilla contains multiple memory corruption vulnerabilities",
+        "overview": "Mozilla contains several memory corruption vulnerabilities. This may allow a remote attacker to execute arbitrary code.",
+        "description": "Mozilla team members have discovered multiple vulnerabilities that cause the browser engine to crash. In certain circumstances, these vulnerabilities may allow arbitrary code execution. Mozilla Firefox and Thunderbird are reported to be vulnerable.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page, an HTML email message, or an HTML email attachment), an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2006-2780": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/466673",
+        "title": "Mozilla contains multiple memory corruption vulnerabilities",
+        "overview": "Mozilla contains several memory corruption vulnerabilities. This may allow a remote attacker to execute arbitrary code.",
+        "description": "Mozilla team members have discovered multiple vulnerabilities that cause the browser engine to crash. In certain circumstances, these vulnerabilities may allow arbitrary code execution. Mozilla Firefox and Thunderbird are reported to be vulnerable.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page, an HTML email message, or an HTML email attachment), an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2006-2934": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/717844",
+        "title": "Linux kernel fails to properly handle malformed SCTP packets",
+        "overview": "It is possible to cause a denial of service of the Linux kernel by sending a SCTP packet containing no chunks.",
+        "description": "The Stream Control Transmission Protocol (SCTP, RFC 2960) is a transport layer protocol which provides reliable, sequential transport of message streams with congestion control. SCTP packets are made up of units of information refered to as chunks. Chunks consist of a chunk header and chunk-specific user data. The netfilter SCTP connection tracking module contains a structure called sctp_packet which takes a variable called newconntrack as an argument. By sending a SCTP packet containing no chunks to a vulnerable system, a remote attacker can cause an unexpected value in the SCTP connection tracking module. Because the value of this variable is used to look up a pointer from an array of timeouts, if this variable contains an unexpected value an error will occur.",
+        "impact": "A remote attacker can cause a denial of service, affecting system availability."
+      }
+    ],
+    "CVE-2006-2937": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/247744",
+        "title": "OpenSSL may fail to properly parse invalid ASN.1 structures",
+        "overview": "A vulnerability in OpenSSL may allow an attacker to create a denial-of-service condition.",
+        "description": "OpenSSL is an Open Source toolkit that implements the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1) protocols.When parsing certain invalid ASN.1 structures, OpenSSL may mishandle an error condition, resulting in an infinite loop. By triggering the infinite loop, an attacker may be able to create a denial-of-service condition.",
+        "impact": "A remote, unauthenticated attacker may be able create a denial-of-service condition."
+      }
+    ],
+    "CVE-2006-3015": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/912588",
+        "title": "WinSCP URI handlers fails to properly parse command line switches",
+        "overview": "A vulnerability has been found in WinSCP, which can be exploited by an attacker to overwrite or add files to the victim's computer.",
+        "description": "WinSCP is an open source SFTP client for Microsoft windows. It supports a file-manager user interface, and uses the SSH protocol to transfer files between hosts. If an attacker convinces a user to follow a specially crafted URL, a file may be directly transferred to the user's computer. The attacker may also be able to append information to files.Depending on what the user interface settings of WinSCP are, user-interaction may or may not be required to complete the file transfer. This vulnerability is a result of certain command line switches being passed to WinSCP in the malicious URL.",
+        "impact": "If a victim user clicks on the specially-crafted URL, an attacker could send any chosen file to the victim's computer with access to folders that the user running WinSCP has write access to. The attacker could also append information to a file that may damage the file or make it unusable."
+      }
+    ],
+    "CVE-2006-3083": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/580124",
+        "title": "MIT Kerberos (krb5) krshd and v4rcp do not properly validate setuid() or seteuid() calls",
+        "overview": "Privilege escalation vulnerabilities in MIT krb5 krshd and v4rcp may allow an authenticated attacker to execute arbitrary code.",
+        "description": "The MIT krb 5 krshd and v4rcp programs contain multiple privilege escalation vulnerabilities. MIT krb5 Security Advisory 2006-001 states that the vulnerabilities \"...result when the OS implementations of setuid() or seteuid() can fail due to resource exhaustion when changing to an unprivileged user ID.\"From MIT krb5 Security Advisory 2006-001:The following vulnerabilities may result from unchecked calls to setuid(), and are believed to only exist on Linux and AIX:Unchecked calls to setuid() in krshd may allow a local privilege escalation leading to execution of programs as root.Unchecked calls to setuid() in the v4rcp may allow a local privilege escalation leading to reading, writing, or creating files as root. v4rcp is the remote end of a krb4-authenticated rcp operation, but may be executed directly by an attacker, as it is a setuid program.",
+        "impact": "An authenticated, remote attacker may be able to execute arbitrary code with root privileges."
+      }
+    ],
+    "CVE-2006-3084": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/401660",
+        "title": "MIT Kerberos (krb5) ftpd and ksu do not properly validate seteuid() calls",
+        "overview": "Privilege escalation vulnerabilities in MIT krb5 ftpd and ksu may allow an authenticated attacker to execute arbitrary code.",
+        "description": "The MIT krb 5 ftpd and ksu programs contain multiple privilege escalation vulnerabilities. These vulnerabilities are dependent on the host operating system's implementation of the seteuid() system call and result when seteuid() can fail due to resource exhaustion while changing to an unprivileged user ID. Some implementations of seteuid() do not expose the vulnerability.From MIT krb5 Security Advisory 2006-001:The following vulnerabilities may result from unchecked calls to seteuid(). These vulnerabilities are not yet known to exist on any operating system: Unchecked calls to seteuid() in ftpd may allow a local privilege escalation leading to reading, writing, or creating files as root.Unchecked calls to seteuid() in the ksu program may allow a local privilege escalation resulting in filling a file with null bytes as root and then deleting it (the \"kdestroy\" operation).",
+        "impact": "An authenticated attacker may be able to execute arbitrary code with root privileges."
+      }
+    ],
+    "CVE-2006-3086": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/394444",
+        "title": "Microsoft Hyperlink Object Library stack buffer overflow",
+        "overview": "The Microsoft Windows system library for handling hyperlinks contains a buffer overflow. Exploitation of this vulnerability may allow an attacker to execute arbitrary code.",
+        "description": "Microsoft Hyperlink Object Library (HLINK.DLL) The Hyperlink Object Library provides interfaces for handling hyperlinks. More information is available in the Microsoft Hyperlinks Guide.The ProblemThere is a stack-based buffer overflow in the Microsoft Hyperlink Object Library. The overflow may be triggered by clicking a specially crafted hyperlink. Note that any program that links to the HLINK.DLL library may be vulnerable, including Microsoft Office applications.Exploit code for this vulnerability is publicly available.",
+        "impact": "By convincing a user to access a specially crafted hyperlink, an attacker could execute arbitrary code with the privileges of the attacked user. If the user is logged in with administrative privileges, the attacker could take complete control of a vulnerable system."
+      }
+    ],
+    "CVE-2006-3281": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/655100",
+        "title": "Microsoft Internet Explorer fails to properly handle CLSID extensions",
+        "overview": "Microsoft Internet Explorer fails to properly handle directories with CLSID extensions. This may allow an attacker to bypass the warning dialog that Internet Explorer should display before executing downloaded code.",
+        "description": "CLSIDAccording to Microsoft MSDN, A CLSID is a \"globally unique identifier (GUID) associated with an OLE class object.\"CLSID extensionsPrior to the update in Microsoft Security Bulletin MS04-024, a file could use a CLSID as a file extension and Windows Explorer would obey the CLSID when determining how to open the file. This can mislead the user into opening a dangerous file. After installing the update for MS04-024, Windows Explorer no longer obeys a CLSID as a file extension.The problemThe MS04-024 update does not completely address the vulnerability. Directories can have a CLSID extension. Even with the MS04-024 update installed, Windows Explorer will treat a directory with a CLSID extension as a file of the type specified by the CLSID. Within the context of Windows Explorer, this can mislead the user with respect to what is on the local filesystem. However, within the context of Internet Explorer, this technique can be used to bypass the warning dialog that Internet Explorer should display before executing downloaded code. Publicly available proof-of-concept code uses an SMB share and requires the user to double-click within the browser window.",
+        "impact": "By convincing a user to access a specially crafted web page with Internet Explorer, an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2006-3435": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/187028",
+        "title": "Microsoft PowerPoint fails to properly handle malformed object pointers",
+        "overview": "Microsoft PowerPoint contains a vulnerability in the handling of malformed object pointers, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft PowerPoint contains a vulnerability that could be exploited when PowerPoint opens a specially crafted document. The vulnerability is caused by incorrect handling of malformed object pointers. This vulnerability affects both Windows and Mac versions of PowerPoint.",
+        "impact": "By convincing a user to open a specially crafted PowerPoint document, an attacker could execute arbitrary code with the privileges of the user running PowerPoint. If the user is logged in with administrative privileges, the attacker could take complete control of a vulnerable system. This vulnerability may also cause PowerPoint to crash."
+      }
+    ],
+    "CVE-2006-3442": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/455516",
+        "title": "Microsoft PGM vulnerable to remote code execution",
+        "overview": "A buffer overflow vulnerability in Microsoft's Pragmatic General Multicast (PGM) protocol implementation may allow an attacker to execute arbitrary code.",
+        "description": "The Pragmatic General Multicast (PGM) protocol is an experimental protocol defined in RFC 3208. Microsoft's implementation of the PGM protocol is the Microsoft Message Queuing Services (MSMQ).A buffer overflow vulnerability exists in the MSMQ service that may allow a remote, unauthenticated attacker to execute arbitrary code. An attacker may be able to send a specially-crafted message that triggers the overflow when received by a vulnerable system.Per Microsoft, primarily Windows XP is affected by this vulnerability.",
+        "impact": "A remote, unauthenticated attacker can run arbitrary code with system privileges."
+      }
+    ],
+    "CVE-2006-3443": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/337244",
+        "title": "Microsoft Windows Kernel vulnerable to privilege escalation",
+        "overview": "Microsoft Windows contains a privilege escalation vulnerability that could allow an authenticated, local attacker to gain complete control of the affected system.",
+        "description": "Winlogon is the component of Microsoft Windows responsible for interactive, security related functions. Upon logon, Winlogon parses the system directory, user directory, and current working directory to load the appropriate user profile settings and applications. The default load order in Microsoft Windows 2000 may allow an autheticated, local attacker to elevate their user privleges by placing a specially crafted DLL in the user directory or current working directory.",
+        "impact": "An authenticated, local attacker can elevate their privleges to gain complete control of the system, including the ability to install programs, view, change or delete data, or create new accounts."
+      }
+    ],
+    "CVE-2006-3445": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/810772",
+        "title": "Microsoft Agent fails to properly handle specially crafted .ACF files",
+        "overview": "Microsoft Agent fails to properly handle specially crafted .ACF files and may allow a remote attacker to execute arbitrary code.",
+        "description": "Microsoft Agent is a software technology that enables an enriched form of user interaction that can make using and learning to use a computer easier and more natural. A vulnerability exists in the way that Microsoft Agent handles specially crafted .ACF files. Exploitation can occur when a remote attacker convinces the user to visit a specially crafted web site. Microsoft states that the following systems are affected:Microsoft Windows 2000 Service Pack 4Microsoft Windows XP Service Pack 2Microsoft Windows XP Professional x64 EditionMicrosoft Windows Server 2003 and Microsoft Windows Server 2003 Service Pack 1Microsoft Windows Server 2003 for Itanium-based Systems and Microsoft Windows Server 2003 with SP1 for Itanium-based SystemsMicrosoft Windows Server 2003 x64 Edition",
+        "impact": "This vulnerability may allow a remote attacker to execute arbitrary code with the privileges of the local user."
+      }
+    ],
+    "CVE-2006-3448": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/466873",
+        "title": "Microsoft Step-by-Step Interactive Training contains a buffer overflow",
+        "overview": "Microsoft Step-by-Step Interactive Training contains a buffer overflow vulnerability. If successfully exploited, this vulnerability may allow an attacker to execute arbitrary code.",
+        "description": "Microsoft Step-by-Step Interactive Training is a training program developed by MIcrosoft. It is preinstalled by some computer manufactuers and is included in many Microsoft Press books. Microsoft Knowledge Base article 898458 contains a partial list of software and publications that include the Step-by-Step Interactive training. The Step-by-Step Interactive Training contains a buffer overflow. To trigger the vulnerability, an attacker would need to convince a user to open a specially crafted bookmark link file. The bookmark file name extension can be .CBL, .CBM, or .CBO.",
+        "impact": "By convincing a user to open a specially crafted bookmark link file, a remote unauthenticated attacker may be able to execute arbitrary code with the privileges of the user who is running the Step-by-Step Interactive Training program."
+      }
+    ],
+    "CVE-2006-3450": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/119180",
+        "title": "Microsoft Internet Explorer fails to properly interpret layout positioning",
+        "overview": "Microsoft Internet Explorer fails to properly handle certain combinations of layout positioning. This can allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft Internet Explorer contains a vulnerability in the handling of certain combinations of layout positioning in an HTML document. When combined with Active Scripting, Internet Explorer may execute arbitrary code as a result of this vulnerability.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page, an HTML email message, or an email attachment), an attacker could execute arbitrary code with the privileges of the user. The attacker could also cause Internet Explorer (or the program using the WebOC control) to crash."
+      }
+    ],
+    "CVE-2006-3451": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/262004",
+        "title": "Microsoft Internet Explorer fails to properly handle chained Cascading Style Sheets",
+        "overview": "Microsoft Internet Explorer fails to properly handle chained Cascading Style Sheets (CSS). This can allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "CSS is a mechanism for adding style to web documents. Microsoft Internet Explorer contains a vulnerability in the handling of chained CSS. An attacker can exploit this vulnerability by creating a specially crafted HTML document that causes memory corruption when it is viewed with Internet Explorer.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page, an HTML email message, or an email attachment), an attacker could execute arbitrary code with the privileges of the user. The attacker could also cause Internet Explorer (or the program using the WebOC control) to crash."
+      }
+    ],
+    "CVE-2006-3638": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/959049",
+        "title": "Multiple COM objects cause memory corruption in Microsoft Internet Explorer",
+        "overview": "Microsoft Internet Explorer (IE) allows instantiation of COM objects not designed for use in the browser, which may allow a remote attacker to execute arbitrary code or crash IE.",
+        "description": "Microsoft COMMicrosoft COM is a technology that allows programmers to create reusable software components that can be incorporated into applications to extend their functionality. Microsoft COM includes COM+, Distributed COM (DCOM), and ActiveX Controls.ActiveX controlsActiveX controls are COM objects that have visual elements. ActiveX controls are traditionally designed to be used in Internet Explorer. A web page can make use of an ActiveX control in various ways, such as by referencing its Class Identifier (CLSID) in an HTML OBJECT tag.The ProblemInternet Explorer will attempt to instantiate any COM object that is referenced by a web page. Certain COM objects that are not designed for use in Internet Explorer may cause unexpected results, such as executing arbitrary code or crashing the browser.Exploit code for these vulnerabilities are publicly available.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page, an HTML email message, or an email attachment), an attacker could execute arbitrary code with the privileges of the user. The attacker could also cause IE (or the program using the WebBrowser control) to crash."
+      }
+    ],
+    "CVE-2006-3643": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/927548",
+        "title": "Microsoft Management Console cross-site scripting vulnerability",
+        "overview": "Microsoft Management Console (MMC) is vulnerable to cross-site scripting, which may allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "MMCMMC is an application that allows a user to perform administrative tasks. Through the use of various snap-ins, MMC can be used to configure Windows services, local users and groups, storage devices, and more. The problemHTML files in the MMC library can be directly referenced by Internet Explorer. This can cause a cross-site scripting vulnerability from other zones into the Local Machine Zone.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page, an HTML email message, or an email attachment), an attacker could execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2006-3650": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/534276",
+        "title": "Microsoft Office fails to properly parse malformed chart records",
+        "overview": "A vulnerability in the way Microsoft Office parses files containing malformed chart records may lead to execution of arbitrary code.",
+        "description": "Microsoft Office fails to properly handle malformed chart records. According to Microsoft Security Bulletin MS06-062:When Office opens a specially crafted file and parses a malformed chart record, it may corrupt system memory in such a way that an attacker could execute arbitrary code.This vulnerability affects Microsoft Office for both Microsoft Windows and Mac OS X.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the affected user or cause a denial-of-service condition."
+      }
+    ],
+    "CVE-2006-3730": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/753044",
+        "title": "Microsoft Windows WebViewFolderIcon ActiveX integer overflow",
+        "overview": "The Microsoft Windows WebViewFolderIcon ActiveX control contains an integer overflow vulnerability. This may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The Microsoft WebViewFolderIcon object is an ActiveX control that comes with Microsoft Windows. This control, which is provided by the file webvw.dll, provides support functionality for icons in the Windows Explorer Web view. The slice method of the WebViewFolderIcon control contains an integer overflow vulnerability.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause Internet Explorer (or the program using the WebBrowser control) to crash.The complete impact of this vulnerability is not yet known."
+      }
+    ],
+    "CVE-2006-3738": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/547300",
+        "title": "OpenSSL SSL_get_shared_ciphers() vulnerable to buffer overflow",
+        "overview": "A buffer overflow vulnerability in an OpenSSL library function could allow a remote attacker to execute code on an affected system.",
+        "description": "The OpenSSL toolkit implements the Secure Sockets Layer (SSL versions 2 and 3) and Transport Layer Security (TLS version 1) protocols as well as a general purpose cryptographic library. The OpenSSL library includes a utility function, SSL_get_shared_ciphers(), to generate human readable strings from the list of shared ciphers supported on an SSL connection. A buffer overflow exists in this function's handling of the length of the list of shared ciphers. Any application using this function could expose the vulnerability, allowing an attacker to execute code with the privileges of that application. Note that although successful exploitation is believed to be difficult, it is still possible in some situations.",
+        "impact": "An attacker with the ability to supply a specially crafted list of ciphers could execute code in the context of an application using the vulnerable function."
+      }
+    ],
+    "CVE-2006-3747": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/395412",
+        "title": "Apache mod_rewrite contains off-by-one error in ldap scheme handling",
+        "overview": "A vulnerability in a common Apache HTTP server module, mod_rewrite, could allow a remote attacker to execute arbitrary code on an affected web server.",
+        "description": "The Apache HTTP server distribution includes a number of supplemental modules that provide additional functionality to the web server. One of these modules, mod_rewrite, provides a rule-based rewriting engine to rewrite requested URLs \"on the fly\" based on regular expressions.An off-by-one error exists in the ldap scheme handling in mod_rewrite. For some RewriteRules, specifically those where the remote user can influence the beginning of a rewritten URL and that do not include any of the following flags: Forbidden (F), Gone (G), or NoEscape (NE), this could lead to a pointer being written out of bounds. This flaw causes a remotely exploitable vulnerability on web servers that have mod_rewrite enabled (configuration directive \"RewriteEngine on\") and configured to use certain rules. For example, rules with this format expose the vulnerability:RewriteRule fred/(.*) $1While rules with this format do not expose the vulnerability:RewriteRule fred/(.*) joe/$1The versions of the mod_rewrite module supplied with the Apache HTTP server versions1.3 branch from 1.3.282.0 branch from 2.0.462.2 branch from 2.2.0are vulnerable to this issue but earlier versions are not. The Apache Software Foundation notes that mod_rewrite is not enabled and configured as a normal default, however it is a commonly used module and may be provided in a vulnerable configuration by redistributors.",
+        "impact": "An attacker may be able to execute arbitrary code in the context of the web server user (e.g., \"apache\", \"httpd\", \"nobody\", \"SYSTEM\", etc.). The Apache Software Foundation notes that, due to the nature of the underlying flaw, successful exploitation is dependent upon the stack frame layout of apache running on the target host."
+      }
+    ],
+    "CVE-2006-3806": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/655892",
+        "title": "Mozilla JavaScript engine contains multiple integer overflows",
+        "overview": "The Mozilla JavaScript engine contains multiple integer overflows. This vulnerability may allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Mozilla products that use the Mozilla JavaScript engine are vulnerable to integer overflows. Specifically, the JavaScript toSource() fails to properly handle malformed strings.For more information and a complete list of affected products refer to Mozilla Foundation Security Advisory 2006-50.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code on a vulnerable system. The attacker could also cause the vulnerable application to crash."
+      }
+    ],
+    "CVE-2006-3838": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/513068",
+        "title": "eIQnetworks Enterprise Security Analyzer Syslog server buffer overflow",
+        "overview": "The eIQnetworks Enterprise Security Analyzer Syslog server contains a buffer overflow vulnerability, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Enterprise Security AnalyzereIQnetworks Enterprise Security Analyzer (ESA) \"... provides essential real-time security intelligence to help decipher hacker/virus behavior, combat security threats and meet regulatory compliance requirements across the entire IT infrastructure – network devices and hosts.\" ESA is also provided on an OEM basis as Astaro Report Manager, Fortinet FortiReporter, iPolicy Security Reporter, SanMina Viking Multi-Log Manager, Secure Computing G2 Security Reporter, and Top Layer Network Security Analyzer.ESA Syslog serverThe ESA Syslog server is provided by the SyslogServer.exe executable. This server collects data from managed machines and listens on 10617/tcp.The problemThe ESA Syslog server contains a buffer overflow vulnerability.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code on a system running the vulnerable Syslog component."
+      }
+    ],
+    "CVE-2006-3864": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/176556",
+        "title": "Microsoft Office fails to properly parse malformed records",
+        "overview": "A vulnerability in the way Microsoft Office parses files containing malformed records may lead to execution of arbitrary code.",
+        "description": "Microsoft Office contains a vulnerability that could be exploited when Office attempts to parse specially crafted records. According to Microsoft Security Bulletin MS06-062:When Office opens a specially crafted file and parses a malformed string, it may corrupt system memory in such a way that an attacker could execute arbitrary code.This vulnerability affects Microsoft Office for both Microsoft Windows and Apple Macintosh.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the affected user or cause a denial-of-service condition."
+      }
+    ],
+    "CVE-2006-3876": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/938196",
+        "title": "Microsoft PowerPoint fails to properly handle malformed data records",
+        "overview": "Microsoft PowerPoint contains a vulnerability in the handling of malformed data records, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft PowerPoint contains a vulnerability that could be exploited when PowerPoint opens a specially crafted document. The vulnerability is caused by incorrect handling of malformed data records. This vulnerability affects both Windows and Mac versions of PowerPoint.",
+        "impact": "By convincing a user to open a specially crafted PowerPoint document, an attacker could execute arbitrary code with the privileges of the user running PowerPoint. If the user is logged in with administrative privileges, the attacker could take complete control of a vulnerable system. This vulnerability may also cause PowerPoint to crash."
+      }
+    ],
+    "CVE-2006-3877": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/205948",
+        "title": "Microsoft PowerPoint malformed record memory corruption",
+        "overview": "Microsoft PowerPoint contains a vulnerability in the handling of malformed records, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft PowerPoint contains a vulnerability that could be exploited when PowerPoint opens a specially crafted document. The vulnerability is caused by incorrect handling of malformed records, which can cause memory corruption. This vulnerability affects both Windows and Mac versions of PowerPoint.",
+        "impact": "By convincing a user to open a specially crafted PowerPoint document, an attacker could execute arbitrary code with the privileges of the user running PowerPoint. If the user is logged in with administrative privileges, the attacker could take complete control of a vulnerable system. This vulnerability may also cause PowerPoint to crash."
+      }
+    ],
+    "CVE-2006-3961": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/481212",
+        "title": "McAfee Subscription Manager ActiveX control vulnerable to stack buffer overflow",
+        "overview": "The McAfee Subscription Manager ActiveX control contains a buffer overflow, which may allow a remote, unauthenticated attacker to execute arbitrary code.",
+        "description": "ActiveXActiveX is a technology that allows programmers to create reusable software components that can be incorporated into applications to extend their functionality. Internet Explorer is a common Windows application that makes use of ActiveX controls.McAfee Security CenterMcAfee Security Center is a console for managing McAfee products and several aspects of a computer system's security.The problemMcAfee Security Center provides a \"safe for scripting\" ActiveX control that contains a buffer overflow. The ActiveX object is called McSubMgr and is provided by the file mcsubmgr.dll.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause Internet Explorer (or the program using the WebOC control) to crash."
+      }
+    ],
+    "CVE-2006-4333": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/696896",
+        "title": "Wireshark SSCOP dissector fails to properly handle malformed packets",
+        "overview": "Wireshark contains a vulnerability in the SSCOP dissector that may cause a denial of service condition.",
+        "description": "Wireshark contains a vulnerability in the Service-Specific Connection Oriented Protocol (SSCOP) dissector.Wireshark states that:If the SSCOP dissector has a port range configured and the SSCOP payload protocol is Q.2931, a malformed packet could make the Q.2931 dissector use up available memory. No port range is configured by default. Wireshark states that Wireshark versions 0.7.9 - 0.99.2 are vulnerable.Note: Ethereal has changed its name to Wireshark.",
+        "impact": "By sending a malformed packet, a remote attacker may be able to cause the Q2931 dissector to exceed the available memory and cause a denial of service condition."
+      }
+    ],
+    "CVE-2006-4339": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/845620",
+        "title": "Multiple RSA implementations fail to properly handle signatures",
+        "overview": "Multiple RSA implementations fail to properly handle RSA signatures. This vulnerability may allow an attacker to forge RSA signatures.",
+        "description": "RSA signatures are used to authenticate the source of a message. To prevent RSA signatures from being forged, messages are padded with data to ensure message hashes are adequately sized. One such padding scheme is specified in the Public-Key Cryptography Standard #1 (PKCS-1), which is defined in RFC 3447. Many RSA implementations may fail to properly verify signatures. Specifically, the verifier may incorrectly parse PKCS-1 padded signatures, ignoring data at the end of a signature. If this data is ignored and a RSA key with a public exponent of three is used, it may be possible to forge the signing key's signature.Note that any application that uses RSA signatures may be affected by this vulnerability. This includes, but is not limited to, SSH, SSL, PGP, and X.509 applications. This issue is further discussed on the ietf-openpgp mailing list.",
+        "impact": "This vulnerability may allow an attacker to forge an RSA signature."
+      }
+    ],
+    "CVE-2006-4343": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/386964",
+        "title": "OpenSSL SSLv2 client code fails to properly check for NULL",
+        "overview": "A flaw in the OpenSSL library could allow a remote attacker to cause a denial of service on an affected application.",
+        "description": "The OpenSSL toolkit implements the Secure Sockets Layer (SSL versions 2 and 3) and Transport Layer Security (TLS version 1) protocols as well as a general purpose cryptographic library. A missing check for NULL exists in the SSLv2 client get_server_hello() function. As a result, an affected client application using OpenSSL to create an SSLv2 connection to a malicious server could be caused to crash.",
+        "impact": "A remote attacker could cause an affected client application to crash, creating a denial of service."
+      }
+    ],
+    "CVE-2006-4640": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/168372",
+        "title": "Adobe Flash Player allowScriptAccess protection bypass vulnerability",
+        "overview": "A vulnerability in Adobe Flash Player may allow a remote attacker to bypass allowScriptAccess protection.",
+        "description": "Adobe Flash Player is a player for the Flash media format and enables frame-based animations with sound to be viewed within a web browser. According to Adobe:The AllowScriptAccess parameter of the Macromedia Flash Player controls the ability to perform outbound scripting from within a Flash SWF. A vulnerability in Adobe Flash Player may allow an attacker to circumvent the allowScriptAccess parameter. The specific cause of the underlying defect is not known.",
+        "impact": "By convincing a victim to view a HTML document (web page, HTML email) containing specially crafted Adobe Flash SWF file, an attacker could access content in a different security domain than the one containing the attacker's document."
+      }
+    ],
+    "CVE-2006-4687": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/197852",
+        "title": "Microsoft Internet Explorer fails to properly interpret HTML with certain layout combinations",
+        "overview": "A vulnerability in the way Microsoft Internet Explorer interprets malformed Web pages may lead to execution of arbitrary code.",
+        "description": "Microsoft Internet Explorer contatins a vulnerabilty that could be exploited when Internet Explorer attempts to interpret specially crafted Web pages. According to Microsoft Security Bulletin MS06-067:When Internet Explorer handles specially crafted HTML with certain HTML layout combinations it may corrupt system memory in such a way that an attacker could execute arbitrary code.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the affected user or cause a denial-of-service condition."
+      }
+    ],
+    "CVE-2006-4692": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/703936",
+        "title": "Microsoft Object Packager fails to properly display file types",
+        "overview": "The Microsoft Object Packager fails to properly display the file types. This vulnerability may allow a remote, unauthenticated attacker execute arbitrary code on a vulnerable system.",
+        "description": "According to Microsoft: Object Packager is a tool you can use to create a package that you can insert into a file. The Object Packager fails to properly display the file types of embedded objects. According to Microsoft Security Bulletin MS06-065:An attacker could try to exploit the vulnerability by creating a specially crafted file and sending the file to a user on an affected system in email or by having them click on a link to receive the file. Once the file is received the user would then have to click on the embedded object within the file and accept a misleading dialogue indicating that the user is about access a different file type. More information is available in Microsoft Security Bulletin MS06-065.",
+        "impact": "Attackers can conceal the types of objects embedded within files, possibly misleading users into executing arbitrary code."
+      }
+    ],
+    "CVE-2006-4694": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/231204",
+        "title": "Microsoft PowerPoint fails to properly handle malformed records",
+        "overview": "Microsoft PowerPoint contains a vulnerability in the handling of malformed records, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft PowerPoint contains a vulnerability that could be exploited when PowerPoint opens a specially crafted document. The vulnerability is caused by incorrect handling of malformed records. This vulnerability affects both Windows and Mac versions of PowerPoint.",
+        "impact": "By convincing a user to open a specially crafted PowerPoint document, an attacker could execute arbitrary code with the privileges of the user running PowerPoint. If the user is logged in with administrative privileges, the attacker could take complete control of a vulnerable system. This vulnerability may also cause PowerPoint to crash."
+      }
+    ],
+    "CVE-2006-4695": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/654577",
+        "title": "Microsoft Office Web Components Spreadsheet ActiveX control URL parsing stack buffer overflow",
+        "overview": "The Microsoft Office Web Components ActiveX controls contain a stack buffer overflow in the processing of URLs, which allows a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft Office Web Components are ActiveX controls that provide Microsoft Office functionality, such as spreadsheets, tables, and charts. These ActiveX controls are provided by the file MSOWC.DLL. Several of the ActiveX controls provided by MSOWC.DLL are marked Safe for Scripting and Safe for Initialization, which means that they can be controlled by a web page in Internet Explorer. Microsoft Office Web Components are provided by multiple products includingMicrosoft Office 2000Microsoft Office XPVisual Studio .NET 2002Visual Studio .NET 2003Microsoft BizTalk Server 2000Microsoft BizTalk Server 2002Microsoft Commerce Server 2000Internet Security and Acceleration Server 2000The Microsoft Office Spreadsheet control contains a stack buffer overflow in the handling of URLs.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2006-4696": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/820628",
+        "title": "Microsoft Server Service fails to properly handle network messages",
+        "overview": "A vulnerability in the way Microsoft Server Service handles network messages may lead to execution of arbitrary code.",
+        "description": "Microsoft Server Service provides support for Remote Proceedure Call (RPC), resource sharing, and named pipe communication over the network. Microsoft Server Service may attempt to derefernce an invalid pointer when handling network messages. According to Microsoft Security Bulletin MS06-063:An attacker could try to exploit the vulnerability by creating a specially crafted message and sending the message to an affected system.In order to exploit this vulnerability an attacker must be authenticated on the affected network.",
+        "impact": "An authenticated attacker may be able to execute arbitrary code or cause a denial of service condition."
+      }
+    ],
+    "CVE-2006-4774": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/821420",
+        "title": "Cisco IOS fails to properly handle summary packets in the VLAN Trunking Protocol",
+        "overview": "Cisco IOS fails to properly handle summary packets in the VLAN Trunking Protocol. This vulnerability may allow a remote, unauthenticated attacker to cause a denial-of-service condition.",
+        "description": "Cisco's VLAN Trunking Protocol (VTP) provides the ability to manage the addition, deletion, and renaming of Virtual Local Area Networks (VLANs) across an entire network. VTP is supported on a number of different Cisco products in both the IOS and CatOS operating systems. According to Cisco Systems:When a switch receives a specially crafted summary packet, the switch will reset with a Software Forced Crash Exception. Messages for either \"watchdog timeout\" or \"CPU hog\" for process VLAN Manager will be seen prior to the software reset within the syslog messages generated by the switch. The packets must be received on a trunk enabled port.This vulnerability may be triggered by sending a switch running certain versions of Cisco IOS software a VTP version 1 summary frame with the VTP version field set to value 2.Note that this vulnerability affects Switches and Ethernet Switch Modules for Cisco 1800/2600/2800/3600/3700/3800 Series Routers running Cisco IOS software that have VTP Operating Mode as either \"server\" or \"client\". See Cisco Security Response cisco-sr-20060913-vtp for more detailed version information. Switches running CatOS and those configured with VTP operating mode as \"transparent\" are not affected by this vulnerability",
+        "impact": "A remote, unauthenticated attacker may be able to cause a denial of service condition."
+      }
+    ],
+    "CVE-2006-4775": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/175148",
+        "title": "Cisco IOS fails to properly verify the VTP configuration revision number",
+        "overview": "Cisco IOS fails to properly verify the VTP configuration revision number. This vulnerability may allow a remote, unauthenticated attacker to prevent changes to the VLAN database from being properly propagated throughout the VTP domain.",
+        "description": "Cisco's VLAN Trunking Protocol (VTP) provides the ability to manage the addition, deletion, and renaming of Virtual Local Area Networks (VLANs) across an entire network. VTP is supported on a number of different Cisco products in both the IOS and CatOS operating systems. According to Cisco Systems:Once the VTP configuration revision exceeds 0x7FFFFFFF, the output for the VTP configuration revision in show vtp status (on an IOS device) or show vtp domain (on a CatOS device) will display as a negative number. Operation of the switch is not affected, however further changes to the VLAN database may not be properly propagated throughout the VTP domain.This vulnerability may be triggered by sending a crafted VTP packet with a change in the configuration revision to an affected switch on a trunk enabled port. The crafted packet must include the correct domain name and VTP domain password to be effective. Note that this vulnerability affects Switches and Ethernet Switch Modules for Cisco 1800/2600/2800/3600/3700/3800 Series Routers running Cisco IOS software that have VTP Operating Mode as either \"server\" or \"client\" and Switches running CatOS. See Cisco Security Response cisco-sr-20060913-vtp for more detailed version information. Switches configured with VTP operating mode as \"transparent\" are not affected by this vulnerability",
+        "impact": "This vulnerability may allow a remote, unauthenticated attacker to prevent changes to the VLAN database from being properly propagated throughout the VTP domain."
+      }
+    ],
+    "CVE-2006-4776": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/542108",
+        "title": "Cisco IOS contains buffer overflow in VTP VLAN name handling",
+        "overview": "Cisco IOS fails to properly handle specially crafted VTP summary advertisement with overly long VLAN name. This vulnerability may allow a remote, unauthenticated attacker to execute arbitrary code or cause a denial-of-service condition.",
+        "description": "Cisco's VLAN Trunking Protocol (VTP) provides the ability to manage the addition, deletion, and renaming of Virtual Local Area Networks (VLANs) across an entire network. VTP is supported on a number of different Cisco products in both the IOS and CatOS operating systems. Some versions of IOS and CatOS contain a buffer overflow vulnerability in their handling of certain VTP summary advertisements. According to Cisco Systems:If a VTP summary advertisement is received with a Type-Length-Value (TLV) containing a VLAN name greater than 100 characters, the receiving switch will reset with an Unassigned Exception error. The packets must be received on a trunk enabled port, with a matching domain name and a matching VTP domain password (if configured).This vulnerability may be triggered by sending a switch running certain versions of Cisco IOS software a VTP summary advertisement with a VLAN name greater than 100 bytes. VLAN names in VTP are limited to 255 bytes in length.Note that this vulnerability affects Switches and Ethernet Switch Modules for Cisco 1800/2600/2800/3600/3700/3800 Series Routers running Cisco IOS software that have VTP Operating Mode as either \"server\" or \"client\". See Cisco Security Response cisco-sr-20060913-vtp for more detailed version information. Switches running CatOS and those configured with VTP operating mode as \"transparent\" are not affected by this vulnerability",
+        "impact": "This vulnerability may allow a remote, unauthenticated attacker to execute arbitrary code or cause a denial-of-service condition on an affected device."
+      }
+    ],
+    "CVE-2006-4777": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/377369",
+        "title": "Microsoft DirectAnimation Path ActiveX control fails to validate input",
+        "overview": "The Microsoft DirectAnimation Path ActiveX control fails to properly validate input. This may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The Microsoft DirectAnimation Path object is an ActiveX control that is used to move objects around the page. This ActiveX control fails to validate input to several of its methods, which can cause Internet Explorer or another host application to crash in an exploitable manner.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause Internet Explorer (or the program using the WebBrowser control) to crash."
+      }
+    ],
+    "CVE-2006-4819": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/484380",
+        "title": "Opera Web Browser fails to properly process overly long URLs",
+        "overview": "The Opera Web Browser fails to properly process overly long URLs. This vulnerability may allow arbitrary code execution.",
+        "description": "Opera is a multi-platform web browser that is available for a range of operating systems and embedded Internet products. Opera contains a heap buffer overflow vulnerability in the way that it parses tags containing long URLs. This vulnerability could be exploited by a remote attacker with the ability to construct a web page containing a specially crafted malicious tag and the ability to coerce an Opera user into visiting the page.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the user running the vulnerable version of Opera or cause the browser to crash, resulting in a denial of service condition."
+      }
+    ],
+    "CVE-2006-4868": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/416092",
+        "title": "Microsoft Internet Explorer VML stack buffer overflow",
+        "overview": "Microsoft Internet Explorer (IE) fails to properly handle Vector Markup Language tags. This vulnerability may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft IE version 5.0 and higher supports the Vector Markup Language (VML), which is a set of XML tags for drawing vector graphics. IE fails to properly handle malformed VML tags allowing a stack buffer overflow to occur. If a remote attacker can persuade a user to access a specially crafted web page with IE, that attacker may be able to trigger the buffer overflow. In addition, an attacker could deliver an HTML email message or entice a user to select an HTML document in Windows Explorer. On Windows XP SP2 systems the vulnerable component (VGX.DLL) is compiled with the /GS (Buffer Security Check) flag. However, exploits using techniques to circumvent the Buffer Security Check are publicly available.Note that this vulnerability is actively being exploited.",
+        "impact": "A remote, unauthenticated attacker can execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2006-4924": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/787448",
+        "title": "OpenSSH fails to properly handle multiple identical blocks in a SSH packet",
+        "overview": "OpenSSH fails to properly handle multiple identical blocks in a SSH packet. This vulnerability may cause a denial-of-service condition.",
+        "description": "OpenSSH is an open source client and server implementation of the Secure Shell (SSH) protocol. OpenSSH includes a cyclic redundancy check (CRC) compensation attack detection function that produces a checksum on a block of data in a SSH packet. This function was introduced to defend against exploitation of CRC weaknesses in version 1 of the SSH protocol (see VU#13877). Multiple identical blocks contained within a SSH packet may trigger a computationally expensive operation within the CRC attack detector that can lead to a denial of service. According to the OpenSSH 4.4 release notes:[This vulnerability]...would cause sshd(8) to spin until the login grace time expired.The OpenSSH sshd daemon is only vulnerable when SSH protocol version 1 is enabled.",
+        "impact": "A remote, unauthenticated attacker could cause a denial-of service condition by sending specially crafted packets to the OpenSSH server that would cause it to use excessive CPU time until a connection timeout occurs."
+      }
+    ],
+    "CVE-2006-4965": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/751808",
+        "title": "Apple QuickTime remote command execution vulnerability",
+        "overview": "Apple QuickTime contains a vulnerability that may allow an attacker to pass arbitrary commands to other applications.",
+        "description": "Apple QuickTime is a media player that is available for Microsoft Windows and Apple OS X. Apple QuickTime includes browser plugins for Internet Explorer, Safari, and Netscape-compatible browsers.QuickTime includes the ability for developers to control how QuickTime movies are launched, what controls are displayed to the user, and other actions. To specify these parameters, developers can create QuickTime link (.qtl) files. QuickTime link files can be embedded in web pages and launched automatically when a user visits a website.The qtnext parameter can be used in QuickTime link files to specify the url of a multimedia file to load and play. The multimedia file may be hosted on a web page or stored locally.Apple QuickTime incorrectly determines the command line used to launch the default web browser on Microsoft Windows systems. Rather than using the ShellExecute method, QuickTime determines the default handler for .HTM files and then crafts its own command line for the registered application. Any protective flags in the registered file handler are stripped out by QuickTime.Current proof-of-concept code targets systems where Mozilla Firefox is the default handler for .HTM files. Other applications are also affected by this vulnerability, although the impact may vary based on what command line parameters the application accepts.",
+        "impact": "By convincing a user to open a specially crafted QuickTime file, a remote, unauthenticated attacker may be able execute arbitrary commands on a vulnerable system."
+      }
+    ],
+    "CVE-2006-5084": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/202604",
+        "title": "Skype for Mac contains a format string error in the handling of URI arguments",
+        "overview": "Skype for Mac contains a format string vulnerability in the handling of URIs, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Skype software provides telephone service over IP networks. There is a format string vulnerability in the NSRunAlertPanel function in the routines that handle Skype-specific URIs, such as skype://.",
+        "impact": "By sending a specially crafted URI to Skype, a remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the user. Such a URI can be sent to Skype by convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment). The attacker could also cause Skype to crash."
+      }
+    ],
+    "CVE-2006-5143": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/361792",
+        "title": "Computer Associates Discovery Service buffer overflow",
+        "overview": "Multiple Computer Associates products contain a buffer overflow in the code that handles the Discovery Service protocol. This vulnerability may allow a remote, unauthenticated attacker to execute arbitrary code.",
+        "description": "Computer Associates BrightStor ARCserve Backup, BrightStor Enterprise Backup, CA Server Protection Suite, and CA Business Protection Suite software use a protocol known as the Discovery Service to find other BrightStor and Protection Suite installations. A lack of validation on Discovery Service packets may allow a buffer overflow to occur. This vulnerability only affects Computer Associates BrightStor ARCserve and Protection Suite products for the Microsoft Windows platform. For more information, including a list of affected products, refer to the Computer Associates BrightStor ARCserve Backup Security Notice.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with SYSTEM privileges."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/860048",
+        "title": "Computer Associates BrightStor ARCserv and Protection Suite products RPC buffer overflow vulnerabilities",
+        "overview": "Multiple vulnerabilities exist in Computer Associates backup products. If successfully exploited, these vulnerabilities may allow an attacker to execute arbitrary code.",
+        "description": "BrightStor ARCserve Backup is a backup and data retention tool that integrates with other BrightStor Data Availability and BrightStor Storage Management solutions. Computer Associates Protection Suites offer multiple Computer Associates security and data recovery products in a single package. BrightStor and CA (Computer Associates) Protection Suite products contain multiple buffer overflow vulnerabilities due to incorrect handling of RPC requests. These overflows may be exploited by sending a malformed RPC request with Opnum 43 (port 6503/tcp) or Opnum 45 (port 6503/tcp) to a vulnerable system.Note that only the Microsoft Windows versions of Computer Associates products are affected by this vulnerability.For more information, including a list of affected products, refer to the Computer Associates Security Advisory.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with SYSTEM privileges."
+      }
+    ],
+    "CVE-2006-5268": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/768681",
+        "title": "Trend Micro ServerProtect contains multiple vulnerabilities",
+        "overview": "Trend Micro ServerProtect contains multiple vulnerabilities. The most severe of these vulnerabilities may allow an attacker to execute commands, view sensitive data, or cause a system to crash.",
+        "description": "Trend Micro ServerProtect is designed to detect and remove viruses from files. ServerProtect contains vulnerabilities, including multiple heap overflows. For more information on these issues see:IBM X-Force Alert 307 - Trend Micro ServerProtect Unauthenticated Remote AdministrationIBM X-Force Alert 308 - Trend Micro ServerProtect [PROCEDURE NAME REDACTED] Heap OverflowIBM X-Force Alert 309 - Trend Micro ServerProtect [PROCEDURE NAME REDACTED] Heap Overflows (3)IBM X-Force Alert 310 - Trend Micro ServerProtect [PROCEDURE NAME REDACTED] Heap Overflows (3)Note that these issues affect Trend Micro ServerProtect versions 5.58 and 5.7.",
+        "impact": "A remote, unauthenticated attacker may be able to gain access with the privileges of the ServerProtect account or an administrator account and execute arbitrary commands, view log files or other sensitive data, or cause a vulnerable system to crash."
+      }
+    ],
+    "CVE-2006-5269": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/768681",
+        "title": "Trend Micro ServerProtect contains multiple vulnerabilities",
+        "overview": "Trend Micro ServerProtect contains multiple vulnerabilities. The most severe of these vulnerabilities may allow an attacker to execute commands, view sensitive data, or cause a system to crash.",
+        "description": "Trend Micro ServerProtect is designed to detect and remove viruses from files. ServerProtect contains vulnerabilities, including multiple heap overflows. For more information on these issues see:IBM X-Force Alert 307 - Trend Micro ServerProtect Unauthenticated Remote AdministrationIBM X-Force Alert 308 - Trend Micro ServerProtect [PROCEDURE NAME REDACTED] Heap OverflowIBM X-Force Alert 309 - Trend Micro ServerProtect [PROCEDURE NAME REDACTED] Heap Overflows (3)IBM X-Force Alert 310 - Trend Micro ServerProtect [PROCEDURE NAME REDACTED] Heap Overflows (3)Note that these issues affect Trend Micro ServerProtect versions 5.58 and 5.7.",
+        "impact": "A remote, unauthenticated attacker may be able to gain access with the privileges of the ServerProtect account or an administrator account and execute arbitrary commands, view log files or other sensitive data, or cause a vulnerable system to crash."
+      }
+    ],
+    "CVE-2006-5559": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/589272",
+        "title": "ADODB.Connection ActiveX control memory corruption vulnerability",
+        "overview": "The Execute() function of the ADODB.Connection ActiveX object contains an unspecified vulnerability. This may allow a remote, unauthenticated attacker to cause Internet Explorer to crash or possibly execute arbitrary code.",
+        "description": "Microsoft ADO (ActiveX Data Objects) are \"... language-neutral object model that expose data raised by an underlying OLE DB Provider.\" The ADODB.Connection ActiveX control contains a vulnerability that can cause memory corruption in the application that is hosting the control, such as Internet Explorer.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause Internet Explorer (or the program using the WebBrowser control) to crash."
+      }
+    ],
+    "CVE-2006-5579": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/599832",
+        "title": "Microsoft Internet Explorer Script Error Handling Memory Corruption Vulnerability",
+        "overview": "A vulnerability in the way Microsoft Internet Explorer handles certain script errors may lead to memory corruption that may allow remote execution of arbitrary code.",
+        "description": "Microsoft Internet Explorer contains a memory corruption vulnerability that could be exploited when handling script errors. According to Microsoft Security Bulletin MS06-072:Internet Explorer attempts to access previously freed memory when handling script errors in certain situations.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or cause a denial-of-service condition."
+      }
+    ],
+    "CVE-2006-5679": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/552136",
+        "title": "Apple Mac OS X UFS filesystem integer overflow vulnerability",
+        "overview": "There is an integer overflow in the ffs_mountfs() function, which is used by Apple's OS X operating system to handle UFS disc images.",
+        "description": "Unix File System (UFS) is a file system used by Unix and other similar operating systems. Apple OS X supports UFS, partitions, and images. There is an integer overflow error in the ffs_mountfs() function that may occur when an OS X system opens a UFS disc image. To trigger the overflow, an attacker would need to convince a user to open a specially crafted disc image. Note that the Safari web browser's default settings consider UFS disc images to be a safe file type, and will automatically open them after downloading.",
+        "impact": "A remote, unauthenticated attacker with the ability to supply a specially crafted DMG file may be able to cause an affected system to crash, thereby creating a denial of service. The original reporter states that an attacker may also be able to execute arbitrary code using this vulnerability. However, this has not been confirmed."
+      }
+    ],
+    "CVE-2006-5710": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/191336",
+        "title": "Apple AirPort driver fails to properly handle probe response frames",
+        "overview": "A buffer overflow in certain Apple AirPort drivers may allow an attacker to execute arbitrary code with system privileges, or create a denial-of-service condition.",
+        "description": "Apple Airport products are 802.11b and 802.11g compatible wireless devices that are produced by Apple. Airport Extreme wireless adapters are capable of joining 802.11g wireless networks.A buffer overflow vulnerability has been reported in Orinoco-based Airport drivers. An attacker within radio range may be able to trigger the overflow by sending a specially-crafted 802.11 management frame to a vulnerable system. Since 802.11b and 802.11g management frames are not encrypted, using wireless encryption (WEP/WPA) does not mitigate this vulnerability.Per Apple, this vulnerability affects eMac, iBook, iMac, PowerBook G3, PowerBook G4, and Power Mac G4 systems using their original wireless adapter. Airport Extreme devices and drivers are not affected by this vulnerability.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with system privileges."
+      }
+    ],
+    "CVE-2006-5857": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/698924",
+        "title": "Adobe Acrobat allows pointer overwrite via specially crafted PDF file",
+        "overview": "Adobe Acrobat and Adobe Reader fail to properly handle a specially crafted PDF file, which may allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Adobe Acrobat and Adobe Reader are applications designed to create and view Portable Document Format (PDF) files. A specially crafted PDF file can cause heap memory corruption when it is opened in these applications. This memory corruption may allow an attacker to overwrite the contents of the EIP (Extended Instruction Pointer) register, thus gaining control of program execution flow. According to Adobe, the affected versions are:Adobe Reader 7.0.8 and earlier versionsAdobe Acrobat Standard, Professional and Elements 7.0.8 and earlier versionsAdobe Acrobat 3D",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2006-5864": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/352825",
+        "title": "GNU gv buffer overflow vulnerability",
+        "overview": "A buffer overflow vulnerability exists in the GNU gv viewer application. Successful exploitation of this vulnerability may allow an attacker to execute arbitrary code, or cause a denial-of-service condition.",
+        "description": "From the GNU gv website:GNU gv allows to view and navigate through PostScript and PDF documents on an X display by providing a user interface for the ghostscript interpreter. gv is a improved derivation of Timothy O. Theisen's Ghostview developed by Johannes Plass. A buffer overflow vulnerability exists in the GNU gv viewer. An attacker may be able to trigger the overflow by convincing a user to open a specially-crafted PostScript file.Note that GNU gv is maintained and packaged by many vendors. Please see the systems affected portion of this document for a list of vendors who distribute GNU gv.",
+        "impact": "A remote, unauthenticated attacker may be able to execute code with the privileges of the user running GNU gv."
+      }
+    ],
+    "CVE-2006-5870": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/220288",
+        "title": "OpenOffice fails to properly process WMF and EMF files",
+        "overview": "Multiple buffer overflow vulnerabilities exist in the OpenOffice.org office suite. If successfully exploited, these vulnerabilities may allow an attacker to execute arbitrary code on a vulnerable system.",
+        "description": "OpenOffice.org is a free office suite that is available for multiple operating systems. Windows Metafile (WMF) is a vector graphics format that was designed by Microsoft for Windows 3.0. A newer version of WMF, known as Enhanced Metafile (EMF) was designed for 32-bit operating systems.OpenOffice.org supports importing and exporting to WMF and EMF files. There are multiple errors within the handling of the EMR_POLYPOLYGON, EMR_POLYPOLYGON16, and META_ESCAPE records that may result in a buffer overflow. An attacker may be able to exploit these vulnerabilities by convincing a user to open a specially crafted WMF or EMF file that triggers the overflow.Note that Sun StarOffice versions 6, 7, and 8 are also vulnerable.",
+        "impact": "A remote unauthenticated attacker may be able to execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2006-5882": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/MAPG-6VGNHW",
+        "title": "Broadcom wireless driver fails to properly process 802.11 probe response frames",
+        "overview": "A buffer overflow vulnerability exists in the Broadcom BCMWL5.SYS wireless driver. Successful exploitation of this vulnerability may allow an attacker to execute arbitrary code, or cause a denial-of-service condition.",
+        "description": "The BCMWL5.SYS driver is a wireless (802.11) device driver produced by Broadcom. See the systems affected section of this document for a list of vendors that ship this driver. In addition to laptop and desktop systems, this driver may also be used in access points, media centers, and other network appliances.A buffer overflow vulnerability exists in the BCMWL5.SYS driver. An attacker may be able to trigger the overflow by sending a malformed SSID probe response frame to a vulnerable system. Since 802.11b and 802.11g management frames are not encrypted, using wireless encryption (WEP/WPA) does not mitigate this vulnerability.Note that Linux or Unix systems that use NDISWrapper or similar technologies to load the BCMWL5.SYS driver may also be vulnerable.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code, or cause a denial-of-service condition on a vulnerable system."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/209376",
+        "title": "Broadcom wireless driver fails to properly process 802.11 probe response frames",
+        "overview": "A buffer overflow vulnerability exists in the Broadcom BCMWL5.SYS wireless driver. Successful exploitation of this vulnerability may allow an attacker to execute arbitrary code, or cause a denial-of-service condition.",
+        "description": "The BCMWL5.SYS driver is a wireless (802.11) device driver produced by Broadcom. See the systems affected section of this document for a list of vendors that ship this driver. In addition to laptop and desktop systems, this driver may also be used in access points, media centers, and other network appliances.A buffer overflow vulnerability exists in the BCMWL5.SYS driver. An attacker may be able to trigger the overflow by sending a malformed SSID probe response frame to a vulnerable system. Since 802.11b and 802.11g management frames are not encrypted, using wireless encryption (WEP/WPA) does not mitigate this vulnerability.Note that Linux or Unix systems that use NDISWrapper or similar technologies to load the BCMWL5.SYS driver may also be vulnerable.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code, or cause a denial-of-service condition on a vulnerable system."
+      }
+    ],
+    "CVE-2006-6125": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/403152",
+        "title": "NetGear wireless driver fails to properly process specially-crafted 802.11 management frames",
+        "overview": "A buffer overflow vulnerability exists in the Netgear WG311ND5.SYS wireless driver. Successful exploitation of this vulnerability may allow an attacker to execute arbitrary code, or cause a denial-of-service condition.",
+        "description": "The WG311ND5.SYS driver is a wireless (802.11g) device driver produced by Netgear that ships with the WG311v1 wireless adapter.A heap buffer overflow vulnerability has been reported in the WG311ND5.SYS driver. This overflow occurs because the driver does not properly process the SSID information element part of 802.11 management frames. An attacker within radio range may be able to trigger the overflow by sending a specially-crafted 802.11 management frame to a vulnerable system. Since 802.11b and 802.11g management frames are not encrypted or authenticated, using wireless encryption (WEP/WPA) does not mitigate this vulnerability. Note that Linux or Unix systems that use NDISWrapper or similar technologies to load the WG311ND5.SYS driver may also be vulnerable.",
+        "impact": "An attacker may be able to execute arbitrary code, or cause a denial-of-service condition."
+      }
+    ],
+    "CVE-2006-6134": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/208769",
+        "title": "Microsoft Windows Media Player fails to properly handle malformed Windows Media Metafiles",
+        "overview": "Windows Media Player does not properly handle malformed Windows Media Metafiles. This vulnerability may allow a remote attacker to execute arbitrary code or crash Windows Media Player.",
+        "description": "Windows Media Player (WMP) is a multimedia application that comes with Microsoft Windows. According to Microsoft:Advanced Stream Redirector (.asx) files, also known as Windows Media Metafiles, are text files that provide information about a file stream and its presentation. ASX files go beyond the simple task of defining playlists to provide Windows Media Player with information about how to present particular media items of the playlist.Windows Media Metafiles are based on XML syntax and can be encoded in either ANSI or UNICODE (UTF-8) format. They are made up of various elements with their associated tags and attributes. Each element in a Windows Media metafile defines a particular setting or action in Windows Media Player. WMP fails to properly handle Windows Media Metafiles. Specifically, if a URL with an unsupported protocol is embdedded in a Windows Media Metafile and accessed with WMP, a limited heap-based buffer overflow may occur. Note that file extensions for Windows Media Metafiles include .wax, .wvx, .wmx, and .asx. More information concerning Windows Media Player files is available in the Windows Media Player File Name Extensions web page.Exploit code for this vulnerability is publicly available.",
+        "impact": "Although the buffer overflow is limited, it may still be possible to corrupt memory in a way that can allow an attacker to execute code or crash WMP."
+      }
+    ],
+    "CVE-2006-6296": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/914617",
+        "title": "Microsoft Windows Print Spooler service fails to properly handle RPC requests",
+        "overview": "The Microsoft Windows Print Spooler fails to properly handle malformed RPC requests. This vulnerability may allow a remote attacker to cause a denial-of-service condition.",
+        "description": "The Microsoft Print Spooler service manages printing operations on a system. The Print Spooler service fails to properly handle malformed RPC requests. This vulnerability can be triggered by sending a specially crafted RPC request to a vulnerable system.Note that exploit code for this vulnerability is publicly available.",
+        "impact": "A remote, unauthenticated attacker could consume large amounts of system resources on an affected device, thereby creating a denial of service."
+      }
+    ],
+    "CVE-2006-6500": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/722244",
+        "title": "Mozilla products vulnerable to heap overflow via miscalculated size during conversion of an image",
+        "overview": "A vulnerability exists in Mozilla products that may allow a remote attacker to execute arbitrary code or cause a denial of service.",
+        "description": "Mozilla products contain a vulnerability in the CSS cursor property on Microsoft Windows that may result in a crash when handling malicious images. According to the Mozilla Foundation Security Advisory 2006-69:A miscalculated size during conversion of the image to a Windows bitmap can result in a heap buffer overflow which could be used to compromise the victim's computer.Mozilla also states that this flaw affects both Firefox 2 and Firefox 1.5 but not the earlier Firefox 1.0 or Mozilla Suite products.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or cause a denial of service."
+      }
+    ],
+    "CVE-2006-6501": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/263412",
+        "title": "Mozilla products vulnerable to privilege escalation via a JavaScript watch() function",
+        "overview": "A vulnerability exists in Mozilla products that may allow a remote attacker to gain elevated privileges.",
+        "description": "Mozilla products contain a vulnerability in the way the JavaScript watch() function is handled that may result in privilege escalation. According to the Mozilla Foundation Security Advisory 2006-70:Shutdown demonstrated that it was possible to use a JavaScript watch() to gain elevated privilege.",
+        "impact": "A remote, unauthenticated attacker may be able to gain elevated privileges."
+      }
+    ],
+    "CVE-2006-6504": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/928956",
+        "title": "Mozilla SVG memory corruption vulnerability",
+        "overview": "Mozilla products contain a memory corruption vulnerability related to SVG processing. This vulnerability may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Scalable Vector Graphics (SVG) processing code in Mozilla Firefox and SeaMonkey contains a memory corruption vulnerability. According to Mozilla Foundation Security Advisory 2006-73:Appending an SVG comment DOM node from one document into another type of document such as HTML in some cases results in a crash due to memory corruption that can be exploited to run arbitrary code. This flaw was introduced in the Firefox 1.5.0.4 release, prior versions are unaffected.",
+        "impact": "By convincing a user to visit a specially crafted website, a remote, unauthenticated attacker may be able to execute arbitrary code."
+      }
+    ]
+  }
+}

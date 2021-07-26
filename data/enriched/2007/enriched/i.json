@@ -1,0 +1,63 @@
+{
+  "year": 2007,
+  "total": 8,
+  "reference": "bugzilla.redhat.com",
+  "reports": {
+    "CVE-2007-0004": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=199715",
+        "title": "CVE-2007-0004 open() succeeds incorrectly on root_squash NFS when mounted with noacl",
+        "description": "Escalated to Bugzilla from IssueTracker"
+      }
+    ],
+    "CVE-2007-0062": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=339561",
+        "title": "CVE-2007-0062 dhcpd possible DoS via large max-message-size option",
+        "description": "ISC dhcpd is prone to denial of service attack (daemon crash) when DHCP clientspecifies large value for dhcp-max-message-size in the request.Problem only occurs when dhcpd is configured to provide clients with very largeamount of DHCP options. Such configurations seems very unlikely to exist in thereal deployments."
+      }
+    ],
+    "CVE-2007-0455": [
+      {
+        "url": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=224607",
+        "title": "CVE-2007-0455 gd: buffer overrun",
+        "description": "Kees Cook from Ubuntu reported a \"off-the-end-of-string increment\", which couldtheoretically lead ot a buffer overflow.This flaw would only be exploitable if a JIS-encoded font is used whenprocessing a special malicious string.The issue here is that the NULL terminator is incremented, which could lead tounknown results during the processing of the malicious string.Index: gdft.c===================================================================RCS file: /repository/gd/libgd/gdft.c,vretrieving revision 1.28diff -u -p -r1.28 gdft.c--- gdft.c 3 Jan 2007 21:21:21 -0000 1.28+++ gdft.c 24 Jan 2007 23:00:55 -0000@@ -1178,7 +1178,7 @@ fprintf(stderr,\"dpi=%d,%d metric_res=%d { ch = c & 0xFF; /* don't extend sign */ }- next++;+ if (*next) next++; } break; case gdFTEX_Big5:"
+      }
+    ],
+    "CVE-2007-0988": [
+      {
+        "url": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=228858",
+        "title": "CVE-2007-0906 PHP security issues (CVE-2007-0907, CVE-2007-0908, CVE-2007-0909, CVE-2007-0910, CVE-2007-0988)",
+        "description": "Description of problem:1. If unserializing untrusted data on 64-bit platforms thezend_hash_init() function can be forced to enter an infinite loop,consuming CPU resources, for a limited length of time, until thescript timeout alarm aborts the script (CVE-NO-NAME)2. If a script uses the imap_mail_compose() function to create a new MIMEmessage based on an input body from an untrusted source, an attacker may be ableto force a heap overflow (CVE-2006-0906)3. If the format string could passed to one of the functions in the printf()family could be controlled by an attacker via untrusted data, then anout-of-bounds memory read could crash the Apache child process (CVE-2006-0909)4. If very long strings are passed to the str_replace() function then an integeroverflow could occur in memory allocation, which could lead to a heap bufferoverflow. (CVE-2006-0906)5. If the wddx extension is used to import WDDX data from an untrusted source,certain WDDX input packets may allow a random portion of heap memory to beexposed. (CVE-2006-0908)6. If the odbc_result_all() function is used to displaydata from a database, and the contents of the database table are underthe control of an attacker, a format string vulnerability is possible.(CVE-2006-0909)7. Unspecified stack overflows and stack corruptions, and super-global clobbersvulnerabilities in the session extension. (CVE-2006-0906, CVE-2006-0910)Affects: RHEL3, RHEL4"
+      }
+    ],
+    "CVE-2007-0994": [
+      {
+        "url": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=230733",
+        "title": "CVE-2007-0994 Thunderbird arbitrary javascript command execution",
+        "description": "A bug was found in the way Thunderbird handles <img> tags. To quote theupstream bug:When javascript: url is set by script, the access checks work properly. <img id=\"i\"> i.src = \"javascript:...\";But, when javascript: url is set by <img> (or <link>, <style>) tag, the accesschecks don't work properly. <img src=\"javascript:...\">Thus, sandboxed script can access xbl.method's clone parent and xbl compilationscope to run arbitrary code with chrome privileges."
+      }
+    ],
+    "CVE-2007-1592": [
+      {
+        "url": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=233478",
+        "title": "CVE-2007-1592 IPv6 oops triggerable by any user",
+        "description": "We accidently copy the ipv6 flow list to child sockets of listening TCPsockets, but don't bump the reference count, clone the object, etc. Andthe list linkage of this object is not built such that multiple socketscan point to it anyways.Therefore if a listening socket has a flow list attached, when a childconnection closes we'll OOPS or double free the flow list entry.Any user can trigger this.Steps to reproduce this behavior:1) Open listening IPV6 TCP socket2) Attach a flowlabel with IPV6_FLOWLABEL_MGR socket option, freq->flr_action == IPV6_FL_A_GET and appropriate metadata.3) Connect to that listening socket, and close()http://marc.info/?l=linux-netdev&m=117406721731891&w=2"
+      }
+    ],
+    "CVE-2007-1660": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=315881",
+        "title": "CVE-2007-1660 pcre regular expression flaws",
+        "description": "Tavis Ormandy of the Google Security Team reported multiple pcre regularexpressions flaws. Here are the details pasted from Tavis' mail:CVE-2007-1660:multiple forms of character class had their sizes miscalculated oninitial passes, resulting in too little memory being allocated, thiswas also inadvertently fixed in version 7.0, where the compile phasewas entirely re-engineered (and much improved, from a securitystandpoint).Acknowledgements:Red Hat would like to thank Tavis Ormandy and Will Drewry for properly disclosing these issues."
+      }
+    ],
+    "CVE-2007-1667": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=231684",
+        "title": "CVE-2007-1667 XGetPixel() integer overflow",
+        "description": "A bug recently showed up in the Debian BTS that describes an integer overflow inX's XGetPixel() functionhttp://bugs.debian.org/cgi-bin/bugreport.cgi?bug=414045The report incorrectly states it is a buffer overflow. The bug also has aproposed patch and reproducer for this flaw.The issue is that the XInitImage() function allows the caller to supply sillyvalues, which can cause several integer overflow. A call to XGetPixel() canalso result in integer overflows. While one would expect the callingapplication to sanitize the data passed to XInitImage(), the library should alsobe smart enough to prevent the caller from giving it bad data."
+      }
+    ]
+  }
+}

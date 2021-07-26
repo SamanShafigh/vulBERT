@@ -1,0 +1,915 @@
+{
+  "year": 2011,
+  "total": 136,
+  "reference": "github.com",
+  "reports": {
+    "CVE-2011-0006": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/867c20265459d30a01b021a9c1e81fb4c5832aa9",
+        "title": "ima: fix add LSM rule bug",
+        "body": "If security_filter_rule_init() doesn't return a rule, then not everythingis as fine as the return code implies.This bug only occurs when the LSM (eg. SELinux) is disabled at runtime.Adding an empty LSM rule causes ima_match_rules() to always succeed,ignoring any remaining rules. default IMA TCB policy: # PROC_SUPER_MAGIC dont_measure fsmagic=0x9fa0 # SYSFS_MAGIC dont_measure fsmagic=0x62656572 # DEBUGFS_MAGIC dont_measure fsmagic=0x64626720 # TMPFS_MAGIC dont_measure fsmagic=0x01021994 # SECURITYFS_MAGIC dont_measure fsmagic=0x73636673 < LSM specific rule > dont_measure obj_type=var_log_t measure func=BPRM_CHECK measure func=FILE_MMAP mask=MAY_EXEC measure func=FILE_CHECK mask=MAY_READ uid=0Thus without the patch, with the boot parameters 'tcb selinux=0', addingthe above 'dont_measure obj_type=var_log_t' rule to the default IMA TCBmeasurement policy, would result in nothing being measured. The patchprevents the default TCB policy from being replaced.Signed-off-by: Mimi Zohar <zohar@us.ibm.com>Cc: James Morris <jmorris@namei.org>Acked-by: Serge Hallyn <serge.hallyn@canonical.com>Cc: David Safford <safford@watson.ibm.com>Cc: <stable@kernel.org>Signed-off-by: Andrew Morton <akpm@linux-foundation.org>Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2011-0469": [
+      {
+        "url": "https://github.com/openSUSE/open-build-service/commit/76b0ab003f34435ca90d943e02dd22279cdeec2a",
+        "title": "[backend] fix argument handling in lxc command execution",
+        "body": ""
+      },
+      {
+        "url": "https://github.com/openSUSE/open-build-service/commit/23c8d21c75242999e29379e6ca8418a14c8725c6",
+        "title": "[backend] verify file names return by source service (do not allow fi…",
+        "body": "…les with new lines #679151)"
+      }
+    ],
+    "CVE-2011-0530": [
+      {
+        "url": "https://github.com/yoe/nbd/commit/3ef52043861ab16352d49af89e048ba6339d6df8",
+        "title": "Fix buffer size checking",
+        "body": "Yes, this means we've re-introduced CVE-2005-3534. Sigh."
+      }
+    ],
+    "CVE-2011-0699": [
+      {
+        "url": "https://github.com/BlankOn/linux-debian/blob/master/debian/changelog.BlankOn",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-0716": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/6b0d6a9b4296fa16a28d10d416db7a770fc03287",
+        "title": "bridge: Fix mglist corruption that leads to memory corruption",
+        "body": "The list mp->mglist is used to indicate whether a multicast groupis active on the bridge interface itself as opposed to one of theconstituent interfaces in the bridge.Unfortunately the operation that adds the mp->mglist node to thelist neglected to check whether it has already been added. Thisleads to list corruption in the form of nodes pointing to itself.Normally this would be quite obvious as it would cause an infiniteloop when walking the list. However, as this list is never actuallywalked (which means that we don't really need it, I'll get rid ofit in a subsequent patch), this instead is hidden until we performa delete operation on the affected nodes.As the same node may now be pointed to by more than one node, thedelete operations can then cause modification of freed memory.This was observed in practice to cause corruption in 512-byte slabs,most commonly leading to crashes in jbd2.Thanks to Josef Bacik for pointing me in the right direction.Reported-by: Ian Page Hands <ihands@redhat.com>Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2011-0739": [
+      {
+        "url": "https://github.com/mikel/mail/raw/master/patches/20110126_sendmail.patch",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-0766": [
+      {
+        "url": "https://github.com/erlang/otp/commit/f228601de45c5b53241b103af6616453c50885a5",
+        "title": "Merge branch 'maint-r14' into dev",
+        "body": ""
+      }
+    ],
+    "CVE-2011-0989": [
+      {
+        "url": "https://github.com/mono/mono/commit/035c8587c0d8d307e45f1b7171a0d337bb451f1e",
+        "title": "Allow only primitive types/enums in RuntimeHelpers.InitializeArray ().",
+        "body": ""
+      }
+    ],
+    "CVE-2011-0991": [
+      {
+        "url": "https://github.com/mono/mono/commit/3f8ee42b8c867d9a4c18c22657840d072cca5c3a",
+        "title": "Don't use finalization to cleanup dynamic methods.",
+        "body": "* reflection.c: Use a reference queue to cleanup dynamic methods instead of finalization. * runtime.c: Shutdown the dynamic method queue before runtime cleanup begins. * DynamicMethod.cs: No longer finalizable. * icall-def.h: Remove unused dynamic method icall. Fixes #660422 Implement a reference queue API. * gc.c: A reference queue allows one to queue callbcks for when objects are collected. It allows for safe cleanup of objects that can only be done when it is effectively collected. The major difference with regular finalization is that the collector makes sure the object was collected - and can't be resurrected. * gc-internal.h: Export entrypoints for the new API."
+      },
+      {
+        "url": "https://github.com/mono/mono/commit/89d1455a80ef13cddee5d79ec00c06055da3085c",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "https://github.com/mono/mono/commit/8eb1189099e02372fd45ca1c67230eccf1edddc0",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-0992": [
+      {
+        "url": "https://github.com/mono/mono/commit/722f9890f09aadfc37ae479e7d946d5fc5ef7b91",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1008": [
+      {
+        "url": "https://github.com/bestpractical/rt/commit/2338cd19ed7a7f4c1e94f639ab2789d6586d01f3",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1021": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/526b4af47f44148c9d665e57723ed9f86634c6e3",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1078": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/c4c896e1471aec3b004a693c689f60be3b17ac86",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1079": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/43629f8f5ea32a998d06d1bb41eefa0e821ff573",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1080": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/d846f71195d57b0bbb143382647c2c6638b04c5a",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1149": [
+      {
+        "url": "https://github.com/tmzt/g2root-kmod/tree/scotty2/scotty2",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1160": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/1309d7afbed112f0e8e90be9af975550caa0076b",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1180": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/d370af0ef7951188daeb15bae75db7ba57c67846",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1476": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/b769f49463711205d57286e64cf535ed4daf59e9",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1477": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/4d00135a680727f6c3be78f8befaac009030e4df",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1479": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/d0de4dc584ec6aa3b26fffea320a8457827768fc",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1572": [
+      {
+        "url": "https://github.com/sitaramc/gitolite/commit/4ce00aef84d1ff7c35f7adbbb99a6241cfda00cc",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1575": [
+      {
+        "url": "https://github.com/jedisct1/pure-ftpd/commit/65c4d4ad331e94661de763e9b5304d28698999c4",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1585": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/4ff67b720c02c36e54d55b88c2931879b7db1cd2",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1589": [
+      {
+        "url": "https://github.com/kraih/mojo/commit/b09854988c5b5b6a2ba53cc8661c4b2677da3818",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "https://github.com/kraih/mojo/issues/114",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1751": [
+      {
+        "url": "https://github.com/nelhage/virtunoid",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1759": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/0f22072ab50cac7983f9660d33974b45184da4f9",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1833": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/764355487ea220fdc2faf128d577d7f679b91f97",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-1937": [
+      {
+        "url": "https://github.com/webmin/webmin/commit/46e3d3ad195dcdc1af1795c96b6e0dc778fb6881",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2161": [
+      {
+        "url": "https://github.com/FFmpeg/FFmpeg/commit/8312e3fc9041027a33c8bc667bb99740fdf41dd5",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2182": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/cae13fe4cc3f24820ffb990c09110626837e85d4",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2206": [
+      {
+        "url": "https://github.com/djabberd/DJabberd/commit/b41d6dc247a175fe8e092d6ec2c460826fa62992",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2208": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/21c5977a836e399fc710ff2c5367845ed5c2527f",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2209": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/21c5977a836e399fc710ff2c5367845ed5c2527f",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2210": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/21c5977a836e399fc710ff2c5367845ed5c2527f",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2211": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/21c5977a836e399fc710ff2c5367845ed5c2527f",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2479": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/78f11a255749d09025f54d4e2df4fbcb031530e2",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2482": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/ea2bc483ff5caada7c4aa0d5fbf87d3a6590273d",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2486": [
+      {
+        "url": "https://github.com/davidben/nspluginwrapper/commit/7e4ab8e1189846041f955e6c83f72bc1624e7a98",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2494": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/1a51410abe7d0ee4b1d112780f46df87d3621043",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2495": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/1d1221f375c94ef961ba8574ac4f85c8870ddd51",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2496": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/982134ba62618c2d69fbbbd166d0a11ee3b7e3d8",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2517": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/208c72f4fe44fe09577e7975ba0e7fa0278f3d03",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2518": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/4e78c724d47e2342aa8fde61f6b8536f662f795f",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2521": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/fc66c5210ec2539e800e87d7b3a985323c7be96e",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2707": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/0d0138ebe24b94065580bd2601f8bb7eb6152f56",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2898": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/13fcb7bd322164c67926ffe272846d4860196dc6",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2909": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/819cbb120eaec7e014e5abd029260db1ca8c5735",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2929": [
+      {
+        "url": "https://github.com/rails/rails/commit/5f94b93279f6d0682fafb237c301302c107a9552",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2930": [
+      {
+        "url": "https://github.com/rails/rails/commit/8a39f411dc3c806422785b1f4d5c7c9d58e4bf85",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2931": [
+      {
+        "url": "https://github.com/rails/rails/commit/586a944ddd4d03e66dea1093306147594748037a",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2932": [
+      {
+        "url": "https://github.com/rails/rails/commit/bfc432574d0b141fd7fe759edfe9b6771dd306bd",
+        "title": "properly escape html to avoid invalid utf8 causing XSS attacks",
+        "body": ""
+      }
+    ],
+    "CVE-2011-2938": [
+      {
+        "url": "https://github.com/mantisbt/mantisbt/commit/317f3db3a3c68775de3acf3b15f55b1e3c18f93b",
+        "title": "Fix #13245: XSS issues with search.php parameters",
+        "body": "Net.Edit0r (Net.Edit0r@Att.net) from BlACK Hat Group[http://black-hg.org] posted a vulnerability report for an XSS issue insearch.php for MantisBT 1.2.6.The full report is available athttp://packetstormsecurity.org/files/104149filter_api.php is the culprit for this vulnerability as it passes usersupplied search parameters back into output without first escaping thevalues.It should be noted that numerous other XSS vulnerabilities (all related)have been fixed with this patch. In other words, it is not just theproject_id parameter to search.php that was affected - it was numerousother parameters/fields as well.The second SQL injection vulnerability identified by Net.Edit0r isinvalid because the only time we ever make reference to \"mbadmin\" in thesource code is:core.php:if ( file_exists( 'mantis_offline.php' ) && !isset( $_GET['mbadmin'] ) )This usage is safe because nothing is ever done with $_GET['mbadmin'].It may be the case that the user's customised version ofmantis_offline.php was incorrectly dumping the value of $_GET['mbadmin']to the screen. The default/sample mantis_offline.php has been checkedand does not print any dynamically created strings/user supplied values."
+      }
+    ],
+    "CVE-2011-3177": [
+      {
+        "url": "https://github.com/yast/yast-core/commit/7fe2e3df308b8b6a901cb2cfd60f398df53219de",
+        "title": "- ini-agent: added Write(.section_private.SECTION, BOOLEAN) (bnc#7136…",
+        "body": "…61, CVE-2011-3177)- system agent: added Write(.target.string, [filename, mode], content)svn merge -r66758:66764 http://svn.opensuse.org/svn/yast/branches/SuSE-Code-11-SP2-Branch/coresvn path=/trunk/core/; revision=67117"
+      }
+    ],
+    "CVE-2011-3178": [
+      {
+        "url": "https://github.com/openSUSE/open-build-service/commit/cbfe2ed36dd77c0843702935dea7f914bb599201",
+        "title": "[webui] check the value of the scheduler parameter",
+        "body": ""
+      }
+    ],
+    "CVE-2011-3186": [
+      {
+        "url": "https://github.com/rails/rails/commit/11dafeaa7533be26441a63618be93a03869c83a9",
+        "title": "fixing response splitting problem",
+        "body": ""
+      }
+    ],
+    "CVE-2011-3191": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/9438fabb73eb48055b58b89fc51e0bc4db22fabd",
+        "title": "cifs: fix possible memory corruption in CIFSFindNext",
+        "body": "The name_len variable in CIFSFindNext is a signed int that gets set tothe resume_name_len in the cifs_search_info. The resume_name_len howeveris unsigned and for some infolevels is populated directly from a 32 bitvalue sent by the server.If the server sends a very large value for this, then that value couldlook negative when converted to a signed int. That would make thatvalue pass the PATH_MAX check later in CIFSFindNext. The name_len wouldthen be used as a length value for a memcpy. It would then be treatedas unsigned again, and the memcpy scribbles over a ton of memory.Fix this by making the name_len an unsigned value in CIFSFindNext.Cc: <stable@kernel.org>Reported-by: Darren Lavender <dcl@hppine99.gbr.hp.com>Signed-off-by: Jeff Layton <jlayton@redhat.com>Signed-off-by: Steve French <sfrench@us.ibm.com>"
+      }
+    ],
+    "CVE-2011-3209": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/f8bd2258e2d520dff28c855658bd24bdafb5102d",
+        "title": "remove div_long_long_rem",
+        "body": "x86 is the only arch right now, which provides an optimized fordiv_long_long_rem and it has the downside that one has to be very careful thatthe divide doesn't overflow.The API is a little akward, as the arguments for the unsigned divide aresigned. The signed version also doesn't handle a negative divisor andproduces worse code on 64bit archs.There is little incentive to keep this API alive, so this converts the fewusers to the new API.Signed-off-by: Roman Zippel <zippel@linux-m68k.org>Cc: Ralf Baechle <ralf@linux-mips.org>Cc: Ingo Molnar <mingo@elte.hu>Cc: Thomas Gleixner <tglx@linutronix.de>Cc: john stultz <johnstul@us.ibm.com>Cc: Christoph Lameter <clameter@sgi.com>Signed-off-by: Andrew Morton <akpm@linux-foundation.org>Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2011-3211": [
+      {
+        "url": "https://github.com/solj/bcfg2/commit/46795ae451ca6ede55a0edeb726978aef4684b53",
+        "title": "Backported unescaped shell command fixes from master branch",
+        "body": ""
+      },
+      {
+        "url": "https://github.com/solj/bcfg2/commit/f4a35efec1b6a1e54d61cf1b8bfc83dd1d89eef7",
+        "title": "fixed security bugs with unescaped input to the shell",
+        "body": ""
+      }
+    ],
+    "CVE-2011-3346": [
+      {
+        "url": "https://github.com/bonzini/qemu/commit/7285477ab11831b1cf56e45878a89170dd06d9b9",
+        "title": "scsi-disk: lazily allocate bounce buffer",
+        "body": "It will not be needed for reads and writes if the HBA provides a sglist.In addition, this lets scsi-disk refuse commands with an excessiveallocation length, as well as limit memory on usual well-behaved guests.Signed-off-by: Paolo Bonzini <pbonzini@redhat.com>Signed-off-by: Kevin Wolf <kwolf@redhat.com>"
+      },
+      {
+        "url": "https://github.com/bonzini/qemu/commit/103b40f51e4012b3b0ad20f615562a1806d7f49a",
+        "title": "scsi-disk: commonize iovec creation between reads and writes",
+        "body": "Also, consistently use qiov.size instead of iov.iov_len.Signed-off-by: Paolo Bonzini <pbonzini@redhat.com>Signed-off-by: Kevin Wolf <kwolf@redhat.com>"
+      }
+    ],
+    "CVE-2011-3356": [
+      {
+        "url": "https://github.com/mantisbt/mantisbt/commit/d00745f5e267eba4ca34286d125de685bc3a8034",
+        "title": "Fix issue introduced previously whereby php_Self is now used unchecked.",
+        "body": "introduced previously by john attempting to fix symlinks. Since we now use php 5.2, we can make use of filter_var.This is a simpler version of what we were trying to do previously aka http://git.mantisforge.org/w/mantisbt.git?a=commitdiff;h=5ac1fdf32717d0c82cca7e7660dd4fd316a6a1b8Depending on server/mantis config this can lead to XSS issuesDavid: Backported from master branch and removed unreachable code branch.Signed-off-by: David Hicks <d@hx.id.au>"
+      }
+    ],
+    "CVE-2011-3357": [
+      {
+        "url": "https://github.com/mantisbt/mantisbt/commit/6ede60d3db9e202044f135001589cce941ff6f0f",
+        "title": "Fix #11481: Don't show bug group actions that can't be used",
+        "body": "Currently the bug action group dropdown list on view_all_bug_page.phpshows (almost) every available option, even if the current user isn'tauthorised to use those options.This patch implements checking to see which options are available to theuser for the issues which are currently shown on view_all_bug_page.php.Options are only displayed in the dropdown list if the user is able touse the option on at least one of the bugs displayed.Additionally, the logic behind when selection checkboxes are shownalongside a bug has been improved. Checkboxes won't display next to bugsthat the user cannot perform group actions on.Backported from master branch because it's needed to resolve an LFI/XSSissue in bug_actiongroup_ext.php."
+      },
+      {
+        "url": "https://github.com/mantisbt/mantisbt/commit/5b93161f3ece2f73410c296fed8522f6475d273d",
+        "title": "Rework the bug action group api such that we can easily convert this …",
+        "body": "…to an object in the future, and to validate calls to require once.This leads to a security issue identified by IBM's Appscan program, whereby calls to require_once are not validated.Depending on webserver configuration, this is a file inclusion vulnerability.There will be a follow up commit to config api - probably:-if( $g_project_override != null ) {+if( $g_project_override != null && $p_project == null ) {At the moment, the action group API calls config_get with a project parameter to use. This is ignored, due to project_override being set - so we either need to:a) change project override within the command list functionb) modifify config api to only use the project override *if* it is attempting to look up information on the default project.Backported from master-1.2.x branch. Note that this commit relies uponcommit 6dc3510 from the master branch(that hadn't been backported to 1.2.x).Conflicts: bug_actiongroup_ext.php bug_actiongroup_ext_page.php bug_actiongroup_page.php core/bug_group_action_api.phpSigned-off-by: David Hicks <d@hx.id.au>"
+      }
+    ],
+    "CVE-2011-3358": [
+      {
+        "url": "https://github.com/mantisbt/mantisbt/commit/0a636b37d3425aea7b781e7f25eaeb164ac54a3d",
+        "title": "Issue #13281: Fix Projax XSS issues (unescaped value attributes)",
+        "body": "Projax sucks. This is why it was replaced with jQuery in the masterbranch. However master-1.2.x still uses the older Projax code. TheProjax library doesn't attempt to escape values before dumping them inHTML output, thus leading to XSS issues.The easiest workaround is to pass in already-escaped values to theProjax functions.This issue was reported by High-Tech Bridge SA Security Research Lab aspart of their advisory #HTB23045, available athttps://www.htbridge.ch/advisory/multiple_vulnerabilities_in_mantisbt.html"
+      }
+    ],
+    "CVE-2011-3359": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/c85ce65ecac078ab1a1835c87c4a6319cf74660a",
+        "title": "b43: allocate receive buffers big enough for max frame len + offset",
+        "body": "Otherwise, skb_put inside of dma_rx can fail...https://bugzilla.kernel.org/show_bug.cgi?id=32042Signed-off-by: John W. Linville <linville@tuxdriver.com>Acked-by: Larry Finger <Larry.Finger@lwfinger.net>Cc: stable@kernel.org"
+      }
+    ],
+    "CVE-2011-3363": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/70945643722ffeac779d2529a348f99567fa5c33",
+        "title": "cifs: always do is_path_accessible check in cifs_mount",
+        "body": "Currently, we skip doing the is_path_accessible check in cifs_mount ifthere is no prefixpath. I have a report of at least one server howeverthat allows a TREE_CONNECT to a share that has a DFS referral at itsroot. The reporter in this case was using a UNC that had no prefixpath,so the is_path_accessible check was not triggered and the box later hita BUG() because we were chasing a DFS referral on the root dentry forthe mount.This patch fixes this by removing the check for a zero-lengthprefixpath. That should make the is_path_accessible check be done inthis situation and should allow the client to chase the DFS referral atmount time instead.Cc: stable@kernel.orgReported-and-Tested-by: Yogesh Sharma <ysharma@cymer.com>Signed-off-by: Jeff Layton <jlayton@redhat.com>Signed-off-by: Steve French <sfrench@us.ibm.com>"
+      }
+    ],
+    "CVE-2011-3371": [
+      {
+        "url": "https://github.com/punbb/punbb/commit/dd50a50a2760f10bd2d09814e30af4b36052ca6d",
+        "title": "Fix XSS vulnerabilities described on http://seclists.org/fulldisclosu…",
+        "body": "…re/2011/Sep/158"
+      }
+    ],
+    "CVE-2011-3578": [
+      {
+        "url": "https://github.com/mantisbt/mantisbt/commit/6ede60d3db9e202044f135001589cce941ff6f0f",
+        "title": "Fix #11481: Don't show bug group actions that can't be used",
+        "body": "Currently the bug action group dropdown list on view_all_bug_page.phpshows (almost) every available option, even if the current user isn'tauthorised to use those options.This patch implements checking to see which options are available to theuser for the issues which are currently shown on view_all_bug_page.php.Options are only displayed in the dropdown list if the user is able touse the option on at least one of the bugs displayed.Additionally, the logic behind when selection checkboxes are shownalongside a bug has been improved. Checkboxes won't display next to bugsthat the user cannot perform group actions on.Backported from master branch because it's needed to resolve an LFI/XSSissue in bug_actiongroup_ext.php."
+      },
+      {
+        "url": "https://github.com/mantisbt/mantisbt/commit/5b93161f3ece2f73410c296fed8522f6475d273d",
+        "title": "Rework the bug action group api such that we can easily convert this …",
+        "body": "…to an object in the future, and to validate calls to require once.This leads to a security issue identified by IBM's Appscan program, whereby calls to require_once are not validated.Depending on webserver configuration, this is a file inclusion vulnerability.There will be a follow up commit to config api - probably:-if( $g_project_override != null ) {+if( $g_project_override != null && $p_project == null ) {At the moment, the action group API calls config_get with a project parameter to use. This is ignored, due to project_override being set - so we either need to:a) change project override within the command list functionb) modifify config api to only use the project override *if* it is attempting to look up information on the default project.Backported from master-1.2.x branch. Note that this commit relies uponcommit 6dc3510 from the master branch(that hadn't been backported to 1.2.x).Conflicts: bug_actiongroup_ext.php bug_actiongroup_ext_page.php bug_actiongroup_page.php core/bug_group_action_api.phpSigned-off-by: David Hicks <d@hx.id.au>"
+      }
+    ],
+    "CVE-2011-3591": [
+      {
+        "url": "https://github.com/phpmyadmin/phpmyadmin/commit/bda213c58aec44925be661acb0e76c19483ea170",
+        "title": "Escape HTML in js-generated confirmation messages",
+        "body": ""
+      }
+    ],
+    "CVE-2011-3592": [
+      {
+        "url": "https://github.com/phpmyadmin/phpmyadmin/commit/2f28ce9c800274190418da0945ce3647d36e1db6",
+        "title": "[security] Fixed XSS in Inline Edit on save action",
+        "body": ""
+      }
+    ],
+    "CVE-2011-3598": [
+      {
+        "url": "https://github.com/phppgadmin/phppgadmin/commit/1df248203de055f97e092b50b1dd9643ccb73842",
+        "title": "Fix two security fix about XSS, reported by Mateusz Goik, fixed by io…",
+        "body": "…guix."
+      }
+    ],
+    "CVE-2011-3602": [
+      {
+        "url": "https://github.com/reubenhwk/radvd/commit/92e22ca23e52066da2258df8c76a2dca8a428bcc",
+        "title": "set_interface_var() doesn't check interface name and blindly does",
+        "body": "fopen(path \"/\" ifname, \"w\") on it. As \"ifname\" is an untrusted input, itshould be checked for \"..\" and/or \"/\" in it. Otherwise, an infectedunprivileged daemon may overwrite contents of file named \"mtu\",\"hoplimit\", etc. in arbitrary location with arbitrary 32-bit value indecimal representation (\"%d\"). If an attacker has a local account ormay create arbitrary symlinks with these names in any location (e.g./tmp), any file may be overwritten with a decimal value."
+      }
+    ],
+    "CVE-2011-3619": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/a5b2c5b2ad5853591a6cac6134cd0f599a720865",
+        "title": "AppArmor: fix oops in apparmor_setprocattr",
+        "body": "When invalid parameters are passed to apparmor_setprocattr a NULL derefoops occurs when it tries to record an audit message. This is becauseit is passing NULL for the profile parameter for aa_audit. But aa_auditnow requires that the profile passed is not NULL.Fix this by passing the current profile on the task that is trying tosetprocattr.Signed-off-by: Kees Cook <kees@ubuntu.com>Signed-off-by: John Johansen <john.johansen@canonical.com>Cc: stable@kernel.orgSigned-off-by: James Morris <jmorris@namei.org>"
+      }
+    ],
+    "CVE-2011-3637": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/76597cd31470fa130784c78fadb4dab2e624a723",
+        "title": "proc: fix oops on invalid /proc/<pid>/maps access",
+        "body": "When m_start returns an error, the seq_file logic will still call m_stopwith that error entry, so we'd better make sure that we check it beforeusing it as a vma.Introduced by commit ec6fd8a (\"report errors in /proc/*/*map*sanely\"), which replaced NULL with various ERR_PTR() cases.(On ia64, you happen to get a unaligned fault instead of a page fault,since the address used is generally some random error code like -EPERM)Reported-by: Anca Emanuel <anca.emanuel@gmail.com>Reported-by: Tony Luck <tony.luck@intel.com>Cc: Al Viro <viro@zeniv.linux.org.uk>Cc: Américo Wang <xiyou.wangcong@gmail.com>Cc: Stephen Wilson <wilsons@start.ca>Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2011-3874": [
+      {
+        "url": "https://github.com/revolutionary/zergRush/blob/master/zergRush.c",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-4080": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/bfdc0b497faa82a0ba2f9dddcf109231dd519fcc",
+        "title": "sysctl: restrict write access to dmesg_restrict",
+        "body": "When dmesg_restrict is set to 1 CAP_SYS_ADMIN is needed to read the kernelring buffer. But a root user without CAP_SYS_ADMIN is able to resetdmesg_restrict to 0.This is an issue when e.g. LXC (Linux Containers) are used and completeuser space is running without CAP_SYS_ADMIN. A unprivileged and jailedroot user can bypass the dmesg_restrict protection.With this patch writing to dmesg_restrict is only allowed when root hasCAP_SYS_ADMIN.Signed-off-by: Richard Weinberger <richard@nod.at>Acked-by: Dan Rosenberg <drosenberg@vsecurity.com>Acked-by: Serge E. Hallyn <serge@hallyn.com>Cc: Eric Paris <eparis@redhat.com>Cc: Kees Cook <kees.cook@canonical.com>Cc: James Morris <jmorris@namei.org>Cc: Eugene Teo <eugeneteo@kernel.org>Cc: <stable@kernel.org>Signed-off-by: Andrew Morton <akpm@linux-foundation.org>Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2011-4081": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/7ed47b7d142ec99ad6880bbbec51e9f12b3af74c",
+        "title": "crypto: ghash - Avoid null pointer dereference if no key is set",
+        "body": "The ghash_update function passes a pointer to gf128mul_4k_lle which willbe NULL if ghash_setkey is not called or if the most recent call toghash_setkey failed to allocate memory. This causes an oops. Fix thisup by returning an error code in the null case.This is trivially triggered from unprivileged userspace through theAF_ALG interface by simply writing to the socket without setting a key.The ghash_final function has a similar issue, but triggering it requiresa memory allocation failure in ghash_setkey _after_ at least onesuccessful call to ghash_update. BUG: unable to handle kernel NULL pointer dereference at 00000670 IP: [<d88c92d4>] gf128mul_4k_lle+0x23/0x60 [gf128mul] *pde = 00000000 Oops: 0000 [#1] PREEMPT SMP Modules linked in: ghash_generic gf128mul algif_hash af_alg nfs lockd nfs_acl sunrpc bridge ipv6 stp llc Pid: 1502, comm: hashatron Tainted: G W 3.1.0-rc9-00085-ge9308cf #32 Bochs Bochs EIP: 0060:[<d88c92d4>] EFLAGS: 00000202 CPU: 0 EIP is at gf128mul_4k_lle+0x23/0x60 [gf128mul] EAX: d69db1f0 EBX: d6b8ddac ECX: 00000004 EDX: 00000000 ESI: 00000670 EDI: d6b8ddac EBP: d6b8ddc8 ESP: d6b8dda4 DS: 007b ES: 007b FS: 00d8 GS: 0033 SS: 0068 Process hashatron (pid: 1502, ti=d6b8c000 task=d6810000 task.ti=d6b8c000) Stack: 00000000 d69db1f0 00000163 00000000 d6b8ddc8 c101a520 d69db1f0 d52aa000 00000ff0 d6b8dde8 d88d310f d6b8a3f8 d52aa000 00001000 d88d502c d6b8ddfc 00001000 d6b8ddf4 c11676ed d69db1e8 d6b8de24 c11679ad d52aa000 00000000 Call Trace: [<c101a520>] ? kmap_atomic_prot+0x37/0xa6 [<d88d310f>] ghash_update+0x85/0xbe [ghash_generic] [<c11676ed>] crypto_shash_update+0x18/0x1b [<c11679ad>] shash_ahash_update+0x22/0x36 [<c11679cc>] shash_async_update+0xb/0xd [<d88ce0ba>] hash_sendpage+0xba/0xf2 [algif_hash] [<c121b24c>] kernel_sendpage+0x39/0x4e [<d88ce000>] ? 0xd88cdfff [<c121b298>] sock_sendpage+0x37/0x3e [<c121b261>] ? kernel_sendpage+0x4e/0x4e [<c10b4dbc>] pipe_to_sendpage+0x56/0x61 [<c10b4e1f>] splice_from_pipe_feed+0x58/0xcd [<c10b4d66>] ? splice_from_pipe_begin+0x10/0x10 [<c10b51f5>] __splice_from_pipe+0x36/0x55 [<c10b4d66>] ? splice_from_pipe_begin+0x10/0x10 [<c10b6383>] splice_from_pipe+0x51/0x64 [<c10b63c2>] ? default_file_splice_write+0x2c/0x2c [<c10b63d5>] generic_splice_sendpage+0x13/0x15 [<c10b4d66>] ? splice_from_pipe_begin+0x10/0x10 [<c10b527f>] do_splice_from+0x5d/0x67 [<c10b6865>] sys_splice+0x2bf/0x363 [<c129373b>] ? sysenter_exit+0xf/0x16 [<c104dc1e>] ? trace_hardirqs_on_caller+0x10e/0x13f [<c129370c>] sysenter_do_call+0x12/0x32 Code: 83 c4 0c 5b 5e 5f c9 c3 55 b9 04 00 00 00 89 e5 57 8d 7d e4 56 53 8d 5d e4 83 ec 18 89 45 e0 89 55 dc 0f b6 70 0f c1 e6 04 01 d6 <f3> a5 be 0f 00 00 00 4e 89 d8 e8 48 ff ff ff 8b 45 e0 89 da 0f EIP: [<d88c92d4>] gf128mul_4k_lle+0x23/0x60 [gf128mul] SS:ESP 0068:d6b8dda4 CR2: 0000000000000670 ---[ end trace 4eaa2a86a8e2da24 ]--- note: hashatron[1502] exited with preempt_count 1 BUG: scheduling while atomic: hashatron/1502/0x10000002 INFO: lockdep is turned off. [...]Signed-off-by: Nick Bowler <nbowler@elliptictech.com>Cc: stable@kernel.org [2.6.37+]Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>"
+      }
+    ],
+    "CVE-2011-4086": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/15291164b22a357cb211b618adfef4fa82fc0de3",
+        "title": "jbd2: clear BH_Delay & BH_Unwritten in journal_unmap_buffer",
+        "body": "journal_unmap_buffer()'s zap_buffer: code clears a lot of buffer headstate ala discard_buffer(), but does not touch _Delay or _Unwritten asdiscard_buffer() does.This can be problematic in some areas of the ext4 code which assumethat if they have found a buffer marked unwritten or delay, then it'sa live one. Perhaps those spots should check whether it is mappedas well, but if jbd2 is going to tear down a buffer, let's reallytear it down completely.Without this I get some fsx failures on sub-page-block filesystemsup until v3.2, at which point 4e96b2dand 189e868 make the failures goaway, because buried within that large change is some more flagclearing. I still think it's worth doing in jbd2, since->invalidatepage leads here directly, and it's the right placeto clear away these flags.Signed-off-by: Eric Sandeen <sandeen@redhat.com>Signed-off-by: \"Theodore Ts'o\" <tytso@mit.edu>Cc: stable@vger.kernel.org"
+      }
+    ],
+    "CVE-2011-4097": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/56c6a8a4aadca809e04276eabe5552935c51387f",
+        "title": "oom: fix integer overflow of points in oom_badness",
+        "body": "commit ff05b6f upstream.An integer overflow will happen on 64bit archs if task's sum of rss,swapents and nr_ptes exceeds (2^31)/1000 value. This was introduced bycommitf755a04 oom: use pte pages in OOM scorewhere the oom score computation was divided into several steps and it's nolonger computed as one expression in unsigned long(rss, swapents, nr_pteare unsigned long), where the result value assigned to points(int) is inrange(1..1000). So there could be an int overflow while computing176 points *= 1000;and points may have negative value. Meaning the oom score for a mem hog taskwill be one.196 if (points <= 0)197 return 1;For example:[ 3366] 0 3366 35390480 24303939 5 0 0 oom01Out of memory: Kill process 3366 (oom01) score 1 or sacrifice childHere the oom1 process consumes more than 24303939(rss)*4096~=92GB physicalmemory, but it's oom score is one.In this situation the mem hog task is skipped and oom killer kills another andmost probably innocent task with oom score greater than one.The points variable should be of type long instead of int to prevent theint overflow.Signed-off-by: Frantisek Hrbata <fhrbata@redhat.com>Acked-by: KOSAKI Motohiro <kosaki.motohiro@jp.fujitsu.com>Acked-by: Oleg Nesterov <oleg@redhat.com>Acked-by: David Rientjes <rientjes@google.com>Signed-off-by: Andrew Morton <akpm@linux-foundation.org>Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>Signed-off-by: Greg Kroah-Hartman <gregkh@suse.de>"
+      }
+    ],
+    "CVE-2011-4098": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/64dd153c83743af81f20924c6343652d731eeecb",
+        "title": "GFS2: rewrite fallocate code to write blocks directly",
+        "body": "GFS2's fallocate code currently goes through the page cache. Since it's onlywriting to the end of the file or to holes in it, it doesn't need to, and itwas causing issues on low memory environments. This patch pulls in some ofSteve's block allocation work, and uses it to simply allocate the blocks forthe file, and zero them out at allocation time. It provides a slightperformance increase, and it dramatically simplifies the code.Signed-off-by: Benjamin Marzinski <bmarzins@redhat.com>Signed-off-by: Steven Whitehouse <swhiteho@redhat.com>"
+      }
+    ],
+    "CVE-2011-4104": [
+      {
+        "url": "https://github.com/toastdriven/django-tastypie/commit/e8af315211b07c8f48f32a063233cc3f76dd5bc2",
+        "title": "Safer loading of YAML. Thanks to daveyss for the report!",
+        "body": ""
+      }
+    ],
+    "CVE-2011-4127": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/ec8013beddd717d1740cfefb1a9b900deef85462",
+        "title": "dm: do not forward ioctls from logical volumes to the underlying device",
+        "body": "A logical volume can map to just part of underlying physical volume.In this case, it must be treated like a partition.Based on a patch from Alasdair G Kergon.Cc: Alasdair G Kergon <agk@redhat.com>Cc: dm-devel@redhat.comSigned-off-by: Paolo Bonzini <pbonzini@redhat.com>Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      },
+      {
+        "url": "https://github.com/torvalds/linux/commit/0bfc96cb77224736dfa35c3c555d37b3646ef35e",
+        "title": "block: fail SCSI passthrough ioctls on partition devices",
+        "body": "Linux allows executing the SG_IO ioctl on a partition or LVM volume, andwill pass the command to the underlying block device. This iswell-known, but it is also a large security problem when (via Unixpermissions, ACLs, SELinux or a combination thereof) a program or userneeds to be granted access only to part of the disk.This patch lets partitions forward a small set of harmless ioctls;others are logged with printk so that we can see which ioctls areactually sent. In my tests only CDROM_GET_CAPABILITY actually occurred.Of course it was being sent to a (partition on a) hard disk, so it wouldhave failed with ENOTTY and the patch isn't changing anything inpractice. Still, I'm treating it specially to avoid spamming the logs.In principle, this restriction should include programs running withCAP_SYS_RAWIO. If for example I let a program access /dev/sda2 and/dev/sdb, it still should not be able to read/write outside theboundaries of /dev/sda2 independent of the capabilities. However, fornow programs with CAP_SYS_RAWIO will still be allowed to send theioctls. Their actions will still be logged.This patch does not affect the non-libata IDE driver. That driverhowever already tests for bd != bd->bd_contains before issuing someioctl; it could be restricted further to forbid these ioctls even forprograms running with CAP_SYS_ADMIN/CAP_SYS_RAWIO.Cc: linux-scsi@vger.kernel.orgCc: Jens Axboe <axboe@kernel.dk>Cc: James Bottomley <JBottomley@parallels.com>Signed-off-by: Paolo Bonzini <pbonzini@redhat.com>[ Make it also print the command name when warning - Linus ]Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2011-4131": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/bf118a342f10dafe44b14451a1392c3254629a1f",
+        "title": "NFSv4: include bitmap in nfsv4 get acl data",
+        "body": "The NFSv4 bitmap size is unbounded: a server can return an arbitrarysized bitmap in an FATTR4_WORD0_ACL request. Replace using thenfs4_fattr_bitmap_maxsz as a guess to the maximum bitmask returned by a serverwith the inclusion of the bitmap (xdr length plus bitmasks) and the acl dataxdr length to the (cached) acl page data.This is a general solution to commit e5012d1 \"NFSv4.1: updatenfs4_fattr_bitmap_maxsz\" and fixes hitting a BUG_ON in xdr_shrink_bufheadwhen getting ACLs.Fix a bug in decode_getacl that returned -EINVAL on ACLs > page when getxattrwas called with a NULL buffer, preventing ACL > PAGE_SIZE from being retrieved.Cc: stable@kernel.orgSigned-off-by: Andy Adamson <andros@netapp.com>Signed-off-by: Trond Myklebust <Trond.Myklebust@netapp.com>"
+      }
+    ],
+    "CVE-2011-4181": [
+      {
+        "url": "https://github.com/openSUSE/open-build-service/commit/5281e4bff9df31f1f91e22a0d1e9086b93b23d7e",
+        "title": "[api] support binary package upload for the admin",
+        "body": ""
+      }
+    ],
+    "CVE-2011-4197": [
+      {
+        "url": "https://github.com/bsdperimeter/pfsense/commit/1379d66f11aaf72982a70287b83e24efcd18898e",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "https://github.com/bsdperimeter/pfsense/commit/87b4deb2b2dae9013e6aa0fe490d6a5a04a27894",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-4312": [
+      {
+        "url": "https://github.com/reviewboard/reviewboard/commit/7a0a9d94555502278534dedcf2d75e9fccce8c3d",
+        "title": "Fix a comment vulnerability allowing scripts to be loaded.",
+        "body": "Due to the way that comments were loaded in, it was possible toterminate a script and inject a new one while loading the diff viewer.This isn't believed to have been a problem in the wild, but is certainlyan important one to fix.We now ensure that the text is escaped at the point where it's being fedinto the JavaScript. It's no longer possible to inject scripts.Thanks to Damian Johnson for the heads up and for the fix that thischange is based on.This will be going into 1.5.7 and 1.6.3 releases."
+      }
+    ],
+    "CVE-2011-4326": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/a9cf73ea7ff78f52662c8658d93c226effbbedde",
+        "title": "ipv6: udp: fix the wrong headroom check",
+        "body": "At this point, skb->data points to skb_transport_header.So, headroom check is wrong.For some case:bridge(UFO is on) + eth device(UFO is off),there is no enough headroom for IPv6 frag head.But headroom check is always false.This will bring about data be moved to there prior to skb->head,when adding IPv6 frag header to skb.Signed-off-by: Shan Wei <shanwei@cn.fujitsu.com>Acked-by: Herbert Xu <herbert@gondor.apana.org.au>Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2011-4329": [
+      {
+        "url": "https://github.com/Dolibarr/dolibarr/commit/762f98ab4137749d0993612b4e3544a4207e78a1",
+        "title": "Fix: [Bug #232] Multiple Cross-Site-Scripting vulnerabilities",
+        "body": ""
+      }
+    ],
+    "CVE-2011-4341": [
+      {
+        "url": "https://github.com/symphonycms/symphony-2/commit/476e4926e2773588eab10dd3036f27e1411521b5",
+        "title": "Fix potential security holes reported by Mavituna Security.",
+        "body": ""
+      }
+    ],
+    "CVE-2011-4347": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/c4e7f9022e506c6635a5037713c37118e23193e4",
+        "title": "KVM: Device assignment permission checks",
+        "body": "(cherry picked from commit 3d27e23)Only allow KVM device assignment to attach to devices which: - Are not bridges - Have BAR resources (assume others are special devices) - The user has permissions to useAssigning a bridge is a configuration error, it's not supported, andtypically doesn't result in the behavior the user is expecting anyway.Devices without BAR resources are typically chipset components thatalso don't have host drivers. We don't want users to hold such devicescaptive or cause system problems by fencing them off into an iommudomain. We determine \"permission to use\" by testing whether the userhas access to the PCI sysfs resource files. By default a normal userwill not have access to these files, so it provides a good indicationthat an administration agent has granted the user access to the device.[Yang Bai: add missing #include][avi: fix comment style]Signed-off-by: Alex Williamson <alex.williamson@redhat.com>Signed-off-by: Yang Bai <hamo.by@gmail.com>Signed-off-by: Marcelo Tosatti <mtosatti@redhat.com>Signed-off-by: Greg Kroah-Hartman <gregkh@suse.de>"
+      }
+    ],
+    "CVE-2011-4356": [
+      {
+        "url": "https://github.com/ask/celery/blob/master/docs/sec/CELERYSA-0001.txt",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "https://github.com/ask/celery/pull/544",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-4594": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/bc909d9ddbf7778371e36a651d6e4194b1cc7d4c",
+        "title": "sendmmsg/sendmsg: fix unsafe user pointer access",
+        "body": "Dereferencing a user pointer directly from kernel-space without goingthrough the copy_from_user family of functions is a bad idea. Two ofsuch usages can be found in the sendmsg code path called from sendmmsg,added bycommit c71d8eb upstream.commit 5b47b80 in the 3.0-stable tree.Usages are performed through memcmp() and memcpy() directly. Fix thoseby using the already copied msg_sys structure instead of the __user *msgstructure. Note that msg_sys can be set to NULL by verify_compat_iovec()or verify_iovec(), which requires additional NULL pointer checks.Signed-off-by: Mathieu Desnoyers <mathieu.desnoyers@efficios.com>Signed-off-by: David Goulet <dgoulet@ev0ke.net>CC: Tetsuo Handa <penguin-kernel@I-love.SAKURA.ne.jp>CC: Anton Blanchard <anton@samba.org>CC: David S. Miller <davem@davemloft.net>CC: stable <stable@kernel.org>Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2011-4596": [
+      {
+        "url": "https://github.com/openstack/nova/commit/76363226bd8533256f7795bba358d7f4b8a6c9e6",
+        "title": "Sanitize EC2 manifests and image tarballs",
+        "body": "Prevent potential directory traversal with malicious EC2 image tarballs,by making sure the tarfile is safe before unpacking it. Fixes bug 894755Prevent potential directory traversal with malicious file names inEC2 image manifests. Fixes bug 885167(cherry picked from commit ad32419)Change-Id: If6109047307bd6e654ee9d1254f0d7f31cf741c1"
+      },
+      {
+        "url": "https://github.com/openstack/nova/commit/ad3241929ea00569c74505ed002208ce360c667e",
+        "title": "Sanitize EC2 manifests and image tarballs",
+        "body": "Prevent potential directory traversal with malicious EC2 image tarballs,by making sure the tarfile is safe before unpacking it. Fixes bug 894755Prevent potential directory traversal with malicious file names inEC2 image manifests. Fixes bug 885167Change-Id: If6109047307bd6e654ee9d1254f0d7f31cf741c1"
+      }
+    ],
+    "CVE-2011-4604": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/b5a1eeef04cc7859f34dec9b72ea1b28e4aba07c",
+        "title": "batman-adv: Only write requested number of byte to user buffer",
+        "body": "Don't write more than the requested number of bytes of an batman-adv icmppacket to the userspace buffer. Otherwise unrelated userspace memory might getoverridden by the kernel.Signed-off-by: Sven Eckelmann <sven@narfation.org>Signed-off-by: Marek Lindner <lindner_marek@yahoo.de>"
+      }
+    ],
+    "CVE-2011-4611": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/0837e3242c73566fc1c0196b4ec61779c25ffc93",
+        "title": "perf, powerpc: Handle events that raise an exception without overflowing",
+        "body": "Events on POWER7 can roll back if a speculative event doesn'teventually complete. Unfortunately in some rare cases they willraise a performance monitor exception. We need to catch this toensure we reset the PMC. In all cases the PMC will be 256 or lesscycles from overflow.Signed-off-by: Anton Blanchard <anton@samba.org>Signed-off-by: Peter Zijlstra <a.p.zijlstra@chello.nl>Cc: <stable@kernel.org> # as far back as it applies cleanlyLKML-Reference: <20110309143842.6c22845e@kryten>Signed-off-by: Ingo Molnar <mingo@elte.hu>"
+      }
+    ],
+    "CVE-2011-4715": [
+      {
+        "url": "https://github.com/liblime/LibLime-Koha/commit/8ea6f7bc37d05a9ec25b5afbea011cf9de5f1e49#C4/Output.pm",
+        "title": "[#21464023] Security: arbitrary file inclusion",
+        "body": "Poor input cleansing can allow a well-constructed cookieto return the contents of arbitrary file system objects."
+      }
+    ],
+    "CVE-2011-4802": [
+      {
+        "url": "https://github.com/Dolibarr/dolibarr/commit/c539155d6ac2f5b6ea75b87a16f298c0090e535a",
+        "title": "Security: More security holes fixed",
+        "body": ""
+      },
+      {
+        "url": "https://github.com/Dolibarr/dolibarr/commit/d08d28c0cda1f762a47cc205d4363de03df16675",
+        "title": "Fix: Sanitize PHP_SELF",
+        "body": ""
+      },
+      {
+        "url": "https://github.com/Dolibarr/dolibarr/commit/63820ab37537fdff842539425b2bf2881f0d8e91",
+        "title": "Security: A lot of security fixes",
+        "body": ""
+      },
+      {
+        "url": "https://github.com/Dolibarr/dolibarr/commit/762f98ab4137749d0993612b4e3544a4207e78a1",
+        "title": "Fix: [Bug #232] Multiple Cross-Site-Scripting vulnerabilities",
+        "body": ""
+      }
+    ],
+    "CVE-2011-4814": [
+      {
+        "url": "https://github.com/Dolibarr/dolibarr/commit/d08d28c0cda1f762a47cc205d4363de03df16675",
+        "title": "Fix: Sanitize PHP_SELF",
+        "body": ""
+      },
+      {
+        "url": "https://github.com/Dolibarr/dolibarr/commit/c539155d6ac2f5b6ea75b87a16f298c0090e535a",
+        "title": "Security: More security holes fixed",
+        "body": ""
+      },
+      {
+        "url": "https://github.com/Dolibarr/dolibarr/commit/63820ab37537fdff842539425b2bf2881f0d8e91",
+        "title": "Security: A lot of security fixes",
+        "body": ""
+      },
+      {
+        "url": "https://github.com/Dolibarr/dolibarr/commit/762f98ab4137749d0993612b4e3544a4207e78a1",
+        "title": "Fix: [Bug #232] Multiple Cross-Site-Scripting vulnerabilities",
+        "body": ""
+      }
+    ],
+    "CVE-2011-4858": [
+      {
+        "url": "https://github.com/FireFart/HashCollision-DOS-POC/blob/master/HashtablePOC.py",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-4885": [
+      {
+        "url": "https://github.com/FireFart/HashCollision-DOS-POC/blob/master/HashtablePOC.py",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-4913": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/be20250c13f88375345ad99950190685eda51eb8",
+        "title": "ROSE: prevent heap corruption with bad facilities",
+        "body": "When parsing the FAC_NATIONAL_DIGIS facilities field, it's possible fora remote host to provide more digipeaters than expected, resulting inheap corruption. Check against ROSE_MAX_DIGIS to prevent overflows, andabort facilities parsing on failure.Additionally, when parsing the FAC_CCITT_DEST_NSAP andFAC_CCITT_SRC_NSAP facilities fields, a remote host can provide a lengthof less than 10, resulting in an underflow in a memcpy size, causing akernel panic due to massive heap corruption. A length of greater than20 results in a stack overflow of the callsign array. Abort facilitiesparsing on these invalid length values.Signed-off-by: Dan Rosenberg <drosenberg@vsecurity.com>Cc: stable@kernel.orgSigned-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2011-4914": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/e0bccd315db0c2f919e7fcf9cb60db21d9986f52",
+        "title": "rose: Add length checks to CALL_REQUEST parsing",
+        "body": "Define some constant offsets for CALL_REQUEST based on the descriptionat <http://www.techfest.com/networking/wan/x25plp.htm> and thedefinition of ROSE as using 10-digit (5-byte) addresses. Use themconsistently. Validate all implicit and explicit facilities lengths.Validate the address length byte rather than either trusting orassuming its value.Signed-off-by: Ben Hutchings <ben@decadent.org.uk>Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2011-4958": [
+      {
+        "url": "https://github.com/silverstripe/sapphire/commit/16c3235",
+        "title": "BUGFIX Escaping base URLs for anchor links rewritten by SSViewer::pro…",
+        "body": "…cess() with the 'rewriteHashlinks' option enabled (which is a framework default, and necessary because of the use of a <base> tag). Also added escaping for base URLs rendered through the 'php' variation of 'rewriteHashlinks'"
+      },
+      {
+        "url": "https://github.com/silverstripe/sapphire/commit/bdd6391",
+        "title": "BUGFIX Respecting SSViewer::$options[\"rewriteHashlinks\"] in SSViewer:…",
+        "body": "…:process()"
+      },
+      {
+        "url": "https://github.com/silverstripe/sapphire/commit/52a895f",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-4959": [
+      {
+        "url": "https://github.com/silverstripe/sapphire/commit/ca78784",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "https://github.com/silverstripe/sapphire/commit/73cca09",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "https://github.com/silverstripe/silverstripe-cms/commit/b5ea2f6",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-4960": [
+      {
+        "url": "https://github.com/silverstripe/sapphire/commit/fef7c32",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-4961": [
+      {
+        "url": "https://github.com/silverstripe/sapphire/commit/de1f070",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-4962": [
+      {
+        "url": "https://github.com/silverstripe/silverstripe-cms/commit/d15e850",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-4969": [
+      {
+        "url": "https://github.com/jquery/jquery/commit/db9e023e62c1ff5d8f21ed9868ab6878da2005e9",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-5018": [
+      {
+        "url": "https://github.com/koala-framework/koala-framework/commit/59f81ea6bd8ef96c04a706a3ca453cd656284faa",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-5034": [
+      {
+        "url": "https://github.com/FireFart/HashCollision-DOS-POC/blob/master/HashtablePOC.py",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-5035": [
+      {
+        "url": "https://github.com/FireFart/HashCollision-DOS-POC/blob/master/HashtablePOC.py",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-5097": [
+      {
+        "url": "https://github.com/opscode/chef/commit/a4ea6edab2fecb922f999cffb0daa04eeeec7a26",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-5098": [
+      {
+        "url": "https://github.com/opscode/chef/commit/33f0e9c58bbf047e1b401a834f3abfe72d9a8947",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-5242": [
+      {
+        "url": "https://github.com/themattharris/tmhOAuth/blob/master/README.md",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2011-5327": [
+      {
+        "url": "https://github.com/torvalds/linux/commit/12f09ccb4612734a53e47ed5302e0479c10a50f8",
+        "title": "",
+        "body": ""
+      }
+    ]
+  }
+}

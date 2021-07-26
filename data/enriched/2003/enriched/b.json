@@ -1,0 +1,1358 @@
+{
+  "year": 2003,
+  "total": 195,
+  "reference": "exchange.xforce.ibmcloud.com",
+  "reports": {
+    "CVE-2003-0222": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11885",
+        "title": "Oracle Database Servers \"CREATE DATABASE LINK\" buffer overflow",
+        "body": "Oracle Database Servers are vulnerable to a stack-based buffer overflow in the Oracle Net Services. A remote attacker who possesses a valid account and the 'CREATE DATABASE LINK' privilege could create a database link with an overly long parameter as the connection string. The attacker could then use the SELECT statement to query the link to overflow a buffer and use the privileges of the user running the Oracle Database Server to cause the server to crash or to execute arbitrary code on the system.Apply the appropriate patch for your system, as listed in Oracle Security Alert #54. See References."
+      }
+    ],
+    "CVE-2003-0286": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11981",
+        "title": "Snitz Forums 2000 register.asp SQL injection",
+        "body": "Snitz Forums is vulnerable to SQL injection, caused by improper validation of user-supplied input by the register.asp script. A remote attacker could exploit this vulnerability by passing malicious SQL commands to the register.asp script using the \"Email\" variable, which would allow the attacker to execute stored procedures, such as xp_cmdshell.Upgrade to the latest version of Snitz Forums 2000 (3.4.03 or later), available from the Snitz Forums 2000 Web site. See References."
+      }
+    ],
+    "CVE-2003-0368": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12221",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-0456": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12483",
+        "title": "VisNetic WebSite path disclosure",
+        "body": "VisNetic WebSite could allow a remote attacker to obtain sensitive information. A remote attacker could send a specially-crafted URL request to the _vti_bin directory for a non-existent file, which would cause an error message to be returned that contains the full path of the directory. An attacker could use this vulnerability to launch further attacks against the affected server.Upgrade to the latest version of VisNetic WebSite (3.5.17 or later), available from the Deerfield.com Web site. See References."
+      }
+    ],
+    "CVE-2003-0542": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13400",
+        "title": "Apache HTTP server mod_alias and mod_rewrite buffer overflow",
+        "body": "Apache HTTP Server is vulnerable to a buffer overflow in the mod_alias and mod_rewrite module. By creating a specially-crafted configuration file containing a regular expression with more than nine capturing parentheses, a local attacker could overflow a buffer and possibly execute arbitrary code on the system.For Apache HTTP Server 1.3.28 and earlier:Upgrade to the latest version of Apache HTTP Server (1.3.29 or later), available from the Apache Web site. See References.For Apache HTTP Server 2.0.47 and earlier:Upgrade to the latest version of Apache HTTP Server (2.0.48 or later), available from the Apache Web site. See References.For OpenPKG:Upgrade to the latest apache package, as listed below. Refer to OpenPKG Security Advisory OpenPKG-SA-2003.046 for more information. See References.OpenPKG CURRENT: 1.3.29-20031028 or laterOpenPKG 1.2: 1.3.27-1.2.3 or laterOpenPKG 1.3: 1.3.28-1.3.1 or laterFor Gentoo Linux:Upgrade to the latest version of net-www/apache (2.0.48 or later), as listed in Gentoo Linux Security Announcement 200310-04. See References.For Mandrake Linux:Upgrade to the latest apache package, as listed below. Refer to MandrakeSoft Security Advisory MDKSA-2003:103 : apache for more information. See References.Mandrake Linux 9.0 and Corporate Server 2.1: 1.3.26-6.3.90mdk or laterMandrake Linux 9.1: 1.3.27-8.1.91mdk or laterMandrake Linux 9.2: 1.3.28-3.1.92mdk or laterMandrake Multi Network Firewall 8.2: 1.3.23-4.3.M82mdk or laterFor Slackware Linux:Upgrade to the latest apache package, as listed below. Refer to slackware-security Mailing List, Tue, 4 Nov 2003 16:48:11 -0800 (PST) for more information. See References.Slackware Linux 8.1, 9.0, 9.1, and -current: 1.3.29-i386-1 or laterFor Conectiva Linux:Upgrade to the latest apache package, as listed below. Refer to Conectiva Linux Security Announcement CLSA-2003:775 for more information. See References.Conectiva Linux 7.0: 1.3.28-1U70_2cl or laterConectiva Linux 8: 1.3.28-1U80_2cl or laterConectiva Linux 9: 2.0.45-2879OU90_5cl or laterFor Trustix Secure Linux 1.2, 1.5, and 2.0:Upgrade to the latest apache package (1.3.29-1tr or 2.0.48-1tr or later), as listed in Trustix Secure Linux Security Advisory #2003-0041. See References.For Red Hat Linux:Upgrade to the latest apache package, as listed below. Refer to RHSA-2003:405-04 for more information. See References.Red Hat 7.1: 1.3.27-3.7.1 or laterRed Hat 7.2: 1.3.27-3.7.2 or laterRed Hat 7.3: 1.3.27-4 or laterFor Red Hat Linux:Upgrade to the latest httpd package, as listed below. Refer to RHSA-2003:320-09 for more information. See References.Red Hat 8.0: 2.0.40-11.9 or laterRed Hat 9: 2.0.40-21.9For Red Hat Linux containing the apache package:Upgrade to the latest apache package, as listed below. Refer to RHSA-2003:360-08 for more information. See References.Red Hat Enterprise Linux AS (v. 2.1), ES (v. 2.1), WS (v. 2.1), and Red Hat Linux Advanced Workstation 2.1 for the Itanium Processor: 3.27-6 or laterFor Red Hat Linux Stronghold:Refer to RHSA-2005:816-10 for patch, upgrade, or suggested workaround information. See References.For SGI IRIX:Apply the 10039 patch for this vulnerability, as listed in SGI Security Advisory 20031203-01-U. See References.For HP-UX 11.00, 11.11, 11.20, and 11.22 :Apply the appropriate patch for your system, as listed in Hewlett-Packard Company Security Bulletin HPSBUX01098. See References.For Turbolinux:Upgrade to the latest apache package (1.3.27-22 or later), as listed in Turbolinux Security Advisory TLSA-2004-10. See References.For Caldera UnixWare 7.1.3, OpenUnix 8.0.0, and UnixWare 7.1.1:Update to the latest fixed binaries, as listed in SCO Security Advisory CSSA-2004-6. See References.For Sun Solaris:Apply the appropriate patch for your system, as listed below. Refer to Sun Alert ID: 57496 for more information. See References.SPARC PlatformSolaris 8 with patch 116973-01 or laterSolaris 9 with patch 113146-03 or laterx86 PlatformSolaris 8 with patch 116974-01 or laterSolaris 9 with patch 114145-02 or laterFor other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2003-0624": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13568",
+        "title": "BEA WebLogic InteractiveQuery.jsp cross-site scripting",
+        "body": "BEA WebLogic is vulnerable to cross-site scripting, caused by improper filtering of user-supplied input. A remote attacker could embed malicious JavaScript within the person variable in a URL request to the InteractiveQuery.jsp CGI application, which would be executed in the victim's Web browser within the security context of the blocked site, once the link is clicked. An attacker could exploit this vulnerability to steal the victim's cookie-based authentication credentials and obtain other sensitive information.Refer to BEA03-36.01 for patch, upgrade or suggested workaround information. See References."
+      }
+    ],
+    "CVE-2003-0662": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13423",
+        "title": "Microsoft Windows 2000 Local Troubleshooter ActiveX control buffer overflow",
+        "body": "Microsoft Windows 2000 is vulnerable to a buffer overflow in the Microsoft Local Troubleshooter ActiveX control (Tshoot.ocx), caused by improper validation of parameters. The Tshoot.ocx ActiveX control assists in diagnosing problems and is used by the Microsoft Windows Troubleshooting and Help System, which is installed by default on Microsoft Windows 2000. By creating a specially-crafted Web page, a remote attacker could overflow a buffer and execute arbitrary code on the victim's computer with privileges of the victim, once the page is viewed. An attacker could exploit this vulnerability by hosting the malicious Web page on a Web site or by sending it to a victim as an HTML email.Apply the appropriate patch for your system, as listed in Microsoft Security Bulletin MS03-042. See References."
+      }
+    ],
+    "CVE-2003-0792": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13450",
+        "title": "Fetchmail email denial of service",
+        "body": "Fetchmail is vulnerable to a denial of service. By sending a specially-crafted email, a remote attacker can cause the program to crash.For Mandrake Linux:Upgrade to the latest fetchmail package, as listed below. Refer to MandrakeSoft Security Advisory MDKSA-2003:101 : fetchmail for more information. See References.Mandrake Linux 9.2: 6.2.4-1.1.92mdk or laterFor Immunix 7+:Upgrade to the latest version of fetchmail (5.9.0-10_imnx_1 or later), as listed in Immunix Secured OS Security Advisory IMNX-2003-7+-023-01. See References.For Slackware Linux:Upgrade to the latest fetchmail package, as listed below. Refer to slackware-security Mailing List, Mon, 27 Oct 2003 12:07:56 -0800 (PST) for more information. See References.Slackware Linux 8.1, 9.0, 9.1, and -current: 6.2.5 or laterFor Turbolinux:Upgrade to the latest fetchmail package (6.2.5-1 or later), as listed in Turbolinux Security Advisory TLSA-2003-61. See References.For Mac OS X:Upgrade to Security Update 2003-12-19 or later, as recommended in AppleCare Knowledge Base Document 61798. See References.For Caldera OpenLinux 3.1.1 Server and Workstation:Upgrade to the latest fetchmail package, as listed below. Refer to SCO Security Advisory CSSA-2004-004.0 for more information. See References.Caldera OpenLinux 3.1.1 Server and Workstation: 6.2.5-1 or laterFor OpenPKG:Refer to OpenPKG Security Advisory OpenPKG-SA-2004.012 for patch, upgrade, or suggested workaround information. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2003-0825": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/15037",
+        "title": "Microsoft Windows Server 2003 WINS /GS flag denial of service",
+        "body": "Microsoft Windows Server 2003 running Windows Internet Naming Service (WINS) is vulnerable to a denial of service attack, caused by the /GS flag security feature. The /GS flag is a security feature used to shut the service down if malicious code is detected, in order to prevent code execution. A remote attacker can send specially-crafted packets to the WINS server, causing the /GS flag to activate, resulting in a denial of service. The denial of service does not occur on Windows NT and Windows 2000 platforms, nor is there a possibility of remote code execution. The Microsoft security update also corrects vulnerable code on these additional nonvulnerable platforms to protect against potential future attack vectors that may allow code execution.Apply the appropriate patch for your system, as listed in the latest Microsoft Security Bulletin. See References.— OR —Use Microsoft Automatic Update if it is supported by your operating system. The original bulletin issued by Microsoft has been superseded."
+      }
+    ],
+    "CVE-2003-0831": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12200",
+        "title": "ProFTPD ASCII file newline buffer overflow",
+        "body": "ProFTPD could allow an attacker to overflow a buffer and gain access using ASCII mode file transfers. An attacker capable of uploading files to the vulnerable system can trigger a buffer overflow and execute arbitrary code to gain complete control of the system. Attackers may use this vulnerability to destroy, steal, or manipulate data on vulnerable FTP sites. The attacker must have the ability to upload a file to the server, and then attempt to download the same file to trigger the vulnerability. The vulnerability occurs when a file is being transferred in ASCII mode. During a transfer of this type, file data is examined in 1024 byte chunks to check for newline (\\n) characters. The translation of these newline characters is not handled correctly, and a buffer overflow can manifest if ProFTPD parses a specially crafted file. The ProFTPD daemon makes an effort to drop superuser privileges to limit the privilege level associated with any successful attack. However, X-Force has demonstrated that this security check can be bypassed, and superuser access can be gained by a remote attacker.For vulnerability detection:Enable the following checks in the ISS Protection Platform:ProftpdAsciiXferNewlineBoFor Virtual Patch:Enable the following checks in the ISS Protection Platform:FTP_ProFTPD_Translate_OverflowFor Manual Protection:Successful exploitation is not possible if attackers cannot upload files to a vulnerable FTP server. Where possible it is advisable to disable the ability for users to perform FTP uploads, either with file permissions or using ProFTPD configuration parameters:>Limit WRITE<DenyAll>/Limit<Risk can also be mitigated by using configuration options which cause root privileges to be dropped altogether by the ProFTPD daemon (although this feature may disable certain ProFTPD functionality):RootRevoke onX-Force recommends that ProFTPD users upgrade to the patched version of ProFTPD when it becomes available.For Slackware Linux:Upgrade to the latest proftpd package, as listed below. Refer to slackware-security Mailing List, Tue, 23 Sep 2003 23:06:38 -0700 (PDT) for more information. See References.Slackware Linux 8.1, 9.0, -current: -1.2.8p-i386-1 or laterFor Mandrake Linux:Upgrade to the latest proftpd package, as listed below. Refer to MandrakeSoft Security Advisory MDKSA-2003:095-1 for more information. See References.Mandrake Linux 9.1: 1.2.8-1.2.91mdk or laterMandrake Linux 9.2: 1.2.8-5.2.92mdkFor OpenPKG:Upgrade to the latest proftpd package, as listed below. Refer to OpenPKG Security Advisory OpenPKG-SA-2003.043 for more information. See References.OpenPKG CURRENT: 1.2.9rc2-20030923 or laterOpenPKG 1.2: 1.2.7-1.2.1 or laterOpenPKG 1.3: 1.2.8-1.3.1 or laterFor Trustix Secure Linux:Upgrade to the latest version of proftpd (1.2.8-10tr or later), as listed in Trustix Security Advisory #2003-0037. See References.For Gentoo Linux:Upgrade to the latest version of proftpd (1.29_rc2 or later), as listed in Gentoo Linux Security Announcement 200309-16. See References.For Conectiva Linux:Upgrade to the latest proftpd package, as listed below. Refer to Conectiva Linux Security Announcement CLSA-2003:750 for more information. See References.Conectiva Linux 9: 1.2.7-27285U90_2cl or laterFor Turbolinux:Upgrade to the latest proftpd package (1.2.8-3 or later), as listed in Turbolinux Security Advisory TLSA-2003-54. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2003-0899": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13530",
+        "title": "thttpd defang function buffer overflow",
+        "body": "thttpd is vulnerable to a buffer overflow in the defang function in the libhttpd.c file. A remote attacker could exploit this vulnerability to overflow a buffer and execute arbitrary code on the system.For thttpd:Upgrade to the latest version of thttpd (2.24 or later), available from the thttpd Web page. See References.For Debian GNU/Linux 3.0 (woody):Upgrade to the latest thttpd package (2.21b-11.2 or later), as listed in DSA-396-1. See References.For SuSE Linux:Upgrade to the latest thttpd package, as listed below. Refer to SuSE Security Announcement SuSE-SA:2003:044 for more information. See References..SuSE Linux 9.0 (Intel): thttpd-2.23beta1-165 or later.SuSE Linux 8.2 (Intel): thttpd-2.23beta1-164 or laterSuSE Linux 8.1 (Intel): thttpd-2.23beta1-163 or laterSuSE Linux 8.0 (Intel): thttpd-2.20c-98 or laterSuSE Linux 7.3 (Intel): thttpd-2.20b-175 or laterSuSE Linux 7.3 (PPC): thttpd-2.20b-112 or later.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2003-0903": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/14187",
+        "title": "Microsoft Data Access Components (MDAC) broadcast request buffer overflow",
+        "body": "Microsoft Data Access Components (MDAC) is vulnerable to a buffer overflow, caused by improper bounds checking in a specific MDAC component. If a remote attacker spoofs a SQL server that listens on a network for a vulnerable system to send a broadcast request, the attacker could then send a specially-crafted UDP packet in response to a request to overflow a buffer and execute code on the system with privileges of the process executing MDAC. Note: This vulnerability is similar to the vulnerability previously discussed in Microsoft Security Bulletin MS03-033. However, the vulnerable codepath for this vulnerability is different from the vulnerable codepath of the vulnerability reported in Microsoft Security Bulletin MS03-033.Apply the patch for this vulnerability, as listed in Microsoft Security Bulletin MS04-003. See References."
+      }
+    ],
+    "CVE-2003-0904": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13869",
+        "title": "Microsoft Exchange Server OWA could allow unauthorized email account access",
+        "body": "Microsoft Exchange Server, when using the Outlook Web Access (OWA), could allow a remote authenticated attacker to gain unauthorized access to a victim's email account. If Microsoft Windows SharePoint Services is installed on a system running Microsoft Windows Server and Microsoft Exchange Server, the Kerberos authentication in Internet Information Services (IIS) is disabled, which would result in improper handling of OWA requests to the vulnerable Exchange Server.Apply the appropriate patch for your system, as listed in Microsoft Security Bulletin MS04-002. See References.As a workaround re-enable and properly configure Kerberos authentication in IIS. See Microsoft Windows Server Support Article dated November 25, 2003 for details."
+      }
+    ],
+    "CVE-2003-1025": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13935",
+        "title": "Microsoft Internet Explorer domain URL spoofing",
+        "body": "Microsoft Internet Explorer could allow a remote attacker to spoof a trusted Web page by altering the URL that is displayed in the Internet Explorer address bar. A remote attacker could add a 0x01 character after the ampersand (@) in (http://user@domain), which would cause only part of the URL to be displayed in the address bar. An attacker could use this vulnerability to gain sensitive information from unsuspecting users, if they could be convinced to visit the spoofed site. Note: Reportedly, Opera is also affected by this vulnerability.Apply the appropriate patch for your system, as listed in the latest Microsoft Security Bulletin. See References.— OR —Use Microsoft Automatic Update if it is supported by your operating system. The original bulletin issued by Microsoft has been superseded."
+      }
+    ],
+    "CVE-2003-1026": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13846",
+        "title": "Microsoft Internet Explorer subframe cross-site scripting",
+        "body": "Microsoft Internet Explorer is vulnerable to cross-site scripting. By creating a malicious Web page that contains a subframe, a FRAME or IFRAME tag, the attacker could bypass the cross-domain security model. This could allow an attacker to cause the execution of malicious script within the victim's \"My Computer\" security zone, once the page is visited.Apply the appropriate patch for your system, as listed in the latest Microsoft Security Bulletin. See References.— OR —Use Microsoft Automatic Update if it is supported by your operating system. The original bulletin issued by Microsoft has been superseded."
+      }
+    ],
+    "CVE-2003-1048": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/16804",
+        "title": "Microsoft Internet Explorer MSHTML.DLL GIF file buffer overflow",
+        "body": "Microsoft Internet Explorer is vulnerable to a buffer overflow, caused by a vulnerability in the MSHTML.DLL shared library, which is used for parsing HTML in Internet Explorer. By creating a specially-crafted GIF file, a remote attacker could overflow a buffer and execute arbitrary code on the system with user privileges or cause a denial of service, once the file is opened. A remote attacker could exploit this vulnerability by sending the malicious file to a victim in an email.Apply the appropriate patch for your system, as listed in the latest Microsoft Security Bulletin. See References.— OR —Use Microsoft Automatic Update if it is supported by your operating system. The original bulletin issued by Microsoft has been superseded."
+      }
+    ],
+    "CVE-2003-1081": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/10105",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1151": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13535",
+        "title": "Fastream NETFile Server non-existent URL cross-site scripting",
+        "body": "Fastream NETFile Server is vulnerable to cross-site scripting. A remote attacker could embed malicious script within a URL link to a non-existent Web page, which would cause a \"404 Not Found\" error page to be returned to the victim and the embedded script to be executed in the victim's Web browser under the security context of the affected server, once the link is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1209": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11650",
+        "title": "Monkey HTTP Daemon Content-Type denial of service",
+        "body": "Monkey HTTP Daemon is vulnerable to a denial of service attack. If a remote attacker sends a malformed HTTP POST request to the Web server with no Content-Type value, the attacker could cause the Web server to crash.Upgrade to the latest version of Monkey HTTP Daemon (0.6.2 or later), available from the Monkey Web page. See References."
+      }
+    ],
+    "CVE-2003-1227": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13419",
+        "title": "Gallery index.php PHP file include",
+        "body": "Gallery could allow a remote attacker to include malicious PHP files, caused by a vulnerability in the index.php script in the setup directory. A remote attacker could send a specially-crafted URL request to the index.php script using the ?GALLERY_BASEDIR variable that specifies a malicious PHP file from a remote or local system as a parameter, which would allow the attacker to execute code on the vulnerable Web server.Upgrade to the latest version of Gallery (1.4-pl2 or later), available from the Gallery Web site. See References."
+      }
+    ],
+    "CVE-2003-1336": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13405",
+        "title": "mIRC long string supplied to IRC protocol could allow execution of code",
+        "body": "mIRC is vulnerable to a buffer overflow. Installation of mIRC causes mIRC to register its own software routine for \"irc\" type URLs. By creating a specially-crafted URL with a long string in the \"irc\" protocol, a remote attacker can overflow a buffer and execute arbitrary code on the system with privileges of the user, once the link is clicked.Upgrade to the latest version of mIRC (6.12 or later), available from the mIRC Home page. See References."
+      }
+    ],
+    "CVE-2003-1337": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12466",
+        "title": "Abyss Web Server HTTP GET request buffer overflow",
+        "body": "Abyss Web Server is vulnerable to a heap buffer overflow. By sending a specially-crafted HTTP GET request appended with a colon and a backslash (:\\) character, a remote attacker can overflow a buffer and execute arbitrary code on the system with privileges of the Abyss Web Server user.Upgrade to the latest version of Abyss Web Server (1.1.6 beta or later), available from the Aprelium Technologies Web site. See References."
+      }
+    ],
+    "CVE-2003-1342": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11060",
+        "title": "Trend VCS ActiveSupport.exe denial of service",
+        "body": "Trend Virus Control System (Trend VCS) for Microsoft Internet Information Server (IIS) is vulnerable to a denial of service attack. A remote attacker can send multiple requests to the ActiveSupport.exe program to consume all memory resources, which would cause the server to become inaccessible for a period of time until after the requests are stopped.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1343": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11061",
+        "title": "ScanMail smg_Smxcfg30.exe authentication bypass",
+        "body": "Trend Micro ScanMail for Microsoft Exchange could allow a remote attacker to bypass authentication. ScanMail is installed with the smg_Smxcfg30.exe program by default. A remote attacker could send a specially-crafted URL request to the smg_Smxcfg30.exe program, which would allow the attacker to bypass password authentication and gain unauthorized access to the Web management interface.Upgrade to the latest version of Microsoft Exchange (5.5 or later or 2000 SP3 or later), available from the Microsoft Exchange Server Download Web page. See References."
+      }
+    ],
+    "CVE-2003-1344": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11063",
+        "title": "Trend VCS stores passwords using weak encryption algorithm",
+        "body": "Trend Virus Control System (Trend VCS) for Microsoft Internet Information Server (IIS) uses a weak encryption algorithm that could allow a remote attacker to obtain user passwords. A remote attacker could send a specially-crafted URL request to the getservers.exe executable to view or download the file that contains user passwords. This could allow an attacker to decrypt the user passwords to gain unauthorized access to other user's Trend VCS accounts.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1345": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11064",
+        "title": "WebCollection Plus forward slash (/) directory traversal",
+        "body": "WebCollection Plus could allow a remote attacker to traverse directories on the Web server. A remote attacker could send a specially-crafted URL request containing a forward slash character (/) followed by the name of a known file to traverse directories and view known files on the Web server.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1346": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11074",
+        "title": "D-Link AirPlus Access Point Manager restores factory default settings during upgrade",
+        "body": "The D-Link DWL-900AP+ restores the factory default settings once the D-Link AirPlus Access Point Manager is used to upgrade the firmware. This could result in weaker than expected security on affected devices and could lead to unauthorized remote access and unauthorized configuration changes.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1347": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11075",
+        "title": "Geeklog profiles.php, users.php, and comment.php script cross-site scripting",
+        "body": "Geeklog is vulnerable to cross-site scripting. A remote attacker could embed malicious script within a URL request to the profiles.php, users.php, or comment.php script, which would be executed in a victim's Web browser within the security context of the hosting site, once the link is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials or launch further attacks against the affected server.Upgrade to the latest version of Geeklog (1.3.7sr1 or later), available from the Geeklog Web page. See References."
+      }
+    ],
+    "CVE-2003-1348": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11155",
+        "title": "FTLS.org Guestbook multiple form field cross-site scripting",
+        "body": "Frederic Tyndiuk's (FTLS.org) Guestbook script is vulnerable to cross-site scripting. A remote attacker could create a guestbook entry containing script embedded within HTML tags in the name, title, or comment field, which would be executed in the victim's Web browser within the security context of the hosting site, once the malicious entry is viewed.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1349": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11062",
+        "title": "NiteServer \"dot dot\" directory traversal",
+        "body": "NiteServer could allow a remote attacker to traverse directories on the FTP server. A remote attacker can login as an \"anonymous\" user and issue a \"ls\" or a \"cd\" command followed by \"dot dot\" sequences (\\..) to traverse directories and view arbitrary files and directories outside of the FTP root directory.Upgrade to the latest version of NiteServer (1.85 or later), available from the NiteServer Web page. See References."
+      }
+    ],
+    "CVE-2003-1350": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11156",
+        "title": "List Site PRO account hijacking",
+        "body": "List Site PRO could allow a remote attacker to hijack another user's List Site PRO account. By registering for a new account and including a pipe character (|) in one of the required fields, a remote attacker could hijack another user's account by including another user's account number in the bannerurl field. An attacker could use this vulnerability to modify the victim's List Site PRO configuration settings.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1351": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11159",
+        "title": "EditTag CGI encoded \"dot dot\" directory traversal",
+        "body": "EditTag could allow a remote attacker to traverse directories on the Web server. A remote attacker could send a specially-crafted URL request to the edittag.cgi script containing URL encoded \"dot dot\" sequences (%F..%F) in the \"file\" parameter to traverse directories and obtain any known file on the Web server.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1353": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11096",
+        "title": "Outreach Project Tool news post cross-site scripting",
+        "body": "Outreach Project Tool (OPT) is vulnerable to cross-site scripting, caused by improper filtering of user-supplied input. A remote attacker could create a news post containing embedded script that would be executed in the victim's Web browser within the security context of the hosting site, once the message is viewed. An attacker could use this vulnerability to obtain a user's cookie-based authentication credentials.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1354": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11084",
+        "title": "Battlefield 1942 game server UDP query command denial of service",
+        "body": "Electronic Arts Battlefield is vulnerable to a denial of service. A remote attacker could exploit this vulnerability by sending spoofed query commands to an affected server, which would cause the server to flood the targeted system with UDP traffic, which could consume all available CPU and memory resources on the targeted system, as well as cause legitimate users to lose their connection to the affected game server.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1355": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11426",
+        "title": "Battlefield 1942 game server RemoteConsole.exe denial of service",
+        "body": "Electronic Arts Battlefield 1942 is vulnerable to a denial of service attack, caused by a vulnerability in the RemoteConsole.exe utility. A remote attacker could send an overly long username or password to the administration port to cause the game server to crash.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1356": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11107",
+        "title": "HP-UX sort utility incorrectly handles files",
+        "body": "The sort utility in HP-UX could allow a local attacker to gain unauthorized access to restricted files, and possibly gain elevated privileges or cause a denial of service.Apply the appropriate patch for your system, as listed below. Refer to Hewlett-Packard Company Security Bulletin HPSBUX0301-237 for more information. See References.HP-UX 11.11: PHCO_25918HP-UX 11.00: PHCO_27565HP-UX 11.04: PHCO_28467HP-UX 10.20: PHCO_27564HP-UX 10.10: PHCO_27940HP-UX 10.01: PHCO_28142"
+      }
+    ],
+    "CVE-2003-1358": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11312",
+        "title": "HP-UX rs.F3000 could allow daemon account access",
+        "body": "HP-UX rs.F3000 could allow a local attacker to gain elevated privileges on the system, caused by a vulnerability in the /usr/lib/X11/Xserver/ucode/screens/hp/rs.F3000 program, which provides support for Freedom series graphics devices on the X Window System. A local attacker could use the rs.F3000 program to gain unauthorized access to the daemon account, and possibly cause a denial of service on the system.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1359": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11313",
+        "title": "HP-UX stmkfont buffer overflow",
+        "body": "HP-UX is vulnerable to a buffer overflow in the /usr/bin/stmkfont program, which is a utility for generating X and PCL fonts from Intellifont scalable typeface data. A local attacker could exploit this buffer overflow to execute arbitrary code on the system with elevated privileges.For HP-UX 10.20:Apply patch PHSS_15423, as listed in Hewlett-Packard Company Security Bulletin HPSBUX0302-241. See References.As a workaround, remove the suid permissions from stmkfont using the following command:chmod 555 /usr/bin/stmkfont"
+      }
+    ],
+    "CVE-2003-1360": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11314",
+        "title": "HP-UX landiag and lanadmin buffer overflows",
+        "body": "HP-UX is vulnerable to buffer overflows in the /usr/sbin/landiag and /usr/sbin/lanadmin programs, which are Local Area Network (LAN) diagnostic and administration programs. A local attacker could exploit these buffer overflows to execute arbitrary code on the system with elevated privileges.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1364": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11718",
+        "title": "Abyss Web Server malformed HTTP GET request denial of service",
+        "body": "Abyss Web Server is vulnerable to a denial of service attack. By sending a malformed HTTP GET request to the server containing an invalid value for either the Connection or Range field, a remote attacker could cause the server to crash, once the strnicmp function is called on the Windows platform or the strncasecmp function is called on the Linux platform.Upgrade to the latest version of Abyss Web Server (1.1.4 or later), available from the Aprelium Technologies Web site. See References."
+      }
+    ],
+    "CVE-2003-1365": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11308",
+        "title": "CGI::Lite Perl module escape_dangerous_chars() shell command execution",
+        "body": "CGI::Lite fails to filter out certain special characters from form input. A remote attacker could exploit this vulnerability to read or write to local files, and possibly execute shell commands on the Web server by supplying malicious form input to an affected Web server.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1366": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11233",
+        "title": "OpenBSD chpass user database information disclosure",
+        "body": "The chpass binary (also chfn/chsh) creates temporary files for editing user database information. A local attacker could open one of these files for editing using chpass, then suspend the process and replace the file currently being edited with a hard link to any file on the system before resuming the operation, allowing chpass to process the file automatically. If the linked file has a line that does not fit the criteria standard chpass temporary file format, an error could occur during processing that would cause portions of the targeted file to be returned. This information could be used by an attacker to launch further attacks against the affected system.Apply the patch for this vulnerability, as included in \"After\" Security Advisory ASA-0001, or available in the OpenBSD CVS repository. See References."
+      }
+    ],
+    "CVE-2003-1368": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11234",
+        "title": "32bit FTP banner buffer overflow",
+        "body": "32bit FTP is vulnerable to a buffer overflow caused by improper bounds checking of FTP banners. By sending an FTP banner of 4096 bytes or more to the client, a remote attacker in control of a malicious FTP server could overflow a buffer and execute arbitrary code on the system or cause the FTP client to crash.Upgrade to the latest version of 32bit FTP (9.50.1 or later), available from the ElectraSoft Software Solutions Web site. See References."
+      }
+    ],
+    "CVE-2003-1369": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11235",
+        "title": "ByteCatcher FTP banner buffer overflow",
+        "body": "ByteCatcher FTP is vulnerable to a buffer overflow caused by improper bounds checking of FTP banners. By sending an FTP banner of 4096 bytes or more to the client, a remote attacker in control of a malicious FTP server could overflow a buffer and execute arbitrary code on the system or cause the FTP client to crash.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1370": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11176",
+        "title": "Nuked-Klan index.php script cross-site scripting",
+        "body": "Nuked-Klan is vulnerable to cross-site scripting in the Guestbook, Forum, and Shoutbox modules. A remote attacker could embed malicious script within a URL request to the index.php script, which would be executed in the victim's Web browser within the security context of the hosting site, once the link is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.Upgrade to the latest version of Nuked-Klan (b1.3 or later), when it becomes available from the Nuked-Clan Web site. See References."
+      }
+    ],
+    "CVE-2003-1371": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11424",
+        "title": "Nuked-Klan information disclosure",
+        "body": "Nuked-Klan could allow a remote attacker to obtain sensitive information, caused by improper filtering of user-supplied URL parameters by the Team, News, and Liens modules. A remote attacker could submit a specially-crafted URL request that invokes the phpinfo() function, which could allow the attacker to gain sensitive information. An attacker could use this information to launch further attacks against the affected server.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1372": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11376",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1373": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11407",
+        "title": "phpBB auth.php script file disclosure",
+        "body": "phpBB could allow a remote attacker to read files on the system, caused by a vulnerability in the auth.php script, which fails to properly filter user-supplied input. A remote attacker could send a specially-crafted URL request containing URL encoded NULL characters (%00) in CGI parameters, which would allow the attacker to view any file on the server readable by the Web server process. An attacker could also use this vulnerability to execute arbitrary PHP code with privileges of the Web server process.Upgrade to the latest version of phpBB (2.0.4 or later), available from the phpBB Web site. See References."
+      }
+    ],
+    "CVE-2003-1374": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11316",
+        "title": "HP-UX line printer daemon disable command buffer overflow",
+        "body": "HP-UX is vulnerable to a buffer overflow in the lp printer daemon disable command. The line printer daemon is used to allow heterogeneous Unix environments to share printers over a network. By issuing a disable command with an overly long -r or -c command line option, a local attacker could overflow a buffer and execute arbitrary code on the system.Apply the appropriate patch for your system. Refer to Hewlett-Packard Company Security Bulletin HPSBUX0310-284 for more information. See References."
+      }
+    ],
+    "CVE-2003-1375": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11272",
+        "title": "HP-UX /usr/sbin/wall buffer overflow",
+        "body": "The /usr/sbin/wall program included with the Hewlett-Packard HP-UX operating system is vulnerable to a buffer overflow. The /usr/sbin/wall program is a setgid tty program that is used to send messages to all users logged onto the system. By sending an overly long argument to the wall program as a file to be broadcast to multiple users, a local attacker could overflow a buffer and execute arbitrary code on the system with \"tty\" group privileges or cause the system to crash.For HP-UX 10.20, 11.00, 11.04 and 11.11:Apply the appropriate patch for your system, as listed in Hewlett-Packard Company Security Bulletin HPSBUX0305-258. See References."
+      }
+    ],
+    "CVE-2003-1377": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11409",
+        "title": "SIRCD reverse DNS lookup buffer overflow",
+        "body": "SIRCD (Smart IRC Daemon) is vulnerable to a buffer overflow, caused by improper bounds checking of client hostnames during the reverse DNS lookup. By connecting the server with an overly long hostname, a remote attacker could overflow a buffer and execute arbitrary code on the system or cause the server to crash, once the client's IP address is resolved.Upgrade to the latest CVS version of SIRCD, available from the SIRCD Web page. See References."
+      }
+    ],
+    "CVE-2003-1378": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11411",
+        "title": "Microsoft Outlook CODEBASE value allows remote program execution",
+        "body": "Microsoft Outlook Express could allow a malicious Web site operator to execute arbitrary programs on a visiting user's computer. A malicious Web site operator can set the CODEBASE parameter to the path of an executable and embed it in HTML objects created using either the window.PopUp() or window.Open() to execute arbitrary programs on the visiting user's computer.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1379": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11419",
+        "title": "ClarkConnect clarkconnectd daemon information disclosure",
+        "body": "ClarkConnect could allow a remote attacker to obtain sensitive information, caused by a vulnerability in the clarkconnectd daemon. A remote attacker could send certain characters (\"A\", \"F\", \"M\", \"P\", \"Y\", \"b\") followed by several line feeds to the clarkconnectd daemon service listening on port 10005 to cause the service to return sensitive information.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1380": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11347",
+        "title": "BisonFTP Server LS command could allow an attacker to view files",
+        "body": "BisonFTP Server could allow a remote attacker to obtain sensitive information. A remote attacker could issue an LS command to view a directory list, and then issue an MGET command to obtain any known file outside of the FTP root directory.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1382": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11432",
+        "title": "ISMail SMTP domain name buffer overflow",
+        "body": "ISMail is vulnerable to a buffer overflow in the SMTP service. By supplying an overly long domain name in either the \"MAIL FROM\" or \"RCPT TO\" fields in an email message, a remote attacker could overflow a buffer and execute arbitrary code on the system or cause ISMail to crash, once the mail is processed.Upgrade to the latest version of ISMail (1.4.5 (Beta) or later), available from the InstantServers Web site. See References."
+      }
+    ],
+    "CVE-2003-1383": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11443",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1384": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11448",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1385": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11435",
+        "title": "Invision Power Board ipchat.php file include",
+        "body": "Invision Power Board could allow a remote attacker to include malicious PHP files. If register_globals is enabled, a remote attacker could send a specially-crafted URL request to the ipchat.php script that specifies the conf_global.php script from a remote system as a parameter, which would allow the attacker to execute code on the vulnerable Web server.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1386": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11440",
+        "title": "AXIS 2400 and 2401 /var/log/messages unauthorized access",
+        "body": "The AXIS 2400 and 2401 Video Servers could allow a remote attacker to gain unauthorized access to the /var/log/messages directory. A remote attacker could send a specially-crafted URL request to the /messages directory to gain unauthorized access to sensitive information. This information could be used to launch further attacks against the affected device.Upgrade to the latest version of firmware, when it becomes available from the Axis Communications Web site. See References."
+      }
+    ],
+    "CVE-2003-1387": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11281",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1388": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11740",
+        "title": "Opera long URL buffer overflow",
+        "body": "Opera is vulnerable to a buffer overflow, caused by improper bounds checking. By creating an overly long URL ending with a .zip file extension, a remote attacker could overflow a buffer and execute arbitrary code on the system, once the link is clicked. An attacker could exploit this vulnerability by sending the malicious URL to a victim in an email or by hosting it on a Web page.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1389": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11294",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1390": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11297",
+        "title": "CryptoBuddy stores bytes of passwords in plain text",
+        "body": "CryptoBuddy stores bytes 53 through 55 of a 55 byte or longer password in plain text. A local attacker could use this vulnerability to launch brute force password guessing attacks against the system to gain unauthorized access to the system.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1391": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11298",
+        "title": "CryptoBuddy weak passphrase encryption",
+        "body": "CryptoBuddy uses a weak encryption algorithm for passphrase generation and use a predictable key for each passphrase. A local attacker with access to CryptoBuddy could use brute force techniques and create a dictionary of encrypted passphrases and use them to decrypt files and obtain sensitive information.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1392": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11317",
+        "title": "CryptoBuddy password modification information disclosure",
+        "body": "CryptoBuddy could allow a local attacker to obtain sensitive information. CryptoBuddy fails to properly use the user-supplied password to encrypt files and stores the password in an encrypted file in a predictable location. A local attacker could exploit this vulnerability by accessing the encrypted file and modifying the password, which would allow the attacker to use the password to decrypt the contents of the file to obtain sensitive information.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1393": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11269",
+        "title": "SQLBase EXECUTE long command or procedure name buffer overflow",
+        "body": "SQLBase is vulnerable to a buffer overflow, caused by improper bounds checking of command or procedure names when using the EXECUTE command. By sending a command or procedure name of more than 700 characters using the EXECUTE command, a remote attacker can overflow a buffer and cause the system to crash or execute arbitrary code on the system with Local System privileges.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1395": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11228",
+        "title": "KaZaA automated advertisement download buffer overflow",
+        "body": "KaZaA is vulnerable to a denial of service attack caused by a buffer overflow. By sending a malicious response to an affected system for the automated advertisement download, a remote attacker could overflow a buffer and cause the system to crash or possibly execute code on the system.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1396": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11894",
+        "title": "Opera long file extension buffer overflow",
+        "body": "Opera is vulnerable to a heap buffer overflow, caused by improper bounds checking of file name extensions. By creating a malicious file with an overly long file extension, a remote attacker could overflow a buffer and cause the system to crash, once the victim downloads the malicious file. An attacker could exploit this vulnerability by sending the malicious file to a victim as an email attachment or by hosting it on a Web page.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1397": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11280",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1398": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11306",
+        "title": "Cisco IOS invalid ICMP redirects could reroute packets",
+        "body": "Multiple Cisco devices running Cisco Internetwork Operating System Softwhasbeen disabled, a remote attacker could send an invalid ICMP redirect packet to the router to cause the router to stop sending packets outside of the local subnet or to forward packets to an attacker controlled gateway or a bogus gateway, which would allow the attacker to intercept all information that is being transmitted through the affected device.Upgrade to one of the fixed versions of Cisco IOS, as listed below. Refer to Cisco Systems \"Field Notice - IOS Accepts ICMP Redirects in Non-default Configuration Settings\" for more information. See References.12.2(13.03)B12.2(12.05)T12.2(12.05)S12.2(12.05)12.2(12.02)S12.2(12.02)T"
+      }
+    ],
+    "CVE-2003-1400": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11229",
+        "title": "PHP-Nuke avatar field could allow an attacker to execute code",
+        "body": "PHP-Nuke could allow a remote attacker to execute arbitrary code on the system. PHP-Nuke fails to properly filter JavaScript code or HTML tags from user-supplied input. A remote attacker could exploit this vulnerability by changing the avatar select box into a text box and embedding malicious HTML or JavaScript code in the avatar field, which would be executed in the victim's Web browser within the security context of the hosting site, once the avatar is viewed.Upgrade to the latest version of PHP-Nuke (6.5 Beta 7 or later), available from the PHP-Nuke Web site. See References."
+      }
+    ],
+    "CVE-2003-1402": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11341",
+        "title": "Kietu hit.php remote PHP file include",
+        "body": "Kietu could allow a remote attacker to include malicious PHP files. A remote attacker could send a specially-crafted URL request to the hit.php script that specifies the config.php script from a remote system as a parameter, which would allow the attacker to execute code on the vulnerable Web server.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1403": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11353",
+        "title": "DotBr foo.php3 information disclosure",
+        "body": "DotBr could allow a remote attacker to obtain sensitive information. A remote attacker could submit a specially-crafted request to the foo.php3 script, which invokes the phpinfo() function, to gain sensitive information. An attacker could then use this information to launch further attacks against the affected server.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1404": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11354",
+        "title": "DotBr config.inc information disclosure",
+        "body": "DotBr could allow a remote attacker to obtain sensitive information. A remote attacker could send a specially-crafted URL request to the config.inc file to cause the contents of the file to be returned. An attacker could then use this information to launch further attacks against the affected server.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1405": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11355",
+        "title": "DotBr exec.php3 and system.php3 command execution",
+        "body": "DotBr could allow a remote attacker to execute commands on the system. A remote attacker could send a specially-crafted URL request to the exec.php3 or the system.php3 script, which would allow the attacker to execute commands on the system.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1406": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11342",
+        "title": "D-Forum header.php3 or footer.php3 script PHP file include",
+        "body": "D-Forum could allow a remote attacker to include malicious PHP files. A remote attacker could use the $my_header variable with the header.php3 script or the $my_footer variable with the footer.php3 script that specifies a malicious file from a remote system as a parameter, which would allow the attacker to execute code on the vulnerable Web server.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1407": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11329",
+        "title": "Microsoft Windows NT and 2000 cmd.exe CD path name buffer overflow",
+        "body": "Microsoft Windows NT and Windows 2000 systems are vulnerable to a buffer overflow in the cmd.exe command prompt, caused by improper bounds checking of file paths. By issuing a CD command with a file path of more than 256 characters, a local attacker could overflow and cause the cmd.exe window to crash, and possibly execute arbitrary code on the system on Windows NT 4.0 systems or cause the CD command to fail on Windows 2000 systems.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1408": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11311",
+        "title": "IBM Lotus Domino Web server \"dot\" file download",
+        "body": "Lotus Domino could allow a remote attacker to obtain sensitive information, caused by a vulnerability in the Web server component. A remote attacker could send a specially-crafted URL request for any non-default Lotus file type appended with a \"dot\" character, which would cause the file contents to be downloaded instead of being processed. This could allow the attacker to view source code, and possibly other sensitive information, if the file references Server Side Includes (SSI) that contain user account information.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1409": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11248",
+        "title": "TOPo in.php or out.php path disclosure",
+        "body": "TOPo could allow a remote attacker to obtain sensitive information. If a remote attacker sends a malformed URL request to the in.php or out.php script, the attacker could cause an error message to be returned containing the full path to the TOPo directory.Upgrade to the latest version of TOPo (2.0.090 or later), available from the EJ3 Scripts Web site. See References."
+      }
+    ],
+    "CVE-2003-1410": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11278",
+        "title": "Cedric Email Reader PHP file include",
+        "body": "Cedric Email Reader could allow a remote or local attacker to include malicious PHP files. An attacker could send a specially-crafted URL request to the email.php3 or email.php script that specifies the code.php script from a remote system as a parameter, which would allow the attacker to execute code on the vulnerable Web server. If register_globals is enabled, an attacker could send a specially-crafted URL request to the emailreader_execute_on_each_page.inc.php script that specifies the code.php script from a remote system as a parameter, which would allow the attacker to execute code on the vulnerable Web server.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1411": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11278",
+        "title": "Cedric Email Reader PHP file include",
+        "body": "Cedric Email Reader could allow a remote or local attacker to include malicious PHP files. An attacker could send a specially-crafted URL request to the email.php3 or email.php script that specifies the code.php script from a remote system as a parameter, which would allow the attacker to execute code on the vulnerable Web server. If register_globals is enabled, an attacker could send a specially-crafted URL request to the emailreader_execute_on_each_page.inc.php script that specifies the code.php script from a remote system as a parameter, which would allow the attacker to execute code on the vulnerable Web server.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1412": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11408",
+        "title": "GOsa PHP plug-in variable file include",
+        "body": "GOsa (GOnicus System Administrator) could allow a remote attacker to include malicious PHP files and execute code on the system. A remote attacker could use the plugin variable to specify a malicious PHP file on a remote system using the index.php script or use the base variable to specify a malicious PHP file on a remote system using the help.php script, which could then be used by the attacker to execute arbitrary code on the affected server.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1413": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11445",
+        "title": "Darwin parse_xml.cgi \"dot dot\" sequences could determine if a file exists",
+        "body": "Apple's Darwin Streaming Server could allow a remote attacker to determine whether specified files exist on the system. If a remote attacker sends a specially-crafted URL request to the parse_xml.cgi script containing \"dot dot\" sequences (../) in the \"filename\" parameter, the attacker could determine whether the requested file exists on the system depending on the error message returned. An attacker could use this information to launch further attacks against the affected system.Upgrade to the latest version of Darwin Streaming Server (4.1.3 or later), available from the Apple Web site. See References."
+      }
+    ],
+    "CVE-2003-1414": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11446",
+        "title": "Darwin parse_xml.cgi \"dot dot dot\" directory traversal",
+        "body": "Apple's Darwin Streaming Server could allow a remote attacker to traverse directories on the server. A remote attacker could send a specially-crafted URL request to the parse_xml.cgi script containing modified \"dot dot dot\" sequences that use three dots instead of two (.../) in the \"filename\" parameter to traverse directories and download any known file from the server.Upgrade to the latest version of Darwin Streaming Server (4.1.3 or later), available from the Apple Web site. See References."
+      }
+    ],
+    "CVE-2003-1415": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11345",
+        "title": "NetCharts chunked encoding buffer overflow",
+        "body": "NetCharts Server (formerly known as ChartWorks Server) is vulnerable to a buffer overflow in the function that handles chunked transfer encoding. By sending multiple HTTP GET requests for the index.jsp file that use invalid chunked transfer encoding, a remote attacker could overflow a network buffer, and possibly obtain sensitive information.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1416": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11346",
+        "title": "BisonFTP Server LS and CWD command denial of service",
+        "body": "BisonFTP Server is vulnerable to a denial of service attack. By issuing a LS or CWD command to the FTP server followed by a character string containing 4300 bytes or more, a remote attacker could cause the server to consume 100% of the available CPU resources.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1418": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11438",
+        "title": "Apache HTTP Server MIME message boundaries information disclosure",
+        "body": "Apache HTTP Server could allow a remote attacker to obtain sensitive information. A remote attacker could obtain file inode numbers (i-numbers) from the ETag header, if the server is configured to use the FileETag directive, and the PIDs of child processes when Apache HTTP server generates MIME message boundaries. An attacker could then use this information to launch further attacks against the affected server.For OpenBSD 3.2:Apply the patch for this vulnerability, as listed in OpenBSD 3.2 errata 008: SECURITY FIX: February 25, 2003. See References."
+      }
+    ],
+    "CVE-2003-1419": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11444",
+        "title": "Netscape JavaScript reformatDate denial of service",
+        "body": "Netscape is vulnerable to a denial of service attack. By creating a malicious Web page that uses the JavaScript reformatData function, a remote attacker could cause Netscape to crash, once the Web page is viewed.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1420": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11423",
+        "title": "Opera \"Enable Automatic Redirection\" option cross-site scripting",
+        "body": "Opera is vulnerable to cross-site scripting, if the \"Enable Automatic Redirection\" option is disabled. A remote attacker could create a specially-crafted Web page containing a URL link that contains malicious code in the HTTP Location header, which would execute in the victim's Web browser, once the link is clicked and the Web page is redirected. An attacker could use this vulnerability to steal the victim's cookies or hijack the session.For Opera 7.2 for Microsoft Windows:Upgrade to the latest version of Opera (7.02 or later), available from the Opera Web site. See References.As a workaround, leave the \"Enable Automatic Redirection\" option enabled (default setting)."
+      }
+    ],
+    "CVE-2003-1421": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11340",
+        "title": "SuckBot mod_mysql_logger denial of service",
+        "body": "SuckBot is vulnerable to a denial of service attack, caused by a vulnerability in the mod_mysql_logger shared object. A remote attacker could send a specially-crafted request to cause Suckbot to crash with a segmentation fault.Upgrade to the latest version of Suckbot (0.008 or later), available from the Suckbot Web page. See References."
+      }
+    ],
+    "CVE-2003-1423": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11358",
+        "title": "petitforum liste.txt information disclosure",
+        "body": "petitforum could allow a remote attacker to obtain sensitive information. petitforum stores users email addresses, usernames, and encrypted passwords in the liste.txt file, which is remotely accessible by default. A remote attacker could exploit this vulnerability by sending a URL request for the liste.txt file to obtain sensitive information. This information could then be used by the attacker to launch further attacks against the affected system.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1425": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11356",
+        "title": "cPanel guestbook.cgi command execution",
+        "body": "cPanel could allow a remote attacker to execute commands on the system, caused by improper filtering of user-supplied input when using the template variable. A remote attacker could pass arbitrary commands to the guestbook.cgi script, which would allow the attacker to execute commands on the system with the same privileges as the victim or possibly read any file on the system that is readable by the victim.Upgrade to the latest version of cPanel (6.0 or later), available from the cPanel Web site. See References."
+      }
+    ],
+    "CVE-2003-1427": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11279",
+        "title": "NETGEAR FM114P hexadecimal URL encoded \"dot dot\" directory traversal",
+        "body": "NETGEAR FM114P could allow a remote attacker to traverse directories on the Web-configuration interface. A remote attacker could send a specially-crafted URL request containing hexadecimal URL encoded \"dot dot\" sequences (in the form of %2e%2e%2f) to traverse directories and gain access to restricted files and folders on the system, such as the netgear.cfg configuration file, which contains the dialup-password and the dynamic dns-configuration password.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1429": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11364",
+        "title": "Proxomitron parameter length buffer overflow",
+        "body": "Proxomitron is vulnerable to a buffer overflow. By sending a parameter of 1024 bytes or longer, a remote attacker can overflow a buffer and execute arbitrary code on the system or cause the system to crash.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1430": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11299",
+        "title": "Unreal Tournament Server known file directory traversal",
+        "body": "Unreal Tournament Server could allow a remote attacker to traverse directories on the game server. A remote attacker could send a specially-crafted URL request for any known file on the game server to traverse directories and possibly cause the server to crash.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1431": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11301",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1432": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12012",
+        "title": "Unreal Tournament Server spoofed UDP packet negative index value denial of service",
+        "body": "Unreal Tournament Server is vulnerable to a denial of service. A remote attacker can send a spoofed UDP packet with a negative index value, to consume all available memory resources and cause the system to crash.Apply the ut2003lnx_patch2225 patch, as listed in the BugTraq Mailing List posting dated Tue May 13 2003 - 15:19:18 CDT. See References.For Gentoo Linux:Upgrade to the latest gnupg package (1.2.2 or later), as listed in Gentoo Linux Security Announcement 200305-05. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11305",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11302",
+        "title": "Unreal Tournament Server malformed packet denial of service",
+        "body": "Unreal Tournament Server is vulnerable to a denial of service attack. A remote attacker could send a malformed packet to the game server to consume all available memory resources on the server.No remedy available as of July 6, 2008."
+      }
+    ],
+    "CVE-2003-1433": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11304",
+        "title": "Unreal Tournament Server request to join denial of service",
+        "body": "Unreal Tournament Server is vulnerable to a denial of service attack. If a remote attacker floods the server with requests to join the server, the attacker could cause the server to consume 100% of the available CPU resources, which would result in a denial of service against legitimate users.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1434": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11374",
+        "title": "login_ldap bypass password authentication",
+        "body": "login_ldap could allow a remote attacker to bypass authentication. If the bind_anon_cred, bind_anon_dn, or bind_anon option in the slapd.conf file is enabled, a remote attacker could bypass password authentication and gain unauthorized access to the system.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1435": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11375",
+        "title": "PHP-Nuke search module SQL injection",
+        "body": "PHP-Nuke is vulnerable to SQL injection, caused by a vulnerability in the search module. By sending specially-crafted SQL statements to the modules.php script using the mid() function, a remote attacker could obtain the MD5 hash of the administrator's password. An attacker could use this vulnerability to gain unauthorized administrative access to the system.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1436": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11217",
+        "title": "Nukebrowser $filhead remote PHP file include",
+        "body": "Nukebrowser could allow a remote attacker to include malicious PHP files, caused by improper filtering of the $filhead variable. If the allow_url_fopen and register_globals are enabled, a remote attacker could send a specially-crafted URL request to the nukebrowser.php script that specifies a malicious file from a remote system in the path value for the $filhead variable, which would allow the attacker to execute code on the vulnerable Web server.Upgrade to the latest version of Nukebrowser (2.5 or later), available from the CrossNuke Web page. See References."
+      }
+    ],
+    "CVE-2003-1440": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11247",
+        "title": "SpamProbe HTML tag new line denial of service",
+        "body": "SpamProbe is vulnerable to a denial of service attack. A remote attacker could send a specially-crafted email containing new lines within HTML <href> tags to a vulnerable system, which would cause the filter to crash, once the email is opened.Upgrade to the latest version of SpamProbe (0.8b or later), available from the SourceForge.net Web site. See References."
+      }
+    ],
+    "CVE-2003-1441": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11285",
+        "title": "Posadis DNS packet denial of service",
+        "body": "Posadis is vulnerable to a denial of service attack, caused by improper validation of DNS packets. By sending a malformed DNS packet to the server, a remote attacker could cause the server to crash or possibly execute arbitrary code on the system.Upgrade to the latest version of Posadis (0.50.9 or later), available from the Posadis Web site. See References."
+      }
+    ],
+    "CVE-2003-1442": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11290",
+        "title": "Ericsson HM220dp could allow an attacker to bypass authentication",
+        "body": "Ericsson HM220dp ADSL modem could allow a local attacker to bypass authentication and gain administrative access to the Web administration interface. The Web administration interface does not require authentication. A remote attacker from within the Local Area Network (LAN) could use this vulnerability to gain unauthorized access to the Web administration interface and modify the device's configuration settings.Apply the patch for this vulnerability ( CXC_132_2094-R3F.exe), available from the Ericsson Web site. See References."
+      }
+    ],
+    "CVE-2003-1443": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11292",
+        "title": "Kaspersky Antivirus (KAV) device path name protection bypass",
+        "body": "Kaspersky Antivirus (KAV) creates a file that uses the name of a DOS device (i.e. aux.vbs or aux.com), the attacker could bypass virus protection, and possibly execute malicious code on the system.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1444": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11291",
+        "title": "Kaspersky Antivirus (KAV) long file path denial of service",
+        "body": "Kaspersky Antivirus (KAV) creates a file with an overly long path, the attacker could cause the KAV monitor service to crash, which would allow the attacker to bypass virus protection, or consume 100% of the available CPU resources, which would cause the system to become unresponsive.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1445": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11293",
+        "title": "FAR long path name buffer overflow",
+        "body": "FAR is vulnerable to a buffer overflow, caused by improper bounds checking of file path names. By requesting a file with an overly long path, a local attacker could overflow a buffer and cause FAR to crash, and possibly execute arbitrary code on the system with elevated privileges.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1446": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11382",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1447": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11245",
+        "title": "IBM WebSphere uses weak encryption algorithm to store passwords in an exported XML file",
+        "body": "IBM WebSphere Advanced Server Edition uses a weak encryption algorithm to store security configuration passwords in an exported XML file. If the XML Configuration Management tool is used to export an XML file, a local attacker could obtain this file and recover the security configuration passwords, such as the administrative server, LTPA and LDAP passwords, which can then be decrypted.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1448": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11274",
+        "title": "Microsoft Windows 2000 NetBIOS continuation packets denial of service",
+        "body": "Microsoft Windows is vulnerable to a denial of service attack, caused by a memory leak when handling NetBIOS continuation packets. A remote attacker could send NetBIOS continuation packets to the server to consume kernel memory and cause the server to stop responding to legitimate Server Message Block (SMB) requests.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1450": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11363",
+        "title": "BitchX IRC client RPL_NAMREPLY message denial of service",
+        "body": "BitchX IRC (Internet Relay Chat) client is vulnerable to a denial of service attack. If a remote attacker sends a malformed RPL_NAMREPLY numeric 353 message to a BitchX IRC client, the attacker could cause the client to crash. The program must be restarted to regain normal functionality.For Gentoo Linux: Upgrade to the latest version of bitchx (1.0.19-r4 or later), as listed in Gentoo Linux Security Announcement 200302-11. See References."
+      }
+    ],
+    "CVE-2003-1451": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11365",
+        "title": "Symantec Norton AntiVirus 2002 email scanning long file name buffer overflow",
+        "body": "Symantec Norton AntiVirus is vulnerable to a buffer overflow, caused by a vulnerability in the email scanning function. By sending an email with a compressed file attached that contains a file with an overly long filename, a remote attacker could overflow a buffer and execute arbitrary code on the system with privileges of the Norton AntiVirus user, once the email is processed by the email scanning function.Run LiveUpdate to ensure your system is patched against this vulnerability."
+      }
+    ],
+    "CVE-2003-1453": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11872",
+        "title": "XOOPS MyTextSanitizer() function cross-site scripting",
+        "body": "XOOPS is vulnerable to cross-site scripting in the News, newbb, private messages, signatures modules, and possibly other modules, caused by improper filtering of user-supplied input by the MyTextSanitizer() function. A remote attacker could post a message containing malicious JavaScript embedded within HTML IMG tags, which would be executed in the victim's Web browser within the security context of the hosting site, once the message is viewed. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.Upgrade to the latest version of XOOPS (1.3.10 or later or 2.0.2 or later), available from the XOOPS Web site. See References."
+      }
+    ],
+    "CVE-2003-1455": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12101",
+        "title": "PoPToP launch_bcrelay() broadcast relay function in pptpctrl.c file buffer overflow",
+        "body": "PoPToP is vulnerable to two buffer overflows, caused by vulnerabilities in the launch_bcrelay() broadcast relay function in the pptpctrl.c configuration file. The bcrelay option is not enabled by default. A local attacker could supply a specially-crafted process file containing an overly large amount of data to overflow a buffer and overwrite memory or execute arbitrary code on the system with elevated privileges, possibly root.Upgrade to the latest version of PoPToP (1.1.4-b4 or later), available from the SourceForge.net Web site. See References."
+      }
+    ],
+    "CVE-2003-1456": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11878",
+        "title": "album.pl command execution",
+        "body": "album.pl could allow a remote attacker to execute commands on the server with privileges of the Web server, typically as a 'nobody' user.Upgrade to the latest version of album.pl (6.2 or later), available from the album.pl Support Forums Web page. See References."
+      }
+    ],
+    "CVE-2003-1458": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12273",
+        "title": "ttCMS and ttForum Profile.php SQL injection",
+        "body": "ttCMS and ttForum are vulnerable to SQL injection, caused by a vulnerability in the Profile.php script. If the magic_quotes_gpc option is disabled, a remote attacker could insert arbitrary SQL code into the database, which would allow the attacker to obtain sensitive information, and possibly add, modify or delete data in the backend database.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1459": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12271",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1461": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11919",
+        "title": "HP-UX /user/lbin/rwrite buffer overflow",
+        "body": "HP-UX is vulnerable to a denial of service attack, caused by a buffer overflow in the /user/lbin/rwrite program. By default, /user/lbin/rwrite is installed setuid root. By sending an overly long argument to the /user/lbin/rwrite program, a local attacker could overflow a buffer and possibly execute arbitrary code on the system or cause the system to crash.For HP-UX 11.00:Apply the PHCO_27132 patch, as listed in BugTraq Mailing List posting dated Fri May 02 2003 - 19:27:03 CDT. See References."
+      }
+    ],
+    "CVE-2003-1463": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11875",
+        "title": "WebAdmin WebAdmin.dll could allow an attacker to view files",
+        "body": "WebAdmin could allow a remote attacker to gain unauthorized access to any file on the system, caused by improper validation of user-supplied input by the WebAdmin.dll file. A remote attacker with administrative privileges could send a specially-crafted URL request to the WebAdmin.dll file to view any file on the system.Upgrade to the latest version of WebAdmin (2.0.3 or later), available from the Alt-N Technologies Web site. See References."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11874",
+        "title": "WebAdmin WebAdmin.dll path disclosure",
+        "body": "WebAdmin could allow a remote attacker to obtain sensitive information. A remote attacker could send a specially-crafted URL request to the WebAdmin.dll file, causing the server to disclose the installation directory of the MDaemon or RelayFax servers. An attacker could use this information to launch further attacks against the affected server.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1464": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11950",
+        "title": "Siemens Short Message Service (SMS) image buffer overflow",
+        "body": "Siemens mobile phones are vulnerable to a denial of service attack, caused by a buffer overflow. If a remote attacker sends a Short Message Service (SMS) message with an overly large image to a vulnerable device, the attacker could overflow a buffer and cause the device to become disabled or become unresponsive for a short period of time.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1465": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12482",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1467": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12502",
+        "title": "Phorum register.php HTML injection",
+        "body": "Phorum is vulnerable to HTML injection, caused by a vulnerability in the register.php script. A remote attacker could embed malicious HTML code within Phorum fields, which would be executed in the victim's Web browser within the security context of the hosting site, once the registration page is redisplayed and viewed by the victim.Upgrade to the latest version of Phorum (3.4.4 or later), available from the Phorum Web site. See References."
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12487",
+        "title": "Phorum multiple cross-site scripting",
+        "body": "Phorum is vulnerable to cross-site scripting, caused by improper filtering of user-supplied input. A remote attacker could create a malicious URL link containing embedded script to the register.php, login.php, post.php, or common.php script, which would be executed in the victim's Web browser within the security context of the hosting site, once the link is clicked.Upgrade to the latest version of Phorum (3.4.4 or later), available from the Phorum Web site. See References."
+      }
+    ],
+    "CVE-2003-1468": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12436",
+        "title": "PHP-Nuke Web_Links module in modules.php script path disclosure",
+        "body": "PHP-Nuke could allow a remote attacker to obtain sensitive information, caused by a vulnerability in the Web_Links module. A remote attacker could send a specially-crafted URL request to the modules.php script using a NULL or nonnumeric value as the value for the cid variable to cause the server to disclose path information.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1469": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11879",
+        "title": "Adobe Macromedia ColdFusion MX physical path disclosure",
+        "body": "Macromedia ColdFusion MX could allow a remote attacker to obtain sensitive information. A remote attacker could send a URL request to the JRun administrative server on TCP port 8500, which would cause an error message to be returned that contains the physical path of the MX server. This information could then be used by the attacker to launch further attacks against the affected server.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1470": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11896",
+        "title": "MDaemon IMAP CREATE command buffer overflow",
+        "body": "MDaemon is vulnerable to a buffer overflow in the IMAP service, caused by insufficient bounds checking of the CREATE command. By creating a mailbox name greater than 1 KB, a remote attacker with a valid account could overflow a buffer and cause all of MDaemon's mail services to crash or execute arbitrary code on the server with SYSTEM level privileges.Upgrade to the latest version (7.2.0 or later), available from the Alt-N Technologies Web site. See References."
+      }
+    ],
+    "CVE-2003-1471": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11882",
+        "title": "MDaemon POP3 negative number denial of service",
+        "body": "MDaemon is vulnerable to a denial of service attack using the POP3 service. By establishing a Telnet connection and issuing a DELE or UIDL command followed by a negative number, a remote attacker with a valid mail account could cause all of MDaemon's mail services to crash. MDaemon must be restarted to regain normal functionality.Upgrade to the latest version of MDaemon (6.7.9 or later), available from the Alt-N Technologies Web site. See References."
+      }
+    ],
+    "CVE-2003-1472": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11883",
+        "title": "3D-FTP FTP banner buffer overflow",
+        "body": "3D-FTP is vulnerable to a denial of service attack, caused by a buffer overflow. By sending an FTP banner containing 8192 bytes or more to the client, a remote attacker can overflow a buffer and cause the system to crash.Upgrade to the latest version of 3D-FTP (6.0 or later), available from the SiteDesigner Technologies Web site. See References."
+      }
+    ],
+    "CVE-2003-1473": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11978",
+        "title": "LTris buffer overflow",
+        "body": "LTris is vulnerable to a buffer overflow, caused by insufficient bounds checking. This vulnerability could allow a local attacker to overflow a buffer and execute arbitrary commands on the system with gid game privileges.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1475": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11982",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1477": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12052",
+        "title": "MAILsweeper for SMTP MS PowerPoint file denial of service",
+        "body": "MAILsweeper for SMTP is vulnerable to a denial of service. A remote attacker can send an email containing a malicious MS PowerPoint file, which would cause the security service to enter into a loop and consume all available CPU resources on the server running MAILsweeper, once the malicious file is detected.Apply the MAILsweeper for SMTP Version 4.3.8 patch, available from the Clearswift Limited Web site. See References."
+      }
+    ],
+    "CVE-2003-1478": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11971",
+        "title": "K Desktop Environment (KDE) Konqueror denial of service",
+        "body": "Konqueror is vulnerable to a denial of service attack. By creating a malicious Web page, a remote attacker could consume 100% of the available CPU resources, which would cause the victim's Web browser to crash, once the page is visited.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1479": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11952",
+        "title": "webcamXP multiple cross-site scripting",
+        "body": "webcamXP is vulnerable to multiple cross-site scripting vulnerabilities. A remote attacker could embed malicious script within the message field, which would be executed in the victim's Web browser within the security context of the hosting site, once the message is viewed. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1481": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11932",
+        "title": "CommuniGate Pro could allow mail session hijacking",
+        "body": "CommuniGate Pro could allow a remote attacker to hijack another user's Webmail session. If a user has the IP session control enabled, a remote attacker could send an image within an HTML message, which would transfer the session ID of the victim in the REFERER field, once the image is viewed. An attacker could then use this information to gain access to another user's Webmail account.Upgrade to the latest version of CommuniGate Pro (4.1b2 or later), available from the Stalker Software Inc. Web site. See References."
+      }
+    ],
+    "CVE-2003-1483": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12298",
+        "title": "FlashFXP weak password encryption",
+        "body": "FlashFXP uses a weak encryption algorithm that could allow a local attacker to obtain valid user passwords. A local attacker could decrypt the user passwords and gain unauthorized access to the FTP user authentication credentials for remote sites.Upgrade to the latest version of FlashFXP (2.1 build 924 or later), available from the FlashFXP Web site. See References."
+      }
+    ],
+    "CVE-2003-1484": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11946",
+        "title": "Microsoft Internet Explorer anchorClick behavior denial of service",
+        "body": "Microsoft Internet Explorer is vulnerable to a denial of service attack, caused by a vulnerability in the anchorClick behavior of the 'a' object, which enables the browser to navigate to a folder view. A remote attacker could create a specially-crafted URL link using the <A> tags with an empty folder value, which would cause the browser to crash, once the link is clicked. An attacker could exploit this vulnerability by hosting the malicious URL link on a Web site or by sending it to a potential victim as an HTML email.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1486": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12499",
+        "title": "Phorum multiple script path disclosure",
+        "body": "Phorum could allow a remote attacker to obtain sensitive information. A remote attacker could send a specially-crafted URL request to the smileys.php, quick_listrss.php, purge.php, news.php, memberlist.php, forum_listrss.php, forum_list_rdf.php, forum_list.php, or move.php script, which would cause an error message to be displayed containing the full path to the Web root directory.Upgrade to the latest version of Phorum (3.4.4 or later), available from the Phorum Web site. See References."
+      }
+    ],
+    "CVE-2003-1487": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12500",
+        "title": "Phorum command execution",
+        "body": "Phorum could allow a remote attacker to execute commands on the system, caused by improper filtering of user-supplied variables. A remote attacker could execute malicious commands on the system using the 'Edit User' profile Web page, 'Stats program', or 'UserAdmin' Web page.Upgrade to the latest version of Phorum (3.4.4 or later), available from the Phorum Web site. See References."
+      }
+    ],
+    "CVE-2003-1488": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11886",
+        "title": "Truegalerie verif_admin.php and check_admin.php could allow administrative access",
+        "body": "Truegalerie could allow a remote attacker to gain administrative access to the program, caused by a vulnerability in the verif_admin.php and check_admin.php scripts. By sending a specially-crafted URL request with the value of the ?loggedin variable set to '1', a remote attacker could bypass authentication and gain unauthorized administrative access to the program.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1490": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11876",
+        "title": "SonicWALL PRO HTTP POST request denial of service",
+        "body": "SonicWALL PRO is vulnerable to a denial of service attack, caused by a buffer overflow. By sending an overly long HTTP POST request to the internal interface of the device, a remote attacker could overflow a buffer and cause the device to enter into a reset cycle.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1491": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11880",
+        "title": "Kerio Personal Firewall (KPF) UDP packet could allow an attacker to bypass the firewall",
+        "body": "Kerio Personal Firewall (KPF) could allow a remote attacker to bypass the firewall filters. A remote attacker can create a specially-crafted UDP packet containing a source port of 53 to cause arbitrary data to be passed through the firewall. An attacker can use this vulnerability to perform further attacks.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1494": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13467",
+        "title": "HP OpenView Network Node Manager packet denial of service",
+        "body": "HP OpenView Network Node Manager (NNM) is vulnerable to a denial of service. By sending a specially-crafted packet to certain NNM processes, a remote attacker could cause a memory leak or cause the processes to consume a large amount of CPU resources, which would result in a denial of service.Apply the appropriate patch for your system, as listed in Hewlett-Packard Company Security Bulletin HPSBUX0310-291. See References."
+      }
+    ],
+    "CVE-2003-1495": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13496",
+        "title": "HP Web-enabled management agents could allow an attacker to gain privileges",
+        "body": "The HP Web-based management products, Insight Manager LC (formerly Compaq Insight Manager), Remote Diagnostics Enabling Agent, and Insight Management for Clients could allow a remote or local attacker to cause a denial of service or gain elevated privileges on the system.Apply the patch for this vulnerability (SP24815.exe), available from the HP Web site. See References."
+      }
+    ],
+    "CVE-2003-1496": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13418",
+        "title": "HP Tru64 UNIX dtmailpr could allow an attacker to gain privileges",
+        "body": "Hewlett-Packard (formerly Compaq) Tru64 UNIX could allow a remote authenticated attacker or local attacker to gain elevated privileges on the system, caused by a vulnerability in the Common Desktop Environment (CDE) dtmailpr program, which is a mail message print filter.For HP Tru64 UNIX:Apply the appropriate Early Release Patches (ERPs) for your system, as listed in Secunia Security Advisory: SA9990. See References."
+      }
+    ],
+    "CVE-2003-1497": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13436",
+        "title": "Linksys EtherFast Log_Page_Num denial of service BEFSX41",
+        "body": "Linksys EtherFast BEFSX41 routers are vulnerable to a denial of service. If logging is enabled, a remote attacker could create a specially-crafted HTTP request containing a long string for the Log_Page_Num variable, which could cause the router to become unresponsive, once the victim clicks the link. An attacker could exploit this vulnerability by creating a malicious Web page and hosting it on a Web site or by sending it to a victim as an HTML email.Upgrade to the latest firmware version (1.45.3 or later), available from the Linksys Support Web page. See References."
+      }
+    ],
+    "CVE-2003-1498": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13431",
+        "title": "Wrensoft Zoom Search Engine search.php cross-site scripting",
+        "body": "Zoom Search Engine is vulnerable to cross-site scripting, caused by improper filtering of user-supplied input. A remote attacker could embed malicious script in the info variable in a specially-crafted URL request to the search.php script, which would be executed in the victim's Web browser within the security context of the hosting site, once the link is clicked.Upgrade to the latest version of Zoom Search Engine (2.0 or later), available from the Zoom Web page. See References."
+      }
+    ],
+    "CVE-2003-1499": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13456",
+        "title": "ByteHoard \"dot dot\" directory traversal",
+        "body": "ByteHoard could allow a remote attacker to traverse directories on the system. A remote attacker could send a specially-crafted HTTP request to the index.php script containing \"dot dot\" (/../) sequences to traverse directories and view directory listings and arbitrary files outside of the Web root directory.Upgrade to the latest version of ByteHoard (0.71 or later), available from the SourceForge.net Web site. See References."
+      }
+    ],
+    "CVE-2003-1500": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13457",
+        "title": "cpCommerce _functions.php script PHP file include",
+        "body": "cpCommerce could allow a remote attacker to include malicious PHP files, caused by a vulnerability in the _functions.php script. A remote attacker could send a specially-crafted URL request to the _functions.php script that specifies a malicious PHP file from a remote or local system as a parameter, which would allow the attacker to execute code on the vulnerable server.Apply the appropriate patch for your system, available from the cpCommerce Web site. See References."
+      }
+    ],
+    "CVE-2003-1501": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13469",
+        "title": "Gast Arbeiter could allow an attacker to upload files",
+        "body": "Gast Arbeiter could allow a remote attacker to upload files to the system, caused by improper validation of user-supplied input. A remote attacker could send a specially-crafted message, which would allow the attacker to upload a file to the system. A remote attacker could use this vulnerability to gain elevated privileges on the system.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1503": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13443",
+        "title": "AOL Instant Messenger getfile long screenname buffer overflow",
+        "body": "AOL Instant Messenger (AIM) is vulnerable to a buffer overflow. By creating a malicious aim:getfile URL containing a long screenname, a remote attacker can overflow a buffer and execute arbitrary code on the system, once the URL is clicked and the victim downloads the malicious file.Upgrade to the latest version of AIM (5.5.3415 Beta or later), available from the AOL Instant Messenger Web site. See References."
+      }
+    ],
+    "CVE-2003-1504": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13465",
+        "title": "Goldlink variables.php could allow an attacker to gain administrative access",
+        "body": "Goldlink could allow a remote attacker to gain unauthorized administrative access to the application, caused by a vulnerability in the variables.php script. By creating two specially-crafted cookies using the $vadmin_login and $vadmin_pass variables, a remote attacker could login to the panel and gain unauthorized administrative access to the Goldlink application.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1506": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13507",
+        "title": "CensorNet CGI script cross-site scripting",
+        "body": "CensorNet is vulnerable to cross-site scripting. A remote attacker could embed malicious script within a URL request to a vulnerable CGI script, which would be executed in the victim's Web browser within the security context of the hosting site, once the link is clicked.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1513": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13460",
+        "title": "Resin name and comment cross-scripting",
+        "body": "Resin is vulnerable to cross-site scripting, caused by improper filtering of user-supplied input. A remote attacker could embed malicious script in the name or comment variable in a specially-crafted URL request to the env.jsp, form.jsp, session.jsp or tictactoe.jsp script, which would be executed in the victim's Web browser within the security context of the hosting site, once the link is clicked.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1514": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13464",
+        "title": "eMule long password denial of service",
+        "body": "eMule is vulnerable to a denial of service. A remote attacker could use the Web Control Panel to submit a long password, which could cause the server to crash.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1515": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13463",
+        "title": "ORIGO ASR-8100 router could allow an attacker to restore the factory default settings",
+        "body": "ORIGO ASR-8100 ADSL router could allow a remote attacker to gain unauthorized access and restore the factory default settings on the device. By telneting to port 254, a remote attacker can gain access to the configuration interface of the device and perform unauthorized configuration changes, which could result in a denial of service.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1517": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13461",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2003-1518": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13428",
+        "title": "WinSyslog long syslog message denial of service",
+        "body": "WinSyslog is vulnerable to a denial of service. A remote attacker could send a long syslog message to the program to cause the system to hang.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1519": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13452",
+        "title": "Vivísimo Clustering Engine cross-site scripting",
+        "body": "Vivísimo Clustering Engine is vulnerable to cross-site scripting, caused by improper filtering of user-supplied input. A remote attacker could create a specially-crafted URL request containing malicious HTML or JavaScript, which would be executed in the victim's Web browser within the security context of the host, once the link is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials and other sensitive information.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1522": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13459",
+        "title": "VPOP3 login page cross-site scripting",
+        "body": "VPOP3 is vulnerable to cross-site scripting, caused by improper filtering of user-supplied input. A remote attacker could create a specially-crafted URL request to the login page containing malicious HTML or JavaScript, which would be executed in the victim's Web browser within the security context of the host, once the link is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials and other sensitive information.Upgrade to the latest version of VPOP3 (2.0.0g or later), available from the VPOP3 Web site. See References."
+      }
+    ],
+    "CVE-2003-1523": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13416",
+        "title": "dbmail multiple parameters are vulnerable to SQL injection",
+        "body": "dbmail is vulnerable to SQL injection, caused by vulnerabilities in the IMAP service. A remote attacker could insert arbitrary SQL code in multiple parameters, such as username and password, which would allow the attacker to obtain sensitive information, bypass authentication, and possibly add, modify or delete data in the backend database.Upgrade to the latest version of dbmail (1.2 or later), available from the dbmail Web site. See References."
+      }
+    ],
+    "CVE-2003-1524": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/13490",
+        "title": "PGPDisk information disclosure",
+        "body": "PGPDisk, running on Microsoft Windows XP, could allow a remote attacker to obtain sensitive information. If a user mounts a PGPDisk and does not log off the system, the disk remains engaged. A local attacker with login access can use the Windows XP switch user function to obtain information stored on the encrypted partition of PGPDisk.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1529": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11623",
+        "title": "J Walk URL encoded \"dot dot\" directory traversal",
+        "body": "J Walk could allow a remote attacker to traverse directories on the Web server. A remote attacker could send a specially-crafted URL request containing hexadecimal URL encoded \"dot dot\" sequences (in the form of /.%252e/) to traverse directories and view any known file on the system, including the sam._ configuration file, which includes the Windows password.Upgrade to the latest version of J Walk (3.3c4 or later) when it becomes available, as listed in IRM Security Advisory No. 005. See References."
+      }
+    ],
+    "CVE-2003-1531": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11638",
+        "title": "Ceilidh textcgi.exe cross-site scripting",
+        "body": "Ceilidh is vulnerable to cross-site scripting, caused by improper filtering of user-supplied input. A remote attacker could create a specially-crafted URL request containing malicious script to the testcgi.exe file, which would be executed in the victim's Web browser within the security context of the hosting site, once the link is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1536": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11602",
+        "title": "DCP-Portal search.php and calendar.php cross-site scripting",
+        "body": "DCP-Portal is vulnerable to cross-site scripting. A remote attacker could embed malicious script within the ?fields variable in a specially-crafted URL request to the search.php script or within the ?year variable in a specially-crafted URL request to the calendar.php script, which would be executed in the victim's Web browser within the security context of the hosting site, once the link is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1540": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11571",
+        "title": "WF-Chat stores plaintext passwords and usernames in !nicks.txt and !pwds.txt",
+        "body": "WF-Chat stores sensitive information insecurely in the !nicks.txt and !pwds.txt files. A remote attacker could exploit this vulnerability by sending a specially-crafted URL request for the !nicks.txt or !pwds.txt file to obtain sensitive information, including plaintext usernames and passwords.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1541": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11609",
+        "title": "Guestbook tr3.a plaintext passwords disclosed in passwd.txt file",
+        "body": "Guestbook tr3.a could allow a remote attacker to obtain sensitive information. A remote attacker could send a specially-crafted URL request for the passwd.txt file to obtain the user's passwords in plain text. An attacker could then use this information to gain unauthorized access to the guestbook.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1543": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11687",
+        "title": "Bajie error message cross-site scripting",
+        "body": "Bajie HTTP Web Server is vulnerable to cross-site scripting, caused by improper filtering of user-supplied input. A remote attacker could create a specially-crafted URL request containing malicious HTML or Javascript, which would cause an error message to be displayed and the script to be executed in the victim's Web browser within the security context of the host, once the link is clicked.Upgrade to the latest version of BBajie HTTP Web Server (0.95zxe1 or later), available from the Bajie Web site. See References."
+      }
+    ],
+    "CVE-2003-1546": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11540",
+        "title": "Filebased guestbook gbook.php cross-site scripting",
+        "body": "Filebased guestbook is vulnerable to cross-site scripting. A remote attacker could create a guestbook entry containing malicious HTML script embedded within the comment field, which would be executed in the victim's Web browser within the security context of the hosting site, once the malicious entry is viewed.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1547": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11675",
+        "title": "PHP-Nuke block-Forums.php subject field cross-site scripting",
+        "body": "PHP-Nuke is vulnerable to cross-site scripting, caused by a vulnerability in the block-Forums.php file of the Splatt Forum module. A remote attacker could post a message that contains malicious script embedded within the subject field, which would be executed in the victim's Web browser within the security context of the hosting site, once the message is viewed. An attacker could use this vulnerability to steal a victim's cookies.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1548": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11556",
+        "title": "MyABraCaDaWeb index.php could disclose Web root path",
+        "body": "MyABraCaDaWeb could allow a remote attacker to obtain sensitive information. If a remote attacker submits a specially-crafted URL request to the index.php script with an invalid value for the IDAdmin variable or other variables, the attacker would cause the Web server to return an error message that could contain the full path to the Web root directory, and possibly other sensitive information. An attacker could use this information to launch further attacks against the affected server.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1549": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11557",
+        "title": "MyABraCaDaWeb index.php ma_kw cross-site scripting",
+        "body": "MyABraCaDaWeb is vulnerable to cross-site scripting. A remote attacker could embed malicious script within the ma_kw variable in a specially-crafted URL request to the index.php script, which would be executed in the victim's Web browser within the security context of the hosting site, once the link is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1550": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11587",
+        "title": "XOOPS $xoopsOption Web root path disclosure",
+        "body": "XOOPS could allow a remote attacker to obtain sensitive information. If a remote attacker submits a specially-crafted URL request to the index.php script or another vulnerable script with an invalid value for the $xoopsOption variable, the attacker would cause the Web server to return an error message that could contain the full path to the Web root directory, and possibly other sensitive information. An attacker could use this information to launch further attacks against the affected server.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1552": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11467",
+        "title": "Uploader /uploads directory file upload",
+        "body": "Uploader could allow a remote attacker to bypass password authentication and upload malicious PHP files. By default, the $ADMIN[RequirePass] variable in the setup.php script is set to \"No\". A remote attacker could send a specially-crafted URL request containing a malicious PHP file to the /uploads directory, which would allow the attacker to upload the specified external PHP file to the system. An attacker could use this vulnerability to execute commands on the system.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1553": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11572",
+        "title": "SIPS configuration directory information disclosure",
+        "body": "Haakon Nilsen Simple Internet Publishing System could allow a remote attacker to obtain sensitive information, caused by the storing of user credentials under the Web root. By sending a direct request to a user-specific configuration directory, a remote attacker could exploit this vulnerability to obtain the password and other sensitive information.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1554": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11658",
+        "title": "ScozBook add.php cross-site scripting",
+        "body": "ScozNet ScozBook is vulnerable to cross-site scripting, caused by improper validation of user-supplied input by the add.php script. A remote attacker could exploit this vulnerability using the username, useremail, aim, msn, sitename, or the siteaddy parameter in a specially-crafted URL to execute script in a victim's Web browser within the security context of the hosting Web site, once the URL is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1555": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11659",
+        "title": "ScozBook view.php path disclosure",
+        "body": "ScozNet ScozBook could allow a remote attacker to obtain sensitive information. An attacker could send a specially-crafted URL request to the view.php scriptusing an invalid PG parameter to cause an error message to be returned containing the full installation path. An attacker could use this information to launch further attacks against the affected system.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1557": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11154",
+        "title": "SpamAssassin spamc BSMTP -B off-by-one buffer overflow",
+        "body": "SpamAssassin is vulnerable to buffer overflow, caused by an off-by-one that can occur when \"dot\" characters (.) are improperly filtered from SMTP lines. If a user is using the SpamAssassin spamc program in BSMTP mode and calls the program with the -B option, a remote attacker could send a specially-crafted email to the user to overflow a buffer and execute arbitrary code on the system with privileges of the spamc user.As a workaround, apply the 3rd party patch for this vulnerability, as listed in the BugTraq Mailing List posting dated 2003-01-23 22:21:32. See References.For Gentoo Linux:Upgrade to the latest version of Mail-SpamAssasin (2.44 or later), as listed in Gentoo Linux Security Announcement 200302-01. See References."
+      }
+    ],
+    "CVE-2003-1558": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/11121",
+        "title": "fnord httpd.c source file overly long CGI request buffer overflow",
+        "body": "fnord is vulnerable to a denial of service attack, caused by a buffer overflow in the httpd.c source file. By sending an overly long CGI request to the Web server, a remote attacker can overflow a buffer and cause the server to crash.Upgrade to the latest version of fnord (1.7 or later), available from the fnord Web page. See References.For Gentoo Linux:Upgrade versions fnord-1.6 and earlier, as listed in Gentoo Linux Security Announcement 2003-01-9. See References.For other distributions:Contact your vendor for upgrade or patch information."
+      }
+    ],
+    "CVE-2003-1570": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/49536",
+        "title": "Tivoli Storage Manager console mode information disclosure",
+        "body": "Tivoli Storage Manager console could allow a remote authenticated attacker with administrative privileges to obtain sensitive information, caused by a weakness in console mode. By starting an admin session in console mode, an attacker could exploit this vulnerability to monitor activities on the TSM server.Refer to IBM Technote (FAQ) 1375360 for patch, upgrade or suggested workaround information. See References."
+      }
+    ],
+    "CVE-2003-1573": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/14883",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/14882",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/14881",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/14008",
+        "title": "Sun J2EE PointBase SQL injection",
+        "body": "The PointBase database component in the J2EE is vulnerable to SQL injection. A remote attacker could send specially-crafted SQL statements related to \"inadequate security settings and library bugs in sun.* and org.apache.* packages\", which could allow the attacker to view, add, modify or delete information in the back-end database, obtain sensitive information and possibly cause a denial of service.Upgrade to the latest version of PointBase (4.8 or later), available from the PointBase Support Web page. See References."
+      }
+    ],
+    "CVE-2003-1574": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/40347",
+        "title": "TikiWiki username security bypass",
+        "body": "TikiWiki could allow a remote attacker to bypass security restrictions, caused by the improper validation of user login credentials. By logging in using a valid username and password and activating the \"remember me\" option, a remote attacker could exploit this vulnerability and bypass the authentication process to gain unauthorized access to the system with the privileges of the victim.Upgrade to the latest version of TikiWiki (1.7.1.1 or later), available from the TikiWiki Web site. See References."
+      }
+    ],
+    "CVE-2003-1577": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/56632",
+        "title": "Sun ONE (aka iPlanet) Web Server iPlanet Log Analyzer cross-site scripting",
+        "body": "Sun ONE (aka iPlanet) Web Server is vulnerable to cross-site scripting, caused by improper validation of user-supplied input by the iPlanet Log Analyzer. If DNS resolution is enabled for client IP addresses, a remote attacker could exploit this vulnerability using an HTTP request in conjunction with a crafted DNS response to inject malicious script into a Web page which would be executed in a victim's Web browser within the security context of the hosting Web site, once the page is viewed. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.Refer to Sun Alert ID: 201453 for patch, upgrade or suggested workaround information. See References."
+      }
+    ],
+    "CVE-2003-1583": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/56650",
+        "title": "WebTrends domain name cross-site scripting",
+        "body": "WebTrends is vulnerable to cross-site scripting, caused by improper validation of user-supplied input. A remote attacker could exploit this vulnerability using a specially-crafted client domain name, related to an Inverse Lookup Log Corruption (ILLC) issue to inject malicious script into a Web page which would be executed in a victim's Web browser within the security context of the hosting Web site, once the page is viewed. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1584": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/56649",
+        "title": "SurfStats domain name cross-site scripting",
+        "body": "SurfStats is vulnerable to cross-site scripting, caused by improper validation of user-supplied input. A remote attacker could exploit this vulnerability using a specially-crafted client domain name, related to an Inverse Lookup Log Corruption (ILLC) issue to inject malicious script into a Web page which would be executed in a victim's Web browser within the security context of the hosting Web site, once the page is viewed. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1585": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/56647",
+        "title": "WebLogExpert domain name cross-site scripting",
+        "body": "WebLogExpert is vulnerable to cross-site scripting, caused by improper validation of user-supplied input. A remote attacker could exploit this vulnerability using a specially-crafted client domain name, related to an Inverse Lookup Log Corruption (ILLC) issue to inject malicious script into a Web page which would be executed in a victim's Web browser within the security context of the hosting Web site, once the page is viewed. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1586": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/56646",
+        "title": "WebExpert User-Agent HTTP header cross-site scripting",
+        "body": "WebExpert is vulnerable to cross-site scripting, caused by improper validation of user-supplied input. A remote attacker could exploit this vulnerability using the User-Agent HTTP header to inject malicious script into a Web page which would be executed in a victim's Web browser within the security context of the hosting Web site, once the page is viewed. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1587": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/56645",
+        "title": "LoganPro User-Agent HTTP header cross-site scripting",
+        "body": "LoganPro is vulnerable to cross-site scripting, caused by improper validation of user-supplied input. A remote attacker could exploit this vulnerability using the User-Agent HTTP header to inject malicious script into a Web page which would be executed in a victim's Web browser within the security context of the hosting Web site, once the page is viewed. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.No remedy available as of September 1, 2014."
+      }
+    ],
+    "CVE-2003-1598": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12204",
+        "title": "WordPress blog.header.php SQL injection",
+        "body": "WordPress is vulnerable to SQL injection. A remote attacker could insert arbitrary SQL code in the $posts variable in a request to the blog.header.php script, which would allow the attacker to add, modify or delete data in the backend database on some systems.Apply the blog.header.php patch, available from the WordPress Web page. See References."
+      }
+    ],
+    "CVE-2003-1599": [
+      {
+        "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/12205",
+        "title": "WordPress links.all.php could allow an attacker to include PHP files",
+        "body": "WordPress could allow a remote attacker to include malicious PHP files. A remote attacker could send a specially-crafted URL request to the links.all.php script that uses the $abspath variable to specify a malicious PHP file on a remote system, which could then be used by the attacker to execute arbitrary code on vulnerable system.No remedy available as of September 1, 2014."
+      }
+    ]
+  }
+}

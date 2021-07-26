@@ -1,0 +1,215 @@
+{
+  "year": 2003,
+  "total": 27,
+  "reference": "kb.cert.org",
+  "reports": {
+    "CVE-2003-0001": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/412115",
+        "title": "Network device drivers reuse old frame buffer data to pad packets",
+        "overview": "Many network device drivers reuse old frame buffer data to pad packets, resulting in an information leakage vulnerability that may allow remote attackers to harvest sensitive information from affected devices.",
+        "description": "The Ethernet standard (IEEE 802.3) specifies a minimum data field size of 46 bytes. If a higher layer protocol such as IP provides packet data that is smaller than 46 bytes, the device driver must fill the remainder of the data field with a \"pad\". For IP datagrams, RFC1042 specifies that \"the data field should be padded (with octets of zero) to meet the IEEE 802 minimum frame size requirements.\"Researchers from @Stake have discovered that, contrary to the recommendations of RFC1042, many Ethernet device drivers fail to pad frames with null bytes. Instead, these device drivers reuse previously transmitted frame data to pad frames smaller than 46 bytes. This constitutes an information leakage vulnerability that may allow remote attackers to harvest potentially sensitive information. Depending upon the implementation of an affected device driver, the leaked information may originate from dynamic kernel memory, from static system memory allocated to the device driver, or from a hardware buffer located on the network interface card. For detailed information on this research, please read @Stake's \"EtherLeak: Ethernet frame padding information leakage\", available athttp://www.atstake.com/research/advisories/2003/atstake_etherleak_report.pdfThis vulnerability may also affect link layer networking protocols other than Ethernet."
+      }
+    ],
+    "CVE-2003-0095": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/953746",
+        "title": "Oracle9i Database contains remotely exploitable buffer overflow in \"ORACLE.EXE\"",
+        "overview": "A remotely exploitable buffer overflow vulnerability exists in Oracle9i Database.",
+        "description": "A buffer overflow vulnerability exists on all platforms in the following versions of Oracle9i Database:Oracle9i Database Release 29i Release 18i8.1.78.0.6The buffer overflow exists in a portion of code responsible for processing authentication requests to the Oracle Database Server. By sending an overly large username, a remote attacker may be able to overwrite a buffer, resulting in the ability to execute arbitrary code with the privileges of the vulnerable process. This process typically runs as \"Oracle\" on Linux and UNIX hosts and as \"Local System\" on Windows systems. Oracle has published Oracle Security Alert #51 regarding this issue."
+      }
+    ],
+    "CVE-2003-0096": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/840666",
+        "title": "Oracle9i Database contains remotely exploitable buffer overflow in \"TO_TIMESTAMP_TZ\" function",
+        "overview": "A remotely exploitable buffer overflow vulnerability exists in Oracle9i Database.",
+        "description": "A buffer overflow vulnerability exists on all platforms in the following versions of Oracle9i Database:Oracle9i Database Release 29i Release 18i8.1.78.0.6A buffer overflow exists in TO_TIMESTAMP_TZ (a function responsible for handling timezone-related calculations). By supplying an overly long character string to the function, a remote attacker can overwrite a return address on the Oracle process stack, resulting in the ability to execute arbitrary code with the privileges of the vulnerable process. This process typically runs as \"Oracle\" on Linux and UNIX hosts and as \"Local System\" on Windows systems. Oracle has published Oracle Security Alert #50 regarding this issue. Patches for this vulnerability are available from Metalink (the Oracle Worldwide Support Services web site)."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/743954",
+        "title": "Oracle9i Database contains remotely exploitable buffer overflow in \"TZ_OFFSET\" function",
+        "overview": "A remotely exploitable buffer overflow vulnerability exists in Oracle9i Database.",
+        "description": "A buffer overflow vulnerability exists on all platforms in the following versions of Oracle9i Database:Oracle9i Database Release 29i Release 18i8.1.78.0.6A buffer overflow vulnerability exists in TZ_OFFSET (a function responsible for handling timezone-related calculations). By supplying an overly long character string to the function, a remote attacker can overwrite a return address on the Oracle process stack, resulting in the ability to execute arbitrary code with the privileges of the vulnerable process. This process typically runs as \"Oracle\" on Linux and UNIX hosts and as \"Local System\" on Windows systems. Oracle has published Oracle Security Alert #49 regarding this issue. Patches for this vulnerability are available from Metalink (the Oracle Worldwide Support Services web site)."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/663786",
+        "title": "Oracle9i Database contains remotely exploitable buffer overflow in \"BFILENAME\" function",
+        "overview": "A remotely exploitable buffer overflow vulnerability exists in Oracle9i Database.",
+        "description": "A buffer overflow vulnerability exists on all platforms in the following versions of Oracle 9i Database:Oracle9i Database Release 29i Release 18i8.1.78.0.6A buffer overflow exists in BFILENAME. By supplying an overly long DIRECTORY parameter to BFILENAME, a remote attacker may be able to execute arbitrary code with the privileges of the vulnerable process. This process typically runs as \"Oracle\" on Linux and UNIX hosts and as \"Local System\" on Windows systems."
+      }
+    ],
+    "CVE-2003-0216": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/443257",
+        "title": "Cisco Catalyst switches allow access to \"enable mode\" without password",
+        "overview": "Cisco Catalyst OS 7.5(1) contains a vulnerability that allows anyone who can obtain command line access to gain \"enable\" mode access without knowledge of the \"enable\" password.",
+        "description": "Cisco Catalyst OS is an operating system for Cisco's line of Catalyst switches. Version 7.5(1) of Catalyst OS contains a vulnerability that could allow an intruder with command line access to gain access to \"enable\" mode. Enable mode provides access to administrative functions of the switch. The problem affects \"all users of Cisco Catalyst 4000, 6000, and 6500 with the Catalyst OS software version 7.5(1) only,\" according to the Cisco Advisory. This vulnerability does not affect Catalyst hardware running any version of IOS. Furthermore, this vulnerability is distinct from a similar vulnerability described in a previous Cisco advisory."
+      }
+    ],
+    "CVE-2003-0230": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/556356",
+        "title": "Microsoft SQL Server contains flaw in checking method for the named pipe",
+        "overview": "A vulnerability in Microsoft SQL Server may allow an attacker to hijack a named pipe. An attacker may be able to leverage this vulnerability to gain elevated privileges.",
+        "description": "Microsoft describes a named pipe as, \"a specifically named one-way or two-way channel for communication between a pipe server and one or more pipe clients.\" Microsoft SQL Server does not correctly check named pipes. Quoting from MS03-031, \"The vulnerability results because of a flaw in the checking method used by SQL Server when a client establishes an authenticated logon by using a named pipe.\""
+      }
+    ],
+    "CVE-2003-0368": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/924812",
+        "title": "Nokia Gateway GPRS support node vulnerable to DoS",
+        "overview": "A vulnerability in the Nokia Gateway GPRS support node (GGSN) may allow a remote attacker to cause a denial of service.",
+        "description": "A vulnerability in the GGSN may allow a remote attacker to restart the device. For technical details, please see the @stake Security Advisory Nokia GGSN (IP650 Based) DoS Issues.Nokia describes the GGSN as follows:The Nokia GGSN is the network element that provides the interface between the GPRS network and external IP networks, such as the Internet and corporate intranet. By providing secure connections to external packet networks, the GGSN links the GPRS network to the Internet, ISPs and corporate intranets. The GGSN also provides allocation of IP address."
+      }
+    ],
+    "CVE-2003-0512": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/886796",
+        "title": "Cisco Aironet AP1100 fails to provide universal login error messages thereby disclosing validity of user account",
+        "overview": "A vulnerability in the Cisco Aironet 1100 Series Access Point may allow a remote attacker to discover valid accounts on the access point.",
+        "description": "Cisco describes the Aironet 1100 Series Access Point as, \"an affordable and upgradable 802.11b wireless LAN (WLAN) solution, setting the enterprise standard for high performance, secure, manageable, and reliable WLANs.\" A vulnerability in this access point may allow a remote attacker to discover valid accounts on the device using brute-force techniques. For further technical information, please see the following documents:Enumerating Locally Defined Users in Cisco IOSCisco Aironet AP1100 Valid Account Disclosure Vulnerability"
+      }
+    ],
+    "CVE-2003-0542": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/434566",
+        "title": "Apache mod_rewrite vulnerable to buffer overflow via crafted regular expression",
+        "overview": "A vulnerability in a supplementary module to the Apache HTTP server could allow an attacker to execute arbitrary code on an affected web server under certain circumstances.",
+        "description": "The Apache HTTP server distribution includes a number of supplemental modules that provide additional functionality to the web server. One of these modules, mod_rewrite, provides a rule-based rewriting engine to rewrite requested URLs \"on the fly\" based regular expressions. A buffer overflow has been discovered in the way that mod_rewrite handles regular expressions containing more than 9 captures (stored strings matching a particular pattern). This flaw results in a remotely exploitable vulnerability on web servers that specify such a regular expression to the mod_rewrite module in their configuration files."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/549142",
+        "title": "Apache mod_alias vulnerable to buffer overflow via crafted regular expression",
+        "overview": "A vulnerability in a supplementary module to the Apache HTTP server could allow an attacker to execute arbitrary code on an affected web server under certain circumstances.",
+        "description": "The Apache HTTP server distribution includes a number of supplemental modules that provide additional functionality to the web server. One of these modules, mod_alias, provides for mapping different parts of the host filesystem into the document tree and for URL redirection. Several of the mod_alias directives can use regular expressions rather than simple prefix matches. A buffer overflow has been discovered in the way that mod_alias handles regular expressions containing more than 9 captures (stored strings matching a particular pattern). This flaw results in a remotely exploitable vulnerability on web servers that specify such a regular expression to the mod_alias module in their configuration files."
+      }
+    ],
+    "CVE-2003-0545": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/935264",
+        "title": "OpenSSL ASN.1 parser insecure memory deallocation",
+        "overview": "A vulnerability in the way OpenSSL deallocates memory used to store ASN.1 structures could allow a remote attacker to execute arbitrary code with the privileges of the process using the OpenSSL library.",
+        "description": "OpenSSL implements the Secure Sockets Layer (SSL) and Transport Layer Security (TLS) protocols and includes a general purpose cryptographic library. SSL and TLS are commonly used to provide authentication, encryption, integrity, and non-repudiation services to network applications such as HTTP, IMAP, POP3, LDAP, and others. Clients and servers exchange authentication information in X.509 certificates. While the SSL and TLS protocols are not directly based on ASN.1, they do rely on ASN.1 objects used in X.509 certificates and other cryptographic elements (e.g. PKCS#1 encoded RSA values). The ASN.1 parser in OpenSSL is also used to handle non-SSL/TLS elements such as PKCS#7 encoded S/MIME parts.There is a vulnerability in the way OpenSSL deallocates memory used to store ASN.1 structures (ASN1_TYPE). Parsing specially crafted ASN.1 encoded structures that OpenSSL determines to be invalid could cause memory to be deallocated insecurely, corrupting the stack.From the OpenSSL advisory:1. Certain ASN.1 encodings that are rejected as invalid by the parsercan trigger a bug in the deallocation of the corresponding datastructure, corrupting the stack. This can be used as a denial of serviceattack. It is currently unknown whether this can be exploited to runmalicious code. This issue does not affect OpenSSL 0.9.6.All versions of SSLeay and versions of OpenSSL prior to 0.9.7c are vulnerable, as are operating systems and applications that use vulnerable SSLeay or OpenSSL libraries. The OpenSSL advisory describes as vulnerable \"Any application that makes use of OpenSSL's ASN1 library to parse untrusted data. This includes all SSL or TLS applications, those using S/MIME (PKCS#7) or certificate generation routines.\" OpenSSL 0.9.6 is not affected.The U.K. National Infrastructure Security Co-ordination Centre (NISCC) is tracking this vulnerability as NISCC/006489/openssl/3."
+      }
+    ],
+    "CVE-2003-0567": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/411332",
+        "title": "Cisco IOS Interface Blocked by IPv4 Packet",
+        "overview": "A denial-of-service vulnerability exists in Cisco's Internetwork Operating System (IOS). This vulnerability may allow remote attackers to conduct denial-of-service attacks on an affected device.",
+        "description": "Cisco IOS is a very widely deployed network operating system. A vulnerability in IOS could allow an intruder to execute a denial-of-service attack against an affected device. Cisco has published an advisory on this topic, available at http://www.cisco.com/warp/public/707/cisco-sa-20030717-blocked.shtml. We strongly encourage sites using IOS to read this document and take appropriate action."
+      }
+    ],
+    "CVE-2003-0662": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/989932",
+        "title": "Microsoft contains a buffer overflow in the Local Troubleshooter ActiveX control (Tshoot.ocx)",
+        "overview": "Microsoft Windows ships with a troubleshooting application to assist users with problems. A vulnerability in this application may permit a remote attacker to execute arbitrary code with the privileges of the current user.",
+        "description": "Microsoft Windows 2000 ships with an ActiveX control (Tshoot.ocx) that is a troubleshooting application to assist users with various system problems. A buffer overflow vulnerability exists in this control that may permit a remote attacker to execute arbitrary code with the privileges of the current user. Since this control is marked Safe for Scripting, a remote attacker who could trick the victim into viewing a crafted HTML web site, or HTML-based email message may be able to exploit this vulnerability.It should be noted that the Microsoft Local Troubleshooter ActiveX control is installed as a default part of the operating system on Windows 2000."
+      }
+    ],
+    "CVE-2003-0712": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/435444",
+        "title": "Microsoft Outlook Web Access (OWA) contains cross-site scripting vulnerability in the \"Compose New Message\" form",
+        "overview": "There is a cross-site scripting vulnerability in Microsoft Outlook Web Access.",
+        "description": "The \"Compose New Message\" form of the Outlook Web Access (OWA) component of Microsoft Exchange 5.5 contains a cross-site scripting vulnerability. For more information about cross-site scripting vulnerabilities, see http://www.cert.org/advisories/CA-2000-02.htmlhttp://www.cert.org/archive/pdf/cross_site_scripting.pdfFor more information on this particular cross-site scripting vulnerability, see Microsoft Security Bulletin MS03-047."
+      }
+    ],
+    "CVE-2003-0819": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/749342",
+        "title": "Multiple vulnerabilities in H.323 implementations",
+        "overview": "A number of vulnerabilities have been discovered in various implementations of the multimedia telephony protocols H.323 and H.225. Voice over Internet Protocol (VoIP) and video conferencing equpiment and software can use these protocols to interoperate over a variety of computer networks. The majority of the vulnerabilities discovered are limited to denial of service impacts; however, several may allow unauthorized code execution.",
+        "description": "The U.K. National Infrastructure Security Co-ordination Center (NISCC) has reported multiple vulnerabilities in different vendor implementations of the multimedia telephony protocols H.323 and H.225. H.323 and H.225 are international standard protocols, published by the International Telecommunications Union, used to facilitate communication among telephony and multimedia systems. An example of such a system includes VoIP or video-conferencing equipment and software deployed on a network or computer. Sending an exceptional ASN.1 element to a vulnerable telephony component that cannot handle it may cause the application or system behavior to become unpredictable.A test suite developed by NISCC has exposed vulnerabilities in a variety of H.323/H.225 implementations. While most of these vulnerabilities exist in ASN.1 parsing routines, some vulnerabilities may occur elsewhere. Due to the general lack of specific vulnerability information, this document covers multiple vulnerabilities in different H.323/H.225 implementations. Information about individual vendors is available in the Systems Affected section.The U.K. National Infrastructure Security Co-ordination Centre is tracking this vulnerability as NISCC/006489/H.323."
+      }
+    ],
+    "CVE-2003-0825": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/445214",
+        "title": "Microsoft Windows Internet Naming Service (WINS) fails to properly validate the length of specially crafted packets",
+        "overview": "Microsoft Windows Internet Naming Service (WINS) fails to properly validate the length of specially crafted packets which could allow an unauthenticated, remote attacker to cause a denial-of-service condition.",
+        "description": "The Windows Internet Naming Service (WINS) maps IP addresses to NETBIOS computer names. There is a vulnerability in the way WINS validates the length of specially crafted packets. This could allow an attacker to cause WINS to crash. According to Microsoft, this vulnerability will only cause a denial of service on Windows Server 2003. While the vulnerable code exists in Windows NT and Windows 2000, WINS will reject the specially crafted packet thus not causing a denial of service."
+      }
+    ],
+    "CVE-2003-0831": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/405348",
+        "title": "ProFTPD fails to properly handle newline characters when transferring files in ASCII mode",
+        "overview": "ProFTPD is a popular free File Transfer Protocol (FTP) server package. A vulnerability in its handling of files transferred in ASCII mode can allow an attacker to compromise the system running the server.",
+        "description": "The File Transfer Protocol (FTP) described in RFC959 defines operations for several data types, including ASCII. For this mode of operation, RFC959 states:... The sender converts the data from an internal character representation to the standard 8-bit NVT-ASCII representation (see the Telnet specification). The receiver will convert the data from the standard form to his own internal form.In accordance with the NVT standard, the <CRLF> sequence should be used where necessary to denote the end of a line of text. (See the discussion of file structure at the end of the Section on Data Representation and Storage.)...Researchers at ISS have discovered a flaw in the way that the ProFTP server handles this conversion that results in a vulnerability. According to ISS's bulletin:A vulnerability exists in the ProFTPD server that can be triggered by remote attackers when transferring files from the FTP server in ASCII mode. The attacker must have the ability to upload a file to the server, and then attempt to download the same file to trigger the vulnerability.The vulnerability occurs when a file is being transferred in ASCII mode. During a transfer of this type, file data is examined in 1024 byte chunks to check for newline (\\) characters. The translation of these newline characters is not handled correctly, and a buffer overflow can manifest if ProFTPD parses a specially crafted file."
+      }
+    ],
+    "CVE-2003-0903": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/139150",
+        "title": "Microsoft Data Access Components (MDAC) contains buffer overflow",
+        "overview": "Microsoft Data Access Components (MDAC) contains a buffer overflow vulnerability that could allow a remote attacker to execute arbitrary code or cause a denial of service.",
+        "description": "From Microsoft Security Bulletin MS04-003:Microsoft Data Access Components (MDAC) is a collection of components that provides the underlying functionality for a number of database operations, such as connecting to remote databases and returning data to a client.MS04-003 notes that \"...MDAC is a ubiquitous technology\" that is installed as part of Windows 2000, Windows XP, and other Microsoft programs (e.g., Microsoft Access and Microsoft SQL Server).An MDAC client sends a network broadcast to port 1434/udp to query for systems running Microsoft SQL Server. A buffer overflow vulnerability exists in an MDAC component that handles responses to such a query. The vulnerability could be triggered by a specially crafted response packet. An MDAC client is only vulnerable for some period of time after it issues a query."
+      }
+    ],
+    "CVE-2003-0904": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/530660",
+        "title": "Microsoft Exchange Server 2003 fails to assign user credentials to proper mailbox",
+        "overview": "A flaw in the authentication mechanism that Microsoft Exchange Server 2003 uses for Outlook Web Access users in some configurations could expose another user's mailbox.",
+        "description": "Outlook Web Access (OWA) is a feature of Microsoft Exchange Server 2003. By using OWA, a server that is running Exchange Server can also function as a Web site that lets authorized users read or send e-mail messages, manage their calendar, or perform other mail functions over the Internet by using a Web browser. Exchange servers providing OWA access can be configured in a front-end/back-end configuration that allows users with mailboxes on multiple servers to connect to a single front-end Exchange server. This front-end server in turn connects (\"proxies\") to the appropriate back-end servers where mailboxes are actually stored. A flaw exists in the way that Hypertext Transfer Protocol (HTTP) connections are reused when NTLM authentication is used between front-end Exchange 2003 servers providing OWA access and running Windows 2000 or Windows Server 2003, and back-end Exchange 2003 servers that are running Windows Server 2003. This flaw may expose a vulnerability in which authenticated users on the system are occasionally and unpredictably connected to another user's mailbox.Kerberos is the default authentication mechanism between the Exchange server providing OWA and the back-end Exchange server and the vulnerability is not exposed when this method of authentication is used. However, there may be situations in which a fallback to NTLM authentication between these servers has occurred. According to Microsoft this situation may occur when a Microsoft Internet Information Services (IIS) virtual server is extended with Windows SharePoint Services (WSS). The virtual server is subsequently configured to use Integrated Windows authentication (formerly named NTLM, or Windows NT Challenge/Response authentication) and explicitly disables Kerberos authentication. Alternatively, if WSS has been installed on the same server as an Exchange Server 2003 back-end running Windows Server 2003, Kerberos may have been disabled on the website hosting the Exchange programs."
+      }
+    ],
+    "CVE-2003-1025": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/652278",
+        "title": "Microsoft Internet Explorer does not properly display URLs",
+        "overview": "Microsoft Internet Explorer does not properly display the location of HTML documents. An attacker could exploit this behavior to mislead users into revealing sensitive information.",
+        "description": "Web browsers frequently display the Uniform Resource Locator (URL) in the address bar. Users expect this information to indicate the source of the current browser frame. Microsoft Internet Explorer (IE) does not properly display URLs that contain certain non-printable characters. IE may connect to one address but display a different address.Per RFC 2396, the URL scheme for HTTP is represented as <userinfo>@<host>:<port>When IE encounters a NULL or similar non-printable character before the @ sign, the browser displays the <userinfo> data but accesses the correct location specified by the <host>:<port> portion of the URL. Code that displays the contents of the address bar and the status bar does not properly handle NULL and other non-printable characters. Both the address bar and the display bar show the truncated URL.Even in the absence of this vulnerability, a class of social engineering attacks (also called \"phishing\") attempts to mislead a user into visiting a web site that appear to be legitimate but is in fact under the control of an attacker. The attacker might disguise the actual location of a URL by populating <userinfo> with credible data and obfuscating <host>:<port> with various URL representations, URL encoding, or other techniques. By making the web site appear to be legitimate, the attacker seeks to convince the user to provide sensitive information such as credit card numbers, account numbers, and passwords.The vulnerability described in this document significantly adds to the attacker's ability to mislead users, since only <userinfo> is visible, not the actual location of the URL.Outside the scope of this vulnerability, it is worth noting that RFC 2396 specifically recommends against including passwords in the <userinfo> portion of a URL:Some URL schemes use the format \"user:password\" in the userinfo field. This practice is NOT RECOMMENDED, because the passing of authentication information in clear text (such as URI) has proven to be a security risk in almost every case where it has been used."
+      }
+    ],
+    "CVE-2003-1026": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/784102",
+        "title": "Microsoft Internet Explorer does not properly validate source of URL stored in Travel Log",
+        "overview": "Microsoft Internet Explorer (IE) does not properly determine the source of script used in URLs stored in the \"Travel Log.\" An attacker could exploit this vulnerability to evaluate script in different security domains. By causing script to be evaluated in the Local Machine Zone, the attacker could execute arbitrary code with the privileges of the user running IE.",
+        "description": "IE uses a cross-domain security model to maintain separation between browser frames from different sources. This model is designed to prevent code in one domain from accessing data in a different domain. From Microsoft Security Bulletin MS04-004:One of the principal security functions of a browser is to ensure that browser windows that are under the control of different Web sites cannot interfere with each other or access each other's data, while allowing windows from the same site to interact with each other. To differentiate between cooperative and uncooperative browser windows, the concept of a \"domain\" has been created. A domain is a security boundary - any open windows within the same domain can interact with each other, but windows from different domains cannot. The cross-domain security model is the part of the security architecture that keeps windows from different domains from interfering with each other.IE can evaluate script contained in a URL. For example, either of the following URLs will display an alert dialog containing the text \"Hello world.\":javascript:eval('alert(\"Hello world.\")')javascript:alert(\"Hello world.\")This URL will display an alert dialog with the contents of the HTTP cookie for the current site:javascript:alert(document.cookie)The cross-domain security model should not allow script from one domain to read or modify data in a different domain using this type of \"script URL\".IE hosts an instance of the WebBrowser ActiveX control, which includes technology called the \"Travel Log.\" From MS04-004:Internet Explorer's travel log is an interface that maintains a navigation stack for the WebBrowser control. This stack is used by Internet Explorer to maintain a list of recently visited sites. For example, the History tab in Internet Explorer is built based on information from the travel log.The IE cross-domain security model does not properly validate the source domain of the URLs stored on the travel log stack. Script in a URL stored in the travel log can be executed in the context of a different domain, including the Local Machine Zone.The MS03-048 patch prevents script URLs from being directly stored in the travel log. It still possible, however, to use other techniques, such as frames (BackToFramedJpu) or certain DHTML methods (Andreas Sandblad #12), to store script URLs in the travel log. These two attack vectors are blocked by the MS04-004 patch.An attacker could exploit this vulnerability using a crafted HTML document containing script. Due to the way IE determines the MIME type of a file referenced by a URL, an HTML document may not necessarily have the expected file name extension (.html or .htm).Any program that uses the WebBrowser ActiveX control or the IE HTML rendering engine (MSHTML) may be affected by this vulnerability. Outlook and Outlook Express are affected; however, recent versions of these programs open mail in the Restricted Sites Zone where ActiveX controls and Active scripting are disabled by default."
+      }
+    ],
+    "CVE-2003-1048": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/685364",
+        "title": "Microsoft Internet Explorer contains a double-free vulnerability in the processing of GIF files",
+        "overview": "A double-free vulnerability in Microsoft's Internet Explorer (IE) web browser could allow a remote attacker to cause a denial-of-service condition or execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft Internet Explorer (IE) is a web browser. A double-free vulnerability has been discovered in the way that Internet Explorer processes GIF image files. When processing GIF image files, the routine responsible for freeing memory may attempt to free the same memory reference more than once. Deallocating the already freed memory can lead to memory corruption, which could cause a denial-of-service condition or potentially be leveraged by an attacker to execute arbitrary code."
+      }
+    ],
+    "CVE-2003-1081": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/464817",
+        "title": "Sun Solaris asppls(1M) vulnerable to arbitrary file overwriting via symlink redirection of temporary file",
+        "overview": "Sun Solaris asppls(1M) creates temporary files insecurely, leading to possible local root compromise.",
+        "description": "Sun Microsystems describes the function of asppls(1M) as follows:aspppd is the link manager for the asynchronous data link protocol specified in RFC1331, The Point-to-Point Protocol (PPP) for the Transmission of Multi-protocol Datagrams over Point-to-Point Links. It is a user level daemon that works in concert with the IP-Dialup driver (ipdcm) and PPP streams module ( ppp(7M)) to provide IP network services over an analog modem using dialed voice grade telephone lines. The link manager automates the process of connecting to a peer (remote) host when PPP service with that host is required. The connection process can be initiated either by sending an IP datagram to a (disconnected) peer host or by receiving a notification that a peer host desires to establish a connection. aspppls is the login service that connects the peer host machine to aspppd. aspppls is invoked by the serial port monitor when a peer machine logs into a PPP-enabled account. Its purpose is to cause the link manager to accept the incoming call.A flaw in asppls(1M) allows a local attacker to overwrite or create any file on a Solaris 8 host."
+      }
+    ],
+    "CVE-2003-1320": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/AAMN-5L74VD",
+        "title": "Multiple vendors' Internet Key Exchange (IKE) implementations do not properly handle IKE response packets",
+        "overview": "Internet Key Exchange (IKE) implementations from several vendors contain buffer overflows and denial-of-service conditions. The buffer overflow vulnerabilities could permit an attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The CERT/CC has received a report describing several vulnerabilities in different vendors' IKE implementations. The IKE protocol (RFC 2409) operates within the framework of the Internet Security Association and Key Management Protocol (ISAKMP, RFC 2408) and provides a way for nodes to authenticate each other and exchange keying material that is used to establish secure network services. IKE is commonly used by IPSec-based VPNs.During an IKE exchange, some IKE implementations do not properly handle exceptional response packets. The report enumerates several cases:IKE represents the ISAKMP security association (SA) in the Security Paramater Index (SPI) field of a response packet. An overly large SPI payload value could trigger a buffer overflow.An IKE response packet with a large number of payloads or an overly large payload could trigger buffer overflows.An IKE response packet with a payload length of zero could cause vulnerable IKE implementations to consume CPU resources, causing a denial-of-service condition.These problems have been shown to exist in IPSec-based VPN client software operating in Aggressive Mode during a phase 1 IKE exchange. Other software and other types of exchanges may also be affected."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/287771",
+        "title": "Multiple vendors' Internet Key Exchange (IKE) implementations do not properly handle IKE response packets",
+        "overview": "Internet Key Exchange (IKE) implementations from several vendors contain buffer overflows and denial-of-service conditions. The buffer overflow vulnerabilities could permit an attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The CERT/CC has received a report describing several vulnerabilities in different vendors' IKE implementations. The IKE protocol (RFC 2409) operates within the framework of the Internet Security Association and Key Management Protocol (ISAKMP, RFC 2408) and provides a way for nodes to authenticate each other and exchange keying material that is used to establish secure network services. IKE is commonly used by IPSec-based VPNs.During an IKE exchange, some IKE implementations do not properly handle exceptional response packets. The report enumerates several cases:IKE represents the ISAKMP security association (SA) in the Security Paramater Index (SPI) field of a response packet. An overly large SPI payload value could trigger a buffer overflow.An IKE response packet with a large number of payloads or an overly large payload could trigger buffer overflows.An IKE response packet with a payload length of zero could cause vulnerable IKE implementations to consume CPU resources, causing a denial-of-service condition.These problems have been shown to exist in IPSec-based VPN client software operating in Aggressive Mode during a phase 1 IKE exchange. Other software and other types of exchanges may also be affected."
+      }
+    ],
+    "CVE-2003-1567": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/288308",
+        "title": "Microsoft Internet Information Server (IIS) vulnerable to cross-site scripting via HTTP TRACK method",
+        "overview": "Microsoft Internet Information Server (IIS) servers support a HTTP method called TRACK. The HTTP TRACK method returns the contents of client HTTP requests in the entity-body of the TRACK response. This behavior could be leveraged by attackers to access sensitive information, such as cookies or authentication data, contained in the HTTP headers of the request.",
+        "description": "Microsoft IIS servers support the HTTP TRACK method. The HTTP TRACK method asks a web server to echo the contents of the request back to the client for debugging purposes. The TRACK request is not RFC compliant and not well documented.The complete request, including HTTP headers, is returned in the entity-body of a TRACK response. This leads to a Cross-site Scripting attack. Using features that provide client-side HTTP protocol support, such as XMLHTTP ActiveX or XMLDOM scripting objects, a web site can cause browsers to issue TRACK requests. The site can read the TRACK response, including sensitive header information such as cookies or authentication data. Because the TRACK method is similar to the TRACE method, when combined with cross-domain browser vulnerabilities (VU#244729, VU#711843, VU#728563), HTTP TRACK and client-side HTTP support can be leveraged by attackers to read sensitive header information from third-party domains. This technique has been termed \"Cross-Site Tracing,\" or XST, in a report published by WhiteHat Security. As noted in the report, the technique can be used to bypass the HttpOnly cookie attribute introduced in Microsoft Internet Explorer 6.0 SP1. HttpOnly blocks script access to the cookie property (document.cookie), but does not prevent a scripting object from reading the cookie out of an HTTP TRACK response.IIS 6 is reported to be not vulnerable."
+      }
+    ]
+  }
+}

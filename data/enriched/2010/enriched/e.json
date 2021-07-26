@@ -1,0 +1,1858 @@
+{
+  "year": 2010,
+  "total": 267,
+  "reference": "debian.org",
+  "reports": {
+    "CVE-2010-0001": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1974",
+        "title": "",
+        "body": "Aki Helin discovered an integer underflow when decompressing files thatare compressed using the LZW algorithm. This could lead to the executionof arbitrary code when trying to decompress a crafted LZW compressedgzip archive."
+      },
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2074",
+        "title": "",
+        "body": "Aki Helin discovered an integer underflow in ncompress, the originalLempel-Ziv compress/uncompress programs.This could lead to the execution of arbitrary code when trying to decompressa crafted LZW compressed gzip archive.For the stable distribution (lenny), this problem has been fixed inversion 4.2.4.2-1+lenny1.For the testing (squeeze) and unstable (sid) distribution, thisproblem has been fixed in version 4.2.4.3-1.We recommend that you upgrade your ncompress package."
+      }
+    ],
+    "CVE-2010-0003": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1996",
+        "title": "",
+        "body": "Andi Kleen reported a defect which allows local users to gain read access to memory reachable by the kernel when the print-fatal-signals option is enabled. This option is disabled by default."
+      },
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2005",
+        "title": "",
+        "body": "Andi Kleen reported a defect which allows local users to gain read access to memory reachable by the kernel when the print-fatal-signals option is enabled. This option is disabled by default."
+      }
+    ],
+    "CVE-2010-0007": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1996",
+        "title": "",
+        "body": "Florian Westphal reported a lack of capability checking in the ebtables netfilter subsystem. If the ebtables module is loaded, local users can add and modify ebtables rules."
+      },
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2005",
+        "title": "",
+        "body": "Florian Westphal reported a lack of capability checking in the ebtables netfilter subsystem. If the ebtables module is loaded, local users can add and modify ebtables rules."
+      }
+    ],
+    "CVE-2010-0012": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1967",
+        "title": "",
+        "body": "Dan Rosenberg discovered that Transmission, a lightwight client forthe Bittorrent filesharing protocol, performs insufficient sanitisingof file names specified in .torrent files. This could lead to theoverwrite of local files with the privileges of the user runningTransmission if the user is tricked into opening a malicious torrentfile.For the stable distribution (lenny), this problem has been fixed inversion 1.22-1+lenny2.For the unstable distribution (sid), this problem has been fixed inversion 1.77-1.We recommend that you upgrade your transmission packages."
+      }
+    ],
+    "CVE-2010-0097": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2054",
+        "title": "",
+        "body": "CVE-2010-0097"
+      }
+    ],
+    "CVE-2010-0136": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1995",
+        "title": "",
+        "body": "It was discovered that macro security settings were insufficiently enforced for VBA macros."
+      }
+    ],
+    "CVE-2010-0160": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1999",
+        "title": "",
+        "body": "Orlando Barrera II discovered that incorrect memory handling in the implementation of the web worker API could lead to the execution of arbitrary code."
+      }
+    ],
+    "CVE-2010-0162": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1999",
+        "title": "",
+        "body": "Georgi Guninski discovered that the same origin policy can be bypassed through specially crafted SVG documents."
+      }
+    ],
+    "CVE-2010-0175": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2027",
+        "title": "",
+        "body": "It was discovered that incorrect memory handling in the XUL event handler might allow the execution of arbitrary code."
+      }
+    ],
+    "CVE-2010-0176": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2027",
+        "title": "",
+        "body": "It was discovered that incorrect memory handling in the XUL event handler might allow the execution of arbitrary code."
+      }
+    ],
+    "CVE-2010-0177": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2027",
+        "title": "",
+        "body": "It was discovered that incorrect memory handling in the plugin code might allow the execution of arbitrary code."
+      }
+    ],
+    "CVE-2010-0178": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2027",
+        "title": "",
+        "body": "Paul Stone discovered that forced drag-and-drop events could lead to Chrome privilege escalation."
+      }
+    ],
+    "CVE-2010-0179": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2027",
+        "title": "",
+        "body": "It was discovered that a programming error in the XMLHttpRequestSpy module could lead to the execution of arbitrary code."
+      }
+    ],
+    "CVE-2010-0287": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1976",
+        "title": "",
+        "body": "It was discovered that an internal variable is not properly sanitized beforebeing used to list directories. This can be exploited to list contents ofarbitrary directories."
+      }
+    ],
+    "CVE-2010-0288": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1976",
+        "title": "",
+        "body": "It was discovered that the ACL Manager plugin doesn't properly check theadministrator permissions. This allow an attacker to introduce arbitrary ACLrules and thus gaining access to a closed Wiki."
+      }
+    ],
+    "CVE-2010-0289": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1976",
+        "title": "",
+        "body": "It was discovered that the ACL Manager plugin doesn't have protections againstcross-site request forgeries (CSRF). This can be exploited to change theaccess control rules by tricking a logged in administrator into visitinga malicious web site."
+      }
+    ],
+    "CVE-2010-0291": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1996",
+        "title": "",
+        "body": "Al Viro reported several issues with the mmap/mremap system calls that allow local users to cause a denial of service (system panic) or obtain elevated privileges."
+      },
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2005",
+        "title": "",
+        "body": "Al Viro reported several issues with the mmap/mremap system calls that allow local users to cause a denial of service (system panic) or obtain elevated privileges."
+      }
+    ],
+    "CVE-2010-0292": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1992",
+        "title": "",
+        "body": "chronyd replies to all cmdmon packets with NOHOSTACCESS messages even for unauthorized hosts. An attacker can abuse this behaviour to force two chronyd instances to play packet ping-pong by sending such a packet with spoofed source address and port. This results in high CPU and network usage and thus denial of service conditions."
+      }
+    ],
+    "CVE-2010-0293": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1992",
+        "title": "",
+        "body": "The client logging facility of chronyd doesn't limit memory that is used to store client information. An attacker can cause chronyd to allocate large amounts of memory by sending NTP or cmdmon packets with spoofed source addresses resulting in memory exhaustion."
+      }
+    ],
+    "CVE-2010-0294": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1992",
+        "title": "",
+        "body": "chronyd lacks of a rate limit control to the syslog facility when logging received packets from unauthorized hosts. This allows an attacker to cause denial of service conditions via filling up the logs and thus disk space by repeatedly sending invalid cmdmon packets."
+      }
+    ],
+    "CVE-2010-0295": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1987",
+        "title": "",
+        "body": "Li Ming discovered that lighttpd, a small and fast webserver with minimalmemory footprint, is vulnerable to a denial of service attack due to badmemory handling. Slowly sending very small chunks of request data causeslighttpd to allocate new buffers for each read instead of appending toold ones. An attacker can abuse this behaviour to cause denial of serviceconditions due to memory exhaustion.For the oldstable distribution (etch), this problem has been fixed inversion 1.4.13-4etch12.For the stable distribution (lenny), this problem has been fixed inversion 1.4.19-5+lenny1.For the testing (squeeze) and unstable (sid) distribution, this problemwill be fixed soon.We recommend that you upgrade your lighttpd packages."
+      }
+    ],
+    "CVE-2010-0296": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2058",
+        "title": "",
+        "body": "Jeff Layton and Dan Rosenberg discovered that the GNU C library did not correctly handle newlines in the mntent family of functions. If a local attacker were able to inject newlines into a mount entry through other vulnerable mount helpers, they could disrupt the system or possibly gain root privileges."
+      }
+    ],
+    "CVE-2010-0298": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1996",
+        "title": "",
+        "body": "Gleb Natapov discovered issues in the KVM subsystem where missing permission checks (CPL/IOPL) permit a user in a guest system to denial of service a guest (system crash) or gain escalated privileges with the guest."
+      }
+    ],
+    "CVE-2010-0301": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1981",
+        "title": "",
+        "body": "Christoph Anton Mitterer discovered that maildrop, a mail delivery agentwith filtering abilities, is prone to a privilege escalation issue thatgrants a user root group privileges.For the oldstable distribution (etch), this problem has been fixed inversion 2.0.2-11+etch1.For the stable distribution (lenny), this problem has been fixed inversion 2.0.4-3+lenny1.For the testing distribution (squeeze) and the unstable distribution(sid), this problem will be fixed soon.We recommend that you upgrade your maildrop packages."
+      }
+    ],
+    "CVE-2010-0303": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1982",
+        "title": "",
+        "body": "Julien Cristau discovered that hybserv, a daemon running IRC servicesfor IRCD-Hybrid, is prone to a denial of service attack via the commandsoption.For the stable distribution (lenny), this problem has been fixed inversion 1.9.2-4+lenny2.Due to a bug in the archive system, it is not possible to release thefix for the oldstable distribution (etch) simultaneously. Therefore,etch will be fixed in version 1.9.2-4+etch1 as soon as it becomesavailable.For the testing distribution (squeeze), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 1.9.2-4.1.We recommend that you upgrade your hybserv packages."
+      }
+    ],
+    "CVE-2010-0304": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1983",
+        "title": "",
+        "body": "Several buffer overflows were found in the LWRES dissector."
+      }
+    ],
+    "CVE-2010-0305": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2033",
+        "title": "",
+        "body": "It was discovered that in ejabberd, a distributed XMPP/Jabber serverwritten in Erlang, a problem in ejabberd_c2s.erl allows remoteauthenticated users to cause a denial of service by sending a largenumber of c2s (client2server) messages; that triggers an overload of thequeue, which in turn causes a crash of the ejabberd daemon.For the stable distribution (lenny), this problem has been fixed inversion 2.0.1-6+lenny2.For the testing distribution (squeeze), this problem has been fixed inversion 2.1.2-2.For the unstable distribution (sid), this problem has been fixed inversion 2.1.2-2.We recommend that you upgrade your ejabberd packages."
+      }
+    ],
+    "CVE-2010-0306": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1996",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2010-0394": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1990",
+        "title": "",
+        "body": "Stefan Goebel discovered that the Debian version of trac-git, the Gitadd-on for the Trac issue tracking system, contains a flaw whichenables attackers to execute code on the web server running trac-gitby sending crafted HTTP queries.The old stable distribution (etch) does not contain a trac-git package.For the stable distribution (lenny), this problem has been fixed inversion 0.0.20080710-3+lenny1.For the unstable distribution (sid) and the testing distribution(squeeze), this problem has been fixed in version 0.0.20090320-1.We recommend that you upgrade your trac-git package."
+      }
+    ],
+    "CVE-2010-0395": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2055",
+        "title": "",
+        "body": "It was discovered that OpenOffice.org, a full-featured office productivitysuite that provides a near drop-in replacement for Microsoft® Office, isnot properly handling python macros embedded in an office document. Thisallows an attacker to perform user-assisted execution of arbitrary code incertain use cases of the python macro viewer component.For the stable distribution (lenny), this problem has been fixed inversion 1:2.4.1+dfsg-1+lenny7.For the testing distribution (squeeze), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 1:3.2.1-1.We recommend that you upgrade your openoffice.org packages."
+      }
+    ],
+    "CVE-2010-0396": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2011",
+        "title": "",
+        "body": "William Grant discovered that the dpkg-source component of dpkg, thelow-level infrastructure for handling the installation and removal ofDebian software packages, is vulnerable to path traversal attacks.A specially crafted Debian source package can lead to file modificationoutside of the destination directory when extracting the package content.For the stable distribution (lenny), this problem has been fixed inversion 1.14.29.For the testing (squeeze) and unstable (sid) distribution this problemwill be fixed soon.We recommend that you upgrade your dpkg packages."
+      }
+    ],
+    "CVE-2010-0400": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2030",
+        "title": "",
+        "body": "It was discovered that mahara, an electronic portfolio, weblog, and resumebuilder is not properly escaping input when generating a unique usernamebased on a remote user name from a single sign-on application. An attackercan use this to compromise the mahara database via crafted user names.For the stable distribution (lenny), this problem has been fixed inversion 1.0.4-4+lenny5.For the testing distribution (squeeze), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 1.2.4-1.We recommend that you upgrade your mahara packages."
+      }
+    ],
+    "CVE-2010-0403": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2046",
+        "title": "",
+        "body": "A local file inclusion vulnerability allows remote attackers to executearbitrary PHP code and include arbitrary local files."
+      }
+    ],
+    "CVE-2010-0404": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2046",
+        "title": "",
+        "body": "Multiple SQL injection vulnerabilities allows remote attackers to executearbitrary SQL commands."
+      }
+    ],
+    "CVE-2010-0407": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2059",
+        "title": "",
+        "body": "It was discovered that PCSCD, a daemon to access smart cards, was vulnerableto a buffer overflow allowing a local attacker to elevate his privilegesto root.For the stable distribution (lenny), this problem has been fixed in version1.4.102-1+lenny1.For the unstable distribution (sid), this problem has been fixed inversion 1.5.4-1.We recommend that you upgrade your pcsc-lite package."
+      }
+    ],
+    "CVE-2010-0410": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-1996",
+        "title": "",
+        "body": "Sebastian Krahmer discovered an issue in the netlink connector subsystem that permits local users to allocate large amounts of system memory resulting in a denial of service (out of memory)."
+      },
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2005",
+        "title": "",
+        "body": "Sebastian Krahmer discovered an issue in the netlink connector subsystem that permits local users to allocate large amounts of system memory resulting in a denial of service (out of memory)."
+      }
+    ],
+    "CVE-2010-0420": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2038",
+        "title": "",
+        "body": "Crafted nicknames in the XMPP protocol can crash Pidgin remotely."
+      }
+    ],
+    "CVE-2010-0421": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2019",
+        "title": "",
+        "body": "Marc Schoenefeld discovered an improper input sanitization in Pango, a libraryfor layout and rendering of text, leading to array indexing error.If a local user was tricked into loading a specially-crafted font file in anapplication, using the Pango font rendering library, it could lead to denialof service (application crash).For the stable distribution (lenny), this problem has been fixed inversion 1.20.5-5+lenny1.For the testing distribution (squeeze), and the unstable distribution (sid),this problem will be fixed soon.We recommend that you upgrade your pango1.0 package."
+      }
+    ],
+    "CVE-2010-0423": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2038",
+        "title": "",
+        "body": "Remote contacts may send too many custom smilies, crashing Pidgin."
+      }
+    ],
+    "CVE-2010-0426": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2006",
+        "title": "",
+        "body": "It was discovered that sudo when a pseudo-command is enabled, permits amatch between the name of the pseudo-command and the name of anexecutable file in an arbitrary directory, which allows local users togain privileges via a crafted executable file."
+      }
+    ],
+    "CVE-2010-0427": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2006",
+        "title": "",
+        "body": "It was discovered that sudo when the runas_default option is used, doesnot properly set group memberships, which allows local users to gain privilegesvia a sudo command."
+      }
+    ],
+    "CVE-2010-0434": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2035",
+        "title": "",
+        "body": "A flaw in the core subrequest process code was found, which could leadto a daemon crash (segfault) or disclosure of sensitive informationif the headers of a subrequest were modified by modules such asmod_headers."
+      }
+    ],
+    "CVE-2010-0442": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2051",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2010-0540": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2176",
+        "title": "",
+        "body": "A cross-site request forgery vulnerability was discovered in the web interface."
+      }
+    ],
+    "CVE-2010-0542": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2176",
+        "title": "",
+        "body": "Incorrect memory management in the filter subsystem could lead to denial of service."
+      }
+    ],
+    "CVE-2010-0629": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2031",
+        "title": "",
+        "body": "Sol Jerome discovered that kadmind service in krb5, a system for authenticatingusers and services on a network, allows remote authenticated users to cause adenial of service (daemon crash) via a request from a kadmin client that sendsan invalid API version number.For the stable distribution (lenny), this problem has been fixed inversion 1.6.dfsg.4~beta1-5lenny3.The testing distribution (squeeze), and the unstable distribution (sid) arenot affected by this issue.We recommend that you upgrade your krb5 package."
+      }
+    ],
+    "CVE-2010-0727": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2053",
+        "title": "",
+        "body": "Sachin Prabhu reported an issue in the GFS2 filesystem. Local users can trigger a BUG() altering the permissions on a locked file, resulting in a denial of service."
+      }
+    ],
+    "CVE-2010-0734": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2023",
+        "title": "",
+        "body": "Wesley Miaw discovered that libcurl, a multi-protocol file transferlibrary, is prone to a buffer overflow via the callback function whenan application relies on libcurl to automatically uncompress data. Notethat this only affects applications that trust libcurl's maximum limitfor a fixed buffer size and do not perform any sanity checks themselves.For the stable distribution (lenny), this problem has been fixed inversion 7.18.2-8lenny4.Due to a problem with the archive software, we are unable to release allarchitectures simultaneously. Binaries for the hppa, ia64, mips, mipseland s390 architectures will be provided once they are available.For the testing distribution (squeeze) and the unstable distribution(sid), this problem has been fixed in version 7.20.0-1.We recommend that you upgrade your curl packages."
+      }
+    ],
+    "CVE-2010-0793": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2049",
+        "title": "",
+        "body": "It has been discovered that barnowl, a curses-based tty Jabber, IRC, AIMand Zephyr client, is prone to a buffer overflow via its \"CC:\" handling,which could lead to the execution of arbitrary code.For the stable distribution (lenny), this problem has been fixed inversion 1.0.1-4+lenny1.For the testing distribution (squeeze) and the unstable distribution(sid), this problem has been fixed in version 1.5.1-1.We recommend that you upgrade your barnowl packages."
+      }
+    ],
+    "CVE-2010-0828": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2024",
+        "title": "",
+        "body": "Jamie Strandboge discovered that moin, a python clone of WikiWiki, doesnot sufficiently sanitize the page name in \"Despam\" action, allowing remoteattackers to perform cross-site scripting (XSS) attacks.In addition, this update fixes a minor issue in the \"textcha\" protection, itcould be trivially bypassed by blanking the \"textcha-question\" and \"textcha-answer\"form fields.For the stable distribution (lenny), these problems have been fixed inversion 1.7.1-3+lenny4.For the testing (squeeze) and unstable (sid) distribution, these problemswill be fixed soon.We recommend that you upgrade your moin package."
+      }
+    ],
+    "CVE-2010-0829": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2048",
+        "title": "",
+        "body": "Dan Rosenberg discovered that in dvipng, a utility that converts DVIfiles to PNG graphics, several array index errors allow context-dependentattackers, via a specially crafted DVI file, to cause a denial ofservice (crash of the application), and possibly arbitrary codeexecution.For the stable distribution (lenny), this problem has been fixed inversion dvipng_1.11-1+lenny1.For the testing distribution (squeeze), this problem has been fixed inversion 1.13-1.For the unstable distribution (sid), this problem has been fixed inversion 1.13-1.We recommend that you upgrade your dvipng package."
+      }
+    ],
+    "CVE-2010-0830": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2058",
+        "title": "",
+        "body": "Dan Rosenberg discovered that the GNU C library did not correctly validate certain ELF program headers. If a user or automated system were tricked into verifying a specially crafted ELF program, a remote attacker could execute arbitrary code with user privileges."
+      }
+    ],
+    "CVE-2010-1083": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2053",
+        "title": "",
+        "body": "Linus Torvalds reported an issue in the USB subsystem, which may allow local users to obtain portions of sensitive kernel memory."
+      }
+    ],
+    "CVE-2010-1084": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2053",
+        "title": "",
+        "body": "Neil Brown reported an issue in the Bluetooth subsystem that may permit remote attackers to overwrite memory through the creation of large numbers of sockets, resulting in a denial of service."
+      }
+    ],
+    "CVE-2010-1086": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2053",
+        "title": "",
+        "body": "Ang Way Chuang reported an issue in the DVB subsystem for Digital TV adapters. By creating a specially-encoded MPEG2-TS frame, a remote attacker could cause the receiver to enter an endless loop, resulting in a denial of service."
+      }
+    ],
+    "CVE-2010-1132": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2021",
+        "title": "",
+        "body": "A missing input sanitization in spamass-milter, a milterused to filter mail through spamassassin, was discovered.This allows a remote attacker to inject and execute arbitrary shell commands.For the stable distribution (lenny), this problem has been fixed inversion 0.3.1-8+lenny1.For the testing (squeeze) and unstable (sid) distribution this problemhas been fixed in version 0.3.1-9.We recommend that you upgrade your spamass-milter package."
+      }
+    ],
+    "CVE-2010-1150": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2041",
+        "title": "",
+        "body": "It was discovered that mediawiki, a website engine for collaborativework, is vulnerable to a Cross-Site Request Forgery login attack, whichcould be used to conduct phishing or similar attacks to users viaaffected mediawiki installations.Note that the fix used breaks the login API and may require clients using it tobe updated.For the stable distribution (lenny), this problem has been fixed inversion 1:1.12.0-2lenny5.For the testing distribution (squeeze) and the unstable distribution (sid),this problem has been fixed in version 1:1.15.3-1.We recommend that you upgrade your mediawiki packages."
+      }
+    ],
+    "CVE-2010-1157": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2207",
+        "title": "",
+        "body": "Various vulnerabilities have been discovered in the Tomcat Servlet andJSP engine, resulting in denial of service, cross-site scripting,information disclosure and WAR file traversal. Further details on theindividual security issues can be found on the ApacheTomcat 5 vulnerabilities page.For the oldstable distribution (lenny), this problem has been fixed inversion 5.5.26-5lenny2.The stable distribution (squeeze) no longer contains tomcat5.5. tomcat6is already fixed.The unstable distribution (sid) no longer contains tomcat5.5. tomcat6is already fixed.We recommend that you upgrade your tomcat5.5 packages."
+      }
+    ],
+    "CVE-2010-1169": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2051",
+        "title": "",
+        "body": "Tim Bunce discovered that the implementation of the procedural language PL/Perl insufficiently restricts the subset of allowed code, which allows authenticated users the execution of arbitrary Perl code."
+      }
+    ],
+    "CVE-2010-1170": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2051",
+        "title": "",
+        "body": "Tom Lane discovered that the implementation of the procedural language PL/Tcl insufficiently restricts the subset of allowed code, which allows authenticated users the execution of arbitrary Tcl code."
+      }
+    ],
+    "CVE-2010-1173": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2053",
+        "title": "",
+        "body": "Chris Guo from Nokia China and Jukka Taimisto and Olli Jarva from Codenomicon Ltd reported an issue in the SCTP subsystem that allows a remote attacker to cause a denial of service using a malformed init package."
+      }
+    ],
+    "CVE-2010-1187": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2053",
+        "title": "",
+        "body": "Neil Hormon reported an issue in the TIPC subsystem. Local users can cause a denial of service by way of a NULL pointer dereference by sending datagrams through AF_TIPC before entering network mode."
+      }
+    ],
+    "CVE-2010-1195": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2020",
+        "title": "",
+        "body": "Ivan Shmakov discovered that the htmlscrubber component of ikiwiki, a wikicompiler, performs insufficient input sanitization on data:image/svg+xmlURIs. As these can contain script code this can be used by an attackerto conduct cross-site scripting attacks.For the stable distribution (lenny), this problem has been fixed inversion 2.53.5.For the testing distribution (squeeze), this problem has been fixed inversion 3.20100312.For the unstable distribution (sid), this problem has been fixed inversion 3.20100312."
+      }
+    ],
+    "CVE-2010-1238": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2024",
+        "title": "",
+        "body": "Jamie Strandboge discovered that moin, a python clone of WikiWiki, doesnot sufficiently sanitize the page name in \"Despam\" action, allowing remoteattackers to perform cross-site scripting (XSS) attacks.In addition, this update fixes a minor issue in the \"textcha\" protection, itcould be trivially bypassed by blanking the \"textcha-question\" and \"textcha-answer\"form fields.For the stable distribution (lenny), these problems have been fixed inversion 1.7.1-3+lenny4.For the testing (squeeze) and unstable (sid) distribution, these problemswill be fixed soon.We recommend that you upgrade your moin package."
+      }
+    ],
+    "CVE-2010-1321": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2052",
+        "title": "",
+        "body": "Shawn Emery discovered that in MIT Kerberos 5 (krb5), a system forauthenticating users and services on a network, a null pointerdereference flaw in the Generic Security Service Application ProgramInterface (GSS-API) library could allow an authenticated remote attackerto crash any server application using the GSS-API authenticationmechanism, by sending a specially-crafted GSS-API token with a missingchecksum field.For the stable distribution (lenny), this problem has been fixed inversion 1.6.dfsg.4~beta1-5lenny4.For the testing distribution (squeeze), this problem has been fixed inversion 1.8.1+dfsg-3.For the unstable distribution (sid), this problem has been fixed inversion 1.8.1+dfsg-3.We recommend that you upgrade your krb5 packages."
+      }
+    ],
+    "CVE-2010-1323": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2129",
+        "title": "",
+        "body": "A vulnerability has been found in krb5, the MIT implementation ofKerberos.MIT krb5 clients incorrectly accept unkeyed checksums in the SAM-2preauthentication challenge: an unauthenticated remote attacker couldalter a SAM-2 challenge, affecting the prompt text seen by the user orthe kind of response sent to the KDC. Under some circumstances, thiscan negate the incremental security benefit of using a single-useauthentication mechanism token.MIT krb5 incorrectly accepts RFC 3961 key-derivation checksums usingRC4 keys when verifying KRB-SAFE messages: an unauthenticated remoteattacker has a 1/256 chance of forging KRB-SAFE messages in anapplication protocol if the targeted pre-existing session uses an RC4session key. Few application protocols use KRB-SAFE messages.The Common Vulnerabilities and Exposures project has assignedCVE-2010-1323 to these issues.For the stable distribution (lenny), these problems have been fixed inversion 1.6.dfsg.4~beta1-5lenny6.The builds for the mips architecture are not included in this advisory.They will be released as soon as they are available.For the testing distribution (squeeze) and the unstable distribution(sid), these problem have been fixed in version 1.8.3+dfsg-3.We recommend that you upgrade your krb5 packages."
+      }
+    ],
+    "CVE-2010-1326": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2108",
+        "title": "",
+        "body": "It has been discovered that in cvsnt, a multi-platform version of theoriginal source code versioning system CVS, an error in theauthentication code allows a malicious, unprivileged user, through theuse of a specially crafted branch name, to gain write access to anymodule or directory, including CVSROOT itself. The attacker can thenexecute arbitrary code as root by modifying or adding administrativescripts in that directory.For the stable distribution (lenny), this problem has been fixed inversion 2.5.03.2382-3.3+lenny1.We recommend that you upgrade your cvsnt package."
+      }
+    ],
+    "CVE-2010-1431": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2039",
+        "title": "",
+        "body": "It was discovered that Cacti, a frontend to rrdtool for monitoringsystems and services missed input sanitising, making an SQL injectionattack possible.For the stable distribution (lenny), this problem has been fixed inversion 0.8.7b-2.1+lenny2.For the unstable distribution (sid), this problem will be fixed soon.We recommend that you upgrade your cacti package."
+      }
+    ],
+    "CVE-2010-1446": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2053",
+        "title": "",
+        "body": "Wufei reported an issue with kgdb on the PowerPC architecture, allowing local users to write to kernel memory. Note: this issue does not affect binary kernels provided by Debian. The fix is provided for the benefit of users who build their own kernels from Debian source."
+      }
+    ],
+    "CVE-2010-1447": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2267",
+        "title": "",
+        "body": "It was discovered that Perl's Safe module - a module to compile andexecute code in restricted compartments - could be bypassed.Please note that this update is known to break Petal, an XML-basedtemplating engine (shipped with Debian 6.0/Squeeze in the packagelibpetal-perl, seebug #582805 for details). A fix is not yet available. If you use Petal, youmight consider to put the previous Perl packages on hold.For the oldstable distribution (lenny), this problem has been fixed inversion 5.10.0-19lenny5.For the stable distribution (squeeze), this problem has been fixed inversion 5.10.1-17squeeze2.For the unstable distribution (sid), this problem has been fixed inversion 5.12.3-1.We recommend that you upgrade your perl packages."
+      }
+    ],
+    "CVE-2010-1451": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2053",
+        "title": "",
+        "body": "Brad Spengler reported an issue on the SPARC architecture that allows local users to execute non-executable pages."
+      }
+    ],
+    "CVE-2010-1512": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2047",
+        "title": "",
+        "body": "A vulnerability was discovered in aria2, a download client. The \"name\"attribute of the \"file\" element of metalink files is not properlysanitised before using it to download files. If a user is tricked intodownloading from a specially crafted metalink file, this can beexploited to download files to directories outside of the intendeddownload directory.For the stable distribution (lenny), this problem has been fixed inversion 0.14.0-1+lenny2.For the unstable distribution (sid), this problem has been fixed inversion 1.9.3-1.We recommend that you upgrade your aria2 package."
+      }
+    ],
+    "CVE-2010-1646": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2062",
+        "title": "",
+        "body": "Anders Kaseorg and Evan Broder discovered a vulnerability in sudo, aprogram designed to allow a sysadmin to give limited root privileges tousers, that allows a user with sudo permissions on certain programs touse those programs with an untrusted value of PATH.This could possibly lead to certain intended restrictions being bypassed,such as the secure_path setting.For the stable distribution (lenny), this problem has been fixed inversion 1.6.9p17-3For the unstable distribution (sid), this problem has been fixed inversion 1.7.2p7-1, and will migrate to the testing distribution (squeeze)shortly.We recommend that you upgrade your sudo package."
+      }
+    ],
+    "CVE-2010-1666": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2068",
+        "title": "",
+        "body": "Matt Giuca discovered a buffer overflow in python-cjson, a fast JSONencoder/decoder for Python.This allows a remote attacker to cause a denial of service (application crash)through a specially-crafted Python script.For the stable distribution (lenny), this problem has been fixed inversion 1.0.5-1+lenny1.For the testing (squeeze) and the unstable (sid) distribution, this problemhas been fixed in version 1.0.5-3.We recommend that you upgrade your python-cjson package."
+      }
+    ],
+    "CVE-2010-1675": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2197",
+        "title": "",
+        "body": "The BGP daemon resets BGP sessions when it encounters malformed AS_PATHLIMIT attributes, introducing a distributed BGP session reset vulnerability which disrupts packet forwarding. Such malformed attributes are propagated by the Internet core, and exploitation of this vulnerability is not restricted to directly configured BGP peers."
+      }
+    ],
+    "CVE-2010-1676": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2136",
+        "title": "",
+        "body": "Willem Pinckaers discovered that Tor, a tool to enable online anonymity,does not correctly handle all data read from the network. By supplyingspecially crafted packets a remote attacker can cause Tor to overflow itsheap, crashing the process. Arbitrary code execution has not beenconfirmed but there is a potential risk.In the stable distribution (lenny), this update also includes an update ofthe IP address for the Tor directory authority gabelmoo and addressesa weakness in the package's postinst maintainer script.For the stable distribution (lenny) this problem has been fixed inversion 0.2.1.26-1~lenny+4.For the testing distribution (squeeze) and the unstable distribution (sid),this problem has been fixed in version 0.2.1.26-6.We recommend that you upgrade your tor packages."
+      }
+    ],
+    "CVE-2010-1679": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2142",
+        "title": "",
+        "body": "Jakub Wilk discovered that the dpkg-source component of dpkg, the Debianpackage management system, doesn't correctly handle paths in patches ofsource packages, which could make it traverse directories.Raphaël Hertzog additionally discovered that symbolic links in the .pcdirectory are followed, which could make it traverse directories too.Both issues only affect source packages using the \"3.0 quilt\" format atunpack-time.For the stable distribution (lenny), these problems have been fixed inversion 1.14.31.For the testing (squeeze) and unstable distributions (sid),these problems will be fixed soon.We recommend that you upgrade your dpkg packages.Further information about Debian Security Advisories, how to applythese updates to your system and frequently asked questions can befound at: https://www.debian.org/security/"
+      }
+    ],
+    "CVE-2010-1748": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2176",
+        "title": "",
+        "body": "Information disclosure in the web interface."
+      }
+    ],
+    "CVE-2010-1783": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2188",
+        "title": "",
+        "body": "WebKit does not properly handle dynamic modification of a text node, which allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted HTML document."
+      }
+    ],
+    "CVE-2010-1917": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2089",
+        "title": "",
+        "body": "The fnmatch function can be abused to conduct denial of service attacks (by crashing the interpreter) by the means of a stack overflow."
+      }
+    ],
+    "CVE-2010-1938": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2281",
+        "title": "",
+        "body": "Sebastian Krahmer discovered that opie, a system that makes it simple to useOne-Time passwords in applications, is prone to a privilege escalation(CVE-2011-2490)and an off-by-one error, which can lead to the execution of arbitrary code(CVE-2011-2489).Adam Zabrocki and Maksymilian Arciemowicz also discovered another off-by-oneerror(CVE-2010-1938),which only affects the lenny version as the fix was already included insqueeze.For the oldstable distribution (lenny), these problems have been fixed inversion 2.32-10.2+lenny2.For the stable distribution (squeeze), these problems have been fixed inversion 2.32.dfsg.1-0.2+squeeze1The testing distribution (wheezy) and the unstable distribution (sid) donot contain opie.We recommend that you upgrade your opie packages."
+      }
+    ],
+    "CVE-2010-1975": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2051",
+        "title": "",
+        "body": "It was discovered that an unprivileged user could reset superuser-only parameter settings."
+      }
+    ],
+    "CVE-2010-2006": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2146",
+        "title": "",
+        "body": "D. Fabian and L. Weichselbaum discovered a directory traversalvulnerability in MyDMS, a open-source document management system basedon PHP and MySQL.For the stable distribution (lenny), this problem has been fixed inversion 1.7.0-1+lenny1.The testing distribution (squeeze) and the unstable distribution (sid)no longer contain mydms packages.We recommend that you upgrade your mydms packages.Further information about Debian Security Advisories, how to applythese updates to your system and frequently asked questions can befound at: https://www.debian.org/security/"
+      }
+    ],
+    "CVE-2010-2063": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2061",
+        "title": "",
+        "body": "Jun Mao discovered that Samba, an implementation of the SMB/CIFS protocolfor Unix systems, is not properly handling certain offset values whenprocessing chained SMB1 packets. This enables an unauthenticated attackerto write to an arbitrary memory location resulting in the possibility toexecute arbitrary code with root privileges or to perform denial of serviceattacks by crashing the samba daemon.For the stable distribution (lenny), this problem has been fixed inversion 3.2.5-4lenny12.This problem does not affect the versions in the testing (squeeze) andunstable (sid) distribution.We recommend that you upgrade your samba packages."
+      }
+    ],
+    "CVE-2010-2092": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2060",
+        "title": "",
+        "body": "Stefan Esser discovered that cacti, a front-end to rrdtool for monitoringsystems and services, is not properly validating input passed to the rra_idparameter of the graph.php script. Due to checking the input of $_REQUESTbut using $_GET input in a query an unauthenticated attacker is able toperform SQL injections via a crafted rra_id $_GET value and an additionalvalid rra_id $_POST or $_COOKIE value.For the stable distribution (lenny), this problem has been fixed inversion 0.8.7b-2.1+lenny3.For the testing distribution (squeeze), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 0.8.7e-4.We recommend that you upgrade your cacti packages."
+      }
+    ],
+    "CVE-2010-2155": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2056",
+        "title": "",
+        "body": "It was discovered that in ZoneCheck, a tool to check DNS configurations,the CGI does not perform sufficient sanitation of user input; anattacker can take advantage of this and pass script code in order toperform cross-site scripting attacks.For the stable distribution (lenny), this problem has been fixed inversion 2.0.4-13lenny1.For the testing distribution (squeeze), this problem has been fixed inversion 2.1.1-1.For the unstable distribution (sid), this problem has been fixed inversion 2.1.1-1.We recommend that you upgrade your zonecheck packages."
+      }
+    ],
+    "CVE-2010-2225": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2089",
+        "title": "",
+        "body": "The SplObjectStorage unserializer allows attackers to execute arbitrary code via serialized data by the means of a use-after-free vulnerability."
+      }
+    ],
+    "CVE-2010-2226": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2094",
+        "title": "",
+        "body": "Dan Rosenberg reported an issue in the xfs filesystem that allows local users to copy and read a file owned by another user, for which they only have write permissions, due to a lack of permission checking in the XFS_SWAPEXT ioctl."
+      }
+    ],
+    "CVE-2010-2227": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2207",
+        "title": "",
+        "body": "Various vulnerabilities have been discovered in the Tomcat Servlet andJSP engine, resulting in denial of service, cross-site scripting,information disclosure and WAR file traversal. Further details on theindividual security issues can be found on the ApacheTomcat 5 vulnerabilities page.For the oldstable distribution (lenny), this problem has been fixed inversion 5.5.26-5lenny2.The stable distribution (squeeze) no longer contains tomcat5.5. tomcat6is already fixed.The unstable distribution (sid) no longer contains tomcat5.5. tomcat6is already fixed.We recommend that you upgrade your tomcat5.5 packages."
+      }
+    ],
+    "CVE-2010-2240": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2094",
+        "title": "",
+        "body": "Rafal Wojtczuk reported an issue that allows users to obtain escalated privileges. Users must already have sufficient privileges to execute or connect clients to an Xorg server."
+      }
+    ],
+    "CVE-2010-2248": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2094",
+        "title": "",
+        "body": "Suresh Jayaraman discovered an issue in the CIFS filesystem. A malicious file server can set an incorrect \"CountHigh\" value, resulting in a denial of service (BUG_ON() assertion)."
+      }
+    ],
+    "CVE-2010-2251": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2085",
+        "title": "",
+        "body": "It was discovered that in lftp, a command-line HTTP/FTP client, there isno proper validation of the filename provided by the server through theContent-Disposition header; attackers can use this flaw by suggesting afilename they wish to overwrite on the client machine, and then possiblyexecute arbitrary code (for instance if the attacker elects to write adotfile in a home directory).For the stable distribution (lenny), this problem has been fixed inversion 3.7.3-1+lenny1.For the testing distribution (squeeze), this problem has been fixed inversion 4.0.6-1.For the unstable distribution (sid), this problem has been fixed inversion 4.0.6-1.We recommend that you upgrade your lftp packages."
+      }
+    ],
+    "CVE-2010-2432": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2176",
+        "title": "",
+        "body": "Denial of service in the authentication code."
+      }
+    ],
+    "CVE-2010-2452": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2065",
+        "title": "",
+        "body": "Two security issues have been discovered in the DCC protocol supportcode of kvirc, a KDE-based next generation IRC client, which allowthe overwriting of local files through directory traversal and theexecution of arbitrary code through a format string attack.For the stable distribution (lenny), these problems have been fixed inversion 3.4.0-5.For the unstable distribution (sid), these problems have been fixed inversion 4.0.0~svn4340+rc3-1.We recommend that you upgrade your kvirc packages."
+      }
+    ],
+    "CVE-2010-2487": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2083",
+        "title": "",
+        "body": "It was discovered that moin, a python clone of WikiWiki, does not sufficientlysanitize parameters when passing them to the add_msg function. This allows aremote attackers to conduct cross-site scripting (XSS) attacks for examplevia the template parameter.For the stable distribution (lenny), this problem has been fixed inversion 1.7.1-3+lenny5.For the testing distribution (squeeze), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 1.9.3-1."
+      }
+    ],
+    "CVE-2010-2498": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2070",
+        "title": "",
+        "body": "Robert Swiecki discovered several vulnerabilities in the FreeType fontlibrary, which could lead to the execution of arbitrary code if amalformed font file is processed.Also, several buffer overflows were found in the included demo programs.For the stable distribution (lenny), these problems have been fixed inversion 2.3.7-2+lenny2.For the unstable distribution (sid), these problems have been fixed inversion 2.4.0-1.We recommend that you upgrade your freetype packages."
+      }
+    ],
+    "CVE-2010-2500": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2070",
+        "title": "",
+        "body": "Robert Swiecki discovered several vulnerabilities in the FreeType fontlibrary, which could lead to the execution of arbitrary code if amalformed font file is processed.Also, several buffer overflows were found in the included demo programs.For the stable distribution (lenny), these problems have been fixed inversion 2.3.7-2+lenny2.For the unstable distribution (sid), these problems have been fixed inversion 2.4.0-1.We recommend that you upgrade your freetype packages."
+      }
+    ],
+    "CVE-2010-2519": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2070",
+        "title": "",
+        "body": "Robert Swiecki discovered several vulnerabilities in the FreeType fontlibrary, which could lead to the execution of arbitrary code if amalformed font file is processed.Also, several buffer overflows were found in the included demo programs.For the stable distribution (lenny), these problems have been fixed inversion 2.3.7-2+lenny2.For the unstable distribution (sid), these problems have been fixed inversion 2.4.0-1.We recommend that you upgrade your freetype packages."
+      }
+    ],
+    "CVE-2010-2520": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2070",
+        "title": "",
+        "body": "Robert Swiecki discovered several vulnerabilities in the FreeType fontlibrary, which could lead to the execution of arbitrary code if amalformed font file is processed.Also, several buffer overflows were found in the included demo programs.For the stable distribution (lenny), these problems have been fixed inversion 2.3.7-2+lenny2.For the unstable distribution (sid), these problems have been fixed inversion 2.4.0-1.We recommend that you upgrade your freetype packages."
+      }
+    ],
+    "CVE-2010-2521": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2094",
+        "title": "",
+        "body": "Neil Brown reported an issue in the NFSv4 server code. A malicious client could trigger a denial of service (Oops) on a server due to a bug in the read_buf() routine."
+      }
+    ],
+    "CVE-2010-2531": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2266",
+        "title": "",
+        "body": "An information leak was found in the var_export() function."
+      }
+    ],
+    "CVE-2010-2546": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2081",
+        "title": "",
+        "body": "Tomas Hoger discovered that the upstream fix for CVE-2009-3995 wasinsufficient. This update provides a corrected package.For the stable distribution (lenny), this problem has been fixed inversion 3.1.11-6.0.1+lenny1.For the unstable distribution (sid), these problems have been fixed inversion 3.1.11-6.3.We recommend that you upgrade your libmikmod packages."
+      }
+    ],
+    "CVE-2010-2547": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2076",
+        "title": "",
+        "body": "It was discovered that GnuPG 2 uses a freed pointer when verifying asignature or importing a certificate with many Subject Alternate Names,potentially leading to arbitrary code execution.For the stable distribution (lenny), this problem has been fixed inversion 2.0.9-3.1+lenny1.For the unstable distribution (sid), this problem has been fixed inversion 2.0.14-2.GnuPG 1 (in the gnupg package) is not affected by this problem.We recommend that you upgrade your gnupg2 packages."
+      }
+    ],
+    "CVE-2010-2595": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2552",
+        "title": "",
+        "body": "An array index error, related to downsampled OJPEG input in the TIFFYCbCrtoRGB function causes an unexpected crash."
+      }
+    ],
+    "CVE-2010-2597": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2552",
+        "title": "",
+        "body": "Also related to downsampled OJPEG input, the TIFFVStripSize function crash unexpectly."
+      }
+    ],
+    "CVE-2010-2630": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2552",
+        "title": "",
+        "body": "The TIFFReadDirectory function does not properly validate the data types of codec-specific tags that have an out-of-order position in a TIFF file."
+      }
+    ],
+    "CVE-2010-2640": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2357",
+        "title": "",
+        "body": "Insufficient array bounds checks in the PK fonts parser could lead to function pointer overwrite, causing arbitrary code execution."
+      }
+    ],
+    "CVE-2010-2641": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2357",
+        "title": "",
+        "body": "Insufficient array bounds checks in the VF fonts parser could lead to function pointer overwrite, causing arbitrary code execution."
+      }
+    ],
+    "CVE-2010-2642": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2357",
+        "title": "",
+        "body": "Insufficient bounds checks in the AFM fonts parser when writing data to a memory buffer allocated on heap could lead to arbitrary memory overwrite and arbitrary code execution."
+      }
+    ],
+    "CVE-2010-2643": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2357",
+        "title": "",
+        "body": "Insufficient check on an integer used as a size for memory allocation can lead to arbitrary write outside the allocated range and cause arbitrary code execution."
+      }
+    ],
+    "CVE-2010-2760": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2106",
+        "title": "",
+        "body": "Implementation errors in XUL processing allow the execution of arbitrarycode."
+      }
+    ],
+    "CVE-2010-2763": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2106",
+        "title": "",
+        "body": "An implementation error in the XPCSafeJSObjectWrapper wrapper allows thebypass of the same origin policy."
+      }
+    ],
+    "CVE-2010-2765": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2106",
+        "title": "",
+        "body": "An integer overflow in frame handling allows the execution of arbitrarycode."
+      }
+    ],
+    "CVE-2010-2766": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2106",
+        "title": "",
+        "body": "An implementation error in DOM handling allows the execution of arbitrarycode."
+      }
+    ],
+    "CVE-2010-2767": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2106",
+        "title": "",
+        "body": "Incorrect pointer handling in the plugin code allow the execution ofarbitrary code."
+      }
+    ],
+    "CVE-2010-2768": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2106",
+        "title": "",
+        "body": "Incorrect handling of an object tag may lead to the bypass of crosssite scripting filters."
+      }
+    ],
+    "CVE-2010-2769": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2106",
+        "title": "",
+        "body": "Incorrect copy and paste handling could lead to cross site scripting."
+      }
+    ],
+    "CVE-2010-2795": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2172",
+        "title": "",
+        "body": "Several vulnerabilties have been discovered in phpCAS, a CAS clientlibrary for PHP. The Moodle course management system includes a copyof phpCAS.For the oldstable distribution (lenny), this problem has been fixed inversion 1.8.13-3.The stable distribution (squeeze) already contains a fixed version ofphpCAS.The unstable distribution (sid) already contains a fixed version ofphpCAS.We recommend that you upgrade your moodle packages."
+      }
+    ],
+    "CVE-2010-2796": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2172",
+        "title": "",
+        "body": "Several vulnerabilties have been discovered in phpCAS, a CAS clientlibrary for PHP. The Moodle course management system includes a copyof phpCAS.For the oldstable distribution (lenny), this problem has been fixed inversion 1.8.13-3.The stable distribution (squeeze) already contains a fixed version ofphpCAS.The unstable distribution (sid) already contains a fixed version ofphpCAS.We recommend that you upgrade your moodle packages."
+      }
+    ],
+    "CVE-2010-2798": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2094",
+        "title": "",
+        "body": "Bob Peterson reported an issue in the GFS2 file system. A file system user could cause a denial of service (Oops) via certain rename operations."
+      }
+    ],
+    "CVE-2010-2799": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2090",
+        "title": "",
+        "body": "A stack overflow vulnerability was found in socat that allows anattacker to execute arbitrary code with the privileges of the socatprocess.This vulnerability can only be exploited when an attacker is able toinject more than 512 bytes of data into socat's argument.A vulnerable scenario would be a CGI script that reads data fromclients and uses (parts of) this data as argument for a socatinvocation.For the stable distribution (lenny), this problem has been fixed inversion 1.6.0.1-1+lenny1.For the unstable distribution (sid), this problem has been fixed inversion 1.7.1.3-1.We recommend that you upgrade your socat package."
+      }
+    ],
+    "CVE-2010-2801": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2087",
+        "title": "",
+        "body": "It was discovered that a programming error in the archive test mode ofcabextract, a program to extract Microsoft Cabinet files, could lead tothe execution of arbitrary code.For the stable distribution (lenny), this problem has been fixed inversion 1.2-3+lenny1.For the unstable distribution (sid), this problem will be fixed soon.We recommend that you upgrade your cabextract package."
+      }
+    ],
+    "CVE-2010-2803": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2094",
+        "title": "",
+        "body": "Kees Cook reported an issue in the DRM (Direct Rendering Manager) subsystem. Local users with sufficient privileges (local X users or members of the 'video' group on a default Debian install) could acquire access to sensitive kernel memory."
+      }
+    ],
+    "CVE-2010-2813": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2091",
+        "title": "",
+        "body": "SquirrelMail, a webmail application, does not employ a user-specific tokenfor webforms. This allows a remote attacker to perform a Cross Site RequestForgery (CSRF) attack. The attacker may hijack the authentication ofunspecified victims and send messages or change user preferences among otheractions, by tricking the victim into following a link controlled by theoffender.In addition, a denial-of-service was fixed, which could be triggered when apassword containing 8-bit characters was used to log in (CVE-2010-2813).For the stable distribution (lenny), these problems have been fixed inversion 1.4.15-4+lenny3.1.For the testing distribution (squeeze) and the unstable distribution (sid),these problems have been fixed in version 1.4.21-1.We recommend that you upgrade your squirrelmail packages."
+      }
+    ],
+    "CVE-2010-2891": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2145",
+        "title": "",
+        "body": "Andres Lopez Luksenberg discovered a buffer overflow in the OID parserof libsmi, a library to access SMI MIB data.For the stable distribution (lenny), this problem has been fixed inversion 0.4.7+dfsg-0.2.For the testing distribution (squeeze), this problem has been fixed inversion 0.4.8+dfsg2-3.For the unstable distribution (sid), this problem has been fixed inversion 0.4.8+dfsg2-3.We recommend that you upgrade your libsmi packages.Further information about Debian Security Advisories, how to applythese updates to your system and frequently asked questions can befound at: https://www.debian.org/security/"
+      }
+    ],
+    "CVE-2010-2901": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2188",
+        "title": "",
+        "body": "The rendering implementation in WebKit allows remote attackers to cause a denial of service (memory corruption) or possibly have unspecified other impact via unknown vectors."
+      }
+    ],
+    "CVE-2010-2939": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2100",
+        "title": "",
+        "body": "George Guninski discovered a double free in the ECDH code of the OpenSSLcrypto library, which may lead to denial of service and potentially theexecution of arbitrary code.For the stable distribution (lenny), this problem has been fixed inversion 0.9.8g-15+lenny8.For the unstable distribution (sid), this problem has been fixed inversion 0.9.8o-2.We recommend that you upgrade your openssl packages."
+      }
+    ],
+    "CVE-2010-2941": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2176",
+        "title": "",
+        "body": "Incorrect memory management in the IPP code could lead to denial of service or the execution of arbitrary code."
+      }
+    ],
+    "CVE-2010-2948": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2104",
+        "title": "",
+        "body": "When processing a crafted Route Refresh message receivedfrom a configured, authenticated BGP neighbor, Quaggamay crash, leading to a denial of service."
+      }
+    ],
+    "CVE-2010-2959": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2094",
+        "title": "",
+        "body": "Ben Hawkes discovered an issue in the AF_CAN socket family. An integer overflow condition may allow local users to obtain elevated privileges."
+      }
+    ],
+    "CVE-2010-2963": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Kees Cook discovered an issue in the v4l 32-bit compatibility layer for 64-bit systems that allows local users with /dev/video write permission to overwrite arbitrary kernel memory, potentially leading to a privilege escalation. On Debian systems, access to /dev/video devices is restricted to members of the 'video' group by default."
+      }
+    ],
+    "CVE-2010-2969": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2083",
+        "title": "",
+        "body": "It was discovered that moin, a python clone of WikiWiki, does not sufficientlysanitize parameters when passing them to the add_msg function. This allows aremote attackers to conduct cross-site scripting (XSS) attacks for examplevia the template parameter.For the stable distribution (lenny), this problem has been fixed inversion 1.7.1-3+lenny5.For the testing distribution (squeeze), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 1.9.3-1."
+      }
+    ],
+    "CVE-2010-2970": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2083",
+        "title": "",
+        "body": "It was discovered that moin, a python clone of WikiWiki, does not sufficientlysanitize parameters when passing them to the add_msg function. This allows aremote attackers to conduct cross-site scripting (XSS) attacks for examplevia the template parameter.For the stable distribution (lenny), this problem has been fixed inversion 1.7.1-3+lenny5.For the testing distribution (squeeze), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 1.9.3-1."
+      }
+    ],
+    "CVE-2010-2971": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2081",
+        "title": "",
+        "body": "Tomas Hoger discovered that the upstream fix for CVE-2009-3995 wasinsufficient. This update provides a corrected package.For the stable distribution (lenny), this problem has been fixed inversion 3.1.11-6.0.1+lenny1.For the unstable distribution (sid), these problems have been fixed inversion 3.1.11-6.3.We recommend that you upgrade your libmikmod packages."
+      }
+    ],
+    "CVE-2010-3015": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2094",
+        "title": "",
+        "body": "Toshiyuki Okajima reported an issue in the ext4 filesystem. Local users could trigger a denial of service (BUG assertion) by generating a specific set of filesystem operations."
+      }
+    ],
+    "CVE-2010-3055": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2097",
+        "title": "",
+        "body": "The configuration setup script does not properly sanitise its output file, which allows remote attackers to execute arbitrary PHP code via a crafted POST request. In Debian, the setup tool is protected through Apache HTTP basic authentication by default."
+      }
+    ],
+    "CVE-2010-3056": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2097",
+        "title": "",
+        "body": "Various cross site scripting issues have been discovered that allow a remote attacker to inject arbitrary web script or HTML."
+      }
+    ],
+    "CVE-2010-3065": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2089",
+        "title": "",
+        "body": "The default sessions serializer does not correctly handle a special marker, which allows an attacker to inject arbitrary variables into the session and possibly exploit vulnerabilities in the unserializer."
+      }
+    ],
+    "CVE-2010-3067": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Tavis Ormandy discovered an issue in the io_submit system call. Local users can cause an integer overflow resulting in a denial of service."
+      }
+    ],
+    "CVE-2010-3076": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2103",
+        "title": "",
+        "body": "It was discovered that smbind, a PHP-based tool for managing DNS zonesfor BIND, does not properly validating input.An unauthenticated remote attacker could execute arbitrary SQL commandsor gain access to the admin account.For the stable distribution (lenny), this problem has been fixed inversion 0.4.7-3+lenny1.For the unstable distribution (sid), this problem has been fixed inversion 0.4.7-5, and will migrate to the testing distribution (squeeze)shortly.We recommend that you upgrade your smbind (0.4.7-3+lenny1) package."
+      }
+    ],
+    "CVE-2010-3089": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2170",
+        "title": "",
+        "body": "Two cross site scripting vulnerabilities were been discovered inMailman, a web-based mailing list manager. These allowed an attackerto retrieve session cookies via inserting crafted JavaScript intoconfirmation messages (CVE-2011-0707) and in the list admin interface(CVE-2010-3089; oldstable only).For the oldstable distribution (lenny), these problems have been fixed inversion 1:2.1.11-11+lenny2.For the stable distribution (squeeze), this problem has been fixed inversion 1:2.1.13-5.For the testing (wheezy) and unstable distribution (sid), this problemhas been fixed in version 1:2.1.14-1.We recommend that you upgrade your mailman packages."
+      }
+    ],
+    "CVE-2010-3091": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2113",
+        "title": "",
+        "body": "Several issues have been discovered in the OpenID module that allowsmalicious access to user accounts."
+      }
+    ],
+    "CVE-2010-3092": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2113",
+        "title": "",
+        "body": "The upload module includes a potential bypass of access restrictions dueto not checking letter case-sensitivity."
+      }
+    ],
+    "CVE-2010-3093": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2113",
+        "title": "",
+        "body": "The comment module has a privilege escalation issue that allows certainusers to bypass limitations."
+      }
+    ],
+    "CVE-2010-3094": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2113",
+        "title": "",
+        "body": "Several cross-site scripting (XSS) issues have been discovered in theAction feature."
+      }
+    ],
+    "CVE-2010-3167": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2106",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2010-3168": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2106",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2010-3170": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2123",
+        "title": "",
+        "body": "NSS recognizes a wildcard IP address in the subject's CommonName field of an X.509 certificate, which might allowman-in-the-middle attackers to spoof arbitrary SSL servers viaa crafted certificate issued by a legitimate CertificationAuthority."
+      }
+    ],
+    "CVE-2010-3173": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2123",
+        "title": "",
+        "body": "NSS does not properly set the minimum key length forDiffie-Hellman Ephemeral (DHE) mode, which makes it easier forremote attackers to defeat cryptographic protection mechanismsvia a brute-force attack."
+      }
+    ],
+    "CVE-2010-3177": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2124",
+        "title": "",
+        "body": "Multiple cross-site scripting (XSS) vulnerabilities in theGopher parser in Xulrunner allow remote attackers to injectarbitrary web script or HTML via a crafted name of a (1) fileor (2) directory on a Gopher server."
+      }
+    ],
+    "CVE-2010-3178": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2124",
+        "title": "",
+        "body": "Xulrunner does not properly handle certain modal calls made byjavascript: URLs in circumstances related to opening a newwindow and performing cross-domain navigation, which allowsremote attackers to bypass the Same Origin Policy via acrafted HTML document."
+      }
+    ],
+    "CVE-2010-3179": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2124",
+        "title": "",
+        "body": "Stack-based buffer overflow in the text-renderingfunctionality in Xulrunner allows remote attackers to executearbitrary code or cause a denial of service (memory corruptionand application crash) via a long argument to thedocument.write method."
+      }
+    ],
+    "CVE-2010-3180": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2124",
+        "title": "",
+        "body": "Use-after-free vulnerability in the nsBarProp function inXulrunner allows remote attackers to execute arbitrary code byaccessing the locationbar property of a closed window."
+      }
+    ],
+    "CVE-2010-3183": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2124",
+        "title": "",
+        "body": "The LookupGetterOrSetter function in Xulrunner does notproperly support window.__lookupGetter__ function calls thatlack arguments, which allows remote attackers to executearbitrary code or cause a denial of service (incorrect pointerdereference and application crash) via a crafted HTMLdocument."
+      }
+    ],
+    "CVE-2010-3275": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2211",
+        "title": "",
+        "body": "Ricardo Narvaja discovered that missing input sanitising in VLC, amultimedia player and streamer, could lead to the execution of arbitrarycode if a user is tricked into opening a malformed media file.This update also provides updated packages for oldstable (lenny) forvulnerabilities, which have already been addressed in Debian stable(squeeze), either during the freeze or in DSA-2159(CVE-2010-0522,CVE-2010-1441,CVE-2010-1442 andCVE-2011-0531).For the oldstable distribution (lenny), this problem has been fixed inversion 0.8.6.h-4+lenny3.For the stable distribution (squeeze), this problem has been fixed inversion 1.1.3-1squeeze4.For the unstable distribution (sid), this problem has been fixed inversion 1.1.8-1.We recommend that you upgrade your vlc packages."
+      }
+    ],
+    "CVE-2010-3276": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2211",
+        "title": "",
+        "body": "Ricardo Narvaja discovered that missing input sanitising in VLC, amultimedia player and streamer, could lead to the execution of arbitrarycode if a user is tricked into opening a malformed media file.This update also provides updated packages for oldstable (lenny) forvulnerabilities, which have already been addressed in Debian stable(squeeze), either during the freeze or in DSA-2159(CVE-2010-0522,CVE-2010-1441,CVE-2010-1442 andCVE-2011-0531).For the oldstable distribution (lenny), this problem has been fixed inversion 0.8.6.h-4+lenny3.For the stable distribution (squeeze), this problem has been fixed inversion 1.1.3-1squeeze4.For the unstable distribution (sid), this problem has been fixed inversion 1.1.8-1.We recommend that you upgrade your vlc packages."
+      }
+    ],
+    "CVE-2010-3296": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Dan Rosenberg discovered an issue in the cxgb network driver that allows unprivileged users to obtain the contents of sensitive kernel memory."
+      }
+    ],
+    "CVE-2010-3310": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Dan Rosenberg discovered an issue in the ROSE socket implementation. On systems with a rose device, local users can cause a denial of service (kernel memory corruption)."
+      }
+    ],
+    "CVE-2010-3311": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2116",
+        "title": "",
+        "body": "Marc Schoenefeld has found an input stream position error in theway the FreeType font rendering engine processed input file streams.If a user loaded a specially-crafted font file with an applicationlinked against FreeType and relevant font glyphs were subsequentlyrendered with the X FreeType library (libXft), it could cause theapplication to crash or, possibly execute arbitrary code.After the upgrade, all running applications and services that uselibfreetype6 should be restarted. In most cases, logging out andin again should be enough. The script checkrestart from thedebian-goodies package or lsof may help to find out whichprocesses are still using the old version of libfreetype6.For the stable distribution (lenny), these problems have been fixed inversion 2.3.7-2+lenny4.The testing distribution (squeeze) and the unstable distribution (sid)are not affected by this problem.We recommend that you upgrade your freetype packages."
+      }
+    ],
+    "CVE-2010-3313": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2013",
+        "title": "",
+        "body": "Nahuel Grisolia discovered two vulnerabilities in Egroupware, a web-basedgroupware suite: Missing input sanitising in the spellchecker integrationmay lead to the execution of arbitrary commands and a cross-site scriptingvulnerability was discovered in the login page.For the stable distribution (lenny), these problems have been fixed inversion 1.4.004-2.dfsg-4.2.The upcoming stable distribution (squeeze), no longer contains egroupwarepackages.We recommend that you upgrade your egroupware packages."
+      }
+    ],
+    "CVE-2010-3314": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2013",
+        "title": "",
+        "body": "Nahuel Grisolia discovered two vulnerabilities in Egroupware, a web-basedgroupware suite: Missing input sanitising in the spellchecker integrationmay lead to the execution of arbitrary commands and a cross-site scriptingvulnerability was discovered in the login page.For the stable distribution (lenny), these problems have been fixed inversion 1.4.004-2.dfsg-4.2.The upcoming stable distribution (squeeze), no longer contains egroupwarepackages.We recommend that you upgrade your egroupware packages."
+      }
+    ],
+    "CVE-2010-3429": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2165",
+        "title": "",
+        "body": "Cesar Bernardini and Felipe Andres Manzano reported an arbitrary offset dereference vulnerability in the libavcodec, in particular in the FLIC file format parser. A specific FLIC file may exploit this vulnerability and execute arbitrary code. Mplayer is also affected by this problem, as well as other software that use this library."
+      }
+    ],
+    "CVE-2010-3432": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Thomas Dreibholz discovered an issue in the SCTP protocol that permits a remote user to cause a denial of service (kernel panic)."
+      }
+    ],
+    "CVE-2010-3433": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2120",
+        "title": "",
+        "body": "Tim Bunce discovered that PostgreSQL, a database server software, doesnot properly separate interpreters for server-side stored procedureswhich run in different security contexts. As a result, non-privilegedauthenticated database users might gain additional privileges.Note that this security update may impact intended communication throughglobal variables between stored procedures. It might be necessary toconvert these functions to run under the plperlu or pltclu languages,with database superuser privileges.This security update also includes unrelated bug fixes from PostgreSQL8.3.12.For the stable distribution (lenny), this problem has been fixed inversion 8.3_8.3.12-0lenny1.For the unstable distribution (sid), this problem has been fixed inversion 8.4.5-1 of the postgresql-8.4 package.We recommend that you upgrade your PostgreSQL packages."
+      }
+    ],
+    "CVE-2010-3437": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Dan Rosenberg discovered an issue in the pktcdvd driver. Local users with permission to open /dev/pktcdvd/control can obtain the contents of sensitive kernel memory or cause a denial of service. By default on Debian systems, this access is restricted to members of the group 'cdrom'."
+      }
+    ],
+    "CVE-2010-3442": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Dan Rosenberg discovered an issue in the ALSA sound system. Local users with permission to open /dev/snd/controlC0 can create an integer overflow condition that causes a denial of service. By default on Debian systems, this access is restricted to members of the group 'audio'."
+      }
+    ],
+    "CVE-2010-3445": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2127",
+        "title": "",
+        "body": "A flaw has been found in wireshark, a network protocol analyzer.It was found that the ASN.1 BER dissector was susceptible to a stackoverflow, causing the application to crash.For the stable distribution (lenny), the problem has been fixed inversion 1.0.2-3+lenny11.For the testing distribution (squeeze) and the unstable distribution(sid), this problem has been fixed in version 1.2.11-3.We recommend that you upgrade your wireshark packages."
+      }
+    ],
+    "CVE-2010-3448": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Dan Jacobson reported an issue in the thinkpad-acpi driver. On certain Thinkpad systems, local users can cause a denial of service (X.org crash) by reading /proc/acpi/ibm/video."
+      }
+    ],
+    "CVE-2010-3450": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2151",
+        "title": "",
+        "body": "During an internal security audit within Red Hat, a directory traversal vulnerability has been discovered in the way OpenOffice.org 3.1.1 through 3.2.1 processes XML filter files. If a local user is tricked into opening a specially-crafted OOo XML filters package file, this problem could allow remote attackers to create or overwrite arbitrary files belonging to local user or, potentially, execute arbitrary code."
+      }
+    ],
+    "CVE-2010-3452": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2151",
+        "title": "",
+        "body": "Dan Rosenberg discovered a vulnerability in the RTF file parser which can be leveraged by attackers to achieve arbitrary code execution by convincing a victim to open a maliciously crafted RTF file."
+      }
+    ],
+    "CVE-2010-3453": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2151",
+        "title": "",
+        "body": "As part of his work with Virtual Security Research, Dan Rosenberg discovered a vulnerability in the WW8ListManager::WW8ListManager() function of OpenOffice.org that allows a maliciously crafted file to cause the execution of arbitrary code."
+      }
+    ],
+    "CVE-2010-3454": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2151",
+        "title": "",
+        "body": "As part of his work with Virtual Security Research, Dan Rosenberg discovered a vulnerability in the WW8DopTypography::ReadFromMem() function in OpenOffice.org that may be exploited by a maliciously crafted file which allows an attacker to control program flow and potentially execute arbitrary code."
+      }
+    ],
+    "CVE-2010-3477": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Jeff Mahoney discovered an issue in the Traffic Policing (act_police) module that allows local users to obtain the contents of sensitive kernel memory."
+      }
+    ],
+    "CVE-2010-3613": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2130",
+        "title": "",
+        "body": "BIND does not properly handle the combination of signednegative responses and corresponding RRSIG records in thecache, which allows remote attackers to cause a denial ofservice (server crash) via a query for cached data."
+      }
+    ],
+    "CVE-2010-3614": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2130",
+        "title": "",
+        "body": "BIND does not properly determine the security status of an NSRRset during a DNSKEY algorithm rollover, which may lead tozone unavailability during rollovers."
+      }
+    ],
+    "CVE-2010-3677": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2143",
+        "title": "",
+        "body": "It was discovered that MySQL allows remote authenticated users to cause a denial of service (mysqld daemon crash) via a join query that uses a table with a unique SET column."
+      }
+    ],
+    "CVE-2010-3685": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2113",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2010-3686": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2113",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2010-3689": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2151",
+        "title": "",
+        "body": "Dmitri Gribenko discovered that the soffice script does not treat an empty LD_LIBRARY_PATH variable like an unset one, which may lead to the execution of arbitrary code."
+      }
+    ],
+    "CVE-2010-3690": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2172",
+        "title": "",
+        "body": "Several vulnerabilties have been discovered in phpCAS, a CAS clientlibrary for PHP. The Moodle course management system includes a copyof phpCAS.For the oldstable distribution (lenny), this problem has been fixed inversion 1.8.13-3.The stable distribution (squeeze) already contains a fixed version ofphpCAS.The unstable distribution (sid) already contains a fixed version ofphpCAS.We recommend that you upgrade your moodle packages."
+      }
+    ],
+    "CVE-2010-3692": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2172",
+        "title": "",
+        "body": "Several vulnerabilties have been discovered in phpCAS, a CAS clientlibrary for PHP. The Moodle course management system includes a copyof phpCAS.For the oldstable distribution (lenny), this problem has been fixed inversion 1.8.13-3.The stable distribution (squeeze) already contains a fixed version ofphpCAS.The unstable distribution (sid) already contains a fixed version ofphpCAS.We recommend that you upgrade your moodle packages."
+      }
+    ],
+    "CVE-2010-3695": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2204",
+        "title": "",
+        "body": "Moritz Naumann discovered that IMP 4, a webmail component for the Hordeframework, is prone to cross-site scripting attacks by a lack of inputsanitising of certain Fetchmail information.For the oldstable distribution (lenny), this problem has been fixed inversion 4.2-4lenny3.For the stable distribution (squeeze), this problem has been fixed inversion 4.3.7+debian0-2.1, which was already included in the squeezerelease.For the testing distribution (wheezy) and the unstable distribution(sid), this problem has been fixed in version 4.3.7+debian0-2.1.We recommend that you upgrade your imp4 packages."
+      }
+    ],
+    "CVE-2010-3702": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2119",
+        "title": "",
+        "body": "Joel Voss of Leviathan Security Group discovered two vulnerabilities inthe Poppler PDF rendering library, which may lead to the execution ofarbitrary code if a malformed PDF file is opened.For the stable distribution (lenny), these problems have been fixed inversion 0.8.7-4.For the unstable distribution (sid), these problems will be fixed soon.We recommend that you upgrade your poppler packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2135",
+        "title": "",
+        "body": "Joel Voss of Leviathan Security Group discovered two vulnerabilitiesin xpdf rendering engine, which may lead to the execution of arbitrarycode if a malformed PDF file is opened.For the stable distribution (lenny), these problems have been fixed inversion 3.02-1.4+lenny3.For the upcoming stable distribution (squeeze) and the unstabledistribution (sid), these problems don't apply, since xpdf has beenpatched to use the Poppler PDF library.We recommend that you upgrade your poppler packages."
+      }
+    ],
+    "CVE-2010-3704": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2119",
+        "title": "",
+        "body": "Joel Voss of Leviathan Security Group discovered two vulnerabilities inthe Poppler PDF rendering library, which may lead to the execution ofarbitrary code if a malformed PDF file is opened.For the stable distribution (lenny), these problems have been fixed inversion 0.8.7-4.For the unstable distribution (sid), these problems will be fixed soon.We recommend that you upgrade your poppler packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2135",
+        "title": "",
+        "body": "Joel Voss of Leviathan Security Group discovered two vulnerabilitiesin xpdf rendering engine, which may lead to the execution of arbitrarycode if a malformed PDF file is opened.For the stable distribution (lenny), these problems have been fixed inversion 3.02-1.4+lenny3.For the upcoming stable distribution (squeeze) and the unstabledistribution (sid), these problems don't apply, since xpdf has beenpatched to use the Poppler PDF library.We recommend that you upgrade your poppler packages."
+      }
+    ],
+    "CVE-2010-3714": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2121",
+        "title": "",
+        "body": "Multiple remote file disclosure vulnerabilities in the jumpUrlmechanism and the Extension Manager allowed attackers to readfiles with the privileges of the account under which the webserver was running."
+      }
+    ],
+    "CVE-2010-3715": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2121",
+        "title": "",
+        "body": "The TYPO3 backend contained several cross-site scriptingvulnerabilities, and the RemoveXSS function did not filterall Javascript code."
+      }
+    ],
+    "CVE-2010-3716": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2121",
+        "title": "",
+        "body": "Malicious editors with user creation permission could escalatetheir privileges by creating new users in arbitrary groups, dueto lack of input validation in the taskcenter."
+      }
+    ],
+    "CVE-2010-3717": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2121",
+        "title": "",
+        "body": "TYPO3 exposed a crasher bug in the PHP filter_var function,enabling attackers to cause the web server process to crashand thus consume additional system resources."
+      }
+    ],
+    "CVE-2010-3762": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2130",
+        "title": "",
+        "body": "When DNSSEC validation is enabled, BIND does not properlyhandle certain bad signatures if multiple trust anchors existfor a single zone, which allows remote attackers to cause adenial of service (server crash) via a DNS query."
+      }
+    ],
+    "CVE-2010-3765": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2124",
+        "title": "",
+        "body": "Xulrunner allows remote attackers to execute arbitrary codevia vectors related to nsCSSFrameConstructor::ContentAppended,the appendChild method, incorrect index tracking, and thecreation of multiple frames, which triggers memory corruption."
+      }
+    ],
+    "CVE-2010-3767": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2132",
+        "title": "",
+        "body": "Several remote vulnerabilities have been discovered in Xulrunner, aruntime environment for XUL applications. The Common Vulnerabilitiesand Exposures project identifies the following problems:For the stable distribution (lenny), these problems have been fixed inversion 1.9.0.19-7.For the upcoming stable version (squeeze) and the unstabledistribution (sid), these problems have been fixed in version 3.5.15-1.For the experimental distribution, these problems have been fixed inversion 3.6.13-1.We recommend that you upgrade your xulrunner packages."
+      }
+    ],
+    "CVE-2010-3769": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2132",
+        "title": "",
+        "body": "Several remote vulnerabilities have been discovered in Xulrunner, aruntime environment for XUL applications. The Common Vulnerabilitiesand Exposures project identifies the following problems:For the stable distribution (lenny), these problems have been fixed inversion 1.9.0.19-7.For the upcoming stable version (squeeze) and the unstabledistribution (sid), these problems have been fixed in version 3.5.15-1.For the experimental distribution, these problems have been fixed inversion 3.6.13-1.We recommend that you upgrade your xulrunner packages."
+      }
+    ],
+    "CVE-2010-3770": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2132",
+        "title": "",
+        "body": "Several remote vulnerabilities have been discovered in Xulrunner, aruntime environment for XUL applications. The Common Vulnerabilitiesand Exposures project identifies the following problems:For the stable distribution (lenny), these problems have been fixed inversion 1.9.0.19-7.For the upcoming stable version (squeeze) and the unstabledistribution (sid), these problems have been fixed in version 3.5.15-1.For the experimental distribution, these problems have been fixed inversion 3.6.13-1.We recommend that you upgrade your xulrunner packages."
+      }
+    ],
+    "CVE-2010-3772": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2132",
+        "title": "",
+        "body": "Several remote vulnerabilities have been discovered in Xulrunner, aruntime environment for XUL applications. The Common Vulnerabilitiesand Exposures project identifies the following problems:For the stable distribution (lenny), these problems have been fixed inversion 1.9.0.19-7.For the upcoming stable version (squeeze) and the unstabledistribution (sid), these problems have been fixed in version 3.5.15-1.For the experimental distribution, these problems have been fixed inversion 3.6.13-1.We recommend that you upgrade your xulrunner packages."
+      }
+    ],
+    "CVE-2010-3776": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2132",
+        "title": "",
+        "body": "Several remote vulnerabilities have been discovered in Xulrunner, aruntime environment for XUL applications. The Common Vulnerabilitiesand Exposures project identifies the following problems:For the stable distribution (lenny), these problems have been fixed inversion 1.9.0.19-7.For the upcoming stable version (squeeze) and the unstabledistribution (sid), these problems have been fixed in version 3.5.15-1.For the experimental distribution, these problems have been fixed inversion 3.6.13-1.We recommend that you upgrade your xulrunner packages."
+      }
+    ],
+    "CVE-2010-3778": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2132",
+        "title": "",
+        "body": "Several remote vulnerabilities have been discovered in Xulrunner, aruntime environment for XUL applications. The Common Vulnerabilitiesand Exposures project identifies the following problems:For the stable distribution (lenny), these problems have been fixed inversion 1.9.0.19-7.For the upcoming stable version (squeeze) and the unstabledistribution (sid), these problems have been fixed in version 3.5.15-1.For the experimental distribution, these problems have been fixed inversion 3.6.13-1.We recommend that you upgrade your xulrunner packages."
+      }
+    ],
+    "CVE-2010-3814": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2155",
+        "title": "",
+        "body": "Two buffer overflows were found in the Freetype font library, which couldlead to the execution of arbitrary code.For the stable distribution (lenny), this problem has been fixed inversion 2.3.7-2+lenny5.For the testing distribution (squeeze), this problem has been fixed inversion 2.4.2-2.1.For the unstable distribution (sid), this problem has been fixed inversion 2.4.2-2.1.We recommend that you upgrade your freetype packages."
+      }
+    ],
+    "CVE-2010-3833": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2143",
+        "title": "",
+        "body": "It was discovered that MySQL incorrectly handled propagation during evaluation of arguments to extreme-value functions. An authenticated user could crash the server."
+      }
+    ],
+    "CVE-2010-3835": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2143",
+        "title": "",
+        "body": "It was discovered that MySQL incorrectly handled certain user-variable assignment expressions that are evaluated in a logical expression context. An authenticated user could crash the server."
+      }
+    ],
+    "CVE-2010-3836": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2143",
+        "title": "",
+        "body": "It was discovered that MySQL incorrectly handled pre-evaluation of LIKE predicates during view preparation. An authenticated user could crash the server."
+      }
+    ],
+    "CVE-2010-3837": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2143",
+        "title": "",
+        "body": "It was discovered that MySQL incorrectly handled using GROUP_CONCAT() and WITH ROLLUP together. An authenticated user could crash the server."
+      }
+    ],
+    "CVE-2010-3848": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Nelson Elhage discovered an issue in the Econet protocol. Local users can cause a stack overflow condition with large msg->msgiovlen values that can result in a denial of service or privilege escalation."
+      }
+    ],
+    "CVE-2010-3849": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Nelson Elhage discovered an issue in the Econet protocol. Local users can cause a denial of service (oops) if a NULL remote addr value is passed as a parameter to sendmsg()."
+      }
+    ],
+    "CVE-2010-3855": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2155",
+        "title": "",
+        "body": "Two buffer overflows were found in the Freetype font library, which couldlead to the execution of arbitrary code.For the stable distribution (lenny), this problem has been fixed inversion 2.3.7-2+lenny5.For the testing distribution (squeeze), this problem has been fixed inversion 2.4.2-2.1.For the unstable distribution (sid), this problem has been fixed inversion 2.4.2-2.1.We recommend that you upgrade your freetype packages."
+      }
+    ],
+    "CVE-2010-3856": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2122",
+        "title": "",
+        "body": "Ben Hawkes and Tavis Ormandy discovered that the dynamic loader in GNUlibc allows local users to gain root privileges using a craftedLD_AUDIT environment variable.For the stable distribution (lenny), this problem has been fixed inversion 2.7-18lenny6.For the upcoming stable distribution (squeeze), this problem has beenfixed in version 2.11.2-6+squeeze1 of the eglibc package.For the unstable distribution (sid), this problem will be fixed soon.We recommend that you upgrade your glibc packages."
+      }
+    ],
+    "CVE-2010-3859": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Dan Rosenberg reported an issue in the TIPC protocol. When the tipc module is loaded, local users can gain elevated privileges via the sendmsg() system call."
+      }
+    ],
+    "CVE-2010-3867": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2191",
+        "title": "",
+        "body": "Several directory traversal vulnerabilities have been discovered in the mod_site_misc module."
+      }
+    ],
+    "CVE-2010-3873": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Dan Rosenberg reported an issue in the X.25 network protocol. Local users can cause heap corruption, resulting in a denial of service (kernel panic)."
+      }
+    ],
+    "CVE-2010-3874": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Dan Rosenberg discovered an issue in the Control Area Network (CAN) subsystem on 64-bit systems. Local users may be able to cause a denial of service (heap corruption)."
+      }
+    ],
+    "CVE-2010-3875": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Vasiliy Kulikov discovered an issue in the AX.25 protocol. Local users can obtain the contents of sensitive kernel memory."
+      }
+    ],
+    "CVE-2010-3908": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2306",
+        "title": "",
+        "body": "FFmpeg before 0.5.4, allows remote attackers to cause a denial of service (memory corruption and application crash) or possibly execute arbitrary code via a malformed WMV file."
+      }
+    ],
+    "CVE-2010-4008": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2128",
+        "title": "",
+        "body": "Bui Quang Minh discovered that libxml2, a library for parsing andhandling XML data files, does not well process a malformed XPATH,causing crash and allowing arbitrary code execution.For the stable distribution (lenny), this problem has been fixed inversion 2.6.32.dfsg-5+lenny2.For the testing (squeeze) and unstable (sid) distribution, this problemhas been fixed in version 2.7.8.dfsg-1.We recommend that you upgrade your libxml2 package."
+      }
+    ],
+    "CVE-2010-4015": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2157",
+        "title": "",
+        "body": "It was discovered that PostgreSQL's intarray contrib module does notproperly handle integers with a large number of digits, leading to aserver crash and potentially arbitrary code execution.For the stable distribution (lenny), this problem has been fixed inversion 8.3.14-0lenny1 of the postgresql-8.3 package.For the testing distribution (squeeze), this problem has been fixed inversion 8.4.7-0squeeze1 of the postgresql-8.4 package.For the unstable distribution (sid), this problem has been fixed inversion 8.4.7-1 of the postgresql-8.4 package and version 9.0.3-1 ofthe postgresql-9.0 package.The updates also include reliability improvements; for details see therespective changelogs.We recommend that you upgrade your PostgreSQL packages."
+      }
+    ],
+    "CVE-2010-4040": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2188",
+        "title": "",
+        "body": "WebKit does not properly handle animated GIF images, which allows remote attackers to cause a denial of service (memory corruption) or possibly have unspecified other impact via a crafted image."
+      }
+    ],
+    "CVE-2010-4068": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2121",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2010-4072": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Kees Cook discovered an issue in the System V shared memory subsystem. Local users can obtain the contents of sensitive kernel memory."
+      }
+    ],
+    "CVE-2010-4073": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Dan Rosenberg discovered an issue in the System V shared memory subsystem. Local users on 64-bit system can obtain the contents of sensitive kernel memory via the 32-bit compatible semctl() system call."
+      }
+    ],
+    "CVE-2010-4074": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Dan Rosenberg reported issues in the mos7720 and mos7840 drivers for USB serial converter devices. Local users with access to these devices can obtain the contents of sensitive kernel memory."
+      }
+    ],
+    "CVE-2010-4079": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Dan Rosenberg reported an issue in the ivtvfb driver used for the Hauppauge PVR-350 card. Local users with access to the framebuffer device can obtain the contents of sensitive kernel memory via the FBIOGET_VBLANK ioctl."
+      }
+    ],
+    "CVE-2010-4080": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2126",
+        "title": "",
+        "body": "Dan Rosenberg discovered an issue in the ALSA driver for RME Hammerfall DSP audio devices. Local users with access to the audio device can obtain the contents of sensitive kernel memory via the SNDRV_HDSP_IOCTL_GET_CONFIG_INFO ioctl."
+      }
+    ],
+    "CVE-2010-4170": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2348",
+        "title": "",
+        "body": "It was discovered that insufficient validation of environment variables in staprun could lead to privilege escalation."
+      }
+    ],
+    "CVE-2010-4171": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2348",
+        "title": "",
+        "body": "It was discovered that insufficient validation of module unloading could lead to denial of service."
+      }
+    ],
+    "CVE-2010-4199": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2188",
+        "title": "",
+        "body": "WebKit does not properly perform a cast of an unspecified variable during processing of an SVG <use> element, which allows remote attackers to cause a denial of service or possibly have unspecified other impact via a crafted SVG document."
+      }
+    ],
+    "CVE-2010-4253": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2151",
+        "title": "",
+        "body": "A heap based buffer overflow has been discovered with unknown impact."
+      }
+    ],
+    "CVE-2010-4257": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2138",
+        "title": "",
+        "body": "Vladimir Kolesnikov discovered a SQL injection vulnerability in WordPress,a weblog manager.An authenticated user could execute arbitrary SQL commands via the SendTrackbacks field.For the stable distribution (lenny), this problem has been fixedin version 2.5.1-11+lenny4.For the unstable distribution (sid), and the testing distribution (squeeze),this problem has been fixed in version 3.0.2-1.We recommend that you upgrade your wordpress package.Further information about Debian Security Advisories, how to applythese updates to your system and frequently asked questions can befound at: https://www.debian.org/security/"
+      }
+    ],
+    "CVE-2010-4259": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2253",
+        "title": "",
+        "body": "Ulrik Persson reported a stack-based buffer overflow flaw in FontForge,a font editor. When processed a crafted Bitmap Distribution Format (BDF)FontForge could crash or execute arbitrary code with the privileges ofthe user running FontForge.For the oldstable distribution (lenny), this problem has been fixed inversion 0.0.20080429-1+lenny2.The stable distribution (squeeze), testing distribution (wheezy),and unstable distribution (sid) are not affected by this problem.We recommend that you upgrade your fontforge packages."
+      }
+    ],
+    "CVE-2010-4267": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2152",
+        "title": "",
+        "body": "Sebastian Krahmer discovered a buffer overflow in the SNMP discovery codeof the HP Linux Printing and Imaging System, which could result in theexecution of arbitrary code.For the stable distribution (lenny), this problem has been fixed inversion 2.8.6.b-4+lenny1.For the testing distribution (squeeze), this problem has been fixed inversion 3.10.6-2.For the unstable distribution (sid), this problem has been fixed inversion 3.10.6-2.For the experimental distribution, this problem has been fixed inversion 3.11.1-1.We recommend that you upgrade your hplip packages."
+      }
+    ],
+    "CVE-2010-4329": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2139",
+        "title": "",
+        "body": "Cross site scripting was possible in search, that allowed a remote attacker to inject arbitrary web script or HTML."
+      }
+    ],
+    "CVE-2010-4336": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2133",
+        "title": "",
+        "body": "It was discovered that collectd, a statistics collection and monitoringdaemon, is prone to a denial of service attack via a crafted networkpacket.For the stable distribution (lenny), this problem has been fixed inversion 4.4.2-3+lenny1.For the testing distribution (squeeze), this problem has been fixed inversion 4.10.1-1+squeeze2.For the unstable distribution (sid), this problem has been fixed inversion 4.10.1-2.1.This advisory only contains the packages for the alpha, amd64, arm,armel, hppa, i386, ia64, mips, powerpc, s390 and sparc architectures.The packages for the mipsel architecture will be released soon.We recommend that you upgrade your collectd packages."
+      }
+    ],
+    "CVE-2010-4344": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2131",
+        "title": "",
+        "body": "Several vulnerabilities have been found in exim4 that allow a remoteattacker to execute arbitrary code as root user. Exploits for theseissues have been seen in the wild.This update fixes a memory corruption issue that allows a remoteattacker to execute arbitrary code as the Debian-exim user(CVE-2010-4344).A fix for an additional issue that allows the Debian-exim user toobtain root privileges (CVE-2010-4345) is currently being checked forcompatibility issues. It is not yet included in this upgrade but willreleased soon in an update to this advisory.For the stable distribution (lenny), this problem has been fixed inversion 4.69-9+lenny1.This advisory only contains the packages for the alpha, amd64, hppa,i386, ia64, powerpc, and s390 architectures. The packages for thearm, armel, mips, mipsel, and sparc architectures will be releasedas soon as they are built.For the testing distribution (squeeze) and the unstable distribution(sid), this problem has been fixed in version 4.70-1.We strongly recommend that you upgrade your exim4 packages."
+      }
+    ],
+    "CVE-2010-4345": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2131",
+        "title": "",
+        "body": "Several vulnerabilities have been found in exim4 that allow a remoteattacker to execute arbitrary code as root user. Exploits for theseissues have been seen in the wild.This update fixes a memory corruption issue that allows a remoteattacker to execute arbitrary code as the Debian-exim user(CVE-2010-4344).A fix for an additional issue that allows the Debian-exim user toobtain root privileges (CVE-2010-4345) is currently being checked forcompatibility issues. It is not yet included in this upgrade but willreleased soon in an update to this advisory.For the stable distribution (lenny), this problem has been fixed inversion 4.69-9+lenny1.This advisory only contains the packages for the alpha, amd64, hppa,i386, ia64, powerpc, and s390 architectures. The packages for thearm, armel, mips, mipsel, and sparc architectures will be releasedas soon as they are built.For the testing distribution (squeeze) and the unstable distribution(sid), this problem has been fixed in version 4.70-1.We strongly recommend that you upgrade your exim4 packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2154",
+        "title": "",
+        "body": "A design flaw (CVE-2010-4345)in exim4 allowed the local Debian-exim user to obtain root privileges byspecifying an alternate configuration file using the -C option or by using themacro override facility (-D option). Unfortunately, fixing this vulnerabilityis not possible without some changes in exim4's behaviour. If you use the -Cor -D options or use the system filter facility, you should evaluatethe changes carefully and adjust your configuration accordingly. TheDebian default configuration is not affected by the changes.The detailed list of changes is described in the NEWS.Debian file inthe packages. The relevant sections are also reproduced below.In addition to that, missing error handling for the setuid/setgidsystem calls allowed the Debian-exim user to cause root to append log data toarbitrary files (CVE-2011-0017).For the stable distribution (lenny), these problems have been fixed inversion 4.69-9+lenny3.For the testing distribution (squeeze) and the unstable distribution(sid), these problem have been fixed in version 4.72-4.Excerpt from the NEWS.Debian file from the packages exim4-daemon-lightand exim4-daemon-heavy:Exim versions up to and including 4.72 are vulnerable toCVE-2010-4345. This is a privilege escalation issue that allows theexim user to gain root privileges by specifying an alternateconfiguration file using the -C option. The macro override facility(-D) might also be misused for this purpose.In reaction to this security vulnerability upstream has made a numberof user visible changes. This package includes these changes.If exim is invoked with the -C or -D option the daemon will not regainroot privileges though re-execution. This is usually necessary forlocal delivery, though. Therefore it is generally not possible anymoreto run an exim daemon with -D or -C options.However this version of exim has been built withTRUSTED_CONFIG_LIST=/etc/exim4/trusted_configs. TRUSTED_CONFIG_LISTdefines a list of configuration files which are trusted; if a configfile is owned by root and matches a pathname in the list, then it maybe invoked by the Exim build-time user without Exim relinquishing rootprivileges.As a hotfix to not break existing installations of mailscanner we havealso set WHITELIST_D_MACROS=OUTGOING. i.e. it is still possible tostart exim with -DOUTGOING while being able to do local deliveries.If you previously were using -D switches you will need to change yoursetup to use a separate configuration file. The \".include\" mechanismmakes this easy.The system filter is run as exim_user instead of root by default. Ifyour setup requies root privileges when running the system filter youwill need to set the system_filter_user exim main configurationoption."
+      }
+    ],
+    "CVE-2010-4351": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2224",
+        "title": "",
+        "body": "The JNLP SecurityManager returns from the checkPermission method instead of throwing an exception in certain circumstances, which might allow context-dependent attackers to bypass the intended security policy by creating instances of ClassLoader."
+      }
+    ],
+    "CVE-2010-4352": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2149",
+        "title": "",
+        "body": "Rémi Denis-Courmont discovered that dbus, a message bus application,is not properly limiting the nesting level when examining messages withextensive nested variants. This allows an attacker to crash the dbus systemdaemon due to a call stack overflow via crafted messages.For the stable distribution (lenny), this problem has been fixed inversion 1.2.1-5+lenny2.For the testing distribution (squeeze), this problem has been fixed inversion 1.2.24-4.For the unstable distribution (sid), this problem has been fixed inversion 1.2.24-4.We recommend that you upgrade your dbus packages."
+      }
+    ],
+    "CVE-2010-4480": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2139",
+        "title": "",
+        "body": "Cross site scripting was possible in errors, that allowed a remote attacker to inject arbitrary web script or HTML."
+      }
+    ],
+    "CVE-2010-4481": [
+      {
+        "url": "http://www.debian.org/security/2010/dsa-2139",
+        "title": "",
+        "body": "Display of PHP's phpinfo() function was available to world, but only if this functionality had been enabled (defaults to off). This may leak some information about the host system."
+      }
+    ],
+    "CVE-2010-4492": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2188",
+        "title": "",
+        "body": "Use-after-free vulnerability in WebKit allows remote attackers to cause a denial of service or possibly have unspecified other impact via vectors involving SVG animations."
+      }
+    ],
+    "CVE-2010-4493": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2188",
+        "title": "",
+        "body": "Use-after-free vulnerability in WebKit allows remote attackers to cause a denial of service via vectors related to the handling of mouse dragging events."
+      }
+    ],
+    "CVE-2010-4531": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2156",
+        "title": "",
+        "body": "MWR InfoSecurity identified a buffer overflow in pcscd, middlewareto access a smart card via PC/SC, which could lead to the executionof arbitrary code.For the stable distribution (lenny), this problem has been fixed inversion 1.4.102-1+lenny4.For the testing distribution (squeeze), this problem has been fixed inversion 1.5.5-4.For the unstable distribution (sid), this problem has been fixed inversion 1.5.5-4.We recommend that you upgrade your pcscd packages."
+      }
+    ],
+    "CVE-2010-4538": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2144",
+        "title": "",
+        "body": "It was discovered that a buffer overflow in the ENTTEC dissector maylead to the execution of arbitrary code.For the stable distribution (lenny), this problem has been fixed inversion 1.0.2-3+lenny12.For the testing distribution (squeeze), this problem has been fixed inversion 1.2.11-6.For the unstable distribution (sid), this problem has been fixed inversion 1.2.11-6.We recommend that you upgrade your wireshark packages.Further information about Debian Security Advisories, how to applythese updates to your system and frequently asked questions can befound at: https://www.debian.org/security/"
+      }
+    ],
+    "CVE-2010-4540": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2426",
+        "title": "",
+        "body": "Stack-based buffer overflow in the load_preset_responsefunction in plug-ins/lighting/lighting-ui.c in the LIGHTINGEFFECTS & LIGHT plugin allows user-assisted remote attackersto cause a denial of service (application crash) or possiblyexecute arbitrary code via a long Position field in a pluginconfiguration file."
+      }
+    ],
+    "CVE-2010-4541": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2426",
+        "title": "",
+        "body": "Stack-based buffer overflow in the loadit function inplug-ins/common/sphere-designer.c in the SPHERE DESIGNERplugin allows user-assisted remote attackers to cause a denialof service (application crash) or possibly execute arbitrarycode via a long Number of lights field in a pluginconfiguration file."
+      }
+    ],
+    "CVE-2010-4542": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2426",
+        "title": "",
+        "body": "Stack-based buffer overflow in the gfig_read_parameter_gimp_rgbfunction in the GFIG plugin allows user-assisted remoteattackers to cause a denial of service (application crash) orpossibly execute arbitrary code via a long Foreground field in aplugin configuration file."
+      }
+    ],
+    "CVE-2010-4543": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2426",
+        "title": "",
+        "body": "Heap-based buffer overflow in the read_channel_data function infile-psp.c in the Paint Shop Pro (PSP) plugin allows remoteattackers to cause a denial of service (application crash) orpossibly execute arbitrary code via a PSP_COMP_RLE (aka RLEcompression) image file that begins a long run count at the endof the image."
+      }
+    ],
+    "CVE-2010-4554": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2291",
+        "title": "",
+        "body": "SquirrelMail did not prevent page rendering inside a third-party HTML frame, which makes it easier for remote attackers to conduct clickjacking attacks via a crafted web site."
+      }
+    ],
+    "CVE-2010-4555": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2291",
+        "title": "",
+        "body": "Multiple small bugs in SquirrelMail allowed an attacker to inject malicious script into various pages or alter the contents of user preferences."
+      }
+    ],
+    "CVE-2010-4567": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2322",
+        "title": "",
+        "body": "Bugzilla has a URL field that can contain several types of URL, including javascript: and data: URLs. However, it does not make javascript: and data: URLs into clickable links, to protect against cross-site scripting attacks or other attacks. It was possible to bypass this protection by adding spaces into the URL in places that Bugzilla did not expect them. Also, javascript: and data: links were always shown as clickable to logged-out users."
+      }
+    ],
+    "CVE-2010-4568": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2322",
+        "title": "",
+        "body": "It was possible for a user to gain unauthorized access to any Bugzilla account in a very short amount of time (short enough that the attack is highly effective)."
+      }
+    ],
+    "CVE-2010-4572": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2322",
+        "title": "",
+        "body": "By inserting particular strings into certain URLs, it was possible to inject both headers and content to any browser."
+      }
+    ],
+    "CVE-2010-4577": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2188",
+        "title": "",
+        "body": "The CSSParser::parseFontFaceSrc function in WebCore/css/CSSParser.cpp in WebKit does not properly parse Cascading Style Sheets (CSS) token sequences, which allows remote attackers to cause a denial of service (out-of-bounds read) via a crafted local font, related to Type Confusion."
+      }
+    ],
+    "CVE-2010-4643": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2151",
+        "title": "",
+        "body": "A vulnerability has been discovered in the way OpenOffice.org handles TGA graphics which can be tricked by a specially crafted TGA file that could cause the program to crash due to a heap-based buffer overflow with unknown impact."
+      }
+    ],
+    "CVE-2010-4652": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2191",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2010-4665": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2552",
+        "title": "",
+        "body": "The tiffdump utility has an integer overflow in the ReadDirectory function."
+      }
+    ],
+    "CVE-2010-4704": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2165",
+        "title": "",
+        "body": "Greg Maxwell discovered an integer overflow the Vorbis decoder in FFmpeg. A specific Ogg file may exploit this vulnerability and execute arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2306",
+        "title": "",
+        "body": "libavcodec/vorbis_dec.c in the Vorbis decoder in FFmpeg allows remote attackers to cause a denial of service (application crash) via a crafted Ogg file, related to the vorbis_floor0_decode function."
+      }
+    ],
+    "CVE-2010-4705": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2165",
+        "title": "",
+        "body": "A potential integer overflow has been discovered in the Vorbis decoder in FFmpeg."
+      }
+    ],
+    "CVE-2010-4802": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2239",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Mojolicious, a Perl WebApplication Framework. The link_to helper was affected by cross-sitescripting and implementation errors in the MD5 HMAC and CGI environmenthandling have been corrected.The oldstable distribution (lenny) doesn't include libmojolicious-perl.For the stable distribution (squeeze), this problem has been fixed inversion 0.999926-1+squeeze2.For the unstable distribution (sid), this problem has been fixed inversion 1.12-1.We recommend that you upgrade your libmojolicious-perl packages."
+      }
+    ],
+    "CVE-2010-4803": [
+      {
+        "url": "http://www.debian.org/security/2011/dsa-2239",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Mojolicious, a Perl WebApplication Framework. The link_to helper was affected by cross-sitescripting and implementation errors in the MD5 HMAC and CGI environmenthandling have been corrected.The oldstable distribution (lenny) doesn't include libmojolicious-perl.For the stable distribution (squeeze), this problem has been fixed inversion 0.999926-1+squeeze2.For the unstable distribution (sid), this problem has been fixed inversion 1.12-1.We recommend that you upgrade your libmojolicious-perl packages."
+      }
+    ],
+    "CVE-2010-5077": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2442",
+        "title": "",
+        "body": "It has been discovered that spoofed getstatus UDP requests are beingsent by attackers to servers for use with games derived from theQuake 3 engine (such as openarena). These servers respond with apacket flood to the victim whose IP address was impersonated by theattackers, causing a denial of service.For the stable distribution (squeeze), this problem has been fixed inversion 0.8.5-5+squeeze3.For the testing distribution (wheezy) and the unstable distribution(sid), this problem has been fixed in version 0.8.5-6.We recommend that you upgrade your openarena packages."
+      }
+    ],
+    "CVE-2010-5312": [
+      {
+        "url": "http://www.debian.org/security/2015/dsa-3249",
+        "title": "",
+        "body": "Shadowman131 discovered that jqueryui, a JavaScript UI library fordynamic web applications, failed to properly sanitize its titleoption. This would allow a remote attacker to inject arbitrary codethrough cross-site scripting.For the oldstable distribution (wheezy), this problem has been fixedin version 1.8.ooops.21+dfsg-2+deb7u1.For the stable distribution (jessie), testing distribution (stretch)and unstable distribution (sid), this problem has been fixed inversion 1.10.1+dfsg-1.We recommend that you upgrade your jqueryui packages."
+      }
+    ]
+  }
+}

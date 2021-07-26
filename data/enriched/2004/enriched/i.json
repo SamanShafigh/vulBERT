@@ -1,0 +1,35 @@
+{
+  "year": 2004,
+  "total": 4,
+  "reference": "bugzilla.redhat.com",
+  "reports": {
+    "CVE-2004-0175": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=120147",
+        "title": "CAN-2004-0175 malicious ssh server can cause scp to write to arbitrary files",
+        "description": "Back in 2000 it was reported that a malicious ssh server could causescp to write to arbitrary files outside of the current directory. See: http://cert.uni-stuttgart.de/archive/bugtraq/2000/09/msg00499.htmlThis is a valid behaviour of the rcp protocol.The issue was rediscovered in Mar 2004 and discussed amongst OSSvendors, with Markus Friedl from OpenBSD writing a proposed patch forthis issue but warned that it needed a lot of testing: http://www.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/scp.c.diff?r1=1.113&r2=1.114"
+      }
+    ],
+    "CVE-2004-2541": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=490667",
+        "title": "CVE-2004-2541, CVE-2009-0148 cscope: multiple buffer overflows",
+        "description": "Apple Security Team reported multiple buffer overflows in cscope, caused by insecure sprintf usage. Processing a maliciously crafted source file with cscope may lead to an unexpected application termination or arbitrary code execution."
+      }
+    ],
+    "CVE-2004-2761": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=648886",
+        "title": "CVE-2004-2761 MD5: MD5 Message-Digest Algorithm is not collision resistant",
+        "description": "Common Vulnerabilities and Exposures assigned an identifier CVE-2004-2761 to the following vulnerability:The MD5 Message-Digest Algorithm is not collision resistant, which makes it easier for context-dependent attackers to conduct spoofing attacks, as demonstrated by attacks on the use of MD5 in the signature algorithm of an X.509 certificate.References:http://www.kb.cert.org/vuls/id/836068http://eprint.iacr.org/2004/199http://eprint.iacr.org/2005/067http://www.win.tue.nl/hashclash/rogue-ca/http://www.phreedom.org/research/rogue-ca/http://blog.mozilla.com/security/2008/12/30/md5-weaknesses-could-lead-to-certificate-forgery/"
+      }
+    ],
+    "CVE-2004-2768": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=598775",
+        "title": "CVE-2010-2059 rpm: fails to drop SUID/SGID bits on package upgrade",
+        "description": "Created attachment 418879 [details]SRPM for testing this bugDescription of problem:When RPM replaces an executable, it does not clear the setuid and setgid bits of the old file. Thus, if a user made a hard link to the old executable, he/she will still be able to run it with elevated privileges. This is bad if it was replaced because it had a vulnerability. The problem seems to occur only when executables are replaced, not when they are erased.This is the same bug that was previously noted in dpkg:http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=225692Version-Release number of selected component (if applicable):rpm-4.8.0-14.fc13.x86_64How reproducible:AlwaysSteps to Reproduce:1. Rebuild the attached SRPM twice, once with -D 'rel 1' and once with -D 'rel 2'.2. mkdir /tmp/rpm-setuid-test3. rpm -i rpm-setuid-test-0-1.fc13.$(rpm -E '%{_build_arch}').rpm4. ln /usr/bin/rpm-setuid-test /tmp/rpm-setuid-test/5. rpm -U rpm-setuid-test-0-2.fc13.$(rpm -E '%{_build_arch}').rpm6. ls -l /tmp/rpm-setuid-test/rpm-setuid-testActual results:The old executable is setuid.Expected results:The old executable is not setuid."
+      }
+    ]
+  }
+}

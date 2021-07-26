@@ -1,0 +1,1512 @@
+{
+  "year": 2007,
+  "total": 171,
+  "reference": "kb.cert.org",
+  "reports": {
+    "CVE-2007-0008": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/377812",
+        "title": "Mozilla Network Security Services (NSS) fails to properly process malformed SSLv2 server messages",
+        "overview": "A vulnerability in the way Mozilla Network Security Services (NSS) handles malformed SSLv2 server messages may lead to execution of arbitrary code.",
+        "description": "The SSLv2 protocol uses a client master key to generate all subsequent session keys. The client master key is created using a public key recieved from the server during phase one of the SSL handshake. Mozilla NSS library contains a vulnerability in the way malformed SSLv2 server messages related to the public key are handled that may result in a buffer overflow. According to the Mozilla Foundation Security Advisory 2007-06:SSL clients such as Firefox and Thunderbird can suffer a buffer overflow if a malicious server presents a certificate with a public key that is too small to encrypt the entire \"Master Secret\". Exploiting this overflow appears to be unreliable but possible if the SSLv2 protocol is enabled.Note that this vulnerability may affect any application that uses the Mozilla NSS library.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the user who is running the vulnerable application or cause a denial of service."
+      }
+    ],
+    "CVE-2007-0009": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/592796",
+        "title": "Mozilla Network Security Services (NSS) fails to properly handle the client master key",
+        "overview": "A vulnerability in the way Mozilla Network Security Services (NSS) handles the client master key may lead to execution of arbitrary code.",
+        "description": "The SSLv2 protocol uses a client master key to generate all subsequent session keys. The validity of the client master key is determined during phase one of the SSL handshake. Mozilla NSS library contains a vulnerability in the way client master keys with invalid length values are handled that may result in a buffer overflow. According to the Mozilla Foundation Security Advisory (MFSA) 2007-06:Servers that use NSS for the SSLv2 protocol can be exploited by a client that presents a \"Client Master Key\" with invalid length values in any of several fields that are used without adequate error checking. This can lead to a buffer overflow that presumably could be exploitable.Note that this vulnerability may affect any application that uses the Mozilla NSS library.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the user who is running the vulnerable application or cause a denial of service."
+      }
+    ],
+    "CVE-2007-0018": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/292713",
+        "title": "Online Media Technologies NCTsoft NCTAudioFile2 ActiveX buffer overflow",
+        "overview": "The Online Media Technologies NCTsoft NCTAudioFile2 ActiveX control contains a buffer overflow vulnerability, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Online Media Technologies NCTsoft provides an ActiveX control called NCTAudioFile2. This control is provided by the file NCTAudioFile2.dll. The NCTAudioFile2 ActiveX control is included with several applications, including, but not limited to:Altdo Software ProductsXrlly SoftwareSoftDiv Software ProductsEXPStudio Audio EditorDB Audio Mixer And EditorMovavi ProductsMagic Video ProductsCode-it Software ProductsAudio Edit MagicCDBurnerXP ProThe NCTAudioFile2 ActiveX control contains a buffer overflow in the SetFormatLikeSample() method. This buffer overflow allows an attacker to overwrite the contents of the EIP (Extended Instruction Pointer) register, thus gaining control of program execution flow.",
+        "impact": "By convincing a victim to view an HTML document (web page, HTML email, or email attachment), an attacker could run arbitrary code with the privileges of the user running IE."
+      }
+    ],
+    "CVE-2007-0025": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/932041",
+        "title": "Microsoft MFC component vulnerable to remote code execution via malformed embedded OLE object",
+        "overview": "A memory corruption vulnerability exists in the MFC component that is provided with Microsoft Windows and Visual Studio",
+        "description": "The Microsoft Foundation Class Library (MFC), is a Microsoft library that wraps parts of the Windows API in C++ classes. MFC is included in Microsoft Visual Studio and Microsoft Windows.Per Microsoft Security Bulletin MS07-012, a memory corruption vulnerability exists in the MFC component that is provided with Microsoft Windows and Visual Studio. An attacker may be able to exploit this vulnerability by convincing a user to open a malformed embedded OLE object within a Rich Text Format (RTF) file.Note that reports indicate that Visual Studio 2005 and Windows Vista are unaffected by this vulnerability, however Windows Server 2003 is affected.",
+        "impact": "A remote unauthenticated attacker may be able to execute arbitrary code with the privileges of the user who is running Windows."
+      }
+    ],
+    "CVE-2007-0028": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/493185",
+        "title": "Microsoft Excel vulnerable to arbitrary code execution via malformed record",
+        "overview": "A vulnerability in Microsoft Excel may allow an attacker to execute arbitrary code on a vulnerable system.",
+        "description": "A vulnerability exists in the way Microsoft Excel handles malformed records.Per Microsoft Security Bulletin MS07-002:A remote code execution vulnerability exists in Microsoft Excel. An attacker could exploit this vulnerability when Excel parses a file and processes a malformed record.",
+        "impact": "A remote unauthenticated attacker may be able to execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2007-0034": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/271860",
+        "title": "Microsoft Outlook fails to properly parse Office Saved Searches (.oss) files",
+        "overview": "A vulnerability exists in the way Microsoft Outlook handles Office Saved Searches (.oss). This vulnerability may allow a remote attacker to execute arbitrary code.",
+        "description": "Office Saved Searches (.oss) contain views of e-mail items that satisfy previous search criteria.Microsoft Outlook fails to properly parse Office Saved Searches (.oss) files. This vulnerability can be triggered when a user opens a specially crafted .oss file. Exploitation of this vulnerability may corrupt system memory, possibly resulting in the exploitation of arbitrary code.More information and a list of affected versions is available in Microsoft Security Bulletin MS07-003.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with the permissions of the user running Outlook."
+      }
+    ],
+    "CVE-2007-0035": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/260777",
+        "title": "Microsoft Word fails to properly process crafted array data",
+        "overview": "Microsoft Word contains a remote code execution vulnerability that could enable an attacker to execute arbitrary code and gain complete control of the vulnerable system.",
+        "description": "Microsoft Word fails to properly handle malformed data within an array. When a Word file is opened, Word does not properly perform validation over data within the array. An attacker could send a specially crafted Word file in an email message or hosted on a website that, when opened, could allow the attacker to execute arbitrary code. The attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.",
+        "impact": "An attacker could execute arbitrary code and gain complete control of the affected system."
+      }
+    ],
+    "CVE-2007-0038": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/191609",
+        "title": "Microsoft Windows animated cursor stack buffer overflow",
+        "overview": "Microsoft Windows contains a stack buffer overflow in the handling of animated cursor files. This vulnerability may allow a remote attacker to execute arbitrary code or cause a denial-of-service condition.",
+        "description": "Animated cursor files (.ani) contain animated graphics for icons and cursors. Animated cursor files are stored as Resource Interchange File Format (RIFF) data. A stack buffer overflow vulnerability exists in the way that Microsoft Windows processes malformed animated cursor files. Specifically, Microsoft Windows fails to properly validate the size of animated cursor file headers. Note that Windows Explorer will process animated cursor files with several different file extensions, such as .ani, .cur, or .ico.Note that animated cursor files are parsed when the containing folder is opened or it is used as a cursor. In addition, Internet Explorer can process animated cursor files in HTML documents, so web pages and HTML email messages can also trigger this vulnerability. Note that any Windows application may call the vulnerable code to process animated cursor files.More information on this vulnerability is available in Microsoft Security Advisory Bulletin MS07-017.Exploit code for this vulnerability is publicly available, and it is being actively exploited.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or cause a denial-of-service condition."
+      }
+    ],
+    "CVE-2007-0045": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/815960",
+        "title": "Adobe Acrobat Plug-In cross domain violation",
+        "overview": "The Adobe Acrobat Plug-In fails to properly validate user-supplied content, which may allow for cross-site scripting.",
+        "description": "Adobe Acrobat Reader is software designed to view Portable Document Format (PDF) files. Adobe also distributes the Adobe Acrobat Plug-In to allow users to view PDF files inside of a web browser. The Adobe Acrobat Plug-In PDF Open Parameters feature allows users to specify actions to take on a PDF document via URI parameters. However, the Adobe Acrobat Plug-In fails to properly validate these URI parameters for scripting code. This allows user-supplied scripts to execute within the context of the web site hosting the PDF file causing a cross-site scripting vulnerability. More information about cross-site scripting is available in CERT Advisory CA-2000-02.Additionally, any PDF documnt can be leveraged to exploit this vulnerability, regardless of whether that document is on the local file system or a remote web server. However, web browsers typically prevent remote content from accessing resources on the local file system. This will stop scripts originating from remote sources from accessing resources on the local file system.",
+        "impact": "An attacker may be able to obtain sensitive data from a user that visits a web site hosting a PDF document. Depending on the nature of the web site, this data may include passwords, credit card numbers, and any arbitrary information provided by the user. Likewise, information stored in cookies could be stolen or corrupted."
+      }
+    ],
+    "CVE-2007-0064": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/319385",
+        "title": "Microsoft Windows Media Format Runtime ASF handling buffer overflow",
+        "overview": "Microsoft Windows Media Format Runtime is vulnerable to a heap-based buffer overflow. This vulnerability may allow a remote, unauthenticated attacker to execute arbitrary code on an vulnerable system.",
+        "description": "Microsoft Windows Media Format Runtime is used by various Windows Media applications such as Windows Media Player. The Windows Media Format Runtime includes the ability to play Advanced Systems Format (ASF) files, which can contain streaming audio, video, slide shows and synchronized events. A heap-based buffer overflow exists due to Microsoft Windows Media Format Runtime's improper parsing of ASF files. By successfully persuading a user to access a specially crafted ASF file, a remote, unauthenticated attacker could trigger the buffer overflow.",
+        "impact": "A remote, unauthenticated attacker could execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2007-0071": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/159523",
+        "title": "Adobe Flash Player integer overflow vulnerability",
+        "overview": "Adobe Flash contains an integer overflow vulnerability. This vulnerability may allow an attacker to execute code on an affected system.",
+        "description": "The Adobe Flash Player is a player for the Flash media format and enables frame-based animations and multimedia to be viewed within a web browser.Adobe Flash Player contains an integer overflow vulnerability. An attacker may be able to trigger this overflow by convincing a user to open a specially crafted SWF file. The SWF file could be hosted or imbedded in a web page.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or cause the Flash player to crash."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/395473",
+        "title": "Adobe Flash player code execution vulnerability",
+        "overview": "Adobe Flash contains a vulnerability that may allow an attacker to run code on a system that has a vulnerable version of the Flash player installed. There are reports that this vulnerability is being actively exploited.",
+        "description": "The Adobe Flash Player is a player for the Flash media format and enables frame-based animations and multimedia to be viewed within a web browser.Adobe Flash Player contains a code execution vulnerability. An attacker may be able to trigger this overflow by convincing a user to open a specially crafted SWF file. The SWF file could be hosted or embedded in a web page. If an attacker can take control of a website or web server, trusted sites may exploit this vulnerability.",
+        "impact": "A remoted, unauthenticated attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2007-0072": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/768681",
+        "title": "Trend Micro ServerProtect contains multiple vulnerabilities",
+        "overview": "Trend Micro ServerProtect contains multiple vulnerabilities. The most severe of these vulnerabilities may allow an attacker to execute commands, view sensitive data, or cause a system to crash.",
+        "description": "Trend Micro ServerProtect is designed to detect and remove viruses from files. ServerProtect contains vulnerabilities, including multiple heap overflows. For more information on these issues see:IBM X-Force Alert 307 - Trend Micro ServerProtect Unauthenticated Remote AdministrationIBM X-Force Alert 308 - Trend Micro ServerProtect [PROCEDURE NAME REDACTED] Heap OverflowIBM X-Force Alert 309 - Trend Micro ServerProtect [PROCEDURE NAME REDACTED] Heap Overflows (3)IBM X-Force Alert 310 - Trend Micro ServerProtect [PROCEDURE NAME REDACTED] Heap Overflows (3)Note that these issues affect Trend Micro ServerProtect versions 5.58 and 5.7.",
+        "impact": "A remote, unauthenticated attacker may be able to gain access with the privileges of the ServerProtect account or an administrator account and execute arbitrary commands, view log files or other sensitive data, or cause a vulnerable system to crash."
+      }
+    ],
+    "CVE-2007-0073": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/768681",
+        "title": "Trend Micro ServerProtect contains multiple vulnerabilities",
+        "overview": "Trend Micro ServerProtect contains multiple vulnerabilities. The most severe of these vulnerabilities may allow an attacker to execute commands, view sensitive data, or cause a system to crash.",
+        "description": "Trend Micro ServerProtect is designed to detect and remove viruses from files. ServerProtect contains vulnerabilities, including multiple heap overflows. For more information on these issues see:IBM X-Force Alert 307 - Trend Micro ServerProtect Unauthenticated Remote AdministrationIBM X-Force Alert 308 - Trend Micro ServerProtect [PROCEDURE NAME REDACTED] Heap OverflowIBM X-Force Alert 309 - Trend Micro ServerProtect [PROCEDURE NAME REDACTED] Heap Overflows (3)IBM X-Force Alert 310 - Trend Micro ServerProtect [PROCEDURE NAME REDACTED] Heap Overflows (3)Note that these issues affect Trend Micro ServerProtect versions 5.58 and 5.7.",
+        "impact": "A remote, unauthenticated attacker may be able to gain access with the privileges of the ServerProtect account or an administrator account and execute arbitrary commands, view log files or other sensitive data, or cause a vulnerable system to crash."
+      }
+    ],
+    "CVE-2007-0074": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/768681",
+        "title": "Trend Micro ServerProtect contains multiple vulnerabilities",
+        "overview": "Trend Micro ServerProtect contains multiple vulnerabilities. The most severe of these vulnerabilities may allow an attacker to execute commands, view sensitive data, or cause a system to crash.",
+        "description": "Trend Micro ServerProtect is designed to detect and remove viruses from files. ServerProtect contains vulnerabilities, including multiple heap overflows. For more information on these issues see:IBM X-Force Alert 307 - Trend Micro ServerProtect Unauthenticated Remote AdministrationIBM X-Force Alert 308 - Trend Micro ServerProtect [PROCEDURE NAME REDACTED] Heap OverflowIBM X-Force Alert 309 - Trend Micro ServerProtect [PROCEDURE NAME REDACTED] Heap Overflows (3)IBM X-Force Alert 310 - Trend Micro ServerProtect [PROCEDURE NAME REDACTED] Heap Overflows (3)Note that these issues affect Trend Micro ServerProtect versions 5.58 and 5.7.",
+        "impact": "A remote, unauthenticated attacker may be able to gain access with the privileges of the ServerProtect account or an administrator account and execute arbitrary commands, view log files or other sensitive data, or cause a vulnerable system to crash."
+      }
+    ],
+    "CVE-2007-0169": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/180336",
+        "title": "CA BrightStor ARCserve Backup Message Engine RPC buffer overflow",
+        "overview": "The Computer Associates BrightStor ARCserve Backup Message Engine contains a buffer overflow vulnerability. If successfully exploited, this vulnerability may allow a remote attacker to execute arbitrary code.",
+        "description": "BrightStor ARCserve Backup is a backup and data retention tool that integrates with other BrightStor Data Availability and BrightStor Storage Management solutions. The Message Engine service is installed and started automatically on BrightStor ARCserve Backup servers.According to a report from Zero Day Initiative, the BrightStor ARCserve Backup Message Engine contains a vulnerability that is caused by incorrect handling of RPC requests. This vulnerability may be exploited by sending a malformed RPC request to port 6503/tcp or 6504/tcp on a vulnerable system.Note that the vulnerable software may be running on any machines that have BrightStor ARCserve Backup products installed.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/151032",
+        "title": "CA BrightStor ARCserve Backup Tape Engine RPC buffer overflow",
+        "overview": "The Computer Associates BrightStor ARCserve Backup Tape Engine RPC service contains a buffer overflow vulnerability. If successfully exploited, this vulnerability may allow a remote attacker to execute arbitrary code.",
+        "description": "BrightStor ARCserve Backup is a backup and data retention tool that integrates with other BrightStor Data Availability and BrightStor Storage Management solutions. The Tape Engine features allow BrightStor ARCserve Backup products to use tape drives for storage. According to a report from Zero Day Initiative, the BrightStor ARCserve Backup Tape Engine RPC service contains a vulnerability that is caused by incorrect handling of malformed RPC requests. This vulnerability may be exploited by sending a specially crafted RPC request to port 6503/tcp on a vulnerable system.Note that the vulnerable software may be running on any machines that have BrightStor ARCserve Backup products installed.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2007-0197": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/240880",
+        "title": "Apple Mac OS X Finder DMG volume name buffer overflow",
+        "overview": "Apple Mac OS X Finder fails to properly handle DMG files with large volume names, which could allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "DMG files are disk images that can contain a variety of filesystems. Apple Mac OS X Finder contains a buffer overflow vulnerability in the handling of DMG volume names. Specifically, a DMG file with a volume name of more than 255 bytes can trigger memory corruption. Note that by default, Safari will automatically mount DMG files that are referenced in web pages.",
+        "impact": "By convincing a user to mount a specially-crafted DMG file, such as by viewing a web page with Safari, a remote, unauthenticated attacker may be able to execute code with the privileges of the user or cause a denial-of-service condition."
+      }
+    ],
+    "CVE-2007-0213": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/343145",
+        "title": "Microsoft Exchange Server fails to properly decode MIME email messages",
+        "overview": "Microsoft Exchange Server contains a remote code execution vulnerability that could enable an attacker to execute arbitrary code and gain complete control of the vulnerable system.",
+        "description": "Microsoft Exchange Server fails to properly process MIME messages. When an email message containing base64 encoded content is opened, Microsoft Exchange Server does not properly decode the base64 content. An attacker could send a specially crafted email that, when opened, could allow the attacker to execute arbitrary code. The attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.",
+        "impact": "By sending a specially crafted email message to a Microsoft Exchange Server, a remote, unauthenticated attacker could execute arbitrary code on the server."
+      }
+    ],
+    "CVE-2007-0220": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/124113",
+        "title": "Microsoft Exchange Outlook Web Access UTF character set label script injection vulnerability",
+        "overview": "Microsoft Exchange Outlook Web Access (OWA) fails to properly handle the UTF character set label, which can allow a remote, unauthenticated attacker to execute script within the security context of the OWA user.",
+        "description": "OWA allows users to access their email accounts on a Microsoft Exchange server from another host through a web browser. When a user opens a script-based email attachment, the web browser may execute the script on the client side. If executed, the script would have all the privileges of the OWA user, including access to and manipulation of messages and folders on the server.",
+        "impact": "A remote attacker with the ability to supply an email message containing specially crafted script may be able to execute the script in the security context of the victim user on the client system. For more information about this type of vulnerability, please see CERT Advisory CA-2000-02."
+      }
+    ],
+    "CVE-2007-0243": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/388289",
+        "title": "Sun Microsystems Java GIF image processing buffer overflow",
+        "overview": "A vulnerability in the Sun Java Runtime Environment may allow an attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The Sun Java Runtime Environment (JRE) allows users to run Java applications in a browser or as standalone programs. Sun has made the JRE available for multiple operating systems. When a GIF image with a specified width of 0 is processed, the Sun JRE will overwrite memory contents, which can cause pointer corruption.Note that exploit code for this vulnerability is publicly available.",
+        "impact": "A remote unauthenticated attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2007-0320": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/MAPG-6UQUDP",
+        "title": "Macrovision / InstallShield InstallFromTheWeb buffer overflows",
+        "overview": "Macrovision / InstallShield InstallFromTheWeb contains multiple buffer overflows, which could allow an attacker to execute arbitrary code on a vulnerable system.",
+        "description": "InstallShield InstallFromTheWeb is a web-based software installation product for Microsoft Windows systems. InstallFromTheWeb is available as an ActiveX control for Internet Explorer and also as a Netscape-style plug-in for other web browsers. The ActiveX control is provided by the file iftw.dll, and the plug-in is provided by the file npiftw32.dll. InstallFromTheWeb contains multiple buffer overflows.Note that InstallShield has been acquired by Macrovision. The InstallFromTheWeb product is no longer supported by Macrovision.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause the web browser to crash."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/181041",
+        "title": "Macrovision / InstallShield InstallFromTheWeb buffer overflows",
+        "overview": "Macrovision / InstallShield InstallFromTheWeb contains multiple buffer overflows, which could allow an attacker to execute arbitrary code on a vulnerable system.",
+        "description": "InstallShield InstallFromTheWeb is a web-based software installation product for Microsoft Windows systems. InstallFromTheWeb is available as an ActiveX control for Internet Explorer and also as a Netscape-style plug-in for other web browsers. The ActiveX control is provided by the file iftw.dll, and the plug-in is provided by the file npiftw32.dll. InstallFromTheWeb contains multiple buffer overflows.Note that InstallShield has been acquired by Macrovision. The InstallFromTheWeb product is no longer supported by Macrovision.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause the web browser to crash."
+      }
+    ],
+    "CVE-2007-0322": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/907481",
+        "title": "Intuit QuickBooks Online Edition ActiveX control stack buffer overflows",
+        "overview": "The Intuit QuickBooks Online Edition ActiveX control contains multiple stack buffer overflows, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Intuit QuickBooks Online Edition is a version of QuickBooks that functions within Internet Explorer as an ActiveX control. This ActiveX control contains multiple stack buffer overflow vulnerabilities, which can allow an overwrite of the process Structured Exception Handler (SEH).",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause Internet Explorer (or the program using the WebBrowser control) to crash."
+      }
+    ],
+    "CVE-2007-0325": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/784369",
+        "title": "Trend Micro OfficeScan Web-Deployment SetupINICtrl ActiveX control buffer overflows",
+        "overview": "The Trend Micro OfficeScan Web-Deployment SetupINICtrl ActiveX control contains multiple buffer overflows, which could allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Trend Micro OfficeScan comes with a web-based administration console that makes use of ActiveX controls. The OfficeScan Web-Deployment SetupINICtrl ActiveX control, which is provided by the file OfficeScanSetupINI.dll, is vulnerable to buffer overflows in multiple methods. It is reported that Client Server Messaging Security for SMB also contains the vulnerable control.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause Internet Explorer (or the program using the WebBrowser control) to crash."
+      }
+    ],
+    "CVE-2007-0326": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/854769",
+        "title": "PhotoChannel Networks Photo Upload Plugin ActiveX control stack buffer overflows",
+        "overview": "The PhotoChannel Networks Photo Upload Plugin ActiveX control contains multiple buffer overflows, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "PNI Digital Media, which is a division of PhotoChannel Networks, provides photo services for retailers, carriers, and content providers. The PhotoChannel Networks Photo Upload Plugin is an ActiveX control that allows a user to upload multiple photographs using the Internet Explorer web browser. This ActiveX control is used by photo centers for multiple retailers, including Costco, Kmart, Wal-Mart, Sam's Club, Brooks Pharmacy, Eckerd Pharmacy, Black's Photo Centre, Hy-Vee, Rexall, and Visions Electronics. The PhotoChannel Networks Photo Upload Plugin ActiveX control contains multiple stack buffer overflow vulnerabilities. Versions 2.0.0.9 and earlier of the control appear to be vulnerable.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause the web browser to crash."
+      }
+    ],
+    "CVE-2007-0348": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/922969",
+        "title": "InterActual Player SyscheckObject ActiveX controls contain stack buffer overflows",
+        "overview": "InterActual Player provides multiple ActiveX controls that are vulnerable to buffer overflows. This can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "InterActual Player is a video DVD playing application for Windows systems. InterActual Player was formerly known as InterActual PCFriendly. The InterActual Player software provides several ActiveX controls. ActiveX controls provided by IASystemInfo.dll are vulnerable to stack buffer overflows in the ApplicationType property. Note that some versions of InterActual WinDVD provide the vulnerable ActiveX controls.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page, an HTML email message, or an HTML email attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause the web browser to crash."
+      }
+    ],
+    "CVE-2007-0449": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/357308",
+        "title": "Computer Associates BrightStor ARCserve Backup LGSERVER.EXE heap buffer overflow",
+        "overview": "Computer Associates BrightStor ARCserve Backup contains a buffer overflow, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Computer Associates BrightStor ARCserve Backup products come with a service called LGSERVER.EXE. This service listens on ports 2200/tcp and 1900/tcp. The LGSERVER.EXE process fails to properly validate the size of data received on port 2200/tcp, which can cause heap memory corruption. According to Computer Associates CAID 34993, the following products are affectedBrightStor ARCserve:BrightStor ARCserve Backup for Laptops and Desktops r11.1 SP1BrightStor ARCserve Backup for Laptops and Desktops r11.1BrightStor ARCserve Backup for Laptops and Desktops r11.0BrightStor Mobile Backup r4.0CA Protection Suites r2:CA Desktop Protection Suite r2CA Business Protection Suite r2CA Business Protection Suite for Microsoft Small Business Server Standard Edition r2CA Business Protection Suite for Microsoft Small Business Server Premium Edition r2CA Desktop Management Suite:DMS r11.0DMS r11.1",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with local SYSTEM privileges or cause a denial-of-service condition on a vulnerable system."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/611276",
+        "title": "Computer Associates BrightStor ARCserve Backup LGSERVER.EXE stack buffer overflow",
+        "overview": "Computer Associates BrightStor ARCserve Backup contains a stack buffer overflow, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Computer Associates BrightStor ARCserve Backup products come with a service called LGSERVER.EXE. This service listens on ports 2200/tcp and 1900/tcp. The LGSERVER.EXE process fails to properly validate data packets received on port 1900/tcp, which can cause a stack buffer overflow. According to Computer Associates CAID 34993, the following products are affectedBrightStor ARCserve:BrightStor ARCserve Backup for Laptops and Desktops r11.1 SP1BrightStor ARCserve Backup for Laptops and Desktops r11.1BrightStor ARCserve Backup for Laptops and Desktops r11.0BrightStor Mobile Backup r4.0CA Protection Suites r2:CA Desktop Protection Suite r2CA Business Protection Suite r2CA Business Protection Suite for Microsoft Small Business Server Standard Edition r2CA Business Protection Suite for Microsoft Small Business Server Premium Edition r2CA Desktop Management Suite:DMS r11.0DMS r11.1Note that exploit code for this vulnerability is publicly available.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with local SYSTEM privileges or cause a denial-of-service condition on a vulnerable system."
+      }
+    ],
+    "CVE-2007-0710": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/836024",
+        "title": "Apple iChat fails to properly handle crafted TXT key hashes",
+        "overview": "A vulnerability in the way Apple iChat handles specially crafted TXT key hashes could lead to denial of service.",
+        "description": "Apple iChat is an instant message client for Apple Mac OS X. Apple iChat Agent is a back-end process that manages iChat sessions and available contacts. Apple Bounjour is a service provided with Apple Mac OS X that facilitates automatic discovery of computers, devices, and services on IP networks. The iChat Agent uses Bonjour to discover available contacts. The Apple iChat Agent contains a vulnerability that could be exploited when it attempts to handle specially crafted TXT key hashes received via Bonjour messages. According to MOAB-29-01-2007:This will instantly cause a SIGTRAP signal to be sent to the process, causing a so-called 'crash'. Further attempts to launch iChat Bonjour functionality again will fail as mDNSResponder keeps the crafted record (and restarting it will be necessary).",
+        "impact": "A remote, unauthenticated attacker on the same multicast network may be able to cause iChat to crash, thereby creating a denial-of-service condition."
+      }
+    ],
+    "CVE-2007-0711": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/568689",
+        "title": "Apple QuickTime 3GP integer overflow",
+        "overview": "A vulnerabilty in the way Apple QuickTime processes 3GP files may allow execution of arbitrary code.",
+        "description": "A vulnerability exists in the way Apple QuickTime handles specially crafted 3GP files. According to Apple QuickTime 7.1.5 security document 305149:An integer overflow exists in QuickTime's handling of 3GP video files. By enticing a user to open a malicious movie, an attacker can trigger the overflow, which may lead to an application crash or arbitrary code execution. This update addresses the issue by performing additional validation of 3GP video files.This vulnerability may be triggered by sending a specially crafted 3GP file to QuickTime or an application that uses the QuickTime plug-in. Apple iTunes includes QuickTime.Note that this issue does not affect QuickTime on Mac OS X.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or cause a denial-of-service condition. The crafted 3GP file may be supplied on a web page or in email for the victim to select, or by some other means designed to encourage them to invoke QuickTime on the exploit file."
+      }
+    ],
+    "CVE-2007-0712": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/822481",
+        "title": "Apple QuickTime fails to properly process specially crafted MIDI files",
+        "overview": "The Apple Quicktime player contains a heap buffer overflow vulnerability. This vulnerability may allow an attacker to execute arbitrary code or create a denial-of-service condition.",
+        "description": "Apple QuickTime contains a heap buffer overflow vulnerability. This vulnerability may allow an attacker to execute arbitrary code with the privileges of the user running QuickTime. By convincing a user to open a specially crafted midi file with QuickTime, an attacker can trigger the overflow.Depending on settings, a web browser could automatically open a midi file using Quicktime without user interaction. Apple iTunes includes the QuickTime player.Note that this vulnerability may be present in QuickTime versions prior to 7.1.5 running on Mac OS X and Microsoft Windows 2000, XP and Vista.",
+        "impact": "A remote, unauthenticated attacker can execute arbitrary code or create a denial-of-service condition. The crafted file may be supplied on a web page, in an email for the victim to select, or by some other means designed to encourage them to invoke QuickTime on the exploit file."
+      }
+    ],
+    "CVE-2007-0714": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/861817",
+        "title": "Apple QuickTime UDTA atom integer overflow",
+        "overview": "Apple QuickTime contains an integer overflow in handling UDTA atoms, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Apple QuickTime User Data (UDTA) Atoms allow a user to \"... define and store data associated with a QuickTime object, such as a movie, track, or media. This includes both information that QuickTime looks for, such as copyright information or whether a movie should loop, and arbitrary information—provided by and for your application—that QuickTime simply ignores.\"Apple QuickTime 7.1.5 addresses an integer overflow in the handling of the size field in UDTA Atoms. Note that this issue affects QuickTime installations on both Apple Mac OS X and Microsoft Windows operating systems.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or cause a denial-of-service condition. The crafted QuickTime media file may be supplied on a web page, in an email for the victim to select, or by some other means designed to encourage them to invoke QuickTime on the exploit file."
+      }
+    ],
+    "CVE-2007-0718": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/313225",
+        "title": "Apple QuickTime QTIF heap buffer overflow",
+        "overview": "Apple QuickTime is vulnerable to a heap buffer overflow which may allow an attacker to execute arbitrary code or crash the system.",
+        "description": "A vulnerability exists in the way Apple QuickTime handles specially crafted QuickTime Image (QTIF) files. According to Apple QuickTime 7.1.5 security document 305149:A heap buffer overflow exists in QuickTime's handling of QTIF files. By enticing a user to access a maliciously-crafted QTIF file, an attacker can trigger the overflow, which may lead to an application crash or arbitrary code execution. This vulnerability may be triggered by sending a specially crafted QTIF file to QuickTime or an application that uses the QuickTime plug-in.Note that this issue affects QuickTime installations on both Apple Mac OS X and Microsoft Windows operating systems.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or crash the system."
+      }
+    ],
+    "CVE-2007-0729": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/312424",
+        "title": "Apple AFP Client privilege escalation vulnerability",
+        "overview": "The Apple File Protocol (AFP) Client fails to properly clean its environment before executing commands. This vulnerability may allow a local attacker execute commands with elevated privileges.",
+        "description": "The Apple File Protocol service allows Apple Mac OS clients to access files remotely from a server. According to Apple Security Update 2007-004:Under certain circumstances, AFP Client may execute commands without properly cleaning the environment. This may allow a local user to create files or execute commands with systemprivileges.",
+        "impact": "A local attacker may be able to execute commands with elevated privileges."
+      }
+    ],
+    "CVE-2007-0776": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/551436",
+        "title": "Mozilla Firefox SVG viewer vulnerable to integer overflow",
+        "overview": "The Mozilla SVG viewer contains an integer overflow vulnerability. This vulnerability may allow an attacker to execute arbitrary code, or create a denial-of-service condition.",
+        "description": "Scalable Vector Graphics (SVG) is an XML markup language for describing and displaying animated or static vector graphics. Mozilla Firefox includes a native SVG viewer, other Mozilla projects may use the Adobe SVG viewer.The Mozilla SVG viewer fails to properly validate size parameters supplied to a memory allocation routine allowing an integer overflow to occur. This vulnerability could cause an undersized buffer to be allocated. When data is copied to that buffer, a heap-based buffer overflow may occur. An attacker may be able to exploit this vulnerability by convincing a user to go to a website that hosts a specially crafted SVG file.This vulnerability occurred as a result of failing to comply with rule INT30-C of the CERT C Programming Language Secure Coding Standard.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code, or create a denial-of-service condition."
+      }
+    ],
+    "CVE-2007-0777": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/269484",
+        "title": "Mozilla JavaScript engine vulnerable to memory corruption",
+        "overview": "The Mozilla JavaScript engine contains multiple memory corruption vulnerabilities. These vulnerabilities may allow an attacker to execute arbitrary code, or create a denial of service condition.",
+        "description": "The Mozilla Foundation supports several Open Source projects, including the Mozilla, Seamonkey, and Firefox web browsers. The Thunderbird email client is also a Mozilla product.Multiple memory corruption vulnerabilities exist in the way Mozilla products process JavaScript. For more information refer to Mozilla Foundation Security Advisory 2007-01.Note that other Mozilla-based applications may also be affected.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or create a denial of service condition."
+      }
+    ],
+    "CVE-2007-0882": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/881872",
+        "title": "Sun Solaris telnet authentication bypass vulnerability",
+        "overview": "A vulnerability in the Sun Solaris telnet daemon (in.telnetd) could allow a remote attacker to log on to the system with elevated privileges.",
+        "description": "The Sun Solaris telnet daemon may accept authentication information via the USER environment variable. However, the daemon does not properly sanitize this information before passing it to the login program, and login makes unsafe assumptions about the information. This may allow a remote attacker to trivially bypass the telnet and login authentication mechanisms. In some default configurations of Solaris this vulnerability cannot be exploited to gain access to the root account, but it can be used to gain privileges of other accounts, such as adm and lp.According to Sun, Solaris 10 (SunOS 5.10) and Solaris \"Nevada\" (SunOS 5.11) are affected by this issue. More information is available in Sun Alert Notification 102802 and in Alan Hargreaves' blog, here and here.This vulnerability is being exploited by a worm, for more information see the Security Sun Alert Feed and Technical Alert TA07-059A.",
+        "impact": "A remote attacker could log on to a vulnerable system via telnet and gain elevated privileges."
+      }
+    ],
+    "CVE-2007-0932": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/613833",
+        "title": "Aruba Mobility Controller vulnerable to privilege escalation",
+        "overview": "The Aruba Mobility Controller Management Interface contains a privilege escalation vulnerability. This vulnerability may allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The Aruba Mobility Controllers are used to process and control network traffic in a wireless network. The Aruba Mobility Controller Management Interface is a utility used to configure and manage the Aruba Mobility Controllers. The management interface can be accessed via a command line or a web-based interface.The Aruba Mobility Controller contains an guest account, which is intended to have restricted privileges on the Mobility Controller. However, due to an unspecified implementation error, an attacker with access to the guest account may be able to gain administrative privileges on the Mobility Controller.According to Aruba Networks this vulnerability affects Aruba Networks Mobility Controllers (200, 800, 2400, and 6000) running software versions 2.0 and later and Alcatel-Lucent OmniAccess Wireless 43xx and 6000 running software versions 2.0 and later.",
+        "impact": "A remote attacker may be able to gain administrative privileges on the Aruba Mobility Controller."
+      }
+    ],
+    "CVE-2007-0957": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/704024",
+        "title": "MIT Kerberos 5 administration daemon stack overflow in krb5_klog_syslog()",
+        "overview": "The Kerberos administration daemon contains a buffer overflow that may allow a remote, authenticated attacker to execute arbitrary code or cause a denial of service.",
+        "description": "A vulnerability exists in the way the krb5_klog_syslog() function used by the Kerberos administration daemon handles specially crafted strings. This vulnerability may cause a buffer overflow that could allow a remote, authenticated user to execute arbitrary code. According to MIT krb5 Security Advisory MITKRB5-SA-2007-002:krb5_klog_syslog() uses vsprintf() to format text into a fixed-length stack buffer. Format specifiers such as \"%s\" used in calls to krb5_klog_syslog() may allow formatting of strings of sufficient length to overwrite memory past the end of the stack buffer.Certain strings received from the client by the kadmin daemon are not truncated prior to logging. Among these strings is the target principal for the kadmin operation.The KDC truncates most client-originated strings prior to logging. One sort of string which is not truncated is a transited-realms string. A malicious KDC sharing a key with the target realm may issue tickets with specially-crafted transited-realms strings to exploit this vulnerability. There are other places where an authenticated user may cause the KDC to log a string which triggers the vulnerability.Note that this issue affects all releases of MIT krb5 up to and including krb5-1.6. Other server applications that call the krb5_klog_syslog()function provided with MIT krb5 may also be affected. This vulnerability can be triggered by sending a specially crafted Kerberos message to a vulnerable system.",
+        "impact": "A remote, authenticated user may be able to execute arbitrary code on an affected system or cause the affected program to crash, resulting in a denial of service. Secondary impacts of code execution include complete compromise of the Kerberos key database."
+      }
+    ],
+    "CVE-2007-0981": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/885753",
+        "title": "Mozilla browsers \"location.hostname\" cross-domain vulnerability",
+        "overview": "Mozilla-based browsers contain a cross-domain vulnerability, which may allow an attacker to access data in other sites.",
+        "description": "Mozilla uses a same origin security model to maintain separation between browser frames from different sources. This model is designed to prevent code in one domain from accessing data in a different domain. From the same origin policy:Mozilla considers two pages to have the same origin if the protocol, port (if given), and host are the same for both pages. Mozilla fails to properly handle location.hostname parameters that have embedded null characters, which can cause a cross-domain violation. Note that this only affects web sites that have specify the document.domain setting for relaxed same origin protection. This vulnerability appears to affect all Mozilla-based browsers, including Firefox.",
+        "impact": "By convincing a victim to view an HTML document (web page), an attacker could modify data in another domain. For example, web page script in one domain could set a cookie for a web page in another domain."
+      }
+    ],
+    "CVE-2007-1036": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/632656",
+        "title": "JBoss Application Server may not properly restrict access to the administrative interface",
+        "overview": "The JBoss Application Server may allow unauthenticated, remote access to the administrative console.",
+        "description": "JBoss is an open source application server implemented in Java. Because it is Java-based, JBoss can be used on any operating system that supports Java. JBoss servers can be remotely managed through a web-based administrative interface.If JBoss is installed without using the advanced installer options, the JBoss security features will need to be configured manually. If a JBoss server is configured to allow unauthenticated access to the administrative interface, and is accessible from a remote network, then an attacker may be able to access and modify data on the server.Note that it may be possible to enumerate vulnerable servers by using search engines.",
+        "impact": "A remote, unauthenticated attacker may be able to gain administrative access to a JBoss Application Server. Once an attacker has access, they may be able to access and modify data on that server."
+      }
+    ],
+    "CVE-2007-1083": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/308087",
+        "title": "VeriSign Managed PKI Configuration Checker ActiveX control stack buffer overflow",
+        "overview": "The VeriSign Configuration Checker ActiveX control contains a stack buffer overflow, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The VeriSign Configuration Checker ActiveX control is provided by web-based digital certificate enrollment sites and also by the VeriSign Managed PKI OnSiteMSI package. This control is vulnerable to a stack buffer overflow in the VerCompare() method, which can allow an overwrite of the process Structured Exception Handler (SEH).",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause Internet Explorer (or the program using the WebBrowser control) to crash."
+      }
+    ],
+    "CVE-2007-1202": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/555489",
+        "title": "Microsoft Word fails to properly parse crafted rich text content",
+        "overview": "Microsoft Word fails to properly parse rich text content and may allow a remote, unauthenticated attacker to execute arbitrary code.",
+        "description": "Microsoft Word does not properly validate rich text within the contents of a file. When Word opens and parses a specially crafted file, memory corruption can occur and can allow arbitrary code execution. By convincing a user to open a specially crafted Word file, an attacker may be able to execute arbitrary code.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or access the system with the privileges of the local user."
+      }
+    ],
+    "CVE-2007-1206": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/337953",
+        "title": "Microsoft Windows Kernel vulnerable to privilege escalation",
+        "overview": "The Microsoft Windows Kernel contains a privilege escalation vulnerability that may allow a local attacker to take control of the system.",
+        "description": "The Microsoft Windows Kernel fails to properly set permissions when mapping to a memory segment. By running a specially crafted application, an attacker may be able to trigger this vulnerability.For more information, please refer to Microsoft Security Bulletin MS07-022.",
+        "impact": "A local, authenticated attacker may be able to execute arbitrary code with elevated privileges."
+      }
+    ],
+    "CVE-2007-1209": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/219848",
+        "title": "Microsoft Windows Vista CSRSS privilege escalation vulnerability",
+        "overview": "The Microsoft Windows Client/Server Run-time Subsystem (CSRSS) process fails to properly handle error messages. This vulnerability may allow an attacker to execute arbitrary code.",
+        "description": "The Microsoft Client/Server Run-time Subsystem (CSRSS) is an essential subsystem. CSRSS is responsible for console windows and creating and deleting threads.According to Microsoft Security Bulletin MS07-021:A privilege elevation vulnerability exists in the way that the Windows 32 Client/Server Run-time Subsystem (CSRSS) handles its connections during the startup and stopping of processes.",
+        "impact": "A local authenticated attacker may be able to gain elevated privileges."
+      }
+    ],
+    "CVE-2007-1214": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/253825",
+        "title": "Microsoft Excel fails to properly process files with crafted filter records",
+        "overview": "A vulnerability in Microsoft Excel could allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft Excel fails to validate certain filter records contained in Excel documents. This flaw results in an unspecified memory corruption vulnerability that could allow an attacker to execute arbitrary code when Excel opens documents containing specially crafted filter records.This vulnerability could be exploited remotely in the form of a specially crafted Excel file supplied by a web page or in an email message to the victim user. Microsoft states that in order for an attack to be successful, a victim user must manually open a malicious attachment sent in an email message.",
+        "impact": "An attacker with the ability to supply a specially crafted Microsoft Excel file could execute arbitrary code on a vulnerable system. The attacker-supplied code would be executed with the privileges of the user opening the malicious file."
+      }
+    ],
+    "CVE-2007-1257": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/472412",
+        "title": "Cisco Catalyst Systems with a NAM may allow system access via spoofing the SNMP communication",
+        "overview": "A vulnerabilty in Cisco Catalyst Systems that have a Network Analysis Module (NAM) installed may allow a remote, unauthenticated attacker to gain complete control of this device.",
+        "description": "Cisco Catalyst 6000, 6500, and Cisco 7600 series switches may utilize Cisco's NAM to monitor and analyze network traffic using Management Information Bases (MIBs). Cisco Catalyst 6000, 6500 and Cisco 7600 series switches that have a NAM installed contain a vulnerability in the way SNMP packets are handled. According to Cisco Security Advisory: cisco-sa-20070228-nam:NAMs communicate with the Catalyst system by using the Simple Network Management Protocol (SNMP). By spoofing the SNMP communication between the Catalyst system and the NAM an attacker may obtain complete control of the Catalyst system.Note that only Cisco Catalyst 6000, 6500 and Cisco 7600 series systems with a NAM on them are affected by this issue. According to Cisco, none of their other products, including the Network Analysis Modules for Cisco Branch Routers (NM-NAM), are affected by this issue .",
+        "impact": "By successfully exploiting this vulnerability, an attacker may gain complete control of the device."
+      }
+    ],
+    "CVE-2007-1277": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/214480",
+        "title": "WordPress fails to properly sanitize input passed to the ix parameter in wp-includes/feed.php",
+        "overview": "WordPress fails to properly sanitize input to the ix parameter in wp-includes/feed.php, which could allow a remote, unauthenticated attacker to execute arbitrary PHP code.",
+        "description": "WordPress is a blogging application that is written in PHP. WordPress 2.1.1 fails to properly sanitize input to the ix parameter in wp-includes/feed.php, PHP commands that are passed to the ix parameter are executed by the WordPress server.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary PHP code on a vulnerable WordPress system."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/641456",
+        "title": "WordPress fails to properly sanitize input passed to the iz parameter in wp-includes/theme.php",
+        "overview": "WordPress fails to properly sanitize input to the iz parameter in wp-includes/theme.php, which could allow a remote, unauthenticated attacker to execute arbitrary commands.",
+        "description": "WordPress is a blogging application that is written in PHP. WordPress 2.1.1 fails to properly sanitize input to the iz parameter in wp-includes/theme.php, Commands that are passed to the iz parameter are executed by the WordPress server.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary commands on a vulnerable WordPress system."
+      }
+    ],
+    "CVE-2007-1313": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/MIMG-6XEPXN",
+        "title": "NETxAutomation NETxEIB OPC Server fails to properly validate OPC server handles",
+        "overview": "The NETxAutomation NETxEIB OPC Server contains a vulnerability that may allow a remote attacker to execute arbitary code or cause a denial-of-service.",
+        "description": "OLE for Process Control (OPC) is a specification for a standard set of OLE COM objects for use in the process control and manufacturing fields. OPC servers are often used in control systems to consolidate field and network device information.The NETxAutomation NETxEIB OPC Server fails to properly validate server handles. This vulnerability may be triggered by an attacker with access to the server's OPC interface.",
+        "impact": "An attacker with access to the NETxEIB OPC Server may be able to arbitrarily access server process memory, potentially allowing that attacker to execute arbitrary code or cause a denial-of-service."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/296593",
+        "title": "NETxAutomation NETxEIB OPC Server fails to properly validate OPC server handles",
+        "overview": "The NETxAutomation NETxEIB OPC Server contains a vulnerability that may allow a remote attacker to execute arbitary code or cause a denial-of-service.",
+        "description": "OLE for Process Control (OPC) is a specification for a standard set of OLE COM objects for use in the process control and manufacturing fields. OPC servers are often used in control systems to consolidate field and network device information.The NETxAutomation NETxEIB OPC Server fails to properly validate server handles. This vulnerability may be triggered by an attacker with access to the server's OPC interface.",
+        "impact": "An attacker with access to the NETxEIB OPC Server may be able to arbitrarily access server process memory, potentially allowing that attacker to execute arbitrary code or cause a denial-of-service."
+      }
+    ],
+    "CVE-2007-1347": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/194944",
+        "title": "Microsoft Windows fails to properly handle malformed OLE documents",
+        "overview": "A vulnerability exists in a Microsoft Windows library that is used to handle OLE documents. The complete impact of this vulnerability is not clear, but may include the execution of arbitrary code as well as a denial of service.",
+        "description": "Microsoft OLE documents include summary information about the document, such as the line count. A memory corruption vulnerability exists in a library (ole32.dll) used by Windows to parse OLE document summary information. Note that Microsoft Windows can parse OLE document summary information without having Microsoft Office installed.Public exploit code targeting Microsoft Windows Explorer is available for this vulnerability. The public exploit code uses specially crafted Office document to trigger the vulnerability in Microsoft Windows Explorer. However, any application that links to ole32.dll may also be affected.",
+        "impact": "The complete impact of this vulnerability is not known. Memory corruption does occur, but it is not clear if this can be leveraged to execute arbitrary code. At a minimum, this vulnerability will cause a denial of service."
+      }
+    ],
+    "CVE-2007-1441": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/282856"
+      }
+    ],
+    "CVE-2007-1536": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/606700",
+        "title": "file integer overflow vulnerability",
+        "overview": "The file program contains a vulnerability that may allow an attacker to execute arbitrary code or create a denial-of-service condition.",
+        "description": "file is a program for Unix-like operating systems that is used to determine what type of data is contained in a file.file contains a buffer overflow vulnerability that is caused by an integer overflow in the file_printf function. To trigger the overflow, an attacker would need to convince a user to run a vulnerable version of file on a specially crafted file.",
+        "impact": "An attacker may be able to execute arbitrary code with the permissions of the user running the vulnerable version of file or cause the program to crash, creating a denial-of-service condition"
+      }
+    ],
+    "CVE-2007-1682": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/914785",
+        "title": "SoftArtisans XFile FileManager ActiveX control stack buffer overflows",
+        "overview": "The SoftArtisans XFile FileManager ActiveX control contains several stack buffer overflows, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "SoftArtisans XFile is an ActiveX file transfer application. The XFile FileManager ActiveX control, which is included with XFile, contains multiple stack buffer overflow vulnerabilities. The XFile FileManager ActiveX control is provided by the file SAFmgPws.dll. Vulnerable methods include BuildPath(), GetDriveName(), DriveExists(), and DeleteFile().",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause Internet Explorer (or the program using the WebBrowser control) to crash."
+      }
+    ],
+    "CVE-2007-1688": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/171449",
+        "title": "Callisto PhotoParade Player PhPInfo ActiveX control buffer overflow",
+        "overview": "The Callisto PhotoParade Player PhPInfo ActiveX control contains a buffer overflow, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Callisto PhotoParade Player includes an ActiveX control called PhPinfo. The ActiveX control is provided by the file PhPCtrl.dll. The FileVersionOf property of this ActiveX control is vulnerable to a buffer overflow.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause the web browser to crash."
+      }
+    ],
+    "CVE-2007-1747": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/853184",
+        "title": "Microsoft Office drawing object vulnerability",
+        "overview": "Microsoft Office fails to properly handle malformed drawing objects. This vulnerability may allow a remote, unauthenticated attacker to execute arbitrary code.",
+        "description": "Microsoft Office fails to properly handle malformed drawing objects embedded within Office documents. By convincing a user to open a specially crafted Office document, an attacker may be able to corrupt memory in a way that could allow them to execute arbitrary code.More information on this vulnerability is available in Microsoft Security Bulletin MS07-025.",
+        "impact": "remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the user running the Office application. If the user is logged in with administrative privileges, the attacker could take complete control of a vulnerable system"
+      }
+    ],
+    "CVE-2007-1748": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/555920",
+        "title": "Microsoft Windows DNS RPC buffer overflow",
+        "overview": "The Microsoft DNS service Remote Procedure Call (RPC) implementation contains a stack buffer overflow. This vulnerability may allow a remote attacker to execute arbitrary code with SYSTEM privileges.",
+        "description": "The Microsoft Windows DNS service uses RPC to facilitate remote management. The Microsoft Windows DNS service RPC management interface contains a stack-based buffer overflow. This vulnerability can be triggered by sending a specially crafted RPC packet to the RPC management interface. The management interface typically operates on a dynamically-assigned port between 1024/tcp and 5000/tcp. This vulnerability can also be exploited via the ports used by SMB services (139/tcp, 139/udp, 445/tcp, and 445/udp). However, this attack vector requires valid authentication credentials.More information on this vulnerability, including a list of affected products is available in Microsoft Security Bulletin MS07-029.Exploit code for this vulnerability is publicly available, and it is being actively exploited.",
+        "impact": "A remote attacker may be able to execute arbitrary code with SYSTEM privileges."
+      }
+    ],
+    "CVE-2007-1819": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/589097",
+        "title": "HP Mercury Interactive Quality Center Spider Module ActiveX control stack buffer overflow",
+        "overview": "The HP Mercury Interactive Quality Center Spider Module ActiveX control contains a stack buffer overflow, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "HP Mercury Interactive Quality Center includes an ActiveX control called Spider Module. It is provided by the file Spider.ocx or Spider90.ocx. This ActiveX control contains a stack buffer overflow in the ProgColor property.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause the web browser to crash."
+      }
+    ],
+    "CVE-2007-2108": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/809457",
+        "title": "Oracle Database vulnerable to privilege escalation",
+        "overview": "A vulnerability in Oracle Database for Microsoft Windows could allow a remote attacker to log on to the system with elevated privileges.",
+        "description": "A vulnerability exists in Oracle Database's Core Relational Database Management System (RDBMS) that may allow a remote attacker to log on to the system with elevated privileges. According to NGSSoftware-OracleCPUAPR2007:Due to the way that Windows XP with Simple File Sharing enabled logs on users it is possible for an attacker to gain DBA access to the Oracle server.Note that this issue affects Oracle Database versions including 9.0.1.5, 9.2.0.8, 10.1.0.5, and 10.2.0.2 installed in Microsoft Windows.",
+        "impact": "A remote attacker could log on to a vulnerable system and gain elevated privileges."
+      }
+    ],
+    "CVE-2007-2217": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/180345",
+        "title": "Microsoft Kodak Image Viewer code execution vulnerability",
+        "overview": "The Kodak Image Viewer which is included in Windows 2000 contains a code execution vulnerability.",
+        "description": "The Kodak Image Viewer is included in Windows 2000. It may also be present on other versions of Windows that were upgraded from Windows 2000.Per Microsoft Security Bulletin MS07-055:A remote code execution vulnerability exists in the way that the Kodak Image Viewer in Windows handles specially crafted image files. An attacker could exploit the vulnerability by constructing a specially crafted image that could potentially allow remote code execution if a user visited a Web site, viewed a specially crafted e-mail message, or opened an e-mail attachment. An attacker who successfully exploited this vulnerability could take complete control of an affected system.Note that there is publicly available proof of concept code that targets this vulnerability.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2007-2222": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/507433",
+        "title": "Microsoft Speech API ActiveX controls contain buffer overflows",
+        "overview": "The Microsoft Speech API ActiveListen and ActiveVoice ActiveX controls contain multiple buffer overflows, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft Speech API is a software package that provides text-to-speech and speech recognition capabilities. The Microsoft Speech API includes ActiveX controls called ActiveListen and ActiveVoice, which are provided by Xlisten.dll and XVoice.dll, respectively. These ActiveX controls contain multiple buffer overflow vulnerabilities.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause Internet Explorer (or the program using the WebBrowser control) to crash."
+      }
+    ],
+    "CVE-2007-2223": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/361968",
+        "title": "Microsoft XML Core Services XMLDOM substringData() buffer overflow",
+        "overview": "Microsoft XML Core Services contains an unspecified memory corruption vulnerability, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft XML Core Services (MSXML) allow developers who use JScript, Visual Basic Scripting Edition (VBScript), and Microsoft Visual Studio 6.0 to create XML-based applications. MSXML includes several ActiveX controls to allow XML support in Internet Explorer and other applications.The MSXML XMLDOM object contains a buffer overflow vulnerability in the substringData() method.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2007-2238": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/789121",
+        "title": "Microsoft Whale Intelligent Application Gateway Whale Client Components ActiveX control stack buffer overflows",
+        "overview": "The Microsoft Whale Intelligent Application Gateway Whale Client Components ActiveX control contains multiple stack buffer overflows, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Whale Communications Intelligent Application Gateway is an application that provides SSL VPN functionality. The Whale Client Components, which is provided by the file WhlMgr.dll, contains stack buffer overflow vulnerabilities in the CheckForUpdates() and UpdateComponents() methods. Note that Whale Communications is a subsidiary of Microsoft.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause the web browser to crash."
+      }
+    ],
+    "CVE-2007-2246": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/349305",
+        "title": "HP-UX sendmail vulnerable to denial of service",
+        "overview": "HP-UX contains an unspecified vulnerability in sendmail, which may allow a remote, unauthenticated attacker to cause a denial of service.",
+        "description": "HP-UX systems running sendmail are vulnerable to an unspecified denial of service. According to HP technical document c00841370, the following versions are affectedHP-UX B.11.00 (obsolete) running sendmail 8.9.3 or sendmail 8.11.1,HP-UX B.11.11 running sendmail 8.9.3 or sendmail 8.11.1,HP-UX B.11.23 running sendmail 8.11.1.Note that this vulnerability only affects sendmail on HP-UX systems.",
+        "impact": "A remote, unauthenticated attacker may be able to create a denial-of-service condition on a vulnerable HP-UX system."
+      }
+    ],
+    "CVE-2007-2388": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/995836",
+        "title": "Apple QuickTime for Java security bypass vulnerability",
+        "overview": "Apple QuickTime for Java fails to properly restrict the instantiation and manipulation of Java objects. This vulnerability may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Apple QuickTime includes the ability to integrate QuickTime into Java applications and applets. This feature is known as QuickTime for Java. Apple QuickTime for Java fails to properly restrict the instantiation and manipulation of Java objects. This can allow an attacker to create a specially crafted Java applet that can bypass Java applet security restrictions. Once the security restrictions are bypassed, the malicious applet may be able to access and manipulate system resources.More information is available in About Security Update (QuickTime 7.1.6).",
+        "impact": "By convincing a user to run a malicious Java applet, a remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the user. This can be accomplished by visiting a malicious web page with a Java-enabled web browser."
+      }
+    ],
+    "CVE-2007-2400": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/289988",
+        "title": "Apple Safari cross-domain HTTP redirection race condition",
+        "overview": "Apple Safari contains a race condition when handling HTTP redirection when updating pages. This can allow a cross-domain violation.",
+        "description": "Apple Safari contains a race condition when updating pages. When this race condition is used in combination with an HTTP redirection, Safari may allow JavaScript to modify content in another domain, which is a violation of the same-origin policy.Note that this vulnerability is reported to only be in the Safari 3 beta, which is available for Mac OS X 10.4.9, Windows XP, and Vista.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page, an HTML email message, or an email attachment), an attacker may be able to execute script or obtain full access to content in a different domain. The impact is similar to that of a cross-site scripting vulnerability. This includes the ability to spoof or modify web content, access website information such as cookies, or retrieve data from an encrypted HTTPS connection. For a more detailed description of the impact of cross-site scripting vulnerabilities, please see CERT Advisory CA-2000-02."
+      }
+    ],
+    "CVE-2007-2401": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/845708",
+        "title": "Apple WebCore XMLHttpRequest fails to properly serialize headers into an HTTP request",
+        "overview": "Apple WebCore fails to properly serialize headers into an HTTP request, which can cause a cross-domain security violation.",
+        "description": "Apple WebCore is one of the components of the WebKit web browser engine that is used by Safari, Dashboard, Mail, and other applications. WebCore provides support for the XMLHttpRequest object, which allows dynamic HTML and XML functionality. XMLHttpRequest in WebCore fails to properly serialize headers when creating an HTTP request, which can lead to a cross-domain violation.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page, an HTML email message, or an email attachment), an attacker may be able to execute script or obtain full access to content in a different domain. The impact is similar to that of a cross-site scripting vulnerability. This includes the ability to spoof or modify web content, access website information such as cookies, or retrieve data from an encrypted HTTPS connection. For a more detailed description of the impact of cross-site scripting vulnerabilities, please see CERT Advisory CA-2000-02."
+      }
+    ],
+    "CVE-2007-2446": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/773720",
+        "title": "Samba NDR MS-RPC heap buffer overflow",
+        "overview": "Samba fails to properly handle malformed MS-RPC packets. Exploitation of this vulnerability could allow a remote attacker to execute arbitrary code.",
+        "description": "Samba is a widely used open-source implementation of Server Message Block (SMB)/Common Internet File System (CIFS). Network Data Representation (NDR) is the scheme to encode MS-RPC data for transport. Samba fails to properly validate MS-RPC packets. Specifically, Samba's NDR functions do not properly validate arguments supplied to memory allocation routines. This results in a buffer of insufficient size being allocated. When data is copied to this buffer, a heap-based buffer overflow may occur.More information is available in Samba's Security Announcement.",
+        "impact": "A remote attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2007-2508": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/515616",
+        "title": "Trend Micro ServerProtect EarthAgent buffer overflow vulnerability",
+        "overview": "Trend Micro ServerProtect contains a buffer overflow vulnerability. This vulnerability may allow an attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Trend Micro ServerProtect is an anti-virus application that is designed to run on Windows-based servers. The ServerProtect architecture includes a management console, information server, and the server which has ServerProtect installed. The Information Server is the middleware that sits between the Management Console and the servers it manages. The Information Server allows administrators to send and receive instructions from remote sites. The information server executable is called EarthAgent.exe. The EarthAgent process contains a stack overflow vulnerability. An attacker may be able to trigger the overflow by sending a malformed RPC request to the EarthAgent process.",
+        "impact": "A remote unauthenticated attacker may be able to execute arbitrary code, or cause a denial-of-service condition."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/488424",
+        "title": "Trend Micro ServerProtect SpntSvc buffer overflow vulnerability",
+        "overview": "Trend Micro ServerProtect contains a buffer overflow vulnerability. This vulnerability may allow an attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Trend Micro ServerProtect is an anti-virus application that is designed to run on Windows-based servers. The ServerProtect architecture includes a management console, information server, and the server which has ServerProtect installed. The ServerProtect executable that runs on the server being protected by the anti-virus engine is called SpntSvc.exe. The SpntSvc component contains a stack overflow vulnerability. An attacker may be able to trigger the overflow by sending a malformed RPC request to the SpntSvc process.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with elevated privileges, or create a denial-of-service condition."
+      }
+    ],
+    "CVE-2007-2522": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/680616",
+        "title": "Computer Associates eTrust AntiVirus Server buffer overflow",
+        "overview": "Computer Associates eTrust AntiVirus Server contains a buffer overflow vulnerability. This vulnerability may allow an attacker to execute arbitrary code, or create a denial of service condition.",
+        "description": "Computer Associates eTrust AntiVirus Server is an antivirus product distributed by Computer Associates. eTrust AntiVirus Server installs a service called inoweb that listens on port 12168/tcp.The inoweb process contains a stack based buffer overflow vulnerability. By sending a malformed packet to a vulnerable system, an attacker may be able to trigger the overflow.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code, or create a denial of service condition."
+      }
+    ],
+    "CVE-2007-2788": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/138545",
+        "title": "Java Runtime Environment Image Parsing Code buffer overflow vulnerability",
+        "overview": "The Sun Java Runtime Environment contains a buffer overflow vulnerability that may allow an attacker to execute code or read local files.",
+        "description": "The Java Runtime Environment (JRE) is a group software packages from Sun Microsystems that allow a computer to access and use Java applications. Sun distributes a JRE plug-in for web browsers that allow websites to include Java applications that can execute in the user's web browser. The JRE is part of the Java Development Kit (JDK).The International Color Consortium (ICC) supports cross-platform color management systems. One of these systems is the ICC profile format.There is a buffer overflow vulnerability in the Java Runtime Environment. From Sun Alert 102934:A buffer overflow vulnerability in the image parsing code in the Java Runtime Environment may allow an untrusted applet or application to elevate its privileges. For example, an applet may grant itself permissions to read and write local files or execute local applications that are accessible to the user running the untrusted applet.The image parsers that come with the Java Development Kit (JDK) support embedded ICC profiles. The ICC parser that comes with the Sun JRE uses native code that contains the buffer overflow. More information is available in Chris Evans' security advisory CESA-2006-004.Note that an attacker may be able to exploit this vulnerability by convincing a user to open a website that hosts a specially crafted Java applet.",
+        "impact": "A remote, unauthenticated attacker may be able to read or write files and execute code with the privileges of the user who is running the JRE."
+      }
+    ],
+    "CVE-2007-2798": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/554257",
+        "title": "MIT Kerberos kadmind principal renaming stack buffer overflow",
+        "overview": "The MIT Kerberos administration daemon (kadmind) contains a stack buffer overflow that may allow a remote, authenticated attacker to execute arbitrary code or cause a denial of service.",
+        "description": "A vulnerability exists in the way the principal renaming operation used by the Kerberos administration daemon handles strings and a fixed-size stack buffer. This vulnerability may cause a buffer overflow vulnerability that could allow a remote, authenticated user to execute arbitrary code. According to MIT krb5 Security Advisory MITKRB5-SA-2007-005:The kadmind code which performs the principal renaming operation passes unchecked string arguments to a sprintf() call which has a fixed-size stack buffer as its destination. These strings are the old and new principal names passed to the rename operation. The attacker needs to authenticate to kadmind to perform this attack, but no administrative privileges are required because the vulnerable code executes prior to privilege verification.Note that this issue affects all releases of MIT krb5 up to and including krb5-1.6.1. MIT has been provided with proof-of-concept exploit code, but it's not clear whether the exploit code is publicly available yet.",
+        "impact": "A remote, authenticated user may be able to execute arbitrary code on an affected system or cause the affected program to crash, resulting in a denial of service. Secondary impacts of code execution include complete compromise of the Kerberos key database."
+      }
+    ],
+    "CVE-2007-2846": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/125868",
+        "title": "Avast! antivirus buffer overflow vulnerability",
+        "overview": "Avast! antivirus contains a buffer overflow vulnerability. This vulnerability may allow an attacker to execute code a vulnerable system.",
+        "description": "Avast! antivirus is an antivirus application that can scan different types of files. The Symbian Installer Format (SIS) file format is used by the Symbian OS to package files for distribution to mobile devices.Avast! antivirus contains a buffer overflow vulnerability. By convincing a user to scan a specially crafted SIS file with a vulnerable version of Avast! antivirus, an attacker may be able to trigger the overflow.",
+        "impact": "A remote unauthenticated attacker may be able to execute arbitrary code, or create a denial-of-service condition."
+      }
+    ],
+    "CVE-2007-2867": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/751636",
+        "title": "Mozilla Layout Engine memory corruption vulnerabilities",
+        "overview": "The Mozilla layout engine contains multiple vulnerabilities that may lead to memory corruption. These vulnerabilities may allow an attacker to execute code or cause a denial-of-service condition.",
+        "description": "The Mozilla Layout Engine contains an multiple vulnerabilities that may result in memory corruption. The impacts of these vulnerabilities vary. According to Mozilla Foundation Security Advisory 2007-12:Some of these crashes that showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Information about the individual bug reports addressed in this update can be found in Mozilla Foundation Security Advisory 2007-12.",
+        "impact": "Potential consequences include remote execution of arbitrary code and denial of service."
+      }
+    ],
+    "CVE-2007-2868": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/609956",
+        "title": "Mozilla products vulnerable to memory corruption in the JavaScript engine",
+        "overview": "A vulnerability in the Mozilla JavaScript engine may allow execution of arbitrary code or denial of service.",
+        "description": "The Mozilla JavaScript engine contains an unspecified vulnerability that may result in memory corruption. The impact of this memory corruption is unclear. According to Mozilla Foundation Security Advisory 2007-12:Some of these crashes that showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code.Information about the individual bug reports addressed in this update can be found in Mozilla Foundation Security Advisory 2007-12.",
+        "impact": "Potential consequences include remote execution of arbitrary code and denial of service."
+      }
+    ],
+    "CVE-2007-2931": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/166521",
+        "title": "MSN Messenger and Windows Live Messenger webcam stream heap overflow",
+        "overview": "MSN Messenger fails to properly handle webcam streams, which may allow a remote attacker to execute arbitrary code.",
+        "description": "MSN Messenger is an instant messaging application. Starting with version 8, MSN Messenger was renamed to Windows Live Messenger. Windows Live Messenger and some versions of MSN Messenger support the use of webcams. MSN Messenger and Windows Live Messenger appear to require user interaction to connect a webcam stream.MSN Messenger and Windows Live Messenger contain a heap overflow in the handling of a malformed webcam streams. Exploit code for this vulnerability is publicly available.",
+        "impact": "By convincing a user to accept a webcam invitation, a remote attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2007-2983": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/686249",
+        "title": "British Telecommunications Consumer webhelper ActiveX control buffer overflows",
+        "overview": "The British Telecommunications Consumer webhelper ActiveX control contains multiple buffer overflows, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The registration process for British Telecommunications (BT) internet services uses an ActiveX control called webhelper. This ActiveX control is provided by the file btwebcontrol.dll. The BT Consumer webhelper ActiveX control contains multiple buffer overflow vulnerabilities.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause Internet Explorer (or the program using the WebBrowser control) to crash."
+      }
+    ],
+    "CVE-2007-2984": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/933353",
+        "title": "Media Technology Group CDPass ActiveX control stack buffer overflows",
+        "overview": "The Media Technology Group CDPass ActiveX control contains several stack buffer overflows, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Media Technology Group CDPass is software that provides bonus content for music CDs and DVDs. CDPass is an ActiveX control, which is provided by the file CDPass.dll. The CDPass ActiveX control contains several stack buffer overflows.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause the web browser to crash."
+      }
+    ],
+    "CVE-2007-2987": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/603529",
+        "title": "Zenturi ProgramChecker ActiveX buffer overflow vulnerabilities",
+        "overview": "Zenturi ProgramChecker contains multiple ActiveX buffer overflows, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Zenturi ProgramChecker is a set of \"... easy to use tools to analyze, validate, authenticate and research the programs that run on their PCs.\" Zenturi ProgramChecker includes multiple ActiveX controls, which are provided by sasatl.dll. These ActiveX controls contain multiple buffer overflow vulnerabilities.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause the web browser to crash."
+      }
+    ],
+    "CVE-2007-3033": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/558648",
+        "title": "Microsoft Windows Vista Feed Headlines Gadget vulnerability",
+        "overview": "The Windows Vista Feed Headlines gadget contains a vulnerability that may allow and attacker to execute code.",
+        "description": "From Microsoft Security Bulletin MS07-048:Gadgets are mini-applications designed to provide the user with information or utilities. Windows Vista treats gadgets similar to the way Windows Vista treats other executable code. Gadgets are written using HTML and script, but this HTML is not located on an arbitrary remote server as web pages are. HTML content in the Gadget is downloaded first as part of a package of resources and configuration files and then executed from the local computer. This download process is similar to applications (.exe files) downloaded from the Internet.The Windows Vista Feed headlines gadget contains a vulnerability that occurs because the gadget does not properly parse HTML attributes. To exploit this vulnerability, an attacker would need to convince a user to subscribe to a malicious RSS feed using the Vista Feed headlines gadget.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code, or create a denial-of-service condition."
+      }
+    ],
+    "CVE-2007-3034": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/640136",
+        "title": "Microsoft GDI Windows Metafile AttemptWrite integer overflow",
+        "overview": "Microsoft Windows GDI contains an integer overflow in the handling of Windows metafiles, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft Windows GDI (Graphics Device Interface) enables applications to use graphics and formatted text on both video displays and printers. GDI can be used to handle bitmaps, metafiles, and fonts. Microsoft Windows GDI contains an integer overflow vulnerability in the AttemptWrite() function. This integer overflow leads to a heap overflow.",
+        "impact": "By convincing a user to view a specially crafted metafile, a remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2007-3036": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/768440",
+        "title": "Microsoft Windows Services for UNIX privilege escalation vulnerability",
+        "overview": "Microsoft Windows Services for UNIX contains a vulnerability that may allow a local, authenticated attacker to gain elevated privileges.",
+        "description": "Windows Services for UNIX fails to properly handle setuid binary files. An attacker may be able to trigger this vulnerability by running a specially crafted setuid binary file.For more information, please see Microsoft Security Bulletin MS07-053.",
+        "impact": "A local, authenticated attacker may be able to gain elevated privileges on a vulnerable system."
+      }
+    ],
+    "CVE-2007-3040": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/716872",
+        "title": "Microsoft Agent fails to properly handle specially crafted URLs",
+        "overview": "Microsoft Agent fails to properly handle specially crafted URLs, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system",
+        "description": "Microsoft Agent is software that provides animated characters to enhance interaction with computer systems. Microsoft Agent comes with Microsoft Windows systems. Microsoft Agent functionality is exposed as an ActiveX control that can be used by web pages. Microsoft Agent fails to properly handle specially crafted URLs, which can result in memory corruption.According to public reports, exploit code is availabe for this vulnerability.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause the web browser to crash.More information is available in Microsoft Security Bulletin MS07-051."
+      }
+    ],
+    "CVE-2007-3147": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/949817",
+        "title": "Yahoo! Webcam image upload ActiveX control vulnerable to arbitrary code execution",
+        "overview": "The Yahoo! Webcam image upload ActiveX control contains a stack buffer overflow, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Yahoo! Webcam is a component of Yahoo! Messenger that allows users to chat via webcams over a network. Yahoo! Webcam Upload includes an ActiveX control provided by the file ywcupl.dll . This ActiveX control contains a stack buffer overflow vulnerability in the Server property.We are aware of publicly available exploit code for this vulnerability.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause Internet Explorer (or the program using the WebBrowser control) to crash."
+      }
+    ],
+    "CVE-2007-3148": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/932217",
+        "title": "Yahoo! Webcam view utilities ActiveX control vulnerable to arbitrary code execution",
+        "overview": "The Yahoo! Webcam view utilities ActiveX control contains a stack buffer overflow, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Yahoo! Webcam is a component of Yahoo! Messenger that allows users to chat via webcams over a network. Yahoo! Webcam Viewer includes an ActiveX control provided by the file ywcvwr.dll . This ActiveX control contains a stack buffer overflow vulnerability in the Server property.We are aware of publicly available exploit code for this vulnerability.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause Internet Explorer (or the program using the WebBrowser control) to crash."
+      }
+    ],
+    "CVE-2007-3375": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/871497",
+        "title": "Lhaca buffer overflow vulnerability",
+        "overview": "The Lhaca archiving program contains a buffer overflow vulnerability that may allow an attacker to execute arbitrary code.",
+        "description": "LHA is an archive file format. LHA is used by the Lhaca compression utility.A stack buffer overflow vulnerability exists in the Lhaca program. This vulnerability occurs due to insuffiecient bounds checking. Note that there are reports that this vulnerability is being publicly exploited.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code, or create a denial-of-service condition."
+      }
+    ],
+    "CVE-2007-3382": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/993544",
+        "title": "Apache Tomcat fails to properly handle cookies containing single quotes",
+        "overview": "Apache Tomcat fails to properly handle cookies that contain a single quote, which may allow session hijacking.",
+        "description": "Apache Tomcat is an implementation of the Java Servlet and JavaServer Page (JSP) technologies. Apache Tomcat incorrectly treats a single quote as a cookie delimiter. This can cause the Tomcat cookie parsing mechanism to improperly handle all of the cookies in the cookie string that follow the cookie with the single quote. According to the vendor, the following versions of Apache Tomcat are affected6.0.0 to 6.0.135.5.0 to 5.5.245.0.0 to 5.0.304.1.0 to 4.1.363.3 to 3.3.2",
+        "impact": "This vulnerability can increase the possibility of a session hijacking success. In the presense of a cross-site scripting vulnerability, it may allow a denial-of-service attack against a web site by preventing a client from being able to log in using cookies."
+      }
+    ],
+    "CVE-2007-3385": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/993544",
+        "title": "Apache Tomcat fails to properly handle cookies containing single quotes",
+        "overview": "Apache Tomcat fails to properly handle cookies that contain a single quote, which may allow session hijacking.",
+        "description": "Apache Tomcat is an implementation of the Java Servlet and JavaServer Page (JSP) technologies. Apache Tomcat incorrectly treats a single quote as a cookie delimiter. This can cause the Tomcat cookie parsing mechanism to improperly handle all of the cookies in the cookie string that follow the cookie with the single quote. According to the vendor, the following versions of Apache Tomcat are affected6.0.0 to 6.0.135.5.0 to 5.5.245.0.0 to 5.0.304.1.0 to 4.1.363.3 to 3.3.2",
+        "impact": "This vulnerability can increase the possibility of a session hijacking success. In the presense of a cross-site scripting vulnerability, it may allow a denial-of-service attack against a web site by preventing a client from being able to log in using cookies."
+      }
+    ],
+    "CVE-2007-3410": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/770904",
+        "title": "RealNetworks players SMIL \"wallclock\" buffer overflow",
+        "overview": "A buffer overflow in RealNetworks media players could allow a remote attacker to execute arbitrary code on an affected system.",
+        "description": "The RealNetworks RealPlayer and Helix Player applications allow users to view local and remote audio and video content. These players support multiple media formats including the synchronized multimedia integration language (SMIL). A stack-based buffer overflow exists in the way that these players handle the \"wallclock-sync\" values encoded in the SMIL data. A remote attacker with the ability to supply a specially crafted media file or stream could exploit this vulnerability to execute arbitrary code on an affected system.Note that we are aware of publicly-available exploit code for this vulnerability.",
+        "impact": "A remote unauthenticated attacker could execute arbitrary code with the privileges of the user running a vulnerable application or cause the vulnerable application to crash, resulting in a denial of service."
+      }
+    ],
+    "CVE-2007-3456": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/730785",
+        "title": "Adobe Flash Player FLV integer overflow",
+        "overview": "A vulnerability in the Adobe Flash Player could allow a remote attacker to execute arbitrary code on an affected system.",
+        "description": "Adobe Flash Player is a player for the Flash media format and enables frame-based animations with sound to be viewed within a web browser. An integer overflow vulnerability exists in the way some versions of the Flash Player handle Flash Video (.flv) media. This vulnerability could be exploited by an attacker with the ability to supply specially crafted media content to a user’s web browser, email client, or other applications that include or reference the Flash Player.",
+        "impact": "A remote unauthenticated attacker may be able to execute arbitrary code on an affected system. The attacker-supplied code would be executed with the privileges of the user running the vulnerable software component."
+      }
+    ],
+    "CVE-2007-3457": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/138457",
+        "title": "Adobe Flash Player fails to properly validate HTTP Referers",
+        "overview": "The Adobe Flash Player fails to properly validate HTTP Referers. This may allow an attacker to conduct cross-site request forgery attacks.",
+        "description": "Adobe Flash Player is a player for the Flash media format and enables frame-based animations with sound to be viewed within a web browser. HTTP Referer Headers are defined in section 14.36 of RFC 2616:The Referer[sic] request-header field allows the client to specify, for the server's benefit, the address (URI) of the resource from which the Request-URI was obtained (the \"referrer\", although the header field is misspelled.) The Referer request-header allows a server to generate lists of back-links to resources for interest, logging, optimized caching, etc. It also allows obsolete or mistyped links to be traced for maintenance. The Referer field MUST NOT be sent if the Request-URI was obtained from a source that does not have its own URI, such as input from the user keyboard.Per Adobe Security Bulletin APSB 07-12, HTTP Referers are not sufficiently validated in Flash Player 8.0.34.0 and earlier.",
+        "impact": "An attacker may be able to execute cross-site request forgery attacks."
+      }
+    ],
+    "CVE-2007-3670": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/358017",
+        "title": "Mozilla Firefox URL protocol handling vulnerability",
+        "overview": "Mozilla Firefox protocol handlers may allow remotely supplied JavaScript to execute with elevated privileges. This may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "On Microsoft Windows systems, Mozilla Firefox installs protocol handlers for Mozilla-specific protocols, such as the FirefoxURL and FirefoxHTML protocols. If Microsoft Windows encounters a URL protocol it cannot handle natively it searches the Windows registry for the appropriate protocol handler. When the correct protocol handler is found, Windows passes it the URL string. By design Windows passes the URL string to the protocol handler as it was received without performing any sanitization.Mozilla Firefox URL protocol handlers are constructed in a way that may allow a remote attacker to execute arbitrary JavaScript with elevated (chrome) privileges. Mozilla Firefox security restrictions detect and prevent the execution of such JavaScript. However, if a remote attacker can persuade a user with Firefox installed to access a specially crafted web page using Internet Explorer, and perhaps other Windows applications, the malicious JavaScript will be executed. Reports claim this vulnerability is introduced when Firefox versions 2.0.0.2 and later are installed.Exploit code is publicly available for this vulnerability.",
+        "impact": "This vulnerability may allow a remote, unauthenticated attacker to execute JavaScript with elevated (chrome) privileges. This essentially means that the attacker can execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2007-3832": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/786920",
+        "title": "Trillian Instant Messenger client fails to properly handle malformed URIs",
+        "overview": "The Trillian Instant Messaging client contains a buffer overflow vulnerability that may allow an attacker to execute code.",
+        "description": "A Uniform Resource Identifier (URI) is a string of characters that can be used to identify a location, resource, or protocol. The Trillian Instant Messenger client is an IM application that supports multiple services, including AOL Instant Messenger. Trillian registers itself as the default handler for aim: URIs during installation. Web browsers may pass URIs to other applications that have been registered to handle them.A buffer overflow vulnerability exists in the Trillian Instant Messenger client. An attacker may exploit this vulnerability by convincing a user to open a malformed aim: URI inside of a web browser. When the web browser passes the malformed URI to the Trillian Instant Messenger client, the overflow may be triggered.Note that some web browsers may present a dialog box warning that the aim: URI is being handed off to another program.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the user running Trillian."
+      }
+    ],
+    "CVE-2007-3895": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/321233",
+        "title": "Microsoft DirectX remote code execution",
+        "overview": "Microsoft DirectX is vulnerable to a remote code execution vulnerability which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft DirectX is a feature of the Microsoft Windows operating system used for streaming multimedia content. DirectX integrates DirectShow technology to provide high-quality capture of streaming media such as video and audio. A stack-based buffer overflow exists due to DirectShow's improper parsing of WAV and AVI files. By successfully persuading a user to access a specially crafted WAV or AVI file, a remote, unauthenticated attacker could trigger the buffer overflow.",
+        "impact": "A remote, unauthenticated attacker could execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2007-3896": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/403150",
+        "title": "Microsoft Windows URI protocol handling vulnerability",
+        "overview": "Microsoft Windows fails to properly handle protocols specified in a URI, which could allow a remote, unauthenticated attacker to execute arbitrary commands on a vulnerable system.",
+        "description": "A Uniform Resource Identifier (URI) is a string of characters that can be used to identify a location, resource, or protocol. Microsoft Windows will parse a URI to determine the appropriate application that is registered to handle the protocol. More information about how Windows accomplishes this is available in Microsoft Knowledge Base article 224816. Several types of Windows applications, such as web browsers and email clients, may rely on Microsoft Windows to determine the proper application to handle a specified URI.Internet Explorer 7 has changed how Microsoft Windows parses URIs. This has introduced a flaw that can cause Windows to incorrectly determine the appropriate handler for the protocol specified in a URI. This flaw appears to rely on having a \"%\" character in the URI.Publicly available exploit code uses Mozilla Firefox as an attack vector for this vulnerability. For more information, including workarounds, please see VU#783400.",
+        "impact": "Microsoft Windows may incorrectly determine the appropriate application to handle a protocol. For example, a \"safe\" protocol such as mailto: may be incorrectly handled with an \"unsafe\" application, such as the Windows command interpreter. This can allow unexpected execution of arbitrary commands."
+      }
+    ],
+    "CVE-2007-3901": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/804089",
+        "title": "Microsoft DirectX SAMI parsing buffer overflow",
+        "overview": "Microsoft DirectX is vulnerable to a stack-based buffer overflow. This vulnerability may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft DirectX is a feature of the Microsoft Windows operating system used for streaming multimedia content. DirectX integrates DirectShow technology to provide high-quality capture of streaming media such as video and audio. A stack-based buffer overflow exists due to DirectShow's improper parsing of Synchonized Accessible Media Interchange (SAMI) files. By successfully persuading a user to access a specially crafted SAMI file, a remote, unauthenticated attacker could trigger the buffer overflow.",
+        "impact": "A remote, unauthenticated attacker could execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2007-3999": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/883632",
+        "title": "MIT Kerberos 5 kadmind buffer overflow vulnerability",
+        "overview": "An unspecified vulnerability in MIT Kerberos kadmind server may allow an attacker to execute arbitrary code.",
+        "description": "Kerberos is a network authentication system that uses a trusted third party to authenticate clients and servers to each other. It is designed to provide strong authentication for client/server applications by using secret-key cryptography. MIT Kerberos code is used in network applications from a variety of different vendors and is included in many UNIX and Linux distributions. The kadmind daemon is the administration server that runs on the master Kerberos server.From the kadmind manual page:This command starts the KADM5 administration server. The administration server runs on the master Kerberos server, which stores the KDC principal database and the KADM5 policy database. Kadmind accepts remote requests to administer the information--exclude in these databases. Remote requests are sent, for example, by kadmin(8) and the kpasswd(1) command, both of which are clients of kadmind.Per MITKRB5-SA-2007-006 there is a stack buffer overflow in the RPCSEC_GSS authentication in the RPC library that is included in krb5-1.4 through krb5-1.6.2. Any programs that link against the RPC library may also be affected. Note that per MITKRB5-SA-2007-006, versions of kerberos prior to krb5-1.5 are not affected.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2007-4000": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/377544",
+        "title": "MIT Kerberos 5 kadmind privilege escalation vulnerability",
+        "overview": "MIT Kerberos kadmind contains a privilege escalation vulnerability that may allow an authenticated attacker to execute code with root privileges.",
+        "description": "Kerberos is a network authentication system that uses a trusted third party to authenticate clients and servers to each other. It is designed to provide strong authentication for client/server applications by using secret-key cryptography. MIT Kerberos code is used in network applications from a variety of different vendors and is included in many UNIX and Linux distributions. The kadmind daemon is the administration server that runs on the master Kerberos server.From the kadmind manual page:This command starts the KADM5 administration server. The administration server runs on the master Kerberos server, which stores the KDC principal database and the KADM5 policy database. Kadmind accepts remote requests to administer the information in these databases. Remote requests are sent, for example, by kadmin(8) and the kpasswd(1) command, both of which are clients of kadmind.Per MITKRB5-SA-2007-006 there is a privilege execution vulnerability in kadmind that may allow an authenticated user with modify policy privileges to execute arbitrary code. Note that per MITKRB5-SA-2007-006, versions of kerberos prior to krb5-1.5 are not affected by this vulnerability.",
+        "impact": "A local attacker, who has modify policy privileges, may be able to execute arbitrary code with elevated privileges"
+      }
+    ],
+    "CVE-2007-4034": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/120760",
+        "title": "Yahoo! Installer Plugin for Widgets ActiveX control stack buffer overflow",
+        "overview": "The Yahoo! Installer Plugin for Widgets ActiveX control contains a stack buffer overflow, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Yahoo! Widgets is a program for Windows that allows the user to run applications called \"widgets.\" Yahoo! Widgets includes an ActiveX control called Yahoo! Installer Plugin for Widgets. This ActiveX control, which is provided by YDPCTL.dll, contains a stack buffer overflow in the GetComponentVersion() method.Exploit code for this vulnerability is publicly available.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2007-4041": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/783400",
+        "title": "Mozilla Firefox URI filtering vulnerability",
+        "overview": "Mozilla Firefox does not filter input when sending certain URIs to registered protocol handlers. This may allow a remote, authenticated attacker to use Firefox as a vector for executing commands on a vulnerable system.",
+        "description": "A Uniform Resource Identifier (URI) is a string of characters that can be used to identify a location, resource, or protocol. Mozilla Firefox will rely on Microsoft Windows to determine the appropriate protocol handler for certain URIs that it does not handle internally.Firefox does not filter data passed to certain URI protocol handlers. This allows Firefox to be used as an attack vector for vulnerabilities in other applications. For example, Firefox can be used as an attack vector for the vulnerability in how Microsoft Windows itself determines the appropriate protocol handler [VU#403150]. Public exploit code for this vulnerability exists, which uses mailto, news, nntp, snews, and telnet URI handlers.Note this vulnerability is only present in the Windows version of Firefox.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary commands, using Firefox as an attack vector."
+      }
+    ],
+    "CVE-2007-4218": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/109056",
+        "title": "Trend Micro ServerProtect RPC buffer overflows",
+        "overview": "The Trend Micro ServerProtect fails to properly handle RPC requests. This vulnerability may allow a remote, unauthenticated attacker to execute arbitrary code.",
+        "description": "Trend Micro ServerProtect is an anti-virus application that is designed to run on Microsoft Windows servers. Trend Micro ServerProtect handles Remote Procedure Calls (RPC) using port 5168/tcp. Trend Micro ServerProtect contains heap-based and stack-based buffer overflows in that can be exploited via multiple RPC functions. A remote, unauthenticated attacker may be able to trigger these overflows by sending malformed RPC requests to a vulnerable Trend Micro ServerProtect installation.More information, including a list of vulnerable RPC functions can be found in the README file for Security Patch 4.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with SYSTEM privileges."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/204448",
+        "title": "Trend Micro ServerProtect Agent service RPC stack-buffer overflow",
+        "overview": "Trend Micro ServerProtect Agent service fails to properly handle RPC requests. This vulnerability may allow a remote, unauthenticated attacker to execute arbitrary code.",
+        "description": "The Trend Micro ServerProtect Agent service handles RPC Remote Procedure Calls (RPC) using port 3628/tcp. The Trend Micro ServerProtect Agent fails to properly validate RPC requests, possibly allowing a stack-based buffer overflow to occur. A remote, unauthenticated attacker can trigger this overflow vulnerability by sending a specially crafted RPC request to the RPCFN_CopyAUSrc function.More information can be found in the README file for Security Patch 4.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2007-4219": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/959400",
+        "title": "Trend Micro ServerProtect Integer Overflow Vulnerability",
+        "overview": "Trend Micro ServerProtect contains an integer overflow vulnerability that may allow a remote attacker to execute arbitrary code.",
+        "description": "Trend Micro ServerProtect is an anti-virus application designed to run on Microsoft Windows servers. The application provides administrators with centralized management of multiple servers. The ServerProtect architecture includes a management console, information server, and the server which has ServerProtect installed. The ServerProtect executable that runs on the server being protected by the anti-virus engine is called SpntSvc.exe. This executable uses the StRpcSrv.dll library to handle RPC requests on 5168/tcp. The ServerProtect component contains an integer overflow vulnerability within the RPC function RPCFN_SYNC_TASK. A remote, unauthenticated attacker may be able to trigger the overflow by sending malformed RPC request to a vulnerable system.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2007-4286": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/201984",
+        "title": "Cisco IOS fails to properly handle Next Hop Resolution Protocol packets",
+        "overview": "Cisco IOS fails to properly handle Next Hop Resolution Protocol packets, which could allow a remote, unauthenticated attacker to execute arbitrary code or cause a denial of service.",
+        "description": "Cisco IOS is an operating system that is used on Cisco network devices. Cisco IOS supports a feature called Next Hop Resolution Protocol (NHRP). NHRP is a component of the Dynamic Multipoint Virtual Private Network (DMVPN) feature. NHRP is not enabled by default in Cisco IOS. Cisco IOS fails to properly handle NHRP packets. According to the Cisco Security Advisory, NHRP can operate in three ways: at the link layer (Layer 2), over Generic Routing Encapsulation (GRE) and multipoint GRE (mGRE) tunnels and directly on IP (IP protocol number 54). This vulnerability affects all three methods of operation.Note that exploit code for this vulnerability is publicly available.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or cause a denial of service on an affected device."
+      }
+    ],
+    "CVE-2007-4351": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/446897",
+        "title": "CUPS buffer overflow vulnerability",
+        "overview": "The Common Unix Printing System contains a buffer overflow vulnerability. This vulnerability may allow a remote attacker to execute arbitrary code.",
+        "description": "The Common Unix Printing System (CUPS) is a printing service used by many Linux and Unix operating systems. CUPS uses a print scheduling process that dispatches print jobs and provides the printer's status to local and remote programs.The Internet Printing Protocol (IPP) is a standard protocol that defines printing and managing print ques. As specified in RFC 2910, the IPP transport layer consists of an HTTP/1.1 request or response. Section 3.5 of RFC 2910 specifies two different types of tags that can either delimit sections of protocols (delimiter tags) or specify the type of each attribute value (value tags). textWithLanguage tags are defined in section 4.1.1.2 and nameWithLanguage is defined in section 4.1.2.2.Per Secunia Advisory 2007-76:Secunia Research has discovered a vulnerability in CUPS, which can be exploited by malicious people to compromise a vulnerable system.The vulnerability is caused due to a boundary error within the \"ippReadIO()\" function in cups/ipp.c when processing IPP (Internet Printing Protocol) tags. This can be exploited to overwrite one byte on the stack with a zero by sending an IPP request containing specially crafted \"textWithLanguage\" or \"nameWithLanguage\" tags.Successful exploitation allows execution of arbitrary code.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the user running the CUPS server or cause the server to crash. The cupsd daemon may run with root privileges."
+      }
+    ],
+    "CVE-2007-4391": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/515968",
+        "title": "Yahoo! Messenger webcam stream heap overflow",
+        "overview": "Yahoo! Messenger fails to properly handle webcam streams, which may allow a remote attacker to execute arbitrary code.",
+        "description": "Yahoo! Messenger is an instant messaging application that is available for Windows, Mac, Unix, web, and mobile systems. Some version of Yahoo! Messenger, such as the Windows and Mac versions, support webcam use. When Yahoo! Messenger views a webcam stream, it makes a connection to port 5100/tcp. The webcam video stream is sent as a JPEG 2000 code stream. Yahoo! Messenger appears to require user interaction to connect a webcam stream.Yahoo! Messenger contains a heap overflow in the handling of a malformed JPEG 2000 code streams. Exploit code that causes a denial of service is publicly available.",
+        "impact": "A remote attacker may be able to execute arbitrary code with the privileges of the user running Yahoo! Messenger. This vulnerability may also cause a denial of service by causing Yahoo! Messenger to crash."
+      }
+    ],
+    "CVE-2007-4466": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/179281",
+        "title": "Electronic Arts SnoopyCtrl ActiveX control and plug-in stack buffer overflows",
+        "overview": "The Electronic Arts SnoopyCtrl ActiveX control and plug-in contains multiple stack buffer overflows, which could allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Electronic Arts (EA.com) provides an ActiveX control and Netscape-style plug-in called SnoopyCtrl. This control, provided by NPSnpy.dll, is included with an EA.com update package. The SnoopyCtrl ActiveX control and plug-in contains buffer overflow vulnerabilities in multiple methods and initialization parameters.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), a remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the user on a vulnerable system."
+      }
+    ],
+    "CVE-2007-4467": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/474433",
+        "title": "Oracle JInitiator ActiveX control stack buffer overflows",
+        "overview": "The Oracle JInitiator ActiveX control contains multiple stack buffer overflows, which could allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Oracle JInitiator allows users to run Oracle Developer Server applications within a web browser. Oracle JInitiator includes an ActiveX control called beans.ocx. The Oracle JInitiator ActiveX control is vulnerable to multiple stack buffer overflows in initialization parameters.This vulnerability appears to be present in versions 1.1.8.x through 1.1.8.26 of the Oracle JInitiator software. In our testing, the 1.3.1.x versions of JInitiator do not contain these buffer overflows. However, installing a later version of the software will not remove the vulnerable version of the control.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code on a vulnerable system with privileges of the user."
+      }
+    ],
+    "CVE-2007-4470": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/589188",
+        "title": "Earth Resource Mapping NCSView ActiveX control stack buffer overflows",
+        "overview": "The Earth Resource Mapping NCSView ActiveX control contains multiple stack buffer overflows, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The Earth Resource Mapping NCSView ActiveX control, which is provided by NCSView.dll, is used to view maps in the Internet Explorer web browser. The NCSView ActiveX control contains multiple stack buffer overflows.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code on a vulnerable system with privileges of the user."
+      }
+    ],
+    "CVE-2007-4471": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/979638",
+        "title": "Intuit QuickBooks Online Edition ActiveX control fails to properly restrict access to methods",
+        "overview": "The Intuit QuickBooks Online Edition ActiveX control fails to properly restrict access to dangerous methods, which could allow a remote attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Intuit QuickBooks Online Edition is a version of QuickBooks that is implemented as an ActiveX control. This ActiveX control contains several dangerous methods, such as httpGETToFile() and httpPOSTFromFile(). These methods can be used to download or upload files in arbitrary locations.",
+        "impact": "By convincing a victim to view an HTML document (web page, HTML email, or email attachment), an attacker could download arbitrary files to a vulnerable system within the security context of the user running IE. These files could contain code that could be executed through other means. The user may click the file inadvertently, or the file may be placed in a sensitive location, such as the Windows Startup folder where it will automatically execute the next time the user logs onto the system. An attacker can also retrieve arbitrary files from a victim's computer."
+      }
+    ],
+    "CVE-2007-4472": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/574401",
+        "title": "Broderbund Expressit 3DGreetings Player ActiveX control buffer overflows",
+        "overview": "The Broderbund Expressit 3DGreetings Player ActiveX control contains multiple buffer overflows, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The 3DGreetings Player is an ActiveX control that displays 3D greeting cards. This control, originally provided by Expressit.com, is now owned by Broderbund. The 3DGreetings Player ActiveX control contains multiple buffer overflows.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause the web browser to crash."
+      }
+    ],
+    "CVE-2007-4473": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/205073",
+        "title": "Gesytec Easylon OPC Server fails to properly validate OPC server handles",
+        "overview": "The Gesytec Easylon OPC Server contains a vulnerability that may allow a remote attacker to execute arbitary code or cause a denial-of-service condition.",
+        "description": "OLE for Process Control (OPC) is a specification for a standard set of OLE COM objects used in the process control and manufacturing fields. OPC servers are often used in control systems to consolidate field and network device information.The Gesytec Easylon OPC Server fails to properly validate server handles. This vulnerability may be triggered by an attacker with access to the server's OPC interface.",
+        "impact": "An attacker with access to the Gesytec Easylon OPC Server may be able to arbitrarily access server process memory, potentially allowing that attacker to execute arbitrary code or cause a denial of service."
+      }
+    ],
+    "CVE-2007-4474": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/963889",
+        "title": "IBM Lotus Domino Web Access ActiveX control stack buffer overflows",
+        "overview": "The IBM Lotus Domino Web Access ActiveX control contains multiple stack buffer overflow vulnerabilities, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "IBM Lotus Domino includes an ActiveX control called Domino Web Access, which is used for uploading files and clearing the cache on logout. The Domino Web Access is provided by the files inotes6.dll and inotes6w.dll for Domino 6.x, dwa7.dll or dwa7W.dll for Domino 7.x, and dwa8.dll or dwa8w.dll for Domino 8.x. The Domino Web Access ActiveX control contains multiple stack buffer overflows.Exploit code for this vulnerability is publicly available.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause the web browser to crash."
+      }
+    ],
+    "CVE-2007-4475": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/985449",
+        "title": "SAP AG SAPgui EAI WebViewer3D ActiveX control stack buffer overflow",
+        "overview": "The Siemens Unigraphics Solutions Teamcenter Visualization EAI WebViewer3D ActiveX control, which comes with SAPgui, contains a stack buffer overflow. This may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "SAP AG SAPgui includes an ActiveX control called EAI WebViewer3D, which is produced by Unigraphics Solutions, a division of Siemens. The EAI WebViewer3D ActiveX control, which is provided by webviewer3d.dll, contains a stack buffer overflow in the SaveViewToSessionFile() method. Although the ActiveX control is produced by Siemens, it is reported to only be used by SAP.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user. The attacker could also cause the web browser to crash."
+      }
+    ],
+    "CVE-2007-4607": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/281977",
+        "title": "Quiksoft EasyMail SMTP ActiveX control stack buffer overflow vulnerabilities",
+        "overview": "The Quiksoft EasyMail SMTP ActiveX control contains multiple stack buffer overflow vulnerabilities, which could allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Quiksoft EasyMail Objects is a set of ActiveX controls that provides email functionality, including SMTP, POP3, and IMAP4. The EasyMail SMTP ActiveX control, which is provided by emsmtp.dll, contains multiple stack buffer overflow vulnerabilities.This control is bundled with several applications, including Earthlink internet access software. Exploit code for this vulnerability is publicly available.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code on a vulnerable system with privileges of the user."
+      }
+    ],
+    "CVE-2007-4676": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/690515",
+        "title": "Apple QuickTime buffer overflow vulnerability",
+        "overview": "Apple QuickTime contains a stack buffer overflow vulnerability. If exploited, this vulnerability may allow an attacker to execute code.",
+        "description": "Apple QuickTime is a media player that includes a browser plugin. QuickTime can display PICT images.From Apple Article ID: 306896 \"About the security content of QuickTime 7.3\":A stack buffer overflow exists in PICT image processing. By enticing a user to open a maliciously crafted image, an attacker may cause an unexpected application termination or arbitrary code execution. This update addresses the issue by performing additional validation of PICT files. Credit to Ruben Santamarta of reversemode.com working with TippingPoint and the Zero Day Initiative for reporting this issue.To exploit this vulnerability, an attacker would have to convince a user to open a specially crafted PICT image, which could be hosted on a web page.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or cause QuickTime to crash."
+      }
+    ],
+    "CVE-2007-4677": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/445083",
+        "title": "Apple QuickTime heap buffer overflow vulnerability",
+        "overview": "Apple QuickTime contains a buffer overflow vulnerability. If exploited, this vulnerability may allow an attacker to execute code.",
+        "description": "Apple QuickTime is a media player that includes a browser plugin. Color table atoms can set a list of preferred colors for displaying movieson clients that only support 256 colors.From Apple Article ID: 306896 \"About the security content of QuickTime 7.3\":A heap buffer overflow exists in the parsing of the color table atom when opening a movie file. By enticing a user to open a maliciously crafted movie file, an attacker may cause an unexpected application termination or arbitrary code execution. This update addresses the issue by performing additional validation of color table atoms. To exploit this vulnerability, an attacker would have to convince a user to open a specially crafted QuickTime movie which could be hosted on a web page or sent in an email.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code or cause QuickTime to crash."
+      }
+    ],
+    "CVE-2007-4682": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/498105",
+        "title": "Apple Mac OS X CoreText uninitialized pointer vulnerability",
+        "overview": "Apple Mac OS X CoreText contains an uninitialized pointer vulnerability, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Apple Mac OS X CoreText is a framework for handling text on Mac OS X Tiger (10.4) and later. Mac OS X CoreText fails to properly initialize pointers, which can cause memory corruption. Any application that uses the CoreText framework for handling text may be vulnerable.",
+        "impact": "By convincing a user to view specially crafted text, a remote, unauthenticated attacker may be able to execute arbitrary code or cause a denial of service on a vulnerable system."
+      }
+    ],
+    "CVE-2007-4722": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/298345",
+        "title": "Move Networks Quantum Streaming Player ActiveX stack buffer overflows",
+        "overview": "The Move Networks Quantum Streaming Player ActiveX controls contain multiple stack buffer overflows, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Move Networks Quantum Streaming Player is an ActiveX video player for use in the Internet Explorer web browser. The Quantum Streaming Player ActiveX controls contain stack buffer overflow vulnerabilities in the Buzzer() and Play() methods.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code on a vulnerable system with privileges of the user."
+      }
+    ],
+    "CVE-2007-4827": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/981849",
+        "title": "Automated Solutions Modbus TCP Slave ActiveX Control Vulnerability",
+        "overview": "Automated Solutions Modbus TCP Slave ActiveX Control contains a vulnerability that may allow a remote attacker to execute arbitrary code or cause a denial-of-service.",
+        "description": "Automated Solutions Modbus TCP Slave ActiveX Control fails to properly process malformed \"Modbus\" requests to TCP port 502 due to an error in \"MiniHMI.exe\". According to TippingPoint:When processing malformed Modbus requests on this port a controllable heap corruption can occur which may result in execution of arbitrary code.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the user running the MiniHMI.exe or cause a denial-of-service."
+      }
+    ],
+    "CVE-2007-4916": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/611008",
+        "title": "Microsoft MFC FindFile function heap buffer overflow",
+        "overview": "A buffer overflow vulnerability in the Microsoft Foundation Class (MFC) Library could allow an attacker to execute arbitrary code on an affected system.",
+        "description": "The Microsoft Foundation Class (MFC) Library is a Microsoft library that wraps parts of the Windows API in C++ classes. The MFC libraries contain a function called FindFile(). The FindFile() function manages file searches across a filesystem, enabling users to specify the type of file to search. MFC is included in Microsoft Visual Studio and Microsoft Windows. MFC is also used by other many other Windows applications such as Hewlett-Packard All-in-One and in Hewlett-Packard Photo and Imaging Gallery. Note, however, that the use of MFC library is not necessarily limited to these applications; other applications may also be using the vulnerable libraries. Additionally, the list of vendors under the \"Systems Affected\" section of this vulnerability may not be an exhaustive list. The MFC42 and MFC71 libraries contain a heap-based buffer overflow vulnerability in the FindFile() function's argument handling. This vulnerability could allow an attacker to execute arbitrary code or cause a denial of service.",
+        "impact": "An attacker may be able to execute arbitrary code in the context of an application that uses the vulnerable function. The scope of the impact depends on how the affected application works. Applications that process filename input from the network, such as some web applications, would be vulnerable to a remote attacker. Applications that only process filename input from a local user would only be vulnerable to a local attacker.Note that applications may be linking to the MFC library dynamically or statically. It will be necessary to recompile any applications that are statically linked to the MFC library."
+      }
+    ],
+    "CVE-2007-5080": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/759385",
+        "title": "RealNetworks player \"Lyrics3\" buffer overflow",
+        "overview": "Multiple RealNetworks media players contain a buffer overflow which could allow a remote attacker to execute arbitrary code on an affected system.",
+        "description": "The RealNetworks RealPlayer and Helix Player applications allow users to view local and remote audio and video content. These players include support for a number of different media formats, including the MP3 audio-encoding format. A heap-based buffer overflow exists in the way that these players handle the Lyrics3 v2.00 tags in MP3 files. A remote, unauthenticated attacker with the ability to supply a specially crafted MP3 file could exploit this vulnerability to execute arbitrary code on an affected system.",
+        "impact": "A remote, unauthenticated attacker could execute arbitrary code with the privileges of the user running a vulnerable application."
+      }
+    ],
+    "CVE-2007-5289": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/898865"
+      }
+    ],
+    "CVE-2007-5339": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/559977",
+        "title": "Mozilla products vulnerable to memory corruption in the browser engine",
+        "overview": "A number of vulnerabilities in the Mozilla browser engine may allow the execution of arbitrary code or denial of service.",
+        "description": "The Mozilla browser engine contains several vulnerabilities that may result in memory corruption. The impact of this memory corruption in specific cases is unclear. According to Mozilla Foundation Security Advisory MFSA 2007-29:As part of the Firefox 2.0.0.8 update releases Mozilla developers fixed many bugs to improve the stability of the product. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code.Information about the individual flaws causing the vulnerabilities addressed in this update can be found in the references section of this document.Note that the Thunderbird email client also uses the Mozilla browser engine and could be affected by these vulnerabilities if JavaScript is enabled (it is disabled by default).",
+        "impact": "Potential impacts of these vulnerabilities include remote execution of arbitrary code and denial of service."
+      }
+    ],
+    "CVE-2007-5340": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/755513",
+        "title": "Mozilla products vulnerable to memory corruption in the JavaScript engine",
+        "overview": "A number of vulnerabilities in the Mozilla JavaScript engine may allow the execution of arbitrary code or denial of service.",
+        "description": "The Mozilla JavaScript engine contains several vulnerabilities that may result in memory corruption. The impact of this memory corruption in specific cases is unclear. According to Mozilla Foundation Security Advisory MFSA 2007-29:As part of the Firefox 2.0.0.8 update releases Mozilla developers fixed many bugs to improve the stability of the product. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code.Information about the individual flaws causing the vulnerabilities addressed in this update can be found in the references section of this document.Note that the Thunderbird email client also uses the Mozilla JavaScript engine and could be affected by these vulnerabilities if JavaScript is enabled (it is disabled by default).",
+        "impact": "Potential impacts of these vulnerabilities include remote execution of arbitrary code and denial of service."
+      }
+    ],
+    "CVE-2007-5350": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/601073",
+        "title": "Microsoft Windows Vista privilege escalation vulnerability",
+        "overview": "Microsoft Windows Vista contains a local privilege escalation vulnerability.",
+        "description": "The Windows Advanced Local Procedure Call (ALPC) does not properly evaluate certain conditions in legacy reply paths.Per Microsoft Security Bulletin MS07-066:An elevation of privilege vulnerability exists in the way that the Windows kernel processes certain access requests. This vulnerability could allow an attacker to run code and to take complete control of the system. An attacker could then install programs; view, change, or delete data; or create new accounts with full administrative rights. Users whose accounts are configured to have fewer user rights on the system could be less impacted than users who operate with administrative user rights.Note that this vulnerability is present in the 32 and 64-bit versions of Windows Vista.",
+        "impact": "A local attacker may be able to gain elevated privileges."
+      }
+    ],
+    "CVE-2007-5351": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/520465",
+        "title": "Microsoft SMBv2 signing vulnerability",
+        "overview": "A vulnerability in the way Microsoft Server Message Block Version 2 (SMBv2) implements digital signing of packets may allow a remote, unauthenticated attacker to gain local user privileges and execute arbitrary code.",
+        "description": "Microsoft Server Message Block (SMB) Protocol is a network file sharing protocol used by default on Windows based computers. SMBv2 is supported on computers running Windows Server 2008 and Windows Vista. SMBv2 packet signing - used over all SMB communications - is critical for enabling recipients to verify the source and authenticity of the packet. A flaw exists in the way SMBv2 implements packet signing which may allow an attacker to modify a packet in transit, gain local user access to the system and execute arbitrary code.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code with local user privileges on an affected system."
+      }
+    ],
+    "CVE-2007-5352": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/410025",
+        "title": "Microsoft Windows LSASS privilege escalation vulnerability",
+        "overview": "The Windows LSASS service contains privilege escalation vulnerability.",
+        "description": "The Windows Local Security Authority Subsystem Service (LSASS) is a process that enforces the local security policy. Per Microsoft Security Bulletin MS08-002:An elevation of privilege vulnerability exists in the Microsoft Windows Local Security Authority Subsystem Service (LSASS) due to its improper handling of local procedure call (LPC) requests. The vulnerability could allow an attacker to run code with elevated privileges. An attacker who successfully exploited this vulnerability could take complete control of an affected system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.",
+        "impact": "A local, authenticated attacker may be able gain elevated privileges or execute programs in the context of a different user."
+      }
+    ],
+    "CVE-2007-5381": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/230505",
+        "title": "Cisco IOS LPD buffer overflow vulnerability",
+        "overview": "The Cisco IOS Line Printer Daemon contains a buffer overflow vulnerability. If successfully exploited, this vulnerability may allow an attacker to execute arbitrary code or create a denial-of-service condition .",
+        "description": "The Cisco IOS includes support for the UNIX Line Printer Daemon (LPD) protocol. The LPD service listens on 515/tcp and is not enabled by default.The IOS LPD service does not properly check the length of the hostname of the router. This error may result in a buffer overflow. See Cisco Security Response Document ID: 99109 for more information about this vulnerability.From Information Risk Management Advisory 024:When the LPD daemon is configured in Cisco IOS it listens on the default LPD TCP port, 515. If connected to with a source TCP port of anything other than 515 the following error is displayed:$ telnet 172.30.3.101 515Trying 172.30.3.101...Connected to 172.30.3.101 (172.30.3.101).Escape character is '^]'.hostname_of_the_router: /usr/lib/lpd: Malformed from addressIf the hostname is 99 characters or longer then the overflow occurs as the result of a call to the sprintf() function.",
+        "impact": "An attacker may be able to execute arbitrary code or create a denial-of-service condition ."
+      }
+    ],
+    "CVE-2007-5400": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/298651",
+        "title": "RealNetworks RealPlayer Shockwave Flash (SWF) file vulnerability",
+        "overview": "RealNetworks RealPlayer fails to properly handle frames within Shockwave Flash (SWF) files, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The RealNetworks RealPlayer application provides support for the SWF file format. A buffer overflow exists in the way that the RealPlayer handles specially crafted SWF files. A remote, unauthenticated attacker with the ability to supply a specially crafted SWF file could exploit this vulnerability to execute arbitrary code on an affected system.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2007-5502": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/150249",
+        "title": "OpenSSL FIPS Object Module fails to properly generate random seeds",
+        "overview": "The OpenSSL FIPS Module fails to perform auto-seeding, which may allow an attacker to predict pseudo-randomly generated data.",
+        "description": "OpenSSL is a toolkit that provides SSL and TLS protocols as well as a general purpose cryptography library. The OpenSSL FIPS Object Module provides an API for invoking FIPS-approved cryptographic functions. The OpenSSL FIPS Module fails to properly perform auto-seeding during the FIPS self-test. This causes the PRNG key and seed to correspond to the last self-test. The FIPS PRNG gets additional seed data from the date-time information only.",
+        "impact": "An attacker may be able to predict pseudo-randomly generated data from OpenSSL. This can weaken the protection provided by OpenSSL's cryptography."
+      }
+    ],
+    "CVE-2007-5601": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/871673",
+        "title": "RealPlayer playlist name stack buffer overflow",
+        "overview": "RealPlayer contains a stack buffer overflow in the handling of playlist names, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "RealNetworks RealPlayer is a multimedia application that allows users to view local and remote audio/video content. The RealPlayer Database Component, which is provided by MPAMedia.dll, contains a stack buffer overflow in the handling of playlist names. The RealPlayer IERPCtl ActiveX control, which is provided by ierpplug.dll, can be used to import a local file into a specified playlist in RealPlayer. This can be used to trigger the buffer overflow vulnerability. The ActiveX control is present in RealPlayer version 9 (RealOne Player) and later.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), a remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the user on a vulnerable system."
+      }
+    ],
+    "CVE-2007-5602": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/639169",
+        "title": "SwiftView ActiveX control and plug-in stack buffer overflow",
+        "overview": "The SwiftView ActiveX control and plug-in contain a stack buffer overflow, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "SwiftView is software used to view or print PCL, HPGL, and TIFF files. SwiftSend is a product used for secure electronic document communications. Both of these products include the SwiftView ActiveX control and Netscape-style plug-in, which are provided by svocx.ocx and npsview.dll, respectively. The SwiftView ActiveX control and Netscape-style plug-in contain stack buffer overflows.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), a remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the user on a vulnerable system."
+      }
+    ],
+    "CVE-2007-5603": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/WDON-78K56M",
+        "title": "SonicWall NetExtender NELaunchCtrl ActiveX control stack buffer overflow",
+        "overview": "The SonicWall NetExtender NELaunchCtrl ActiveX control contains a stack buffer overflow, which could allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "SonicWall NetExtender is an SSL VPN client that is implemented by using an ActiveX control. The NELaunchCtrl ActiveX control, which is provided by NELaunchX.dll, contains a stack buffer overflow in the AddRouteEntry() method.Exploit code for this vulnerability is publicly available.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), a remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the user on a vulnerable system."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/298521",
+        "title": "SonicWall NetExtender NELaunchCtrl ActiveX control stack buffer overflow",
+        "overview": "The SonicWall NetExtender NELaunchCtrl ActiveX control contains a stack buffer overflow, which could allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "SonicWall NetExtender is an SSL VPN client that is implemented by using an ActiveX control. The NELaunchCtrl ActiveX control, which is provided by NELaunchX.dll, contains a stack buffer overflow in the AddRouteEntry() method.Exploit code for this vulnerability is publicly available.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), a remote, unauthenticated attacker may be able to execute arbitrary code with the privileges of the user on a vulnerable system."
+      }
+    ],
+    "CVE-2007-5604": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/754403",
+        "title": "HP Online Support Services ActiveX ExtractCab() buffer overflow",
+        "overview": "HP Online Support Services contains the function ExtractCab(), which can be exploited to cause a buffer overflow. This may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system in the context of the local user.",
+        "description": "HP Services provides online product support services including HP Instant Support. The HPISDataManager.dll ActiveX control contains the insecure function ExtractCab(), which can be exploited by a malicious attacker to cause a buffer overflow on a vulnerable system. Note that the HP Support Services ActiveX control is locked to certain domains, such as hp.com. This means that an attacker would have to subvert the host name lookup methodology on a victim's system or exploit a cross-site scripting vulnerability in one of the allowed domains to exploit this vulnerability.",
+        "impact": "By convincing a user to visit a malicious web page, a remote unathenticated attacker could exploit this vulnerability to execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2007-5607": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/526131",
+        "title": "HP Online Support Services ActiveX RegistryString() buffer overflow",
+        "overview": "HP Online Support Services contains the function RegistryString(), which can be exploited to cause a buffer overflow. This may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "HP Services provides online product support services including HP Instant Support. The HPISDataManager.dll ActiveX control contains the insecure function RegistryString(), which can be exploited by a malicious attacker to cause a buffer overflow on a vulnerable system. Note that the HP Support Services ActiveX control is locked to certain domains, such as hp.com. This means that an attacker would have to subvert the host name lookup methodology on a victim's system or exploit a cross-site scripting vulnerability in one of the allowed domains to exploit this vulnerability.",
+        "impact": "By convincing a user to visit a malicious web page, a remote unathenticated attacker could exploit this vulnerability to execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2007-5612": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/MIMG-78YMXE",
+        "title": "IBM Director fails to properly time-out connection requests from clients",
+        "overview": "IBM Director Systems, specifically CIM Server, contains a denial-of-service vulnerability that can allow a remote, unauthenticated attacker to render Director inoperative.",
+        "description": "IBM Director is a suite of system management tools.When a rogue connection request is made to IBM Director Systems, specifically the CIM Server, a thread is created that listens on a port, waiting for a specific response from the client. If the client does not send the expected response, the thread remains in memory listening, indicating a high CPU utilization until the client connects to it. If multiple rogue clients connect simultaneously, the finite number of connections can be exhausted causing server to crash.Versions 5.20.1 and earlier for Windows and Linux are affected.",
+        "impact": "IBM Director Systems will become inaccessible for management."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/512193",
+        "title": "IBM Director fails to properly time-out connection requests from clients",
+        "overview": "IBM Director Systems, specifically CIM Server, contains a denial-of-service vulnerability that can allow a remote, unauthenticated attacker to render Director inoperative.",
+        "description": "IBM Director is a suite of system management tools.When a rogue connection request is made to IBM Director Systems, specifically the CIM Server, a thread is created that listens on a port, waiting for a specific response from the client. If the client does not send the expected response, the thread remains in memory listening, indicating a high CPU utilization until the client connects to it. If multiple rogue clients connect simultaneously, the finite number of connections can be exhausted causing server to crash.Versions 5.20.1 and earlier for Windows and Linux are affected.",
+        "impact": "IBM Director Systems will become inaccessible for management."
+      }
+    ],
+    "CVE-2007-5613": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/237888",
+        "title": "Mortbay Jetty Dump Servlet vulnerable to cross-site scripting",
+        "overview": "The Mortbay Jetty Dump Servlet contains a cross-site scripting vulnerability.",
+        "description": "Mortbay Jetty is a web server that is written in Java. The Dump Servlet that is included with Jetty is vulnerable to cross-site scripting. Note that according to the vendor, the Dump Servlet is for testing purposes and is not intended to be included in a live web site.",
+        "impact": "A remote, unauthenticated attacker may be able to perform a cross-site scripting attack against a Jetty web server. More information about cross-site scripting can be found in CERT Advisory CA-2000-02."
+      }
+    ],
+    "CVE-2007-5615": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/212984",
+        "title": "Mortbay Jetty vulnerable to HTTP response splitting",
+        "overview": "Mortbay Jetty is vulnerable to HTTP response splitting, which may allow a remote, unauthenticated attacker to inject various HTTP headers",
+        "description": "Mortbay Jetty is a web server that is written in Java. Jetty fails to properly handle HTTP headers with CRLF sequences, which can allow an attacker to inject certain HTTP headers into server responses.",
+        "impact": "A remote, unauthenticated attacker may be able to perform a cross-site scripting attack, set cookies, or poison a proxy cache."
+      }
+    ],
+    "CVE-2007-5659": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/666281",
+        "title": "Adobe Reader and Acrobat JavaScript methods buffer overflow vulnerabilities",
+        "overview": "Adobe Reader and Acrobat contains multiple buffer overflow vulnerabilities. Successful exploitation of this vulnerability may allow an attacker to execute code.",
+        "description": "Adobe Acrobat Reader is software designed to view Portable Document Format (PDF) files. Adobe also distributes the Adobe Acrobat Plug-In to allow users to view PDF files inside of a web browser. Per iDefense Advisory 02.08.08:Remote exploitation of multiple stack-based buffer overflows in JavaScript methods in Adobe Reader and Acrobat could allow an attacker to execute arbitrary code as the current user.These issues exist due to insufficient input validation in several JavaScript methods. Inadequate checking is performed on the string length before it is copied into a fixed sized buffer on the stack. If an attacker supplies a long string, control structures on the stack may be modified, allowing the execution of arbitrary code.",
+        "impact": "By convincing a user to open a specially-crafted PDF file, a remote, unauthenticated attacker may be able to execute arbitrary code. This can happen in several ways, such as opening an email attachment or viewing a web page."
+      }
+    ],
+    "CVE-2007-5663": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/140129",
+        "title": "Adobe Reader EScript.api arbitrary code execution",
+        "overview": "The Adobe Acrobat Reader contains a vulnerability that may allow an attacker to execute arbitrary code.",
+        "description": "Adobe Acrobat Reader is software designed to view Portable Document Format (PDF) files. Adobe also distributes the Adobe Acrobat Plug-In to allow users to view PDF files inside of a web browser.Per iDefense Advisory 02.08.08:Remote exploitation of an insecure method exposed by the JavaScript library in Adobe Reader and Acrobat could allow an attacker to execute arbitrary code as the current user.Adobe Reader and Acrobat implement a version of JavaScript in the EScript.api plug-in which is based on the reference implementation used in Mozilla products. One of the methods exposed allows direct control over low level features of the object, which in turn allows execution of arbitrary code.",
+        "impact": "By convincing a user to open a malicious PDF file, a remote, unauthenticated attacker may be able to execute arbitrary code. This can happen in several ways, such as opening an email attachment or viewing a web page."
+      }
+    ],
+    "CVE-2007-5703": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/342793",
+        "title": "RSA Keon cross-site scripting vulnerabilities",
+        "overview": "The RSA KEON Registration Authority web interface contains multiple cross-site scripting (XSS) vulnerabilities.",
+        "description": "The RSA Keon Certificate Authority (CA) software is a digital certificate management system. The RSA KEON Registration Authority allows the CA to handle large numbers of certificate requests.The RSA KEON Registration Authority web interface contains multiple cross-site scripting vulnerabilities.",
+        "impact": "An attacker may be able to obtain sensitive data from the site running the RSA KEON Registration Authority software or use the vulnerability create spoofed content."
+      }
+    ],
+    "CVE-2007-5859": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/905292",
+        "title": "Apple Safari code execution vulnerability",
+        "overview": "The Apple Safari web browser contains a vulnerability that may allow an attacker to execute arbitrary code.",
+        "description": "Per Apple Security Update 2007-009:A memory corruption issue exists in Safari's handling of feed: URLs. By enticing a user to access a maliciously crafted URL, an attacker may cause an unexpected application termination or arbitrary code execution. This update addresses the issue by performing additional validation of feed: URLs and providing an error message in case of an invalid URL. This issue does not affect systems running Mac OS X 10.5 or later.",
+        "impact": "A remote unauthenticated attacker who can persuade a user to click on a malicious hyperlink may be able to execute arbitrary code. Note that per Apple Security Update 2007-009 this vulnerability only affects versions of Safari shipped with Mac OS X 10.4 and earlier."
+      }
+    ],
+    "CVE-2007-5947": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/715737",
+        "title": "Mozilla-based browsers jar: URI cross-site scripting vulnerability",
+        "overview": "Mozilla-based web browsers including Firefox contain a vulnerability that may allow an attacker to execute code, or conduct cross-site scripting attacks.",
+        "description": "The jar: protocol is designed to extract content from ZIP compressed files. Mozilla-based browsers include support for jar: URIs that are of the form jar:[url]![/path/to/file.ext]. The compressed file does not need to have a .zip extension.From the GNUCITIZEN blog:jar: content run within the scope/origin of the secondary URL. Therefore, a URL like this: jar:https:// example.com/test.jar!/t.htm, will render a page which executes within the origin of https://example.com.Since the script in the webpage at the second URL runs in the context of the first URL's page, a cross-site scripting vulnerability occurs.To successfully exploit this vulnerability, an attacker could place or link to a specially crafted archive file on a site and convince the user to open the file with a Mozilla based browser. An attacker could use sites that allow user-submitted content distribute malicious archived files.",
+        "impact": "This vulnerability may allow an attacker to execute cross-site scripting attacks on sites that allow users to upload pictures, archives, or other files."
+      }
+    ],
+    "CVE-2007-6015": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/438395",
+        "title": "Samba \"send_mailslot()\" function buffer overflow",
+        "overview": "The Samba \"send_mailslot()\" function contains a stack-based buffer overflow vulnerability which could be exploited by a remote, unauthenticated attacker to execute arbitrary code.",
+        "description": "Samba is a widely used open-source implementation of Server Message Block (SMB)/Common Internet File System (CIFS). A stack-based buffer overflow exists in the send_mailslot() function due to the function's improper processing of SAMLOGON packets. By sending a SAMLOGON domain logon packet containing a username string placed at an odd offset followed by an overly long GETDC string, an attacker could then overflow the stack to exploit the vulnerability.",
+        "impact": "By sending a specially crafted SAMLOGON domain logon packet, a remote, unauthenticated attacker can exploit the vulnerability to execute arbitrary code."
+      }
+    ],
+    "CVE-2007-6026": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/936529",
+        "title": "Microsoft Jet Engine stack buffer overflow",
+        "overview": "The Microsoft Jet Engine contains a stack buffer overflow, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "Microsoft Jet, or Joint Engine Technology, is a database engine that is used by several Microsoft products, including Access and Visual Basic. A Microsoft Access database uses the .MDB file extension by default. The Microsoft Jet Engine contains a stack buffer overflow in the handling of specially crafted database files.Microsoft Word can link to Jet databases. In some cases, the database can be opened without prompting the user. This can allow Microsoft Word documents to be used as an attack vector for this vulnerability. Microsoft Outlook can also be used as an attack vector by either opening a specially crafted email message or by viewing such a message in the preview pane.",
+        "impact": "By convincing a user to open a specially crafted Word document or Jet database, such as a Microsoft Access .MDB file, a remote, unauthenticated attacker may be able to execute arbitrary code on a vulnerable system."
+      }
+    ],
+    "CVE-2007-6033": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/138633",
+        "title": "Invensys Wonderware InTouch creates insecure NetDDE share",
+        "overview": "Invensys Wonderware InTouch 8.0 creates a NetDDE share that could allow an attacker to run arbitrary programs.",
+        "description": "Invensys Wonderware InTouch HMI Software is used in Supervisory Control And Data Acquisition (SCADA) systems.Dynamic Data Exchange (DDE) was designed to allow Microsoft Windows applications to share data. NetDDE is an extension to DDE that was developed by Wonderware. NetDDE allows communications with local DDE applications and with remote NetDDE agents using NetBIOS. NetDDE is not supported in Windows Vista, but is included in Windows NT, 2000, XP, and Server 2003.InTouch 8.0 creates a universal NetDDE share. The permissions applied to the share may allow a remote attacker to execute arbitrary programs. Windows access permissions apply to NetDDE connections, however if an attacker can obtain valid credentials, or possibly if anonymous connections are enabled, the attacker could connect to the NetDDE share and execute programs.Other vendors may also create insecure NetDDE shares.",
+        "impact": "A remote attacker may be able to execute any application that accepts NetDDE connections. This could allow an attacker to gain control of the system running NetDDE"
+      }
+    ],
+    "CVE-2007-6054": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/680449"
+      }
+    ],
+    "CVE-2007-6078": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/315107",
+        "title": "SkyPortal contains multiple SQL injection vulnerabilities",
+        "overview": "SkyPortal RC6 contains multiple SQL injection vulnerabilities which could allow a remote, unauthenticated attacker to gain access to the back-end database and to add, modify or remove data.",
+        "description": "SkyPortal is a modular web portal and online community system that includes web-based administration, user selectable skins, user control panel and additional modules such as Public Events Calendar, Classifieds Manager, WebLinks Manager, Download Manager, Article Manager, and Picture Manager. There are multiple vulnerabilities in a number of pages and functions. These include nc_top.asp, inc_bookmarks.asp, inc_profile_functions.asp, inc_SUBSCRIPTIONS.asp, Avatar_URL, LINK1, and LINK2. Processing of maliciously crafted SQL commands to any of these functions could trigger the vulnerabilities. Any web site developed with vulnerable versions of SkyPortal will (or is likely to) contain SQL injection vulnerabilities.",
+        "impact": "By sending specially crafted SQL statements to any of the stated functions, a remote, unauthenticated attacker could gain access to the system to add, modify or remove data. Attackers are using automated tools to inject malicious content into vulnerable sites."
+      }
+    ],
+    "CVE-2007-6165": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/433819",
+        "title": "Apple Mail remote command execution vulnerability",
+        "overview": "Apple Mail contains a vulnerability that may allow an attacker to execute arbitrary commands on OS X Leopdard (10.5) systems.",
+        "description": "Apple OS X uses resource forks to store structured data in files. Data forks are used to store unstructured data.The AppleDouble standard is specified in RFC 1740:AppleDouble is the preferred format for a Macintosh file that is to be included in an Internet mail message, because it provides recipients with Macintosh computers the entire document, including icons and other Macintosh specific information, while other users easily can extract the Data fork (the actual data) as it is separated from the AppleDouble encoding.Apple Mail parses resource forks in mail attachments that use the MIME format AppleDouble.From the Heise Security report:Files on a Mac can contain additional information, such as the one that another program should be used to open them. The operating system stores these in the file system in a so-called \"resource fork\", which is linked to the file. This type of information is usually limited to the local system; however, for emails the MIME format AppleDouble allows resource forks to be attached -- these are automatically analyzed by Apple Mail.This allows an attacker to create an email with an attachment called picture.jpg that is displayed with a JPEG icon. But when the user tries to open the picture, Apple Mail analyses the resource fork and executes a shell script, for example, without further warning. In this case, even the MIME type displays the attachment as image/jpeg, but careful Mac users may become suspicious when they see that the picture is not immediately displayed as usual.Note that to successfully exploit this vulnerability an attacker would need to convince a user to open a specially crafted email attachment with Apple Mail. Note that this vulnerability was originally addressed in APPLE-SA-2006-03-01, but was not addressed or reintroduced in Mac OS X Leopard. See US-CERT Technical Cyber Security Alert TA06-062A for more information about APPLE-SA-2006-03-01.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary commands with the permissions of the user running Apple Mail."
+      }
+    ],
+    "CVE-2007-6166": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/659761",
+        "title": "Apple QuickTime RTSP Content-Type header stack buffer overflow",
+        "overview": "Apple QuickTime contains a stack buffer overflow vulnerability that may allow a remote, unauthenticated attacker to execute arbitrary code or cause a denial-of-service condition.",
+        "description": "Real Time Streaming Protocol (RTSP) is a protocol that is used by streaming media systems. The Apple QuickTime Streaming Server and QuickTime player both support RTSP.Apple QuickTime contains a stack buffer overflow vulnerability in the way QuickTime handles the RTSP Content-Type header. This vulnerability may be exploited by convincing a user to connect to a specially crafted RTSP stream. Note that QuickTime is a component of Apple iTunes, therefore iTunes installations are also affected by this vulnerability. We are aware of publicly available exploit code for this vulnerability.Testing indicates that QuickTime versions 4.0 through 7.3 are vulnerable on all supported Mac and Windows platforms.",
+        "impact": "By convincing a user to connect to a specially crafted RTSP stream, a remote, unauthenticated attacker may be able to execute arbitrary code on a vulnerable system. An attacker can use various types of web page content, including a QuickTime Media Link file, to cause a user to load an RTSP stream."
+      }
+    ],
+    "CVE-2007-6239": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/232881",
+        "title": "Squid remote denial-of-service vulnerability",
+        "overview": "The Squid Proxy server contains a vulnerability that may allow an attacker to create a denial-of-service condition that affects the Squid server and systems that rely on it.",
+        "description": "Squid Proxy Cache is a caching proxy that supports the HTTP, HTTPS, and FTP protocols. Squid can also be deployed as a reverse proxy.From Squid Proxy Cache Security Update Advisory SQUID-2007:2Due to incorrect bounds checking Squid is vulnerable to a denial of service check during some cache update reply processing.This incorrect bounds checking occurs within the httpHeaderUpdate() function when processing cache update replies.",
+        "impact": "An attacker who can access the Squid proxy may be able to cause the proxy server to crash. If the Squid proxy is deployed as a reverse proxy, the web servers relying on the proxy may also be affected."
+      }
+    ],
+    "CVE-2007-6243": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/935737",
+        "title": "Adobe Flash Player may load arbitrary, malformed cross-domain policy files",
+        "overview": "Adobe Flash Player may load arbitrary, malformed cross-domain policy files. This could allow an attacker to control cross-domain data loading, potentially allowing the attacker to gain access to sensitive information or to manipulate content in other domains.",
+        "description": "Adobe Flash Player is a widely deployed application for multimedia viewing on the internet. A vulnerability exists in the way that Flash Player handles cross-domain policy files. An attacker could use a specially crafted cross-domain policy file to circumvent a site's Flash content data loading security polices.From Security changes in Flash Player 9:There is a possibility that a file on a server that does not appear to be a policy file may in fact be used as a policy file. For example, if a server permits uploads by users, but does not intend to open data for cross-domain access, it is possible that a user could deliberately construct a policy file but disguise it as a different type of file, such as an ordinary text, XML, or HTML file, or even as a binary type, such as a PNG or JPEG image file. A user who successfully uploaded this disguised policy file could then write a SWF file that takes advantage of the disguised policy file to load data from outside the server's domain.",
+        "impact": "A remote, unauthenticated attacker may be able to conduct cross-domain and cross-site scripting attacks on sites hosting Flash content. This could allow the attacker to read data or modify Flash content, possibly gaining access to sensitive information or spoofing web site content."
+      }
+    ],
+    "CVE-2007-6244": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/758769",
+        "title": "Adobe Flash Player asfunction protocol may enable cross-site scripting",
+        "overview": "The Adobe Flash player asfunction protocol could allow an attacker to conduct cross-site scripting attacks on websites that host vulnerable Flash files.",
+        "description": "The Adobe Flash Player is a player for the Flash media format and enables frame-based animations and multimedia to be viewed within a web browser. ActionScript is a scripting language that is used to develop software and multimedia files that are processed by the Adobe Flash Player. The asfunction protocol enables HTTP hyperlinks in Flash files to launch a ActionScript functions.Per Adobe Security Bulletin APSB07-20:This update restricts the unsupported asfunction: protocol to address potential cross-site scripting issues with some SWF files. This issue is specific to Flash Player 8 and Flash Player 9 and does not affect Flash Player 7.Note that vulnerable versions of the Flash Player may be distributed with various operating systems.",
+        "impact": "A remote, unauthenticated attacker may be able to launch cross-site scripting attacks against sites that host vulnerable Flash files."
+      }
+    ],
+    "CVE-2007-6250": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/568681",
+        "title": "AOL Radio AOLMediaPlaybackControl.exe stack buffer overflow",
+        "overview": "The AOL AOLMediaPlaybackControl application contains a stack buffer overflow, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "AOL Radio includes several ActiveX controls to stream audio in web pages. The AOL AmpX and CoAxTrack ActiveX controls, which are provided by AmpX.dll and axtrack.dll respectively, use a program called AOLMediaPlaybackControl.exe. The AOLMediaPlaybackControl application contains a stack buffer overflow that is exploitable via the AppendFileToPlayList() method in the AmpX and CoAxTrack ActiveX controls.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2007-6252": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/524857",
+        "title": "Learn2 STRunner ActiveX control stack buffer overflows",
+        "overview": "The Learn2 STRunner ActiveX control contains multiple stack buffer overflows, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The Learn2 Corporation STRunner ActiveX control, which is provided by iestm32.dll, can view multimedia streams that are commonly used in online tutorials. This ActiveX control, which is also known as the Street Technologies ActiveX Control, contains multiple stack buffer overflow vulnerabilities.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2007-6253": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/362849",
+        "title": "Adobe Form Designer and Advanced Form Client ActiveX controls contain multiple buffer overflows",
+        "overview": "Adobe Form Designer and Advanced Form Client contain multiple ActiveX buffer overflows, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The Adobe Form Designer and Advanced Form Client software provide multiple ActiveX controls. The Adobe File Dialog Button Control, which is provided by FileDlg.dll, and the Adobe Copy to Server Object, which is provided by SvrCopy.dll, contain buffer overflow vulnerabilities. The 5.0 versions of the Designer and Client software appear to be vulnerable.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2007-6254": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/MIMG-732R7X",
+        "title": "BusinessObjects RptViewerAX ActiveX control stack buffer overflow",
+        "overview": "The BusinessObjects RptViewerAX ActiveX control contains a stack buffer overflow, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "BusinessObjects 6.5 includes an ActiveX control called RptViewerAX, which is provided by RptViewerAX.dll. This ActiveX control is marked as Safe for Scripting and Safe for Initialization, which means that they can be controlled by a web page in Internet Explorer. The RptViewerAX ActiveX control is vulnerable to stack buffer overflow.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user."
+      },
+      {
+        "url": "http://www.kb.cert.org/vuls/id/329673",
+        "title": "BusinessObjects RptViewerAX ActiveX control stack buffer overflow",
+        "overview": "The BusinessObjects RptViewerAX ActiveX control contains a stack buffer overflow, which can allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "BusinessObjects 6.5 includes an ActiveX control called RptViewerAX, which is provided by RptViewerAX.dll. This ActiveX control is marked as Safe for Scripting and Safe for Initialization, which means that they can be controlled by a web page in Internet Explorer. The RptViewerAX ActiveX control is vulnerable to stack buffer overflow.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2007-6255": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/570089",
+        "title": "Microsoft HeartbeatCtl ActiveX control buffer overflow",
+        "overview": "The Microsoft HeartbeatCtl ActiveX control contains a buffer overflow, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "The Microsoft HeartbeatCtl ActiveX control is used to play multiplayer games on the MSN Games website. The HeartbeatCtl ActiveX control contains a buffer overflow in the handling of the \"Host\" parameter.",
+        "impact": "By convincing a user to view a specially crafted HTML document (e.g., a web page or an HTML email message or attachment), an attacker may be able to execute arbitrary code with the privileges of the user."
+      }
+    ],
+    "CVE-2007-6258": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/771937",
+        "title": "Apache mod_jk2 host header buffer overflow",
+        "overview": "A vulnerability exists in the legacy version of the mod_jk2 Apache module. If successfully exploited, the vulnerability may allow an attacker to run arbitrary code on affected system.",
+        "description": "The host header field allows HTTP 1.1 (RFC 2616) compliant servers to host multiple domains using a single IP address. Per the IOActive Security Advisory Multiple Buffer Overflows in legacy mod_jk2 apache module 2.0.3-DEV and earlier:mod_jk2 versions less than 2.0.4 are vulnerable to multiple stack overflow vulnerabilities. Specifically, IOActive has discovered multiplelocations where these vulnerabilities are exploitable via the Host request header in any given request. These overflows all result in remotecode execution under the user of the running apache process. Although a legacy module which is end of life, certain vendors may use thismodule in their products rendering them vulnerable to remote exploitation.",
+        "impact": "A remote, unauthenticated attacker may be able to execute arbitrary code."
+      }
+    ],
+    "CVE-2007-6277": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/544656",
+        "title": "libFLAC contains multiple vulnerabilities",
+        "overview": "libFLAC contains multiple vulnerabilities, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "FLAC (Free Lossless Audio Codec) is a lossless audio format. libFLAC is a library that can process FLAC files. libFLAC contains multiple vulnerabilities, including:Metadata Block Size Heap OverflowVORBIS Comment String Size Field Heap OverflowVORBIS Comment String Size Length Stack OverflowPicture MIME-Type Size Heap OverflowPicture MIME-Type Size Stack OverflowPicture Dimension Size Heap OverflowPicture Description Size Heap OverflowPicture Description Length Stack OverflowPicture Data Length Heap OverflowPicture URL Stack OverflowMalformed Image/File Download VulnerabilityPadding Length Heap OverflowSeektable Out-Of-Scope Double Free ConditionMalformed Seektable Double Free ConditionPlease see eEye advisory AD20071115 for more details.",
+        "impact": "By convincing a user to open a specially crafted FLAC file, a remote, unauthenticated attacker may be able to execute arbitrary code or cause a denial-of-service condition on a vulnerable system."
+      }
+    ],
+    "CVE-2007-6278": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/544656",
+        "title": "libFLAC contains multiple vulnerabilities",
+        "overview": "libFLAC contains multiple vulnerabilities, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "FLAC (Free Lossless Audio Codec) is a lossless audio format. libFLAC is a library that can process FLAC files. libFLAC contains multiple vulnerabilities, including:Metadata Block Size Heap OverflowVORBIS Comment String Size Field Heap OverflowVORBIS Comment String Size Length Stack OverflowPicture MIME-Type Size Heap OverflowPicture MIME-Type Size Stack OverflowPicture Dimension Size Heap OverflowPicture Description Size Heap OverflowPicture Description Length Stack OverflowPicture Data Length Heap OverflowPicture URL Stack OverflowMalformed Image/File Download VulnerabilityPadding Length Heap OverflowSeektable Out-Of-Scope Double Free ConditionMalformed Seektable Double Free ConditionPlease see eEye advisory AD20071115 for more details.",
+        "impact": "By convincing a user to open a specially crafted FLAC file, a remote, unauthenticated attacker may be able to execute arbitrary code or cause a denial-of-service condition on a vulnerable system."
+      }
+    ],
+    "CVE-2007-6279": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/544656",
+        "title": "libFLAC contains multiple vulnerabilities",
+        "overview": "libFLAC contains multiple vulnerabilities, which may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable system.",
+        "description": "FLAC (Free Lossless Audio Codec) is a lossless audio format. libFLAC is a library that can process FLAC files. libFLAC contains multiple vulnerabilities, including:Metadata Block Size Heap OverflowVORBIS Comment String Size Field Heap OverflowVORBIS Comment String Size Length Stack OverflowPicture MIME-Type Size Heap OverflowPicture MIME-Type Size Stack OverflowPicture Dimension Size Heap OverflowPicture Description Size Heap OverflowPicture Description Length Stack OverflowPicture Data Length Heap OverflowPicture URL Stack OverflowMalformed Image/File Download VulnerabilityPadding Length Heap OverflowSeektable Out-Of-Scope Double Free ConditionMalformed Seektable Double Free ConditionPlease see eEye advisory AD20071115 for more details.",
+        "impact": "By convincing a user to open a specially crafted FLAC file, a remote, unauthenticated attacker may be able to execute arbitrary code or cause a denial-of-service condition on a vulnerable system."
+      }
+    ],
+    "CVE-2007-6372": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/929656",
+        "title": "BGP implementations do not properly handle UPDATE messages",
+        "overview": "BGP implementations from multiple vendors including Juniper may not properly handle specially crafted BGP UPDATE messages. These vulnerabilities could allow an unauthenticated, remote attacker to cause a denial of service. Disrupting BGP communication could lead to routing instability.",
+        "description": "The Border Gateway Protocol (BGP, RFC 4271) is a widely used inter-Autonomous System routing protocol. BGP communication among peer routers is critical to the stable operation of the internet. Multiple vendors BGP implementations do not properly handle specially crafted BGP UPDATE messages. A vulnerable BGP implementation could drop sessions when processing crafted UPDATE messages. A persistent attack could lead to routing instability (route flapping). To affect a BGP session, an attacker would need to succesfully inject a specially crafted packet into an existing BGP session or the underlying TCP session (179/tcp). In other words, the attacker would need to have a valid, configured BGP session or be able to spoof TCP traffic.This vulnerability was first announced as affecting Juniper routers. Further investigation indicates that other vendors are affected by the same or similar issues. Please see the Systems Affected section below.",
+        "impact": "A remote attacker could cause a denial of service by injecting a specially crafted BGP UPDATE message into a legitimate BGP session. An attacker with a configured BGP session could attack targets several BGP hops away, or an attacker could spoof TCP traffic."
+      }
+    ],
+    "CVE-2007-6672": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/553235",
+        "title": "Jetty fails to properly process URLs that contain double / characters",
+        "overview": "The Jetty web server contains a vulnerability that may allow an attacker to access private files or directories.",
+        "description": "Jetty is a web server that is implemented in Java. Jetty contains a vulnerability in the way it processes URLs with multiple \"/\" (slash) characters. See the Jetty Double slash problem bug report for more information.",
+        "impact": "A remote unauthenticated attacker may be able view hidden or private files and directories."
+      }
+    ]
+  }
+}

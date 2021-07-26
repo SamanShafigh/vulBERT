@@ -1,0 +1,343 @@
+{
+  "year": 2014,
+  "total": 52,
+  "reference": "debian.org",
+  "reports": {
+    "CVE-2014-0004": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2872",
+        "title": "",
+        "body": "Florian Weimer discovered a buffer overflow in udisks's mount pathparsing code which may result in privilege escalation.For the oldstable distribution (squeeze), this problem has been fixed inversion 1.0.1+git20100614-3squeeze1.For the stable distribution (wheezy), this problem has been fixed inversion 1.0.4-7wheezy1.For the unstable distribution (sid), this problem has been fixed inversion 1.0.5-1.We recommend that you upgrade your udisks packages."
+      }
+    ],
+    "CVE-2014-0015": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2849",
+        "title": "",
+        "body": "Paras Sethia discovered that libcurl, a client-side URL transferlibrary, would sometimes mix up multiple HTTP and HTTPS connectionswith NTLM authentication to the same server, sending requests for oneuser over the connection authenticated as a different user.For the oldstable distribution (squeeze), this problem has been fixed inversion 7.21.0-2.1+squeeze7.For the stable distribution (wheezy), this problem has been fixed inversion 7.26.0-1+wheezy8.For the unstable distribution (sid), this problem has been fixed inversion 7.35.0-1.We recommend that you upgrade your curl packages."
+      }
+    ],
+    "CVE-2014-0017": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2879",
+        "title": "",
+        "body": "It was discovered that libssh, a tiny C SSH library, did not reset thestate of the PRNG after accepting a connection. A server modeapplication that forks itself to handle incoming connections could seeits children sharing the same PRNG state, resulting in a cryptographicweakness and possibly the recovery of the private key.For the oldstable distribution (squeeze), this problem has been fixed inversion 0.4.5-3+squeeze2.For the stable distribution (wheezy), this problem has been fixed inversion 0.5.4-1+deb7u1.For the testing distribution (jessie), this problem has been fixed inversion 0.5.4-3.For the unstable distribution (sid), this problem has been fixed inversion 0.5.4-3.We recommend that you upgrade your libssh packages."
+      }
+    ],
+    "CVE-2014-0020": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2859",
+        "title": "",
+        "body": "Daniel Atallah discovered that Pidgin could be crashed via malformed IRC arguments."
+      }
+    ],
+    "CVE-2014-0033": [
+      {
+        "url": "http://www.debian.org/security/2016/dsa-3530",
+        "title": "",
+        "body": "Multiple security vulnerabilities have been fixed in the Tomcat servletand JSP engine, which may result on bypass of security managerrestrictions, information disclosure, denial of service or sessionfixation.For the oldstable distribution (wheezy), these problems have been fixedin version 6.0.45+dfsg-1~deb7u1.We recommend that you upgrade your tomcat6 packages."
+      }
+    ],
+    "CVE-2014-0044": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2854",
+        "title": "",
+        "body": "It was discovered that a malformed Opus voice packet sent to a Mumble client could trigger a NULL pointer dereference or an out-of-bounds array access. A malicious remote attacker could exploit this flaw to mount a denial of service attack against a mumble client by causing the application to crash."
+      }
+    ],
+    "CVE-2014-0045": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2854",
+        "title": "",
+        "body": "It was discovered that a malformed Opus voice packet sent to a Mumble client could trigger a heap-based buffer overflow. A malicious remote attacker could use this flaw to cause a client crash (denial of service) or potentially use it to execute arbitrary code."
+      }
+    ],
+    "CVE-2014-0050": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2856",
+        "title": "",
+        "body": "It was discovered that the Apache Commons FileUpload package for Javacould enter an infinite loop while processing a multipart request witha crafted Content-Type, resulting in a denial-of-service condition.For the oldstable distribution (squeeze), this problem has been fixed inversion 1.2.2-1+deb6u2.For the stable distribution (wheezy), this problem has been fixed inversion 1.2.2-1+deb7u2.For the unstable distribution (sid), this problem has been fixed inversion 1.3.1-1.We recommend that you upgrade your libcommons-fileupload-java packages."
+      }
+    ],
+    "CVE-2014-0060": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2864",
+        "title": "",
+        "body": "Granting a role without ADMIN OPTION is supposed to prevent the grantee from adding or removing members from the granted role, but this restriction was easily bypassed by doing SET ROLE first. The security impact is mostly that a role member can revoke the access of others, contrary to the wishes of his grantor. Unapproved role member additions are a lesser concern, since an uncooperative role member could provide most of his rights to others anyway by creating views or SECURITY DEFINER functions."
+      },
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2865",
+        "title": "",
+        "body": "Granting a role without ADMIN OPTION is supposed to prevent the grantee from adding or removing members from the granted role, but this restriction was easily bypassed by doing SET ROLE first. The security impact is mostly that a role member can revoke the access of others, contrary to the wishes of his grantor. Unapproved role member additions are a lesser concern, since an uncooperative role member could provide most of his rights to others anyway by creating views or SECURITY DEFINER functions."
+      }
+    ],
+    "CVE-2014-0061": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2865",
+        "title": "",
+        "body": "The primary role of PL validator functions is to be called implicitly during CREATE FUNCTION, but they are also normal SQL functions that a user can call explicitly. Calling a validator on a function actually written in some other language was not checked for and could be exploited for privilege-escalation purposes. The fix involves adding a call to a privilege-checking function in each validator function. Non-core procedural languages will also need to make this change to their own validator functions, if any."
+      },
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2864",
+        "title": "",
+        "body": "The primary role of PL validator functions is to be called implicitly during CREATE FUNCTION, but they are also normal SQL functions that a user can call explicitly. Calling a validator on a function actually written in some other language was not checked for and could be exploited for privilege-escalation purposes. The fix involves adding a call to a privilege-checking function in each validator function. Non-core procedural languages will also need to make this change to their own validator functions, if any."
+      }
+    ],
+    "CVE-2014-0063": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2864",
+        "title": "",
+        "body": "The MAXDATELEN constant was too small for the longest possible value of type interval, allowing a buffer overrun in interval_out(). Although the datetime input functions were more careful about avoiding buffer overrun, the limit was short enough to cause them to reject some valid inputs, such as input containing a very long timezone name. The ecpg library contained these vulnerabilities along with some of its own."
+      },
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2865",
+        "title": "",
+        "body": "The MAXDATELEN constant was too small for the longest possible value of type interval, allowing a buffer overrun in interval_out(). Although the datetime input functions were more careful about avoiding buffer overrun, the limit was short enough to cause them to reject some valid inputs, such as input containing a very long timezone name. The ecpg library contained these vulnerabilities along with some of its own."
+      }
+    ],
+    "CVE-2014-0064": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2864",
+        "title": "",
+        "body": "Several functions, mostly type input functions, calculated an allocation size without checking for overflow. If overflow did occur, a too-small buffer would be allocated and then written past."
+      },
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2865",
+        "title": "",
+        "body": "Several functions, mostly type input functions, calculated an allocation size without checking for overflow. If overflow did occur, a too-small buffer would be allocated and then written past."
+      }
+    ],
+    "CVE-2014-0065": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2864",
+        "title": "",
+        "body": "Use strlcpy() and related functions to provide a clear guarantee that fixed-size buffers are not overrun. Unlike the preceding items, it is unclear whether these cases really represent live issues, since in most cases there appear to be previous constraints on the size of the input string. Nonetheless it seems prudent to silence all Coverity warnings of this type."
+      },
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2865",
+        "title": "",
+        "body": "Use strlcpy() and related functions to provide a clear guarantee that fixed-size buffers are not overrun. Unlike the preceding items, it is unclear whether these cases really represent live issues, since in most cases there appear to be previous constraints on the size of the input string. Nonetheless it seems prudent to silence all Coverity warnings of this type."
+      }
+    ],
+    "CVE-2014-0066": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2865",
+        "title": "",
+        "body": "There are relatively few scenarios in which crypt() could return NULL, but contrib/chkpass would crash if it did. One practical case in which this could be an issue is if libc is configured to refuse to execute unapproved hashing algorithms (e.g., FIPS mode)."
+      },
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2864",
+        "title": "",
+        "body": "There are relatively few scenarios in which crypt() could return NULL, but contrib/chkpass would crash if it did. One practical case in which this could be an issue is if libc is configured to refuse to execute unapproved hashing algorithms (e.g., FIPS mode)."
+      }
+    ],
+    "CVE-2014-0067": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2864",
+        "title": "",
+        "body": "Since the temporary server started by make check uses trust authentication, another user on the same machine could connect to it as database superuser, and then potentially exploit the privileges of the operating-system user who started the tests. A future release will probably incorporate changes in the testing procedure to prevent this risk, but some public discussion is needed first. So for the moment, just warn people against using make check when there are untrusted users on the same machine."
+      },
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2865",
+        "title": "",
+        "body": "Since the temporary server started by make check uses trust authentication, another user on the same machine could connect to it as database superuser, and then potentially exploit the privileges of the operating-system user who started the tests. A future release will probably incorporate changes in the testing procedure to prevent this risk, but some public discussion is needed first. So for the moment, just warn people against using make check when there are untrusted users on the same machine."
+      }
+    ],
+    "CVE-2014-0075": [
+      {
+        "url": "http://www.debian.org/security/2016/dsa-3530",
+        "title": "",
+        "body": "Multiple security vulnerabilities have been fixed in the Tomcat servletand JSP engine, which may result on bypass of security managerrestrictions, information disclosure, denial of service or sessionfixation.For the oldstable distribution (wheezy), these problems have been fixedin version 6.0.45+dfsg-1~deb7u1.We recommend that you upgrade your tomcat6 packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2016/dsa-3447",
+        "title": "",
+        "body": "It was discovered that malicious web applications could use theExpression Language to bypass protections of a Security Manager asexpressions were evaluated within a privileged code section.For the oldstable distribution (wheezy), this problem has been fixedin version 7.0.28-4+deb7u3. This update also provides fixes forCVE-2013-4444, CVE-2014-0075, CVE-2014-0099, CVE-2014-0227 andCVE-2014-0230, which were all fixed for the stable distribution (jessie)already.For the stable distribution (jessie), this problem has been fixed inversion 7.0.56-3+deb8u1.For the testing distribution (stretch), this problem has been fixedin version 7.0.61-1.For the unstable distribution (sid), this problem has been fixed inversion 7.0.61-1.We recommend that you upgrade your tomcat7 packages."
+      }
+    ],
+    "CVE-2014-0092": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2869",
+        "title": "",
+        "body": "Nikos Mavrogiannopoulos of Red Hat discovered an X.509 certificateverification issue in GnuTLS, an SSL/TLS library. A certificatevalidation could be reported sucessfully even in cases were an errorwould prevent all verification steps to be performed.An attacker doing a man-in-the-middle of a TLS connection could use thisvulnerability to present a carefully crafted certificate that would beaccepted by GnuTLS as valid even if not signed by one of the trustedauthorities.For the oldstable distribution (squeeze), this problem has been fixed inversion 2.8.6-1+squeeze3.For the stable distribution (wheezy), this problem has been fixed inversion 2.12.20-8+deb7u1.For the testing distribution (jessie), this problem has been fixed inversion 2.12.23-13.For the unstable distribution (sid), this problem has been fixed inversion 2.12.23-13.We recommend that you upgrade your gnutls26 packages."
+      }
+    ],
+    "CVE-2014-0096": [
+      {
+        "url": "http://www.debian.org/security/2016/dsa-3530",
+        "title": "",
+        "body": "Multiple security vulnerabilities have been fixed in the Tomcat servletand JSP engine, which may result on bypass of security managerrestrictions, information disclosure, denial of service or sessionfixation.For the oldstable distribution (wheezy), these problems have been fixedin version 6.0.45+dfsg-1~deb7u1.We recommend that you upgrade your tomcat6 packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2016/dsa-3552",
+        "title": "",
+        "body": "Multiple security vulnerabilities have been discovered in the Tomcatservlet and JSP engine, which may result in information disclosure,the bypass of CSRF protections and bypass of the SecurityManager.For the oldstable distribution (wheezy), these problems have been fixedin version 7.0.28-4+deb7u4. This update also fixes CVE-2014-0119 andCVE-2014-0096.For the stable distribution (jessie), these problems have been fixed inversion 7.0.56-3+deb8u2.For the testing distribution (stretch), these problems have been fixedin version 7.0.68-1.For the unstable distribution (sid), these problems have been fixed inversion 7.0.68-1.We recommend that you upgrade your tomcat7 packages."
+      }
+    ],
+    "CVE-2014-0099": [
+      {
+        "url": "http://www.debian.org/security/2016/dsa-3530",
+        "title": "",
+        "body": "Multiple security vulnerabilities have been fixed in the Tomcat servletand JSP engine, which may result on bypass of security managerrestrictions, information disclosure, denial of service or sessionfixation.For the oldstable distribution (wheezy), these problems have been fixedin version 6.0.45+dfsg-1~deb7u1.We recommend that you upgrade your tomcat6 packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2016/dsa-3447",
+        "title": "",
+        "body": "It was discovered that malicious web applications could use theExpression Language to bypass protections of a Security Manager asexpressions were evaluated within a privileged code section.For the oldstable distribution (wheezy), this problem has been fixedin version 7.0.28-4+deb7u3. This update also provides fixes forCVE-2013-4444, CVE-2014-0075, CVE-2014-0099, CVE-2014-0227 andCVE-2014-0230, which were all fixed for the stable distribution (jessie)already.For the stable distribution (jessie), this problem has been fixed inversion 7.0.56-3+deb8u1.For the testing distribution (stretch), this problem has been fixedin version 7.0.61-1.For the unstable distribution (sid), this problem has been fixed inversion 7.0.61-1.We recommend that you upgrade your tomcat7 packages."
+      }
+    ],
+    "CVE-2014-0107": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2886",
+        "title": "",
+        "body": "Nicolas Gregoire discovered several vulnerabilities in libxalan2-java,a Java library for XSLT processing. Crafted XSLT programs couldaccess system properties or load arbitrary classes, resulting ininformation disclosure and, potentially, arbitrary code execution.For the oldstable distribution (squeeze), this problem has been fixed inversion 2.7.1-5+deb6u1.For the stable distribution (wheezy), this problem has been fixed inversion 2.7.1-7+deb7u1.For the unstable distribution (sid), this problem has been fixed inversion 2.7.1-9.We recommend that you upgrade your libxalan2-java packages."
+      }
+    ],
+    "CVE-2014-0114": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2940",
+        "title": "",
+        "body": "It was discovered that missing access checks in the Struts ActionFormobject could result in the execution of arbitrary code.For the stable distribution (wheezy), this problem has been fixed inversion 1.2.9-5+deb7u1.For the unstable distribution (sid), this problem has been fixed inversion 1.2.9-9.We recommend that you upgrade your libstruts1.2-java packages."
+      }
+    ],
+    "CVE-2014-0118": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2989",
+        "title": "",
+        "body": "The DEFLATE input filter (inflates request bodies) in mod_deflate allows remote attackers to cause a denial of service (resource consumption) via crafted request data that decompresses to a much larger size."
+      }
+    ],
+    "CVE-2014-0119": [
+      {
+        "url": "http://www.debian.org/security/2016/dsa-3530",
+        "title": "",
+        "body": "Multiple security vulnerabilities have been fixed in the Tomcat servletand JSP engine, which may result on bypass of security managerrestrictions, information disclosure, denial of service or sessionfixation.For the oldstable distribution (wheezy), these problems have been fixedin version 6.0.45+dfsg-1~deb7u1.We recommend that you upgrade your tomcat6 packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2016/dsa-3552",
+        "title": "",
+        "body": "Multiple security vulnerabilities have been discovered in the Tomcatservlet and JSP engine, which may result in information disclosure,the bypass of CSRF protections and bypass of the SecurityManager.For the oldstable distribution (wheezy), these problems have been fixedin version 7.0.28-4+deb7u4. This update also fixes CVE-2014-0119 andCVE-2014-0096.For the stable distribution (jessie), these problems have been fixed inversion 7.0.56-3+deb8u2.For the testing distribution (stretch), these problems have been fixedin version 7.0.68-1.For the unstable distribution (sid), these problems have been fixed inversion 7.0.68-1.We recommend that you upgrade your tomcat7 packages."
+      }
+    ],
+    "CVE-2014-0138": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2902",
+        "title": "",
+        "body": "Steve Holme discovered that libcurl can in some circumstances re-use the wrong connection when asked to do transfers using other protocols than HTTP and FTP."
+      }
+    ],
+    "CVE-2014-0139": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2902",
+        "title": "",
+        "body": "Richard Moore from Westpoint Ltd. reported that libcurl does not behave compliant to RFC 2828 under certain conditions and incorrectly validates wildcard SSL certificates containing literal IP addresses."
+      }
+    ],
+    "CVE-2014-0150": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2910",
+        "title": "",
+        "body": "Michael S. Tsirkin of Red Hat discovered a buffer overflow flaw in theway qemu processed MAC addresses table update requests from the guest.A privileged guest user could use this flaw to corrupt qemu processmemory on the host, which could potentially result in arbitrary codeexecution on the host with the privileges of the qemu process.For the oldstable distribution (squeeze), this problem has been fixed inversion 0.12.5+dfsg-5+squeeze11.For the stable distribution (wheezy), this problem has been fixed inversion 1.1.2+dfsg-6+deb7u1.We recommend that you upgrade your qemu-kvm packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2909",
+        "title": "",
+        "body": "Michael S. Tsirkin of Red Hat discovered a buffer overflow flaw in theway qemu processed MAC addresses table update requests from the guest.A privileged guest user could use this flaw to corrupt qemu processmemory on the host, which could potentially result in arbitrary codeexecution on the host with the privileges of the qemu process.For the oldstable distribution (squeeze), this problem has been fixed inversion 0.12.5+dfsg-3squeeze4.For the stable distribution (wheezy), this problem has been fixed inversion 1.1.2+dfsg-6a+deb7u1.For the testing distribution (jessie), this problem has been fixed inversion 1.7.0+dfsg-8.For the unstable distribution (sid), this problem has been fixed inversion 1.7.0+dfsg-8.We recommend that you upgrade your qemu packages."
+      }
+    ],
+    "CVE-2014-0159": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2899",
+        "title": "",
+        "body": "Michael Meffie discovered that in OpenAFS, a distributed filesystem,an attacker with the ability to connect to an OpenAFS fileserver cantrigger a buffer overflow, crashing the fileserver, and potentiallypermitting the execution of arbitrary code.In addition, this update addresses a minor denial of service issue:the listener thread of the server will hang for about one second whenreceiving an invalid packet, giving the opportunity to slow downthe server to an unusable state by sending such packets.For the oldstable distribution (squeeze), this problem has been fixedin version 1.4.12.1+dfsg-4+squeeze3.For the stable distribution (wheezy), this problem has been fixed inversion 1.6.1-3+deb7u2.For the unstable distribution (sid), this problem has been fixed inversion 1.6.7-1.We recommend that you upgrade your openafs packages."
+      }
+    ],
+    "CVE-2014-0160": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2896",
+        "title": "",
+        "body": "A vulnerability has been discovered in OpenSSL's support for theTLS/DTLS Heartbeat extension. Up to 64KB of memory from either client orserver can be recovered by an attacker. This vulnerability might allow anattacker to compromise the private key and other sensitive data inmemory.All users are urged to upgrade their openssl packages (especiallylibssl1.0.0) and restart applications as soon as possible.According to the currently available information, private keys should beconsidered as compromised and regenerated as soon as possible. Moredetails will be communicated at a later time.The oldstable distribution (squeeze) is not affected by thisvulnerability.For the stable distribution (wheezy), this problem has been fixed inversion 1.0.1e-2+deb7u5.For the testing distribution (jessie), this problem has been fixed inversion 1.0.1g-1.For the unstable distribution (sid), this problem has been fixed inversion 1.0.1g-1.We recommend that you upgrade your openssl packages."
+      }
+    ],
+    "CVE-2014-0165": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2901",
+        "title": "",
+        "body": "A user with a contributor role, using a specially crafted request, can publish posts, which is reserved for users of the next-higher role."
+      }
+    ],
+    "CVE-2014-0166": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2901",
+        "title": "",
+        "body": "Jon Cave of the WordPress security team discovered that the wp_validate_auth_cookie function in wp-includes/pluggable.php does not properly determine the validity of authentication cookies, allowing a remote attacker to obtain access via a forged cookie."
+      }
+    ],
+    "CVE-2014-0179": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-3038",
+        "title": "",
+        "body": "Richard Jones and Daniel P. Berrange found that libvirt passes the XML_PARSE_NOENT flag when parsing XML documents using the libxml2 library, in which case all XML entities in the parsed documents are expanded. A user able to force libvirtd to parse an XML document with an entity pointing to a special file that blocks on read access could use this flaw to cause libvirtd to hang indefinitely, resulting in a denial of service on the system."
+      }
+    ],
+    "CVE-2014-0207": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-3021",
+        "title": "",
+        "body": "Multiple security issues have been found in file, a tool to determinea file type. These vulnerabilities allow remote attackers to cause adenial of service, via resource consumption or application crash.For the stable distribution (wheezy), these problems have been fixed inversion 5.11-2+deb7u4.For the testing distribution (jessie), these problems have been fixed inversion file 1:5.19-2.For the unstable distribution (sid), these problems have been fixed inversion file 1:5.19-2.We recommend that you upgrade your file packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2974",
+        "title": "",
+        "body": "Francisco Alonso of the Red Hat Security Response Team reported an incorrect boundary check in the cdf_read_short_sector() function."
+      }
+    ],
+    "CVE-2014-0209": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2927",
+        "title": "",
+        "body": "Integer overflow of allocations in font metadata file parsing could allow a local user who is already authenticated to the X server to overwrite other memory in the heap."
+      }
+    ],
+    "CVE-2014-0210": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2927",
+        "title": "",
+        "body": "libxfont does not validate length fields when parsing xfs protocol replies allowing to write past the bounds of allocated memory when storing the returned data from the font server."
+      }
+    ],
+    "CVE-2014-0211": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2927",
+        "title": "",
+        "body": "Integer overflows calculating memory needs for xfs replies could result in allocating too little memory and then writing the returned data from the font server past the end of the allocated buffer."
+      }
+    ],
+    "CVE-2014-0230": [
+      {
+        "url": "http://www.debian.org/security/2016/dsa-3530",
+        "title": "",
+        "body": "Multiple security vulnerabilities have been fixed in the Tomcat servletand JSP engine, which may result on bypass of security managerrestrictions, information disclosure, denial of service or sessionfixation.For the oldstable distribution (wheezy), these problems have been fixedin version 6.0.45+dfsg-1~deb7u1.We recommend that you upgrade your tomcat6 packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2016/dsa-3447",
+        "title": "",
+        "body": "It was discovered that malicious web applications could use theExpression Language to bypass protections of a Security Manager asexpressions were evaluated within a privileged code section.For the oldstable distribution (wheezy), this problem has been fixedin version 7.0.28-4+deb7u3. This update also provides fixes forCVE-2013-4444, CVE-2014-0075, CVE-2014-0099, CVE-2014-0227 andCVE-2014-0230, which were all fixed for the stable distribution (jessie)already.For the stable distribution (jessie), this problem has been fixed inversion 7.0.56-3+deb8u1.For the testing distribution (stretch), this problem has been fixedin version 7.0.61-1.For the unstable distribution (sid), this problem has been fixed inversion 7.0.61-1.We recommend that you upgrade your tomcat7 packages."
+      }
+    ],
+    "CVE-2014-0231": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2989",
+        "title": "",
+        "body": "A flaw was found in mod_cgid. If a server using mod_cgid hosted CGI scripts which did not consume standard input, a remote attacker could cause child processes to hang indefinitely, leading to denial of service."
+      }
+    ],
+    "CVE-2014-0237": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-3021",
+        "title": "",
+        "body": "Multiple security issues have been found in file, a tool to determinea file type. These vulnerabilities allow remote attackers to cause adenial of service, via resource consumption or application crash.For the stable distribution (wheezy), these problems have been fixed inversion 5.11-2+deb7u4.For the testing distribution (jessie), these problems have been fixed inversion file 1:5.19-2.For the unstable distribution (sid), these problems have been fixed inversion file 1:5.19-2.We recommend that you upgrade your file packages."
+      }
+    ]
+  }
+}

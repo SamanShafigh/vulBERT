@@ -1,0 +1,106 @@
+{
+  "year": 2004,
+  "total": 15,
+  "reference": "debian.org",
+  "reports": {
+    "CVE-2004-0041": [
+      {
+        "url": "http://www.debian.org/security/2004/dsa-421",
+        "title": "",
+        "body": "David B Harris discovered a problem with mod-auth-shadow, an Apachemodule which authenticates users against the system shadow passworddatabase, where the expiration status of the user's account andpassword were not enforced. This vulnerability would allow anotherwise authorized user to successfully authenticate, when theattempt should be rejected due to the expiration parameters.For the current stable distribution (woody) this problem has beenfixed in version 1.3-3.1woody.1For the unstable distribution (sid) this problem has been fixed inversion 1.4-1.We recommend that you update your mod-auth-shadow package."
+      }
+    ],
+    "CVE-2004-0234": [
+      {
+        "url": "http://www.debian.org/security/2004/dsa-515",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2004-0398": [
+      {
+        "url": "http://www.debian.org/security/2004/dsa-506",
+        "title": "",
+        "body": "Stefan Esser discovered a problem in neon, an HTTP and WebDAV clientlibrary. User input is copied into variables not large enough for allcases. This can lead to an overflow of a static heap variable.For the stable distribution (woody) this problem has been fixed inversion 0.19.3-2woody5.For the unstable distribution (sid) this problem has been fixed inversion 0.23.9.dfsg-2 and neon_0.24.6.dfsg-1.We recommend that you upgrade your libneon* packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2004/dsa-507",
+        "title": "",
+        "body": "Stefan Esser discovered a problem in neon, an HTTP and WebDAV clientlibrary, which is also present in cadaver, a command-line client forWebDAV server. User input is copied into variables not large enoughfor all cases. This can lead to an overflow of a static heapvariable.For the stable distribution (woody) this problem has been fixed inversion 0.18.0-1woody3.For the unstable distribution (sid) this problem has been fixed inversion 0.22.1-3.We recommend that you upgrade your cadaver package."
+      }
+    ],
+    "CVE-2004-0416": [
+      {
+        "url": "http://www.debian.org/security/2004/dsa-519",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2004-0434": [
+      {
+        "url": "http://www.debian.org/security/2004/dsa-504",
+        "title": "",
+        "body": "Evgeny Demidov discovered a potential buffer overflow in a Kerberos 4component of heimdal, a free implementation of Kerberos 5. Theproblem is present in kadmind, a server for administrative access tothe Kerberos database. This problem could perhaps be exploited tocause the daemon to read a negative amount of data which could lead tounexpected behaviour.For the stable distribution (woody) this problem has been fixed inversion 0.4e-7.woody.9.For the unstable distribution (sid) this problem has been fixed inversion 0.6.2-1.We recommend that you upgrade your heimdal and related packages."
+      }
+    ],
+    "CVE-2004-0772": [
+      {
+        "url": "http://www.debian.org/security/2004/dsa-543",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2004-0836": [
+      {
+        "url": "http://www.debian.org/security/2004/dsa-562",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2004-0940": [
+      {
+        "url": "http://www.debian.org/security/2004/dsa-594",
+        "title": "",
+        "body": "Two vulnerabilities have been identified in the Apache 1.3 webserver:CAN-2004-0940 \"Crazy Einstein\" has discovered a vulnerability in the \"mod_include\" module, which can cause a buffer to be overflown and could lead to the execution of arbitrary code.NO VULN ID Larry Cashdollar has discovered a potential buffer overflow in the htpasswd utility, which could be exploited when user-supplied is passed to the program via a CGI (or PHP, or ePerl, ...) program.For the stable distribution (woody) these problems have been fixed inversion 1.3.26-0woody6.For the unstable distribution (sid) these problems have been fixed inversion 1.3.33-2.We recommend that you upgrade your apache packages."
+      }
+    ],
+    "CVE-2004-1617": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1077",
+        "title": "",
+        "body": "Michal Zalewski discovered that lynx, the popular text-mode WWWBrowser, is not able to grok invalid HTML including a TEXTAREA tagwith a large COLS value and a large tag name in an element that is notterminated, and loops forever trying to render the broken HTML. Thesame code is present in lynx-ssl.For the old stable distribution (woody) this problem has been fixed inversion 2.8.4.1b-3.3.The stable distribution (sarge) does not contain lynx-ssl packagesanymore.The unstable distribution (sid) does not contain lynx-ssl packagesanymore.We recommend that you upgrade your lynx-ssl package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1076",
+        "title": "",
+        "body": "Michal Zalewski discovered that lynx, the popular text-mode WWWBrowser, is not able to grok invalid HTML including a TEXTAREA tagwith a large COLS value and a large tag name in an element that is notterminated, and loops forever trying to render the broken HTML.For the old stable distribution (woody) this problem has been fixed inversion 2.8.4.1b-3.4.For the stable distribution (sarge) this problem has been fixed inversion 2.8.5-2sarge2.For the unstable distribution (sid) this problem has been fixed inversion 2.8.5-2sarge2.We recommend that you upgrade your lynx package."
+      },
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1085",
+        "title": "",
+        "body": "Michal Zalewski discovered that lynx is not able to grok invalid HTML including a TEXTAREA tag with a large COLS value and a large tag name in an element that is not terminated, and loops forever trying to render the broken HTML."
+      }
+    ],
+    "CVE-2004-2541": [
+      {
+        "url": "http://www.debian.org/security/2006/dsa-1064",
+        "title": "",
+        "body": "Jason Duell discovered that cscope, a source code browsing tool, does notverify the length of file names sourced in include statements, which maypotentially lead to the execution of arbitrary code through speciallycrafted source code files.For the old stable distribution (woody) this problem has been fixed inversion 15.3-1woody3.For the stable distribution (sarge) this problem has been fixed inversion 15.5-1.1sarge1.For the unstable distribution (sid) this problem will be fixed soon.We recommend that you upgrade your cscope package."
+      }
+    ],
+    "CVE-2004-2731": [
+      {
+        "url": "http://www.debian.org/security/2008/dsa-1503",
+        "title": "",
+        "body": "infamous41md reported multiple integer overflows in the Sbus PROM driver that would allow for a DoS (Denial of Service) attack by a local user, and possibly the execution of arbitrary code."
+      }
+    ],
+    "CVE-2004-2771": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-3105",
+        "title": "",
+        "body": "mailx interprets shell meta-characters in certain email addresses."
+      }
+    ]
+  }
+}

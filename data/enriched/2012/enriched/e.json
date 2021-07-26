@@ -1,0 +1,2401 @@
+{
+  "year": 2012,
+  "total": 364,
+  "reference": "debian.org",
+  "reports": {
+    "CVE-2012-0022": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2401",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2012-0031": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2405",
+        "title": "",
+        "body": "An apache2 child process could cause the parent process to crash during shutdown. This is a violation of the privilege separation between the apache2 processes and could potentially be used to worsen the impact of other vulnerabilities."
+      }
+    ],
+    "CVE-2012-0036": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2398",
+        "title": "",
+        "body": "Dan Fandrich discovered that cURL performs insufficient sanitising when extracting the file path part of an URL."
+      }
+    ],
+    "CVE-2012-0037": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2438",
+        "title": "",
+        "body": "It was discovered that Raptor, a RDF parser and serializer library,allows file inclusion through XML entities, resulting in informationdisclosure.For the stable distribution (squeeze), this problem has been fixed inversion 1.4.21-2+squeeze1.For the unstable distribution (sid), this problem will be fixed soon.We recommend that you upgrade your raptor packages."
+      }
+    ],
+    "CVE-2012-0040": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2387",
+        "title": "",
+        "body": "timtai1 discovered that simpleSAMLphp, an authentication and federationplatform, is vulnerable to a cross site scripting attack, allowing aremote attacker to access sensitive client data.The oldstable distribution (lenny) does not contain a simplesamlphppackage.For the stable distribution (squeeze), this problem has been fixed inversion 1.6.3-3.For the unstable distribution (sid), this problem has been fixed inversion 1.8.2-1.We recommend that you upgrade your simplesamlphp packages."
+      }
+    ],
+    "CVE-2012-0048": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2524",
+        "title": "",
+        "body": "Two denial of service vulnerabilities have been discovered in the servercomponent of OpenTTD, a free reimplementation of Transport Tycoon Deluxe.For the stable distribution (squeeze), this problem has been fixed inversion 1.0.4-6.For the unstable distribution (sid), this problem will be fixed soon.We recommend that you upgrade your openttd packages."
+      }
+    ],
+    "CVE-2012-0050": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2392",
+        "title": "",
+        "body": "Antonio Martin discovered a denial-of-service vulnerability inOpenSSL, an implementation of TLS and related protocols. A maliciousclient can cause the DTLS server implementation to crash. Regular,TCP-based TLS is not affected by this issue.For the oldstable distribution (lenny), this problem has been fixed inversion 0.9.8g-15+lenny16.For the stable distribution (squeeze), this problem has been fixed inversion 0.9.8o-4squeeze7.For the testing distribution (wheezy) and the unstable distribution(sid), this problem has been fixed in version 1.0.0g-1.We recommend that you upgrade your openssl packages."
+      }
+    ],
+    "CVE-2012-0053": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2405",
+        "title": "",
+        "body": "The response message for error code 400 (bad request) could be used to expose httpOnly cookies. This could allow a remote attacker using cross site scripting to steal authentication cookies."
+      }
+    ],
+    "CVE-2012-0057": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2399",
+        "title": "",
+        "body": "When applying a crafted XSLT transform, an attacker could write files to arbitrary places in the filesystem."
+      }
+    ],
+    "CVE-2012-0210": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2409",
+        "title": "",
+        "body": "Paul Wise discovered that due to insufficient input sanitising when processing .dsc and .changes files, it is possible to execute arbitrary code and disclose system information."
+      }
+    ],
+    "CVE-2012-0211": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2409",
+        "title": "",
+        "body": "Raphael Geissert discovered that it is possible to inject or modify arguments of external commands when processing source packages with specially-named tarballs in the top-level directory of the .orig tarball, allowing arbitrary code execution."
+      }
+    ],
+    "CVE-2012-0212": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2409",
+        "title": "",
+        "body": "Raphael Geissert discovered that it is possible to inject or modify arguments of external commands when passing as argument to debdiff a specially-named file, allowing arbitrary code execution."
+      }
+    ],
+    "CVE-2012-0213": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2468",
+        "title": "",
+        "body": "It was discovered that Apache POI, a Java implementation of theMicrosoft Office file formats, would allocate arbitrary amounts ofmemory when processing crafted documents. This could impact thestability of the Java virtual machine.For the stable distribution (squeeze), this problem has been fixed inversion 3.6+dfsg-1+squeeze1.We recommend that you upgrade your libjakarta-poi-java packages."
+      }
+    ],
+    "CVE-2012-0215": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2444",
+        "title": "",
+        "body": "It was discovered that the Tryton application framework for Pythonallows authenticated users to escalate their privileges by editing theMany2Many field.For the stable distribution (squeeze), this problem has been fixed inversion 1.6.1-2+squeeze1.For the unstable distribution (sid), this problem has been fixed inversion 2.2.2-1.We recommend that you upgrade your tryton-server packages."
+      }
+    ],
+    "CVE-2012-0217": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2508",
+        "title": "",
+        "body": "Rafal Wojtczuk from Bromium discovered that FreeBSD wasn't handling correctlyuncanonical return addresses on Intel amd64 CPUs, allowing privilege escalationto kernel for local users.For the stable distribution (squeeze), this problem has been fixed inversion 8.1+dfsg-8+squeeze3.For the testing distribution (wheezy), this problem has been fixed inversion 8.3-4.For the unstable distribution (sid), this problem has been fixed inversion 8.3-4.We recommend that you upgrade your kfreebsd-8 packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2501",
+        "title": "",
+        "body": "Xen does not properly handle uncanonical return addresses onIntel amd64 CPUs, allowing amd64 PV guests to elevate tohypervisor privileges. AMD processors, HVM and i386 guestsare not affected."
+      }
+    ],
+    "CVE-2012-0220": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2474",
+        "title": "",
+        "body": "Raúl Benencia discovered that ikiwiki, a wiki compiler, does notproperly escape the author (and its URL) of certain metadata, such ascomments. This might be used to conduct cross-site scripting attacks.For the stable distribution (squeeze), this problem has been fixed inversion 3.20100815.9.For the testing distribution (wheezy), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 3.20120516.We recommend that you upgrade your ikiwiki packages."
+      }
+    ],
+    "CVE-2012-0247": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2427",
+        "title": "",
+        "body": "When parsing a maliciously crafted image with incorrect offsetand count in the ResolutionUnit tag in EXIF IFD0, ImageMagickwrites two bytes to an invalid address."
+      }
+    ],
+    "CVE-2012-0249": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2459",
+        "title": "",
+        "body": "A buffer overflow in the ospf_ls_upd_list_lsa function in the OSPFv2 implementation allows remote attackers to cause a denial of service (assertion failure and daemon exit) via a Link State Update (aka LS Update) packet that is smaller than the length specified in its header."
+      }
+    ],
+    "CVE-2012-0250": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2459",
+        "title": "",
+        "body": "A buffer overflow in the OSPFv2 implementation allows remote attackers to cause a denial of service (daemon crash) via a Link State Update (aka LS Update) packet containing a network-LSA link-state advertisement for which the data-structure length is smaller than the value in the Length header field."
+      }
+    ],
+    "CVE-2012-0255": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2459",
+        "title": "",
+        "body": "The BGP implementation does not properly use message buffers for OPEN messages, which allows remote attackers impersonating a configured BGP peer to cause a denial of service (assertion failure and daemon exit) via a message associated with a malformed AS4 capability."
+      }
+    ],
+    "CVE-2012-0259": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2462",
+        "title": "",
+        "body": "Several integer overflows and missing input validations were discoveredin the ImageMagick image manipulation suite, resulting in the executionof arbitrary code or denial of service.For the stable distribution (squeeze), this problem has been fixed inversion 6.6.0.4-3+squeeze3.For the unstable distribution (sid), this problem has been fixed inversion 8:6.7.4.0-5.We recommend that you upgrade your imagemagick packages."
+      }
+    ],
+    "CVE-2012-0317": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2423",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Movable Type, a bloggingsystem:Under certain circumstances, a user who has Create Entries orManage Blog permissions may be able to read known files on the localfile system.The file management system contains shell command injectionvulnerabilities, the most serious of which may lead to arbitrary OScommand execution by a user who has a permission to sign-in to theadmin script and also has a permission to upload files.Session hijack and cross-site request forgery vulnerabilities exist inthe commenting and the community script. A remote attacker couldhijack the user session or could execute arbitrary script code onvictim's browser under the certain circumstances.Templates which do not escape variable properly and mt-wizard.cgicontain cross-site scripting vulnerabilities.For the stable distribution (squeeze), these problems have been fixedin version 4.3.8+dfsg-0+squeeze2.For the testing distribution (wheezy) and the unstable distribution(sid), these problems have been fixed in version 5.1.3+dfsg-1.We recommend that you upgrade your movabletype-opensource packages."
+      }
+    ],
+    "CVE-2012-0318": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2423",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Movable Type, a bloggingsystem:Under certain circumstances, a user who has Create Entries orManage Blog permissions may be able to read known files on the localfile system.The file management system contains shell command injectionvulnerabilities, the most serious of which may lead to arbitrary OScommand execution by a user who has a permission to sign-in to theadmin script and also has a permission to upload files.Session hijack and cross-site request forgery vulnerabilities exist inthe commenting and the community script. A remote attacker couldhijack the user session or could execute arbitrary script code onvictim's browser under the certain circumstances.Templates which do not escape variable properly and mt-wizard.cgicontain cross-site scripting vulnerabilities.For the stable distribution (squeeze), these problems have been fixedin version 4.3.8+dfsg-0+squeeze2.For the testing distribution (wheezy) and the unstable distribution(sid), these problems have been fixed in version 5.1.3+dfsg-1.We recommend that you upgrade your movabletype-opensource packages."
+      }
+    ],
+    "CVE-2012-0319": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2423",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Movable Type, a bloggingsystem:Under certain circumstances, a user who has Create Entries orManage Blog permissions may be able to read known files on the localfile system.The file management system contains shell command injectionvulnerabilities, the most serious of which may lead to arbitrary OScommand execution by a user who has a permission to sign-in to theadmin script and also has a permission to upload files.Session hijack and cross-site request forgery vulnerabilities exist inthe commenting and the community script. A remote attacker couldhijack the user session or could execute arbitrary script code onvictim's browser under the certain circumstances.Templates which do not escape variable properly and mt-wizard.cgicontain cross-site scripting vulnerabilities.For the stable distribution (squeeze), these problems have been fixedin version 4.3.8+dfsg-0+squeeze2.For the testing distribution (wheezy) and the unstable distribution(sid), these problems have been fixed in version 5.1.3+dfsg-1.We recommend that you upgrade your movabletype-opensource packages."
+      }
+    ],
+    "CVE-2012-0441": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2490",
+        "title": "",
+        "body": "Kaspar Brand discovered that Mozilla's Network Security Services (NSS)libraries did insufficient length checking in the QuickDER decoder,allowing to crash a program using the libraries.For the stable distribution (squeeze), this problem has been fixed inversion 3.12.8-1+squeeze5.For the testing distribution (wheezy) and unstable distribution (sid),this problem has been fixed in version 2:3.13.4-3.We recommend that you upgrade your nss packages."
+      }
+    ],
+    "CVE-2012-0444": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2400",
+        "title": "",
+        "body": "regenrecht discovered that missing input sanitising in the Ogg Vorbis parser may lead to the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2406",
+        "title": "",
+        "body": "Icedove does not properly initialize nsChildView data structures, which allows remote attackers to cause a denial of service (memory corruption and application crash) or possibly execute arbitrary code via a crafted Ogg Vorbis file."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2402",
+        "title": "",
+        "body": "regenrecht discovered that missing input sanitising in the Ogg Vorbis parser may lead to the execution of arbitrary code."
+      }
+    ],
+    "CVE-2012-0449": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2400",
+        "title": "",
+        "body": "Nicolas Gregoire and Aki Helin discovered that missing input sanitising in XSLT processing may lead to the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2406",
+        "title": "",
+        "body": "Icedove allows remote attackers to cause a denial of service (memory corruption and application crash) or possibly execute arbitrary code via a malformed XSLT stylesheet that is embedded in a document."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2402",
+        "title": "",
+        "body": "Nicolas Gregoire and Aki Helin discovered that missing input sanitising in XSLT processing may lead to the execution of arbitrary code."
+      }
+    ],
+    "CVE-2012-0455": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2433",
+        "title": "",
+        "body": "Soroush Dalili discovered that a cross-site scripting countermeasure related to JavaScript URLs could be bypassed."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2458",
+        "title": "",
+        "body": "Soroush Dalili discovered that a cross-site scripting countermeasure related to JavaScript URLs could be bypassed."
+      }
+    ],
+    "CVE-2012-0456": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2433",
+        "title": "",
+        "body": "Atte Kettunen discovered an out of bounds read in the SVG Filters, resulting in memory disclosure."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2458",
+        "title": "",
+        "body": "Atte Kettunen discovered an out of bounds read in the SVG Filters, resulting in memory disclosure."
+      }
+    ],
+    "CVE-2012-0458": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2433",
+        "title": "",
+        "body": "Mariusz Mlynski discovered that privileges could be escalated through a JavaScript URL as the home page."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2458",
+        "title": "",
+        "body": "Mariusz Mlynski discovered that privileges could be escalated through a JavaScript URL as the home page."
+      }
+    ],
+    "CVE-2012-0470": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2464",
+        "title": "",
+        "body": "Atte Kettunen discovered that a memory corruption bug in gfxImageSurface may lead to the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2458",
+        "title": "",
+        "body": "Atte Kettunen discovered that a memory corruption bug in gfxImageSurface may lead to the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2457",
+        "title": "",
+        "body": "Atte Kettunen discovered that a memory corruption bug in gfxImageSurface may lead to the execution of arbitrary code."
+      }
+    ],
+    "CVE-2012-0471": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2464",
+        "title": "",
+        "body": "Anne van Kesteren discovered that incorrect multibyte character encoding may lead to cross-site scripting."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2458",
+        "title": "",
+        "body": "Anne van Kesteren discovered that incorrect multibyte character encoding may lead to cross-site scripting."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2457",
+        "title": "",
+        "body": "Anne van Kesteren discovered that incorrect multibyte character encoding may lead to cross-site scripting."
+      }
+    ],
+    "CVE-2012-0477": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2464",
+        "title": "",
+        "body": "Masato Kinugawa discovered that incorrect encoding of Korean and Chinese character sets may lead to cross-site scripting."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2458",
+        "title": "",
+        "body": "Masato Kinugawa discovered that incorrect encoding of Korean and Chinese character sets may lead to cross-site scripting."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2457",
+        "title": "",
+        "body": "Masato Kinugawa discovered that incorrect encoding of Korean and Chinese character sets may lead to cross-site scripting."
+      }
+    ],
+    "CVE-2012-0698": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2576",
+        "title": "",
+        "body": "Andy Lutomirski discovered that tcsd (the TPM userspace daemon) was missinginput validation. Using carefully crafted input, it can lead to a denial ofservice by making the daemon crash with a segmentation fault.For the stable distribution (squeeze), this problem has been fixed inversion 0.3.5-2+squeeze1.For the testing distribution (wheezy), this problem has been fixed inversion 0.3.9-1.For the unstable distribution (sid), this problem has been fixed inversion 0.3.9-1.We recommend that you upgrade your trousers packages."
+      }
+    ],
+    "CVE-2012-0791": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2485",
+        "title": "",
+        "body": "Multiple cross-site scripting (XSS) vulnerabilities were discovered inIMP, the webmail component in the Horde framework. The vulnerabilitiesallow remote attackers to inject arbitrary web script or HTML via variouscrafted parameters.For the stable distribution (squeeze), this problem has been fixed inversion 4.3.7+debian0-2.2.For the testing distribution (wheezy) and unstable distribution (sid),this problem will be fixed soon.We recommend that you upgrade your imp4 packages."
+      }
+    ],
+    "CVE-2012-0792": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2421",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2012-0793": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2421",
+        "title": "",
+        "body": "Eloy Lafuente discovered that profile images were insufficiently protected. A new configuration option forceloginforprofileimages was introduced for that."
+      }
+    ],
+    "CVE-2012-0795": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2421",
+        "title": "",
+        "body": "John Ehringer discovered that email addresses were insufficiently validated."
+      }
+    ],
+    "CVE-2012-0796": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2421",
+        "title": "",
+        "body": "Simon Coggins discovered that additional information could be injected into mail headers."
+      }
+    ],
+    "CVE-2012-0804": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2407",
+        "title": "",
+        "body": "It was discovered that a malicious CVS server could cause a heapoverflow in the CVS client, potentially allowing the server to executearbitrary code on the client.For the stable distribution (squeeze), this problem has been fixed inversion 1:1.12.13-12+squeeze1.For the unstable distribution (sid), this problem has been fixed inversion 2:1.12.13+real-7.We recommend that you upgrade your cvs packages."
+      }
+    ],
+    "CVE-2012-0805": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2449",
+        "title": "",
+        "body": "It was discovered that SQLAlchemy, an SQL toolkit and object relationalmapper for Python, is not sanitizing input passed to the limit/offsetkeywords to select() as well as the value passed to select.limit()/offset().This allows an attacker to perform SQL injection attacks againstapplications using SQLAlchemy that do not implement their own filtering.For the stable distribution (squeeze), this problem has been fixed inversion 0.6.3-3+squeeze1.For the testing distribution (wheezy), this problem has been fixed inversion 0.6.7-1.For the unstable distribution (sid), this problem has been fixed inversion 0.6.7-1.We recommend that you upgrade your sqlalchemy packages."
+      }
+    ],
+    "CVE-2012-0825": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2776",
+        "title": "",
+        "body": "Multiple vulnerabilities have been been fixed in the Drupal contentmanagement framework, resulting in information disclosure, insufficientvalidation, cross-site scripting and cross-site request forgery.For the oldstable distribution (squeeze), these problems have been fixed inversion 6.28-1.For the stable distribution (wheezy), these problems have already beenfixed in the drupal7 package.For the unstable distribution (sid), these problems have already beenfixed in the drupal7 package.We recommend that you upgrade your drupal6 packages."
+      }
+    ],
+    "CVE-2012-0826": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2776",
+        "title": "",
+        "body": "Multiple vulnerabilities have been been fixed in the Drupal contentmanagement framework, resulting in information disclosure, insufficientvalidation, cross-site scripting and cross-site request forgery.For the oldstable distribution (squeeze), these problems have been fixed inversion 6.28-1.For the stable distribution (wheezy), these problems have already beenfixed in the drupal7 package.For the unstable distribution (sid), these problems have already beenfixed in the drupal7 package.We recommend that you upgrade your drupal6 packages."
+      }
+    ],
+    "CVE-2012-0830": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2403",
+        "title": "",
+        "body": "Stefan Esser discovered that the implementation of the max_input_varsconfiguration variable in a recent PHP security update was flawed suchthat it allows remote attackers to crash PHP or potentially executecode.For the oldstable distribution (lenny), this problem has been fixed inversion 5.2.6.dfsg.1-1+lenny16.For the stable distribution (squeeze), this problem has been fixed inversion 5.3.3-7+squeeze7.For the unstable distribution (sid), this problem has been fixed inversion 5.3.10-1.We recommend that you upgrade your php5 packages."
+      }
+    ],
+    "CVE-2012-0841": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2417",
+        "title": "",
+        "body": "It was discovered that the internal hashing routine of libxml2,a library providing an extensive API to handle XML data, is vulnerable topredictable hash collisions. Given an attacker with knowledge of thehashing algorithm, it is possible to craft input that creates a largeamount of collisions. As a result it is possible to perform denial ofservice attacks against applications using libxml2 functionality becauseof the computational overhead.For the stable distribution (squeeze), this problem has been fixed inversion 2.7.8.dfsg-2+squeeze3.For the testing (wheezy) and unstable (sid) distributions, this problemwill be fixed soon.We recommend that you upgrade your libxml2 packages."
+      }
+    ],
+    "CVE-2012-0851": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2494",
+        "title": "",
+        "body": "It was discovered that FFmpeg, Debian's version of the Libav mediacodec suite, contains vulnerabilities in the DPCM codecs(CVE-2011-3951),H.264 (CVE-2012-0851),ADPCM (CVE-2012-0852), and theKMVC decoder (CVE-2011-3952).In addition, this update contains bug fixes from the Libav 0.5.9upstream release.For the stable distribution (squeeze), these problems have been fixedin version 4:0.5.9-1.For the unstable distribution (sid), these problems have been fixed inversion 6:0.8.3-1.We recommend that you upgrade your ffmpeg packages."
+      }
+    ],
+    "CVE-2012-0852": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2494",
+        "title": "",
+        "body": "It was discovered that FFmpeg, Debian's version of the Libav mediacodec suite, contains vulnerabilities in the DPCM codecs(CVE-2011-3951),H.264 (CVE-2012-0851),ADPCM (CVE-2012-0852), and theKMVC decoder (CVE-2011-3952).In addition, this update contains bug fixes from the Libav 0.5.9upstream release.For the stable distribution (squeeze), these problems have been fixedin version 4:0.5.9-1.For the unstable distribution (sid), these problems have been fixed inversion 6:0.8.3-1.We recommend that you upgrade your ffmpeg packages."
+      }
+    ],
+    "CVE-2012-0863": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2411",
+        "title": "",
+        "body": "It was discovered that Mumble, a VoIP client, does not properly managepermissions on its user-specific configuration files, allowing otherlocal users on the system to access them.For the stable distribution (squeeze), this problem has been fixed inversion 1.2.2-6+squeeze1.For the testing distribution (wheezy) and the unstable distribution(sid), this problem has been fixed in version 1.2.3-3.We recommend that you upgrade your mumble packages."
+      }
+    ],
+    "CVE-2012-0866": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2418",
+        "title": "",
+        "body": "It was discovered that the permissions of a function called by a trigger are not checked. This could result in privilege escalation."
+      }
+    ],
+    "CVE-2012-0867": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2418",
+        "title": "",
+        "body": "It was discovered that only the first 32 characters of a host name are checked when validating host names through SSL certificates. This could result in spoofing the connection in limited circumstances."
+      }
+    ],
+    "CVE-2012-0868": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2418",
+        "title": "",
+        "body": "It was discovered that pg_dump did not sanitise object names. This could result in arbitrary SQL command execution if a malformed dump file is opened."
+      }
+    ],
+    "CVE-2012-0869": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2414",
+        "title": "",
+        "body": "Nicola Fioravanti discovered that F*X, a web service for transferringvery large files, is not properly sanitizing input parameters of the fupscript. An attacker can use this flaw to conduct reflected cross-sitescripting attacks via various script parameters.For the stable distribution (squeeze), this problem has been fixed inversion 20100208+debian1-1+squeeze3.For the testing distribution (wheezy), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixedin version 20120215-1.We recommend that you upgrade your fex packages."
+      }
+    ],
+    "CVE-2012-0876": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2525",
+        "title": "",
+        "body": "It was discovered that Expat, a C library to parse XML, is vulnerableto denial of service through hash collisions and a memory leak inpool handling.For the stable distribution (squeeze), this problem has been fixed inversion 2.0.1-7+squeeze1.For the testing distribution (wheezy), this problem has been fixed inversion 2.1.0~beta3-1.For the unstable distribution (sid), this problem has been fixed inversion 2.1.0~beta3-1.We recommend that you upgrade your expat packages."
+      }
+    ],
+    "CVE-2012-0884": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2454",
+        "title": "",
+        "body": "Ivan Nestlerode discovered a weakness in the CMS and PKCS #7implementations that could allow an attacker to decrypt datavia a Million Message Attack (MMA)."
+      }
+    ],
+    "CVE-2012-0920": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2456",
+        "title": "",
+        "body": "Danny Fullerton discovered a use-after-free in the Dropbear SSH daemon,resulting in potential execution of arbitrary code. Exploitation islimited to users, who have been authenticated through public keyauthentication and for which command restrictions are in place.For the stable distribution (squeeze), this problem has been fixed inversion 0.52-5+squeeze1.For the testing distribution (wheezy), this problem has been fixed inversion 2012.55-1.For the unstable distribution (sid), this problem has been fixed inversion 2012.55-1.We recommend that you upgrade your dropbear packages."
+      }
+    ],
+    "CVE-2012-0947": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2471",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in FFmpeg, a multimediaplayer, server and encoder. Multiple input validations in the decoders/demuxers for Westwood Studios VQA, Apple MJPEG-B, Theora, Matroska,Vorbis, Sony ATRAC3, DV, NSV, files could lead to the execution ofarbitrary code.These issues were discovered by Aki Helin, Mateusz Jurczyk, GynvaelColdwind, and Michael Niedermayer.For the stable distribution (squeeze), this problem has been fixed inversion 4:0.5.8-1.For the unstable distribution (sid), this problem has been fixed inversion 6:0.8.2-1 of libav.We recommend that you upgrade your ffmpeg packages."
+      }
+    ],
+    "CVE-2012-1015": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2518",
+        "title": "",
+        "body": "By sending specially crafted AS-REQ to a KDC, an attacker could make itdereference an uninitialized pointer, leading to process crash or evenarbitrary code execution"
+      }
+    ],
+    "CVE-2012-1053": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2419",
+        "title": "",
+        "body": "Puppet runs execs with an unintended group privileges,potentially leading to privilege escalation."
+      }
+    ],
+    "CVE-2012-1054": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2419",
+        "title": "",
+        "body": "The k5login type writes to untrusted locations,enabling local users to escalate their privilegesif the k5login type is used."
+      }
+    ],
+    "CVE-2012-1099": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2466",
+        "title": "",
+        "body": "Sergey Nartimov discovered that in Rails, a Ruby based framework forweb development, when developers generate html options tags manually,user input concatenated with manually built tags may not be escapedand an attacker can inject arbitrary HTML into the document.For the stable distribution (squeeze), this problem has been fixed inversion 2.3.5-1.2+squeeze3.For the testing distribution (wheezy) and unstable distribution (sid),this problem has been fixed in version 2.3.14.We recommend that you upgrade your rails packages."
+      }
+    ],
+    "CVE-2012-1103": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2416",
+        "title": "",
+        "body": "It was discovered that Notmuch, an email indexer, did not sufficientlyescape Emacs MML tags. When using the Emacs interface, a user couldbe tricked into replying to a maliciously formatted message which couldlead to files from the local machine being attached to the outgoingmessage.For the stable distribution (squeeze), this problem has been fixed inversion 0.3.1+squeeze1.For the testing distribution (wheezy) and unstable distribution (sid),this problem has been fixed in version 0.11.1-1.We recommend that you upgrade your notmuch packages."
+      }
+    ],
+    "CVE-2012-1118": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2500",
+        "title": "",
+        "body": "Mantis installation in which the private_bug_view_thresholdconfiguration option has been set to an array value do notproperly enforce bug viewing restrictions."
+      }
+    ],
+    "CVE-2012-1119": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2500",
+        "title": "",
+        "body": "Copy/clone bug report actions fail to leave an audit trail."
+      }
+    ],
+    "CVE-2012-1120": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2500",
+        "title": "",
+        "body": "The delete_bug_threshold/bugnote_allow_user_edit_deleteaccess check can be bypassed by users who have writeaccess to the SOAP API."
+      }
+    ],
+    "CVE-2012-1122": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2500",
+        "title": "",
+        "body": "Mantis performed access checks incorrectly when moving bugsbetween projects."
+      }
+    ],
+    "CVE-2012-1123": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2500",
+        "title": "",
+        "body": "A SOAP client sending a null password field can authenticateas the Mantis administrator."
+      }
+    ],
+    "CVE-2012-1133": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2428",
+        "title": "",
+        "body": "Mateusz Jurczyk from the Google Security Team discovered severalvulnerabilties in Freetype's parsing of BDF, Type1 and TrueType fonts,which could result in the execution of arbitrary code if a malformedfont file is processed.For the stable distribution (squeeze), this problem has been fixed inversion 2.4.2-2.1+squeeze4. The updated packages are already availablesince yesterday, but the advisory text couldn't be send earlier.For the unstable distribution (sid), this problem will be fixed soon.We recommend that you upgrade your freetype packages."
+      }
+    ],
+    "CVE-2012-1134": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2428",
+        "title": "",
+        "body": "Mateusz Jurczyk from the Google Security Team discovered severalvulnerabilties in Freetype's parsing of BDF, Type1 and TrueType fonts,which could result in the execution of arbitrary code if a malformedfont file is processed.For the stable distribution (squeeze), this problem has been fixed inversion 2.4.2-2.1+squeeze4. The updated packages are already availablesince yesterday, but the advisory text couldn't be send earlier.For the unstable distribution (sid), this problem will be fixed soon.We recommend that you upgrade your freetype packages."
+      }
+    ],
+    "CVE-2012-1136": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2428",
+        "title": "",
+        "body": "Mateusz Jurczyk from the Google Security Team discovered severalvulnerabilties in Freetype's parsing of BDF, Type1 and TrueType fonts,which could result in the execution of arbitrary code if a malformedfont file is processed.For the stable distribution (squeeze), this problem has been fixed inversion 2.4.2-2.1+squeeze4. The updated packages are already availablesince yesterday, but the advisory text couldn't be send earlier.For the unstable distribution (sid), this problem will be fixed soon.We recommend that you upgrade your freetype packages."
+      }
+    ],
+    "CVE-2012-1142": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2428",
+        "title": "",
+        "body": "Mateusz Jurczyk from the Google Security Team discovered severalvulnerabilties in Freetype's parsing of BDF, Type1 and TrueType fonts,which could result in the execution of arbitrary code if a malformedfont file is processed.For the stable distribution (squeeze), this problem has been fixed inversion 2.4.2-2.1+squeeze4. The updated packages are already availablesince yesterday, but the advisory text couldn't be send earlier.For the unstable distribution (sid), this problem will be fixed soon.We recommend that you upgrade your freetype packages."
+      }
+    ],
+    "CVE-2012-1144": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2428",
+        "title": "",
+        "body": "Mateusz Jurczyk from the Google Security Team discovered severalvulnerabilties in Freetype's parsing of BDF, Type1 and TrueType fonts,which could result in the execution of arbitrary code if a malformedfont file is processed.For the stable distribution (squeeze), this problem has been fixed inversion 2.4.2-2.1+squeeze4. The updated packages are already availablesince yesterday, but the advisory text couldn't be send earlier.For the unstable distribution (sid), this problem will be fixed soon.We recommend that you upgrade your freetype packages."
+      }
+    ],
+    "CVE-2012-1148": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2525",
+        "title": "",
+        "body": "It was discovered that Expat, a C library to parse XML, is vulnerableto denial of service through hash collisions and a memory leak inpool handling.For the stable distribution (squeeze), this problem has been fixed inversion 2.0.1-7+squeeze1.For the testing distribution (wheezy), this problem has been fixed inversion 2.1.0~beta3-1.For the unstable distribution (sid), this problem has been fixed inversion 2.1.0~beta3-1.We recommend that you upgrade your expat packages."
+      }
+    ],
+    "CVE-2012-1149": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2487",
+        "title": "",
+        "body": "Integer overflows in PNG image handling."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2473",
+        "title": "",
+        "body": "Tielei Wang discovered that OpenOffice.org does not allocate a largeenough memory region when processing a specially crafted JPEG object,leading to a heap-based buffer overflow and potentially arbitrary codeexecution.For the stable distribution (squeeze), this problem has been fixed inversion 1:3.2.1-11+squeeze5.For the testing distribution (wheezy) and the unstable distribution(sid), this problem has been fixed in version 1:3.4.5-1 of thelibreoffice package.We recommend that you upgrade your openoffice.org packages."
+      }
+    ],
+    "CVE-2012-1165": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2454",
+        "title": "",
+        "body": "It was discovered that a NULL pointer could be dereferencedwhen parsing certain S/MIME messages, leading to denial ofservice."
+      }
+    ],
+    "CVE-2012-1172": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2465",
+        "title": "",
+        "body": "De Eindbazen discovered that PHP, when run with mod_cgi, willinterpret a query string as command line parameters, allowing toexecute arbitrary code.Additionally, this update fixes insufficient validation of uploadname which lead to corrupted $_FILES indices.For the stable distribution (squeeze), this problem has been fixed inversion 5.3.3-7+squeeze9.The testing distribution (wheezy) will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 5.4.3-1.We recommend that you upgrade your php5 packages."
+      }
+    ],
+    "CVE-2012-1173": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2447",
+        "title": "",
+        "body": "Alexander Gavrun discovered an integer overflow in the TIFF libraryin the parsing of the TileSize entry, which could result in the executionof arbitrary code if a malformed image is opened.For the stable distribution (squeeze), this problem has been fixed inversion 3.9.4-5+squeeze4.For the unstable distribution (sid), this problem will be fixed soon.We recommend that you upgrade your tiff packages."
+      }
+    ],
+    "CVE-2012-1175": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2435",
+        "title": "",
+        "body": "Tielei Wang from Georgia Tech Information Security Center discovered a vulnerability in GNU Gnash which is caused due to an integer overflow error and can be exploited to cause a heap-based buffer overflow by tricking a user into opening a specially crafted SWF file."
+      }
+    ],
+    "CVE-2012-1177": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2482",
+        "title": "",
+        "body": "Vreixo Formoso discovered that libgdata, a library used to access variousGoogle services, wasn't validating certificates against trusted systemroot CAs when using an HTTPS connection.For the stable distribution (squeeze), this problem has been fixed inversion 0.6.4-2+squeeze1.For the testing distribution (wheezy), this problem has been fixed inversion 0.10.2-1.For the unstable distribution (sid), this problem has been fixed inversion 0.10.2-1.We recommend that you upgrade your libgdata packages."
+      }
+    ],
+    "CVE-2012-1180": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2434",
+        "title": "",
+        "body": "Matthew Daley discovered a memory disclosure vulnerability in nginx. Inprevious versions of this web server, an attacker can receive the content ofpreviously freed memory if an upstream server returned a specially crafted HTTPresponse, potentially exposing sensitive information.For the stable distribution (squeeze), this problem has been fixed inversion 0.7.67-3+squeeze2.For the unstable distribution (sid), this problem has been fixed inversion 1.1.17-1.We recommend that you upgrade your nginx packages."
+      }
+    ],
+    "CVE-2012-1181": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2436",
+        "title": "",
+        "body": "It was discovered that the Apache FCGID module, a FastCGI implementation,did not properly enforce the FcgidMaxProcessesPerClass resource limit,rendering this control ineffective and potentially allowing a virtualhost to consume excessive resources.For the stable distribution (squeeze), this problem has been fixed inversion 1:2.3.6-1+squeeze1.For the testing distribution (wheezy), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 1:2.3.6-1.1.We recommend that you upgrade your libapache2-mod-fcgid packages."
+      }
+    ],
+    "CVE-2012-1182": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2450",
+        "title": "",
+        "body": "It was discovered that Samba, the SMB/CIFS file, print, and login server,contained a flaw in the remote procedure call (RPC) code which allowedremote code execution as the super user from an unauthenticatedconnection.For the stable distribution (squeeze), this problem has been fixed inversion 2:3.5.6~dfsg-3squeeze7.For the testing distribution (wheezy), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 2:3.6.4-1.We recommend that you upgrade your samba packages."
+      }
+    ],
+    "CVE-2012-1183": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2460",
+        "title": "",
+        "body": "Russell Bryant discovered a buffer overflow in the Milliwatt application."
+      }
+    ],
+    "CVE-2012-1185": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2462",
+        "title": "",
+        "body": "Several integer overflows and missing input validations were discoveredin the ImageMagick image manipulation suite, resulting in the executionof arbitrary code or denial of service.For the stable distribution (squeeze), this problem has been fixed inversion 6.6.0.4-3+squeeze3.For the unstable distribution (sid), this problem has been fixed inversion 8:6.7.4.0-5.We recommend that you upgrade your imagemagick packages."
+      }
+    ],
+    "CVE-2012-1262": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2423",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Movable Type, a bloggingsystem:Under certain circumstances, a user who has Create Entries orManage Blog permissions may be able to read known files on the localfile system.The file management system contains shell command injectionvulnerabilities, the most serious of which may lead to arbitrary OScommand execution by a user who has a permission to sign-in to theadmin script and also has a permission to upload files.Session hijack and cross-site request forgery vulnerabilities exist inthe commenting and the community script. A remote attacker couldhijack the user session or could execute arbitrary script code onvictim's browser under the certain circumstances.Templates which do not escape variable properly and mt-wizard.cgicontain cross-site scripting vulnerabilities.For the stable distribution (squeeze), these problems have been fixedin version 4.3.8+dfsg-0+squeeze2.For the testing distribution (wheezy) and the unstable distribution(sid), these problems have been fixed in version 5.1.3+dfsg-1.We recommend that you upgrade your movabletype-opensource packages."
+      }
+    ],
+    "CVE-2012-1293": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2414",
+        "title": "",
+        "body": "Nicola Fioravanti discovered that F*X, a web service for transferringvery large files, is not properly sanitizing input parameters of the fupscript. An attacker can use this flaw to conduct reflected cross-sitescripting attacks via various script parameters.For the stable distribution (squeeze), this problem has been fixed inversion 20100208+debian1-1+squeeze3.For the testing distribution (wheezy), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixedin version 20120215-1.We recommend that you upgrade your fex packages."
+      }
+    ],
+    "CVE-2012-1497": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2423",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Movable Type, a bloggingsystem:Under certain circumstances, a user who has Create Entries orManage Blog permissions may be able to read known files on the localfile system.The file management system contains shell command injectionvulnerabilities, the most serious of which may lead to arbitrary OScommand execution by a user who has a permission to sign-in to theadmin script and also has a permission to upload files.Session hijack and cross-site request forgery vulnerabilities exist inthe commenting and the community script. A remote attacker couldhijack the user session or could execute arbitrary script code onvictim's browser under the certain circumstances.Templates which do not escape variable properly and mt-wizard.cgicontain cross-site scripting vulnerabilities.For the stable distribution (squeeze), these problems have been fixedin version 4.3.8+dfsg-0+squeeze2.For the testing distribution (wheezy) and the unstable distribution(sid), these problems have been fixed in version 5.1.3+dfsg-1.We recommend that you upgrade your movabletype-opensource packages."
+      }
+    ],
+    "CVE-2012-1502": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2430",
+        "title": "",
+        "body": "Markus Vervier discovered a double free in the Python interface to thePAM library, which could lead to denial of service.For the stable distribution (squeeze), this problem has been fixed inversion 0.4.2-12.2+squeeze1.For the unstable distribution (sid), this problem has been fixed inversion 0.4.2-13.We recommend that you upgrade your python-pam packages."
+      }
+    ],
+    "CVE-2012-1569": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2440",
+        "title": "",
+        "body": "Matthew Hall discovered that many callers of the asn1_get_length_derfunction did not check the result against the overall buffer lengthbefore processing it further. This could result in out-of-boundsmemory accesses and application crashes. Applications using GNUTLSare exposed to this issue.For the stable distribution (squeeze), this problem has been fixed inversion 2.7-1+squeeze+1.For the unstable distribution (sid), this problem has been fixed inversion 2.12-1.We recommend that you upgrade your libtasn1-3 packages."
+      }
+    ],
+    "CVE-2012-1571": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2422",
+        "title": "",
+        "body": "The file type identification tool, file, and its associated library,libmagic, do not properly process malformed files in the CompositeDocument File (CDF) format, leading to crashes.Note that after this update, file may return different detectionresults for CDF files (well-formed or not). The new detections arebelieved to be more accurate.For the stable distribution (squeeze), this problem has been fixed inversion 5.04-5+squeeze2.We recommend that you upgrade your file packages."
+      }
+    ],
+    "CVE-2012-1573": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2441",
+        "title": "",
+        "body": "Matthew Hall discovered that GNUTLS does not properly handle truncatedGenericBlockCipher structures nested inside TLS records, leading tocrashes in applications using the GNUTLS library.For the stable distribution (squeeze), this problem has been fixed inversion 2.8.6-1+squeeze2.For the unstable distribution (sid), this problem has been fixed inversion 2.12.18-1 of the gnutls26 package and version 3.0.17-2 of thegnutls28 package.We recommend that you upgrade your gnutls26 packages."
+      }
+    ],
+    "CVE-2012-1601": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2469",
+        "title": "",
+        "body": "Michael Ellerman reported an issue in the KVM subsystem. Local users could cause a denial of service (NULL pointer dereference) by creating VCPUs before a call to KVM_CREATE_IRQCHIP."
+      }
+    ],
+    "CVE-2012-1606": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2445",
+        "title": "",
+        "body": "Failing to properly HTML-encode user input in several places,the TYPO3 backend is susceptible to Cross-Site Scripting. Avalid backend user is required to exploit thesevulnerabilities."
+      }
+    ],
+    "CVE-2012-1607": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2445",
+        "title": "",
+        "body": "Accessing a CLI Script directly with a browser may disclosethe database name used for the TYPO3 installation."
+      }
+    ],
+    "CVE-2012-1608": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2445",
+        "title": "",
+        "body": "By not removing non printable characters, the API methodt3lib_div::RemoveXSS() fails to filter specially crafted HTMLinjections, thus is susceptible to Cross-Site Scripting."
+      }
+    ],
+    "CVE-2012-1610": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2462",
+        "title": "",
+        "body": "Several integer overflows and missing input validations were discoveredin the ImageMagick image manipulation suite, resulting in the executionof arbitrary code or denial of service.For the stable distribution (squeeze), this problem has been fixed inversion 6.6.0.4-3+squeeze3.For the unstable distribution (sid), this problem has been fixed inversion 8:6.7.4.0-5.We recommend that you upgrade your imagemagick packages."
+      }
+    ],
+    "CVE-2012-1667": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2486",
+        "title": "",
+        "body": "It was discovered that BIND, a DNS server, can crash while processingresource records containing no data bytes. Both authoritative serversand resolvers are affected.For the stable distribution (squeeze), this problem has been fixed inversion 1:9.7.3.dfsg-1~squeeze5.We recommend that you upgrade your bind9 packages."
+      }
+    ],
+    "CVE-2012-1798": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2462",
+        "title": "",
+        "body": "Several integer overflows and missing input validations were discoveredin the ImageMagick image manipulation suite, resulting in the executionof arbitrary code or denial of service.For the stable distribution (squeeze), this problem has been fixed inversion 6.6.0.4-3+squeeze3.For the unstable distribution (sid), this problem has been fixed inversion 8:6.7.4.0-5.We recommend that you upgrade your imagemagick packages."
+      }
+    ],
+    "CVE-2012-1823": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2465",
+        "title": "",
+        "body": "De Eindbazen discovered that PHP, when run with mod_cgi, willinterpret a query string as command line parameters, allowing toexecute arbitrary code.Additionally, this update fixes insufficient validation of uploadname which lead to corrupted $_FILES indices.For the stable distribution (squeeze), this problem has been fixed inversion 5.3.3-7+squeeze9.The testing distribution (wheezy) will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 5.4.3-1.We recommend that you upgrade your php5 packages."
+      }
+    ],
+    "CVE-2012-1836": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2448",
+        "title": "",
+        "body": "It was discovered that a heap-based buffer overflow in InspIRCd could allowremote attackers to execute arbitrary code via a crafted DNS query.For the stable distribution (squeeze), this problem has been fixed inversion 1.1.22+dfsg-4+squeeze1.For the testing distribution (wheezy), this problem has been fixed inversion 1.1.22+dfsg-4+wheezy1.For the unstable distribution (sid), this problem has been fixed inversion 2.0.5-0.1.We recommend that you upgrade your inspircd packages."
+      }
+    ],
+    "CVE-2012-1906": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2451",
+        "title": "",
+        "body": "Puppet is using predictable temporary file names when downloading Mac OS X package files. This allows a local attacker to either overwrite arbitrary files on the system or to install an arbitrary package."
+      }
+    ],
+    "CVE-2012-1939": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2499",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Icedove, the Debianversion of the Mozilla Thunderbird mail/news client. There weremiscellaneous memory safety hazards(CVE-2012-1937,CVE-2012-1939) anda use-after-free issue(CVE-2012-1940).For the stable distribution (squeeze), these problems have been fixedin version 3.0.11-1+squeeze11.We recommend that you upgrade your icedove packages."
+      }
+    ],
+    "CVE-2012-1940": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2499",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Icedove, the Debianversion of the Mozilla Thunderbird mail/news client. There weremiscellaneous memory safety hazards(CVE-2012-1937,CVE-2012-1939) anda use-after-free issue(CVE-2012-1940).For the stable distribution (squeeze), these problems have been fixedin version 3.0.11-1+squeeze11.We recommend that you upgrade your icedove packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2489",
+        "title": "",
+        "body": "Abhishek Arya discovered a use-after-free problem when working with column layout with absolute positioning in a container that changes size, which may lead to the execution of arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2488",
+        "title": "",
+        "body": "Abhishek Arya discovered a use-after-free problem when working with column layout with absolute positioning in a container that changes size, which may lead to the execution of arbitrary code."
+      }
+    ],
+    "CVE-2012-1947": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2489",
+        "title": "",
+        "body": "Abhishek Arya discovered a heap buffer overflow in utf16 to latin1 character set conversion, allowing to execute arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2488",
+        "title": "",
+        "body": "Abhishek Arya discovered a heap buffer overflow in utf16 to latin1 character set conversion, allowing to execute arbitrary code."
+      }
+    ],
+    "CVE-2012-1954": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2528",
+        "title": "",
+        "body": "A use-after-free vulnerability in the nsDocument::AdoptNodefunction allows remote attackers to cause a denial of service(heap memory corruption) or possibly execute arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2514",
+        "title": "",
+        "body": "Abhishek Arya discovered a use-after-free problem in nsDocument::AdoptNode that may lead to the execution of arbitrary code."
+      }
+    ],
+    "CVE-2012-1966": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2514",
+        "title": "",
+        "body": "moz_bug_r_a4 discovered that it is possible to perform cross-site scripting attacks through the context menu when using data: URLs."
+      }
+    ],
+    "CVE-2012-1970": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2553",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceweasel, a webbrowser based on Firefox. The included XULRunner library providesrendering services for several other applications included in Debian.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 3.5.16-18.For the testing distribution (wheezy), these problems have been fixed inversion 10.0.7esr-2.For the unstable distribution (sid), these problems have been fixed inversion 10.0.7esr-2.We recommend that you upgrade your iceweasel packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2556",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Icedove, Debian's versionof the Mozilla Thunderbird mail and news client.This includes several instances of use-after-free and buffer overflowissues. The reported vulnerabilities could lead to the execution ofarbitrary code, and additionally to the bypass of content-loadingrestrictions via the location object.For the stable distribution (squeeze), this problem has been fixed inversion 3.0.11-1+squeeze13.For the testing distribution (wheezy), this problem has been fixed inversion 10.0.7-1.For the unstable distribution (sid), this problem has been fixed inversion 10.0.7-1.We recommend that you upgrade your icedove packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2554",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceape, an internet suite basedon Seamonkey.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 2.0.11-15.For the testing distribution (wheezy), these problems have been fixed inversion 2.7.7-1.For the unstable distribution (sid), these problems have been fixed inversion 2.7.7-1.We recommend that you upgrade your iceape packages."
+      }
+    ],
+    "CVE-2012-1972": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2553",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceweasel, a webbrowser based on Firefox. The included XULRunner library providesrendering services for several other applications included in Debian.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 3.5.16-18.For the testing distribution (wheezy), these problems have been fixed inversion 10.0.7esr-2.For the unstable distribution (sid), these problems have been fixed inversion 10.0.7esr-2.We recommend that you upgrade your iceweasel packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2556",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Icedove, Debian's versionof the Mozilla Thunderbird mail and news client.This includes several instances of use-after-free and buffer overflowissues. The reported vulnerabilities could lead to the execution ofarbitrary code, and additionally to the bypass of content-loadingrestrictions via the location object.For the stable distribution (squeeze), this problem has been fixed inversion 3.0.11-1+squeeze13.For the testing distribution (wheezy), this problem has been fixed inversion 10.0.7-1.For the unstable distribution (sid), this problem has been fixed inversion 10.0.7-1.We recommend that you upgrade your icedove packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2554",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceape, an internet suite basedon Seamonkey.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 2.0.11-15.For the testing distribution (wheezy), these problems have been fixed inversion 2.7.7-1.For the unstable distribution (sid), these problems have been fixed inversion 2.7.7-1.We recommend that you upgrade your iceape packages."
+      }
+    ],
+    "CVE-2012-1973": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2553",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceweasel, a webbrowser based on Firefox. The included XULRunner library providesrendering services for several other applications included in Debian.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 3.5.16-18.For the testing distribution (wheezy), these problems have been fixed inversion 10.0.7esr-2.For the unstable distribution (sid), these problems have been fixed inversion 10.0.7esr-2.We recommend that you upgrade your iceweasel packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2556",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Icedove, Debian's versionof the Mozilla Thunderbird mail and news client.This includes several instances of use-after-free and buffer overflowissues. The reported vulnerabilities could lead to the execution ofarbitrary code, and additionally to the bypass of content-loadingrestrictions via the location object.For the stable distribution (squeeze), this problem has been fixed inversion 3.0.11-1+squeeze13.For the testing distribution (wheezy), this problem has been fixed inversion 10.0.7-1.For the unstable distribution (sid), this problem has been fixed inversion 10.0.7-1.We recommend that you upgrade your icedove packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2554",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceape, an internet suite basedon Seamonkey.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 2.0.11-15.For the testing distribution (wheezy), these problems have been fixed inversion 2.7.7-1.For the unstable distribution (sid), these problems have been fixed inversion 2.7.7-1.We recommend that you upgrade your iceape packages."
+      }
+    ],
+    "CVE-2012-1974": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2553",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceweasel, a webbrowser based on Firefox. The included XULRunner library providesrendering services for several other applications included in Debian.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 3.5.16-18.For the testing distribution (wheezy), these problems have been fixed inversion 10.0.7esr-2.For the unstable distribution (sid), these problems have been fixed inversion 10.0.7esr-2.We recommend that you upgrade your iceweasel packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2556",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Icedove, Debian's versionof the Mozilla Thunderbird mail and news client.This includes several instances of use-after-free and buffer overflowissues. The reported vulnerabilities could lead to the execution ofarbitrary code, and additionally to the bypass of content-loadingrestrictions via the location object.For the stable distribution (squeeze), this problem has been fixed inversion 3.0.11-1+squeeze13.For the testing distribution (wheezy), this problem has been fixed inversion 10.0.7-1.For the unstable distribution (sid), this problem has been fixed inversion 10.0.7-1.We recommend that you upgrade your icedove packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2554",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceape, an internet suite basedon Seamonkey.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 2.0.11-15.For the testing distribution (wheezy), these problems have been fixed inversion 2.7.7-1.For the unstable distribution (sid), these problems have been fixed inversion 2.7.7-1.We recommend that you upgrade your iceape packages."
+      }
+    ],
+    "CVE-2012-1975": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2553",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceweasel, a webbrowser based on Firefox. The included XULRunner library providesrendering services for several other applications included in Debian.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 3.5.16-18.For the testing distribution (wheezy), these problems have been fixed inversion 10.0.7esr-2.For the unstable distribution (sid), these problems have been fixed inversion 10.0.7esr-2.We recommend that you upgrade your iceweasel packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2556",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Icedove, Debian's versionof the Mozilla Thunderbird mail and news client.This includes several instances of use-after-free and buffer overflowissues. The reported vulnerabilities could lead to the execution ofarbitrary code, and additionally to the bypass of content-loadingrestrictions via the location object.For the stable distribution (squeeze), this problem has been fixed inversion 3.0.11-1+squeeze13.For the testing distribution (wheezy), this problem has been fixed inversion 10.0.7-1.For the unstable distribution (sid), this problem has been fixed inversion 10.0.7-1.We recommend that you upgrade your icedove packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2554",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceape, an internet suite basedon Seamonkey.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 2.0.11-15.For the testing distribution (wheezy), these problems have been fixed inversion 2.7.7-1.For the unstable distribution (sid), these problems have been fixed inversion 2.7.7-1.We recommend that you upgrade your iceape packages."
+      }
+    ],
+    "CVE-2012-1976": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2553",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceweasel, a webbrowser based on Firefox. The included XULRunner library providesrendering services for several other applications included in Debian.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 3.5.16-18.For the testing distribution (wheezy), these problems have been fixed inversion 10.0.7esr-2.For the unstable distribution (sid), these problems have been fixed inversion 10.0.7esr-2.We recommend that you upgrade your iceweasel packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2556",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Icedove, Debian's versionof the Mozilla Thunderbird mail and news client.This includes several instances of use-after-free and buffer overflowissues. The reported vulnerabilities could lead to the execution ofarbitrary code, and additionally to the bypass of content-loadingrestrictions via the location object.For the stable distribution (squeeze), this problem has been fixed inversion 3.0.11-1+squeeze13.For the testing distribution (wheezy), this problem has been fixed inversion 10.0.7-1.For the unstable distribution (sid), this problem has been fixed inversion 10.0.7-1.We recommend that you upgrade your icedove packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2554",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceape, an internet suite basedon Seamonkey.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 2.0.11-15.For the testing distribution (wheezy), these problems have been fixed inversion 2.7.7-1.For the unstable distribution (sid), these problems have been fixed inversion 2.7.7-1.We recommend that you upgrade your iceape packages."
+      }
+    ],
+    "CVE-2012-1986": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2451",
+        "title": "",
+        "body": "When handling requests for a file from a remote filebucket, Puppet can be tricked into overwriting its defined location for filebucket storage. This allows an authorized attacker with access to the Puppet master to read arbitrary files."
+      }
+    ],
+    "CVE-2012-2110": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2454",
+        "title": "",
+        "body": "Tavis Ormandy, Google Security Team, discovered a vulnerabilityin the way DER-encoded ASN.1 data is parsed that can result ina heap overflow."
+      }
+    ],
+    "CVE-2012-2111": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2463",
+        "title": "",
+        "body": "Ivano Cristofolini discovered that insufficient security checks inSamba's handling of LSA RPC calls could lead to privilege escalationby gaining the take ownership privilege.For the stable distribution (squeeze), this problem has been fixed inversion 3.5.6~dfsg-3squeeze8.For the unstable distribution (sid), this problem has been fixed inversion 3.6.5-1.We recommend that you upgrade your samba packages."
+      }
+    ],
+    "CVE-2012-2112": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2455",
+        "title": "",
+        "body": "Helmut Hummel of the TYPO3 security team discovered that TYPO3, a webcontent management system, is not properly sanitizing output of theexception handler. This allows an attacker to conduct cross-sitescripting attacks if either third-party extensions are installed that donot sanitize this output on their own or in the presence of extensionsusing the extbase MVC framework which accept objects to controller actions.For the stable distribution (squeeze), this problem has been fixed inversion 4.3.9+dfsg1-1+squeeze4.For the testing (wheezy) and unstable (sid) distributions, this problemwill be fixed soon.We recommend that you upgrade your typo3-src packages."
+      }
+    ],
+    "CVE-2012-2113": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2552",
+        "title": "",
+        "body": "The tiff2pdf utility has an integer overflow error when parsing images."
+      }
+    ],
+    "CVE-2012-2123": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2469",
+        "title": "",
+        "body": "Steve Grubb reported an issue in fcaps, a filesystem-based capabilities system. Personality flags set using this mechanism, such as the disabling of address space randomization, may persist across suid calls."
+      }
+    ],
+    "CVE-2012-2131": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2454",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2012-2133": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2469",
+        "title": "",
+        "body": "Shachar Raindel discovered a use-after-free bug in the hugepages quota implementation. Local users with permission to use hugepages via the hugetlbfs implementation may be able to cause a denial of service (system crash)."
+      }
+    ],
+    "CVE-2012-2143": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2491",
+        "title": "",
+        "body": "The crypt(text, text) function in the pgcrypto contrib moduledid not handle certain passwords correctly when producingtraditional DES-based hashes. Characters after the first0x80 byte were ignored."
+      }
+    ],
+    "CVE-2012-2151": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2461",
+        "title": "",
+        "body": "Several vulnerabilities have been found in SPIP, a website engine forpublishing, resulting in cross-site scripting, script code injectionand bypass of restrictions.For the stable distribution (squeeze), this problem has been fixed inversion 2.1.1-3squeeze3.For the testing distribution (wheezy), this problem has been fixed inversion 2.1.13-1.For the unstable distribution (sid), this problem has been fixed inversion 2.1.13-1.We recommend that you upgrade your spip packages."
+      }
+    ],
+    "CVE-2012-2152": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2498",
+        "title": "",
+        "body": "It was discovered that dhcpcd, a DHCP client, was vulnerable to a stackoverflow. A malformed DHCP message could crash the client, causing a denial ofservice, and potentially remote code execution through properly designedmalicous DHCP packets.For the stable distribution (squeeze), this problem has been fixed inversion 1:3.2.3-5+squeeze1.For the testing distribution (wheezy), this problem has been fixed inversion 1:3.2.3-11.For the unstable distribution (sid), this problem has been fixed inversion 1:3.2.3-11.We recommend that you upgrade your dhcpcd package."
+      }
+    ],
+    "CVE-2012-2237": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2540",
+        "title": "",
+        "body": "Emanuel Bronshtein discovered that Mahara, an electronic portfolio,weblog, and resume builder, contains multiple cross-site scriptingvulnerabilities due to missing sanitization and insufficient encodingof user-supplied data.For the stable distribution (squeeze), these problems have been fixed inversion 1.2.6-2+squeeze5.For the testing distribution (wheezy), these problems will be fixed soon.For the unstable distribution (sid), these problems have been fixed inversion 1.5.1-2.We recommend that you upgrade your mahara packages."
+      }
+    ],
+    "CVE-2012-2239": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2591",
+        "title": "",
+        "body": "Multiple security issues have been found in Mahara, an electronicportfolio, weblog, and resume builder, which can result in cross-sitescripting, clickjacking or arbitrary file execution.For the stable distribution (squeeze), these problems have been fixed inversion 1.2.6-2+squeeze6.For the unstable distribution (sid), these problems have been fixed inversion 1.5.1-3.1.We recommend that you upgrade your mahara packages."
+      }
+    ],
+    "CVE-2012-2240": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2549",
+        "title": "",
+        "body": "Raphael Geissert discovered that dscverify does not perform sufficient validation and does not properly escape arguments to external commands, allowing a remote attacker (as when dscverify is used by dget) to execute arbitrary code."
+      }
+    ],
+    "CVE-2012-2241": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2549",
+        "title": "",
+        "body": "Raphael Geissert discovered that dget allows an attacker to delete arbitrary files when processing a specially-crafted .dsc or .changes file, due to insuficient input validation."
+      }
+    ],
+    "CVE-2012-2242": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2549",
+        "title": "",
+        "body": "Raphael Geissert discovered that dget does not properly escape arguments to external commands when processing .dsc and .changes files, allowing an attacker to execute arbitrary code. This issue is limited with the fix for CVE-2012-2241, and had already been fixed in version 2.10.73 due to changes to the code, without considering its security implications."
+      }
+    ],
+    "CVE-2012-2243": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2591",
+        "title": "",
+        "body": "Multiple security issues have been found in Mahara, an electronicportfolio, weblog, and resume builder, which can result in cross-sitescripting, clickjacking or arbitrary file execution.For the stable distribution (squeeze), these problems have been fixed inversion 1.2.6-2+squeeze6.For the unstable distribution (sid), these problems have been fixed inversion 1.5.1-3.1.We recommend that you upgrade your mahara packages."
+      }
+    ],
+    "CVE-2012-2244": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2591",
+        "title": "",
+        "body": "Multiple security issues have been found in Mahara, an electronicportfolio, weblog, and resume builder, which can result in cross-sitescripting, clickjacking or arbitrary file execution.For the stable distribution (squeeze), these problems have been fixed inversion 1.2.6-2+squeeze6.For the unstable distribution (sid), these problems have been fixed inversion 1.5.1-3.1.We recommend that you upgrade your mahara packages."
+      }
+    ],
+    "CVE-2012-2246": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2591",
+        "title": "",
+        "body": "Multiple security issues have been found in Mahara, an electronicportfolio, weblog, and resume builder, which can result in cross-sitescripting, clickjacking or arbitrary file execution.For the stable distribution (squeeze), these problems have been fixed inversion 1.2.6-2+squeeze6.For the unstable distribution (sid), these problems have been fixed inversion 1.5.1-3.1.We recommend that you upgrade your mahara packages."
+      }
+    ],
+    "CVE-2012-2247": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2591",
+        "title": "",
+        "body": "Multiple security issues have been found in Mahara, an electronicportfolio, weblog, and resume builder, which can result in cross-sitescripting, clickjacking or arbitrary file execution.For the stable distribution (squeeze), these problems have been fixed inversion 1.2.6-2+squeeze6.For the unstable distribution (sid), these problems have been fixed inversion 1.5.1-3.1.We recommend that you upgrade your mahara packages."
+      }
+    ],
+    "CVE-2012-2251": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2578",
+        "title": "",
+        "body": "Incorrect filtering of command line when using rsync protocol. It wasfor example possible to pass dangerous options after a -- switch. The rsyncprotocol support has been added in a Debian (and Fedora/Red Hat) specificpatch, so this vulnerability doesn't affect upstream."
+      }
+    ],
+    "CVE-2012-2253": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2591",
+        "title": "",
+        "body": "Multiple security issues have been found in Mahara, an electronicportfolio, weblog, and resume builder, which can result in cross-sitescripting, clickjacking or arbitrary file execution.For the stable distribution (squeeze), these problems have been fixed inversion 1.2.6-2+squeeze6.For the unstable distribution (sid), these problems have been fixed inversion 1.5.1-3.1.We recommend that you upgrade your mahara packages."
+      }
+    ],
+    "CVE-2012-2311": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2465",
+        "title": "",
+        "body": "De Eindbazen discovered that PHP, when run with mod_cgi, willinterpret a query string as command line parameters, allowing toexecute arbitrary code.Additionally, this update fixes insufficient validation of uploadname which lead to corrupted $_FILES indices.For the stable distribution (squeeze), this problem has been fixed inversion 5.3.3-7+squeeze9.The testing distribution (wheezy) will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 5.4.3-1.We recommend that you upgrade your php5 packages."
+      }
+    ],
+    "CVE-2012-2333": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2475",
+        "title": "",
+        "body": "It was discovered that openssl did not correctly handle explicitInitialization Vectors for CBC encryption modes, as used in TLS 1.1,1.2, and DTLS. An incorrect calculation would lead to an integerunderflow and incorrect memory access, causing denial of service(application crash.)For the stable distribution (squeeze), this problem has been fixed inversion 0.9.8o-4squeeze13.For the testing distribution (wheezy), and the unstable distribution(sid), this problem has been fixed in version 1.0.1c-1.We recommend that you upgrade your openssl packages."
+      }
+    ],
+    "CVE-2012-2334": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2487",
+        "title": "",
+        "body": "Integer overflow in operator new[] invocation and heap-basedbuffer overflow inside the MS-ODRAW parser."
+      }
+    ],
+    "CVE-2012-2337": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2478",
+        "title": "",
+        "body": "It was discovered that sudo misparsed network masks used in Host andHost_List stanzas. This allowed the execution of commands on hosts,where the user would not be allowed to run the specified command.For the stable distribution (squeeze), this problem has been fixed inversion 1.7.4p4-2.squeeze.3.For the unstable distribution (sid), this problem will be fixed soon.We recommend that you upgrade your sudo packages."
+      }
+    ],
+    "CVE-2012-2351": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2467",
+        "title": "",
+        "body": "It was discovered that Mahara, the portfolio, weblog, and resume builder,had an insecure default with regards to SAML-based authentication usedwith more than one SAML identity provider. Someone with control over oneIdP could impersonate users from other IdP's.For the stable distribution (squeeze), this problem has been fixed inversion 1.2.6-2+squeeze4.For the testing distribution (wheezy) and unstable distribution (sid),this problem has been fixed in version 1.4.2-1.We recommend that you upgrade your mahara packages."
+      }
+    ],
+    "CVE-2012-2352": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2477",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Sympa, a mailing listmanager, that allow to skip the scenario-based authorizationmechanisms. This vulnerability allows to display the archivesmanagement page, and download and delete the list archives byunauthorized users.For the stable distribution (squeeze), this problem has been fixed inversion 6.0.1+dfsg-4+squeeze1.For the testing distribution (wheezy), this problem will be fixedsoon.For the unstable distribution (sid), this problem has been fixed inversion 6.1.11~dfsg-2.We recommend that you upgrade your sympa packages."
+      }
+    ],
+    "CVE-2012-2388": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2483",
+        "title": "",
+        "body": "An authentication bypass issue was discovered by the Codenomicon CROSSproject in strongSwan, an IPsec-based VPN solution. When usingRSA-based setups, a missing check in the gmp plugin could allow anattacker presenting a forged signature to successfully authenticateagainst a strongSwan responder.The default configuration in Debian does not use the gmp plugin forRSA operations but rather the OpenSSL plugin, so the packages asshipped by Debian are not vulnerable.For the stable distribution (squeeze), this problem has been fixed inversion 4.4.1-5.2.For the testing distribution (wheezy), this problem has been fixed inversion 4.5.2-1.4.For the unstable distribution (sid), this problem has been fixed inversion 4.5.2-1.4.We recommend that you upgrade your strongswan packages."
+      }
+    ],
+    "CVE-2012-2401": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2470",
+        "title": "",
+        "body": "Several vulnerabilities were identified in WordPress, a web bloggingtool. As the CVEs were allocated from releases announcements andspecific fixes are usually not identified, it has been decided toupgrade the wordpress package to the latest upstream version insteadof backporting the patches.This means extra care should be taken when upgrading, especially whenusing third-party plugins or themes, since compatibility may have beenimpacted along the way. We recommend that users check their installbefore doing the upgrade.For the stable distribution (squeeze), those problems have been fixed inversion 3.3.2+dfsg-1~squeeze1.For the testing distribution (wheezy) and the unstable distribution(sid), those problems have been fixed in version 3.3.2+dfsg-1.We recommend that you upgrade your wordpress packages."
+      }
+    ],
+    "CVE-2012-2402": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2470",
+        "title": "",
+        "body": "Several vulnerabilities were identified in WordPress, a web bloggingtool. As the CVEs were allocated from releases announcements andspecific fixes are usually not identified, it has been decided toupgrade the wordpress package to the latest upstream version insteadof backporting the patches.This means extra care should be taken when upgrading, especially whenusing third-party plugins or themes, since compatibility may have beenimpacted along the way. We recommend that users check their installbefore doing the upgrade.For the stable distribution (squeeze), those problems have been fixed inversion 3.3.2+dfsg-1~squeeze1.For the testing distribution (wheezy) and the unstable distribution(sid), those problems have been fixed in version 3.3.2+dfsg-1.We recommend that you upgrade your wordpress packages."
+      }
+    ],
+    "CVE-2012-2403": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2470",
+        "title": "",
+        "body": "Several vulnerabilities were identified in WordPress, a web bloggingtool. As the CVEs were allocated from releases announcements andspecific fixes are usually not identified, it has been decided toupgrade the wordpress package to the latest upstream version insteadof backporting the patches.This means extra care should be taken when upgrading, especially whenusing third-party plugins or themes, since compatibility may have beenimpacted along the way. We recommend that users check their installbefore doing the upgrade.For the stable distribution (squeeze), those problems have been fixed inversion 3.3.2+dfsg-1~squeeze1.For the testing distribution (wheezy) and the unstable distribution(sid), those problems have been fixed in version 3.3.2+dfsg-1.We recommend that you upgrade your wordpress packages."
+      }
+    ],
+    "CVE-2012-2404": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2470",
+        "title": "",
+        "body": "Several vulnerabilities were identified in WordPress, a web bloggingtool. As the CVEs were allocated from releases announcements andspecific fixes are usually not identified, it has been decided toupgrade the wordpress package to the latest upstream version insteadof backporting the patches.This means extra care should be taken when upgrading, especially whenusing third-party plugins or themes, since compatibility may have beenimpacted along the way. We recommend that users check their installbefore doing the upgrade.For the stable distribution (squeeze), those problems have been fixed inversion 3.3.2+dfsg-1~squeeze1.For the testing distribution (wheezy) and the unstable distribution(sid), those problems have been fixed in version 3.3.2+dfsg-1.We recommend that you upgrade your wordpress packages."
+      }
+    ],
+    "CVE-2012-2414": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2460",
+        "title": "",
+        "body": "David Woolley discovered a privilege escalation in the Asterisk manager interface."
+      }
+    ],
+    "CVE-2012-2415": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2460",
+        "title": "",
+        "body": "Russell Bryant discovered a buffer overflow in the Skinny driver."
+      }
+    ],
+    "CVE-2012-2417": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2502",
+        "title": "",
+        "body": "It was discovered that that the ElGamal code in PythonCrypto, acollection of cryptographic algorithms and protocols for Python usedinsecure insufficient prime numbers in key generation, which lead to aweakened signature or public key space, allowing easier brute forceattacks on such keys.For the stable distribution (squeeze), this problem has been fixed inversion 2.1.0-2+squeeze1.For the unstable distribution (sid), this problem has been fixed inversion 2.6-1.We recommend that you upgrade your python-crypto packages. Afterinstalling this update, previously generated keys need to be regenerated."
+      }
+    ],
+    "CVE-2012-2582": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2536",
+        "title": "",
+        "body": "It was discovered that Open Ticket Request System (OTRS),a ticket request system, contains across-site scripting vulnerability when email messages are viewedusing Internet Explorer. This update also improves the HTML securityfilter to detect tag nesting.For the stable distribution (squeeze), this problem has been fixed inversion 2.4.9+dfsg1-3+squeeze3.For the unstable distribution (sid), this problem has been fixed inversion 3.1.7+dfsg1-5.We recommend that you upgrade your otrs2 packages."
+      }
+    ],
+    "CVE-2012-2655": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2491",
+        "title": "",
+        "body": "SECURITY DEFINER and SET attributes for a call handler of aprocedural language could crash the database server."
+      }
+    ],
+    "CVE-2012-2665": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2520",
+        "title": "",
+        "body": "Timo Warns from PRE-CERT discovered multiple heap-based buffer overflows inOpenOffice.org, an office productivity suite. The issues lies in the XMLmanifest encryption tag parsing code. Using specially crafted files, anattacker can cause application crash and could cause arbitrary code execution.For the stable distribution (squeeze), this problem has been fixed inversion 1:3.2.1-11+squeeze7.openoffice.org package has been replaced by libreoffice in testing (wheezy) andunstable (sid) distributions.For the testing distribution (wheezy), this problem has been fixed inversion 1:3.5.4-7.For the unstable distribution (sid), this problem has been fixed inversion 1:3.5.4-7.We recommend that you upgrade your openoffice.org packages."
+      }
+    ],
+    "CVE-2012-2807": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2521",
+        "title": "",
+        "body": "Jueri Aedla discovered several integer overflows in libxml, which couldlead to the execution of arbitrary code or denial of service.For the stable distribution (squeeze), this problem has been fixed inversion 2.7.8.dfsg-2+squeeze5.For the testing distribution (wheezy) and the unstable distribution (sid),this problem has been fixed in version 2.8.0+dfsg1-5.We recommend that you upgrade your libxml2 packages."
+      }
+    ],
+    "CVE-2012-2812": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2559",
+        "title": "",
+        "body": "A heap-based out-of-bounds array read in the exif_entry_get_value function allows remote attackers to cause a denial of service or possibly obtain potentially sensitive information from process memory via an image with crafted EXIF tags."
+      }
+    ],
+    "CVE-2012-2813": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2559",
+        "title": "",
+        "body": "A heap-based out-of-bounds array read in the exif_convert_utf16_to_utf8 function allows remote attackers to cause a denial of service or possibly obtain potentially sensitive information from process memory via an image with crafted EXIF tags."
+      }
+    ],
+    "CVE-2012-2814": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2559",
+        "title": "",
+        "body": "A buffer overflow in the exif_entry_format_value function allows remote attackers to cause a denial of service or possibly execute arbitrary code via an image with crafted EXIF tags."
+      }
+    ],
+    "CVE-2012-2836": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2559",
+        "title": "",
+        "body": "A heap-based out-of-bounds array read in the exif_data_load_data function allows remote attackers to cause a denial of service or possibly obtain potentially sensitive information from process memory via an image with crafted EXIF tags."
+      }
+    ],
+    "CVE-2012-2837": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2559",
+        "title": "",
+        "body": "A divide-by-zero error in the mnote_olympus_entry_get_value function while formatting EXIF maker note tags allows remote attackers to cause a denial of service via an image with crafted EXIF tags."
+      }
+    ],
+    "CVE-2012-2840": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2559",
+        "title": "",
+        "body": "An off-by-one error in the exif_convert_utf16_to_utf8 function allows remote attackers to cause a denial of service or possibly execute arbitrary code via an image with crafted EXIF tags."
+      }
+    ],
+    "CVE-2012-2841": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2559",
+        "title": "",
+        "body": "An integer underflow in the exif_entry_get_value function can cause a heap overflow and potentially arbitrary code execution while formatting an EXIF tag, if the function is called with a buffer size parameter equal to zero or one."
+      }
+    ],
+    "CVE-2012-2870": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2555",
+        "title": "",
+        "body": "Nicholas Gregoire and Cris Neckar discovered several memory handlingbugs in libxslt, which could lead to denial of service or the executionof arbitrary code if a malformed document is processed.For the stable distribution (squeeze), these problems have been fixed inversion 1.1.26-6+squeeze2.For the unstable distribution (sid), these problems have been fixed inversion 1.1.26-14.We recommend that you upgrade your libxslt packages."
+      }
+    ],
+    "CVE-2012-2893": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2555",
+        "title": "",
+        "body": "Nicholas Gregoire and Cris Neckar discovered several memory handlingbugs in libxslt, which could lead to denial of service or the executionof arbitrary code if a malformed document is processed.For the stable distribution (squeeze), these problems have been fixed inversion 1.1.26-6+squeeze2.For the unstable distribution (sid), these problems have been fixed inversion 1.1.26-14.We recommend that you upgrade your libxslt packages."
+      }
+    ],
+    "CVE-2012-2942": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2711",
+        "title": "",
+        "body": "Buffer overflow in the header capture code."
+      }
+    ],
+    "CVE-2012-2944": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2484",
+        "title": "",
+        "body": "Sebastian Pohle discovered that UPSD, the server of Network UPS Tools(NUT) is vulnerable to a remote denial of service attack.For the stable distribution (squeeze), this problem has been fixed inversion 2.4.3-1.1squeeze2.For the testing distribution (wheezy) and unstable distribution (sid),this problem will be fixed soon.We recommend that you upgrade your nut packages."
+      }
+    ],
+    "CVE-2012-2948": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2493",
+        "title": "",
+        "body": "The Skinny channel driver allows remote authenticated users tocause a denial of service (NULL pointer dereference and daemoncrash) by closing a connection in off-hook mode."
+      }
+    ],
+    "CVE-2012-2978": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2515",
+        "title": "",
+        "body": "Marek Vavruša and Lubos Slovak discovered that NSD, an authoritativedomain name server, is not properly handling non-standard DNS packets.This can result in a NULL pointer dereference and crash the handlingprocess. A remote attacker can abuse this flaw to perform denial ofservice attacks.For the stable distribution (squeeze), this problem has been fixed inversion 3.2.5-1.squeeze2.For the testing distribution (wheezy), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 3.2.12-1.We recommend that you upgrade your nsd3 packages."
+      }
+    ],
+    "CVE-2012-3291": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2495",
+        "title": "",
+        "body": "A buffer overflow was discovered in OpenConnect, a client for the CiscoAnyConnect VPN, which could result in denial of service.For the stable distribution (squeeze), this problem has been fixed inversion 2.25-0.1+squeeze1.For the unstable distribution (sid), this problem has been fixed inversion 3.18-1.We recommend that you upgrade your openconnect packages."
+      }
+    ],
+    "CVE-2012-3292": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2523",
+        "title": "",
+        "body": "It was discovered that the GridFTP component from the Globus Toolkit, atoolkit used for building Grid systems and applications, performedinsufficient validation of a name lookup, which could lead to privilegeescalation.For the stable distribution (squeeze), this problem has been fixed inversion 3.23-1+squeeze1 of the globus-gridftp-server source packageand in version 0.43-1+squeeze1 of the globus-gridftp-server-controlsource package.For the testing distribution (wheezy) and the unstable distribution (sid),this problem has been fixed in version 6.5-1.We recommend that you upgrade your globus-gridftp-server packages."
+      }
+    ],
+    "CVE-2012-3356": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2563",
+        "title": "",
+        "body": "The remote Subversion views functionality does not properlyperform authorization, which allows remote attackers to bypass intendedaccess restrictions."
+      }
+    ],
+    "CVE-2012-3357": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2563",
+        "title": "",
+        "body": "The Subversion revision view does not properly handle logmessages when a readable path is copied from an unreadable path, whichallows remote attackers to obtain sensitive information."
+      }
+    ],
+    "CVE-2012-3362": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2510",
+        "title": "",
+        "body": "John Leitch has discovered a vulnerability in eXtplorer, a very featurerich web server file manager, which can be exploited by malicious peopleto conduct cross-site request forgery attacks.The vulnerability allows users to perform certain actions via HTTP requestswithout performing any validity checks to verify the request. This can beexploited for example, to create an administrative user account by trickingan logged administrator to visiting an attacker-defined web link.For the stable distribution (squeeze), this problem has been fixed inversion 2.1.0b6+dfsg.2-1+squeeze1.For the testing distribution (wheezy), this problem has been fixed inversion 2.1.0b6+dfsg.3-3.For the unstable distribution (sid), this problem has been fixed inversion 2.1.0b6+dfsg.3-3.We recommend that you upgrade your extplorer packages."
+      }
+    ],
+    "CVE-2012-3366": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2503",
+        "title": "",
+        "body": "It was discovered that malicious clients can trick the servercomponent of the Bcfg2 configuration management system to executecommands with root privileges.For the stable distribution (squeeze), this problem has been fixed inversion 1.0.1-3+squeeze2.For the unstable distribution (sid), this problem has been fixed inversion 1.2.2-2.We recommend that you upgrade your bcfg2 packages."
+      }
+    ],
+    "CVE-2012-3401": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2552",
+        "title": "",
+        "body": "Huzaifa Sidhpurwala discovered heap-based buffer overflow in the t2p_read_tiff_init() function."
+      }
+    ],
+    "CVE-2012-3418": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2533",
+        "title": "",
+        "body": "Multiple buffer overflows in the PCP protocol decoders cancause PCP clients and servers to crash or, potentially,execute arbitrary code while processing crafted PDUs."
+      }
+    ],
+    "CVE-2012-3419": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2533",
+        "title": "",
+        "body": "The linux PMDA used by the pmcd daemon discloses sensitiveinformation from the /proc file system to unauthenticatedclients."
+      }
+    ],
+    "CVE-2012-3420": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2533",
+        "title": "",
+        "body": "Multiple memory leaks processing crafted requests can causepmcd to consume large amounts of memory and eventually crash."
+      }
+    ],
+    "CVE-2012-3432": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2531",
+        "title": "",
+        "body": "Guest mode unprivileged code, which has been granted the privilege to access MMIO regions, may leverage that access to crash the whole guest. Since this can be used to crash a client from within, this vulnerability is considered to have low impact."
+      }
+    ],
+    "CVE-2012-3433": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2531",
+        "title": "",
+        "body": "A guest kernel can cause the host to become unresponsive for a period of time, potentially leading to a DoS. Since an attacker with full control in the guest can impact the host, this vulnerability is considered to have high impact."
+      }
+    ],
+    "CVE-2012-3435": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2539",
+        "title": "",
+        "body": "It was discovered that Zabbix, a network monitoring solution, does notproperly validate user input used as a part of an SQL query. This mayallow unauthenticated attackers to execute arbitrary SQL commands (SQLinjection) and possibly escalate privileges.For the stable distribution (squeeze), this problem has been fixed inversion 1:1.8.2-1squeeze4.For the testing distribution (wheezy), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 1:2.0.2+dfsg-1.We recommend that you upgrade your zabbix packages."
+      }
+    ],
+    "CVE-2012-3442": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2529",
+        "title": "",
+        "body": "Two functions do not validate the scheme of a redirect target, which might allow remote attackers to conduct cross-site scripting (XSS) attacks via a data: URL."
+      }
+    ],
+    "CVE-2012-3443": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2529",
+        "title": "",
+        "body": "The ImageField class completely decompresses image data during image validation, which allows remote attackers to cause a denial of service (memory consumption) by uploading an image file."
+      }
+    ],
+    "CVE-2012-3444": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2529",
+        "title": "",
+        "body": "The get_image_dimensions function in the image-handling functionality uses a constant chunk size in all attempts to determine dimensions, which allows remote attackers to cause a denial of service (process or thread consumption) via a large TIFF image."
+      }
+    ],
+    "CVE-2012-3458": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2541",
+        "title": "",
+        "body": "It was discovered that Beaker, a cache and session library for Python,when using the python-crypto backend, is vulnerable to informationdisclosure due to a cryptographic weakness related to the use of theAES cipher in ECB mode.Systems that have the python-pycryptopp package should not bevulnerable, as this backend is preferred over python-crypto.After applying this update, existing sessions will be invalidated.For the stable distribution (squeeze), this problem has been fixed inversion 1.5.4-4+squeeze1.For the testing distribution (wheezy), and the unstable distribution(sid), this problem has been fixed in version 1.6.3-1.1.We recommend that you upgrade your beaker packages."
+      }
+    ],
+    "CVE-2012-3461": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2526",
+        "title": "",
+        "body": "Just Ferguson discovered that libotr, an off-the-record (OTR) messaginglibrary, can be forced to perform zero-length allocations for heap buffersthat are used in base64 decoding routines. An attacker can exploit thisflaw by sending crafted messages to an application that is using libotr toperform denial of service attacks or potentially execute arbitrary code.For the stable distribution (squeeze), this problem has been fixed inversion 3.2.0-2+squeeze1.For the testing distribution (wheezy), this problem has been fixed inversion 3.2.1-1.For the unstable distribution (sid), this problem has been fixed inversion 3.2.1-1.We recommend that you upgrade your libotr packages."
+      }
+    ],
+    "CVE-2012-3478": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2530",
+        "title": "",
+        "body": "Henrik Erkkonen discovered that rssh, a restricted shell for SSH, doesnot properly restrict shell access.For the stable distribution (squeeze), this problem has been fixed inversion 2.3.2-13squeeze1.For the unstable distribution (sid), this problem has been fixed inversion 2.3.3-5.We recommend that you upgrade your rssh packages."
+      }
+    ],
+    "CVE-2012-3488": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2534",
+        "title": "",
+        "body": "contrib/xml2's xslt_process() can be used to read and writeexternal files and URLs."
+      }
+    ],
+    "CVE-2012-3489": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2534",
+        "title": "",
+        "body": "xml_parse() fetches external files or URLs to resolve DTD andentity references in XML values."
+      }
+    ],
+    "CVE-2012-3494": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2544",
+        "title": "",
+        "body": "It was discovered that set_debugreg allows writes to reserved bits of the DR7 debug control register on amd64 (x86-64) paravirtualised guests, allowing a guest to crash the host."
+      }
+    ],
+    "CVE-2012-3499": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2637",
+        "title": "",
+        "body": "The modules mod_info, mod_status, mod_imagemap, mod_ldap, and mod_proxy_ftp did not properly escape hostnames and URIs in HTML output, causing cross site scripting vulnerabilities."
+      }
+    ],
+    "CVE-2012-3505": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2564",
+        "title": "",
+        "body": "gpernot discovered that Tinyproxy, a HTTP proxy, is vulnerable to adenial of service by remote attackers by sending crafted requestheaders.For the stable distribution (squeeze), this problem has been fixed inversion 1.8.2-1squeeze3.For the testing distribution (wheezy), this problem has been fixed inversion 1.8.3-3.For the unstable distribution (sid), this problem has been fixed inversion 1.8.3-3.We recommend that you upgrade your tinyproxy packages."
+      }
+    ],
+    "CVE-2012-3515": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2545",
+        "title": "",
+        "body": "QEMU does not properly handle VT100 escape sequences when emulating certain devices with a virtual console backend. An attacker within a guest with access to the vulnerable virtual console could overwrite memory of QEMU and escalate privileges to that of the qemu process."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2543",
+        "title": "",
+        "body": "The device model for HVM domains does not properly handle VT100 escape sequences when emulating certain devices with a virtual console backend. An attacker within a guest with access to the vulnerable virtual console could overwrite memory of the device model and escalate privileges to that of the device model process."
+      }
+    ],
+    "CVE-2012-3527": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2537",
+        "title": "",
+        "body": "An insecure call to unserialize in the help system enablesarbitrary code execution by authenticated users."
+      }
+    ],
+    "CVE-2012-3528": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2537",
+        "title": "",
+        "body": "The TYPO3 backend contains several cross-site scriptingvulnerabilities."
+      }
+    ],
+    "CVE-2012-3529": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2537",
+        "title": "",
+        "body": "Authenticated users who can access the configuration modulecan obtain the encryption key, allowing them to escalate theirprivileges."
+      }
+    ],
+    "CVE-2012-3531": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2537",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2012-3547": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2546",
+        "title": "",
+        "body": "Timo Warns discovered that the EAP-TLS handling of FreeRADIUS, ahigh-performance and highly configurable RADIUS server, is not properlyperforming length checks on user-supplied input before copying to a localstack buffer. As a result, an unauthenticated attacker can exploit thisflaw to crash the daemon or execute arbitrary code via craftedcertificates.For the stable distribution (squeeze), this problem has been fixed inversion 2.1.10+dfsg-2+squeeze1.For the testing distribution (wheezy), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 2.1.12+dfsg-1.1.We recommend that you upgrade your freeradius packages."
+      }
+    ],
+    "CVE-2012-3571": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2516",
+        "title": "",
+        "body": "Markus Hietava of the Codenomicon CROSS project discovered that it is possible to force the server to enter an infinite loop via messages with malformed client identifiers."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2519",
+        "title": "",
+        "body": "Markus Hietava of the Codenomicon CROSS project discovered that it is possible to force the server to enter an infinite loop via messages with malformed client identifiers."
+      }
+    ],
+    "CVE-2012-3812": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2550",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Asterisk, a PBX and telephonytoolkit, allowing privilege escalation in the Asterisk Manager, denial ofservice or privilege escalation.More detailed information can be found in the Asterisk advisories:AST-2012-010,AST-2012-011,AST-2012-012, andAST-2012-013.For the stable distribution (squeeze), these problems have been fixed inversion 1:1.6.2.9-2+squeeze8.For the testing distribution (wheezy) and the unstable distribution (sid),these problems have been fixed in version 1:1.8.13.1~dfsg-1.We recommend that you upgrade your asterisk packages."
+      }
+    ],
+    "CVE-2012-3817": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2517",
+        "title": "",
+        "body": "Einar Lonn discovered that under certain conditions bind9, a DNS server,may use cached data before initialization. As a result, an attacker cantrigger an assertion failure on servers under high query load that doDNSSEC validation.For the stable distribution (squeeze), this problem has been fixed inversion 1:9.7.3.dfsg-1~squeeze6.For the testing distribution (wheezy), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 1:9.8.1.dfsg.P1-4.2.We recommend that you upgrade your bind9 packages."
+      }
+    ],
+    "CVE-2012-3863": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2550",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Asterisk, a PBX and telephonytoolkit, allowing privilege escalation in the Asterisk Manager, denial ofservice or privilege escalation.More detailed information can be found in the Asterisk advisories:AST-2012-010,AST-2012-011,AST-2012-012, andAST-2012-013.For the stable distribution (squeeze), these problems have been fixed inversion 1:1.6.2.9-2+squeeze8.For the testing distribution (wheezy) and the unstable distribution (sid),these problems have been fixed in version 1:1.8.13.1~dfsg-1.We recommend that you upgrade your asterisk packages."
+      }
+    ],
+    "CVE-2012-3864": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2511",
+        "title": "",
+        "body": "Authenticated clients could read arbitrary files on the puppet master."
+      }
+    ],
+    "CVE-2012-3865": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2511",
+        "title": "",
+        "body": "Authenticated clients could delete arbitrary files on the puppet master."
+      }
+    ],
+    "CVE-2012-3866": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2511",
+        "title": "",
+        "body": "The report of the most recent Puppet run was stored with world readable permissions, resulting in information disclosure."
+      }
+    ],
+    "CVE-2012-3867": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2511",
+        "title": "",
+        "body": "Agent hostnames were insufficiently validated."
+      }
+    ],
+    "CVE-2012-3954": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2516",
+        "title": "",
+        "body": "Glen Eustace discovered that DHCP servers running in DHCPv6 mode and possibly DHCPv4 mode suffer of memory leaks while processing messages. An attacker can use this flaw to exhaust resources and perform denial of service attacks."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2519",
+        "title": "",
+        "body": "Glen Eustace discovered that DHCP servers running in DHCPv6 mode and possibly DHCPv4 mode suffer of memory leaks while processing messages. An attacker can use this flaw to exhaust resources and perform denial of service attacks."
+      }
+    ],
+    "CVE-2012-3959": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2553",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceweasel, a webbrowser based on Firefox. The included XULRunner library providesrendering services for several other applications included in Debian.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 3.5.16-18.For the testing distribution (wheezy), these problems have been fixed inversion 10.0.7esr-2.For the unstable distribution (sid), these problems have been fixed inversion 10.0.7esr-2.We recommend that you upgrade your iceweasel packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2556",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Icedove, Debian's versionof the Mozilla Thunderbird mail and news client.This includes several instances of use-after-free and buffer overflowissues. The reported vulnerabilities could lead to the execution ofarbitrary code, and additionally to the bypass of content-loadingrestrictions via the location object.For the stable distribution (squeeze), this problem has been fixed inversion 3.0.11-1+squeeze13.For the testing distribution (wheezy), this problem has been fixed inversion 10.0.7-1.For the unstable distribution (sid), this problem has been fixed inversion 10.0.7-1.We recommend that you upgrade your icedove packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2554",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceape, an internet suite basedon Seamonkey.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 2.0.11-15.For the testing distribution (wheezy), these problems have been fixed inversion 2.7.7-1.For the unstable distribution (sid), these problems have been fixed inversion 2.7.7-1.We recommend that you upgrade your iceape packages."
+      }
+    ],
+    "CVE-2012-3969": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2553",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceweasel, a webbrowser based on Firefox. The included XULRunner library providesrendering services for several other applications included in Debian.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 3.5.16-18.For the testing distribution (wheezy), these problems have been fixed inversion 10.0.7esr-2.For the unstable distribution (sid), these problems have been fixed inversion 10.0.7esr-2.We recommend that you upgrade your iceweasel packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2556",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Icedove, Debian's versionof the Mozilla Thunderbird mail and news client.This includes several instances of use-after-free and buffer overflowissues. The reported vulnerabilities could lead to the execution ofarbitrary code, and additionally to the bypass of content-loadingrestrictions via the location object.For the stable distribution (squeeze), this problem has been fixed inversion 3.0.11-1+squeeze13.For the testing distribution (wheezy), this problem has been fixed inversion 10.0.7-1.For the unstable distribution (sid), this problem has been fixed inversion 10.0.7-1.We recommend that you upgrade your icedove packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2554",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceape, an internet suite basedon Seamonkey.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 2.0.11-15.For the testing distribution (wheezy), these problems have been fixed inversion 2.7.7-1.For the unstable distribution (sid), these problems have been fixed inversion 2.7.7-1.We recommend that you upgrade your iceape packages."
+      }
+    ],
+    "CVE-2012-3972": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2553",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceweasel, a webbrowser based on Firefox. The included XULRunner library providesrendering services for several other applications included in Debian.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 3.5.16-18.For the testing distribution (wheezy), these problems have been fixed inversion 10.0.7esr-2.For the unstable distribution (sid), these problems have been fixed inversion 10.0.7esr-2.We recommend that you upgrade your iceweasel packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2556",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Icedove, Debian's versionof the Mozilla Thunderbird mail and news client.This includes several instances of use-after-free and buffer overflowissues. The reported vulnerabilities could lead to the execution ofarbitrary code, and additionally to the bypass of content-loadingrestrictions via the location object.For the stable distribution (squeeze), this problem has been fixed inversion 3.0.11-1+squeeze13.For the testing distribution (wheezy), this problem has been fixed inversion 10.0.7-1.For the unstable distribution (sid), this problem has been fixed inversion 10.0.7-1.We recommend that you upgrade your icedove packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2554",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceape, an internet suite basedon Seamonkey.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 2.0.11-15.For the testing distribution (wheezy), these problems have been fixed inversion 2.7.7-1.For the unstable distribution (sid), these problems have been fixed inversion 2.7.7-1.We recommend that you upgrade your iceape packages."
+      }
+    ],
+    "CVE-2012-3978": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2553",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceweasel, a webbrowser based on Firefox. The included XULRunner library providesrendering services for several other applications included in Debian.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 3.5.16-18.For the testing distribution (wheezy), these problems have been fixed inversion 10.0.7esr-2.For the unstable distribution (sid), these problems have been fixed inversion 10.0.7esr-2.We recommend that you upgrade your iceweasel packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2556",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Icedove, Debian's versionof the Mozilla Thunderbird mail and news client.This includes several instances of use-after-free and buffer overflowissues. The reported vulnerabilities could lead to the execution ofarbitrary code, and additionally to the bypass of content-loadingrestrictions via the location object.For the stable distribution (squeeze), this problem has been fixed inversion 3.0.11-1+squeeze13.For the testing distribution (wheezy), this problem has been fixed inversion 10.0.7-1.For the unstable distribution (sid), this problem has been fixed inversion 10.0.7-1.We recommend that you upgrade your icedove packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2554",
+        "title": "",
+        "body": "Several vulnerabilities have been discovered in Iceape, an internet suite basedon Seamonkey.The reported vulnerabilities could lead to the execution of arbitrarycode or the bypass of content-loading restrictions via the locationobject.For the stable distribution (squeeze), these problems have been fixed inversion 2.0.11-15.For the testing distribution (wheezy), these problems have been fixed inversion 2.7.7-1.For the unstable distribution (sid), these problems have been fixed inversion 2.7.7-1.We recommend that you upgrade your iceape packages."
+      }
+    ],
+    "CVE-2012-3986": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2569",
+        "title": "",
+        "body": "Icedove does not properly restrict calls to DOMWindowUtilsmethods, which allows remote attackers to bypass intendedaccess restrictions via crafted JavaScript code."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2565",
+        "title": "",
+        "body": "Iceweasel does not properly restrict calls to DOMWindowUtilsmethods, which allows remote attackers to bypass intendedaccess restrictions via crafted JavaScript code."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2572",
+        "title": "",
+        "body": "Icedove does not properly restrict calls to DOMWindowUtils methods, which allows remote attackers to bypass intended access restrictions via crafted JavaScript code."
+      }
+    ],
+    "CVE-2012-3990": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2569",
+        "title": "",
+        "body": "A Use-after-free vulnerability in the IME State Managerimplementation allows remote attackers to execute arbitrarycode via unspecified vectors, related to thensIContent::GetNameSpaceID function."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2565",
+        "title": "",
+        "body": "A Use-after-free vulnerability in the IME State Managerimplementation allows remote attackers to execute arbitrarycode via unspecified vectors, related to thensIContent::GetNameSpaceID function."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2572",
+        "title": "",
+        "body": "A Use-after-free vulnerability in the IME State Manager implementation allows remote attackers to execute arbitrary code via unspecified vectors, related to the nsIContent::GetNameSpaceID function."
+      }
+    ],
+    "CVE-2012-3991": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2569",
+        "title": "",
+        "body": "Icedove does not properly restrict JSAPI access to theGetProperty function, which allows remote attackers to bypassthe Same Origin Policy and possibly have unspecified otherimpact via a crafted web site."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2565",
+        "title": "",
+        "body": "Iceweasel does not properly restrict JSAPI access to theGetProperty function, which allows remote attackers to bypassthe Same Origin Policy and possibly have unspecified otherimpact via a crafted web site."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2572",
+        "title": "",
+        "body": "Icedove does not properly restrict JSAPI access to the GetProperty function, which allows remote attackers to bypass the Same Origin Policy and possibly have unspecified other impact via a crafted web site."
+      }
+    ],
+    "CVE-2012-4000": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2522",
+        "title": "",
+        "body": "Emilio Pinna discovered a cross site scripting vulnerability in thespellchecker.php page of FCKeditor, a popular HTML/DHTML editor for the web.For the stable distribution (squeeze), this problem has been fixed inversion 1:2.6.6-1squeeze1.For the testing distribution (wheezy), this problem has been fixed inversion 1:2.6.6-3.For the unstable distribution (sid), this problem has been fixed inversion 1:2.6.6-3.We recommend that you upgrade your fckeditor packages."
+      }
+    ],
+    "CVE-2012-4048": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2590",
+        "title": "",
+        "body": "Bjorn Mork and Laurent Butti discovered crashes in the PPP and RTPS2dissectors, which could potentially result in the execution of arbitrarycode.For the stable distribution (squeeze), these problems have been fixed inversion 1.2.11-6+squeeze8.For the unstable distribution (sid), these problems have been fixed inversion 1.8.2-1.We recommend that you upgrade your wireshark packages."
+      }
+    ],
+    "CVE-2012-4179": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2569",
+        "title": "",
+        "body": "A use-after-free vulnerability in thensHTMLCSSUtils::CreateCSSPropertyTxn function allows remoteattackers to execute arbitrary code or cause a denial ofservice (heap memory corruption) via unspecified vectors."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2565",
+        "title": "",
+        "body": "A use-after-free vulnerability in thensHTMLCSSUtils::CreateCSSPropertyTxn function allows remoteattackers to execute arbitrary code or cause a denial ofservice (heap memory corruption) via unspecified vectors."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2572",
+        "title": "",
+        "body": "A use-after-free vulnerability in the nsHTMLCSSUtils::CreateCSSPropertyTxn function allows remote attackers to execute arbitrary code or cause a denial of service (heap memory corruption) via unspecified vectors."
+      }
+    ],
+    "CVE-2012-4180": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2569",
+        "title": "",
+        "body": "A heap-based buffer overflow in thensHTMLEditor::IsPrevCharInNodeWhitespace function allowsremote attackers to execute arbitrary code via unspecifiedvectors."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2565",
+        "title": "",
+        "body": "A heap-based buffer overflow in thensHTMLEditor::IsPrevCharInNodeWhitespace function allowsremote attackers to execute arbitrary code via unspecifiedvectors."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2572",
+        "title": "",
+        "body": "A heap-based buffer overflow in the nsHTMLEditor::IsPrevCharInNodeWhitespace function allows remote attackers to execute arbitrary code via unspecified vectors."
+      }
+    ],
+    "CVE-2012-4182": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2569",
+        "title": "",
+        "body": "A use-after-free vulnerability in thensTextEditRules::WillInsert function allows remote attackersto execute arbitrary code or cause a denial of service (heapmemory corruption) via unspecified vectors."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2565",
+        "title": "",
+        "body": "A use-after-free vulnerability in thensTextEditRules::WillInsert function allows remote attackersto execute arbitrary code or cause a denial of service (heapmemory corruption) via unspecified vectors."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2572",
+        "title": "",
+        "body": "A use-after-free vulnerability in the nsTextEditRules::WillInsert function allows remote attackers to execute arbitrary code or cause a denial of service (heap memory corruption) via unspecified vectors."
+      }
+    ],
+    "CVE-2012-4186": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2569",
+        "title": "",
+        "body": "A heap-based buffer overflow in thensWav-eReader::DecodeAudioData function allows remote attackersto execute arbitrary code via unspecified vectors."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2565",
+        "title": "",
+        "body": "A heap-based buffer overflow in thensWav-eReader::DecodeAudioData function allows remote attackersto execute arbitrary code via unspecified vectors."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2572",
+        "title": "",
+        "body": "A heap-based buffer overflow in the nsWav-eReader::DecodeAudioData function allows remote attackers to execute arbitrary code via unspecified vectors."
+      }
+    ],
+    "CVE-2012-4188": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2569",
+        "title": "",
+        "body": "A heap-based buffer overflow in the Convolve3x3 functionallows remote attackers to execute arbitrary code viaunspecified vectors."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2565",
+        "title": "",
+        "body": "A heap-based buffer overflow in the Convolve3x3 functionallows remote attackers to execute arbitrary code viaunspecified vectors."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2572",
+        "title": "",
+        "body": "A heap-based buffer overflow in the Convolve3x3 function allows remote attackers to execute arbitrary code via unspecified vectors."
+      }
+    ],
+    "CVE-2012-4201": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2583",
+        "title": "",
+        "body": "The evalInSandbox implementation uses an incorrect context during the handling of JavaScript code that sets the location.href property, which allows remote attackers to conduct cross-site scripting (XSS) attacks or read arbitrary files by leveraging a sandboxed add-on."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2584",
+        "title": "",
+        "body": "The evalInSandbox implementation uses an incorrect context during the handling of JavaScript code that sets the location.href property, which allows remote attackers to conduct cross-site scripting (XSS) attacks or read arbitrary files by leveraging a sandboxed add-on."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2588",
+        "title": "",
+        "body": "The evalInSandbox implementation uses an incorrect context during the handling of JavaScript code that sets the location.href property, which allows remote attackers to conduct cross-site scripting (XSS) attacks or read arbitrary files by leveraging a sandboxed add-on."
+      }
+    ],
+    "CVE-2012-4207": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2583",
+        "title": "",
+        "body": "The HZ-GB-2312 character-set implementation does not properly handle a ~ (tilde) character in proximity to a chunk delimiter, which allows remote attackers to conduct cross-site scripting (XSS) attacks via a crafted document."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2584",
+        "title": "",
+        "body": "The HZ-GB-2312 character-set implementation does not properly handle a ~ (tilde) character in proximity to a chunk delimiter, which allows remote attackers to conduct cross-site scripting (XSS) attacks via a crafted document."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2588",
+        "title": "",
+        "body": "The HZ-GB-2312 character-set implementation does not properly handle a ~ (tilde) character in proximity to a chunk delimiter, which allows remote attackers to conduct cross-site scripting (XSS) attacks via a crafted document."
+      }
+    ],
+    "CVE-2012-4216": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2583",
+        "title": "",
+        "body": "Use-after-free vulnerability in the gfxFont::GetFontEntry function allows remote attackers to execute arbitrary code or cause a denial of service (heap memory corruption) via unspecified vectors."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2584",
+        "title": "",
+        "body": "Use-after-free vulnerability in the gfxFont::GetFontEntry function allows remote attackers to execute arbitrary code or cause a denial of service (heap memory corruption) via unspecified vectors."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2588",
+        "title": "",
+        "body": "Use-after-free vulnerability in the gfxFont::GetFontEntry function allows remote attackers to execute arbitrary code or cause a denial of service (heap memory corruption) via unspecified vectors."
+      }
+    ],
+    "CVE-2012-4296": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2590",
+        "title": "",
+        "body": "Bjorn Mork and Laurent Butti discovered crashes in the PPP and RTPS2dissectors, which could potentially result in the execution of arbitrarycode.For the stable distribution (squeeze), these problems have been fixed inversion 1.2.11-6+squeeze8.For the unstable distribution (sid), these problems have been fixed inversion 1.8.2-1.We recommend that you upgrade your wireshark packages."
+      }
+    ],
+    "CVE-2012-4404": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2538",
+        "title": "",
+        "body": "It was discovered that Moin, a Python clone of WikiWiki, incorrectlyevaluates ACLs when virtual groups are involved. This may allow certainusers to have additional permissions (privilege escalation) or lackexpected permissions.For the stable distribution (squeeze), this problem has been fixed inversion 1.9.3-1+squeeze2.For the testing distribution (wheezy), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 1.9.4-8.We recommend that you upgrade your moin packages."
+      }
+    ],
+    "CVE-2012-4411": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2543",
+        "title": "",
+        "body": "The QEMU monitor was enabled by default, allowing administrators of a guest to access resources of the host, possibly escalate privileges or access resources belonging to another guest."
+      }
+    ],
+    "CVE-2012-4430": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2558",
+        "title": "",
+        "body": "It was discovered that bacula, a network backup service, does notproperly enforce console ACLs. This could allow information aboutresources to be dumped by an otherwise-restricted client.For the stable distribution (squeeze), this problem has been fixed inversion 5.0.2-2.2+squeeze1.For the testing distribution (wheezy), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 5.2.6+dfsg-4.We recommend that you upgrade your bacula packages."
+      }
+    ],
+    "CVE-2012-4445": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2557",
+        "title": "",
+        "body": "Timo Warns discovered that the internal authentication server of hostapd,a user space IEEE 802.11 AP and IEEE 802.1X/WPA/WPA2/EAP Authenticator,is vulnerable to a buffer overflow when processing fragmented EAP-TLSmessages. As a result, an internal overflow checking routine terminatesthe process. An attacker can abuse this flaw to conduct denial of serviceattacks via crafted EAP-TLS messages prior to any authentication.For the stable distribution (squeeze), this problem has been fixed inversion 1:0.6.10-2+squeeze1.For the testing (wheezy) and unstable (sid) distributions, this problemwill be fixed soon.We recommend that you upgrade your hostapd packages."
+      }
+    ],
+    "CVE-2012-4447": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2561",
+        "title": "",
+        "body": "It was discovered that a buffer overflow in libtiff's parsing of filesusing PixarLog compression could lead to the execution of arbitrarycode.For the stable distribution (squeeze), this problem has been fixed inversion 3.9.4-5+squeeze6.For the testing distribution (wheezy) and the unstable distribution(sid), this problem has been fixed in version 3.9.6-9 of the tiff3source package and in version 4.0.2-4 of the tiff source package.We recommend that you upgrade your tiff packages."
+      }
+    ],
+    "CVE-2012-4502": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2760",
+        "title": "",
+        "body": "Florian Weimer discovered two security problems in the Chrony timesynchronisation software (buffer overflows and use of uninitialised datain command replies).For the oldstable distribution (squeeze), these problems will be fixedsoon in 1.24-3+squeeze1 (due to a technical restriction in the archiveprocessing scripts the two updates cannot be released together).For the stable distribution (wheezy), these problems have been fixed inversion 1.24-3.1+deb7u2.For the unstable distribution (sid), these problems will be fixed soon.We recommend that you upgrade your chrony packages."
+      }
+    ],
+    "CVE-2012-4503": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2760",
+        "title": "",
+        "body": "Florian Weimer discovered two security problems in the Chrony timesynchronisation software (buffer overflows and use of uninitialised datain command replies).For the oldstable distribution (squeeze), these problems will be fixedsoon in 1.24-3+squeeze1 (due to a technical restriction in the archiveprocessing scripts the two updates cannot be released together).For the stable distribution (wheezy), these problems have been fixed inversion 1.24-3.1+deb7u2.For the unstable distribution (sid), these problems will be fixed soon.We recommend that you upgrade your chrony packages."
+      }
+    ],
+    "CVE-2012-4505": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2571",
+        "title": "",
+        "body": "The Red Hat Security Response Team discovered that libproxy, a libraryfor automatic proxy configuration management, applied insufficientvalidation to the Content-Length header sent by a server providing aproxy.pac file. Such remote server could trigger an integer overflowand consequently overflow an in-memory buffer.For the stable distribution (squeeze), this problem has been fixed inversion 0.3.1-2+squeeze1.For the testing distribution (wheezy), and the unstable distribution(sid), this problem has been fixed in version 0.3.1-5.1.We recommend that you upgrade your libproxy packages."
+      }
+    ],
+    "CVE-2012-4510": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2562",
+        "title": "",
+        "body": "cups-pk-helper, a PolicyKit helper to configure CUPS with fine-grainedprivileges, wraps CUPS function calls in an insecure way. This couldlead to uploading sensitive data to a CUPS resource, or overwritingspecific files with the content of a CUPS resource. The user would haveto explicitly approve the action.For the stable distribution (squeeze), this problem has been fixed inversion 0.1.0-3.For the testing distribution (wheezy), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 0.2.3-1.We recommend that you upgrade your cups-pk-helper packages."
+      }
+    ],
+    "CVE-2012-4520": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2634",
+        "title": "",
+        "body": "James Kettle discovered that Django did not properly filter the HTTP Host header when processing certain requests. An attacker could exploit this to generate and cause parts of Django, particularly the password-reset mechanism, to display arbitrary URLs to users."
+      }
+    ],
+    "CVE-2012-4523": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2573",
+        "title": "",
+        "body": "Ralf Paffrath reported that Radsecproxy, a RADIUS protocol proxy, mixed uppre- and post-handshake verification of clients. This vulnerability maywrongly accept clients without checking their certificate chain undercertain configurations.Raphael Geissert spotted that the fix for CVE-2012-4523 was incomplete,giving origin to CVE-2012-4566. Both vulnerabilities are fixed with thisupdate.Notice that this fix may make Radsecproxy reject some clients that arecurrently (erroneously) being accepted.For the stable distribution (squeeze), these problems have been fixed inversion 1.4-1+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1.6.2-1.For the unstable distribution (sid), these problems have been fixed inversion 1.6.2-1.We recommend that you upgrade your radsecproxy packages."
+      }
+    ],
+    "CVE-2012-4533": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2563",
+        "title": "",
+        "body": "function name lines returned by diff are not properlyescaped, allowing attackers with commit access to perform cross sitescripting."
+      }
+    ],
+    "CVE-2012-4535": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2582",
+        "title": "",
+        "body": "A guest which sets a VCPU with an inappropriate deadline can cause aninfinite loop in Xen, blocking the affected physical CPU indefinitely."
+      }
+    ],
+    "CVE-2012-4538": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2582",
+        "title": "",
+        "body": "The HVMOP_pagetable_dying hypercall does not correctly check thecaller's pagetable state, leading to a hypervisor crash."
+      }
+    ],
+    "CVE-2012-4539": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2582",
+        "title": "",
+        "body": "Due to inappropriate duplicate use of the same loop control variable,passing bad arguments to GNTTABOP_get_status_frames can cause aninfinite loop in the compat hypercall handler."
+      }
+    ],
+    "CVE-2012-4540": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2768",
+        "title": "",
+        "body": "A heap-based buffer overflow vulnerability was found in icedtea-web, aweb browser plugin for running applets written in the Java programminglanguage. If a user were tricked into opening a malicious website, anattacker could cause the plugin to crash or possibly execute arbitrarycode as the user invoking the program.This problem was initially discovered by Arthur Gerkis and got assignedCVE-2012-4540. Fixes where applied in the 1.1, 1.2 and 1.3 branches butnot to the 1.4 branch.For the stable distribution (wheezy), this problem has been fixed inversion 1.4-3~deb7u2.For the unstable distribution (sid), this problem has been fixed inversion 1.4-3.1.We recommend that you upgrade your icedtea-web packages."
+      }
+    ],
+    "CVE-2012-4544": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2636",
+        "title": "",
+        "body": "Insufficient validation of kernel or ramdisk sizes in the Xen PV domain builder could result in denial of service."
+      }
+    ],
+    "CVE-2012-4545": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2592",
+        "title": "",
+        "body": "Marko Myllynen discovered that ELinks, a powerful text-mode browser,incorrectly delegates user credentials during GSS-Negotiate.For the stable distribution (squeeze), this problem has been fixed inversion 0.12~pre5-2+squeeze1. Since the initial Squeeze release,XULRunner needed to be updated and the version currently in the archiveis incompatible with ELinks. As such, JavaScript support needed to bedisabled (only a small subset of typical functionality was supportedanyway). It will likely be re-enabled in a later point update.For the testing distribution (wheezy), this problem has been fixed inversion 0.12~pre5-9.For the unstable distribution (sid), this problem has been fixed inversion 0.12~pre5-9.We recommend that you upgrade your elinks packages."
+      }
+    ],
+    "CVE-2012-4557": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2579",
+        "title": "",
+        "body": "A flaw was found when mod_proxy_ajp connects to a backendserver that takes too long to respond. Given a specificconfiguration, a remote attacker could send certain requests,putting a backend server into an error state until the retrytimeout expired. This could lead to a temporary denial ofservice."
+      }
+    ],
+    "CVE-2012-4558": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2637",
+        "title": "",
+        "body": "Mod_proxy_balancer did not properly escape hostnames and URIs in its balancer-manager interface, causing a cross site scripting vulnerability."
+      }
+    ],
+    "CVE-2012-4559": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2577",
+        "title": "",
+        "body": "CVE-2012-4559:multiple double free() flaws"
+      }
+    ],
+    "CVE-2012-4562": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2577",
+        "title": "",
+        "body": "CVE-2012-4562:multiple improper overflow checks"
+      }
+    ],
+    "CVE-2012-4566": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2573",
+        "title": "",
+        "body": "Ralf Paffrath reported that Radsecproxy, a RADIUS protocol proxy, mixed uppre- and post-handshake verification of clients. This vulnerability maywrongly accept clients without checking their certificate chain undercertain configurations.Raphael Geissert spotted that the fix for CVE-2012-4523 was incomplete,giving origin to CVE-2012-4566. Both vulnerabilities are fixed with thisupdate.Notice that this fix may make Radsecproxy reject some clients that arecurrently (erroneously) being accepted.For the stable distribution (squeeze), these problems have been fixed inversion 1.4-1+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1.6.2-1.For the unstable distribution (sid), these problems have been fixed inversion 1.6.2-1.We recommend that you upgrade your radsecproxy packages."
+      }
+    ],
+    "CVE-2012-4731": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2568",
+        "title": "",
+        "body": "It was discovered that RTFM, the FAQ manager for Request Tracker,allows authenticated users to create articles in any class.For the stable distribution (squeeze), this problem has been fixed inversion 2.4.2-4+squeeze2.We recommend that you upgrade your rtfm packages."
+      }
+    ],
+    "CVE-2012-4737": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2550",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Asterisk, a PBX and telephonytoolkit, allowing privilege escalation in the Asterisk Manager, denial ofservice or privilege escalation.More detailed information can be found in the Asterisk advisories:AST-2012-010,AST-2012-011,AST-2012-012, andAST-2012-013.For the stable distribution (squeeze), these problems have been fixed inversion 1:1.6.2.9-2+squeeze8.For the testing distribution (wheezy) and the unstable distribution (sid),these problems have been fixed in version 1:1.8.13.1~dfsg-1.We recommend that you upgrade your asterisk packages."
+      }
+    ],
+    "CVE-2012-4884": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2567",
+        "title": "",
+        "body": "If GnuPG support is enabled, authenticated users cancreate arbitrary files as the web server user, which mayenable arbitrary code execution."
+      }
+    ],
+    "CVE-2012-4929": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2579",
+        "title": "",
+        "body": ""
+      },
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2627",
+        "title": "",
+        "body": "Juliano Rizzo and Thai Duong discovered a weakness in the TLS/SSLprotocol when using compression. This side channel attack, dubbedCRIME, allows eavesdroppers to gather information to recover theoriginal plaintext in the protocol. This update to nginx disablesSSL compression.For the stable distribution (squeeze), this problem has been fixed inversion 0.7.67-3+squeeze3.For the testing distribution (wheezy), and unstable distribution (sid),this problem has been fixed in version 1.1.16-1.We recommend that you upgrade your nginx packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2015/dsa-3253",
+        "title": "",
+        "body": "Pound, a HTTP reverse proxy and load balancer, had several issuesrelated to vulnerabilities in the Secure Sockets Layer (SSL) protocol.For Debian 7 (wheezy) this update adds a missing part to make it actuallypossible to disable client-initiated renegotiation and disables it by default(CVE-2009-3555).TLS compression is disabled (CVE-2012-4929),although this is normally already disabled by the OpenSSL system library.Finally it adds the ability to disable the SSLv3 protocol (CVE-2014-3566)entirely via the new DisableSSLv3 configuration directive, although itwill not disabled by default in this update. Additionally a non-securitysensitive issue in redirect encoding isaddressed.For Debian 8 (jessie) these issues have been fixed prior to the release,with the exception of client-initiated renegotiation (CVE-2009-3555).This update addresses that issue for jessie.For the oldstable distribution (wheezy), these problems have been fixedin version 2.6-2+deb7u1.For the stable distribution (jessie), these problems have been fixed inversion 2.6-6+deb8u1.For the unstable distribution (sid), these problems have been fixed inversion 2.6-6.1.We recommend that you upgrade your pound packages."
+      }
+    ],
+    "CVE-2012-5134": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2580",
+        "title": "",
+        "body": "Jueri Aedla discovered a buffer overflow in the libxml XML library, whichcould result in the execution of arbitrary code.For the stable distribution (squeeze), this problem has been fixed inversion 2.7.8.dfsg-2+squeeze6.For the unstable distribution (sid), this problem has been fixed inversion 2.8.0+dfsg1-7.We recommend that you upgrade your libxml2 packages."
+      }
+    ],
+    "CVE-2012-5166": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2560",
+        "title": "",
+        "body": "It was discovered that BIND, a DNS server, hangs while constructingthe additional section of a DNS reply, when certain combinations ofresource records are present. This vulnerability affects bothrecursive and authoritative servers.For the stable distribution (squeeze), this problem has been fixed inversion 1:9.7.3.dfsg-1~squeeze8.We recommend that you upgrade your bind9 packages."
+      }
+    ],
+    "CVE-2012-5195": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2586",
+        "title": "",
+        "body": "The x operator could cause the Perl interpreter to crash if very long strings were created."
+      }
+    ],
+    "CVE-2012-5468": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2585",
+        "title": "",
+        "body": "A heap-based buffer overflow was discovered in bogofilter, a softwarepackage for classifying mail messages as spam or non-spam. Craftedmail messages with invalid base64 data could lead to heap corruptionand, potentially, arbitrary code execution.For the stable distribution (squeeze), this problem has been fixed inversion 1.2.2-2+squeeze1.For the testing distribution (wheezy) and the unstable distribution(sid), this problem has been fixed in version 1.2.2+dfsg1-2.We recommend that you upgrade your bogofilter packages."
+      }
+    ],
+    "CVE-2012-5511": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2636",
+        "title": "",
+        "body": "Several HVM control operations performed insufficient validation of input, which could result in denial of service through resource exhaustion."
+      }
+    ],
+    "CVE-2012-5513": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2582",
+        "title": "",
+        "body": "The handler for XENMEM_exchange accesses guest memory without range checkingthe guest provided addresses, thus allowing these accesses to include thehypervisor reserved range."
+      }
+    ],
+    "CVE-2012-5529": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2648",
+        "title": "",
+        "body": "A buffer overflow was discovered in the Firebird database server, whichcould result in the execution of arbitrary code. In addition, a denialof service vulnerability was discovered in the TraceManager.For the stable distribution (squeeze), these problems have been fixed inversion 2.5.0.26054~ReleaseCandidate3.ds2-1+squeeze1.For the testing distribution (wheezy), these problems will be fixed soon.For the unstable distribution (sid), these problems will be fixed soon.We recommend that you upgrade your firebird2.5 packages."
+      }
+    ],
+    "CVE-2012-5581": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2589",
+        "title": "",
+        "body": "The tiff library for handling TIFF image files contained a stack-basedbuffer overflow, potentially allowing attackers who can submit suchfiles to a vulnerable system to execute arbitrary code.For the stable distribution (squeeze), this problem has been fixed inversion 3.9.4-5+squeeze8.For the testing distribution (wheezy) and the unstable distribution(sid), this problem has been fixed in version 4.0.2-1 of the tiffpackage, and version 3.9.6-10 of the tiff3 package.We recommend that you upgrade your tiff packages."
+      }
+    ],
+    "CVE-2012-5611": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2581",
+        "title": "",
+        "body": "Several issues have been discovered in the MySQL database server. Thevulnerabilities are addressed by upgrading MySQL to a new upstream version,5.1.66, which includes additional changes, such as performance improvements andcorrections for data loss defects. These changes are described in theMySQL release notes.For the testing distribution (wheezy) and unstable distribution (sid), theseproblems have been fixed in version 5.5.28+dfsg-1.Additionally, CVE-2012-5611has been fixed in this upload. The vulnerability(discovered independently by Tomas Hoger from the Red Hat Security ResponseTeam and king cope) is a stack-based buffer overflow in acl_get() whenchecking user access to a database. Using a carefully crafted database name, analready authenticated MySQL user could make the server crash or even executearbitrary code as the mysql system user.For the stable distribution (squeeze), this problem has been fixed in version5.1.66-0+squeeze1.For the testing distribution (wheezy) and unstable distribution (sid), thisproblem will be fixed soon.We recommend that you upgrade your mysql-5.1 packages."
+      }
+    ],
+    "CVE-2012-5643": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2631",
+        "title": "",
+        "body": "squid's cachemgr.cgi was vulnerable to excessive resource use. A remote attacker could exploit this flaw to perform a denial of service attack on the server and other hosted services."
+      }
+    ],
+    "CVE-2012-5651": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2776",
+        "title": "",
+        "body": "Multiple vulnerabilities have been been fixed in the Drupal contentmanagement framework, resulting in information disclosure, insufficientvalidation, cross-site scripting and cross-site request forgery.For the oldstable distribution (squeeze), these problems have been fixed inversion 6.28-1.For the stable distribution (wheezy), these problems have already beenfixed in the drupal7 package.For the unstable distribution (sid), these problems have already beenfixed in the drupal7 package.We recommend that you upgrade your drupal6 packages."
+      }
+    ],
+    "CVE-2012-5652": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2776",
+        "title": "",
+        "body": "Multiple vulnerabilities have been been fixed in the Drupal contentmanagement framework, resulting in information disclosure, insufficientvalidation, cross-site scripting and cross-site request forgery.For the oldstable distribution (squeeze), these problems have been fixed inversion 6.28-1.For the stable distribution (wheezy), these problems have already beenfixed in the drupal7 package.For the unstable distribution (sid), these problems have already beenfixed in the drupal7 package.We recommend that you upgrade your drupal6 packages."
+      }
+    ],
+    "CVE-2012-5653": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2776",
+        "title": "",
+        "body": "Multiple vulnerabilities have been been fixed in the Drupal contentmanagement framework, resulting in information disclosure, insufficientvalidation, cross-site scripting and cross-site request forgery.For the oldstable distribution (squeeze), these problems have been fixed inversion 6.28-1.For the stable distribution (wheezy), these problems have already beenfixed in the drupal7 package.For the unstable distribution (sid), these problems have already beenfixed in the drupal7 package.We recommend that you upgrade your drupal6 packages."
+      }
+    ],
+    "CVE-2012-5671": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2566",
+        "title": "",
+        "body": "It was discovered that Exim, a mail transport agent, is not properlyhandling the decoding of DNS records for DKIM. Specifically, craftedrecords can yield to a heap-based buffer overflow. An attacker canexploit this flaw to execute arbitrary code.For the stable distribution (squeeze), this problem has been fixed inversion 4.72-6+squeeze3.For the testing distribution (wheezy), this problem has been fixed inversion 4.80-5.1.For the unstable distribution (sid), this problem has been fixed inversion 4.80-5.1.We recommend that you upgrade your exim4 packages."
+      }
+    ],
+    "CVE-2012-5829": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2583",
+        "title": "",
+        "body": "Heap-based buffer overflow in the nsWindow::OnExposeEvent function could allow remote attackers to execute arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2584",
+        "title": "",
+        "body": "Heap-based buffer overflow in the nsWindow::OnExposeEvent function could allow remote attackers to execute arbitrary code."
+      },
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2588",
+        "title": "",
+        "body": "Heap-based buffer overflow in the nsWindow::OnExposeEvent function could allow remote attackers to execute arbitrary code."
+      }
+    ],
+    "CVE-2012-5958": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2614",
+        "title": "",
+        "body": "Multiple stack-based buffer overflows were discovered in libupnp, a libraryused for handling the Universal Plug and Play protocol. HD Moore from Rapid7discovered that SSDP queries where not correctly handled by theunique_service_name() function.An attacker sending carefully crafted SSDP queries to a daemon built on libupnpcould generate a buffer overflow, overwriting the stack, leading to the daemoncrash and possible remote code execution.For the stable distribution (squeeze), these problems have been fixed inversion 1:1.6.6-5+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1:1.6.17-1.2.For the unstable distribution (sid), these problems have been fixed inversion 1:1.6.17-1.2.We recommend that you upgrade your libupnp packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2615",
+        "title": "",
+        "body": "Multiple stack-based buffer overflows were discovered in libupnp4, a libraryused for handling the Universal Plug and Play protocol. HD Moore from Rapid7discovered that SSDP queries where not correctly handled by theunique_service_name() function.An attacker sending carefully crafted SSDP queries to a daemon built onlibupnp4 could generate a buffer overflow, overwriting the stack, leading tothe daemon crash and possible remote code execution.For the stable distribution (squeeze), these problems have been fixed inversion 1.8.0~svn20100507-1+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1.8.0~svn20100507-1.2.For the unstable distribution (sid), these problems have been fixed inversion 1.8.0~svn20100507-1.2.We recommend that you upgrade your libupnp4 packages."
+      }
+    ],
+    "CVE-2012-5959": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2614",
+        "title": "",
+        "body": "Multiple stack-based buffer overflows were discovered in libupnp, a libraryused for handling the Universal Plug and Play protocol. HD Moore from Rapid7discovered that SSDP queries where not correctly handled by theunique_service_name() function.An attacker sending carefully crafted SSDP queries to a daemon built on libupnpcould generate a buffer overflow, overwriting the stack, leading to the daemoncrash and possible remote code execution.For the stable distribution (squeeze), these problems have been fixed inversion 1:1.6.6-5+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1:1.6.17-1.2.For the unstable distribution (sid), these problems have been fixed inversion 1:1.6.17-1.2.We recommend that you upgrade your libupnp packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2615",
+        "title": "",
+        "body": "Multiple stack-based buffer overflows were discovered in libupnp4, a libraryused for handling the Universal Plug and Play protocol. HD Moore from Rapid7discovered that SSDP queries where not correctly handled by theunique_service_name() function.An attacker sending carefully crafted SSDP queries to a daemon built onlibupnp4 could generate a buffer overflow, overwriting the stack, leading tothe daemon crash and possible remote code execution.For the stable distribution (squeeze), these problems have been fixed inversion 1.8.0~svn20100507-1+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1.8.0~svn20100507-1.2.For the unstable distribution (sid), these problems have been fixed inversion 1.8.0~svn20100507-1.2.We recommend that you upgrade your libupnp4 packages."
+      }
+    ],
+    "CVE-2012-5960": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2614",
+        "title": "",
+        "body": "Multiple stack-based buffer overflows were discovered in libupnp, a libraryused for handling the Universal Plug and Play protocol. HD Moore from Rapid7discovered that SSDP queries where not correctly handled by theunique_service_name() function.An attacker sending carefully crafted SSDP queries to a daemon built on libupnpcould generate a buffer overflow, overwriting the stack, leading to the daemoncrash and possible remote code execution.For the stable distribution (squeeze), these problems have been fixed inversion 1:1.6.6-5+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1:1.6.17-1.2.For the unstable distribution (sid), these problems have been fixed inversion 1:1.6.17-1.2.We recommend that you upgrade your libupnp packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2615",
+        "title": "",
+        "body": "Multiple stack-based buffer overflows were discovered in libupnp4, a libraryused for handling the Universal Plug and Play protocol. HD Moore from Rapid7discovered that SSDP queries where not correctly handled by theunique_service_name() function.An attacker sending carefully crafted SSDP queries to a daemon built onlibupnp4 could generate a buffer overflow, overwriting the stack, leading tothe daemon crash and possible remote code execution.For the stable distribution (squeeze), these problems have been fixed inversion 1.8.0~svn20100507-1+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1.8.0~svn20100507-1.2.For the unstable distribution (sid), these problems have been fixed inversion 1.8.0~svn20100507-1.2.We recommend that you upgrade your libupnp4 packages."
+      }
+    ],
+    "CVE-2012-5961": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2614",
+        "title": "",
+        "body": "Multiple stack-based buffer overflows were discovered in libupnp, a libraryused for handling the Universal Plug and Play protocol. HD Moore from Rapid7discovered that SSDP queries where not correctly handled by theunique_service_name() function.An attacker sending carefully crafted SSDP queries to a daemon built on libupnpcould generate a buffer overflow, overwriting the stack, leading to the daemoncrash and possible remote code execution.For the stable distribution (squeeze), these problems have been fixed inversion 1:1.6.6-5+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1:1.6.17-1.2.For the unstable distribution (sid), these problems have been fixed inversion 1:1.6.17-1.2.We recommend that you upgrade your libupnp packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2615",
+        "title": "",
+        "body": "Multiple stack-based buffer overflows were discovered in libupnp4, a libraryused for handling the Universal Plug and Play protocol. HD Moore from Rapid7discovered that SSDP queries where not correctly handled by theunique_service_name() function.An attacker sending carefully crafted SSDP queries to a daemon built onlibupnp4 could generate a buffer overflow, overwriting the stack, leading tothe daemon crash and possible remote code execution.For the stable distribution (squeeze), these problems have been fixed inversion 1.8.0~svn20100507-1+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1.8.0~svn20100507-1.2.For the unstable distribution (sid), these problems have been fixed inversion 1.8.0~svn20100507-1.2.We recommend that you upgrade your libupnp4 packages."
+      }
+    ],
+    "CVE-2012-5962": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2614",
+        "title": "",
+        "body": "Multiple stack-based buffer overflows were discovered in libupnp, a libraryused for handling the Universal Plug and Play protocol. HD Moore from Rapid7discovered that SSDP queries where not correctly handled by theunique_service_name() function.An attacker sending carefully crafted SSDP queries to a daemon built on libupnpcould generate a buffer overflow, overwriting the stack, leading to the daemoncrash and possible remote code execution.For the stable distribution (squeeze), these problems have been fixed inversion 1:1.6.6-5+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1:1.6.17-1.2.For the unstable distribution (sid), these problems have been fixed inversion 1:1.6.17-1.2.We recommend that you upgrade your libupnp packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2615",
+        "title": "",
+        "body": "Multiple stack-based buffer overflows were discovered in libupnp4, a libraryused for handling the Universal Plug and Play protocol. HD Moore from Rapid7discovered that SSDP queries where not correctly handled by theunique_service_name() function.An attacker sending carefully crafted SSDP queries to a daemon built onlibupnp4 could generate a buffer overflow, overwriting the stack, leading tothe daemon crash and possible remote code execution.For the stable distribution (squeeze), these problems have been fixed inversion 1.8.0~svn20100507-1+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1.8.0~svn20100507-1.2.For the unstable distribution (sid), these problems have been fixed inversion 1.8.0~svn20100507-1.2.We recommend that you upgrade your libupnp4 packages."
+      }
+    ],
+    "CVE-2012-5963": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2614",
+        "title": "",
+        "body": "Multiple stack-based buffer overflows were discovered in libupnp, a libraryused for handling the Universal Plug and Play protocol. HD Moore from Rapid7discovered that SSDP queries where not correctly handled by theunique_service_name() function.An attacker sending carefully crafted SSDP queries to a daemon built on libupnpcould generate a buffer overflow, overwriting the stack, leading to the daemoncrash and possible remote code execution.For the stable distribution (squeeze), these problems have been fixed inversion 1:1.6.6-5+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1:1.6.17-1.2.For the unstable distribution (sid), these problems have been fixed inversion 1:1.6.17-1.2.We recommend that you upgrade your libupnp packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2615",
+        "title": "",
+        "body": "Multiple stack-based buffer overflows were discovered in libupnp4, a libraryused for handling the Universal Plug and Play protocol. HD Moore from Rapid7discovered that SSDP queries where not correctly handled by theunique_service_name() function.An attacker sending carefully crafted SSDP queries to a daemon built onlibupnp4 could generate a buffer overflow, overwriting the stack, leading tothe daemon crash and possible remote code execution.For the stable distribution (squeeze), these problems have been fixed inversion 1.8.0~svn20100507-1+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1.8.0~svn20100507-1.2.For the unstable distribution (sid), these problems have been fixed inversion 1.8.0~svn20100507-1.2.We recommend that you upgrade your libupnp4 packages."
+      }
+    ],
+    "CVE-2012-5964": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2614",
+        "title": "",
+        "body": "Multiple stack-based buffer overflows were discovered in libupnp, a libraryused for handling the Universal Plug and Play protocol. HD Moore from Rapid7discovered that SSDP queries where not correctly handled by theunique_service_name() function.An attacker sending carefully crafted SSDP queries to a daemon built on libupnpcould generate a buffer overflow, overwriting the stack, leading to the daemoncrash and possible remote code execution.For the stable distribution (squeeze), these problems have been fixed inversion 1:1.6.6-5+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1:1.6.17-1.2.For the unstable distribution (sid), these problems have been fixed inversion 1:1.6.17-1.2.We recommend that you upgrade your libupnp packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2615",
+        "title": "",
+        "body": "Multiple stack-based buffer overflows were discovered in libupnp4, a libraryused for handling the Universal Plug and Play protocol. HD Moore from Rapid7discovered that SSDP queries where not correctly handled by theunique_service_name() function.An attacker sending carefully crafted SSDP queries to a daemon built onlibupnp4 could generate a buffer overflow, overwriting the stack, leading tothe daemon crash and possible remote code execution.For the stable distribution (squeeze), these problems have been fixed inversion 1.8.0~svn20100507-1+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1.8.0~svn20100507-1.2.For the unstable distribution (sid), these problems have been fixed inversion 1.8.0~svn20100507-1.2.We recommend that you upgrade your libupnp4 packages."
+      }
+    ],
+    "CVE-2012-5965": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2614",
+        "title": "",
+        "body": "Multiple stack-based buffer overflows were discovered in libupnp, a libraryused for handling the Universal Plug and Play protocol. HD Moore from Rapid7discovered that SSDP queries where not correctly handled by theunique_service_name() function.An attacker sending carefully crafted SSDP queries to a daemon built on libupnpcould generate a buffer overflow, overwriting the stack, leading to the daemoncrash and possible remote code execution.For the stable distribution (squeeze), these problems have been fixed inversion 1:1.6.6-5+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1:1.6.17-1.2.For the unstable distribution (sid), these problems have been fixed inversion 1:1.6.17-1.2.We recommend that you upgrade your libupnp packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2615",
+        "title": "",
+        "body": "Multiple stack-based buffer overflows were discovered in libupnp4, a libraryused for handling the Universal Plug and Play protocol. HD Moore from Rapid7discovered that SSDP queries where not correctly handled by theunique_service_name() function.An attacker sending carefully crafted SSDP queries to a daemon built onlibupnp4 could generate a buffer overflow, overwriting the stack, leading tothe daemon crash and possible remote code execution.For the stable distribution (squeeze), these problems have been fixed inversion 1.8.0~svn20100507-1+squeeze1.For the testing distribution (wheezy), these problems have been fixed inversion 1.8.0~svn20100507-1.2.For the unstable distribution (sid), these problems have been fixed inversion 1.8.0~svn20100507-1.2.We recommend that you upgrade your libupnp4 packages."
+      }
+    ],
+    "CVE-2012-5976": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2605",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Asterisk, a PBX and telephonytoolkit, that allow remote attackers to perform denial of serviceattacks.For the stable distribution (squeeze), these problems have been fixed inversion 1:1.6.2.9-2+squeeze10.For the testing distribution (wheezy) and unstable distribution (sid),these problems will be fixed soon.We recommend that you upgrade your asterisk packages."
+      }
+    ],
+    "CVE-2012-5977": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2605",
+        "title": "",
+        "body": "Several vulnerabilities were discovered in Asterisk, a PBX and telephonytoolkit, that allow remote attackers to perform denial of serviceattacks.For the stable distribution (squeeze), these problems have been fixed inversion 1:1.6.2.9-2+squeeze10.For the testing distribution (wheezy) and unstable distribution (sid),these problems will be fixed soon.We recommend that you upgrade your asterisk packages."
+      }
+    ],
+    "CVE-2012-6037": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2591",
+        "title": "",
+        "body": "Multiple security issues have been found in Mahara, an electronicportfolio, weblog, and resume builder, which can result in cross-sitescripting, clickjacking or arbitrary file execution.For the stable distribution (squeeze), these problems have been fixed inversion 1.2.6-2+squeeze6.For the unstable distribution (sid), these problems have been fixed inversion 1.5.1-3.1.We recommend that you upgrade your mahara packages."
+      }
+    ],
+    "CVE-2012-6063": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2577",
+        "title": "",
+        "body": ""
+      }
+    ],
+    "CVE-2012-6080": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2593",
+        "title": "",
+        "body": "It was discovered that missing input validation in the twikidraw andanywikidraw actions can result in the execution of arbitrary code.This security issue is being actively exploited.This update also addresses path traversal in AttachFile.For the stable distribution (squeeze), this problem has been fixed inversion 1.9.3-1+squeeze4.For the unstable distribution (sid), this problem has been fixed inversion 1.9.5-4.We recommend that you upgrade your moin packages."
+      }
+    ],
+    "CVE-2012-6096": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2616",
+        "title": "",
+        "body": "A buffer overflow problem has been found in nagios3, a host/service/networkmonitoring and management system. A malicious client could craft arequest to history.cgi and cause application crashes.For the stable distribution (squeeze), this problem has been fixed inversion 3.2.1-2+squeeze1.For the testing distribution (wheezy), this problem will be fixed soon.For the unstable distribution (sid), this problem has been fixed inversion 3.4.1-3.We recommend that you upgrade your nagios3 packages."
+      },
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2653",
+        "title": "",
+        "body": "It was discovered that Icinga, a host and network monitoring system,contains several buffer overflows in the history.cgi CGI program.For the stable distribution (squeeze), this problem has been fixed inversion 1.0.2-2+squeeze1.For the testing distribution (wheezy), this problem has been fixed inversion 1.7.1-5.For the unstable distribution (sid), this problem has been fixed inversion 1.7.1-5.We recommend that you upgrade your icinga packages."
+      }
+    ],
+    "CVE-2012-6128": [
+      {
+        "url": "http://www.debian.org/security/2013/dsa-2623",
+        "title": "",
+        "body": "Kevin Cernekee discovered that a malicious VPN gateway can sendcrafted responses which trigger stack-based buffer overflows.For the stable distribution (squeeze), this problem has been fixed inversion 2.25-0.1+squeeze2.We recommend that you upgrade your openconnect packages."
+      }
+    ],
+    "CVE-2012-6495": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2593",
+        "title": "",
+        "body": "It was discovered that missing input validation in the twikidraw andanywikidraw actions can result in the execution of arbitrary code.This security issue is being actively exploited.This update also addresses path traversal in AttachFile.For the stable distribution (squeeze), this problem has been fixed inversion 1.9.3-1+squeeze4.For the unstable distribution (sid), this problem has been fixed inversion 1.9.5-4.We recommend that you upgrade your moin packages."
+      }
+    ],
+    "CVE-2012-6531": [
+      {
+        "url": "http://www.debian.org/security/2012/dsa-2505",
+        "title": "",
+        "body": "An XML External Entities inclusion vulnerability was discovered inZend Framework, a PHP library. This vulnerability may allow attackersto access to local files, depending on how the framework is used.For the stable distribution (squeeze), this problem has been fixed inversion 1.10.6-1squeeze1.For the unstable distribution (sid), this problem has been fixed inversion 1.11.12-1.We recommend that you upgrade your zendframework packages."
+      }
+    ],
+    "CVE-2012-6535": [
+      {
+        "url": "http://www.debian.org/security/2014/dsa-2844",
+        "title": "",
+        "body": "It was discovered that djvulibre, the Open Source DjVu implementationproject, can be crashed or possibly make it execute arbitrary code whenprocessing a specially crafted djvu file.For the oldstable distribution (squeeze), this problem has been fixed inversion 3.5.23-3+squeeze1.This problem has been fixed before the release of the stable distribution(wheezy), therefore it is not affected.We recommend that you upgrade your djvulibre packages."
+      }
+    ],
+    "CVE-2012-6656": [
+      {
+        "url": "http://www.debian.org/security/2015/dsa-3142",
+        "title": "",
+        "body": "The charset conversion code for certain IBM multi-byte code pages could perform an out-of-bounds array access, causing the process to crash. In some scenarios, this allows a remote attacker to cause a persistent denial of service."
+      }
+    ],
+    "CVE-2012-6684": [
+      {
+        "url": "http://www.debian.org/security/2015/dsa-3168",
+        "title": "",
+        "body": "Kousuke Ebihara discovered that redcloth, a Ruby module used toconvert Textile markup to HTML, did not properly sanitize itsinput. This allowed a remote attacker to perform a cross-sitescripting attack by injecting arbitrary JavaScript code into thegenerated HTML.For the stable distribution (wheezy), this problem has been fixed inversion 4.2.9-2+deb7u2.For the unstable distribution (sid), this problem has been fixed inversion 4.2.9-4.We recommend that you upgrade your ruby-redcloth packages."
+      }
+    ],
+    "CVE-2012-6698": [
+      {
+        "url": "http://www.debian.org/security/2016/dsa-3534",
+        "title": "",
+        "body": "Guido Vranken discovered several vulnerabilities in dhcpcd, a DHCPclient, which may result in denial of service.For the oldstable distribution (wheezy), these problems have been fixedin version 1:3.2.3-11+deb7u1.We recommend that you upgrade your dhcpcd packages."
+      }
+    ],
+    "CVE-2012-6699": [
+      {
+        "url": "http://www.debian.org/security/2016/dsa-3534",
+        "title": "",
+        "body": "Guido Vranken discovered several vulnerabilities in dhcpcd, a DHCPclient, which may result in denial of service.For the oldstable distribution (wheezy), these problems have been fixedin version 1:3.2.3-11+deb7u1.We recommend that you upgrade your dhcpcd packages."
+      }
+    ],
+    "CVE-2012-6700": [
+      {
+        "url": "http://www.debian.org/security/2016/dsa-3534",
+        "title": "",
+        "body": "Guido Vranken discovered several vulnerabilities in dhcpcd, a DHCPclient, which may result in denial of service.For the oldstable distribution (wheezy), these problems have been fixedin version 1:3.2.3-11+deb7u1.We recommend that you upgrade your dhcpcd packages."
+      }
+    ],
+    "CVE-2012-6702": [
+      {
+        "url": "http://www.debian.org/security/2016/dsa-3597",
+        "title": "",
+        "body": "It was introduced when CVE-2012-0876 was addressed. Stefan Sørensen discovered that the use of the function XML_Parse() seeds the random number generator generating repeated outputs for rand() calls."
+      }
+    ]
+  }
+}
