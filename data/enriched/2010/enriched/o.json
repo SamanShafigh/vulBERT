@@ -1,6 +1,511 @@
 {
   "year": 2010,
-  "total": 0,
+  "total": 72,
   "reference": "mozilla.org",
-  "reports": {}
+  "reports": {
+    "CVE-2010-0160": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-02.html",
+        "title": "Web Worker Array Handling Heap Corruption Vulnerability",
+        "description": "Security researcher Orlando Barrera II of SecTheory reported, via TippingPoint's Zero Day Initiative, that Mozilla's implementation of Web Workers contained an error in its handling of array data types when processing posted messages. This error could be used by an attacker to corrupt heap memory and crash the browser, potentially running arbitrary code on a victim's computer. Web Workers were introduced in Firefox 3.5; Firefox 3.0 and earlier versions were not affected. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2010-0161": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-07.html",
+        "title": "Fixes for potentially exploitable crashes ported to the legacy branch",
+        "description": "Mozilla developers took fixes from previously fixed memory safety bugs in newer Mozilla-based products and ported them to the Mozilla 1.8.1 branch so they can be utilized by Thunderbird 2 and SeaMonkey 1.1."
+      }
+    ],
+    "CVE-2010-0162": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-05.html",
+        "title": "XSS hazard using SVG document and binary Content-Type",
+        "description": "Mozilla security researcher Georgi Guninski reported that when a SVG document which is served with Content-Type: application/octet-stream is embedded into another document via an <embed> tag with type=\"image/svg+xml\", the Content-Type is ignored and the SVG document is processed normally. A website which allows arbitrary binary data to be uploaded but which relies on Content-Type: application/octet-stream to prevent script execution could have such protection bypassed. An attacker could upload a SVG document containing JavaScript as a binary file to a website, embed the SVG document into a malicous page on another site, and gain access to the script environment from the SVG-serving site, bypassing the same-origin policy."
+      }
+    ],
+    "CVE-2010-0164": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-09.html",
+        "title": "Deleted frame reuse in multipart/x-mixed-replace image",
+        "description": "Security researcher regenrecht reported (via TippingPoint's Zero Day Initiative) a potential reuse of a deleted image frame in Firefox 3.6's handling of multipart/x-mixed-replace images. Although no exploit was shown, re-use of freed memory has led to exploitable vulnerabilities in the past."
+      }
+    ],
+    "CVE-2010-0165": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-11.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.2.2/ 1.9.1.8/ 1.9.0.18)",
+        "description": "Mozilla developers identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2010-0166": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-11.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.2.2/ 1.9.1.8/ 1.9.0.18)",
+        "description": "Mozilla developers identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2010-0167": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-11.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.2.2/ 1.9.1.8/ 1.9.0.18)",
+        "description": "Mozilla developers identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2010-0168": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-13.html",
+        "title": "Content policy bypass with image preloading",
+        "description": "Mozilla developer Josh Soref of Nokia reported that documents failed to call certain security checks when attempting to preload images. Although the image content is not available to the page, it is possible to specify protocols that are normally not allowed in a web page such as file:. This includes internal schemes implemented by add-ons that might perform privileged actions resulting in something like a Cross-Site Request Forgery (CSRF) attack against the add-on. Potential severity would depend on the add-ons installed."
+      }
+    ],
+    "CVE-2010-0170": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-10.html",
+        "title": "XSS via plugins and unprotected Location object",
+        "description": "Mozilla developer Blake Kaplan reported that the window.location object was made a normal overridable JavaScript object in the Firefox 3.6 browser engine (Gecko 1.9.2) because new mechanisms were developed to enforce the same-origin policy between windows and frames. This object is unfortunately also used by some plugins to determine the page origin used for access restrictions. A malicious page could override this object to fool a plugin into granting access to data on another site or the local file system. The behavior of older Firefox versions has been restored. This flaw does not affect earlier versions of Firefox, or other programs such as Thunderbird or SeaMonkey built on older versions of the browser engine."
+      }
+    ],
+    "CVE-2010-0171": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-12.html",
+        "title": "XSS using addEventListener and setTimeout on a wrapped object",
+        "description": "Mozilla security researcher moz_bug_r_a4 reports that by using an appropriately wrapped object it was possible to bypass the fix for MFSA 2007-19. Prior to Firefox 3.6 this gives an attacker the ability to perform cross-site scripting attacks against arbitrary sites as in the original MFSA 2007-19 attack. Due to unrelated changes in the browser engine used by Firefox 3.6, attacks in that version are limited to capturing keystroke events from a cross-origin frame or window rather than full DOM access. Those events might be sufficient to illicitly obtain passwords or other sensitive information entered into web forms. Thunderbird does not allow JavaScript to run in mail messages, but users who open web content (such as RSS feeds, or other content through add-ons) could be at risk."
+      }
+    ],
+    "CVE-2010-0175": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-17.html",
+        "title": "Remote code execution with use-after-free in nsTreeSelection",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative that a select event handler for XUL tree items could be called after the tree item was deleted. This results in the execution of previously freed memory which an attacker could use to crash a victim's browser and run arbitrary code on the victim's computer. This vulnerability does not affect Firefox 3.6 Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2010-0176": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-18.html",
+        "title": "Dangling pointer vulnerability in nsTreeContentView",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative an error in the way <option> elements are inserted into a XUL tree <optgroup>. In certain cases, the number of references to an <option> element is under-counted so that when the element is deleted, a live pointer to its old location is kept around and may later be used. An attacker could potentially use these conditions to run arbitrary code on a victim's computer. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2010-0177": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-19.html",
+        "title": "Dangling pointer vulnerability in nsPluginArray",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative an error in the implementation of the window.navigator.plugins object. When a page reloads, the plugins array would reallocate all of its members without checking for existing references to each member. This could result in the deletion of objects for which valid pointers still exist. An attacker could use this vulnerability to crash a victim's browser and run arbitrary code on the victim's machine. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2010-0178": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-20.html",
+        "title": "Chrome privilege escalation via forced URL drag and drop",
+        "description": "Security researcher Paul Stone reported that a browser applet could be used to turn a simple mouse click into a drag-and-drop action, potentially resulting in the unintended loading of resources in a user's browser. This behavior could be used twice in succession to first load a privileged chrome: URL in a victim's browser, then load a malicious javascript: URL on top of the same document resulting in arbitrary script execution with chrome privileges."
+      }
+    ],
+    "CVE-2010-0179": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-21.html",
+        "title": "Arbitrary code execution with Firebug XMLHttpRequestSpy",
+        "description": "Mozilla security researcher moz_bug_r_a4 reported that the XMLHttpRequestSpy module in the Firebug add-on was exposing an underlying chrome privilege escalation vulnerability. When the XMLHttpRequestSpy object was created, it would attach various properties of itself to objects defined in web content, which were not being properly wrapped to prevent their exposure to chrome privileged objects. This could result in an attacker running arbitrary JavaScript on a victim's machine, though it required the victim to have Firebug installed, so the overall severity of the issue was determined to be High. This vulnerability does not affect Firefox 3.6"
+      }
+    ],
+    "CVE-2010-0181": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-23.html",
+        "title": "Image src redirect to mailto: URL opens email editor",
+        "description": "phpBB developer Henry Sudhof reported that when an image tag points to a resource that redirects to a mailto: URL, the external mail handler application is launched. This issue poses no security threat to users but could create an annoyance when browsing a site that allows users to post arbitrary images. This issue has not been fixed in Firefox 3.0"
+      }
+    ],
+    "CVE-2010-0182": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-24.html",
+        "title": "XMLDocument::load() doesn't check nsIContentPolicy",
+        "description": "Mozilla community member Wladimir Palant reported that XML documents were failing to call certain security checks when loading new content. This could result in certain resources being loaded that would otherwise violate security policies set by the browser or installed add-ons. This issue has not been fixed in Firefox 3.0"
+      }
+    ],
+    "CVE-2010-0183": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-27.html",
+        "title": "Use-after-free error in nsCycleCollector::MarkRoots()",
+        "description": "Security researcher wushi of team509 reported that the frame construction process for certain types of menus could result in a menu containing a pointer to a previously freed menu item. During the cycle collection process, this freed item could be accessed, resulting in the execution of a section of code potentially controlled by an attacker."
+      }
+    ],
+    "CVE-2010-0654": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-46.html",
+        "title": "Cross-domain data theft using CSS",
+        "description": "Google security researcher Chris Evans reported that data can be read across domains by injecting bogus CSS selectors into a target site and then retrieving the data using JavaScript APIs. If an attacker can inject opening and closing portions of a CSS selector into points A and B of a target page, then the region between the two injection points becomes readable to JavaScript through, for example, the getComputedStyle() API."
+      }
+    ],
+    "CVE-2010-1028": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-08.html",
+        "title": "WOFF heap corruption due to integer overflow",
+        "description": "Security researcher Evgeny Legerov of Intevydis reported that the WOFF decoder contains an integer overflow in a font decompression routine. This flaw could result in too small a memory buffer being allocated to store a downloadable font. An attacker could use this vulnerability to crash a victim's browser and execute arbitrary code on his/her system. Support for the WOFF downloadable font format is new in Firefox 3.6 (Gecko 1.9.2); this vulnerability does not affect products built on earlier versions of the Mozilla browser engine."
+      }
+    ],
+    "CVE-2010-1121": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-25.html",
+        "title": "Re-use of freed object due to scope confusion",
+        "description": "A memory corruption flaw leading to code execution was reported by security researcher Nils of MWR InfoSecurity during the 2010 Pwn2Own contest sponsored by TippingPoint's Zero Day Initiative. By moving DOM nodes between documents Nils found a case where the moved node incorrectly retained its old scope. If garbage collection could be triggered at the right time then Firefox would later use this freed object. The contest winning exploit only affects Firefox 3.6 and not earlier versions. Updated (June 22, 2010): Firefox 3.5, SeaMonkey 2.0, and Thunderbird 3.0 based on earlier versions of the browser engine were patched just in case there is an alternate way of triggering the underlying flaw."
+      }
+    ],
+    "CVE-2010-1125": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-31.html",
+        "title": "focus() behavior can be used to inject or steal keystrokes",
+        "description": "Google security researcher Michal Zalewski reported that focus() could be used to change a user's cursor focus while they are typing, potentially directing their keyboard input to an unintended location. This behavior was also present across origins when content from one domain was embedded within another via an iframe. A malicious web page could use this behavior to steal keystrokes from a victim while they were typing sensitive information such as a password."
+      }
+    ],
+    "CVE-2010-1196": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-29.html",
+        "title": "Heap buffer overflow in nsGenericDOMDataNode::SetTextInternal",
+        "description": "Security researcher Nils of MWR InfoSecurity reported that the routine for setting the text value for certain types of DOM nodes contained an integer overflow vulnerability. When a very long string was passed to this routine, the integer value used in creating a new memory buffer to hold the string would overflow, resulting in too small a buffer being allocated. An attacker could use this vulnerability to write data past the end of the buffer, causing a crash and potentially running arbitrary code on a victim's computer."
+      }
+    ],
+    "CVE-2010-1197": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-32.html",
+        "title": "Content-Disposition: attachment ignored if Content-Type: multipart also present",
+        "description": "Security researcher Ilja van Sprundel of IOActive reported that the Content-Disposition: attachment HTTP header was ignored when Content-Type: multipart was also present. This issue could potentially lead to XSS problems in sites that allow users to upload arbitrary files and specify a Content-Type but rely on Content-Disposition: attachment to prevent the content from being displayed inline."
+      }
+    ],
+    "CVE-2010-1198": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-28.html",
+        "title": "Freed object reuse across plugin instances",
+        "description": "Microsoft Vulnerability Research reported that two plugin instances could interact in a way in which one plugin gets a reference to an object owned by a second plugin and continues to hold that reference after the second plugin is unloaded and its object is destroyed. In these cases, the first plugin would contain a pointer to freed memory which, if accessed, could be used by an attacker to execute arbitrary code on a victim's computer."
+      }
+    ],
+    "CVE-2010-1199": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-30.html",
+        "title": "Integer Overflow in XSLT Node Sorting",
+        "description": "Security researcher Martin Barbella reported via TippingPoint's Zero Day Initiative that an XSLT node sorting routine contained an integer overflow vulnerability. In cases where one of the nodes to be sorted contained a very large text value, the integer used to allocate a memory buffer to store its value would overflow, resulting in too small a buffer being created. An attacker could use this vulnerability to write data past the end of the buffer, causing the browser to crash and potentially running arbitrary code on a victim's computer."
+      }
+    ],
+    "CVE-2010-1206": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-45.html",
+        "title": "Multiple location bar spoofing vulnerabilities",
+        "description": "Google security researcher Michal Zalewski reported two methods for spoofing the contents of the location bar. The first method works by opening a new window containing a resource that responds with an HTTP 204 (no content) and then using the reference to the new window to insert HTML content into the blank document. The second location bar spoofing method does not require that the resource opened in a new window respond with 204, as long as the opener calls window.stop() before the document is loaded. In either case a user could be mislead as to the correct location of the document they are currently viewing. Security researcher Jordi Chancel reported that the location bar could be spoofed to look like a secure page when the current document was served via plaintext. The vulnerability is triggered by a server by first redirecting a request for a plaintext resource to another resource behind a valid SSL/TLS certificate. A second request made to the original plaintext resource which is responded to not with a redirect but with JavaScript containing history.back() and history.forward() will result in the plaintext resource being displayed with valid SSL/TLS badging in the location bar."
+      }
+    ],
+    "CVE-2010-1207": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-43.html",
+        "title": "Same-origin bypass using canvas context",
+        "description": "Mozilla developer Vladimir Vukicevic reported that a canvas element can be used to read data from another site, violating the same-origin policy. The read restriction placed on a canvas element which has had cross-origin data rendered into it can be bypassed by retaining a reference to the canvas element's context and deleting the associated canvas node from the DOM."
+      }
+    ],
+    "CVE-2010-1208": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-35.html",
+        "title": "DOM attribute cloning remote code execution vulnerability",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative an error in the DOM attribute cloning routine where under certain circumstances an event attribute node can be deleted while another object still contains a reference to it. This reference could subsequently be accessed, potentially causing the execution of attacker controlled memory."
+      }
+    ],
+    "CVE-2010-1209": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-36.html",
+        "title": "Use-after-free error in NodeIterator",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative an error in Mozilla's implementation of NodeIterator in which a malicious NodeFilter could be created which would detach nodes from the DOM tree while it was being traversed. The use of a detached and subsequently deleted node could result in the execution of attacker-controlled memory."
+      }
+    ],
+    "CVE-2010-1210": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-44.html",
+        "title": "Characters mapped to U+FFFD in 8 bit encodings cause subsequent character to vanish",
+        "description": "Security researcher O. Andersen reported that undefined positions within various 8 bit character encodings are mapped to the sequence U+FFFD which when displayed causes the immediately following character to disappear from the text run. This could potentially contribute to XSS problems on sites which expected extra characters to be present within strings being sanitized on the server."
+      }
+    ],
+    "CVE-2010-1212": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-34.html",
+        "title": "Miscellaneous memory safety hazards (rv:1.9.2.7/ 1.9.1.11)",
+        "description": "Mozilla developers identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2010-1213": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-42.html",
+        "title": "Cross-origin data disclosure via Web Workers and importScripts",
+        "description": "Security researcher Yosuke Hasegawa reported that the Web Worker method importScripts can read and parse resources from other domains even when the content is not valid JavaScript. This is a violation of the same-origin policy and could be used by an attacker to steal information from other sites."
+      }
+    ],
+    "CVE-2010-1214": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-37.html",
+        "title": "Plugin parameter EnsureCachedAttrParamArrays remote code execution vulnerability",
+        "description": "Security researcher J23 reported via TippingPoint's Zero Day Initiative an error in the code used to store the names and values of plugin parameter elements. A malicious page could embed plugin content containing a very large number of parameter elements which would cause an overflow in the integer value counting them. This integer is later used in allocating a memory buffer used to store the plugin parameters. Under such conditions, too small a buffer would be created and attacker-controlled data could be written past the end of the buffer, potentially resulting in code execution."
+      }
+    ],
+    "CVE-2010-1215": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-38.html",
+        "title": "Arbitrary code execution using SJOW and fast native function",
+        "description": "Mozilla security researcher moz_bug_r_a4 reported that when content script which is running in a chrome context accesses a content object via SJOW, the content code can gain access to an object from the chrome scope and use that object to run arbitrary JavaScript with chrome privileges. Firefox 3.5 and other Mozilla products built from Gecko 1.9.1 were not affected by this issue."
+      }
+    ],
+    "CVE-2010-1585": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-08.html",
+        "title": "ParanoidFragmentSink allows javascript: URLs in chrome documents",
+        "description": "Security researcher Roberto Suggi Liverani reported that ParanoidFragmentSink, a class used to sanitize potentially unsafe HTML for display, allows javascript: URLs and other inline JavaScript when the embedding document is a chrome document. While there are no unsafe uses of this class in any released products, extension code could have potentially used it in an unsafe manner."
+      }
+    ],
+    "CVE-2010-2751": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-45.html",
+        "title": "Multiple location bar spoofing vulnerabilities",
+        "description": "Google security researcher Michal Zalewski reported two methods for spoofing the contents of the location bar. The first method works by opening a new window containing a resource that responds with an HTTP 204 (no content) and then using the reference to the new window to insert HTML content into the blank document. The second location bar spoofing method does not require that the resource opened in a new window respond with 204, as long as the opener calls window.stop() before the document is loaded. In either case a user could be mislead as to the correct location of the document they are currently viewing. Security researcher Jordi Chancel reported that the location bar could be spoofed to look like a secure page when the current document was served via plaintext. The vulnerability is triggered by a server by first redirecting a request for a plaintext resource to another resource behind a valid SSL/TLS certificate. A second request made to the original plaintext resource which is responded to not with a redirect but with JavaScript containing history.back() and history.forward() will result in the plaintext resource being displayed with valid SSL/TLS badging in the location bar."
+      }
+    ],
+    "CVE-2010-2752": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-39.html",
+        "title": "nsCSSValue::Array index integer overflow",
+        "description": "Security researcher J23 reported via TippingPoint's Zero Day Initiative that an array class used to store CSS values contained an integer overflow vulnerability. The 16 bit integer value used in allocating the size of the array could overflow, resulting in too small a memory buffer being created. When the array was later populated with CSS values data would be written past the end of the buffer potentially resulting in the execution of attacker-controlled memory."
+      }
+    ],
+    "CVE-2010-2753": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-40.html",
+        "title": "nsTreeSelection dangling pointer remote code execution vulnerability",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative an integer overflow vulnerability in the implementation of the XUL <tree> element's selection attribute. When the size of a new selection is sufficiently large the integer used in calculating the length of the selection can overflow, resulting in a bogus range being marked selected. When adjustSelection is then called on the bogus range the range is deleted leaving dangling references to the ranges which could be used by an attacker to call into deleted memory and run arbitrary code on a victim's computer."
+      }
+    ],
+    "CVE-2010-2754": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-47.html",
+        "title": "Cross-origin data leakage from script filename in error messages",
+        "description": "Security researcher Soroush Dalili reported that potentially sensitive URL parameters could be leaked across domains upon script errors when the script filename and line number is included in the error message."
+      }
+    ],
+    "CVE-2010-2755": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-48.html",
+        "title": "Dangling pointer crash regression from plugin parameter array fix",
+        "description": "Mozilla developer Daniel Holbert reported that the fix to the plugin parameter array crash that was fixed in Firefox 3.6.7 caused a crash showing signs of memory corruption. In certain circumstances, properties in the plugin instance's parameter array could be freed prematurely leaving a dangling pointer that the plugin could execute, potentially calling into attacker-controlled memory. Firefox 3.5.11 was also affected by the regression but the equivalent pointer was always initialized to NULL and not exploitable."
+      }
+    ],
+    "CVE-2010-2760": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-54.html",
+        "title": "Dangling pointer vulnerability in nsTreeSelection",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative that there was a remaining dangling pointer issue leftover from the fix to CVE-2010-2753. Under certain circumstances one of the pointers held by a XUL tree selection could be freed and then later reused, potentially resulting in the execution of attacker-controlled memory."
+      }
+    ],
+    "CVE-2010-2762": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-59.html",
+        "title": "SJOW creates scope chains ending in outer object",
+        "description": "Mozilla developer Blake Kaplan reported that the wrapper class XPCSafeJSObjectWrapper (SJOW), a security wrapper that allows content-defined objects to be safely accessed by privileged code, creates scope chains ending in outer objects. Users of SJOWs which expect the scope chain to end on an inner object may be handed a chrome privileged object which could be leveraged to run arbitrary JavaScript with chrome privileges. Michal Zalewski's recent contributions helped to identify this architectural weakness."
+      }
+    ],
+    "CVE-2010-2763": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-60.html",
+        "title": "XSS using SJOW scripted function",
+        "description": "Mozilla security researcher moz_bug_r_a4 reported that the wrapper class XPCSafeJSObjectWrapper (SJOW) on the Mozilla 1.9.1 development branch has a logical error in its scripted function implementation that allows the caller to run the function within the context of another site. This is a violation of the same-origin policy and could be used to mount an XSS attack."
+      }
+    ],
+    "CVE-2010-2764": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-63.html",
+        "title": "Information leak via XMLHttpRequest statusText",
+        "description": "Matt Haggard reported that the statusText property of an XMLHttpRequest object is readable by the requestor even when the request is made across origins. This status information reveals the presence of a web server and could be used to gather information about servers on internal private networks. This issue was also independently reported to Mozilla by Nicholas Berthaume"
+      }
+    ],
+    "CVE-2010-2765": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-50.html",
+        "title": "Frameset integer overflow vulnerability",
+        "description": "Security researcher Chris Rohlf of Matasano Security reported that the implementation of the HTML frameset element contained an integer overflow vulnerability. The code responsible for parsing the frameset columns used an 8-byte counter for the column numbers, so when a very large number of columns was passed in the counter would overflow. When this counter was subsequently used to allocate memory for the frameset, the memory buffer would be too small, potentially resulting in a heap buffer overflow and execution of attacker-controlled memory."
+      }
+    ],
+    "CVE-2010-2766": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-57.html",
+        "title": "Crash and remote code execution in normalizeDocument",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative that code used to normalize a document contained a logical flaw that could be leveraged to run arbitrary code. When the normalization code ran, a static count of the document's child nodes was used in the traversal, so a page could be constructed that would remove DOM nodes during this normalization which could lead to the accessing of a deleted object and potentially the execution of attacker-controlled memory. Workaround Disable JavaScript or install NoScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2010-2767": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-51.html",
+        "title": "Dangling pointer vulnerability using DOM plugin array",
+        "description": "Security researcher Sergey Glazunov reported a dangling pointer vulnerability in the implementation of navigator.plugins in which the navigator object could retain a pointer to the plugins array even after it had been destroyed. An attacker could potentially use this issue to crash the browser and run arbitrary code on a victim's computer."
+      }
+    ],
+    "CVE-2010-2768": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-61.html",
+        "title": "UTF-7 XSS by overriding document charset using <object> type attribute",
+        "description": "Security researchers David Huang and Collin Jackson of Carnegie Mellon University CyLab (Silicon Valley campus) reported that the type attribute of an <object> tag can override the charset of a framed HTML document, even when the document is included across origins. A page could be constructed containing such an <object> tag which sets the charset of the framed document to UTF-7. This could potentially allow an attacker to inject UTF-7 encoded JavaScript into a site, bypassing the site's XSS filters, and then executing the code using the above technique."
+      }
+    ],
+    "CVE-2010-2769": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-62.html",
+        "title": "Copy-and-paste or drag-and-drop into designMode document allows XSS",
+        "description": "Security researcher Paul Stone reported that when an HTML selection containing JavaScript is copy-and-pasted or dropped onto a document with designMode enabled the JavaScript will be executed within the context of the site where the code was dropped. A malicious site could leverage this issue in an XSS attack by persuading a user into taking such an action and in the process running malicious JavaScript within the context of another site."
+      }
+    ],
+    "CVE-2010-2770": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-58.html",
+        "title": "Crash on Mac using fuzzed font in data: URL",
+        "description": "Security researcher Marc Schoenefeld reported that a specially crafted font could be applied to a document and cause a crash on Mac systems. The crash showed signs of memory corruption and presumably could be used by an attacker to execute arbitrary code on a victim's computer."
+      }
+    ],
+    "CVE-2010-3166": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-53.html",
+        "title": "Heap buffer overflow in nsTextFrameUtils::TransformText",
+        "description": "Security researcher wushi of team509 reported a heap buffer overflow in code routines responsible for transforming text runs. A page could be constructed with a bidirectional text run which upon reflow could result in an incorrect length being calculated for the run of text. When this value is subsequently used to allocate memory for the text too small a buffer may be created potentially resulting in a buffer overflow and the execution of attacker controlled memory."
+      }
+    ],
+    "CVE-2010-3167": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-56.html",
+        "title": "Dangling pointer vulnerability in nsTreeContentView",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative that the implementation of XUL <tree>'s content view contains a dangling pointer vulnerability. One of the content view's methods for accessing the internal structure of the tree could be manipulated into removing a node prior to accessing it, resulting in the accessing of deleted memory. If an attacker can control the contents of the deleted memory prior to its access they could use this vulnerability to run arbitrary code on a victim's machine."
+      }
+    ],
+    "CVE-2010-3168": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-55.html",
+        "title": "XUL tree removal crash and remote code execution",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative that XUL <tree> objects could be manipulated such that the setting of certain properties on the object would trigger the removal of the tree from the DOM and cause certain sections of deleted memory to be accessed. In products based on Gecko version 1.9.2 (Firefox 3.6, Thunderbird 3.1) and newer this memory has been overwritten by a value that will cause an unexploitable crash. In products based on Gecko version 1.9.1 (Firefox 3.5, Thunderbird 3.0, and SeaMonkey 2.0) and older an attacker could potentially use this vulnerability to crash a victim's browser and run arbitrary code on their computer."
+      }
+    ],
+    "CVE-2010-3170": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-70.html",
+        "title": "SSL wildcard certificate matching IP addresses",
+        "description": "Security researcher Richard Moore reported that when an SSL certificate was created with a common name containing a wildcard followed by a partial IP address a valid SSL connection could be established with a server whose IP address matched the wildcard range by browsing directly to the IP address. It is extremely unlikely that such a certificate would be issued by a Certificate Authority."
+      }
+    ],
+    "CVE-2010-3173": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-72.html",
+        "title": "Insecure Diffie-Hellman key exchange",
+        "description": "Mozilla cryptographer Nelson Bolyard reported that the SSL implementation was permitting servers to use Diffie-Hellman Ephemeral mode (DHE) with too short of a minimum key length. DHE keys of such lengths are trivially breakable on modern hardware so SSL servers operating in this mode were providing very little effective security for their clients."
+      }
+    ],
+    "CVE-2010-3177": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-68.html",
+        "title": "XSS in gopher parser when parsing hrefs",
+        "description": "Google security researcher Robert Swiecki reported that functions used by the Gopher parser to convert text to HTML tags could be exploited to turn text into executable JavaScript. If an attacker could create a file or directory on a Gopher server with the encoded script as part of its name the script would then run in a victim's browser within the context of the site."
+      }
+    ],
+    "CVE-2010-3178": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-69.html",
+        "title": "Cross-site information disclosure via modal calls",
+        "description": "Security researcher Eduardo Vela Nava reported that if a web page opened a new window and used a javascript: URL to make a modal call, such as alert(), then subsequently navigated the page to a different domain, once the modal call returned the opener of the window could get access to objects in the navigated window. This is a violation of the same-origin policy and could be used by an attacker to steal information from another web site."
+      }
+    ],
+    "CVE-2010-3179": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-65.html",
+        "title": "Buffer overflow and memory corruption using document.write",
+        "description": "Security researcher Alexander Miller reported that passing an excessively long string to document.write could cause text rendering routines to end up in an inconsistent state with sections of stack memory being overwritten with the string data. An attacker could use this flaw to crash a victim's browser and potentially run arbitrary code on their computer."
+      }
+    ],
+    "CVE-2010-3180": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-66.html",
+        "title": "Use-after-free error in nsBarProp",
+        "description": "Security researcher Sergey Glazunov reported that it was possible to access the locationbar property of a window object after it had been closed. Since the closed window's memory could have been subsequently reused by the system it was possible that an attempt to access the locationbar property could result in the execution of attacker-controlled memory."
+      }
+    ],
+    "CVE-2010-3183": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-67.html",
+        "title": "Dangling pointer vulnerability in LookupGetterOrSetter",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative that when window.__lookupGetter__ is called with no arguments the code assumes the top JavaScript stack value is a property name. Since there were no arguments passed into the function, the top value could represent uninitialized memory or a pointer to a previously freed JavaScript object. Under such circumstances the value is passed to another subroutine which calls through the dangling pointer, potentially executing attacker-controlled memory."
+      }
+    ],
+    "CVE-2010-3765": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-73.html",
+        "title": "Heap buffer overflow mixing document.write and DOM insertion",
+        "description": "Morten Kråkvik of Telenor SOC reported an exploit targeting particular versions of Firefox 3.6 on Windows XP that Telenor found while investigating an intrusion attempt on a customer network. The underlying vulnerability, however, was present on both the Firefox 3.5 and Firefox 3.6 development branches and affected all supported platforms. Reading mail in Thunderbird does not pose a risk to users, however the vulnerability is present and could be triggered in RSS feeds if JavaScript is enabled or by an add-on that enables browser-like functionality."
+      }
+    ],
+    "CVE-2010-3766": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-80.html",
+        "title": "Use-after-free error with nsDOMAttribute MutationObserver",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative that a nsDOMAttribute node can be modified without informing the iterator object responsible for various DOM traversals. This flaw could lead to a inconsistent state where the iterator points to an object it believes is part of the DOM but actually points to some other object. If such an object had been deleted and its memory reclaimed by the system, then the iterator could be used to call into attacker-controlled memory."
+      }
+    ],
+    "CVE-2010-3767": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-81.html",
+        "title": "Integer overflow vulnerability in NewIdArray",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative that JavaScript arrays were vulnerable to an integer overflow vulnerability. The report demonstrated that an array could be constructed containing a very large number of items such that when memory was allocated to store the array items, the integer value used to calculate the buffer size would overflow resulting in too small a buffer being allocated. Subsequent use of the array object could then result in data being written past the end of the buffer and causing memory corruption."
+      }
+    ],
+    "CVE-2010-3768": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-78.html",
+        "title": "Add support for OTS font sanitizer",
+        "description": "Mozilla added the OTS font sanitizing library to prevent downloadable fonts from exposing vulnerabilities in the underlying OS font code. This library mitigates against several issues independently reported by Red Hat Security Response Team member Marc Schoenefeld and Mozilla security researcher Christoph Diehl."
+      }
+    ],
+    "CVE-2010-3769": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-75.html",
+        "title": "Buffer overflow while line breaking after document.write with long string",
+        "description": "Dirk Heinrich reported that on Windows platforms when document.write() was called with a very long string a buffer overflow was caused in line breaking routines attempting to process the string for display. Such cases triggered an invalid read past the end of an array causing a crash which an attacker could potentially use to run arbitrary code on a victim's computer."
+      }
+    ],
+    "CVE-2010-3770": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-84.html",
+        "title": "XSS hazard in multiple character encodings",
+        "description": "Security researchers Yosuke Hasegawa and Masatoshi Kimura reported that the x-mac-arabic, x-mac-farsi and x-mac-hebrew character encodings are vulnerable to XSS attacks due to some characters being converted to angle brackets when displayed by the rendering engine. Sites using these character encodings would thus be potentially vulnerable to script injection attacks if their script filtering code fails to strip out these specific characters."
+      }
+    ],
+    "CVE-2010-3772": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-77.html",
+        "title": "Crash and remote code execution using HTML tags inside a XUL tree",
+        "description": "Security researcher wushi of team509 reported that when a XUL tree had an HTML <div> element nested inside a <treechildren> element then code attempting to display content in the XUL tree would incorrectly treat the <div> element as a parent node to tree content underneath it resulting in incorrect indexes being calculated for the child content. These incorrect indexes were used in subsequent array operations which resulted in writing data past the end of an allocated buffer. An attacker could use this issue to crash a victim's browser and run arbitrary code on their machine."
+      }
+    ],
+    "CVE-2010-3774": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-83.html",
+        "title": "Location bar SSL spoofing using network error page",
+        "description": "Google security researcher Michal Zalewski reported that when a window was opened to a site resulting in a network or certificate error page, the opening site could access the document inside the opened window and inject arbitrary content. An attacker could use this bug to spoof the location bar and trick a user into thinking they were on a different site than they actually were."
+      }
+    ],
+    "CVE-2010-3776": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-74.html",
+        "title": "Miscellaneous memory safety hazards (rv:1.9.2.13/ 1.9.1.16)",
+        "description": "Mozilla developers identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Update (March 1, 2011): CVE-2010-3777 was fixed in Firefox 3.5.17"
+      }
+    ],
+    "CVE-2010-3777": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-74.html",
+        "title": "Miscellaneous memory safety hazards (rv:1.9.2.13/ 1.9.1.16)",
+        "description": "Mozilla developers identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Update (March 1, 2011): CVE-2010-3777 was fixed in Firefox 3.5.17"
+      }
+    ],
+    "CVE-2010-3778": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-74.html",
+        "title": "Miscellaneous memory safety hazards (rv:1.9.2.13/ 1.9.1.16)",
+        "description": "Mozilla developers identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Update (March 1, 2011): CVE-2010-3777 was fixed in Firefox 3.5.17"
+      }
+    ]
+  }
 }

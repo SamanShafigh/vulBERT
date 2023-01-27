@@ -8,7 +8,12 @@ const securitygentoo = require('./security-gentoo.js');
 const ubuntu = require('./ubuntu.js');
 const kbcert = require('./kb-cert.js');
 const bugzillaRedhat = require('./bugzilla-redhat.js');
-
+const listsApple = require('./lists-apple.js');
+const usnubuntu = require('./usn-ubuntu.js');
+const portalMsrcMicrosoft = require('./portal-msrc-microsoft.js');
+const bugzillaMozilla = require('./bugzilla-mozilla.js');
+const mozilla = require('./mozilla.js');
+const gitKernel = require('./git-kernel.js');
 /**
  * List of drivers, Each driver can return object of shape
  * { 
@@ -16,10 +21,11 @@ const bugzillaRedhat = require('./bugzilla-redhat.js');
  *   subTitle, 
  *   background, // explain the context 
  *   overview, // Short overview of the issue
- *   body, // Deprecated and need to be migrated to description
  *   description, // Main POC
  *   impact,
- *   
+ *   notValid // boolean: if the content is not valid anymore and should not be considered
+ * 
+ *   body, // Deprecated and need to be migrated to description
  *   extra, // Deprecated and need to be migrated
  *   meta: { extraType: 'impact' }, // Deprecated and need to be migrated
  * };
@@ -34,16 +40,13 @@ exports.drivers = {
   "ubuntu.com": ubuntu,
   "kb.cert.org": kbcert,
   "bugzilla.redhat.com": bugzillaRedhat,
-  // "lists.apple.com": ,
-  // "usn.ubuntu.com": ,
-  // "portal.msrc.microsoft.com": ,
+  "lists.apple.com": listsApple,
+  "usn.ubuntu.com": usnubuntu,
+  "portal.msrc.microsoft.com": portalMsrcMicrosoft,
   "docs.microsoft.com": docsMicrosoft,
-  // "bugzilla.mozilla.org": ,
-  // "mozilla.org": ,
-  // "security.netapp.com": ,
-  // "jvn.jp": ,
-  // "drupal.org": ,
-  // "git.kernel.org": ,
+  "bugzilla.mozilla.org": bugzillaMozilla,
+  "mozilla.org": mozilla,
+  "git.kernel.org": gitKernel,
   // "ics-cert.us-cert.gov": ,
   // "crbug.com": ,
   // "gentoo.org": ,

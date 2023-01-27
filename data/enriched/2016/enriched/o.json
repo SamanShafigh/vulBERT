@@ -1,6 +1,581 @@
 {
   "year": 2016,
-  "total": 0,
+  "total": 82,
   "reference": "mozilla.org",
-  "reports": {}
+  "reports": {
+    "CVE-2016-0718": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-68.html",
+        "title": "Out-of-bounds read during XML parsing in Expat library",
+        "description": "Security researcher Gustavo Grieco reported a potential out-of-bounds read parsing malformed XML data during character conversion. This is due to a bug in the Expat library, which is used in Firefox. This could allow an attacker to read other inaccessible memory."
+      }
+    ],
+    "CVE-2016-1521": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-14.html",
+        "title": "Vulnerabilities in Graphite 2",
+        "description": "Security researcher Holger Fuhrmannek reported that a malicious Graphite \"smart font\" could circumvent the validation of internal instruction parameters in the Graphite 2 library using special CNTXT_ITEM instructions. This could result in arbitrary code execution. This issue affected Graphite 2 version 1.3.4, which was used in the Firefox ESR branch. To address this issue and other security vulnerabilities recently disclosed by Cisco Talos affecting this version of the library, Firefox ESR has been updated to version 1.3.5, the same one used in Firefox 44. In general this flaw cannot be exploited through email in the Thunderbird product, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2016-1522": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-14.html",
+        "title": "Vulnerabilities in Graphite 2",
+        "description": "Security researcher Holger Fuhrmannek reported that a malicious Graphite \"smart font\" could circumvent the validation of internal instruction parameters in the Graphite 2 library using special CNTXT_ITEM instructions. This could result in arbitrary code execution. This issue affected Graphite 2 version 1.3.4, which was used in the Firefox ESR branch. To address this issue and other security vulnerabilities recently disclosed by Cisco Talos affecting this version of the library, Firefox ESR has been updated to version 1.3.5, the same one used in Firefox 44. In general this flaw cannot be exploited through email in the Thunderbird product, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2016-1526": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-14.html",
+        "title": "Vulnerabilities in Graphite 2",
+        "description": "Security researcher Holger Fuhrmannek reported that a malicious Graphite \"smart font\" could circumvent the validation of internal instruction parameters in the Graphite 2 library using special CNTXT_ITEM instructions. This could result in arbitrary code execution. This issue affected Graphite 2 version 1.3.4, which was used in the Firefox ESR branch. To address this issue and other security vulnerabilities recently disclosed by Cisco Talos affecting this version of the library, Firefox ESR has been updated to version 1.3.5, the same one used in Firefox 44. In general this flaw cannot be exploited through email in the Thunderbird product, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2016-1930": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-01.html",
+        "title": "Miscellaneous memory safety hazards (rv:44.0 / rv:38.6)",
+        "description": "Mozilla developers and community identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code. In general these flaws cannot be exploited through email in the Thunderbird product because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2016-1931": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-01.html",
+        "title": "Miscellaneous memory safety hazards (rv:44.0 / rv:38.6)",
+        "description": "Mozilla developers and community identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code. In general these flaws cannot be exploited through email in the Thunderbird product because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2016-1933": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-02.html",
+        "title": "Out of Memory crash when parsing GIF format images",
+        "description": "Security researcher Gustavo Grieco reported an out of memory crash when loading maliciously crafted GIF format images. Investigation of the issue determined that the root cause was an error in image parsing code during deinterlacing, leading to a potential integer overflow."
+      }
+    ],
+    "CVE-2016-1935": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-03.html",
+        "title": "Buffer overflow in WebGL after out of memory allocation",
+        "description": "Security researcher Aki Helin used the Address Sanitizer tool to find a buffer overflow write when rendering some WebGL content. This leads to a potentially exploitable crash. In general this flaw cannot be exploited through email in the Thunderbird product, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2016-1937": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-06.html",
+        "title": "Missing delay following user click events in protocol handler dialog",
+        "description": "Security researcher window reported an issue where the protocol handler dialog appears, double click events are treated as two single click events. This was caused by the lack of a delay following the initial focus in the file download dialog. This could cause a second dialog to be sent the second click, leading to unintentional user initiated actions, such as the running of downloaded software from a maliciously positioned prompt."
+      }
+    ],
+    "CVE-2016-1938": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-07.html",
+        "title": "Errors in mp_div and mp_exptmod cryptographic functions in NSS",
+        "description": "Security researcher Hanno Böck reported that calculations with mp_div and mp_exptmod in Network Security Services (NSS) can produce wrong results in some circumstances. These functions are used within NSS for a variety of cryptographic division functions, leading to potential cryptographic weaknesses."
+      }
+    ],
+    "CVE-2016-1939": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-04.html",
+        "title": "Firefox allows for control characters to be set in cookie names",
+        "description": "Security researcher musicDespiteEverything previously reported an issue where illegal control characters were stored in as cookie values in violation of RFC6265. While fixing this issue, Mozilla developer Nicholas Hurley realized that the same issue applied to the names of cookies. These characters have now been disallowed in cookie names. This issue could result in incorrect cookie handling by web servers."
+      }
+    ],
+    "CVE-2016-1941": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-08.html",
+        "title": "Delay following click events in file download dialog too short on OS X",
+        "description": "Security researcher Jordi Chancel reported an issue on OS X where the delay between the download dialog getting focus and the button getting enabled was too short. If an attacker is able to induce the user to double-click in a specific location, they can then pass the second click through to the dialog below, leading to unintentional actions such as the running of downloaded software. This issue only affects OS X installations. Windows, Linux, and Android installations are unaffected by it."
+      }
+    ],
+    "CVE-2016-1942": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-09.html",
+        "title": "Addressbar spoofing attacks",
+        "description": "Security researcher Jordi Chancel reported two issues involving addressbar spoofing. The first of these is a \"high\" rated security issue on on Firefox for Android involving the scrollTo() method to scroll a page. In this attack, scrollTo() is used to scroll the addressbar out of view while replacing it with a fake addressbar created by the attacker when a new tab is opened. The second flaw is a \"low\" rated security issue affecting Desktop Firefox. In this attack, when a URL which is invalid for an internal protocol is pasted into the addressbar, the addressbar contents may be manipulated to show the location of an arbitrary website instead of the one currently loaded. This issue is mitigated by the protocol being prepended to the displayed URL, making the address less likely to be confused with the appended URL. Both of these attacks can lead to potential spoofing by a malicious site."
+      }
+    ],
+    "CVE-2016-1944": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-10.html",
+        "title": "Unsafe memory manipulation found through code inspection",
+        "description": "Security researcher Ronald Crane reported three vulnerabilities affecting released code that were found through code inspection. These include a high rated memory safety issue in the ANGLE graphics library, a moderate rated potential wild pointer flaw when handling zip files, and a critical rated integer overflow during metadata parsing in Mozilla's use of the libstagefright library. The first two issues do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them. The libstagefright issue could potentially be triggered by a malicious MP4 format video file, allowing for arbitrary code execution."
+      }
+    ],
+    "CVE-2016-1946": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-10.html",
+        "title": "Unsafe memory manipulation found through code inspection",
+        "description": "Security researcher Ronald Crane reported three vulnerabilities affecting released code that were found through code inspection. These include a high rated memory safety issue in the ANGLE graphics library, a moderate rated potential wild pointer flaw when handling zip files, and a critical rated integer overflow during metadata parsing in Mozilla's use of the libstagefright library. The first two issues do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them. The libstagefright issue could potentially be triggered by a malicious MP4 format video file, allowing for arbitrary code execution."
+      }
+    ],
+    "CVE-2016-1948": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-12.html",
+        "title": "Lightweight themes on Firefox for Android do not verify a secure connection",
+        "description": "Mozilla developer Margaret Leibovic reported when Firefox for Android installs lightweight themes, it does not check to verify that they are served over an HTTPS connection. Instead, themes can be installed over an unencrypted connection, which could allow for a man-in-the-middle (MITM) attack by third parties replacing the theme content, which consists of images and toolbar text colors. This issue only affects Firefox for Android. Firefox on other operating systems is not affected."
+      }
+    ],
+    "CVE-2016-1949": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-13.html",
+        "title": "Same-origin-policy violation using Service Workers with plugins",
+        "description": "Jason Pang of OneSignal reported that service workers intercept responses to plugin network requests made through the browser. Plugins which make security decisions based on the content of network requests can have these decisions subverted if a service worker forges responses to those requests. For example, a forged crossdomain.xml could allow a malicious site to violate the same-origin policy using the Flash plugin."
+      }
+    ],
+    "CVE-2016-1950": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-35.html",
+        "title": "Buffer overflow during ASN.1 decoding in NSS",
+        "description": "Security researcher Francis Gabriel of Quarkslab reported a heap-based buffer overflow in the way the Network Security Services (NSS) libraries parsed certain ASN.1 structures. An attacker could create a specially-crafted certificate which, when parsed by NSS, would cause it to crash or execute arbitrary code with the permissions of the user. This issue has been addressed in the NSS releases shipping on affected Mozilla products: Firefox ESR 38.7 has been updated to 3.19.2.3. Firefox 45 has been updated to 3.21.1. Projects using NSS 3.21 should update the new 3.21.1 release."
+      }
+    ],
+    "CVE-2016-1952": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-16.html",
+        "title": "Miscellaneous memory safety hazards (rv:45.0 / rv:38.7)",
+        "description": "Mozilla developers fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2016-1953": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-16.html",
+        "title": "Miscellaneous memory safety hazards (rv:45.0 / rv:38.7)",
+        "description": "Mozilla developers fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2016-1954": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-17.html",
+        "title": "Local file overwriting and potential privilege escalation through CSP reports",
+        "description": "Security researcher Nicolas Golubovic reported that a malicious page can overwrite files on the user's machine using Content Security Policy (CSP) violation reports. The file contents are restricted to the JSON format of the report. In many cases overwriting a local file may simply be destructive, breaking the functionality of that file. The CSP error reports can include HTML fragments which could be rendered by browsers. If a user has disabled add-on signing and has installed an \"unpacked\" add-on, a malicious page could overwrite one of the add-on resources. Depending on how this resource is used, this could lead to privilege escalation. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2016-1955": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-18.html",
+        "title": "CSP reports fail to strip location information for embedded iframe pages",
+        "description": "Security researcher Muneaki Nishimura (nishimunea) of Recruit Technologies Co.,Ltd. reported that Content Security Policy (CSP) violation reports contained full path information for cross-origin iframe navigations in violation of the CSP specification. This could result in information disclosure. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2016-1956": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-19.html",
+        "title": "Linux video memory DOS with Intel drivers",
+        "description": "Security researcher Ucha Gobejishvili reported a denial of service (DOS) attack when doing certain WebGL operations in a canvas requiring an unusually large amount buffer to be allocated from video memory. This resulted in memory resource exhaustion with some Intel video cards, requiring the computer to be rebooted to return functionality. This was resolved by putting in additional checks on the amount of memory to be allocated during graphics processing. This issue was limited to a subset of Intel drivers on Linux. Other operating systems were not affected. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2016-1957": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-20.html",
+        "title": "Memory leak in libstagefright when deleting an array during MP4 processing",
+        "description": "Security researchers Jose Martinez and Romina Santillan reported a memory leak in the libstagefright library when array destruction occurs during MPEG4 video file processing. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2016-1959": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-22.html",
+        "title": "Service Worker Manager out-of-bounds read in Service Worker Manager",
+        "description": "Security researcher Looben Yang reported a mechanism where the Clients API in Service Workers can be used to trigger an out-of-bounds read in ServiceWorkerManager. This results in a potentially exploitable crash."
+      }
+    ],
+    "CVE-2016-1963": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-26.html",
+        "title": "Memory corruption when modifying a file being read by FileReader",
+        "description": "Security researcher Oriol reported memory corruption when local files are modified (by either the user or another program) at the same time being read using the FileReader API. This flaw requires that input be taken from a local file in order to be triggered and cannot be triggered by web content. This results in a potentially exploitable crash when triggered."
+      }
+    ],
+    "CVE-2016-1967": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-29.html",
+        "title": "Same-origin policy violation using performance.getEntries and history navigation with session restore",
+        "description": "Security researcher Jordi Chancel discovered a variant of Mozilla Foundation Security Advisory 2015-136 which was fixed in Firefox 43. In the original bug, it was possible to read cross-origin URLs following a redirect if performance.getEntries() was used along with an iframe to host a page. Navigating back in history through script, content was pulled from the browser cache for the redirected location instead of going to the original location. In the newly reported variant issue, it was found that if a browser session was restored, history navigation would still allow for the same attack as content was restored from the browser cache. This is a same-origin policy violation and could allow for data theft."
+      }
+    ],
+    "CVE-2016-1968": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-30.html",
+        "title": "Buffer overflow in Brotli decompression",
+        "description": "Security researcher Luke Li reported a pointer underflow bug in the Brotli library's decompression that leads to a buffer overflow. This results in a potentially exploitable crash when triggered."
+      }
+    ],
+    "CVE-2016-1969": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-38.html",
+        "title": "Out-of-bounds write with malicious font in Graphite 2",
+        "description": "Security researcher James Clawson used the Address Sanitizer tool to discover an out-of-bounds write in the Graphite 2 library when loading a crafted Graphite font file. This results in a potentially exploitable crash."
+      }
+    ],
+    "CVE-2016-1970": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-32.html",
+        "title": "WebRTC and LibVPX vulnerabilities found through code inspection",
+        "description": "Security researcher Ronald Crane reported five \"moderate\" rated vulnerabilities affecting released code that were found through code inspection. These included the following issues in WebRTC: an integer underflow, a missing status check, race condition, and a use of deleted pointers to create new object. A race condition in LibVPX was also identified. These do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them. This issue only affects Windows systems. Linux, OS X, and Android systems are unaffected."
+      }
+    ],
+    "CVE-2016-1971": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-32.html",
+        "title": "WebRTC and LibVPX vulnerabilities found through code inspection",
+        "description": "Security researcher Ronald Crane reported five \"moderate\" rated vulnerabilities affecting released code that were found through code inspection. These included the following issues in WebRTC: an integer underflow, a missing status check, race condition, and a use of deleted pointers to create new object. A race condition in LibVPX was also identified. These do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them. This issue only affects Windows systems. Linux, OS X, and Android systems are unaffected."
+      }
+    ],
+    "CVE-2016-1974": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-34.html",
+        "title": "Out-of-bounds read in HTML parser following a failed allocation",
+        "description": "Security researcher Ronald Crane reported an out-of-bounds read following a failed allocation in the HTML parser while working with unicode strings. This can also affect the parsing of XML and SVG format data. This leads to a potentially exploitable crash. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2016-1977": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-37.html",
+        "title": "Font vulnerabilities in the Graphite 2 library",
+        "description": "Security researcher Holger Fuhrmannek and Mozilla security engineer Tyson Smith reported a number of security vulnerabilities in the Graphite 2 library affecting version 1.3.5. The issue reported by Holger Fuhrmannek is a mechanism to induce stack corruption with a malicious graphite font. This leads to a potentially exploitable crash when the font is loaded. Tyson Smith used the Address Sanitizer tool in concert with a custom software fuzzer to find a series of uninitialized memory, out-of-bounds read, and out-of-bounds write errors when working with fuzzed graphite fonts. To address these security vulnerabilities, Firefox 45 and Firefox ESR 38.7 have been updated to Graphite 2 version 1.3.6."
+      }
+    ],
+    "CVE-2016-2791": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-37.html",
+        "title": "Font vulnerabilities in the Graphite 2 library",
+        "description": "Security researcher Holger Fuhrmannek and Mozilla security engineer Tyson Smith reported a number of security vulnerabilities in the Graphite 2 library affecting version 1.3.5. The issue reported by Holger Fuhrmannek is a mechanism to induce stack corruption with a malicious graphite font. This leads to a potentially exploitable crash when the font is loaded. Tyson Smith used the Address Sanitizer tool in concert with a custom software fuzzer to find a series of uninitialized memory, out-of-bounds read, and out-of-bounds write errors when working with fuzzed graphite fonts. To address these security vulnerabilities, Firefox 45 and Firefox ESR 38.7 have been updated to Graphite 2 version 1.3.6."
+      }
+    ],
+    "CVE-2016-2792": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-37.html",
+        "title": "Font vulnerabilities in the Graphite 2 library",
+        "description": "Security researcher Holger Fuhrmannek and Mozilla security engineer Tyson Smith reported a number of security vulnerabilities in the Graphite 2 library affecting version 1.3.5. The issue reported by Holger Fuhrmannek is a mechanism to induce stack corruption with a malicious graphite font. This leads to a potentially exploitable crash when the font is loaded. Tyson Smith used the Address Sanitizer tool in concert with a custom software fuzzer to find a series of uninitialized memory, out-of-bounds read, and out-of-bounds write errors when working with fuzzed graphite fonts. To address these security vulnerabilities, Firefox 45 and Firefox ESR 38.7 have been updated to Graphite 2 version 1.3.6."
+      }
+    ],
+    "CVE-2016-2793": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-37.html",
+        "title": "Font vulnerabilities in the Graphite 2 library",
+        "description": "Security researcher Holger Fuhrmannek and Mozilla security engineer Tyson Smith reported a number of security vulnerabilities in the Graphite 2 library affecting version 1.3.5. The issue reported by Holger Fuhrmannek is a mechanism to induce stack corruption with a malicious graphite font. This leads to a potentially exploitable crash when the font is loaded. Tyson Smith used the Address Sanitizer tool in concert with a custom software fuzzer to find a series of uninitialized memory, out-of-bounds read, and out-of-bounds write errors when working with fuzzed graphite fonts. To address these security vulnerabilities, Firefox 45 and Firefox ESR 38.7 have been updated to Graphite 2 version 1.3.6."
+      }
+    ],
+    "CVE-2016-2794": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-37.html",
+        "title": "Font vulnerabilities in the Graphite 2 library",
+        "description": "Security researcher Holger Fuhrmannek and Mozilla security engineer Tyson Smith reported a number of security vulnerabilities in the Graphite 2 library affecting version 1.3.5. The issue reported by Holger Fuhrmannek is a mechanism to induce stack corruption with a malicious graphite font. This leads to a potentially exploitable crash when the font is loaded. Tyson Smith used the Address Sanitizer tool in concert with a custom software fuzzer to find a series of uninitialized memory, out-of-bounds read, and out-of-bounds write errors when working with fuzzed graphite fonts. To address these security vulnerabilities, Firefox 45 and Firefox ESR 38.7 have been updated to Graphite 2 version 1.3.6."
+      }
+    ],
+    "CVE-2016-2796": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-37.html",
+        "title": "Font vulnerabilities in the Graphite 2 library",
+        "description": "Security researcher Holger Fuhrmannek and Mozilla security engineer Tyson Smith reported a number of security vulnerabilities in the Graphite 2 library affecting version 1.3.5. The issue reported by Holger Fuhrmannek is a mechanism to induce stack corruption with a malicious graphite font. This leads to a potentially exploitable crash when the font is loaded. Tyson Smith used the Address Sanitizer tool in concert with a custom software fuzzer to find a series of uninitialized memory, out-of-bounds read, and out-of-bounds write errors when working with fuzzed graphite fonts. To address these security vulnerabilities, Firefox 45 and Firefox ESR 38.7 have been updated to Graphite 2 version 1.3.6."
+      }
+    ],
+    "CVE-2016-2797": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-37.html",
+        "title": "Font vulnerabilities in the Graphite 2 library",
+        "description": "Security researcher Holger Fuhrmannek and Mozilla security engineer Tyson Smith reported a number of security vulnerabilities in the Graphite 2 library affecting version 1.3.5. The issue reported by Holger Fuhrmannek is a mechanism to induce stack corruption with a malicious graphite font. This leads to a potentially exploitable crash when the font is loaded. Tyson Smith used the Address Sanitizer tool in concert with a custom software fuzzer to find a series of uninitialized memory, out-of-bounds read, and out-of-bounds write errors when working with fuzzed graphite fonts. To address these security vulnerabilities, Firefox 45 and Firefox ESR 38.7 have been updated to Graphite 2 version 1.3.6."
+      }
+    ],
+    "CVE-2016-2798": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-37.html",
+        "title": "Font vulnerabilities in the Graphite 2 library",
+        "description": "Security researcher Holger Fuhrmannek and Mozilla security engineer Tyson Smith reported a number of security vulnerabilities in the Graphite 2 library affecting version 1.3.5. The issue reported by Holger Fuhrmannek is a mechanism to induce stack corruption with a malicious graphite font. This leads to a potentially exploitable crash when the font is loaded. Tyson Smith used the Address Sanitizer tool in concert with a custom software fuzzer to find a series of uninitialized memory, out-of-bounds read, and out-of-bounds write errors when working with fuzzed graphite fonts. To address these security vulnerabilities, Firefox 45 and Firefox ESR 38.7 have been updated to Graphite 2 version 1.3.6."
+      }
+    ],
+    "CVE-2016-2799": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-37.html",
+        "title": "Font vulnerabilities in the Graphite 2 library",
+        "description": "Security researcher Holger Fuhrmannek and Mozilla security engineer Tyson Smith reported a number of security vulnerabilities in the Graphite 2 library affecting version 1.3.5. The issue reported by Holger Fuhrmannek is a mechanism to induce stack corruption with a malicious graphite font. This leads to a potentially exploitable crash when the font is loaded. Tyson Smith used the Address Sanitizer tool in concert with a custom software fuzzer to find a series of uninitialized memory, out-of-bounds read, and out-of-bounds write errors when working with fuzzed graphite fonts. To address these security vulnerabilities, Firefox 45 and Firefox ESR 38.7 have been updated to Graphite 2 version 1.3.6."
+      }
+    ],
+    "CVE-2016-2800": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-37.html",
+        "title": "Font vulnerabilities in the Graphite 2 library",
+        "description": "Security researcher Holger Fuhrmannek and Mozilla security engineer Tyson Smith reported a number of security vulnerabilities in the Graphite 2 library affecting version 1.3.5. The issue reported by Holger Fuhrmannek is a mechanism to induce stack corruption with a malicious graphite font. This leads to a potentially exploitable crash when the font is loaded. Tyson Smith used the Address Sanitizer tool in concert with a custom software fuzzer to find a series of uninitialized memory, out-of-bounds read, and out-of-bounds write errors when working with fuzzed graphite fonts. To address these security vulnerabilities, Firefox 45 and Firefox ESR 38.7 have been updated to Graphite 2 version 1.3.6."
+      }
+    ],
+    "CVE-2016-2801": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-37.html",
+        "title": "Font vulnerabilities in the Graphite 2 library",
+        "description": "Security researcher Holger Fuhrmannek and Mozilla security engineer Tyson Smith reported a number of security vulnerabilities in the Graphite 2 library affecting version 1.3.5. The issue reported by Holger Fuhrmannek is a mechanism to induce stack corruption with a malicious graphite font. This leads to a potentially exploitable crash when the font is loaded. Tyson Smith used the Address Sanitizer tool in concert with a custom software fuzzer to find a series of uninitialized memory, out-of-bounds read, and out-of-bounds write errors when working with fuzzed graphite fonts. To address these security vulnerabilities, Firefox 45 and Firefox ESR 38.7 have been updated to Graphite 2 version 1.3.6."
+      }
+    ],
+    "CVE-2016-2802": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-37.html",
+        "title": "Font vulnerabilities in the Graphite 2 library",
+        "description": "Security researcher Holger Fuhrmannek and Mozilla security engineer Tyson Smith reported a number of security vulnerabilities in the Graphite 2 library affecting version 1.3.5. The issue reported by Holger Fuhrmannek is a mechanism to induce stack corruption with a malicious graphite font. This leads to a potentially exploitable crash when the font is loaded. Tyson Smith used the Address Sanitizer tool in concert with a custom software fuzzer to find a series of uninitialized memory, out-of-bounds read, and out-of-bounds write errors when working with fuzzed graphite fonts. To address these security vulnerabilities, Firefox 45 and Firefox ESR 38.7 have been updated to Graphite 2 version 1.3.6."
+      }
+    ],
+    "CVE-2016-2804": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-39.html",
+        "title": "Miscellaneous memory safety hazards (rv:46.0 / rv:45.1 / rv:38.8)",
+        "description": "Mozilla developers fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2016-2805": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-39.html",
+        "title": "Miscellaneous memory safety hazards (rv:46.0 / rv:45.1 / rv:38.8)",
+        "description": "Mozilla developers fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2016-2806": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-39.html",
+        "title": "Miscellaneous memory safety hazards (rv:46.0 / rv:45.1 / rv:38.8)",
+        "description": "Mozilla developers fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2016-2807": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-39.html",
+        "title": "Miscellaneous memory safety hazards (rv:46.0 / rv:45.1 / rv:38.8)",
+        "description": "Mozilla developers fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2016-2808": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-47.html",
+        "title": "Write to invalid HashMap entry through JavaScript.watch()",
+        "description": "The CESG, the Information Security Arm of GCHQ, reported that the JavaScript .watch() method could be used to overflow the 32-bit generation count of the underlying HashMap, resulting in a write to an invalid entry. Under the right conditions this write could lead to arbitrary code execution. The overflow takes considerable time and a malicious page would require a user to keep it open for the duration of the attack."
+      }
+    ],
+    "CVE-2016-2809": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-40.html",
+        "title": "Privilege escalation through file deletion by Maintenance Service updater",
+        "description": "Security researcher Holger Fuhrmannek reported an issue where the Mozilla Maintenance Service updater on Windows can delete arbitrary files because of its privileged system access. This file deletion can then potentially be used for further privilege escalation. This flaw requires users to execute a locally saved file in order for it to be triggered. This issue does not affect non-Windows operating systems."
+      }
+    ],
+    "CVE-2016-2810": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-41.html",
+        "title": "Content provider permission bypass allows malicious application to access data",
+        "description": "Security researcher Ken Okuyama reported an issue on Firefox for Android where a previously installed malicious application can access content provider permissions for Firefox in order to read data. This data includes browser history and locally saved passwords. This issue occurs when a list of permissions is defined to match those that Firefox uses for content providers and bypasses signature protections. This issue does not occur on Android 5.0 or later versions of Android. This issue only affects Firefox for Android. Other versions and operating systems are unaffected."
+      }
+    ],
+    "CVE-2016-2813": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-43.html",
+        "title": "Disclosure of user actions through JavaScript with motion and orientation sensors",
+        "description": "Security researcher Maryam Mehrnezhad of Newcastle University, UK reported an issue discovered by their research team, which also includes Ehsan Toreini, Siamak F. Shahandashti, and Feng Hao. They found vulnerabilities in Firefox for Android using orientation data and motion sensors on a mobile device's browser accessible through JavaScript. This allows an attacker to infer touch actions on the device through these sensors when orientation events are triggered in the browser, compromising user privacy and including potentially revealing entered PIN code data along with other user activities. This issue does not affect desktop versions of Firefox."
+      }
+    ],
+    "CVE-2016-2814": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-44.html",
+        "title": "Buffer overflow in libstagefright with CENC offsets",
+        "description": "Using Address Sanitizer, security researcher Sascha Just reported a buffer overflow in the libstagefright library due to issues with the handling of CENC offsets and the sizes table. This results in a potentially exploitable crash triggerable through web content."
+      }
+    ],
+    "CVE-2016-2815": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-49.html",
+        "title": "Miscellaneous memory safety hazards (rv:47.0 / rv:45.2)",
+        "description": "Mozilla developers and community members reported several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2016-2817": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-46.html",
+        "title": "Elevation of privilege with chrome.tabs.update API in web extensions",
+        "description": "Security researcher Muneaki Nishimura (nishimunea) of Recruit Technologies Co., Ltd. reported that the chrome.tabs.update API for web extensions allows for navigation to javascript: URLs without additional permissions. This can used to elevate privilege for a universal cross-site scripting (XSS) attack by a malicious web extension. It can also be used to inject content into other extensions if they load content within browser tabs."
+      }
+    ],
+    "CVE-2016-2818": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-49.html",
+        "title": "Miscellaneous memory safety hazards (rv:47.0 / rv:45.2)",
+        "description": "Mozilla developers and community members reported several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2016-2819": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-50.html",
+        "title": "Buffer overflow parsing HTML5 fragments",
+        "description": "Security researcher firehack reported a buffer overflow when parsing HTML5 fragments in a foreign context such as under an <svg> node. This results in a potentially exploitable crash when inserting an HTML fragment into an existing document."
+      }
+    ],
+    "CVE-2016-2824": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-53.html",
+        "title": "Out-of-bounds write with WebGL shader",
+        "description": "Security researcher Aral reported an out-of-bounds write when using the ANGLE graphics library, which is used for WebGL content on Windows systems. This crash occurs due to improper size checking while writing to an array during some WebGL shader operations. The ANGLE graphics library is only used on Windows. Linux, OS X, and Android operating systems are not affected by this vulnerability."
+      }
+    ],
+    "CVE-2016-2826": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-55.html",
+        "title": "File overwrite and privilege escalation through Mozilla Windows updater",
+        "description": "Security researcher Frédéric Hoguin reported a mechanism where the Mozilla Windows updater could be used to overwrite arbitrary files. He found that files extracted by the updater from a MAR archive are not locked for writing and can be overwritten by other processes while the updater is running. A malicious local program could invoke the updater and then interfere with the extracted files, replacing them with its own. This vulnerability could be used for privilege escalation if these overwritten files were later invoked by other Windows components that had higher privileges. This issue does not affect non-Windows operating systems."
+      }
+    ],
+    "CVE-2016-2830": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-63.html",
+        "title": "Favicon network connection can persist when page is closed",
+        "description": "Security researcher Toni Huttunen reported that once the favicon is requested from a site, the remote server can keep the favicon network connection open even when the page is later closed. This allows a malicious site to continue to use this channel to send requests to the browser, leading to potential information disclosure, such as tracking the user across multiple IP addresses as the user changes networks."
+      }
+    ],
+    "CVE-2016-2832": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-59.html",
+        "title": "Information disclosure of disabled plugins through CSS pseudo-classes",
+        "description": "Mozilla developer John Schoenick reported that CSS pseudo-classes can be used by web content to leak information on plugins that are installed but disabled. This can be used for information disclosure through a fingerprinting attack that lists all of the plugins installed by a user on a system, even when they are disabled."
+      }
+    ],
+    "CVE-2016-2833": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-60.html",
+        "title": "Java applets bypass CSP protections",
+        "description": "Mozilla engineer Matt Wobensmith reported that Content Security Policy (CSP) does not block the loading of cross-domain Java applets when specified by policy. This is because the Java applet is loaded by the Java plugin, which then mediates all network requests without checking against CSP. This could allow a malicious site to manipulate content through a Java applet to bypass CSP protections, allowing for possible cross-site scripting (XSS) attacks."
+      }
+    ],
+    "CVE-2016-2836": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-62.html",
+        "title": "Miscellaneous memory safety hazards (rv:48.0 / rv:45.3)",
+        "description": "Mozilla developers and community members reported several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2016-2837": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-77.html",
+        "title": "Buffer overflow in ClearKey Content Decryption Module (CDM) during video playback",
+        "description": "An anonymous security researcher working with Trend Micro's Zero Day Initiative reported a buffer overflow in the ClearKey Content Decryption Module (CDM) used by the Encrypted Media Extensions (EME) API. This vulnerability can be triggered using a malformed video file due to incorrect error handling. This could allow arbitrary code execution if combined with a second vulnerability that allows an escape from the Gecko Media Plugin (GMP) sandbox. Without such a vulnerability, the buffer overflow is contained within the GMP sandbox and cannot be exploited."
+      }
+    ],
+    "CVE-2016-2838": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-64.html",
+        "title": "Buffer overflow rendering SVG with bidirectional content",
+        "description": "Using the Address Sanitizer tool, security researcher Atte Kettunen found a buffer overflow during the rendering of SVG format graphics with directional content. This is caused by a flaw in directional-isolate processing and results in a potentially exploitable crash."
+      }
+    ],
+    "CVE-2016-2839": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-65.html",
+        "title": "Cairo rendering crash due to memory allocation issue with FFmpeg 0.10",
+        "description": "Security researcher Bert Massop reported a crash in the Cairo graphics layer on Linux systems using the LibAV library included in version 0.10 of the FFmpeg library. This was due to an error when allocating the LibAV header when decoding some videos. This only affects systems running the Linux operating system that also have FFMpeg version 0.10 installed and does not affect OS X or Windows systems."
+      }
+    ],
+    "CVE-2016-5250": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-84.html",
+        "title": "Information disclosure through Resource Timing API during page navigation",
+        "description": "Amazon software engineer Catalin Dumitru reported that the URLs of resources loaded after a navigation started (such as in an unload event handler) were leaked to the following page through the Resource Timing API. This leads to potential information disclosure."
+      }
+    ],
+    "CVE-2016-5251": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-66.html",
+        "title": "Location bar spoofing via data URLs with malformed/invalid mediatypes",
+        "description": "Security researcher Firas Salem reported that decoding url-encoded values in data: urls for display leads to potential spoofing in the Location bar by using non-ASCII and emoji characters in a data: url's mediatype. This issue could result in the wrong URL being displayed as a location, which can mislead users to believe they are on a different site than the one loaded."
+      }
+    ],
+    "CVE-2016-5252": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-67.html",
+        "title": "Stack underflow during 2D graphics rendering",
+        "description": "Georg Koppen of the Tor Project used the Address Sanitizer tool to discover a stack buffer underflow when calculating clipping regions in 2D graphics. This results in a potentially exploitable crash."
+      }
+    ],
+    "CVE-2016-5253": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-69.html",
+        "title": "Arbitrary file manipulation by local user through Mozilla updater and callback application path parameter",
+        "description": "Security researcher Holger Fuhrmannek reported that when the Updater is opened directly using the callback application path parameter, a copy of a user specified file is made as a callback file. If the target of this file is made with a locked hardlink, an arbitrary local file can be replaced on the system even if there is no privileged write access to the targeted file. If this targeted file is run by other processes with privileges, this could allow for arbitrary code execution by a malicious user with local system access. This is not exploitable by web content. This issue is specific to Windows and does not affect Linux or OS X systems."
+      }
+    ],
+    "CVE-2016-5254": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-70.html",
+        "title": "Use-after-free when using alt key and toplevel menus",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team reported a use-after-free vulnerability when the alt key is used in conjunction with toplevel menu items in Firefox. This results in a potentially exploitable crash when triggered. This vulnerability is mitigated by not being triggerable by web content, only direct user interaction with the keyboard."
+      }
+    ],
+    "CVE-2016-5255": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-71.html",
+        "title": "Crash in incremental garbage collection in JavaScript",
+        "description": "Security researcher Jukka Jylänki reported a use-after-free in JavaScript caused by how objects and pointers are handled during incremental garbage collection in some circumstances working with object groups. When triggered, this causes a potential exploitable crash but is mitigated by the difficulties in controlling the crash and its output."
+      }
+    ],
+    "CVE-2016-5258": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-72.html",
+        "title": "Use-after-free in DTLS during WebRTC session shutdown",
+        "description": "Security researcher Looben Yang reported a use-after-free vulnerability in WebRTC. This occurs during WebRTC session shutdown when DTLS objects in memory are freed while still actively in use. This results in a potentially exploitable crash."
+      }
+    ],
+    "CVE-2016-5259": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-73.html",
+        "title": "Use-after-free in service workers with nested sync events",
+        "description": "Security researcher Looben Yang discovered a use-after-free vulnerability when working with nested sync event loops in Service Workers. He discovered a mechanism where scripts can close their own worker, which will then trigger a synchronization XMLHttpRequest on this now closed and released worker. This results in a potentially exploitable crash when triggered."
+      }
+    ],
+    "CVE-2016-5260": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-74.html",
+        "title": "Form input type change from password to text can store plain text password in session restore file",
+        "description": "Mozilla employee Mike Kaply reported that the Firefox session restore data can contain passwords in plain text if a password input field on a page has its type changed from \"password\" to \"text\" during a session. This can occur if the password input field has a scripted mechanism to display the password to the user. Once this type is changed, the password data will persist as clear text within stored form data for this page. This could result in a potential revelation of site passwords on sites that use this mechanism to display password data if an attacker could find a way to read the session restoration file."
+      }
+    ],
+    "CVE-2016-5261": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-75.html",
+        "title": "Integer overflow in WebSockets during data buffering",
+        "description": "Security researcher Samuel Groß reported an integer overflow error in WebSockets during data buffering on incoming packets when an allocated buffer is resized incorrectly. This results in the buffer array holding the data being shrunk, instead of grown, resulting in attacker controlled data being written at a known offset from the newly allocated buffer. This results in a potentially exploitable crash."
+      }
+    ],
+    "CVE-2016-5262": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-76.html",
+        "title": "Scripts on marquee tag can execute in sandboxed iframes",
+        "description": "Security researcher Nikita Arykov reported that JavaScript event handler attributes on a <marquee> tag will execute inside a sandboxed iframe that does not have the allow-scripts flag set. This could result in a cross-site scripting (XSS) vulnerability in a site that depends on the iframe sandbox for sanitization and does no other content filtering."
+      }
+    ],
+    "CVE-2016-5264": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-79.html",
+        "title": "Use-after-free when applying SVG effects",
+        "description": "Security researcher Nils used the Address Sanitizer tool to discover a use-after-free vulnerability when applying effects to SVG elements. This results in a potentially exploitable crash."
+      }
+    ],
+    "CVE-2016-5265": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-80.html",
+        "title": "Same-origin policy violation using local HTML file and saved shortcut file",
+        "description": "Security researcher Abdulrahman Alqabandi reported that when a local HTML file resides in the same directory as a malicious local shortcut file, the shortcut can be called by the local page to allow the page to read the contents of local files or directories or to load an arbitrary website in violation of same-origin policy, allowing for data theft. In order for this vulnerability to be triggered, both the malicious HTML file as well as the shortcut must be saved to the same local directory and then loaded from there by a user."
+      }
+    ],
+    "CVE-2016-5266": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-81.html",
+        "title": "Information disclosure and local file manipulation through drag and drop",
+        "description": "Security researcher Rafael Gieschke reported that file URIs dragged from a web page in Firefox to other software do not have their contents properly filtered before being passed to other programs, such as the local file manager. This can allow for the theft or manipulation of arbitrary local files if a user can be convinced to drag items from a malicious web page to other programs."
+      }
+    ],
+    "CVE-2016-5267": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-82.html",
+        "title": "Addressbar spoofing with right-to-left characters on Firefox for Android",
+        "description": "Security researcher Rafay Baloch reported a mechanism to spoof the addressbar in Firefox for Android using right-to-left character sets when combined with left-to-right characters. This can be used to cause only certain portions of the loaded left-to-right character portion of the URL to be displayed, misleading users as to what site is loaded, possibly leading to phishing attacks. This vulnerability does not affect the desktop version of Firefox."
+      }
+    ],
+    "CVE-2016-5295": [
+      {
+        "url": "https://www.mozilla.org/en-US/security/advisories/mfsa2013-44/",
+        "title": "Local privilege escalation through Mozilla Maintenance Service",
+        "description": "Security researcher Seb Patane reported an issue with the Mozilla Maintenance Service on Windows. This issue allows unprivileged users to local privilege escalation through the system privileges used by the service when interacting with local malicious software. This allows the user to bypass integrity checks leading to local privilege escalation. Local file system access is necessary in order for this issue to be exploitable and it cannot be triggered through web content."
+      }
+    ]
+  }
 }

@@ -1,6 +1,236 @@
 {
   "year": 2006,
-  "total": 0,
+  "total": 33,
   "reference": "mozilla.org",
-  "reports": {}
+  "reports": {
+    "CVE-2006-0298": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-07.html",
+        "title": "Read beyond buffer while parsing XML",
+        "description": "An upgrade in the XML parser introduced a bug that could read beyond the end of the buffer, often causing a crash. We don't know if this could be exploited to incorporate private data into the DOM of an XML document, but could be a privacy risk if so. Firefox 1.0, Thunderbird 1.0 and Mozilla Suite 1.7 are not affected. Update (13 April 2006) This flaw has been fixed in Thunderbird 1.5.0.2 Workaround Upgrade to the fixed versions."
+      }
+    ],
+    "CVE-2006-0748": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-27.html",
+        "title": "Table Rebuilding Code Execution Vulnerability",
+        "description": "An anonymous researcher for TippingPoint and the Zero Day Initiative reports that an invalid and nonsensical ordering of table-related tags causes Mozilla to use a negative array index. This invalid memory use can be exploited to run code of the attacker's choice. Workaround Upgrade to fixed version. Although JavaScript is not involved in the vulnerability itself, disabling JavaScript may prevent an attacker from effectively preparing memory in order to carry out the exploit."
+      }
+    ],
+    "CVE-2006-0749": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-18.html",
+        "title": "Mozilla Firefox Tag Order Vulnerability",
+        "description": "A particular sequence of HTML tags that reliably crash Mozilla clients was reported by an anonymous researcher via TippingPoint and the Zero Day Initiative. The crash is due to memory corruption that can be exploited to run arbitary code. Mozilla mail clients will crash on the tag sequence, but without the ability to run scripts to fill memory with the attack code it may not be possible for an attacker to exploit this crash. Workaround Upgrade to a fixed version."
+      }
+    ],
+    "CVE-2006-0884": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-21.html",
+        "title": "JavaScript execution in mail when forwarding in-line",
+        "description": "Georgi Guninski reports that forwarding mail in-line while using the default HTML \"rich mail\" editor will execute JavaScript embedded in the e-mail message. Forwarding mail in-line is not the default setting but it is easily accessed through the \"Forward As\" menu item. This JavaScript runs with the full privileges of the client and could be used to install malware or send spam. In Thunderbird 1.0.7 and below and Mozilla Suite 1.7.12 and below JavaScript is also executed when you reply to a mail, though limited to the sandbox of the message. This script could spy on or alter the message you are composing. Workaround Switch to \"plain text\" mail composition, this vulnerability only affects HTML mail composition (the default). On the \"Composition and Addressing\" tab of Thunderbird's Account Settings dialog uncheck the \"Compose messages in HTML format\" option to compose messages in plain text."
+      }
+    ],
+    "CVE-2006-1725": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-29.html",
+        "title": "Spoofing with translucent windows",
+        "description": "An interaction between XUL content windows and the new faster history mechanism in Firefox 1.5 caused those windows to become translucent. This could be used to construct spoofs that could trick users into interacting with browser UI they can't see. It's possible a clever game-type presentation could persuade an unsuspicious user into some combination of actions that would result in running the attacker's code. Firefox 1.0 and the Mozilla Suite 1.7 are not vulnerable. Workaround Disable the faster back/forward history: Enter \"about:config\" into the location bar and hit Enter Enter \"sessionhistory\" into the \"Filter\" text box Double-click on browser.sessionhistory.max_total_viewers Change the default \"-1\" to \"0\" and hit the OK button"
+      }
+    ],
+    "CVE-2006-1726": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-28.html",
+        "title": "Security check of js_ValueToFunctionObject() can be circumvented",
+        "description": "The security check in js_ValueToFunctionObject() can be bypassed by clever use of setTimeout() and the new Firefox 1.5 array method ForEach. shutdown demonstrated how to leverage this into a privilege escalation vulnerability that would allow the installation of malware. This vulnerability was introduced during Firefox 1.5 development, Firefox 1.0 and Mozilla Suite 1.7 are not affected. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Workaround Disable JavaScript until you upgrade to a fixed version."
+      }
+    ],
+    "CVE-2006-1729": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-23.html",
+        "title": "File stealing by changing input type",
+        "description": "Claus Jörgensen reports that a text input box can be pre-filled with a filename and then turned into a file-upload control with the contents intact, allowing a malicious website the ability to steal any local file whose name they can guess. Jesse Ruderman reports a variation, changing the type of the input control in an event handler to work around some of the initial checks. Workaround Upgrade to fixed version."
+      }
+    ],
+    "CVE-2006-1730": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-22.html",
+        "title": "CSS Letter-Spacing Heap Overflow Vulnerability",
+        "description": "An anonymous researcher for TippingPoint and the Zero Day Initiative discovered an integer overflow triggered by the CSS letter-spacing property. This results in in under-allocating memory and ultimately a heap buffer overflow which could be exploited to run code of the attacker's choice. The overflow condition itself does not require JavaScript and thus could affect Thunderbird via received mail, but without scripting to prepare memory it may not be possible to exploit this condition in mail. Workaround Upgrade to the fixed version."
+      }
+    ],
+    "CVE-2006-1731": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-19.html",
+        "title": "Cross-site scripting using .valueOf.call()",
+        "description": "moz_bug_r_a4 discovered that .valueOf.call() and .valueOf.apply() when called with no arguments were returning the Object class prototype rather than the caller's global window object. When called on a reachable property of another window this provides a hook to get around the same-origin protection, allowing an attacker to inject script into another window. Cross-site script injection can be used to steal confidential data such as cookies or passwords, or perform actions on the user's behalf. It can also be used to alter the content of the other window which could be used to fool a user into trusting bogus information or downloaded content. Thunderbird shares the JavaScript engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Workaround Disable JavaScript until a fixed version can be installed."
+      }
+    ],
+    "CVE-2006-1733": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-16.html",
+        "title": "Accessing XBL compilation scope via valueOf.call()",
+        "description": "moz_bug_r_a4 discovered that the compilation scope of privileged built-in XBL bindings was not fully protected from web content and could be accessed by calling valueOf.call() and valueOf.apply() on a method of that binding. This could then be used to compile and run attacker-supplied JavaScript, giving it the privileges of the binding which would allow an attacker to install malware such as viruses and password sniffers. shutdown reported an alternate way to get to XBL compilation scope by inserting an XBL method into the DOM's document.body prototype chain. Thunderbird shares the JavaScript engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Workaround Disable JavaScript until you can upgrade to a fixed version."
+      }
+    ],
+    "CVE-2006-1735": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-14.html",
+        "title": "Privilege escalation via XBL.method.eval",
+        "description": "Using the eval associated with methods of an XBL binding it was possible to create JavaScript functions that would get compiled with the wrong privileges, allowing the attacker to run code of their choice with the full permission of the user running the browser. This could be used to install spyware or viruses. Thunderbird shares the JavaScript engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Workaround Disable JavaScript until you can upgrade to a fixed version."
+      }
+    ],
+    "CVE-2006-1737": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-11.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.8)",
+        "description": "As part of the Firefox 1.5 release we fixed several crash bugs to improve the stability of the product. Some of these crashes showed evidence of memory corruption that we presume could be exploited to run arbitrary code and have been applied to the Firefox 1.0.x and Mozilla Suite 1.7.x releases While fixing an unexploitable recursion-induced crash Bernd Mielke discovered that the CSS border-rendering code could potentially write past the end of an array. Alden D'Souza reported a crash when using an extremely large regular expression in JavaScript. This was tracked down to a 16-bit integer overflow that could potentially cause the browser to interpret attacker supplied data as JavaScript bytecode. Martijn Wargers found two potentially exploitable crashes when programmatically changing the -moz-grid and -moz-grid-group display styles. Bob Clary found a memory corruption crash using the InstallTrigger.install() method that was introduced in Firefox 1.0.7 by one of the regression fixes described in MFSA 2005-58. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Workaround Upgrade to the fixed versions. Do not enable JavaScript in Thunderbird or the mail portions of SeaMonkey and the Mozilla Suite."
+      }
+    ],
+    "CVE-2006-1739": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-11.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.8)",
+        "description": "As part of the Firefox 1.5 release we fixed several crash bugs to improve the stability of the product. Some of these crashes showed evidence of memory corruption that we presume could be exploited to run arbitrary code and have been applied to the Firefox 1.0.x and Mozilla Suite 1.7.x releases While fixing an unexploitable recursion-induced crash Bernd Mielke discovered that the CSS border-rendering code could potentially write past the end of an array. Alden D'Souza reported a crash when using an extremely large regular expression in JavaScript. This was tracked down to a 16-bit integer overflow that could potentially cause the browser to interpret attacker supplied data as JavaScript bytecode. Martijn Wargers found two potentially exploitable crashes when programmatically changing the -moz-grid and -moz-grid-group display styles. Bob Clary found a memory corruption crash using the InstallTrigger.install() method that was introduced in Firefox 1.0.7 by one of the regression fixes described in MFSA 2005-58. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Workaround Upgrade to the fixed versions. Do not enable JavaScript in Thunderbird or the mail portions of SeaMonkey and the Mozilla Suite."
+      }
+    ],
+    "CVE-2006-1741": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-09.html",
+        "title": "Cross-site JavaScript injection using event handlers",
+        "description": "shutdown reported a method of injecting running JavaScript code into a page on another site using a modal alert to suspend an event handler while a new page is being loaded. This vulnerability allows an attacker to steal any confidential information the new page might contain, including any passwords and cookies which might allow the attacker to log on to that site as the victim. shutdown also reported a variant using the two-argument form of eval() that did not require a modal dialog and would be much less obtrusive. moz_bug_r_a4 reported two variants that bypassed our initial fixes, one using \"new Script()\", the other extending the eval() attack using window.__proto__ Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Workaround Disable JavaScript until you can upgrade to a fixed version."
+      }
+    ],
+    "CVE-2006-1790": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-11.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.8)",
+        "description": "As part of the Firefox 1.5 release we fixed several crash bugs to improve the stability of the product. Some of these crashes showed evidence of memory corruption that we presume could be exploited to run arbitrary code and have been applied to the Firefox 1.0.x and Mozilla Suite 1.7.x releases While fixing an unexploitable recursion-induced crash Bernd Mielke discovered that the CSS border-rendering code could potentially write past the end of an array. Alden D'Souza reported a crash when using an extremely large regular expression in JavaScript. This was tracked down to a 16-bit integer overflow that could potentially cause the browser to interpret attacker supplied data as JavaScript bytecode. Martijn Wargers found two potentially exploitable crashes when programmatically changing the -moz-grid and -moz-grid-group display styles. Bob Clary found a memory corruption crash using the InstallTrigger.install() method that was introduced in Firefox 1.0.7 by one of the regression fixes described in MFSA 2005-58. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Workaround Upgrade to the fixed versions. Do not enable JavaScript in Thunderbird or the mail portions of SeaMonkey and the Mozilla Suite."
+      }
+    ],
+    "CVE-2006-1993": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-30.html",
+        "title": "Deleted object reference when designMode=\"on\"",
+        "description": "Martijn Wargers and Nick Mott each described crashes that were discovered to ultimately stem from the same root cause: attempting to use a deleted controller context when designMode was turned on. This generally results in crashing the browser, but in theory references to deleted objects can be abused to run malicious code. \"splices\" reported the same crash at the fan site MozillaZine and on Bugtraq, incorrectly describing it as a buffer overflow. Update (31 July 2006) The advisory originally stated that older clients (Firefox 1.0.x and the Mozilla Suite 1.7.x) were unaffected. This is incorrect as demonstrated by the testcase MoBB#4 at the Browser Fun Blog. Those clients were already at risk from many other published vulnerabilities and should no longer be used. Workaround Temporarily disable JavaScript until you can upgrade to a fixed version."
+      }
+    ],
+    "CVE-2006-2775": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-35.html",
+        "title": "Privilege escalation through XUL persist.",
+        "description": "In certain circumstances persisted XUL attributes are associated with the wrong URL. If an attacker can get a persisted string associated with an URL that will later eval or execute that attribute in a privileged context then the attacker's code will run with the full permissions of the browser. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Workaround Disable JavaScript until you upgrade to the fixed version"
+      }
+    ],
+    "CVE-2006-2779": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-32.html",
+        "title": "Fixes for crashes with potential memory corruption (rv:1.8.0.4)",
+        "description": "Mozilla team members discovered several crashes during testing of the browser engine showing evidence of memory corruption that we presume is exploitable. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Workaround Disable Javascript until you can upgrade to a fixed version."
+      }
+    ],
+    "CVE-2006-2780": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-32.html",
+        "title": "Fixes for crashes with potential memory corruption (rv:1.8.0.4)",
+        "description": "Mozilla team members discovered several crashes during testing of the browser engine showing evidence of memory corruption that we presume is exploitable. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Workaround Disable Javascript until you can upgrade to a fixed version."
+      }
+    ],
+    "CVE-2006-2781": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-40.html",
+        "title": "Double-free on malformed VCard",
+        "description": "Masatoshi Kimura reported a hang caused by a double-free in Thunderbird when processing a large VCard with invalid base64 characters in it. Since an attacker can supply an arbitrary amount of well-formed VCard data before introducing the error we presume this could be exploited to run code of the attacker's choosing. Workaround From the View menu de-select \"Display Attachments Inline\", and do not open any VCard attachments (.vcf extension) until you upgrade to a fixed version."
+      }
+    ],
+    "CVE-2006-2782": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-41.html",
+        "title": "File stealing by changing input type (variant)",
+        "description": "Chuck McAuley provided Proof-of-Concept code that demonstrates that MFSA 2006-23 was not fixed for all cases. In Firefox 1.5.0.2 it is still possible to pre-fill a text input control with the path to a file at a known location and then change the type of the input control to a file upload control without having the value reset as intended. Workaround Disable JavaScript until you have upgraded to a fixed version."
+      }
+    ],
+    "CVE-2006-2783": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-42.html",
+        "title": "Web site XSS using BOM on UTF-8 pages",
+        "description": "Masatoshi Kimura reports that the Unicode Byte-order-Mark (BOM) is stripped from UTF-8 pages during the conversion to Unicode before the parser sees the web page. As a result the parser will see and process script tags that web input sanitizers may miss because they appear as \"scr[BOM]ipt\" or similar in the comment code on the web site. Although Firefox 1.5.0.4 and later will be fixed and no longer accept such script tags, web sites will continue to be visited by older versions of Firefox and Mozilla browsers. Web sites can protect themselves by explicitly setting the character encoding to something other than UTF-8, or by adding the Unicode byte-order marks to the repertoire of the site's input sanitizer. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Workaround Users can protect themselves by disabling JavaScript on sites that allow community input until they can upgrade to a fixed version. Sites can protect their users by stripping the BOM from web input or, if appropriate, specifying a character encoding other than UTF-8."
+      }
+    ],
+    "CVE-2006-2784": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-36.html",
+        "title": "PLUGINSPAGE privileged JavaScript execution II",
+        "description": "Paul Nickerson reports that the fix for MFSA 2005-34 can be bypassed using nested javascript: URLs, again allowing the attacker to execute privileged code. The attacker must first convince the user to first click on the missing-plugin icon in the page or the \"Install Missing Plugins...\" button in the infobar, and then click on the \"Manual Install\" button on the plugin-finder dialog. Note that the \"Manual Install\" button is a mechanism for installing software from a site specified by the web page. Many potential victims who have come this far might be convinced to go ahead and install arbitrary software from the attacker's site even without this vulnerability. Workaround Do not press the \"Manual Install\" button on the Firefox plugin finder. Instead use a search engine to find an appropriate plugin for the content."
+      }
+    ],
+    "CVE-2006-2894": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2007/mfsa2007-32.html",
+        "title": "File input focus stealing vulnerability",
+        "description": "A user on the Sla.ckers.org forums named hong reported that a file upload control could be filled programmatically by switching page focus to the label before a file upload form control for selected keyboard events. An attacker could use this trick to steal files from the users' computer if the attacker knew the full pathnames to the desired fileis and could create a pretext that would convince the user to type long enough to produce all the necessary characters. This is a variant on a similar problem reported by Charles McAuley and independently rediscovered by Michal Zalewski that was fixed in Firefox 2.0.0.4."
+      }
+    ],
+    "CVE-2006-3806": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-50.html",
+        "title": "JavaScript engine vulnerabilities",
+        "description": "Continuing our security audit of the JavaScript engine, Mozilla developers found and fixed several potential vulnerabilities. Igor Bukanov and shutdown found additional places where an untimely garbage collection could delete a temporary object that was in active use (similar to MFSA 2006-01 and MFSA 2006-10). Some of these may allow an attacker to run arbitrary code given the right conditions. Georgi Guninski found potential integer overflow issues with long strings in the toSource() methods of the Object, Array and String objects as well as string function arguments. Thunderbird shares the browser engine with Firefox and would be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from enabling JavaScript in mail. Workaround Disable JavaScript until you can upgrade to a fixed version. Do not enable JavaScript in mail clients such as Thunderbird."
+      }
+    ],
+    "CVE-2006-4253": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-59.html",
+        "title": "Concurrency-related vulnerability",
+        "description": "Jonathan Watt and Michal Zalewski independently reported timing dependent testcases that trigger crashes at the same place during text display. We have seen no demonstration that these crashes could be reliably exploited, but they do show evidence of memory corruption so we presume they could be. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from enabling JavaScript in mail. Workaround Disable JavaScript until you can upgrade to a fixed version. Do not enable JavaScript in mail clients such as Thunderbird."
+      }
+    ],
+    "CVE-2006-4340": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-60.html",
+        "title": "RSA Signature Forgery",
+        "description": "Philip Mackenzie and Marius Schilder of Google informed us of Daniel Bleichenbacher's recent presentation of a common implementation error in RSA signature verification, a failure to account for extra data in the signature. For signatures with a small exponent such as 3 it is possible for an attacker to calculate a value for this extra data to make an altered message appear to be correctly signed, allowing the signature to be forged. Mozilla's Network Security Services (NSS) library was vulnerable to this flaw. Because the set of root Certificate Authorities that ship with Mozilla clients contain some with an exponent of 3 it was possible to make up certificates, such as SSL/TLS and email certificates, that were not detected as invalid. This raised the possibility of the sort of Man-in-the-Middle attacks SSL/TLS was invented to prevent. We thank Philip Mackenzie and Marius Schilder for bringing this result to our attention and working with us to ensure the NSS library was safe from variations on this basic attack. Workaround None, upgrade to a fixed version."
+      },
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-66.html",
+        "title": "RSA Signature Forgery (variant)",
+        "description": "MFSA 2006-60 reported that RSA digital signatures with a low exponent (typically 3) could be forged. This flaw was corrected in the Mozilla Network Security Services (NSS) library version 3.11.3 used by Firefox 2.0 and current development versions of Mozilla clients. Ulrich Kuehn reported that Firefox 1.5.0.7, which incorporated NSS version 3.10.2, was incompletely patched and remained vulnerable to a variant of this attack. Workaround None, upgrade to a fixed version."
+      }
+    ],
+    "CVE-2006-4565": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-57.html",
+        "title": "JavaScript Regular Expression Heap Corruption",
+        "description": "Priit Laes reported a crash due to a heap buffer overflow triggered by a JavaScript regular expression containing a minimal quantifier. We presume this could be exploited to run arbitrary code. CanadianGuy, Girts Folkmanis and Catalin Patulea report that a regular expression that ends with a backslash inside an unterminated character set (e.g. \"[\\\\\") will cause the regular epression engine to read beyond the end of the buffer, possibly leading to a crash. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from enabling JavaScript in mail. Workaround Disable JavaScript until you can upgrade to a fixed version. Do not enable JavaScript in mail clients such as Thunderbird."
+      }
+    ],
+    "CVE-2006-4568": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-61.html",
+        "title": "Frame spoofing using document.open()",
+        "description": "shutdown demonstrated a way to inject content into a sub-frame of another site using targetWindow.frames[n].document.open(), making the attackers content look like it was part of the victim site. Similar in effect to MFSA 2005-51. Workaround The victim site must first be opened in a new window (or tab) by the malicious site for this flaw to work. Do not enter a password or other sensitive information into a window \"helpfully\" opened by another site, always use the File menu option to open a trusted new window to which no other site has a reference."
+      }
+    ],
+    "CVE-2006-6500": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-69.html",
+        "title": "CSS cursor image buffer overflow (Windows only)",
+        "description": "Frederik Reiss reported a crash when using the CSS cursor property to set the cursor to certain images on Windows. A miscalculated size during conversion of the image to a Windows bitmap can result in a heap buffer overflow which could be used to compromise the victim's computer. This flaw affects both Firefox 2 and Firefox 1.5 but not the earlier Firefox 1.0 or Mozilla Suite Workaround Upgrade to a fixed version."
+      }
+    ],
+    "CVE-2006-6501": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-70.html",
+        "title": "Privilege escalation using watch point",
+        "description": "Shutdown demonstrated that it was possible to use a JavaScript watch() to gain elevated privilege. This could be used to compromise the user's computer and install malware. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Workaround Upgrade to the fixed versions. Do not enable JavaScript in Thunderbird or the mail portion of SeaMonkey."
+      }
+    ],
+    "CVE-2006-6504": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-73.html",
+        "title": "Mozilla SVG Processing Remote Code Execution",
+        "description": "Appending an SVG comment DOM node from one document into another type of document such as HTML in some cases results in a crash due to memory corruption that can be exploited to run arbitrary code. This flaw was introduced in the Firefox 1.5.0.4 release, prior versions are unaffected. Mozilla would like to thank an anonymous researcher working with TippingPoint and the Zero Day Initiative for reporting this issue. Workaround Disable JavaScript until you can upgrade to a fixed version."
+      }
+    ]
+  }
 }

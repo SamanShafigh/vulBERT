@@ -1,6 +1,14 @@
 {
   "year": 2013,
-  "total": 0,
+  "total": 1,
   "reference": "portal.msrc.microsoft.com",
-  "reports": {}
+  "reports": {
+    "CVE-2013-6629": [
+      {
+        "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2013-6629",
+        "title": "libjpeg Information Disclosure Vulnerability",
+        "body": "An information disclosure vulnerability exists within the open-source libjpeg image-processing library where it fails to properly handle objects in memory, allowing an attacker to retrieve information that could lead to an Address Space Layout Randomization (ASLR) bypass. An attacker who successfully exploited this vulnerability could cause information to be disclosed that could allow for bypassing the ASLR security feature that protects users from a broad class of vulnerabilities. The security feature bypass itself does not allow arbitrary code execution. However, an attacker could use the ASLR bypass vulnerability in conjunction with another vulnerability, such as a remote code execution vulnerability, that could take advantage of the ASLR bypass to run arbitrary code. To exploit this vulnerability, an attacker could convince a user to run a specially crafted application. The security update addresses the vulnerability by correcting how libjpeg handles objects in memory."
+      }
+    ]
+  }
 }

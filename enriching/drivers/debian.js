@@ -3,9 +3,13 @@ const { cleanText } = require("../../util.js");
 
 exports.extract = async function extract({ url, cveId }) {
   const document = await baseExtract({ url: `${url}`, jsdom: true });
-  const dl = document.querySelector("dl");
+  const h1 = document.querySelector("h1");
+  if (h1 && h1.textContent == 'Page not found') {
+    return false;
+  }
 
   let body = '';
+  const dl = document.querySelector("dl");
   const securityDatabaseReferencesSection = dl.children[7];
   const securityDatabaseReferences = securityDatabaseReferencesSection.querySelectorAll("a");
   const moreInfo = dl.children[9];
@@ -29,6 +33,6 @@ exports.extract = async function extract({ url, cveId }) {
   return { title: '', body };
 };
 
-// exports.extract({ url: 'https://www.debian.org/security/2005/dsa-705', cveId: 'CVE-2005-0256' }).then(res => {
+// exports.extract({ url: 'https://www.debian.org/security/2018/dsa-4187', cveId: 'CVE-2017-0861' }).then(res => {
 //   console.log(res)
 // });

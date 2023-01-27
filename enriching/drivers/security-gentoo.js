@@ -17,6 +17,6 @@ exports.extract = async function extract({ url }) {
   return { title, subTitle, background, body, extra, meta: { extraType: 'impact' } };
 };
 
-// exports.extract({ url: 'https://security.gentoo.org/glsa/200812-15'}).then(res => {
+// exports.extract({ url: 'https://security.gentoo.org/glsa/202105-03'}).then(res => {
 //   console.log(res)
 // });

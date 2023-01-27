@@ -1,6 +1,242 @@
 {
   "year": 2021,
-  "total": 0,
+  "total": 37,
   "reference": "git.kernel.org",
-  "reports": {}
+  "reports": {
+    "CVE-2021-22555": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/net/netfilter/x_tables.c?id=b29c457a6511435960115c0f548c4360d5f4801d",
+        "title": "netfilter: x_tables: fix compat match/target pad out-of-bound write",
+        "description": "xt_compat_match/target_from_user doesn't check that zeroing the area to start of next rule won't write past end of allocated ruleset blob. Remove this code and zero the entire blob beforehand. Reported-by: syzbot+cfc0247ac173f597aaaa@syzkaller.appspotmail.com Reported-by: Andy Nguyen <theflow@google.com> Fixes: 9fa492cdc160c (\"[NETFILTER]: x_tables: simplify compat API\") Signed-off-by: Florian Westphal <fw@strlen.de> Signed-off-by: Pablo Neira Ayuso <pablo@netfilter.org>"
+      },
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/net/netfilter/x_tables.c?id=9fa492cdc160cd27ce1046cb36f47d3b2b1efa21",
+        "title": "[NETFILTER]: x_tables: simplify compat API",
+        "description": "Split the xt_compat_match/xt_compat_target into smaller type-safe functions performing just one operation. Handle all alignment and size-related conversions centrally in these function instead of requiring each module to implement a full-blown conversion function. Replace ->compat callback by ->compat_from_user and ->compat_to_user callbacks, responsible for converting just a single private structure. Signed-off-by: Patrick McHardy <kaber@trash.net> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2021-23134": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net.git/commit/?id=c61760e6940d",
+        "title": "net/nfc: fix use-after-free llcp_sock_bind/connect",
+        "description": "Commits 8a4cd82d (\"nfc: fix refcount leak in llcp_sock_connect()\") and c33b1cc62 (\"nfc: fix refcount leak in llcp_sock_bind()\") fixed a refcount leak bug in bind/connect but introduced a use-after-free if the same local is assigned to 2 different sockets. This can be triggered by the following simple program: int sock1 = socket( AF_NFC, SOCK_STREAM, NFC_SOCKPROTO_LLCP ); int sock2 = socket( AF_NFC, SOCK_STREAM, NFC_SOCKPROTO_LLCP ); memset( &addr, 0, sizeof(struct sockaddr_nfc_llcp) ); addr.sa_family = AF_NFC; addr.nfc_protocol = NFC_PROTO_NFC_DEP; bind( sock1, (struct sockaddr*) &addr, sizeof(struct sockaddr_nfc_llcp) ) bind( sock2, (struct sockaddr*) &addr, sizeof(struct sockaddr_nfc_llcp) ) close(sock1); close(sock2); Fix this by assigning NULL to llcp_sock->local after calling nfc_llcp_local_put. This addresses CVE-2021-23134. Reported-by: Or Cohen <orcohen@paloaltonetworks.com> Reported-by: Nadav Markus <nmarkus@paloaltonetworks.com> Fixes: c33b1cc62 (\"nfc: fix refcount leak in llcp_sock_bind()\") Signed-off-by: Or Cohen <orcohen@paloaltonetworks.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2021-26675": [
+      {
+        "url": "https://git.kernel.org/pub/scm/network/connman/connman.git/tree/ChangeLog"
+      },
+      {
+        "url": "https://git.kernel.org/pub/scm/network/connman/connman.git/commit/?id=e4079a20f617a4b076af503f6e4e8b0304c9f2cb",
+        "title": "dnsproxy: Add length checks to prevent buffer overflow",
+        "description": "Fixes: CVE-2021-26675"
+      }
+    ],
+    "CVE-2021-26708": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=c518adafa39f37858697ac9309c6cf1805581446",
+        "title": "vsock: fix the race conditions in multi-transport support",
+        "description": "There are multiple similar bugs implicitly introduced by the commit c0cfa2d8a788fcf4 (\"vsock: add multi-transports support\") and commit 6a2c0962105ae8ce (\"vsock: prevent transport modules unloading\"). The bug pattern: [1] vsock_sock.transport pointer is copied to a local variable, [2] lock_sock() is called, [3] the local variable is used. VSOCK multi-transport support introduced the race condition: vsock_sock.transport value may change between [1] and [2]. Let's copy vsock_sock.transport pointer to local variables after the lock_sock() call. Fixes: c0cfa2d8a788fcf4 (\"vsock: add multi-transports support\") Signed-off-by: Alexander Popov <alex.popov@linux.com> Reviewed-by: Stefano Garzarella <sgarzare@redhat.com> Reviewed-by: Jorgen Hansen <jhansen@vmware.com> Link: https://lore.kernel.org/r/20210201084719.2257066-1-alex.popov@linux.com Signed-off-by: Jakub Kicinski <kuba@kernel.org>"
+      }
+    ],
+    "CVE-2021-27364": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=688e8128b7a92df982709a4137ea4588d16f24aa",
+        "title": "scsi: iscsi: Restrict sessions and handles to admin capabilities",
+        "description": "Protect the iSCSI transport handle, available in sysfs, by requiring CAP_SYS_ADMIN to read it. Also protect the netlink socket by restricting reception of messages to ones sent with CAP_SYS_ADMIN. This disables normal users from being able to end arbitrary iSCSI sessions. Cc: stable@vger.kernel.org Reported-by: Adam Nichols <adam@grimm-co.com> Reviewed-by: Chris Leech <cleech@redhat.com> Reviewed-by: Mike Christie <michael.christie@oracle.com> Signed-off-by: Lee Duncan <lduncan@suse.com> Signed-off-by: Martin K. Petersen <martin.petersen@oracle.com>"
+      }
+    ],
+    "CVE-2021-27365": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f9dbdf97a5bd92b1a49cee3d591b55b11fd7a6d5",
+        "title": "scsi: iscsi: Verify lengths on passthrough PDUs",
+        "description": "Open-iSCSI sends passthrough PDUs over netlink, but the kernel should be verifying that the provided PDU header and data lengths fall within the netlink message to prevent accessing beyond that in memory. Cc: stable@vger.kernel.org Reported-by: Adam Nichols <adam@grimm-co.com> Reviewed-by: Lee Duncan <lduncan@suse.com> Reviewed-by: Mike Christie <michael.christie@oracle.com> Signed-off-by: Chris Leech <cleech@redhat.com> Signed-off-by: Martin K. Petersen <martin.petersen@oracle.com>"
+      },
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ec98ea7070e94cc25a422ec97d1421e28d97b7ee",
+        "title": "scsi: iscsi: Ensure sysfs attributes are limited to PAGE_SIZE",
+        "description": "As the iSCSI parameters are exported back through sysfs, it should be enforcing that they never are more than PAGE_SIZE (which should be more than enough) before accepting updates through netlink. Change all iSCSI sysfs attributes to use sysfs_emit(). Cc: stable@vger.kernel.org Reported-by: Adam Nichols <adam@grimm-co.com> Reviewed-by: Lee Duncan <lduncan@suse.com> Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org> Reviewed-by: Mike Christie <michael.christie@oracle.com> Signed-off-by: Chris Leech <cleech@redhat.com> Signed-off-by: Martin K. Petersen <martin.petersen@oracle.com>"
+      }
+    ],
+    "CVE-2021-28375": [
+      {
+        "url": "https://git.kernel.org/linus/20c40794eb85ea29852d7bc37c55713802a543d6",
+        "title": "misc: fastrpc: restrict user apps from sending kernel RPC messages",
+        "description": "Verify that user applications are not using the kernel RPC message handle to restrict them from directly attaching to guest OS on the remote subsystem. This is a port of CVE-2019-2308 fix. Fixes: c68cfb718c8f (\"misc: fastrpc: Add support for context Invoke method\") Cc: Srinivas Kandagatla <srinivas.kandagatla@linaro.org> Cc: Jonathan Marek <jonathan@marek.ca> Cc: stable@vger.kernel.org Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org> Link: https://lore.kernel.org/r/20210212192658.3476137-1-dmitry.baryshkov@linaro.org Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>"
+      }
+    ],
+    "CVE-2021-28660": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=74b6b20df8cfe90ada777d621b54c32e69e27cd7",
+        "title": "staging: rtl8188eu: prevent ->ssid overflow in rtw_wx_set_scan()",
+        "description": "This code has a check to prevent read overflow but it needs another check to prevent writing beyond the end of the ->ssid[] array. Fixes: a2c60d42d97c (\"staging: r8188eu: Add files for new driver - part 16\") Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com> Cc: stable <stable@vger.kernel.org> Link: https://lore.kernel.org/r/YEHymwsnHewzoam7@mwanda Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>"
+      }
+    ],
+    "CVE-2021-29266": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=f6bbf0010ba004f5e90c7aefdebc0ee4bd3283b9",
+        "title": "vhost-vdpa: fix use-after-free of v->config_ctx",
+        "description": "When the 'v->config_ctx' eventfd_ctx reference is released we didn't set it to NULL. So if the same character device (e.g. /dev/vhost-vdpa-0) is re-opened, the 'v->config_ctx' is invalid and calling again vhost_vdpa_config_put() causes use-after-free issues like the following refcount_t underflow: refcount_t: underflow; use-after-free. WARNING: CPU: 2 PID: 872 at lib/refcount.c:28 refcount_warn_saturate+0xae/0xf0 RIP: 0010:refcount_warn_saturate+0xae/0xf0 Call Trace: eventfd_ctx_put+0x5b/0x70 vhost_vdpa_release+0xcd/0x150 [vhost_vdpa] __fput+0x8e/0x240 ____fput+0xe/0x10 task_work_run+0x66/0xa0 exit_to_user_mode_prepare+0x118/0x120 syscall_exit_to_user_mode+0x21/0x50 ? __x64_sys_close+0x12/0x40 do_syscall_64+0x45/0x50 entry_SYSCALL_64_after_hwframe+0x44/0xae Fixes: 776f395004d8 (\"vhost_vdpa: Support config interrupt in vdpa\") Cc: lingshan.zhu@intel.com Cc: stable@vger.kernel.org Signed-off-by: Stefano Garzarella <sgarzare@redhat.com> Link: https://lore.kernel.org/r/20210311135257.109460-2-sgarzare@redhat.com Signed-off-by: Michael S. Tsirkin <mst@redhat.com> Reviewed-by: Zhu Lingshan <lingshan.zhu@intel.com> Acked-by: Jason Wang <jasowang@redhat.com>"
+      }
+    ],
+    "CVE-2021-30178": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=919f4ebc598701670e80e31573a58f1f2d2bf918",
+        "title": "KVM: x86: hyper-v: Fix Hyper-V context null-ptr-deref",
+        "description": "Reported by syzkaller: KASAN: null-ptr-deref in range [0x0000000000000140-0x0000000000000147] CPU: 1 PID: 8370 Comm: syz-executor859 Not tainted 5.11.0-syzkaller #0 RIP: 0010:synic_get arch/x86/kvm/hyperv.c:165 [inline] RIP: 0010:kvm_hv_set_sint_gsi arch/x86/kvm/hyperv.c:475 [inline] RIP: 0010:kvm_hv_irq_routing_update+0x230/0x460 arch/x86/kvm/hyperv.c:498 Call Trace: kvm_set_irq_routing+0x69b/0x940 arch/x86/kvm/../../../virt/kvm/irqchip.c:223 kvm_vm_ioctl+0x12d0/0x2800 arch/x86/kvm/../../../virt/kvm/kvm_main.c:3959 vfs_ioctl fs/ioctl.c:48 [inline] __do_sys_ioctl fs/ioctl.c:753 [inline] __se_sys_ioctl fs/ioctl.c:739 [inline] __x64_sys_ioctl+0x193/0x200 fs/ioctl.c:739 do_syscall_64+0x2d/0x70 arch/x86/entry/common.c:46 entry_SYSCALL_64_after_hwframe+0x44/0xae Hyper-V context is lazily allocated until Hyper-V specific MSRs are accessed or SynIC is enabled. However, the syzkaller testcase sets irq routing table directly w/o enabling SynIC. This results in null-ptr-deref when accessing SynIC Hyper-V context. This patch fixes it. syzkaller source: https://syzkaller.appspot.com/x/repro.c?x=163342ccd00000 Reported-by: syzbot+6987f3b2dbd9eda95f12@syzkaller.appspotmail.com Fixes: 8f014550dfb1 (\"KVM: x86: hyper-v: Make Hyper-V emulation enablement conditional\") Signed-off-by: Wanpeng Li <wanpengli@tencent.com> Message-Id: <1614326399-5762-1-git-send-email-wanpengli@tencent.com> Signed-off-by: Paolo Bonzini <pbonzini@redhat.com>"
+      }
+    ],
+    "CVE-2021-3178": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=51b2ee7d006a736a9126e8111d1f24e4fd0afaa6",
+        "title": "nfsd4: readdirplus shouldn't return parent of export",
+        "description": "If you export a subdirectory of a filesystem, a READDIRPLUS on the root of that export will return the filehandle of the parent with the \"..\" entry. The filehandle is optional, so let's just not return the filehandle for \"..\" if we're at the root of an export. Note that once the client learns one filehandle outside of the export, they can trivially access the rest of the export using further lookups. However, it is also not very difficult to guess filehandles outside of the export. So exporting a subdirectory of a filesystem should considered equivalent to providing access to the entire filesystem. To avoid confusion, we recommend only exporting entire filesystems. Reported-by: Youjipeng <wangzhibei1999@gmail.com> Signed-off-by: J. Bruce Fields <bfields@redhat.com> Cc: stable@vger.kernel.org Signed-off-by: Chuck Lever <chuck.lever@oracle.com>"
+      }
+    ],
+    "CVE-2021-31870": [
+      {
+        "url": "https://git.kernel.org/pub/scm/libs/klibc/klibc.git/commit/?id=292650f04c2b5348b4efbad61fb014ed09b4f3f2",
+        "title": "[klibc] calloc: Fail if multiplication overflows",
+        "description": "calloc() multiplies its 2 arguments together and passes the result to malloc(). Since the factors and product both have type size_t, this can result in an integer overflow and subsequent buffer overflow. Check for this and fail if it happens. CVE-2021-31870 Signed-off-by: Ben Hutchings <ben@decadent.org.uk>"
+      }
+    ],
+    "CVE-2021-31871": [
+      {
+        "url": "https://git.kernel.org/pub/scm/libs/klibc/klibc.git/commit/?id=2e48a12ab1e30d43498c2d53e878a11a1b5102d5",
+        "title": "[klibc] cpio: Fix possible crash on 64-bit systemsklibc-2.0.9",
+        "description": "copyin_link() tries to allocate (unsigned int)c_filesize + 1 bytes. If c_filesize == UINT_MAX, this works out as 0 bytes, resulting in a null pointer and a subsequent SIGSEGV. The previous commit made this impossible on 32-bit systems. CVE-2021-31871 Signed-off-by: Ben Hutchings <ben@decadent.org.uk>"
+      }
+    ],
+    "CVE-2021-31872": [
+      {
+        "url": "https://git.kernel.org/pub/scm/libs/klibc/klibc.git/commit/?id=9b1c91577aef7f2e72c3aa11a27749160bd278ff",
+        "title": "[klibc] cpio: Fix possible integer overflow on 32-bit systems",
+        "description": "The maximum name and file sizes in the \"new\" header format are 32-bit unsigned values. However, the I/O functions mostly use long for sizes and offsets, so that sizes >= 2^31 are handled wrongly on 32-bit systems. The current GNU cpio code doesn't seem to have this problem, but the divergence between this version and that is large enough that I can't simply cherry-pick a fix for it. As a short-term fix, in read_in_new_ascii(), fail if c_namesize or c_filesize is > LONG_MAX. CVE-2021-31872 Signed-off-by: Ben Hutchings <ben@decadent.org.uk>"
+      }
+    ],
+    "CVE-2021-31873": [
+      {
+        "url": "https://git.kernel.org/pub/scm/libs/klibc/klibc.git/commit/?id=a31ae8c508fc8d1bca4f57e9f9f88127572d5202",
+        "title": "[klibc] malloc: Fail if requested size > PTRDIFF_MAX",
+        "description": "malloc() adds some overhead to the requested size, which may result in an integer overflow and subsequent buffer overflow if it is close to SIZE_MAX. It should fail if size is large enough for this to happen. Further, it's not legal for a C object to be larger than PTRDIFF_MAX (half of SIZE_MAX) as pointer arithmetic within it could overflow. So return failure immediately if size is greater than that. CVE-2021-31873 Signed-off-by: Ben Hutchings <ben@decadent.org.uk>"
+      }
+    ],
+    "CVE-2021-32078": [
+      {
+        "url": "https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=298a58e165e447ccfaae35fe9f651f9d7e15166f",
+        "title": "ARM: footbridge: remove personal server platform",
+        "description": "Remove the personal server platform, as that has had an array overrun issue identified. It is believed that no one is using this code. Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>"
+      }
+    ],
+    "CVE-2021-33033": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ad5d07f4a9cd671233ae20983848874731102c08",
+        "title": "cipso,calipso: resolve a number of problems with the DOI refcounts",
+        "description": "The current CIPSO and CALIPSO refcounting scheme for the DOI definitions is a bit flawed in that we: 1. Don't correctly match gets/puts in netlbl_cipsov4_list(). 2. Decrement the refcount on each attempt to remove the DOI from the DOI list, only removing it from the list once the refcount drops to zero. This patch fixes these problems by adding the missing \"puts\" to netlbl_cipsov4_list() and introduces a more conventional, i.e. not-buggy, refcounting mechanism to the DOI definitions. Upon the addition of a DOI to the DOI list, it is initialized with a refcount of one, removing a DOI from the list removes it from the list and drops the refcount by one; \"gets\" and \"puts\" behave as expected with respect to refcounts, increasing and decreasing the DOI's refcount by one. Fixes: b1edeb102397 (\"netlabel: Replace protocol/NetLabel linking with refrerence counts\") Fixes: d7cce01504a0 (\"netlabel: Add support for removing a CALIPSO DOI.\") Reported-by: syzbot+9ec037722d2603a9f52e@syzkaller.appspotmail.com Signed-off-by: Paul Moore <paul@paul-moore.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      },
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=1165affd484889d4986cf3b724318935a0b120d8",
+        "title": "net: mac802154: Fix general protection fault",
+        "description": "syzbot found general protection fault in crypto_destroy_tfm()[1]. It was caused by wrong clean up loop in llsec_key_alloc(). If one of the tfm array members is in IS_ERR() range it will cause general protection fault in clean up function [1]. Call Trace: crypto_free_aead include/crypto/aead.h:191 [inline] [1] llsec_key_alloc net/mac802154/llsec.c:156 [inline] mac802154_llsec_key_add+0x9e0/0xcc0 net/mac802154/llsec.c:249 ieee802154_add_llsec_key+0x56/0x80 net/mac802154/cfg.c:338 rdev_add_llsec_key net/ieee802154/rdev-ops.h:260 [inline] nl802154_add_llsec_key+0x3d3/0x560 net/ieee802154/nl802154.c:1584 genl_family_rcv_msg_doit+0x228/0x320 net/netlink/genetlink.c:739 genl_family_rcv_msg net/netlink/genetlink.c:783 [inline] genl_rcv_msg+0x328/0x580 net/netlink/genetlink.c:800 netlink_rcv_skb+0x153/0x420 net/netlink/af_netlink.c:2502 genl_rcv+0x24/0x40 net/netlink/genetlink.c:811 netlink_unicast_kernel net/netlink/af_netlink.c:1312 [inline] netlink_unicast+0x533/0x7d0 net/netlink/af_netlink.c:1338 netlink_sendmsg+0x856/0xd90 net/netlink/af_netlink.c:1927 sock_sendmsg_nosec net/socket.c:654 [inline] sock_sendmsg+0xcf/0x120 net/socket.c:674 ____sys_sendmsg+0x6e8/0x810 net/socket.c:2350 ___sys_sendmsg+0xf3/0x170 net/socket.c:2404 __sys_sendmsg+0xe5/0x1b0 net/socket.c:2433 do_syscall_64+0x2d/0x70 arch/x86/entry/common.c:46 entry_SYSCALL_64_after_hwframe+0x44/0xae Signed-off-by: Pavel Skripkin <paskripkin@gmail.com> Reported-by: syzbot+9ec037722d2603a9f52e@syzkaller.appspotmail.com Acked-by: Alexander Aring <aahringo@redhat.com> Link: https://lore.kernel.org/r/20210304152125.1052825-1-paskripkin@gmail.com Signed-off-by: Stefan Schmidt <stefan@datenfreihafen.org>"
+      }
+    ],
+    "CVE-2021-33034": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=5c4c8c9544099bb9043a10a5318130a943e32fc3",
+        "title": "Bluetooth: verify AMP hci_chan before amp_destroy",
+        "description": "hci_chan can be created in 2 places: hci_loglink_complete_evt() if it is an AMP hci_chan, or l2cap_conn_add() otherwise. In theory, Only AMP hci_chan should be removed by a call to hci_disconn_loglink_complete_evt(). However, the controller might mess up, call that function, and destroy an hci_chan which is not initiated by hci_loglink_complete_evt(). This patch adds a verification that the destroyed hci_chan must have been init'd by hci_loglink_complete_evt(). Example crash call trace: Call Trace: __dump_stack lib/dump_stack.c:77 [inline] dump_stack+0xe3/0x144 lib/dump_stack.c:118 print_address_description+0x67/0x22a mm/kasan/report.c:256 kasan_report_error mm/kasan/report.c:354 [inline] kasan_report mm/kasan/report.c:412 [inline] kasan_report+0x251/0x28f mm/kasan/report.c:396 hci_send_acl+0x3b/0x56e net/bluetooth/hci_core.c:4072 l2cap_send_cmd+0x5af/0x5c2 net/bluetooth/l2cap_core.c:877 l2cap_send_move_chan_cfm_icid+0x8e/0xb1 net/bluetooth/l2cap_core.c:4661 l2cap_move_fail net/bluetooth/l2cap_core.c:5146 [inline] l2cap_move_channel_rsp net/bluetooth/l2cap_core.c:5185 [inline] l2cap_bredr_sig_cmd net/bluetooth/l2cap_core.c:5464 [inline] l2cap_sig_channel net/bluetooth/l2cap_core.c:5799 [inline] l2cap_recv_frame+0x1d12/0x51aa net/bluetooth/l2cap_core.c:7023 l2cap_recv_acldata+0x2ea/0x693 net/bluetooth/l2cap_core.c:7596 hci_acldata_packet net/bluetooth/hci_core.c:4606 [inline] hci_rx_work+0x2bd/0x45e net/bluetooth/hci_core.c:4796 process_one_work+0x6f8/0xb50 kernel/workqueue.c:2175 worker_thread+0x4fc/0x670 kernel/workqueue.c:2321 kthread+0x2f0/0x304 kernel/kthread.c:253 ret_from_fork+0x3a/0x50 arch/x86/entry/entry_64.S:415 Allocated by task 38: set_track mm/kasan/kasan.c:460 [inline] kasan_kmalloc+0x8d/0x9a mm/kasan/kasan.c:553 kmem_cache_alloc_trace+0x102/0x129 mm/slub.c:2787 kmalloc include/linux/slab.h:515 [inline] kzalloc include/linux/slab.h:709 [inline] hci_chan_create+0x86/0x26d net/bluetooth/hci_conn.c:1674 l2cap_conn_add.part.0+0x1c/0x814 net/bluetooth/l2cap_core.c:7062 l2cap_conn_add net/bluetooth/l2cap_core.c:7059 [inline] l2cap_connect_cfm+0x134/0x852 net/bluetooth/l2cap_core.c:7381 hci_connect_cfm+0x9d/0x122 include/net/bluetooth/hci_core.h:1404 hci_remote_ext_features_evt net/bluetooth/hci_event.c:4161 [inline] hci_event_packet+0x463f/0x72fa net/bluetooth/hci_event.c:5981 hci_rx_work+0x197/0x45e net/bluetooth/hci_core.c:4791 process_one_work+0x6f8/0xb50 kernel/workqueue.c:2175 worker_thread+0x4fc/0x670 kernel/workqueue.c:2321 kthread+0x2f0/0x304 kernel/kthread.c:253 ret_from_fork+0x3a/0x50 arch/x86/entry/entry_64.S:415 Freed by task 1732: set_track mm/kasan/kasan.c:460 [inline] __kasan_slab_free mm/kasan/kasan.c:521 [inline] __kasan_slab_free+0x106/0x128 mm/kasan/kasan.c:493 slab_free_hook mm/slub.c:1409 [inline] slab_free_freelist_hook+0xaa/0xf6 mm/slub.c:1436 slab_free mm/slub.c:3009 [inline] kfree+0x182/0x21e mm/slub.c:3972 hci_disconn_loglink_complete_evt net/bluetooth/hci_event.c:4891 [inline] hci_event_packet+0x6a1c/0x72fa net/bluetooth/hci_event.c:6050 hci_rx_work+0x197/0x45e net/bluetooth/hci_core.c:4791 process_one_work+0x6f8/0xb50 kernel/workqueue.c:2175 worker_thread+0x4fc/0x670 kernel/workqueue.c:2321 kthread+0x2f0/0x304 kernel/kthread.c:253 ret_from_fork+0x3a/0x50 arch/x86/entry/entry_64.S:415 The buggy address belongs to the object at ffff8881d7af9180 which belongs to the cache kmalloc-128 of size 128 The buggy address is located 24 bytes inside of 128-byte region [ffff8881d7af9180, ffff8881d7af9200) The buggy address belongs to the page: page:ffffea00075ebe40 count:1 mapcount:0 mapping:ffff8881da403200 index:0x0 flags: 0x8000000000000200(slab) raw: 8000000000000200 dead000000000100 dead000000000200 ffff8881da403200 raw: 0000000000000000 0000000080150015 00000001ffffffff 0000000000000000 page dumped because: kasan: bad access detected Memory state around the buggy address: ffff8881d7af9080: fc fc fc fc fc fc fc fc fb fb fb fb fb fb fb fb ffff8881d7af9100: fb fb fb fb fb fb fb fb fc fc fc fc fc fc fc fc >ffff8881d7af9180: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb ^ ffff8881d7af9200: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc ffff8881d7af9280: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc Signed-off-by: Archie Pusaka <apusaka@chromium.org> Reported-by: syzbot+98228e7407314d2d4ba2@syzkaller.appspotmail.com Reviewed-by: Alain Michaud <alainm@chromium.org> Reviewed-by: Abhishek Pandit-Subedi <abhishekpandit@chromium.org> Signed-off-by: Marcel Holtmann <marcel@holtmann.org>"
+      }
+    ],
+    "CVE-2021-3347": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=34b1a1ce1458f50ef27c54e28eb9b1947012907a",
+        "title": "futex: Handle faults correctly for PI futexes",
+        "description": "fixup_pi_state_owner() tries to ensure that the state of the rtmutex, pi_state and the user space value related to the PI futex are consistent before returning to user space. In case that the user space value update faults and the fault cannot be resolved by faulting the page in via fault_in_user_writeable() the function returns with -EFAULT and leaves the rtmutex and pi_state owner state inconsistent. A subsequent futex_unlock_pi() operates on the inconsistent pi_state and releases the rtmutex despite not owning it which can corrupt the RB tree of the rtmutex and cause a subsequent kernel stack use after free. It was suggested to loop forever in fixup_pi_state_owner() if the fault cannot be resolved, but that results in runaway tasks which is especially undesired when the problem happens due to a programming error and not due to malice. As the user space value cannot be fixed up, the proper solution is to make the rtmutex and the pi_state consistent so both have the same owner. This leaves the user space value out of sync. Any subsequent operation on the futex will fail because the 10th rule of PI futexes (pi_state owner and user space value are consistent) has been violated. As a consequence this removes the inept attempts of 'fixing' the situation in case that the current task owns the rtmutex when returning with an unresolvable fault by unlocking the rtmutex which left pi_state::owner and rtmutex::owner out of sync in a different and only slightly less dangerous way. Fixes: 1b7558e457ed (\"futexes: fix fault handling in futex_lock_pi\") Reported-by: gzobqq@gmail.com Signed-off-by: Thomas Gleixner <tglx@linutronix.de> Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org> Cc: stable@vger.kernel.org"
+      },
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f2dac39d93987f7de1e20b3988c8685523247ae2",
+        "title": "futex: Simplify fixup_pi_state_owner()",
+        "description": "Too many gotos already and an upcoming fix would make it even more unreadable. Signed-off-by: Thomas Gleixner <tglx@linutronix.de> Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org> Cc: stable@vger.kernel.org"
+      },
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=12bb3f7f1b03d5913b3f9d4236a488aa7774dfe9",
+        "title": "futex: Ensure the correct return value from futex_lock_pi()",
+        "description": "In case that futex_lock_pi() was aborted by a signal or a timeout and the task returned without acquiring the rtmutex, but is the designated owner of the futex due to a concurrent futex_unlock_pi() fixup_owner() is invoked to establish consistent state. In that case it invokes fixup_pi_state_owner() which in turn tries to acquire the rtmutex again. If that succeeds then it does not propagate this success to fixup_owner() and futex_lock_pi() returns -EINTR or -ETIMEOUT despite having the futex locked. Return success from fixup_pi_state_owner() in all cases where the current task owns the rtmutex and therefore the futex and propagate it correctly through fixup_owner(). Fixup the other callsite which does not expect a positive return value. Fixes: c1e2f0eaf015 (\"futex: Avoid violating the 10th rule of futex\") Signed-off-by: Thomas Gleixner <tglx@linutronix.de> Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org> Cc: stable@vger.kernel.org"
+      },
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=c64396cc36c6e60704ab06c1fb1c4a46179c9120",
+        "title": "Merge tag 'locking-urgent-2021-01-28' of git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip",
+        "description": "Pull locking fixes from Thomas Gleixner: \"A set of PI futex fixes: - Address a longstanding issue where the user space part of the PI futex is not writeable. The kernel returns with inconsistent state which can in the worst case result in a UAF of a tasks kernel stack. The solution is to establish consistent kernel state which makes future operations on the futex fail because user space and kernel space state are inconsistent. Not a problem as PI futexes fundamentaly require a functional RW mapping and if user space pulls the rug under it, then it can keep the pieces it asked for. - Address an issue where the return value is incorrect in case that the futex was acquired after a timeout/signal made the waiter drop out of the rtmutex wait. In one of the corner cases the kernel returned an error code despite having successfully acquired the futex\" * tag 'locking-urgent-2021-01-28' of git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip: futex: Handle faults correctly for PI futexes futex: Simplify fixup_pi_state_owner() futex: Use pi_state_update_owner() in put_pi_state() rtmutex: Remove unused argument from rt_mutex_proxy_unlock() futex: Provide and use pi_state_update_owner() futex: Replace pointless printk in fixup_owner() futex: Ensure the correct return value from futex_lock_pi()"
+      },
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=2156ac1934166d6deb6cd0f6ffc4c1076ec63697",
+        "title": "rtmutex: Remove unused argument from rt_mutex_proxy_unlock()",
+        "description": "Nothing uses the argument. Remove it as preparation to use pi_state_update_owner(). Signed-off-by: Thomas Gleixner <tglx@linutronix.de> Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org> Cc: stable@vger.kernel.org"
+      },
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=6ccc84f917d33312eb2846bd7b567639f585ad6d",
+        "title": "futex: Use pi_state_update_owner() in put_pi_state()",
+        "description": "No point in open coding it. This way it gains the extra sanity checks. Signed-off-by: Thomas Gleixner <tglx@linutronix.de> Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org> Cc: stable@vger.kernel.org"
+      },
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=c5cade200ab9a2a3be9e7f32a752c8d86b502ec7",
+        "title": "futex: Provide and use pi_state_update_owner()",
+        "description": "Updating pi_state::owner is done at several places with the same code. Provide a function for it and use that at the obvious places. This is also a preparation for a bug fix to avoid yet another copy of the same code or alternatively introducing a completely unpenetratable mess of gotos. Originally-by: Peter Zijlstra <peterz@infradead.org> Signed-off-by: Thomas Gleixner <tglx@linutronix.de> Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org> Cc: stable@vger.kernel.org"
+      },
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=04b79c55201f02ffd675e1231d731365e335c307",
+        "title": "futex: Replace pointless printk in fixup_owner()",
+        "description": "If that unexpected case of inconsistent arguments ever happens then the futex state is left completely inconsistent and the printk is not really helpful. Replace it with a warning and make the state consistent. Signed-off-by: Thomas Gleixner <tglx@linutronix.de> Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org> Cc: stable@vger.kernel.org"
+      }
+    ],
+    "CVE-2021-3348": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=b98e762e3d71e893b221f871825dc64694cfb258",
+        "title": "nbd: freeze the queue while we're adding connections",
+        "description": "When setting up a device, we can krealloc the config->socks array to add new sockets to the configuration. However if we happen to get a IO request in at this point even though we aren't setup we could hit a UAF, as we deref config->socks without any locking, assuming that the configuration was setup already and that ->socks is safe to access it as we have a reference on the configuration. But there's nothing really preventing IO from occurring at this point of the device setup, we don't want to incur the overhead of a lock to access ->socks when it will never change while the device is running. To fix this UAF scenario simply freeze the queue if we are adding sockets. This will protect us from this particular case without adding any additional overhead for the normal running case. Cc: stable@vger.kernel.org Signed-off-by: Josef Bacik <josef@toxicpanda.com> Signed-off-by: Jens Axboe <axboe@kernel.dk>"
+      }
+    ],
+    "CVE-2021-3444": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=9b00f1b78809",
+        "title": "bpf: Fix truncation handling for mod32 dst reg wrt zero",
+        "description": "Recently noticed that when mod32 with a known src reg of 0 is performed, then the dst register is 32-bit truncated in verifier: 0: R1=ctx(id=0,off=0,imm=0) R10=fp0 0: (b7) r0 = 0 1: R0_w=inv0 R1=ctx(id=0,off=0,imm=0) R10=fp0 1: (b7) r1 = -1 2: R0_w=inv0 R1_w=inv-1 R10=fp0 2: (b4) w2 = -1 3: R0_w=inv0 R1_w=inv-1 R2_w=inv4294967295 R10=fp0 3: (9c) w1 %= w0 4: R0_w=inv0 R1_w=inv(id=0,umax_value=4294967295,var_off=(0x0; 0xffffffff)) R2_w=inv4294967295 R10=fp0 4: (b7) r0 = 1 5: R0_w=inv1 R1_w=inv(id=0,umax_value=4294967295,var_off=(0x0; 0xffffffff)) R2_w=inv4294967295 R10=fp0 5: (1d) if r1 == r2 goto pc+1 R0_w=inv1 R1_w=inv(id=0,umax_value=4294967295,var_off=(0x0; 0xffffffff)) R2_w=inv4294967295 R10=fp0 6: R0_w=inv1 R1_w=inv(id=0,umax_value=4294967295,var_off=(0x0; 0xffffffff)) R2_w=inv4294967295 R10=fp0 6: (b7) r0 = 2 7: R0_w=inv2 R1_w=inv(id=0,umax_value=4294967295,var_off=(0x0; 0xffffffff)) R2_w=inv4294967295 R10=fp0 7: (95) exit 7: R0=inv1 R1=inv(id=0,umin_value=4294967295,umax_value=4294967295,var_off=(0x0; 0xffffffff)) R2=inv4294967295 R10=fp0 7: (95) exit However, as a runtime result, we get 2 instead of 1, meaning the dst register does not contain (u32)-1 in this case. The reason is fairly straight forward given the 0 test leaves the dst register as-is: # ./bpftool p d x i 23 0: (b7) r0 = 0 1: (b7) r1 = -1 2: (b4) w2 = -1 3: (16) if w0 == 0x0 goto pc+1 4: (9c) w1 %= w0 5: (b7) r0 = 1 6: (1d) if r1 == r2 goto pc+1 7: (b7) r0 = 2 8: (95) exit This was originally not an issue given the dst register was marked as completely unknown (aka 64 bit unknown). However, after 468f6eafa6c4 (\"bpf: fix 32-bit ALU op verification\") the verifier casts the register output to 32 bit, and hence it becomes 32 bit unknown. Note that for the case where the src register is unknown, the dst register is marked 64 bit unknown. After the fix, the register is truncated by the runtime and the test passes: # ./bpftool p d x i 23 0: (b7) r0 = 0 1: (b7) r1 = -1 2: (b4) w2 = -1 3: (16) if w0 == 0x0 goto pc+2 4: (9c) w1 %= w0 5: (05) goto pc+1 6: (bc) w1 = w1 7: (b7) r0 = 1 8: (1d) if r1 == r2 goto pc+1 9: (b7) r0 = 2 10: (95) exit Semantics also match with {R,W}x mod{64,32} 0 -> {R,W}x. Invalid div has always been {R,W}x div{64,32} 0 -> 0. Rewrites are as follows: mod32: mod64: (16) if w0 == 0x0 goto pc+2 (15) if r0 == 0x0 goto pc+1 (9c) w1 %= w0 (9f) r1 %= r0 (05) goto pc+1 (bc) w1 = w1 Fixes: 468f6eafa6c4 (\"bpf: fix 32-bit ALU op verification\") Signed-off-by: Daniel Borkmann <daniel@iogearbox.net> Reviewed-by: John Fastabend <john.fastabend@gmail.com> Acked-by: Alexei Starovoitov <ast@kernel.org>"
+      }
+    ],
+    "CVE-2021-3489": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/bpf/bpf.git/commit/?id=4b81ccebaeee885ab1aa1438133f2991e3a2b6ea",
+        "title": "bpf, ringbuf: Deny reserve of buffers larger than ringbuf",
+        "description": "A BPF program might try to reserve a buffer larger than the ringbuf size. If the consumer pointer is way ahead of the producer, that would be successfully reserved, allowing the BPF program to read or write out of the ringbuf allocated area. Reported-by: Ryota Shiga (Flatt Security) Fixes: 457f44363a88 (\"bpf: Implement BPF ring buffer and verifier support for it\") Signed-off-by: Thadeu Lima de Souza Cascardo <cascardo@canonical.com> Signed-off-by: Daniel Borkmann <daniel@iogearbox.net> Acked-by: Andrii Nakryiko <andrii@kernel.org> Acked-by: Alexei Starovoitov <ast@kernel.org>"
+      }
+    ],
+    "CVE-2021-3490": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/bpf/bpf.git/commit/?id=049c4e13714ecbca567b4d5f6d563f05d431c80e",
+        "title": "bpf: Fix alu32 const subreg bound tracking on bitwise operations",
+        "description": "Fix a bug in the verifier's scalar32_min_max_*() functions which leads to incorrect tracking of 32 bit bounds for the simulation of and/or/xor bitops. When both the src & dst subreg is a known constant, then the assumption is that scalar_min_max_*() will take care to update bounds correctly. However, this is not the case, for example, consider a register R2 which has a tnum of 0xffffffff00000000, meaning, lower 32 bits are known constant and in this case of value 0x00000001. R2 is then and'ed with a register R3 which is a 64 bit known constant, here, 0x100000002. What can be seen in line '10:' is that 32 bit bounds reach an invalid state where {u,s}32_min_value > {u,s}32_max_value. The reason is scalar32_min_max_*() delegates 32 bit bounds updates to scalar_min_max_*(), however, that really only takes place when both the 64 bit src & dst register is a known constant. Given scalar32_min_max_*() is intended to be designed as closely as possible to scalar_min_max_*(), update the 32 bit bounds in this situation through __mark_reg32_known() which will set all {u,s}32_{min,max}_value to the correct constant, which is 0x00000000 after the fix (given 0x00000001 & 0x00000002 in 32 bit space). This is possible given var32_off already holds the final value as dst_reg->var_off is updated before calling scalar32_min_max_*(). Before fix, invalid tracking of R2: [...] 9: R0_w=inv1337 R1=ctx(id=0,off=0,imm=0) R2_w=inv(id=0,smin_value=-9223372036854775807 (0x8000000000000001),smax_value=9223372032559808513 (0x7fffffff00000001),umin_value=1,umax_value=0xffffffff00000001,var_off=(0x1; 0xffffffff00000000),s32_min_value=1,s32_max_value=1,u32_min_value=1,u32_max_value=1) R3_w=inv4294967298 R10=fp0 9: (5f) r2 &= r3 10: R0_w=inv1337 R1=ctx(id=0,off=0,imm=0) R2_w=inv(id=0,smin_value=0,smax_value=4294967296 (0x100000000),umin_value=0,umax_value=0x100000000,var_off=(0x0; 0x100000000),s32_min_value=1,s32_max_value=0,u32_min_value=1,u32_max_value=0) R3_w=inv4294967298 R10=fp0 [...] After fix, correct tracking of R2: [...] 9: R0_w=inv1337 R1=ctx(id=0,off=0,imm=0) R2_w=inv(id=0,smin_value=-9223372036854775807 (0x8000000000000001),smax_value=9223372032559808513 (0x7fffffff00000001),umin_value=1,umax_value=0xffffffff00000001,var_off=(0x1; 0xffffffff00000000),s32_min_value=1,s32_max_value=1,u32_min_value=1,u32_max_value=1) R3_w=inv4294967298 R10=fp0 9: (5f) r2 &= r3 10: R0_w=inv1337 R1=ctx(id=0,off=0,imm=0) R2_w=inv(id=0,smin_value=0,smax_value=4294967296 (0x100000000),umin_value=0,umax_value=0x100000000,var_off=(0x0; 0x100000000),s32_min_value=0,s32_max_value=0,u32_min_value=0,u32_max_value=0) R3_w=inv4294967298 R10=fp0 [...] Fixes: 3f50f132d840 (\"bpf: Verifier, do explicit ALU32 bounds tracking\") Fixes: 2921c90d4718 (\"bpf: Fix a verifier failure with xor\") Reported-by: Manfred Paul (@_manfp) Reported-by: Thadeu Lima de Souza Cascardo <cascardo@canonical.com> Signed-off-by: Daniel Borkmann <daniel@iogearbox.net> Reviewed-by: John Fastabend <john.fastabend@gmail.com> Acked-by: Alexei Starovoitov <ast@kernel.org>"
+      }
+    ],
+    "CVE-2021-3491": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d1f82808877bb10d3deee7cf3374a4eb3fb582db",
+        "title": "io_uring: truncate lengths larger than MAX_RW_COUNT on provide buffers",
+        "description": "Read and write operations are capped to MAX_RW_COUNT. Some read ops rely on that limit, and that is not guaranteed by the IORING_OP_PROVIDE_BUFFERS. Truncate those lengths when doing io_add_buffers, so buffer addresses still use the uncapped length. Also, take the chance and change struct io_buffer len member to __u32, so it matches struct io_provide_buffer len member. This fixes CVE-2021-3491, also reported as ZDI-CAN-13546. Fixes: ddf0322db79c (\"io_uring: add IORING_OP_PROVIDE_BUFFERS\") Reported-by: Billy Jheng Bing-Jhong (@st424204) Signed-off-by: Thadeu Lima de Souza Cascardo <cascardo@canonical.com> Signed-off-by: Jens Axboe <axboe@kernel.dk>"
+      }
+    ],
+    "CVE-2021-3493": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=7c03e2cda4a584cadc398e8f6641ca9988a39d52",
+        "title": "vfs: move cap_convert_nscap() call into vfs_setxattr()",
+        "description": "cap_convert_nscap() does permission checking as well as conversion of the xattr value conditionally based on fs's user-ns. This is needed by overlayfs and probably other layered fs (ecryptfs) and is what vfs_foo() is supposed to do anyway. Signed-off-by: Miklos Szeredi <mszeredi@redhat.com> Acked-by: James Morris <jamorris@linux.microsoft.com>"
+      }
+    ],
+    "CVE-2021-3501": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=04c4f2ee3f68c9a4bf1653d15f1a9a435ae33f7a",
+        "title": "KVM: VMX: Don't use vcpu->run->internal.ndata as an array index",
+        "description": "__vmx_handle_exit() uses vcpu->run->internal.ndata as an index for an array access. Since vcpu->run is (can be) mapped to a user address space with a writer permission, the 'ndata' could be updated by the user process at anytime (the user process can set it to outside the bounds of the array). So, it is not safe that __vmx_handle_exit() uses the 'ndata' that way. Fixes: 1aa561b1a4c0 (\"kvm: x86: Add \"last CPU\" to some KVM_EXIT information\") Signed-off-by: Reiji Watanabe <reijiw@google.com> Reviewed-by: Jim Mattson <jmattson@google.com> Message-Id: <20210413154739.490299-1-reijiw@google.com> Cc: stable@vger.kernel.org Signed-off-by: Paolo Bonzini <pbonzini@redhat.com>"
+      }
+    ]
+  }
 }

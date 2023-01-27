@@ -2396,6 +2396,20 @@
         "title": "",
         "body": "It was introduced when CVE-2012-0876 was addressed. Stefan Sørensen discovered that the use of the function XML_Parse() seeds the random number generator generating repeated outputs for rand() calls."
       }
+    ],
+    "CVE-2012-6696": [
+      {
+        "url": "https://www.debian.org/security/2015/dsa-3226",
+        "title": "DSA-3226-1 inspircd -- security update",
+        "body": "Adam discovered several problems in inspircd, an IRC daemon: An incomplete patch for CVE-2012-1836 failed to adequately resolve the problem where maliciously crafted DNS requests could lead to remote code execution through a heap-based buffer overflow. The incorrect processing of specific DNS packets could trigger an infinite loop, thus resulting in a denial of service. For the stable distribution (wheezy), this problem has been fixed in version 2.0.5-1+deb7u1. For the upcoming stable distribution (jessie) and unstable distribution (sid), this problem has been fixed in version 2.0.16-1."
+      }
+    ],
+    "CVE-2012-6697": [
+      {
+        "url": "https://www.debian.org/security/2015/dsa-3226",
+        "title": "DSA-3226-1 inspircd -- security update",
+        "body": "Adam discovered several problems in inspircd, an IRC daemon: An incomplete patch for CVE-2012-1836 failed to adequately resolve the problem where maliciously crafted DNS requests could lead to remote code execution through a heap-based buffer overflow. The incorrect processing of specific DNS packets could trigger an infinite loop, thus resulting in a denial of service. For the stable distribution (wheezy), this problem has been fixed in version 2.0.5-1+deb7u1. For the upcoming stable distribution (jessie) and unstable distribution (sid), this problem has been fixed in version 2.0.16-1."
+      }
     ]
   }
 }

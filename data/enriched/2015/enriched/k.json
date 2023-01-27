@@ -1,6 +1,106 @@
 {
   "year": 2015,
-  "total": 0,
+  "total": 12,
   "reference": "usn.ubuntu.com",
-  "reports": {}
+  "reports": {
+    "CVE-2015-3643": [
+      {
+        "url": "https://usn.ubuntu.com/usn/usn-2576-1/",
+        "title": "USN-2576-1: usb-creator vulnerability",
+        "body": "Tavis Ormandy discovered that usb-creator was missing an authentication check. A local attacker could use this issue to gain elevated privileges."
+      }
+    ],
+    "CVE-2015-1341": [
+      {
+        "url": "https://usn.ubuntu.com/usn/usn-2576-2/",
+        "title": "USN-2576-2: usb-creator vulnerability",
+        "body": "USN-2576-1 fixed a vulnerability in usb-creator. This update provides the corresponding fix for Ubuntu 15.04. Original advisory details: Tavis Ormandy discovered that usb-creator was missing an authentication check. A local attacker could use this issue to gain elevated privileges."
+      }
+    ],
+    "CVE-2015-2774": [
+      {
+        "url": "https://usn.ubuntu.com/3571-1/",
+        "title": "USN-3571-1: Erlang vulnerabilities",
+        "body": "It was discovered that Erlang incorrectly checked CBC padding bytes. A remote attacker could possibly use this issue to perform a padding oracle attack and decrypt traffic. This issue only affected Ubuntu 14.04 LTS. (CVE-2015-2774)"
+      }
+    ],
+    "CVE-2015-3255": [
+      {
+        "url": "https://usn.ubuntu.com/3717-2/",
+        "title": "USN-3717-2: PolicyKit vulnerabilities",
+        "body": "It was discovered that PolicyKit incorrectly handled certain duplicate action IDs. A local attacker could use this issue to cause PolicyKit to crash, resulting in a denial of service, or possibly escalate privileges. (CVE-2015-3255)"
+      }
+    ],
+    "CVE-2015-8539": [
+      {
+        "url": "https://usn.ubuntu.com/3798-2/",
+        "title": "USN-3798-2: Linux kernel (Trusty HWE) vulnerabilities",
+        "body": "Dmitry Vyukov discovered that the key management subsystem in the Linux kernel did not properly restrict adding a key that already exists but is negatively instantiated. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2015-8539)"
+      },
+      {
+        "url": "https://usn.ubuntu.com/3798-1/",
+        "title": "USN-3798-1: Linux kernel vulnerabilities",
+        "body": "Dmitry Vyukov discovered that the key management subsystem in the Linux kernel did not properly restrict adding a key that already exists but is negatively instantiated. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. (CVE-2015-8539)"
+      }
+    ],
+    "CVE-2015-8853": [
+      {
+        "url": "https://usn.ubuntu.com/3625-2/",
+        "title": "USN-3625-2: Perl vulnerabilities",
+        "body": "It was discovered that Perl incorrectly handled certain regular expressions. An attacker could possibly use this issue to cause Perl to hang, resulting in a denial of service. (CVE-2015-8853)"
+      },
+      {
+        "url": "https://usn.ubuntu.com/3625-1/",
+        "title": "USN-3625-1: Perl vulnerabilities",
+        "body": "It was discovered that Perl incorrectly handled certain regular expressions. An attacker could possibly use this issue to cause Perl to hang, resulting in a denial of service. This issue only affected Ubuntu 14.04 LTS. (CVE-2015-8853)"
+      }
+    ],
+    "CVE-2015-8865": [
+      {
+        "url": "https://usn.ubuntu.com/3686-1/",
+        "title": "USN-3686-1: file vulnerabilities",
+        "body": "It was discovered that file incorrectly handled certain magic files. An attacker could use this issue with a specially crafted magic file to cause a denial of service, or possibly execute arbitrary code. This issue only affected Ubuntu 14.04 LTS. (CVE-2015-8865)"
+      },
+      {
+        "url": "https://usn.ubuntu.com/3686-2/",
+        "title": "USN-3686-2: file vulnerabilities",
+        "body": "It was discovered that file incorrectly handled certain magic files. An attacker could use this issue with a specially crafted magic file to cause a denial of service, or possibly execute arbitrary code. (CVE-2015-8865)"
+      }
+    ],
+    "CVE-2015-9261": [
+      {
+        "url": "https://usn.ubuntu.com/3935-1/",
+        "title": "USN-3935-1: BusyBox vulnerabilities",
+        "body": "It was discovered that BusyBox incorrectly handled certain ZIP archives. If a user or automated system were tricked into processing a specially crafted ZIP archive, a remote attacker could cause BusyBox to crash, leading to a denial of service. This issue only affected Ubuntu 14.04 LTS and Ubuntu 16.04 LTS. (CVE-2015-9261)"
+      }
+    ],
+    "CVE-2015-9381": [
+      {
+        "url": "https://usn.ubuntu.com/4126-2/",
+        "title": "USN-4126-2: FreeType vulnerabilities",
+        "body": "It was discovered that FreeType incorrectly handled certain font files. An attacker could possibly use this issue to access sensitive information. (CVE-2015-9381, CVE-2015-9382)"
+      }
+    ],
+    "CVE-2015-9382": [
+      {
+        "url": "https://usn.ubuntu.com/4126-2/",
+        "title": "USN-4126-2: FreeType vulnerabilities",
+        "body": "It was discovered that FreeType incorrectly handled certain font files. An attacker could possibly use this issue to access sensitive information. (CVE-2015-9381, CVE-2015-9382)"
+      }
+    ],
+    "CVE-2015-9383": [
+      {
+        "url": "https://usn.ubuntu.com/4126-2/",
+        "title": "USN-4126-2: FreeType vulnerabilities",
+        "body": "It was discovered that FreeType incorrectly handled certain font files. An attacker could possibly use this issue to access sensitive information. (CVE-2015-9383)"
+      }
+    ],
+    "CVE-2015-6673": [
+      {
+        "url": "https://usn.ubuntu.com/4126-2/",
+        "title": "USN-4554-1: libPGF vulnerability",
+        "body": "It was discovered that libPGF lacked proper validation when opening a specially crafted PGF file. An attacker could possibly use this issue to cause a denial of service."
+      }
+    ]
+  }
 }

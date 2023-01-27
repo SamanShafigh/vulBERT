@@ -1,6 +1,1736 @@
 {
   "year": 2009,
-  "total": 0,
+  "total": 255,
   "reference": "ubuntu.com",
-  "reports": {}
+  "reports": {
+    "CVE-2009-0023": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-786-1",
+        "title": "USN-786-1: apr-util vulnerabilities",
+        "body": "Matthew Palmer discovered an underflow flaw in apr-util. An attacker couldcause a denial of service via application crash in Apache using a craftedSVNMasterURI directive, .htaccess file, or when using mod_apreq2.Applications using libapreq2 are also affected. (CVE-2009-0023)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-787-1",
+        "title": "USN-787-1: Apache vulnerabilities",
+        "body": "Matthew Palmer discovered an underflow flaw in apr-util as included inApache. An attacker could cause a denial of service via application crashin Apache using a crafted SVNMasterURI directive, .htaccess file, or whenusing mod_apreq2. This issue only affected Ubuntu 6.06 LTS. (CVE-2009-0023)"
+      }
+    ],
+    "CVE-2009-0028": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-751-1",
+        "title": "USN-751-1: Linux kernel vulnerabilities",
+        "body": "In certain situations, cloned processes were able to send signals to parentprocesses, crossing privilege boundaries. A local attacker could sendarbitrary signals to parent processes, leading to a denial of service.(CVE-2009-0028)"
+      }
+    ],
+    "CVE-2009-0031": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-751-1",
+        "title": "USN-751-1: Linux kernel vulnerabilities",
+        "body": "The kernel keyring did not free memory correctly. A local attacker couldconsume unlimited kernel memory, leading to a denial of service.(CVE-2009-0031)"
+      }
+    ],
+    "CVE-2009-0037": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-726-1",
+        "title": "USN-726-1: curl vulnerability",
+        "body": "It was discovered that curl did not enforce any restrictions when followingURL redirects. If a user or automated system were tricked into opening a URL toan untrusted server, an attacker could use redirects to gain access to abitraryfiles. This update changes curl behavior to prevent following \"file\" URLs aftera redirect."
+      }
+    ],
+    "CVE-2009-0065": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-751-1",
+        "title": "USN-751-1: Linux kernel vulnerabilities",
+        "body": "The SCTP stack did not correctly validate FORWARD-TSN packets. A remoteattacker could send specially crafted SCTP traffic causing a system crash,leading to a denial of service. (CVE-2009-0065)"
+      }
+    ],
+    "CVE-2009-0122": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-708-1",
+        "title": "USN-708-1: HPLIP vulnerability",
+        "body": "It was discovered that an installation script in the HPLIP package wouldchange permissions on the hplip config files located in user's home directories.A local user could exploit this and change permissions on arbitrary filesupon an HPLIP installation or upgrade, which could lead to root privileges."
+      }
+    ],
+    "CVE-2009-0135": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-739-1",
+        "title": "USN-739-1: Amarok vulnerabilities",
+        "body": "It was discovered that Amarok did not correctly handle certain malformedtags in Audible Audio (.aa) files. If a user were tricked into opening acrafted Audible Audio file, an attacker could execute arbitrary code withthe privileges of the user invoking the program."
+      }
+    ],
+    "CVE-2009-0136": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-739-1",
+        "title": "USN-739-1: Amarok vulnerabilities",
+        "body": "It was discovered that Amarok did not correctly handle certain malformedtags in Audible Audio (.aa) files. If a user were tricked into opening acrafted Audible Audio file, an attacker could execute arbitrary code withthe privileges of the user invoking the program."
+      }
+    ],
+    "CVE-2009-0163": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-760-1",
+        "title": "USN-760-1: CUPS vulnerability",
+        "body": "It was discovered that CUPS did not properly check the height of TIFF images.If a user or automated system were tricked into opening a crafted TIFF imagefile, a remote attacker could cause a denial of service or possibly executearbitrary code with user privileges. In Ubuntu 7.10, 8.04 LTS, and 8.10,attackers would be isolated by the AppArmor CUPS profile."
+      }
+    ],
+    "CVE-2009-0186": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-749-1",
+        "title": "USN-749-1: libsndfile vulnerability",
+        "body": "It was discovered that libsndfile did not correctly handle descriptionchunks in CAF audio files. If a user or automated system were tricked intoopening a specially crafted CAF audio file, an attacker could executearbitrary code with the privileges of the user invoking the program."
+      }
+    ],
+    "CVE-2009-0269": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-751-1",
+        "title": "USN-751-1: Linux kernel vulnerabilities",
+        "body": "The eCryptfs filesystem did not correctly handle certain VFS return codes.A local attacker with write-access to an eCryptfs filesystem could cause asystem crash, leading to a denial of service. (CVE-2009-0269)"
+      }
+    ],
+    "CVE-2009-0322": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-751-1",
+        "title": "USN-751-1: Linux kernel vulnerabilities",
+        "body": "The Dell platform device did not correctly validate user parameters. Alocal attacker could perform specially crafted reads to crash the system,leading to a denial of service. (CVE-2009-0322)"
+      }
+    ],
+    "CVE-2009-0352": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-717-1",
+        "title": "USN-717-1: Firefox and Xulrunner vulnerabilities",
+        "body": "Several flaws were discovered in the browser engine. These problems could allowan attacker to crash the browser and possibly execute arbitrary code with userprivileges. (CVE-2009-0352, CVE-2009-0353)"
+      }
+    ],
+    "CVE-2009-0353": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-717-1",
+        "title": "USN-717-1: Firefox and Xulrunner vulnerabilities",
+        "body": "Several flaws were discovered in the browser engine. These problems could allowan attacker to crash the browser and possibly execute arbitrary code with userprivileges. (CVE-2009-0352, CVE-2009-0353)"
+      }
+    ],
+    "CVE-2009-0354": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-717-1",
+        "title": "USN-717-1: Firefox and Xulrunner vulnerabilities",
+        "body": "A flaw was discovered in the JavaScript engine. An attacker could bypass thesame-origin policy in Firefox by utilizing a chrome XBL method and executearbitrary JavaScript within the context of another website. (CVE-2009-0354)"
+      }
+    ],
+    "CVE-2009-0355": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-717-2",
+        "title": "USN-717-2: Firefox vulnerabilities",
+        "body": "A flaw was discovered in the browser engine when restoring closed tabs. If auser were tricked into restoring a tab to a malicious website with form inputcontrols, an attacker could steal local files on the user's system.(CVE-2009-0355)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-717-1",
+        "title": "USN-717-1: Firefox and Xulrunner vulnerabilities",
+        "body": "A flaw was discovered in the browser engine when restoring closed tabs. If auser were tricked into restoring a tab to a malicious website with form inputcontrols, an attacker could steal local files on the user's system.(CVE-2009-0355)"
+      }
+    ],
+    "CVE-2009-0357": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-717-2",
+        "title": "USN-717-2: Firefox vulnerabilities",
+        "body": "Wladimir Palant discovered that Firefox did not restrict access to cookies inHTTP response headers. If a user were tricked into opening a malicious webpage, a remote attacker could view sensitive information. (CVE-2009-0357)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-717-1",
+        "title": "USN-717-1: Firefox and Xulrunner vulnerabilities",
+        "body": "Wladimir Palant discovered that Firefox did not restrict access to cookies inHTTP response headers. If a user were tricked into opening a malicious webpage, a remote attacker could view sensitive information. (CVE-2009-0357)"
+      }
+    ],
+    "CVE-2009-0358": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-717-1",
+        "title": "USN-717-1: Firefox and Xulrunner vulnerabilities",
+        "body": "Paul Nel discovered that Firefox did not honor certain Cache-Control HTTPdirectives. A local attacker could exploit this to view private data inimproperly cached pages of another user. (CVE-2009-0358)"
+      }
+    ],
+    "CVE-2009-0360": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-719-1",
+        "title": "USN-719-1: pam-krb5 vulnerabilities",
+        "body": "It was discovered that pam_krb5 parsed environment variables when run withsetuid applications. A local attacker could exploit this flaw to bypassauthentication checks and gain root privileges. (CVE-2009-0360)"
+      }
+    ],
+    "CVE-2009-0361": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-719-1",
+        "title": "USN-719-1: pam-krb5 vulnerabilities",
+        "body": "Derek Chan discovered that pam_krb5 incorrectly handled refreshing existingcredentials when used with setuid applications. A local attacker could exploitthis to create or overwrite arbitrary files, and possibly gain root privileges.(CVE-2009-0361)"
+      }
+    ],
+    "CVE-2009-0365": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-727-2",
+        "title": "USN-727-2: NetworkManager vulnerability",
+        "body": "USN-727-1 fixed vulnerabilities in network-manager-applet. This advisoryprovides the corresponding updates for NetworkManager.It was discovered that NetworkManager did not properly enforce permissions whenresponding to dbus requests. A local user could perform dbus queries to viewsystem and user network connection passwords and pre-shared keys."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-727-1",
+        "title": "USN-727-1: network-manager-applet vulnerabilities",
+        "body": "It was discovered that network-manager-applet did not properly enforcepermissions when responding to dbus requests. A local user could perform dbusqueries to view other users' network connection passwords and pre-shared keys.(CVE-2009-0365)"
+      }
+    ],
+    "CVE-2009-0386": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-736-1",
+        "title": "USN-736-1: GStreamer Good Plugins vulnerabilities",
+        "body": "It was discovered that GStreamer Good Plugins did not correctly handlemalformed Composition Time To Sample (ctts) atom data in Quicktime (mov)movie files. If a user were tricked into opening a crafted mov file, anattacker could execute arbitrary code with the privileges of the userinvoking the program. (CVE-2009-0386)"
+      }
+    ],
+    "CVE-2009-0387": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-736-1",
+        "title": "USN-736-1: GStreamer Good Plugins vulnerabilities",
+        "body": "It was discovered that GStreamer Good Plugins did not correctly handlemalformed Sync Sample (aka stss) atom data in Quicktime (mov) movie files.If a user were tricked into opening a crafted mov file, an attacker couldcause a denial of service via application crash, or possibly executearbitrary code with the privileges of the user invoking the program.(CVE-2009-0387)"
+      }
+    ],
+    "CVE-2009-0397": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-736-1",
+        "title": "USN-736-1: GStreamer Good Plugins vulnerabilities",
+        "body": "It was discovered that GStreamer Good Plugins did not correctly handlemalformed Time-to-sample (aka stts) atom data in Quicktime (mov) moviefiles. If a user were tricked into opening a crafted mov file, an attackercould execute arbitrary code with the privileges of the user invoking theprogram. (CVE-2009-0397)"
+      }
+    ],
+    "CVE-2009-0578": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-727-1",
+        "title": "USN-727-1: network-manager-applet vulnerabilities",
+        "body": "It was discovered that network-manager-applet did not properly enforcepermissions when responding to dbus modify and delete requests. A local usercould use dbus to modify or delete other users' network connections. This issueonly applied to Ubuntu 8.10. (CVE-2009-0578)"
+      }
+    ],
+    "CVE-2009-0581": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-744-1",
+        "title": "USN-744-1: LittleCMS vulnerabilities",
+        "body": "Chris Evans discovered that LittleCMS did not properly handle certain errorconditions, resulting in a large memory leak. If a user or automated systemwere tricked into processing an image with malicious ICC tags, a remoteattacker could cause a denial of service. (CVE-2009-0581)"
+      }
+    ],
+    "CVE-2009-0583": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-743-1",
+        "title": "USN-743-1: Ghostscript vulnerabilities",
+        "body": "It was discovered that Ghostscript contained multiple integer overflows inits ICC color management library. If a user or automated system weretricked into opening a crafted Postscript file, an attacker could cause adenial of service or execute arbitrary code with privileges of the userinvoking the program. (CVE-2009-0583)"
+      }
+    ],
+    "CVE-2009-0584": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-743-1",
+        "title": "USN-743-1: Ghostscript vulnerabilities",
+        "body": "It was discovered that Ghostscript did not properly perform bounds checkingin its ICC color management library. If a user or automated system weretricked into opening a crafted Postscript file, an attacker could cause adenial of service or execute arbitrary code with privileges of the userinvoking the program. (CVE-2009-0584)"
+      }
+    ],
+    "CVE-2009-0585": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-737-1",
+        "title": "USN-737-1: libsoup vulnerability",
+        "body": "It was discovered that the Base64 encoding functions in libsoup did notproperly handle large strings. If a user were tricked into connecting to amalicious server, an attacker could possibly execute arbitrary code withuser privileges."
+      }
+    ],
+    "CVE-2009-0586": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-735-1",
+        "title": "USN-735-1: GStreamer Base Plugins vulnerability",
+        "body": "It was discovered that the Base64 decoding functions in GStreamer BasePlugins did not properly handle large images in Vorbis file tags. If a userwere tricked into opening a specially crafted Vorbis file, an attackercould possibly execute arbitrary code with user privileges."
+      }
+    ],
+    "CVE-2009-0587": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-733-1",
+        "title": "USN-733-1: evolution-data-server vulnerability",
+        "body": "It was discovered that the Base64 encoding functions inevolution-data-server did not properly handle large strings. If a user weretricked into opening a specially crafted image file, or tricked intoconnecting to a malicious server, an attacker could possibly executearbitrary code with user privileges."
+      }
+    ],
+    "CVE-2009-0590": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-750-1",
+        "title": "USN-750-1: OpenSSL vulnerability",
+        "body": "It was discovered that OpenSSL did not properly validate the length of anencoded BMPString or UniversalString when printing ASN.1 strings. If a useror automated system were tricked into processing a crafted certificate, anattacker could cause a denial of service via application crash inapplications linked against OpenSSL."
+      }
+    ],
+    "CVE-2009-0605": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-751-1",
+        "title": "USN-751-1: Linux kernel vulnerabilities",
+        "body": "The page fault handler could consume stack memory. A local attacker couldexploit this to crash the system or gain root privileges with a Kproberegistered. Only Ubuntu 8.10 was affected. (CVE-2009-0605)"
+      }
+    ],
+    "CVE-2009-0642": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-805-1",
+        "title": "USN-805-1: Ruby vulnerabilities",
+        "body": "It was discovered that Ruby did not properly validate certificates. Anattacker could exploit this and present invalid or revoked X.509certificates. (CVE-2009-0642)"
+      }
+    ],
+    "CVE-2009-0675": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-751-1",
+        "title": "USN-751-1: Linux kernel vulnerabilities",
+        "body": "Network interfaces statistics for the SysKonnect FDDI driver did not checkcapabilities. A local user could reset statistics, potentially interferingwith packet accounting systems. (CVE-2009-0675)"
+      }
+    ],
+    "CVE-2009-0676": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-751-1",
+        "title": "USN-751-1: Linux kernel vulnerabilities",
+        "body": "The getsockopt function did not correctly clear certain parameters. A localattacker could read leaked kernel memory, leading to a loss of privacy.(CVE-2009-0676)"
+      }
+    ],
+    "CVE-2009-0688": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-790-1",
+        "title": "USN-790-1: Cyrus SASL vulnerability",
+        "body": "James Ralston discovered that the Cyrus SASL base64 encoding functioncould be used unsafely. If a remote attacker sent a specially craftedrequest to a service that used SASL, it could lead to a loss of privacy,or crash the application, resulting in a denial of service."
+      }
+    ],
+    "CVE-2009-0689": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-915-1",
+        "title": "USN-915-1: Thunderbird vulnerabilities",
+        "body": "Several flaws were discovered in the JavaScript engine of Thunderbird. If auser had JavaScript enabled and were tricked into viewing malicious webcontent, a remote attacker could cause a denial of service or possiblyexecute arbitrary code with the privileges of the user invoking theprogram. (CVE-2009-0689, CVE-2009-2463, CVE-2009-3075)"
+      }
+    ],
+    "CVE-2009-0692": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-803-1",
+        "title": "USN-803-1: dhcp vulnerability",
+        "body": "It was discovered that the DHCP client as included in dhcp3 did not verifythe length of certain option fields when processing a response from an IPv4dhcp server. If a user running Ubuntu 6.06 LTS or 8.04 LTS connected to amalicious dhcp server, a remote attacker could cause a denial of service orexecute arbitrary code as the user invoking the program, typically the'dhcp' user. For users running Ubuntu 8.10 or 9.04, a remote attackershould only be able to cause a denial of service in the DHCP client. InUbuntu 9.04, attackers would also be isolated by the AppArmor dhclient3profile."
+      }
+    ],
+    "CVE-2009-0698": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-746-1",
+        "title": "USN-746-1: xine-lib vulnerability",
+        "body": "It was discovered that the 4xm demuxer in xine-lib did not correctly handlea large current_track value in a 4xm file, resulting in an integeroverflow. If a user or automated system were tricked into opening aspecially crafted 4xm movie file, an attacker could crash xine-lib orpossibly execute arbitrary code with the privileges of the user invokingthe program. (CVE-2009-0698)"
+      }
+    ],
+    "CVE-2009-0723": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-744-1",
+        "title": "USN-744-1: LittleCMS vulnerabilities",
+        "body": "Chris Evans discovered that LittleCMS contained multiple integer overflows.If a user or automated system were tricked into processing an image withmalicious ICC tags, a remote attacker could crash applications linkedagainst liblcms1, leading to a denial of service, or possibly executearbitrary code with user privileges. (CVE-2009-0723)"
+      }
+    ],
+    "CVE-2009-0733": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-744-1",
+        "title": "USN-744-1: LittleCMS vulnerabilities",
+        "body": "Chris Evans discovered that LittleCMS did not properly perform boundschecking, leading to a buffer overflow. If a user or automated system weretricked into processing an image with malicious ICC tags, a remote attackercould execute arbitrary code with user privileges. (CVE-2009-0733)"
+      }
+    ],
+    "CVE-2009-0745": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-751-1",
+        "title": "USN-751-1: Linux kernel vulnerabilities",
+        "body": "The ext4 filesystem did not correctly clear group descriptors whenresizing. A local attacker could exploit this to crash the system, leadingto a denial of service. (CVE-2009-0745)"
+      }
+    ],
+    "CVE-2009-0746": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-751-1",
+        "title": "USN-751-1: Linux kernel vulnerabilities",
+        "body": "The ext4 filesystem did not correctly validate certain fields. A localattacker could mount a malicious ext4 filesystem, causing a systemcrash, leading to a denial of service. (CVE-2009-0746, CVE-2009-0747,CVE-2009-0748)"
+      }
+    ],
+    "CVE-2009-0747": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-751-1",
+        "title": "USN-751-1: Linux kernel vulnerabilities",
+        "body": "The ext4 filesystem did not correctly validate certain fields. A localattacker could mount a malicious ext4 filesystem, causing a systemcrash, leading to a denial of service. (CVE-2009-0746, CVE-2009-0747,CVE-2009-0748)"
+      }
+    ],
+    "CVE-2009-0748": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-751-1",
+        "title": "USN-751-1: Linux kernel vulnerabilities",
+        "body": "The ext4 filesystem did not correctly validate certain fields. A localattacker could mount a malicious ext4 filesystem, causing a systemcrash, leading to a denial of service. (CVE-2009-0746, CVE-2009-0747,CVE-2009-0748)"
+      }
+    ],
+    "CVE-2009-0757": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-772-1",
+        "title": "USN-772-1: MPFR vulnerability",
+        "body": "It was discovered that MPFR improperly handled string lengths in its printroutines. If a user or automated system were tricked into processingspecially crafted data with applications linked against MPFR, an attackercould cause a denial of service or execute arbitrary code with privilegesof the user invoking the program."
+      }
+    ],
+    "CVE-2009-0793": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1043-1",
+        "title": "USN-1043-1: Little CMS vulnerability",
+        "body": "It was discovered that a NULL pointer dereference in the code forhandling transformations of monochrome profiles could allow an attackerto cause a denial of service through a specially crafted image.(CVE-2009-0793)"
+      }
+    ],
+    "CVE-2009-0798": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-766-1",
+        "title": "USN-766-1: acpid vulnerability",
+        "body": "It was discovered that acpid did not properly handle a large number ofconnections. A local user could exploit this and monopolize CPU resources,leading to a denial of service."
+      }
+    ],
+    "CVE-2009-0835": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-751-1",
+        "title": "USN-751-1: Linux kernel vulnerabilities",
+        "body": "The syscall interface did not correctly validate parameters when crossingthe 64-bit/32-bit boundary. A local attacker could bypass certain syscallrestricts via crafted syscalls. (CVE-2009-0834, CVE-2009-0835)"
+      }
+    ],
+    "CVE-2009-0844": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-755-1",
+        "title": "USN-755-1: Kerberos vulnerabilities",
+        "body": "Multiple flaws were discovered in the Kerberos GSS-API and ASN.1 routinesthat did not correctly handle certain requests. An unauthenticated remoteattacker could send specially crafted traffic to crash services usingthe Kerberos library, leading to a denial of service."
+      }
+    ],
+    "CVE-2009-0845": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-755-1",
+        "title": "USN-755-1: Kerberos vulnerabilities",
+        "body": "Multiple flaws were discovered in the Kerberos GSS-API and ASN.1 routinesthat did not correctly handle certain requests. An unauthenticated remoteattacker could send specially crafted traffic to crash services usingthe Kerberos library, leading to a denial of service."
+      }
+    ],
+    "CVE-2009-0846": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-755-1",
+        "title": "USN-755-1: Kerberos vulnerabilities",
+        "body": "Multiple flaws were discovered in the Kerberos GSS-API and ASN.1 routinesthat did not correctly handle certain requests. An unauthenticated remoteattacker could send specially crafted traffic to crash services usingthe Kerberos library, leading to a denial of service."
+      }
+    ],
+    "CVE-2009-0847": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-755-1",
+        "title": "USN-755-1: Kerberos vulnerabilities",
+        "body": "Multiple flaws were discovered in the Kerberos GSS-API and ASN.1 routinesthat did not correctly handle certain requests. An unauthenticated remoteattacker could send specially crafted traffic to crash services usingthe Kerberos library, leading to a denial of service."
+      }
+    ],
+    "CVE-2009-0854": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-732-1",
+        "title": "USN-732-1: dash vulnerability",
+        "body": "Wolfgang M. Reimer discovered that dash, when invoked as a login shell, wouldsource .profile files from the current directory. Local users may be able tobypass security restrictions and gain root privileges by placing speciallycrafted .profile files where they might get sourced by other dash users."
+      }
+    ],
+    "CVE-2009-0859": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-751-1",
+        "title": "USN-751-1: Linux kernel vulnerabilities",
+        "body": "The shared memory subsystem did not correctly handle certain shmctl callswhen CONFIG_SHMEM was disabled. Ubuntu kernels were not vulnerable, sinceCONFIG_SHMEM is enabled by default. (CVE-2009-0859)"
+      }
+    ],
+    "CVE-2009-0945": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-822-1",
+        "title": "USN-822-1: KDE-Libs vulnerabilities",
+        "body": "It was discovered that KDE-Libs did not properly handle certain malformedSVG images. If a user were tricked into opening a specially crafted SVGimage, an attacker could cause a denial of service or possibly executearbitrary code with the privileges of the user invoking the program. Thisissue only affected Ubuntu 9.04. (CVE-2009-0945)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-857-1",
+        "title": "USN-857-1: Qt vulnerabilities",
+        "body": "It was discovered that QtWebKit did not properly handle certain SVGPathListdata structures. If a user were tricked into viewing a malicious website,an attacker could exploit this to execute arbitrary code with theprivileges of the user invoking the program. (CVE-2009-0945)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-836-1",
+        "title": "USN-836-1: WebKit vulnerabilities",
+        "body": "It was discovered that WebKit did not properly handle certain SVGPathListdata structures. If a user were tricked into viewing a malicious website,an attacker could exploit this to execute arbitrary code with theprivileges of the user invoking the program. (CVE-2009-0945)"
+      }
+    ],
+    "CVE-2009-0946": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-767-1",
+        "title": "USN-767-1: FreeType vulnerability",
+        "body": "Tavis Ormandy discovered that FreeType did not correctly handle certainlarge values in font files. If a user were tricked into using a speciallycrafted font file, a remote attacker could execute arbitrary code with userprivileges."
+      }
+    ],
+    "CVE-2009-0949": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-780-1",
+        "title": "USN-780-1: CUPS vulnerability",
+        "body": "Anibal Sacco discovered that CUPS did not properly handle certain networkoperations. A remote attacker could exploit this flaw and cause the CUPSserver to crash, resulting in a denial of service."
+      }
+    ],
+    "CVE-2009-1044": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-745-1",
+        "title": "USN-745-1: Firefox and Xulrunner vulnerabilities",
+        "body": "It was discovered that Firefox did not properly perform XUL garbagecollection. If a user were tricked into viewing a malicious website, aremote attacker could cause a denial of service or execute arbitrary codewith the privileges of the user invoking the program. This issue onlyaffected Ubuntu 8.04 LTS and 8.10. (CVE-2009-1044)"
+      }
+    ],
+    "CVE-2009-1046": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-751-1",
+        "title": "USN-751-1: Linux kernel vulnerabilities",
+        "body": "The virtual consoles did not correctly handle certain UTF-8 sequences. Alocal attacker on the physical console could exploit this to cause a systemcrash, leading to a denial of service. (CVE-2009-1046)"
+      }
+    ],
+    "CVE-2009-1095": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-748-1",
+        "title": "USN-748-1: OpenJDK vulnerabilities",
+        "body": "Java did not correctly check certain JAR headers. If a user orautomated system were tricked into processing a malicious JAR file,a remote attacker could crash the application, leading to a denial ofservice. (CVE-2009-1095, CVE-2009-1096)"
+      }
+    ],
+    "CVE-2009-1096": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-748-1",
+        "title": "USN-748-1: OpenJDK vulnerabilities",
+        "body": "Java did not correctly check certain JAR headers. If a user orautomated system were tricked into processing a malicious JAR file,a remote attacker could crash the application, leading to a denial ofservice. (CVE-2009-1095, CVE-2009-1096)"
+      }
+    ],
+    "CVE-2009-1097": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-748-1",
+        "title": "USN-748-1: OpenJDK vulnerabilities",
+        "body": "It was discovered that PNG and GIF decoding in Java could lead to memorycorruption. If a user or automated system were tricked into processinga specially crafted image, a remote attacker could crash the application,leading to a denial of service. (CVE-2009-1097, CVE-2009-1098)"
+      }
+    ],
+    "CVE-2009-1098": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-748-1",
+        "title": "USN-748-1: OpenJDK vulnerabilities",
+        "body": "It was discovered that PNG and GIF decoding in Java could lead to memorycorruption. If a user or automated system were tricked into processinga specially crafted image, a remote attacker could crash the application,leading to a denial of service. (CVE-2009-1097, CVE-2009-1098)"
+      }
+    ],
+    "CVE-2009-1102": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-748-1",
+        "title": "USN-748-1: OpenJDK vulnerabilities",
+        "body": "The Java Runtime Environment did not correctly validate certain generatedcode. If a user were tricked into running a malicious applet a remoteattacker could execute arbitrary code. (CVE-2009-1102)"
+      }
+    ],
+    "CVE-2009-1169": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-745-1",
+        "title": "USN-745-1: Firefox and Xulrunner vulnerabilities",
+        "body": "A flaw was discovered in the way Firefox performed XSLT transformations.If a user were tricked into opening a crafted XSL stylesheet, an attackercould cause a denial of service or execute arbitrary code with theprivileges of the user invoking the program. (CVE-2009-1169)"
+      }
+    ],
+    "CVE-2009-1185": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-758-1",
+        "title": "USN-758-1: udev vulnerabilities",
+        "body": "Sebastian Krahmer discovered that udev did not correctly validate netlinkmessage senders. A local attacker could send specially crafted messagesto udev in order to gain root privileges. (CVE-2009-1185)"
+      }
+    ],
+    "CVE-2009-1186": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-758-1",
+        "title": "USN-758-1: udev vulnerabilities",
+        "body": "Sebastian Krahmer discovered a buffer overflow in the path encoding routinesin udev. A local attacker could exploit this to crash udev, leading to adenial of service. (CVE-2009-1186)"
+      }
+    ],
+    "CVE-2009-1191": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-787-1",
+        "title": "USN-787-1: Apache vulnerabilities",
+        "body": "Sander de Boer discovered that mod_proxy_ajp would reuse connections whena client closed a connection without sending a request body. A remoteattacker could exploit this to obtain sensitive response data. This issueonly affected Ubuntu 9.04. (CVE-2009-1191)"
+      }
+    ],
+    "CVE-2009-1194": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-773-1",
+        "title": "USN-773-1: Pango vulnerability",
+        "body": "Will Drewry discovered that Pango incorrectly handled rendering text withlong glyphstrings. If a user were tricked into displaying specially crafteddata with applications linked against Pango, such as Firefox, an attackercould cause a denial of service or execute arbitrary code with privilegesof the user invoking the program."
+      }
+    ],
+    "CVE-2009-1242": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-793-1",
+        "title": "USN-793-1: Linux kernel vulnerabilities",
+        "body": "Benjamin Gilbert discovered that the VMX implementation of KVM didnot correctly handle certain registers. An attacker in a guest VMcould exploit this to cause a host system crash, leading to a denialof service. This only affected 32bit hosts. Ubuntu 6.06 was notaffected. (CVE-2009-1242)"
+      }
+    ],
+    "CVE-2009-1265": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-793-1",
+        "title": "USN-793-1: Linux kernel vulnerabilities",
+        "body": "Thomas Pollet discovered that the Amateur Radio X.25 Packet Layer Protocoldid not correctly validate certain fields. A remote attacker could exploitthis to read kernel memory, leading to a loss of privacy. (CVE-2009-1265)"
+      }
+    ],
+    "CVE-2009-1270": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-754-1",
+        "title": "USN-754-1: ClamAV vulnerabilities",
+        "body": "It was discovered that ClamAV did not properly verify its input whenprocessing TAR archives. A remote attacker could send a specially craftedTAR file and cause a denial of service via infinite loop. (CVE-2009-1270)"
+      }
+    ],
+    "CVE-2009-1284": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-937-1",
+        "title": "USN-937-1: TeX Live vulnerabilities",
+        "body": "It was discovered that TeX Live incorrectly handled certain long .bibbibliography files. If a user or automated system were tricked intoprocessing a specially crafted bib file, an attacker could cause a denialof service via application crash. This issue only affected Ubuntu 8.04 LTS,9.04 and 9.10. (CVE-2009-1284)"
+      }
+    ],
+    "CVE-2009-1296": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-783-1",
+        "title": "USN-783-1: eCryptfs vulnerability",
+        "body": "Chris Jones discovered that the eCryptfs support utilities wouldreport the mount passphrase into installation logs when an eCryptfshome directory was selected during Ubuntu installation. The logs areonly readable by the root user, but this still left the mount passphraseunencrypted on disk, potentially leading to a loss of privacy."
+      }
+    ],
+    "CVE-2009-1298": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-869-1",
+        "title": "USN-869-1: Linux kernel vulnerabilities",
+        "body": "David Ford discovered that the IPv4 defragmentation routine did notcorrectly handle oversized packets. A remote attacker could sendspecially crafted traffic that would cause a system to crash, leadingto a denial of service. (The fix was included in the earlier kernelsfrom USN-864-1.) (CVE-2009-1298)"
+      }
+    ],
+    "CVE-2009-1305": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-782-1",
+        "title": "USN-782-1: Thunderbird vulnerabilities",
+        "body": "Several flaws were discovered in the JavaScript engine of Thunderbird. If auser had JavaScript enabled and were tricked into viewing malicious webcontent, a remote attacker could cause a denial of service or possiblyexecute arbitrary code with the privileges of the user invoking theprogram. (CVE-2009-1303, CVE-2009-1305, CVE-2009-1392, CVE-2009-1833,CVE-2009-1838)"
+      }
+    ],
+    "CVE-2009-1307": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-782-1",
+        "title": "USN-782-1: Thunderbird vulnerabilities",
+        "body": "Several flaws were discovered in the way Thunderbird processed malformedURI schemes. If a user were tricked into viewing a malicious website andhad JavaScript and plugins enabled, a remote attacker could executearbitrary JavaScript or steal private data. (CVE-2009-1306, CVE-2009-1307,CVE-2009-1309)"
+      }
+    ],
+    "CVE-2009-1308": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-782-1",
+        "title": "USN-782-1: Thunderbird vulnerabilities",
+        "body": "Cefn Hoile discovered Thunderbird did not adequately protect againstembedded third-party stylesheets. If JavaScript were enabled, an attackercould exploit this to perform script injection attacks using XBL bindings.(CVE-2009-1308)"
+      }
+    ],
+    "CVE-2009-1313": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-765-1",
+        "title": "USN-765-1: Firefox and Xulrunner vulnerabilities",
+        "body": "It was discovered that the upstream security fixes in USN-764-1 introduceda regression which could cause the browser to crash. If a user were trickedinto viewing a malicious website, a remote attacker could cause a denial ofservice or possibly execute arbitrary code with the privileges of the userinvoking the program."
+      }
+    ],
+    "CVE-2009-1336": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-793-1",
+        "title": "USN-793-1: Linux kernel vulnerabilities",
+        "body": "Trond Myklebust discovered that NFS did not correctly handle certainlong filenames. An authenticated remote attacker could exploit this tocause a system crash, leading to a denial of service. Only Ubuntu 6.06was affected. (CVE-2009-1336)"
+      }
+    ],
+    "CVE-2009-1337": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-793-1",
+        "title": "USN-793-1: Linux kernel vulnerabilities",
+        "body": "Oleg Nesterov discovered that the kernel did not correctly handleCAP_KILL. A local user could exploit this to send signals to arbitraryprocesses, leading to a denial of service. (CVE-2009-1337)"
+      }
+    ],
+    "CVE-2009-1338": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-793-1",
+        "title": "USN-793-1: Linux kernel vulnerabilities",
+        "body": "Daniel Hokka Zakrisson discovered that signal handling was not correctlylimited to process namespaces. A local user could bypass namespacerestrictions, possibly leading to a denial of service. Only Ubuntu 8.04was affected. (CVE-2009-1338)"
+      }
+    ],
+    "CVE-2009-1371": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-756-1",
+        "title": "USN-756-1: ClamAV vulnerability",
+        "body": "It was discovered that ClamAV did not properly verify buffers whenprocessing Upack files. A remote attacker could send a crafted file andcause a denial of service via application crash."
+      }
+    ],
+    "CVE-2009-1373": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-781-1",
+        "title": "USN-781-1: Pidgin vulnerabilities",
+        "body": "It was discovered that Pidgin did not properly handle certain malformedmessages when sending a file using the XMPP protocol handler. If a userwere tricked into sending a file, a remote attacker could send a speciallycrafted response and cause Pidgin to crash, or possibly execute arbitrarycode with user privileges. (CVE-2009-1373)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-781-2",
+        "title": "USN-781-2: Gaim vulnerabilities",
+        "body": "It was discovered that Gaim did not properly handle certain malformedmessages when sending a file using the XMPP protocol handler. If a userwere tricked into sending a file, a remote attacker could send a speciallycrafted response and cause Gaim to crash, or possibly execute arbitrarycode with user privileges. (CVE-2009-1373)"
+      }
+    ],
+    "CVE-2009-1374": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-781-1",
+        "title": "USN-781-1: Pidgin vulnerabilities",
+        "body": "It was discovered that Pidgin did not properly handle certain malformedmessages in the QQ protocol handler. A remote attacker could send aspecially crafted message and cause Pidgin to crash. This issue onlyaffected Ubuntu 8.10 and 9.04. (CVE-2009-1374)"
+      }
+    ],
+    "CVE-2009-1375": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-781-1",
+        "title": "USN-781-1: Pidgin vulnerabilities",
+        "body": "It was discovered that Pidgin did not properly handle certain malformedmessages in the XMPP and Sametime protocol handlers. A remote attackercould send a specially crafted message and cause Pidgin to crash.(CVE-2009-1375)"
+      }
+    ],
+    "CVE-2009-1376": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-781-2",
+        "title": "USN-781-2: Gaim vulnerabilities",
+        "body": "It was discovered that Gaim did not properly handle certain malformedmessages in the MSN protocol handler. A remote attacker could send aspecially crafted message and possibly execute arbitrary code with userprivileges. (CVE-2009-1376)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-781-1",
+        "title": "USN-781-1: Pidgin vulnerabilities",
+        "body": "It was discovered that Pidgin did not properly handle certain malformedmessages in the MSN protocol handler. A remote attacker could send aspecially crafted message and possibly execute arbitrary code with userprivileges. (CVE-2009-1376)"
+      }
+    ],
+    "CVE-2009-1377": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-792-1",
+        "title": "USN-792-1: OpenSSL vulnerabilities",
+        "body": "It was discovered that OpenSSL did not limit the number of DTLS records itwould buffer when they arrived with a future epoch. A remote attacker couldcause a denial of service via memory resource consumption by sending alarge number of crafted requests. (CVE-2009-1377)"
+      }
+    ],
+    "CVE-2009-1378": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-792-1",
+        "title": "USN-792-1: OpenSSL vulnerabilities",
+        "body": "It was discovered that OpenSSL did not properly free memory when processingDTLS fragments. A remote attacker could cause a denial of service viamemory resource consumption by sending a large number of crafted requests.(CVE-2009-1378)"
+      }
+    ],
+    "CVE-2009-1379": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-792-1",
+        "title": "USN-792-1: OpenSSL vulnerabilities",
+        "body": "It was discovered that OpenSSL did not properly handle certain servercertificates when processing DTLS packets. A remote DTLS server could causea denial of service by sending a message containing a specially craftedserver certificate. (CVE-2009-1379)"
+      }
+    ],
+    "CVE-2009-1385": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-793-1",
+        "title": "USN-793-1: Linux kernel vulnerabilities",
+        "body": "Neil Horman discovered that the e1000 network driver did not correctlyvalidate certain fields. A remote attacker could send a speciallycrafted packet that would cause a system crash, leading to a denial ofservice. (CVE-2009-1385)"
+      }
+    ],
+    "CVE-2009-1387": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-792-1",
+        "title": "USN-792-1: OpenSSL vulnerabilities",
+        "body": "It was discovered that OpenSSL did not properly handle out of sequenceDTLS handshake messages. A remote attacker could cause a denial of serviceby sending a specially crafted request. (CVE-2009-1387)"
+      }
+    ],
+    "CVE-2009-1389": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-807-1",
+        "title": "USN-807-1: Linux kernel vulnerabilities",
+        "body": "Michael Tokarev discovered that the RTL8169 network driver did notcorrectly validate buffer sizes. A remote attacker on the local networkcould send specially crafted traffic that would crash the system orpotentially grant elevated privileges. (CVE-2009-1389)"
+      }
+    ],
+    "CVE-2009-1392": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-782-1",
+        "title": "USN-782-1: Thunderbird vulnerabilities",
+        "body": "Several flaws were discovered in the JavaScript engine of Thunderbird. If auser had JavaScript enabled and were tricked into viewing malicious webcontent, a remote attacker could cause a denial of service or possiblyexecute arbitrary code with the privileges of the user invoking theprogram. (CVE-2009-1303, CVE-2009-1305, CVE-2009-1392, CVE-2009-1833,CVE-2009-1838)"
+      }
+    ],
+    "CVE-2009-1438": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-771-1",
+        "title": "USN-771-1: libmodplug vulnerabilities",
+        "body": "It was discovered that libmodplug did not correctly handle certainparameters when parsing MED media files. If a user or automated system weretricked into opening a crafted MED file, an attacker could executearbitrary code with privileges of the user invoking the program.(CVE-2009-1438)"
+      }
+    ],
+    "CVE-2009-1439": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-793-1",
+        "title": "USN-793-1: Linux kernel vulnerabilities",
+        "body": "Pavan Naregundi discovered that CIFS did not correctly check lengthswhen handling certain mount requests. A remote attacker could sendspecially crafted traffic to cause a system crash, leading to a denialof service. (CVE-2009-1439)"
+      }
+    ],
+    "CVE-2009-1482": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-774-1",
+        "title": "USN-774-1: MoinMoin vulnerability",
+        "body": "It was discovered that MoinMoin did not properly sanitize its input whenattaching files, resulting in cross-site scripting (XSS) vulnerabilities.With cross-site scripting vulnerabilities, if a user were tricked intoviewing server output during a crafted server request, a remote attackercould exploit this to modify the contents, or steal confidential data,within the same domain."
+      }
+    ],
+    "CVE-2009-1513": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-771-1",
+        "title": "USN-771-1: libmodplug vulnerabilities",
+        "body": "Manfred Tremmel and Stanislav Brabec discovered that libmodplug did notcorrectly handle long instrument names when parsing PAT sample files. If auser or automated system were tricked into opening a crafted PAT file, anattacker could cause a denial of service or execute arbitrary code withprivileges of the user invoking the program. This issue only affectedUbuntu 9.04. (CVE-2009-1513)"
+      }
+    ],
+    "CVE-2009-1571": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-895-1",
+        "title": "USN-895-1: Firefox 3.0 and Xulrunner 1.9 vulnerabilities",
+        "body": "Alin Rad Pop discovered that Firefox's HTML parser would incorrectly freememory under certain circumstances. If the browser could be made to accessthese freed memory objects, an attacker could exploit this to executearbitrary code with the privileges of the user invoking the program.(CVE-2009-1571)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-896-1",
+        "title": "USN-896-1: Firefox 3.5 and Xulrunner 1.9.1 vulnerabilities",
+        "body": "Alin Rad Pop discovered that Firefox's HTML parser would incorrectly freememory under certain circumstances. If the browser could be made to accessthese freed memory objects, an attacker could exploit this to executearbitrary code with the privileges of the user invoking the program.(CVE-2009-1571)"
+      }
+    ],
+    "CVE-2009-1573": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-939-1",
+        "title": "USN-939-1: X.org vulnerabilities",
+        "body": "Loïc Minier discovered that xvfb-run did not correctly keep theX.org session cookie private. A local attacker could gain accessto any local sessions started by xvfb-run. Ubuntu 9.10 was notaffected. (CVE-2009-1573)"
+      }
+    ],
+    "CVE-2009-1601": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-770-1",
+        "title": "USN-770-1: ClamAV vulnerability",
+        "body": "A flaw was discovered in the clamav-milter initscript which caused theownership of the current working directory to be changed to the 'clamav'user. This update attempts to repair the incorrect ownership for standardsystem directories, but it is recommended that the following command beperformed to report any other directories that may be affected:$ sudo find -H / -type d -user clamav ! -group clamav 2>/dev/nullSystems configured to run clamav as a user other than the default 'clamav'user will need to adjust the above command accordingly."
+      }
+    ],
+    "CVE-2009-1630": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-793-1",
+        "title": "USN-793-1: Linux kernel vulnerabilities",
+        "body": "Simon Vallet and Frank Filz discovered that execute permissions werenot correctly handled by NFSv4. A local user could bypass permissionsand run restricted programs, possibly leading to an escalation ofprivileges. (CVE-2009-1630)"
+      }
+    ],
+    "CVE-2009-1632": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-785-1",
+        "title": "USN-785-1: ipsec-tools vulnerabilities",
+        "body": "It was discovered that ipsec-tools did not properly handle memory usagewhen verifying certificate signatures or processing nat-traversalkeep-alive messages. A remote attacker could send specially crafted packetsto the server and exhaust available memory, leading to a denial of service.(CVE-2009-1632)"
+      }
+    ],
+    "CVE-2009-1633": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-793-1",
+        "title": "USN-793-1: Linux kernel vulnerabilities",
+        "body": "Jeff Layton and Suresh Jayaraman discovered buffer overflows in the CIFSclient code. A malicious remote server could exploit this to cause asystem crash or execute arbitrary code as root. (CVE-2009-1633)"
+      }
+    ],
+    "CVE-2009-1669": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-791-3",
+        "title": "USN-791-3: Smarty vulnerability",
+        "body": "It was discovered that Smarty did not correctly filter certain mathinputs. A remote attacker using Smarty via a web service could exploitthis to execute subsets of shell commands as the web server user."
+      }
+    ],
+    "CVE-2009-1687": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-822-1",
+        "title": "USN-822-1: KDE-Libs vulnerabilities",
+        "body": "It was discovered that the KDE JavaScript garbage collector did notproperly handle memory allocation failures. If a user were tricked intoviewing a malicious website, an attacker could cause a denial of service orpossibly execute arbitrary code with the privileges of the user invokingthe program. (CVE-2009-1687)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-857-1",
+        "title": "USN-857-1: Qt vulnerabilities",
+        "body": "Several flaws were discovered in the QtWebKit browser and JavaScriptengines. If a user were tricked into viewing a malicious website, a remoteattacker could cause a denial of service or possibly execute arbitrary codewith the privileges of the user invoking the program. (CVE-2009-1687,CVE-2009-1690, CVE-2009-1698, CVE-2009-1711, CVE-2009-1725)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-836-1",
+        "title": "USN-836-1: WebKit vulnerabilities",
+        "body": "Several flaws were discovered in the WebKit browser and JavaScript engines.If a user were tricked into viewing a malicious website, a remote attackercould cause a denial of service or possibly execute arbitrary code with theprivileges of the user invoking the program. (CVE-2009-1687, CVE-2009-1690,CVE-2009-1698, CVE-2009-1711, CVE-2009-1725)"
+      }
+    ],
+    "CVE-2009-1690": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-822-1",
+        "title": "USN-822-1: KDE-Libs vulnerabilities",
+        "body": "It was discovered that KDE-Libs did not properly handle HTML content in thehead element. If a user were tricked into viewing a malicious website, anattacker could cause a denial of service or possibly execute arbitrary codewith the privileges of the user invoking the program. (CVE-2009-1690)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-857-1",
+        "title": "USN-857-1: Qt vulnerabilities",
+        "body": "Several flaws were discovered in the QtWebKit browser and JavaScriptengines. If a user were tricked into viewing a malicious website, a remoteattacker could cause a denial of service or possibly execute arbitrary codewith the privileges of the user invoking the program. (CVE-2009-1687,CVE-2009-1690, CVE-2009-1698, CVE-2009-1711, CVE-2009-1725)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-836-1",
+        "title": "USN-836-1: WebKit vulnerabilities",
+        "body": "Several flaws were discovered in the WebKit browser and JavaScript engines.If a user were tricked into viewing a malicious website, a remote attackercould cause a denial of service or possibly execute arbitrary code with theprivileges of the user invoking the program. (CVE-2009-1687, CVE-2009-1690,CVE-2009-1698, CVE-2009-1711, CVE-2009-1725)"
+      }
+    ],
+    "CVE-2009-1698": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-822-1",
+        "title": "USN-822-1: KDE-Libs vulnerabilities",
+        "body": "It was discovered that KDE-Libs did not properly handle the Cascading StyleSheets (CSS) attr function call. If a user were tricked into viewing amalicious website, an attacker could cause a denial of service or possiblyexecute arbitrary code with the privileges of the user invoking theprogram. (CVE-2009-1698)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-857-1",
+        "title": "USN-857-1: Qt vulnerabilities",
+        "body": "Several flaws were discovered in the QtWebKit browser and JavaScriptengines. If a user were tricked into viewing a malicious website, a remoteattacker could cause a denial of service or possibly execute arbitrary codewith the privileges of the user invoking the program. (CVE-2009-1687,CVE-2009-1690, CVE-2009-1698, CVE-2009-1711, CVE-2009-1725)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-836-1",
+        "title": "USN-836-1: WebKit vulnerabilities",
+        "body": "Several flaws were discovered in the WebKit browser and JavaScript engines.If a user were tricked into viewing a malicious website, a remote attackercould cause a denial of service or possibly execute arbitrary code with theprivileges of the user invoking the program. (CVE-2009-1687, CVE-2009-1690,CVE-2009-1698, CVE-2009-1711, CVE-2009-1725)"
+      }
+    ],
+    "CVE-2009-1699": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-857-1",
+        "title": "USN-857-1: Qt vulnerabilities",
+        "body": "It was discovered that QtWebKit did not properly handle certain XSLstylesheets. If a user were tricked into viewing a malicious website,an attacker could exploit this to read arbitrary local files, and possiblyfiles from different security zones. (CVE-2009-1699, CVE-2009-1713)"
+      }
+    ],
+    "CVE-2009-1711": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-857-1",
+        "title": "USN-857-1: Qt vulnerabilities",
+        "body": "Several flaws were discovered in the QtWebKit browser and JavaScriptengines. If a user were tricked into viewing a malicious website, a remoteattacker could cause a denial of service or possibly execute arbitrary codewith the privileges of the user invoking the program. (CVE-2009-1687,CVE-2009-1690, CVE-2009-1698, CVE-2009-1711, CVE-2009-1725)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-836-1",
+        "title": "USN-836-1: WebKit vulnerabilities",
+        "body": "Several flaws were discovered in the WebKit browser and JavaScript engines.If a user were tricked into viewing a malicious website, a remote attackercould cause a denial of service or possibly execute arbitrary code with theprivileges of the user invoking the program. (CVE-2009-1687, CVE-2009-1690,CVE-2009-1698, CVE-2009-1711, CVE-2009-1725)"
+      }
+    ],
+    "CVE-2009-1712": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-857-1",
+        "title": "USN-857-1: Qt vulnerabilities",
+        "body": "It was discovered that QtWebKit did not prevent the loading of local Javaapplets. If a user were tricked into viewing a malicious website, anattacker could exploit this to execute arbitrary code with the privilegesof the user invoking the program. (CVE-2009-1712)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-836-1",
+        "title": "USN-836-1: WebKit vulnerabilities",
+        "body": "It was discovered that WebKit did not prevent the loading of local Javaapplets. If a user were tricked into viewing a malicious website,an attacker could exploit this to execute arbitrary code with theprivileges of the user invoking the program. (CVE-2009-1712)"
+      }
+    ],
+    "CVE-2009-1713": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-857-1",
+        "title": "USN-857-1: Qt vulnerabilities",
+        "body": "It was discovered that QtWebKit did not properly handle certain XSLstylesheets. If a user were tricked into viewing a malicious website,an attacker could exploit this to read arbitrary local files, and possiblyfiles from different security zones. (CVE-2009-1699, CVE-2009-1713)"
+      }
+    ],
+    "CVE-2009-1720": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-831-1",
+        "title": "USN-831-1: OpenEXR vulnerabilities",
+        "body": "Drew Yao discovered several flaws in the way OpenEXR handled certainmalformed EXR image files. If a user were tricked into opening a craftedEXR image file, an attacker could cause a denial of service via applicationcrash, or possibly execute arbitrary code with the privileges of the userinvoking the program. (CVE-2009-1720, CVE-2009-1721)"
+      }
+    ],
+    "CVE-2009-1722": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-831-1",
+        "title": "USN-831-1: OpenEXR vulnerabilities",
+        "body": "It was discovered that OpenEXR did not properly handle certain malformedEXR image files. If a user were tricked into opening a crafted EXR imagefile, an attacker could cause a denial of service via application crash, orpossibly execute arbitrary code with the privileges of the user invokingthe program. This issue only affected Ubuntu 8.04 LTS. (CVE-2009-1722)"
+      }
+    ],
+    "CVE-2009-1725": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-857-1",
+        "title": "USN-857-1: Qt vulnerabilities",
+        "body": "Several flaws were discovered in the QtWebKit browser and JavaScriptengines. If a user were tricked into viewing a malicious website, a remoteattacker could cause a denial of service or possibly execute arbitrary codewith the privileges of the user invoking the program. (CVE-2009-1687,CVE-2009-1690, CVE-2009-1698, CVE-2009-1711, CVE-2009-1725)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-836-1",
+        "title": "USN-836-1: WebKit vulnerabilities",
+        "body": "Several flaws were discovered in the WebKit browser and JavaScript engines.If a user were tricked into viewing a malicious website, a remote attackercould cause a denial of service or possibly execute arbitrary code with theprivileges of the user invoking the program. (CVE-2009-1687, CVE-2009-1690,CVE-2009-1698, CVE-2009-1711, CVE-2009-1725)"
+      }
+    ],
+    "CVE-2009-1833": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-782-1",
+        "title": "USN-782-1: Thunderbird vulnerabilities",
+        "body": "Several flaws were discovered in the JavaScript engine of Thunderbird. If auser had JavaScript enabled and were tricked into viewing malicious webcontent, a remote attacker could cause a denial of service or possiblyexecute arbitrary code with the privileges of the user invoking theprogram. (CVE-2009-1303, CVE-2009-1305, CVE-2009-1392, CVE-2009-1833,CVE-2009-1838)"
+      }
+    ],
+    "CVE-2009-1836": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-782-1",
+        "title": "USN-782-1: Thunderbird vulnerabilities",
+        "body": "Shuo Chen, Ziqing Mao, Yi-Min Wang, and Ming Zhang discovered thatThunderbird did not properly handle error responses when connecting to aproxy server. If a user had JavaScript enabled while using Thunderbird toview websites and a remote attacker were able to perform aman-in-the-middle attack, this flaw could be exploited to view sensitiveinformation. (CVE-2009-1836)"
+      }
+    ],
+    "CVE-2009-1838": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-782-1",
+        "title": "USN-782-1: Thunderbird vulnerabilities",
+        "body": "Several flaws were discovered in the JavaScript engine of Thunderbird. If auser had JavaScript enabled and were tricked into viewing malicious webcontent, a remote attacker could cause a denial of service or possiblyexecute arbitrary code with the privileges of the user invoking theprogram. (CVE-2009-1303, CVE-2009-1305, CVE-2009-1392, CVE-2009-1833,CVE-2009-1838)"
+      }
+    ],
+    "CVE-2009-1841": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-782-1",
+        "title": "USN-782-1: Thunderbird vulnerabilities",
+        "body": "It was discovered that Thunderbird could be made to run scripts withelevated privileges. If a user had JavaScript enabled while havingcertain non-default add-ons installed and were tricked into viewing amalicious website, an attacker could cause a chrome privileged object, suchas the browser sidebar, to run arbitrary code via interactions with theattacker controlled website. (CVE-2009-1841)"
+      }
+    ],
+    "CVE-2009-1883": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-852-1",
+        "title": "USN-852-1: Linux kernel vulnerabilities",
+        "body": "Solar Designer discovered that the z90crypt driver did not correctlycheck capabilities. A local attacker could exploit this to shut downthe device, leading to a denial of service. Only affected Ubuntu 6.06.(CVE-2009-1883)"
+      }
+    ],
+    "CVE-2009-1888": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-839-1",
+        "title": "USN-839-1: Samba vulnerabilities",
+        "body": "J. David Hester discovered that Samba incorrectly handled users that lackhome directories when the automated [homes] share is enabled. Anauthenticated user could connect to that share name and gain access to thewhole filesystem. (CVE-2009-2813)Tim Prouty discovered that the smbd daemon in Samba incorrectly handledcertain unexpected network replies. A remote attacker could send maliciousreplies to the server and cause smbd to use all available CPU, leading to adenial of service. (CVE-2009-2906)Ronald Volgers discovered that the mount.cifs utility, when installed as asetuid program, would not verify user permissions before opening acredentials file. A local user could exploit this to use or read thecontents of unauthorized credential files. (CVE-2009-2948)Reinhard Nißl discovered that the smbclient utility contained format stringvulnerabilities in its file name handling. Because of security features inUbuntu, exploitation of this vulnerability is limited. If a user orautomated system were tricked into processing a specially crafted filename, smbclient could be made to crash, possibly leading to a denial ofservice. This only affected Ubuntu 8.10. (CVE-2009-1886)Jeremy Allison discovered that the smbd daemon in Samba incorrectly handledpermissions to modify access control lists when dos filemode is enabled. Aremote attacker could exploit this to modify access control lists. Thisonly affected Ubuntu 8.10 and Ubuntu 9.04. (CVE-2009-1886)"
+      }
+    ],
+    "CVE-2009-1889": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-796-1",
+        "title": "USN-796-1: Pidgin vulnerability",
+        "body": "Yuriy Kaminskiy discovered that Pidgin did not properly handle certainmessages in the ICQ protocol handler. A remote attacker could send aspecially crafted message and cause Pidgin to crash."
+      }
+    ],
+    "CVE-2009-1890": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-802-1",
+        "title": "USN-802-1: Apache vulnerabilities",
+        "body": "It was discovered that mod_proxy_http did not properly handle a largeamount of streamed data when used as a reverse proxy. A remote attackercould exploit this and cause a denial of service via memory resourceconsumption. This issue affected Ubuntu 8.04 LTS, 8.10 and 9.04.(CVE-2009-1890)"
+      }
+    ],
+    "CVE-2009-1891": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-802-1",
+        "title": "USN-802-1: Apache vulnerabilities",
+        "body": "It was discovered that mod_deflate did not abort compressing large fileswhen the connection was closed. A remote attacker could exploit this andcause a denial of service via CPU resource consumption. (CVE-2009-1891)"
+      }
+    ],
+    "CVE-2009-1904": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-805-1",
+        "title": "USN-805-1: Ruby vulnerabilities",
+        "body": "It was discovered that Ruby did not properly handle string arguments thatrepresent large numbers. An attacker could exploit this and cause a denialof service. (CVE-2009-1904)"
+      }
+    ],
+    "CVE-2009-1914": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-793-1",
+        "title": "USN-793-1: Linux kernel vulnerabilities",
+        "body": "Mikulas Patocka discovered that /proc/iomem was not correctlyinitialized on Sparc. A local attacker could use this file to crashthe system, leading to a denial of service. Ubuntu 6.06 was notaffected. (CVE-2009-1914)"
+      }
+    ],
+    "CVE-2009-1956": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-786-1",
+        "title": "USN-786-1: apr-util vulnerabilities",
+        "body": "C. Michael Pilato discovered an off-by-one buffer overflow in apr-util whenformatting certain strings. For big-endian machines (powerpc, hppa andsparc in Ubuntu), a remote attacker could cause a denial of service orinformation disclosure leak. All other architectures for Ubuntu arenot considered to be at risk. (CVE-2009-1956)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-787-1",
+        "title": "USN-787-1: Apache vulnerabilities",
+        "body": "C. Michael Pilato discovered an off-by-one buffer overflow in apr-util whenformatting certain strings. For big-endian machines (powerpc, hppa andsparc in Ubuntu), a remote attacker could cause a denial of service orinformation disclosure leak. All other architectures for Ubuntu are notconsidered to be at risk. This issue only affected Ubuntu 6.06 LTS.(CVE-2009-1956)"
+      }
+    ],
+    "CVE-2009-1959": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-800-1",
+        "title": "USN-800-1: irssi vulnerability",
+        "body": "It was discovered that irssi did not properly check the length of stringswhen processing WALLOPS messages. If a user connected to an IRC networkwhere an attacker had IRC operator privileges, a remote attacker couldcause a denial of service."
+      }
+    ],
+    "CVE-2009-2042": [
+      {
+        "url": "http://ubuntu.com/usn/usn-913-1",
+        "title": "USN-913-1: libpng vulnerabilities",
+        "body": "It was discovered that libpng did not properly initialize memory whendecoding certain 1-bit interlaced images. If a user or automated systemwere tricked into processing crafted PNG images, an attacker could possiblyuse this flaw to read sensitive information stored in memory. This issueonly affected Ubuntu 6.06 LTS, 8.04 LTS, 8.10 and 9.04. (CVE-2009-2042)"
+      }
+    ],
+    "CVE-2009-2287": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-807-1",
+        "title": "USN-807-1: Linux kernel vulnerabilities",
+        "body": "Matt T. Yourst discovered that KVM did not correctly validate thepage table root. A local attacker could exploit this to crash thesystem, leading to a denial of service. Ubuntu 6.06 was not affected.(CVE-2009-2287)"
+      }
+    ],
+    "CVE-2009-2288": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-795-1",
+        "title": "USN-795-1: Nagios vulnerability",
+        "body": "It was discovered that Nagios did not properly parse certain commandssubmitted using the WAP web interface. An authenticated user could exploitthis flaw and execute arbitrary programs on the server."
+      }
+    ],
+    "CVE-2009-2347": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-801-1",
+        "title": "USN-801-1: tiff vulnerability",
+        "body": "Tielei Wang and Tom Lane discovered that the TIFF library did not correctlyhandle certain malformed TIFF images. If a user or automated system weretricked into processing a malicious image, an attacker could executearbitrary code with the privileges of the user invoking the program."
+      }
+    ],
+    "CVE-2009-2404": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-810-1",
+        "title": "USN-810-1: NSS vulnerabilities",
+        "body": "Moxie Marlinspike discovered that NSS did not properly handle regularexpressions in certificate names. A remote attacker could create aspecially crafted certificate to cause a denial of service (via applicationcrash) or execute arbitrary code as the user invoking the program.(CVE-2009-2404)"
+      }
+    ],
+    "CVE-2009-2406": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-807-1",
+        "title": "USN-807-1: Linux kernel vulnerabilities",
+        "body": "Ramon de Carvalho Valle discovered that eCryptfs did not correctlyvalidate certain buffer sizes. A local attacker could create speciallycrafted eCryptfs files to crash the system or gain elevated privileges.Ubuntu 6.06 was not affected. (CVE-2009-2406, CVE-2009-2407)"
+      }
+    ],
+    "CVE-2009-2407": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-807-1",
+        "title": "USN-807-1: Linux kernel vulnerabilities",
+        "body": "Ramon de Carvalho Valle discovered that eCryptfs did not correctlyvalidate certain buffer sizes. A local attacker could create speciallycrafted eCryptfs files to crash the system or gain elevated privileges.Ubuntu 6.06 was not affected. (CVE-2009-2406, CVE-2009-2407)"
+      }
+    ],
+    "CVE-2009-2408": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-810-1",
+        "title": "USN-810-1: NSS vulnerabilities",
+        "body": "Moxie Marlinspike and Dan Kaminsky independently discovered that NSS didnot properly handle certificates with NULL characters in the certificatename. An attacker could exploit this to perform a man in the middle attackto view sensitive information or alter encrypted communications.(CVE-2009-2408)"
+      }
+    ],
+    "CVE-2009-2409": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-810-1",
+        "title": "USN-810-1: NSS vulnerabilities",
+        "body": "Dan Kaminsky discovered NSS would still accept certificates with MD2 hashsignatures. As a result, an attacker could potentially create a malicioustrusted certificate to impersonate another site. (CVE-2009-2409)"
+      }
+    ],
+    "CVE-2009-2411": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-812-1",
+        "title": "USN-812-1: Subversion vulnerability",
+        "body": "Matt Lewis discovered that Subversion did not properly sanitize its inputwhen processing svndiff streams, leading to various integer and heapoverflows. If a user or automated system processed crafted input, a remoteattacker could cause a denial of service or potentially execute arbitrarycode as the user processing the input."
+      }
+    ],
+    "CVE-2009-2412": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-813-2",
+        "title": "USN-813-2: Apache vulnerability",
+        "body": "USN-813-1 fixed vulnerabilities in apr. This update provides thecorresponding updates for apr as provided by Apache on Ubuntu 6.06 LTS.Original advisory details:Matt Lewis discovered that apr did not properly sanitize its input when allocating memory. If an application using apr processed crafted input, a remote attacker could cause a denial of service or potentially execute arbitrary code as the user invoking the application."
+      }
+    ],
+    "CVE-2009-2414": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-815-1",
+        "title": "USN-815-1: libxml2 vulnerabilities",
+        "body": "It was discovered that libxml2 did not correctly handle root XML documentelement DTD definitions. If a user were tricked into processing a speciallycrafted XML document, a remote attacker could cause the application linkedagainst libxml2 to crash, leading to a denial of service. (CVE-2009-2414)"
+      }
+    ],
+    "CVE-2009-2416": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-815-1",
+        "title": "USN-815-1: libxml2 vulnerabilities",
+        "body": "It was discovered that libxml2 did not correctly parse Notation andEnumeration attribute types. If a user were tricked into processing aspecially crafted XML document, a remote attacker could cause theapplication linked against libxml2 to crash, leading to a denial ofservice. (CVE-2009-2416)"
+      }
+    ],
+    "CVE-2009-2417": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1158-1",
+        "title": "USN-1158-1: curl vulnerabilities",
+        "body": "USN 818-1 fixed an issue with curl's handling of SSL certificates withzero bytes in the Common Name. Due to a packaging error, the fix forthis issue was not being applied during the build. This issue onlyaffected Ubuntu 8.04 LTS. We apologize for the error. (CVE-2009-2417)"
+      }
+    ],
+    "CVE-2009-2463": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-915-1",
+        "title": "USN-915-1: Thunderbird vulnerabilities",
+        "body": "Several flaws were discovered in the JavaScript engine of Thunderbird. If auser had JavaScript enabled and were tricked into viewing malicious webcontent, a remote attacker could cause a denial of service or possiblyexecute arbitrary code with the privileges of the user invoking theprogram. (CVE-2009-0689, CVE-2009-2463, CVE-2009-3075)"
+      }
+    ],
+    "CVE-2009-2584": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-852-1",
+        "title": "USN-852-1: Linux kernel vulnerabilities",
+        "body": "Michael Buesch discovered that the SGI GRU driver did not correctly checkthe length when setting options. A local attacker could exploit thisto write to the kernel stack, leading to root privilege escalation ora denial of service. Only affected Ubuntu 8.10 and 9.04. (CVE-2009-2584)"
+      }
+    ],
+    "CVE-2009-2624": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-889-1",
+        "title": "USN-889-1: gzip vulnerabilities",
+        "body": "It was discovered that gzip incorrectly handled certain malformedcompressed files. If a user or automated system were tricked into opening aspecially crafted gzip file, an attacker could cause gzip to crash orpossibly execute arbitrary code with the privileges of the user invokingthe program. (CVE-2009-2624)"
+      }
+    ],
+    "CVE-2009-2625": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-890-1",
+        "title": "USN-890-1: Expat vulnerabilities",
+        "body": "Jukka Taimisto, Tero Rontti and Rauli Kaksonen discovered that Expat didnot properly process malformed XML. If a user or application linked againstExpat were tricked into opening a crafted XML file, an attacker could causea denial of service via application crash. (CVE-2009-2625, CVE-2009-3720)"
+      }
+    ],
+    "CVE-2009-2632": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-838-1",
+        "title": "USN-838-1: Dovecot vulnerabilities",
+        "body": "It was discovered that the Sieve plugin in Dovecot incorrectly handledcertain sieve scripts. An authenticated user could exploit this with acrafted sieve script to cause a denial of service or possibly executearbitrary code. (CVE-2009-2632, CVE-2009-3235)"
+      }
+    ],
+    "CVE-2009-2693": [
+      {
+        "url": "http://ubuntu.com/usn/usn-899-1",
+        "title": "USN-899-1: Tomcat vulnerabilities",
+        "body": "It was discovered that Tomcat did not correctly validate WAR filenames orpaths when deploying. A remote attacker could send a specially crafted WARfile to be deployed and cause arbitrary files and directories to becreated, overwritten, or deleted."
+      }
+    ],
+    "CVE-2009-2695": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-852-1",
+        "title": "USN-852-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that SELinux did not fully implement the mmap_min_addrrestrictions. A local attacker could exploit this to allocate theNULL memory page which could lead to further attacks against kernelNULL-dereference vulnerabilities. Ubuntu 6.06 was not affected.(CVE-2009-2695)"
+      }
+    ],
+    "CVE-2009-2698": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-852-1",
+        "title": "USN-852-1: Linux kernel vulnerabilities",
+        "body": "Cagri Coltekin discovered that the UDP stack did not correctly handlecertain flags. A local user could send specially crafted commands andtraffic to gain root privileges or crash the systeam, leading to a denialof service. Only affected Ubuntu 6.06. (CVE-2009-2698)"
+      }
+    ],
+    "CVE-2009-2700": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-829-1",
+        "title": "USN-829-1: Qt vulnerability",
+        "body": "It was discovered that Qt did not properly handle certificates with NULLcharacters in the Subject Alternative Name field of X.509 certificates. Anattacker could exploit this to perform a man in the middle attack to viewsensitive information or alter encrypted communications. (CVE-2009-2700)"
+      }
+    ],
+    "CVE-2009-2767": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-852-1",
+        "title": "USN-852-1: Linux kernel vulnerabilities",
+        "body": "Hiroshi Shimamoto discovered that monotonic timers did not correctlyvalidate parameters. A local user could make a specially crafted timerrequest to gain root privileges or crash the system, leading to a denialof service. Only affected Ubuntu 9.04. (CVE-2009-2767)"
+      }
+    ],
+    "CVE-2009-2797": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1006-1",
+        "title": "USN-1006-1: WebKit vulnerabilities",
+        "body": "A large number of security issues were discovered in the WebKit browser andJavaScript engines. If a user were tricked into viewing a maliciouswebsite, a remote attacker could exploit a variety of issues related to webbrowser security, including cross-site scripting attacks, denial ofservice attacks, and arbitrary code execution.Please consult the bug listed at the top of this advisory to get the exactlist of CVE numbers fixed for each release."
+      }
+    ],
+    "CVE-2009-2813": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-839-1",
+        "title": "USN-839-1: Samba vulnerabilities",
+        "body": "J. David Hester discovered that Samba incorrectly handled users that lackhome directories when the automated [homes] share is enabled. Anauthenticated user could connect to that share name and gain access to thewhole filesystem. (CVE-2009-2813)"
+      }
+    ],
+    "CVE-2009-2846": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-852-1",
+        "title": "USN-852-1: Linux kernel vulnerabilities",
+        "body": "Michael Buesch discovered that the HPPA ISA EEPROM driver did notcorrectly validate positions. A local user could make a specially craftedrequest to gain root privileges or crash the system, leading to a denialof service. (CVE-2009-2846)"
+      }
+    ],
+    "CVE-2009-2848": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-852-1",
+        "title": "USN-852-1: Linux kernel vulnerabilities",
+        "body": "Jens Rosenboom discovered that the clone method did not correctly clearcertain fields. A local attacker could exploit this to gain privilegesor crash the system, leading to a denial of service. (CVE-2009-2848)"
+      }
+    ],
+    "CVE-2009-2901": [
+      {
+        "url": "http://ubuntu.com/usn/usn-899-1",
+        "title": "USN-899-1: Tomcat vulnerabilities",
+        "body": "It was discovered that Tomcat did not correctly validate WAR filenames orpaths when deploying. A remote attacker could send a specially crafted WARfile to be deployed and cause arbitrary files and directories to becreated, overwritten, or deleted."
+      }
+    ],
+    "CVE-2009-2902": [
+      {
+        "url": "http://ubuntu.com/usn/usn-899-1",
+        "title": "USN-899-1: Tomcat vulnerabilities",
+        "body": "It was discovered that Tomcat did not correctly validate WAR filenames orpaths when deploying. A remote attacker could send a specially crafted WARfile to be deployed and cause arbitrary files and directories to becreated, overwritten, or deleted."
+      }
+    ],
+    "CVE-2009-2905": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-837-1",
+        "title": "USN-837-1: Newt vulnerability",
+        "body": "Miroslav Lichvar discovered that Newt incorrectly handled rendering in atext box. An attacker could exploit this and cause a denial of service orpossibly execute arbitrary code with the privileges of the user invokingthe program."
+      }
+    ],
+    "CVE-2009-2909": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-864-1",
+        "title": "USN-864-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that the AX.25 network subsystem did not correctlycheck integer signedness in certain setsockopt calls. A local attackercould exploit this to crash the system, leading to a denial of service.Ubuntu 9.10 was not affected. (CVE-2009-2909)"
+      }
+    ],
+    "CVE-2009-2910": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-864-1",
+        "title": "USN-864-1: Linux kernel vulnerabilities",
+        "body": "Jan Beulich discovered that the kernel could leak register contents to32-bit processes that were switched to 64-bit mode. A local attackercould run a specially crafted binary to read register values from anearlier process, leading to a loss of privacy. (CVE-2009-2910)"
+      }
+    ],
+    "CVE-2009-2948": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-839-1",
+        "title": "USN-839-1: Samba vulnerabilities",
+        "body": "Ronald Volgers discovered that the mount.cifs utility, when installed as asetuid program, would not verify user permissions before opening acredentials file. A local user could exploit this to use or read thecontents of unauthorized credential files. (CVE-2009-2948)"
+      }
+    ],
+    "CVE-2009-2949": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-903-1",
+        "title": "USN-903-1: OpenOffice.org vulnerabilities",
+        "body": "Sebastian Apelt and Frank Reißner discovered that OpenOffice did notcorrectly import XPM and GIF images. If a user were tricked into openinga specially crafted image, an attacker could execute arbitrary code withuser privileges. (CVE-2009-2949, CVE-2009-2950)"
+      }
+    ],
+    "CVE-2009-2950": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-903-1",
+        "title": "USN-903-1: OpenOffice.org vulnerabilities",
+        "body": "Sebastian Apelt and Frank Reißner discovered that OpenOffice did notcorrectly import XPM and GIF images. If a user were tricked into openinga specially crafted image, an attacker could execute arbitrary code withuser privileges. (CVE-2009-2949, CVE-2009-2950)"
+      }
+    ],
+    "CVE-2009-2957": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-827-1",
+        "title": "USN-827-1: Dnsmasq vulnerabilities",
+        "body": "IvAin Arce, Pablo HernAin Jorge, Alejandro Pablo Rodriguez, MartA­n Coco,Alberto SoliAto Testa and Pablo Annetta discovered that Dnsmasq did notproperly validate its input when processing TFTP requests for files withlong names. A remote attacker could cause a denial of service or executearbitrary code with user privileges. Dnsmasq runs as the 'dnsmasq' user bydefault on Ubuntu. (CVE-2009-2957)"
+      }
+    ],
+    "CVE-2009-2958": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-827-1",
+        "title": "USN-827-1: Dnsmasq vulnerabilities",
+        "body": "Steve Grubb discovered that Dnsmasq could be made to dereference a NULLpointer when processing certain TFTP requests. A remote attacker couldcause a denial of service by sending a crafted TFTP request.(CVE-2009-2958)"
+      }
+    ],
+    "CVE-2009-3001": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-852-1",
+        "title": "USN-852-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that the LLC, AppleTalk, IR, EConet, Netrom, andROSE network stacks did not correctly initialize their data structures.A local attacker could make specially crafted calls to read kernel memory,leading to a loss of privacy. (CVE-2009-3001, CVE-2009-3002)"
+      }
+    ],
+    "CVE-2009-3002": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-852-1",
+        "title": "USN-852-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that the LLC, AppleTalk, IR, EConet, Netrom, andROSE network stacks did not correctly initialize their data structures.A local attacker could make specially crafted calls to read kernel memory,leading to a loss of privacy. (CVE-2009-3001, CVE-2009-3002)"
+      }
+    ],
+    "CVE-2009-3077": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-915-1",
+        "title": "USN-915-1: Thunderbird vulnerabilities",
+        "body": "It was discovered that Thunderbird did not properly manage memory whenusing XUL tree elements. If a user were tricked into viewing maliciouscontent, a remote attacker could cause a denial of service or possiblyexecute arbitrary code with the privileges of the user invoking theprogram. (CVE-2009-3077)"
+      }
+    ],
+    "CVE-2009-3230": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-834-1",
+        "title": "USN-834-1: PostgreSQL vulnerabilities",
+        "body": "Due to an incomplete fix for CVE-2007-6600, RESET ROLE and RESET SESSIONAUTHORIZATION operations were allowed inside security-definer functions. Aremote authenticated attacker could exploit this to escalate privilegeswithin PostgreSQL. (CVE-2009-3230)"
+      }
+    ],
+    "CVE-2009-3231": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-834-1",
+        "title": "USN-834-1: PostgreSQL vulnerabilities",
+        "body": "It was discovered that PostgreSQL did not properly perform LDAPauthentication under certain circumstances. When configured to use LDAPwith anonymous binds, a remote attacker could bypass authentication bysupplying an empty password. This issue did not affect Ubuntu 6.06 LTS.(CVE-2009-3231)"
+      }
+    ],
+    "CVE-2009-3235": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-838-1",
+        "title": "USN-838-1: Dovecot vulnerabilities",
+        "body": "It was discovered that the Sieve plugin in Dovecot incorrectly handledcertain sieve scripts. An authenticated user could exploit this with acrafted sieve script to cause a denial of service or possibly executearbitrary code. (CVE-2009-2632, CVE-2009-3235)"
+      }
+    ],
+    "CVE-2009-3238": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-852-1",
+        "title": "USN-852-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that the randomization used for Address Space LayoutRandomization was predictable within a small window of time. A localattacker could exploit this to leverage further attacks that requireknowledge of userspace memory layouts. (CVE-2009-3238)"
+      }
+    ],
+    "CVE-2009-3245": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1003-1",
+        "title": "USN-1003-1: OpenSSL vulnerabilities",
+        "body": "It was discovered that OpenSSL incorrectly handled return codes from thebn_wexpand function calls. A remote attacker could trigger this flaw inservices that used SSL to cause a denial of service or possibly executearbitrary code with application privileges. This issue only affected Ubuntu6.06 LTS, 8.04 LTS, 9.04 and 9.10. (CVE-2009-3245)"
+      }
+    ],
+    "CVE-2009-3286": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-852-1",
+        "title": "USN-852-1: Linux kernel vulnerabilities",
+        "body": "Eric Paris discovered that NFSv4 did not correctly handle file creationfailures. An attacker with write access to an NFSv4 share could exploitthis to create files with arbitrary mode bits, leading to privilegeescalation or a loss of privacy. (CVE-2009-3286)"
+      }
+    ],
+    "CVE-2009-3288": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-852-1",
+        "title": "USN-852-1: Linux kernel vulnerabilities",
+        "body": "Bob Tracy discovered that the SCSI generic driver did not correctly usethe right index for array access. A local attacker with write accessto a CDR could exploit this to crash the system, leading to a denialof service. Only Ubuntu 9.04 was affected. (CVE-2009-3288)"
+      }
+    ],
+    "CVE-2009-3290": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-852-1",
+        "title": "USN-852-1: Linux kernel vulnerabilities",
+        "body": "Jan Kiszka discovered that KVM did not correctly validate certainhypercalls. A local unprivileged attacker in a virtual guest could exploitthis to crash the guest kernel, leading to a denial of service. Ubuntu6.06 was not affected. (CVE-2009-3290)"
+      }
+    ],
+    "CVE-2009-3301": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-903-1",
+        "title": "USN-903-1: OpenOffice.org vulnerabilities",
+        "body": "Nicolas Joly discovered that OpenOffice did not correctly handlecertain Word documents. If a user were tricked into opening a speciallycrafted document, an attacker could execute arbitrary code with userprivileges. (CVE-2009-3301, CVE-2009-3302)"
+      }
+    ],
+    "CVE-2009-3302": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-903-1",
+        "title": "USN-903-1: OpenOffice.org vulnerabilities",
+        "body": "Nicolas Joly discovered that OpenOffice did not correctly handlecertain Word documents. If a user were tricked into opening a speciallycrafted document, an attacker could execute arbitrary code with userprivileges. (CVE-2009-3301, CVE-2009-3302)"
+      }
+    ],
+    "CVE-2009-3388": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-874-1",
+        "title": "USN-874-1: Firefox 3.5 and Xulrunner 1.9.1 vulnerabilities",
+        "body": "David Keeler, Bob Clary, and Dan Kaminsky discovered several flaws in thirdparty media libraries. If a user were tricked into opening a crafted mediafile, a remote attacker could cause a denial of service or possibly executearbitrary code with the privileges of the user invoking the program.(CVE-2009-3388, CVE-2009-3389)"
+      }
+    ],
+    "CVE-2009-3389": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-874-1",
+        "title": "USN-874-1: Firefox 3.5 and Xulrunner 1.9.1 vulnerabilities",
+        "body": "David Keeler, Bob Clary, and Dan Kaminsky discovered several flaws in thirdparty media libraries. If a user were tricked into opening a crafted mediafile, a remote attacker could cause a denial of service or possibly executearbitrary code with the privileges of the user invoking the program.(CVE-2009-3388, CVE-2009-3389)"
+      }
+    ],
+    "CVE-2009-3553": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-906-1",
+        "title": "USN-906-1: CUPS vulnerabilities",
+        "body": "It was discovered that the CUPS scheduler did not properly handle certainnetwork operations. A remote attacker could exploit this flaw and cause theCUPS server to crash, resulting in a denial of service. This issue onlyaffected Ubuntu 8.04 LTS, 8.10, 9.04 and 9.10. (CVE-2009-3553,CVE-2010-0302)"
+      }
+    ],
+    "CVE-2009-3560": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-890-1",
+        "title": "USN-890-1: Expat vulnerabilities",
+        "body": "It was discovered that Expat did not properly process malformed UTF-8sequences. If a user or application linked against Expat were tricked intoopening a crafted XML file, an attacker could cause a denial of service viaapplication crash. (CVE-2009-3560)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-890-6",
+        "title": "USN-890-6: CMake vulnerabilities",
+        "body": "It was discovered that Expat did not properly process malformed UTF-8 sequences. If a user or application linked against Expat were tricked into opening a crafted XML file, an attacker could cause a denial of service via application crash. (CVE-2009-3560)"
+      }
+    ],
+    "CVE-2009-3603": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-850-1",
+        "title": "USN-850-1: poppler vulnerabilities",
+        "body": "It was discovered that poppler contained multiple security issues whenparsing malformed PDF documents. If a user or automated system were trickedinto opening a crafted PDF file, an attacker could cause a denial ofservice or execute arbitrary code with privileges of the user invoking theprogram."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-850-3",
+        "title": "USN-850-3: poppler vulnerabilities",
+        "body": "USN-850-1 fixed vulnerabilities in poppler. This update provides thecorresponding updates for Ubuntu 9.10.Original advisory details:It was discovered that poppler contained multiple security issues when parsing malformed PDF documents. If a user or automated system were tricked into opening a crafted PDF file, an attacker could cause a denial of service or execute arbitrary code with privileges of the user invoking the program."
+      }
+    ],
+    "CVE-2009-3604": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-850-1",
+        "title": "USN-850-1: poppler vulnerabilities",
+        "body": "It was discovered that poppler contained multiple security issues whenparsing malformed PDF documents. If a user or automated system were trickedinto opening a crafted PDF file, an attacker could cause a denial ofservice or execute arbitrary code with privileges of the user invoking theprogram."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-850-3",
+        "title": "USN-850-3: poppler vulnerabilities",
+        "body": "USN-850-1 fixed vulnerabilities in poppler. This update provides thecorresponding updates for Ubuntu 9.10.Original advisory details:It was discovered that poppler contained multiple security issues when parsing malformed PDF documents. If a user or automated system were tricked into opening a crafted PDF file, an attacker could cause a denial of service or execute arbitrary code with privileges of the user invoking the program."
+      }
+    ],
+    "CVE-2009-3605": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-850-1",
+        "title": "USN-850-1: poppler vulnerabilities",
+        "body": "It was discovered that poppler contained multiple security issues whenparsing malformed PDF documents. If a user or automated system were trickedinto opening a crafted PDF file, an attacker could cause a denial ofservice or execute arbitrary code with privileges of the user invoking theprogram."
+      }
+    ],
+    "CVE-2009-3607": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-850-1",
+        "title": "USN-850-1: poppler vulnerabilities",
+        "body": "It was discovered that poppler contained multiple security issues whenparsing malformed PDF documents. If a user or automated system were trickedinto opening a crafted PDF file, an attacker could cause a denial ofservice or execute arbitrary code with privileges of the user invoking theprogram."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-850-3",
+        "title": "USN-850-3: poppler vulnerabilities",
+        "body": "USN-850-1 fixed vulnerabilities in poppler. This update provides thecorresponding updates for Ubuntu 9.10.Original advisory details:It was discovered that poppler contained multiple security issues when parsing malformed PDF documents. If a user or automated system were tricked into opening a crafted PDF file, an attacker could cause a denial of service or execute arbitrary code with privileges of the user invoking the program."
+      }
+    ],
+    "CVE-2009-3608": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-850-1",
+        "title": "USN-850-1: poppler vulnerabilities",
+        "body": "It was discovered that poppler contained multiple security issues whenparsing malformed PDF documents. If a user or automated system were trickedinto opening a crafted PDF file, an attacker could cause a denial ofservice or execute arbitrary code with privileges of the user invoking theprogram."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-850-3",
+        "title": "USN-850-3: poppler vulnerabilities",
+        "body": "USN-850-1 fixed vulnerabilities in poppler. This update provides thecorresponding updates for Ubuntu 9.10.Original advisory details:It was discovered that poppler contained multiple security issues when parsing malformed PDF documents. If a user or automated system were tricked into opening a crafted PDF file, an attacker could cause a denial of service or execute arbitrary code with privileges of the user invoking the program."
+      }
+    ],
+    "CVE-2009-3609": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-850-1",
+        "title": "USN-850-1: poppler vulnerabilities",
+        "body": "It was discovered that poppler contained multiple security issues whenparsing malformed PDF documents. If a user or automated system were trickedinto opening a crafted PDF file, an attacker could cause a denial ofservice or execute arbitrary code with privileges of the user invoking theprogram."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-850-3",
+        "title": "USN-850-3: poppler vulnerabilities",
+        "body": "USN-850-1 fixed vulnerabilities in poppler. This update provides thecorresponding updates for Ubuntu 9.10.Original advisory details:It was discovered that poppler contained multiple security issues when parsing malformed PDF documents. If a user or automated system were tricked into opening a crafted PDF file, an attacker could cause a denial of service or execute arbitrary code with privileges of the user invoking the program."
+      }
+    ],
+    "CVE-2009-3612": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-864-1",
+        "title": "USN-864-1: Linux kernel vulnerabilities",
+        "body": "Eric Dumazet and Jiri Pirko discovered that the TC and CLS subsystemswould leak kernel memory via uninitialized structure members. A localattacker could exploit this to read several bytes of kernel memory,leading to a loss of privacy. (CVE-2009-3228, CVE-2009-3612)"
+      }
+    ],
+    "CVE-2009-3613": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-864-1",
+        "title": "USN-864-1: Linux kernel vulnerabilities",
+        "body": "Dave Jones and Francois Romieu discovered that the r8169 network drivercould be made to leak kernel memory. A remote attacker could send a largenumber of jumbo frames until the system memory was exhausted, leadingto a denial of service. Ubuntu 9.10 was not affected. (CVE-2009-3613)."
+      }
+    ],
+    "CVE-2009-3620": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-864-1",
+        "title": "USN-864-1: Linux kernel vulnerabilities",
+        "body": "Ben Hutchings discovered that the ATI Rage 128 video driver did notcorrectly validate initialization states. A local attacker couldmake specially crafted ioctl calls to crash the system or gain rootprivileges. (CVE-2009-3620)"
+      }
+    ],
+    "CVE-2009-3623": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-864-1",
+        "title": "USN-864-1: Linux kernel vulnerabilities",
+        "body": "J. Bruce Fields discovered that NFSv4 did not correctly use the credentialcache. A local attacker using a mount with AUTH_NULL authenticationcould exploit this to crash the system or gain root privileges. OnlyUbuntu 9.10 was affected. (CVE-2009-3623)"
+      }
+    ],
+    "CVE-2009-3624": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-864-1",
+        "title": "USN-864-1: Linux kernel vulnerabilities",
+        "body": "Alexander Zangerl discovered that the kernel keyring did not correctlyreference count. A local attacker could issue a series of speciallycrafted keyring calls to crash the system or gain root privileges.Only Ubuntu 9.10 was affected. (CVE-2009-3624)"
+      }
+    ],
+    "CVE-2009-3638": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-864-1",
+        "title": "USN-864-1: Linux kernel vulnerabilities",
+        "body": "David Wagner discovered that KVM did not correctly bounds-check CPUIDentries. A local attacker could exploit this to crash the systemor possibly gain elevated privileges. Ubuntu 6.06 and 9.10 were notaffected. (CVE-2009-3638)"
+      }
+    ],
+    "CVE-2009-3722": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-864-1",
+        "title": "USN-864-1: Linux kernel vulnerabilities",
+        "body": "Avi Kivity discovered that KVM did not correctly check privileges whenaccessing debug registers. A local attacker could exploit this tocrash a host system from within a guest system, leading to a denial ofservice. Ubuntu 6.06 and 9.10 were not affected. (CVE-2009-3722)"
+      }
+    ],
+    "CVE-2009-3725": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-864-1",
+        "title": "USN-864-1: Linux kernel vulnerabilities",
+        "body": "Philip Reisner discovered that the connector layer for uvesafb, pohmelfs,dst, and dm did not correctly check capabilties. A local attacker couldexploit this to crash the system or gain elevated privileges. Ubuntu6.06 was not affected. (CVE-2009-3725)"
+      }
+    ],
+    "CVE-2009-3726": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-864-1",
+        "title": "USN-864-1: Linux kernel vulnerabilities",
+        "body": "Trond Myklebust discovered that NFSv4 clients did not robustlyverify attributes. A malicious remote NFSv4 server could exploitthis to crash a client or gain root privileges. Ubuntu 9.10 was notaffected. (CVE-2009-3726)"
+      }
+    ],
+    "CVE-2009-3888": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-864-1",
+        "title": "USN-864-1: Linux kernel vulnerabilities",
+        "body": "Robin Getz discovered that NOMMU systems did not correctly validateNULL pointers in do_mmap_pgoff calls. A local attacker could attempt toallocate large amounts of memory to crash the system, leading to a denialof service. Only Ubuntu 6.06 and 9.10 were affected. (CVE-2009-3888)"
+      }
+    ],
+    "CVE-2009-3889": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-864-1",
+        "title": "USN-864-1: Linux kernel vulnerabilities",
+        "body": "Joseph Malicki discovered that the MegaRAID SAS driver hadworld-writable option files. A local attacker could exploit theseto disrupt the behavior of the controller, leading to a denial ofservice. (CVE-2009-3889, CVE-2009-3939)"
+      }
+    ],
+    "CVE-2009-3939": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-864-1",
+        "title": "USN-864-1: Linux kernel vulnerabilities",
+        "body": "Joseph Malicki discovered that the MegaRAID SAS driver hadworld-writable option files. A local attacker could exploit theseto disrupt the behavior of the controller, leading to a denial ofservice. (CVE-2009-3889, CVE-2009-3939)"
+      }
+    ],
+    "CVE-2009-3980": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-874-1",
+        "title": "USN-874-1: Firefox 3.5 and Xulrunner 1.9.1 vulnerabilities",
+        "body": "Jesse Ruderman, Josh Soref, Martijn Wargers, Jose Angel, Olli Pettay, andDavid James discovered several flaws in the browser and JavaScript enginesof Firefox. If a user were tricked into viewing a malicious website, aremote attacker could cause a denial of service or possibly executearbitrary code with the privileges of the user invoking the program.(CVE-2009-3979, CVE-2009-3980, CVE-2009-3982, CVE-2009-3986)"
+      }
+    ],
+    "CVE-2009-3986": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-873-1",
+        "title": "USN-873-1: Firefox 3.0 and Xulrunner 1.9 vulnerabilities",
+        "body": "Jesse Ruderman, Josh Soref, Martijn Wargers, Jose Angel, Olli Pettay, andDavid James discovered several flaws in the browser and JavaScript enginesof Firefox. If a user were tricked into viewing a malicious website, aremote attacker could cause a denial of service or possibly executearbitrary code with the privileges of the user invoking the program.(CVE-2009-3979, CVE-2009-3981, CVE-2009-3986)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-874-1",
+        "title": "USN-874-1: Firefox 3.5 and Xulrunner 1.9.1 vulnerabilities",
+        "body": "Jesse Ruderman, Josh Soref, Martijn Wargers, Jose Angel, Olli Pettay, andDavid James discovered several flaws in the browser and JavaScript enginesof Firefox. If a user were tricked into viewing a malicious website, aremote attacker could cause a denial of service or possibly executearbitrary code with the privileges of the user invoking the program.(CVE-2009-3979, CVE-2009-3980, CVE-2009-3982, CVE-2009-3986)"
+      }
+    ],
+    "CVE-2009-3988": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-896-1",
+        "title": "USN-896-1: Firefox 3.5 and Xulrunner 1.9.1 vulnerabilities",
+        "body": "Hidetake Jo discovered that the showModalDialog in Firefox did not alwayshonor the same-origin policy. An attacker could exploit this to rununtrusted JavaScript from other domains. (CVE-2009-3988)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-895-1",
+        "title": "USN-895-1: Firefox 3.0 and Xulrunner 1.9 vulnerabilities",
+        "body": "Hidetake Jo discovered that the showModalDialog in Firefox did not alwayshonor the same-origin policy. An attacker could exploit this to rununtrusted JavaScript from other domains. (CVE-2009-3988)"
+      }
+    ],
+    "CVE-2009-4005": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-864-1",
+        "title": "USN-864-1: Linux kernel vulnerabilities",
+        "body": "Roel Kluin discovered that the Hisax ISDN driver did not correctlycheck the size of packets. A remote attacker could send speciallycrafted packets to cause a system crash, leading to a denial ofservice. (CVE-2009-4005)"
+      }
+    ],
+    "CVE-2009-4012": [
+      {
+        "url": "http://ubuntu.com/usn/usn-887-1",
+        "title": "USN-887-1: LibThai vulnerability",
+        "body": "Tim Starling discovered that LibThai did not correctly handle long strings.A remote attacker could use specially-formed strings to execute arbitrarycode with the user's privileges."
+      }
+    ],
+    "CVE-2009-4013": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-891-1",
+        "title": "USN-891-1: lintian vulnerabilities",
+        "body": "Raphael Geissert discovered that lintian did not correctly validatecertain filenames when processing input. If a user or an automated systemwere tricked into running lintian on a specially crafted set of files,a remote attacker could execute arbitrary code with user privileges."
+      }
+    ],
+    "CVE-2009-4015": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-891-1",
+        "title": "USN-891-1: lintian vulnerabilities",
+        "body": "Raphael Geissert discovered that lintian did not correctly validatecertain filenames when processing input. If a user or an automated systemwere tricked into running lintian on a specially crafted set of files,a remote attacker could execute arbitrary code with user privileges."
+      }
+    ],
+    "CVE-2009-4131": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-869-1",
+        "title": "USN-869-1: Linux kernel vulnerabilities",
+        "body": "Akira Fujita discovered that the Ext4 \"move extents\" ioctl did notcorrectly check permissions. A local attacker could exploit this tooverwrite arbitrary files on the system, leading to root privilegeescalation. (CVE-2009-4131)"
+      }
+    ],
+    "CVE-2009-4212": [
+      {
+        "url": "http://ubuntu.com/usn/usn-881-1",
+        "title": "USN-881-1: Kerberos vulnerability",
+        "body": "It was discovered that Kerberos did not correctly handle invalid AESblocks. An unauthenticated remote attacker could send specially craftedtraffic that would crash the KDC service, leading to a denial of service,or possibly execute arbitrary code with root privileges."
+      }
+    ],
+    "CVE-2009-4270": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-961-1",
+        "title": "USN-961-1: Ghostscript vulnerabilities",
+        "body": "David Srbecky discovered that Ghostscript incorrectly handled debuglogging. If a user or automated system were tricked into opening a craftedPDF file, an attacker could cause a denial of service or execute arbitrarycode with privileges of the user invoking the program. This issue onlyaffected Ubuntu 9.04 and Ubuntu 9.10. The default compiler options foraffected releases should reduce the vulnerability to a denial of service.(CVE-2009-4270)"
+      }
+    ],
+    "CVE-2009-4355": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-884-1",
+        "title": "USN-884-1: OpenSSL vulnerability",
+        "body": "It was discovered that OpenSSL did not correctly free unused memory incertain situations. A remote attacker could trigger this flaw in servicesthat used SSL, causing the service to use all available system memory,leading to a denial of service."
+      }
+    ],
+    "CVE-2009-4484": [
+      {
+        "url": "http://ubuntu.com/usn/usn-897-1",
+        "title": "USN-897-1: MySQL vulnerabilities",
+        "body": "It was discovered that MySQL contained a buffer overflow when parsingssl certificates. A remote attacker could send crafted requests and cause adenial of service or possibly execute arbitrary code. This issue did notaffect Ubuntu 6.06 LTS and the default compiler options for affectedreleases should reduce the vulnerability to a denial of service. In thedefault installation, attackers would also be isolated by the AppArmorMySQL profile. (CVE-2009-4484)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1397-1",
+        "title": "USN-1397-1: MySQL vulnerabilities",
+        "body": "Multiple security issues were discovered in MySQL and this update includesnew upstream MySQL versions to fix these issues.MySQL has been updated to 5.1.61 in Ubuntu 10.04 LTS, Ubuntu 10.10,Ubuntu 11.04 and Ubuntu 11.10. Ubuntu 8.04 LTS has been updated toMySQL 5.0.95.In addition to security fixes, the updated packages contain bug fixes, newfeatures, and possibly incompatible changes.Please see the following for more information:http://dev.mysql.com/doc/refman/5.1/en/news-5-1-x.htmlhttp://dev.mysql.com/doc/refman/5.0/en/news-5-0-x.htmlhttp://www.oracle.com/technetwork/topics/security/cpujan2012-366304.html"
+      }
+    ],
+    "CVE-2009-4632": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-931-1",
+        "title": "USN-931-1: FFmpeg vulnerabilities",
+        "body": "It was discovered that FFmpeg contained multiple security issues whenhandling certain multimedia files. If a user were tricked into opening acrafted multimedia file, an attacker could cause a denial of service viaapplication crash, or possibly execute arbitrary code with the privilegesof the user invoking the program."
+      }
+    ],
+    "CVE-2009-4633": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-931-1",
+        "title": "USN-931-1: FFmpeg vulnerabilities",
+        "body": "It was discovered that FFmpeg contained multiple security issues whenhandling certain multimedia files. If a user were tricked into opening acrafted multimedia file, an attacker could cause a denial of service viaapplication crash, or possibly execute arbitrary code with the privilegesof the user invoking the program."
+      }
+    ],
+    "CVE-2009-4634": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-931-1",
+        "title": "USN-931-1: FFmpeg vulnerabilities",
+        "body": "It was discovered that FFmpeg contained multiple security issues whenhandling certain multimedia files. If a user were tricked into opening acrafted multimedia file, an attacker could cause a denial of service viaapplication crash, or possibly execute arbitrary code with the privilegesof the user invoking the program."
+      }
+    ],
+    "CVE-2009-4635": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-931-1",
+        "title": "USN-931-1: FFmpeg vulnerabilities",
+        "body": "It was discovered that FFmpeg contained multiple security issues whenhandling certain multimedia files. If a user were tricked into opening acrafted multimedia file, an attacker could cause a denial of service viaapplication crash, or possibly execute arbitrary code with the privilegesof the user invoking the program."
+      }
+    ],
+    "CVE-2009-4637": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-931-1",
+        "title": "USN-931-1: FFmpeg vulnerabilities",
+        "body": "It was discovered that FFmpeg contained multiple security issues whenhandling certain multimedia files. If a user were tricked into opening acrafted multimedia file, an attacker could cause a denial of service viaapplication crash, or possibly execute arbitrary code with the privilegesof the user invoking the program."
+      }
+    ],
+    "CVE-2009-4639": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-931-1",
+        "title": "USN-931-1: FFmpeg vulnerabilities",
+        "body": "It was discovered that FFmpeg contained multiple security issues whenhandling certain multimedia files. If a user were tricked into opening acrafted multimedia file, an attacker could cause a denial of service viaapplication crash, or possibly execute arbitrary code with the privilegesof the user invoking the program."
+      }
+    ],
+    "CVE-2009-4640": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-931-1",
+        "title": "USN-931-1: FFmpeg vulnerabilities",
+        "body": "It was discovered that FFmpeg contained multiple security issues whenhandling certain multimedia files. If a user were tricked into opening acrafted multimedia file, an attacker could cause a denial of service viaapplication crash, or possibly execute arbitrary code with the privilegesof the user invoking the program."
+      }
+    ],
+    "CVE-2009-4762": [
+      {
+        "url": "http://ubuntu.com/usn/usn-941-1",
+        "title": "USN-941-1: MoinMoin vulnerability",
+        "body": "It was discovered that MoinMoin incorrectly handled hierarchical accesscontrol lists. Users could bypass intended access controls under certaincircumstances."
+      }
+    ],
+    "CVE-2009-4880": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-944-1",
+        "title": "USN-944-1: GNU C Library vulnerabilities",
+        "body": "Maksymilian Arciemowicz discovered that the GNU C library did notcorrectly handle integer overflows in the strfmon function. If a useror automated system were tricked into processing a specially craftedformat string, a remote attacker could crash applications, leading toa denial of service. (Ubuntu 10.04 was not affected.) (CVE-2008-1391)Jeff Layton and Dan Rosenberg discovered that the GNU C library did notcorrectly handle newlines in the mntent family of functions. If a localattacker were able to inject newlines into a mount entry through othervulnerable mount helpers, they could disrupt the system or possibly gainroot privileges. (CVE-2010-0296)Dan Rosenberg discovered that the GNU C library did not correctly validatecertain ELF program headers. If a user or automated system were trickedinto verifying a specially crafted ELF program, a remote attacker couldexecute arbitrary code with user privileges. (CVE-2010-0830)"
+      }
+    ],
+    "CVE-2009-4897": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-961-1",
+        "title": "USN-961-1: Ghostscript vulnerabilities",
+        "body": "It was discovered that Ghostscript incorrectly handled certain malformedfiles. If a user or automated system were tricked into opening a craftedPostscript or PDF file, an attacker could cause a denial of service orexecute arbitrary code with privileges of the user invoking the program.This issue only affected Ubuntu 8.04 LTS and Ubuntu 9.04. (CVE-2009-4897)"
+      }
+    ],
+    "CVE-2009-5016": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1042-1",
+        "title": "USN-1042-1: PHP vulnerabilities",
+        "body": "It was discovered that an integer overflow in the XML UTF-8 decodingcode could allow an attacker to bypass cross-site scripting (XSS)protections. This issue only affected Ubuntu 6.06 LTS, Ubuntu 8.04 LTS,and Ubuntu 9.10. (CVE-2009-5016)"
+      }
+    ],
+    "CVE-2009-5022": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1120-1",
+        "title": "USN-1120-1: tiff vulnerability",
+        "body": "It was discovered that the TIFF library incorrectly handled certain JPEGdata. If a user or automated system were tricked into opening a speciallycrafted TIFF image, a remote attacker could execute arbitrary code withuser privileges, or crash the application, leading to a denial of service."
+      }
+    ]
+  }
 }

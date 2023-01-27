@@ -1,6 +1,124 @@
 {
   "year": 2018,
-  "total": 0,
+  "total": 13,
   "reference": "kb.cert.org",
-  "reports": {}
+  "reports": {
+    "CVE-2018-10229": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/283803",
+        "title": "Integrated GPUs may allow side-channel and rowhammer attacks using WebGL (\"Glitch\")",
+        "overview": "Some platforms with integrated GPUs, such as smartphones, may allow both side-channel and rowhammer attacks via WebGL, which may allow a remote attacker to compromise the browser on an affected platform. An attack technique that leverages these vulnerabilities is called \"GLitch.\"",
+        "description": "An academic paper describes an attack called \"GLitch,\" which leverages two different techniques to achieve a compromise of a web browser using WebGL. The attack is only feasible on platforms where the CPU and GPU share the same memory, such as a smartphone or similar device. The two components of the attack are:A Side-channel attack to determine physical memory layoutA Rowhammer attack to flip the value of one or more bits in physical memoryThe side-channel attackThe precise timing capabilities provided by WebGL can allow an attacker to determine the difference between cached DRAM accesses and uncached DRAM accesses. This can allow an attacker to determine contiguous areas of physical DRAM memory. Knowledge of contiguous memory regions are used in a number of microarchitectural attacks, such as rowhammer.The rowhammer attackThe rowhammer attack targets the design of DRAM memory. On a system where the DRAM is insufficiently refreshed, targeted operations on a row of DRAM memory may be able to influence the memory values on neighboring rows. Protections against the rowhammer attack include the use of ECC DRAM, as well as increased refresh rates. The LPDDR4 mobile memory standard also has optional hardware support for target row refresh, which can mitigate the rowhammer attack.Combining the attacks with WebGLThe GLitch attack leverages both a side-channel attack to determine contiguous memory, as well as rowhammer. With the knowledge of contiguous memory, an attacker may be able to determine relative physical addresses. This knowledge of relative physical addresses can let the attacker know what memory locations to target with the rowhammer attack. The use of WebGL with precise timers is important in the GLitch attack for these reasons:Precise WebGL timers allow a side-channel to leak memory addresses.GPU capabilities exposed via WebGL allow for fast double-sided DRAM access, enabling the rowhammer attack.The impact of combining both the side-channel attack and rowhammer attack has been demonstrated to bypass the Firefox sandbox on the Android platform.GLitch success rates in testingIt is important to realize that the GLitch attack has only successfully been demonstrated on the Nexus 5 phone, which was released in 2013. The Nexus 5 phone received its last software security update in October, 2015, and is therefore an already unsafe device to use. Several other phones released in 2013 were tested, but were not able to successfully be attacked with the GLitch attack. Success rates on phones newer than 2013 models were not provided. Non-Android devices were not tested as well.",
+        "impact": "Upon visiting a malicious or compromised website with a vulnerable device, an attacker may be able to bypass security features provided by the web browser."
+      }
+    ],
+    "CVE-2018-16986": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/317277",
+        "title": "Texas Instruments CC2640 and CC2650 microcontrollers vulnerable to heap overflow and insecure update",
+        "overview": "Texas Instruments CC2640 and CC2650 microcontrollers are vulnerable to a heap overflow and may allow unauthenticated firmware installation.",
+        "description": "CWE-119: Improper Restriction of Operations within the Bounds of a Memory BufferCVE-2018-16986 - also known as BLEEDINGBITThe following Texas Instrument chips are affected:CC2640 (non-R2) with BLE-STACK version 2.2.1 or an earlier versionCC2650 with BLE-STACK version 2.2.1 or an earlier versionCC2640R2F with SimpleLink CC2640R2 SDK version 1.00.00.22 (BLE-STACK 3.0.0)CC1350 with SimpleLink CC13x0 SDK version 2.20.00.38 (BLE-STACK 2.3.3) or an earlier versionThe above Texas Instruments controllers contain BLE-Stacks with a memory corruption vulnerability resulting from the mishandling of BLE advertising packets. The function llGetAdvChanPDU that is part of the embedded ROM image in both chips handles the incoming advertising packets and parses their headers. It copies the contents to a separate buffer provided by the calling function. The incorrect length of the packet is taken and ends up being parsed as larger packets than originally intended. If the incoming data is over a certain length, the function will call the halAssertHandler function, as defined by the application running on top of the stack, and not stop execution. Since the flow of execution does not stop, it will copy the overly large packet to the buffer and cause a heap overflow.CVE-2018-7080 - also known as BLEEDINGBITThe following Texas Instruments devices are affected if the Over the Air firmware Download (OAD) feature is enabled and not sufficiently secured:CC2642RCC2640R2CC2640CC2650CC2540CC2541Certain Aruba access points are affected.The OAD feature allows for remote firmware updates of some BLE chips. An attacker could connect to a BLE chip on a vulnerable access point (either without authentication or by obtaining the password through other means depending on the implementation) and upload their own malicious firmware, which could give them complete control over the access point.",
+        "impact": "Using a specially crafted set of packets, an attacker can both control the data of the overflow, and the length of it, which may lead to remote code execution on the targeted BLE chip. An attacker needs to be within physical proximity to the device while it is in scanning mode to trigger vulnerable code. This memory corruption can lead to code execution on the main CPU of the device, which could have the potential to affect other devices across a network if the origin is a networked device. An attacker could also exploit this vulnerability to rewrite the operating system of a device and gain full control over it.Given the nature of embedded devices, it is possible that a broader set of devices are impacted than what is listed in this publication. If you believe you are affected, please email us at cert@cert.org."
+      }
+    ],
+    "CVE-2018-5378": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/940439",
+        "title": "Quagga bgpd is affected by multiple vulnerabilities",
+        "overview": "The Quagga BGP daemon bgpd prior to version 1.2.3 may be vulnerable to multiple issues that may result in denial of service, information disclosure, or remote code execution.",
+        "description": "CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer - CVE-2018-5378 (Quagga-2018-0543)The Quagga BGP daemon, bgpd, does not properly bounds check the data sent with a NOTIFY to a peer, if an attribute length is invalid. Arbitrary data from the bgpd process may be sent over the network to a peer and/or it may crash.CWE-415: Double Free - CVE-2018-5379 (Quagga-2018-1114)The Quagga BGP daemon, bgpd, can double-free memory when processing certain forms of UPDATE message, containing cluster-list and/or unknown attributes.CWE-125: Out-of-bounds Read - CVE-2018-5380 (Quagga-2018-1550)The Quagga BGP daemon, bgpd, can overrun internal BGP code-to-string conversion tables used for debug by 1 pointer value, based on input.CWE-228: Improper Handling of Syntactically Invalid Structure - CVE-2018-5381 (Quagga-2018-1975)The Quagga BGP daemon, bgpd, had a bug in its parsing of \"Capabilities\" in BGP OPEN messages, in the bgp_packet.c:bgp_capability_msg_parse function. The parser can enter an infinite loop on invalid capabilities if a Multi-Protocol capability does not have a recognized AFI/SAFI.For more information, please see Quagga's version 1.2.3 release announcement.The CVSS score below is based on CVE-2018-5379.",
+        "impact": "An unauthenticated, remote attacker may be able to use crafted input to result in a crash of bgpd or even allow a remote attacker to gain control of an affected bgpd process."
+      }
+    ],
+    "CVE-2018-5380": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/940439",
+        "title": "Quagga bgpd is affected by multiple vulnerabilities",
+        "overview": "The Quagga BGP daemon bgpd prior to version 1.2.3 may be vulnerable to multiple issues that may result in denial of service, information disclosure, or remote code execution.",
+        "description": "CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer - CVE-2018-5378 (Quagga-2018-0543)The Quagga BGP daemon, bgpd, does not properly bounds check the data sent with a NOTIFY to a peer, if an attribute length is invalid. Arbitrary data from the bgpd process may be sent over the network to a peer and/or it may crash.CWE-415: Double Free - CVE-2018-5379 (Quagga-2018-1114)The Quagga BGP daemon, bgpd, can double-free memory when processing certain forms of UPDATE message, containing cluster-list and/or unknown attributes.CWE-125: Out-of-bounds Read - CVE-2018-5380 (Quagga-2018-1550)The Quagga BGP daemon, bgpd, can overrun internal BGP code-to-string conversion tables used for debug by 1 pointer value, based on input.CWE-228: Improper Handling of Syntactically Invalid Structure - CVE-2018-5381 (Quagga-2018-1975)The Quagga BGP daemon, bgpd, had a bug in its parsing of \"Capabilities\" in BGP OPEN messages, in the bgp_packet.c:bgp_capability_msg_parse function. The parser can enter an infinite loop on invalid capabilities if a Multi-Protocol capability does not have a recognized AFI/SAFI.For more information, please see Quagga's version 1.2.3 release announcement.The CVSS score below is based on CVE-2018-5379.",
+        "impact": "An unauthenticated, remote attacker may be able to use crafted input to result in a crash of bgpd or even allow a remote attacker to gain control of an affected bgpd process."
+      }
+    ],
+    "CVE-2018-5384": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/184077",
+        "title": "Navarino Infinity web interface is affected by multiple vulnerabilities.",
+        "overview": "Navarino Infinity web interface up to version 2.2 is affected by multiple vulnerabilities.",
+        "description": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') - CVE-2018-5384Navarino Infinity exposes an unauthenticated script that is prone to blind sql injection.CWE-384: Session Fixation - CVE-2018-5385Navarino Infinity is prone to session fixation attacks. The server accepts the session ID as a GET parameter which can lead to bypassing the two factor authentication in some installations.CWE-288: Authentication Bypass Using an Alternate Path or Channel -CVE-2018-5386Some Navarino Infinity functions placed in the URL can bypass any authentication mechanism leading to an information leak.",
+        "impact": "A remote, unauthenticated attacker may be able to bypass authentication and perform some administrative functions or perform SQL injection."
+      }
+    ],
+    "CVE-2018-5386": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/184077",
+        "title": "Navarino Infinity web interface is affected by multiple vulnerabilities.",
+        "overview": "Navarino Infinity web interface up to version 2.2 is affected by multiple vulnerabilities.",
+        "description": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') - CVE-2018-5384Navarino Infinity exposes an unauthenticated script that is prone to blind sql injection.CWE-384: Session Fixation - CVE-2018-5385Navarino Infinity is prone to session fixation attacks. The server accepts the session ID as a GET parameter which can lead to bypassing the two factor authentication in some installations.CWE-288: Authentication Bypass Using an Alternate Path or Channel -CVE-2018-5386Some Navarino Infinity functions placed in the URL can bypass any authentication mechanism leading to an information leak.",
+        "impact": "A remote, unauthenticated attacker may be able to bypass authentication and perform some administrative functions or perform SQL injection."
+      }
+    ],
+    "CVE-2018-5388": [
+      {
+        "url": "http://www.kb.cert.org/vuls/id/338343",
+        "title": "strongSwan VPN charon server vulnerable to buffer underflow",
+        "overview": "strongSwan VPN's charon server prior to version 5.6.3 does not check packet length and may allow buffer underflow, resulting in denial of service.",
+        "description": "CWE-124: Buffer Underwrite ('Buffer Underflow') - CVE-2018-5388In stroke_socket.c, a missing packet length check could allow a buffer underflow, which may lead to resource exhaustion and denial of service while reading from the socket.According to the vendor, an attacker must typically have local root permissions to access the socket. However, other accounts and groups such as the vpn group (if capability dropping in enabled, for example) may also have sufficient permissions, but this configuration does not appear to be the default behavior.",
+        "impact": "A remote attacker with local user credentials (possibly a normal user in the vpn group, or root) may be able to underflow the buffer and cause a denial of service."
+      }
+    ],
+    "CVE-2018-5391": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/641765",
+        "title": "Linux kernel IP fragment re-assembly vulnerable to denial of service",
+        "overview": "The Linux kernel, versions 3.9+, IP implementation is vulnerable to denial of service conditions with low rates of specially modified packets.",
+        "description": "CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion') - CVE-2018-5391The Linux kernel, versions 3.9+, is vulnerable to a denial of service attack with low rates of specially modified packets targeting IP fragment re-assembly. An attacker may cause a denial of service condition by sending specially crafted IP fragments. Various vulnerabilities in IP fragmentation have been discovered and fixed over the years. The current vulnerability (CVE-2018-5391) became exploitable in the Linux kernel with the increase of the IP fragment reassembly queue size.",
+        "impact": "An attacker may be able to trigger a denial-of-service condition against the system."
+      }
+    ],
+    "CVE-2018-5402": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/176301",
+        "title": "Auto-Maskin DCU 210E RP 210E and Marine Pro Observer App",
+        "overview": "Auto-Maskin RP remote panels and DCU controls units are used to monitor and control ship engines. The units have several authentication and encryption vulnerabilities which can allow attackers to access the units and control connected engines.",
+        "description": "CWE 798: ​Use of Hard-Coded Credentials - CVE–2018-5399The DCU 210E firmware contains an undocumented Dropbear SSH server with a hardcoded username and password. The password is easily susceptible to cracking.CWE-346:​Origin Validation Error - CVE–2018-5400The Auto-Maskin products utilize an undocumented custom protocol to set up Modbus communications with other devices without validating those devices.CWE-319:​ Cleartext Transmission of Sensitive Information - CVE–2018-5401The devices transmit process control information via unencrypted Modbus communications.CWE-319:​ Cleartext Transmission of Sensitive Information - CVE–2018-5402The embedded webserver uses unencrypted plaintext for the transmission of the administrator PIN.",
+        "impact": "An attacker can exploit this vulnerability to observe information about configurations, settings, what sensors are present and in use, and other information. An attacker can send arbitrary ModBus (control) information to the engine control units."
+      }
+    ],
+    "CVE-2018-5404": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/877837/",
+        "title": "Multiple vulnerabilities in Quest Kace System Management Appliance",
+        "overview": "The Quest Kace System Management (K1000) Appliance contains multiple vulnerabilities, including a blind SQL injection vulnerability and a stored cross site scripting vulnerability. It also suffers from misconfigurations in the cross-origin resource sharing (CORS) mechanism and improperly validates source communications.",
+        "description": "CVE-2018-5404: The Quest Kace System Management (K1000) Appliance allows an authenticated, remote attacker with least privileges ('User Console Only' role) to potentially exploit multiple Blind SQL Injection vulnerabilities to retrieve sensitive information from the database or copy the entire database. (CWE-89)CVE-2018-5405: The Quest Kace System Management (K1000) Appliance allows an authenticated least privileged user with ‘User Console Only’ rights to potentially inject arbitrary JavaScript code on the tickets page. Script execution could allow a malicious user of the system to steal session cookies of other users including Administrator and take over their session. This can further be exploited to launch other attacks. The software also does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users. The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users. (CWE-79)CVE-2018-5406: The Quest Kace System Management (K1000) Appliance allows a remote attacker to exploit the misconfigured Cross-Origin Resource Sharing (CORS) mechanism. An unauthenticated, remote attacker could exploit this vulnerability to perform sensitive actions such as adding a new administrator account or changing the appliance’s settings. A malicious internal user could also gain administrator privileges of this appliance and use it to visit a malicious link that exploits this vulnerability. This could cause the application to perform sensitive actions such as adding a new administrator account or changing the appliance’s settings. (CWE-284)",
+        "impact": "An authenticated remote attacker could leverage Blind SQL injections to obtain sensitive data. An authenticated user with \"user console only\" rights may inject arbitrary JavaScript, which could result in an attacker taking over a session of others, including an Administrator. An unauthenticated, remote attacker could add an administrator-level account or change the appliance's settings."
+      }
+    ],
+    "CVE-2018-5405": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/877837/",
+        "title": "Multiple vulnerabilities in Quest Kace System Management Appliance",
+        "overview": "The Quest Kace System Management (K1000) Appliance contains multiple vulnerabilities, including a blind SQL injection vulnerability and a stored cross site scripting vulnerability. It also suffers from misconfigurations in the cross-origin resource sharing (CORS) mechanism and improperly validates source communications.",
+        "description": "CVE-2018-5404: The Quest Kace System Management (K1000) Appliance allows an authenticated, remote attacker with least privileges ('User Console Only' role) to potentially exploit multiple Blind SQL Injection vulnerabilities to retrieve sensitive information from the database or copy the entire database. (CWE-89)CVE-2018-5405: The Quest Kace System Management (K1000) Appliance allows an authenticated least privileged user with ‘User Console Only’ rights to potentially inject arbitrary JavaScript code on the tickets page. Script execution could allow a malicious user of the system to steal session cookies of other users including Administrator and take over their session. This can further be exploited to launch other attacks. The software also does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users. The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users. (CWE-79)CVE-2018-5406: The Quest Kace System Management (K1000) Appliance allows a remote attacker to exploit the misconfigured Cross-Origin Resource Sharing (CORS) mechanism. An unauthenticated, remote attacker could exploit this vulnerability to perform sensitive actions such as adding a new administrator account or changing the appliance’s settings. A malicious internal user could also gain administrator privileges of this appliance and use it to visit a malicious link that exploits this vulnerability. This could cause the application to perform sensitive actions such as adding a new administrator account or changing the appliance’s settings. (CWE-284)",
+        "impact": "An authenticated remote attacker could leverage Blind SQL injections to obtain sensitive data. An authenticated user with \"user console only\" rights may inject arbitrary JavaScript, which could result in an attacker taking over a session of others, including an Administrator. An unauthenticated, remote attacker could add an administrator-level account or change the appliance's settings."
+      }
+    ],
+    "CVE-2018-5410": [
+      {
+        "url": "https://kb.cert.org/vuls/id/741315/",
+        "title": "Dokan file system driver contains a stack-based buffer overflow",
+        "overview": "A system driver in the Dokan Open Source File System contains a stack-based buffer overflow, which could allow an attacker to gain elevated privileges on the host machine.",
+        "description": "CWE-121: Stack-based Buffer Overflow - CVE-2018-5410Dokan, versions between 1.0.0.5000 and 1.2.0.1000, are vulnerable to a stack-based buffer overflow in the dokan1.sys driver. An attacker can create a device handle to the system driver and send arbitrary input that will trigger the vulnerability. This vulnerability was introduced in the 1.0.0.5000 version update.",
+        "impact": "An attacker could corrupt the kernel memory and elevate their system privileges to gain control of the system."
+      }
+    ],
+    "CVE-2018-5411": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/756913/",
+        "title": "Pixar Tractor contains a stored cross-site scripting vulnerability",
+        "overview": "Pixar's Tractor network rendering software is vulnerable to stored cross-site scripting which may allow an attacker to execute arbitrary JavaScript.",
+        "description": "Pixar's Tractor software, versions 2.2 and earlier, contain a stored cross-site scripting vulnerability (CWE-79) in the field that allows a user to add a note to an existing node. The stored information is displayed when a user requests information about the node. An attacker could insert JavaScript into this note field that is then saved and displayed to the end user.",
+        "impact": "An authenticated attacker might include JavaScript that could execute on an authenticated user's system, which could lead to website redirects, session cookie hijacking, social engineering, and other impacts. Since the attacker's script is stored with the information about the node, all other users with access to this data are also vulnerable."
+      }
+    ]
+  }
 }

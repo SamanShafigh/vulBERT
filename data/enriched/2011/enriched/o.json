@@ -1,6 +1,406 @@
 {
   "year": 2011,
-  "total": 0,
+  "total": 57,
   "reference": "mozilla.org",
-  "reports": {}
+  "reports": {
+    "CVE-2011-0051": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-02.html",
+        "title": "Recursive eval call causes confirm dialogs to evaluate to true",
+        "description": "Security researcher Zach Hoffman reported that a recursive call to eval() wrapped in a try/catch statement places the browser into a inconsistent state. Any dialog box opened in this state is displayed without text and with non-functioning buttons. Closing the window causes the dialog to evaluate to true. An attacker could use this issue to force a user into accepting any dialog, such as one granting elevated privileges to the page presenting the dialog."
+      }
+    ],
+    "CVE-2011-0054": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-04.html",
+        "title": "Buffer overflow in JavaScript upvarMap",
+        "description": "Security researcher Christian Holler reported that the JavaScript engine's internal memory mapping of non-local JS variables contained a buffer overflow which could potentially be used by an attacker to run arbitrary code on a victim's computer."
+      }
+    ],
+    "CVE-2011-0055": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-03.html",
+        "title": "Use-after-free error in JSON.stringify",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative that a method used by JSON.stringify contained a use-after-free error in which a currently in-use pointer was freed and subsequently dereferenced. This could lead to arbitrary code execution if an attacker was able to store malicious code in the freed section of memory. Mozilla developer Igor Bukanov also independently discovered and reported this issue two weeks after the initial report was received."
+      }
+    ],
+    "CVE-2011-0056": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-05.html",
+        "title": "Buffer overflow in JavaScript atom map",
+        "description": "Security researcher Christian Holler reported that the JavaScript engine's internal mapping of string values contained an error in cases where the number of values being stored was above 64K. In such cases an offset pointer was manually moved forwards and backwards to access the larger address space. If an exception was thrown between the time that the offset pointer was moved forward and the time it was reset, then the exception object would be read from an invalid memory address, potentially executing attacker-controlled memory."
+      }
+    ],
+    "CVE-2011-0057": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-06.html",
+        "title": "Use-after-free error using Web Workers",
+        "description": "Daniel Kozlowski reported that a JavaScript Worker could be used to keep a reference to an object that could be freed during garbage collection. Subsequent calls through this deleted reference could cause attacker-controlled memory to be executed on a victim's computer."
+      }
+    ],
+    "CVE-2011-0058": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-07.html",
+        "title": "Memory corruption during text run construction (Windows)",
+        "description": "Alex Miller reported that when very long strings were constructed and inserted into an HTML document, the browser would incorrectly construct the layout objects used to display the text. Under such conditions an incorrect length would be calculated for a text run resulting in too small of a memory buffer being allocated to store the text. This issue could be used by an attacker to write data past the end of the buffer and execute malicious code on a victim's computer."
+      }
+    ],
+    "CVE-2011-0059": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-10.html",
+        "title": "CSRF risk with plugins and 307 redirects",
+        "description": "Independent security researcher Kuza55 and Microsoft security researcher Tom Gallagher reported that when plugin-initiated requests receive a 307 redirect response, the plugin is not notified and the request is forwarded to the new location. This is true even for cross-site redirects, so any custom headers that were added as part of the initial request would be forwarded intact across origins. This poses a CSRF risk for web applications that rely on custom headers only being present in requests from their own origin."
+      }
+    ],
+    "CVE-2011-0061": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-09.html",
+        "title": "Crash caused by corrupted JPEG image",
+        "description": "Security researcher Jordi Chancel reported that a JPEG image could be constructed that would be decoded incorrectly, causing data to be written past the end of a buffer created to store the image. An attacker could potentially craft such an image that would cause malicious code to be stored in memory and then later executed on a victim's computer. Firefox 3.5 was not affected by this issue."
+      }
+    ],
+    "CVE-2011-0065": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-13.html",
+        "title": "Multiple dangling pointer vulnerabilities",
+        "description": "Security researcher regenrecht reported several dangling pointer vulnerabilities via TippingPoint's Zero Day Initiative. Firefox 4 was not affected by these issues."
+      }
+    ],
+    "CVE-2011-0066": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-13.html",
+        "title": "Multiple dangling pointer vulnerabilities",
+        "description": "Security researcher regenrecht reported several dangling pointer vulnerabilities via TippingPoint's Zero Day Initiative. Firefox 4 was not affected by these issues."
+      }
+    ],
+    "CVE-2011-0067": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-14.html",
+        "title": "Information stealing via form history",
+        "description": "Security researcher Paul Stone reported that a Java applet could be used to mimic interaction with form autocomplete controls and steal entries from the form history. Firefox 4 was not affected by this issue."
+      }
+    ],
+    "CVE-2011-0071": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-16.html",
+        "title": "Directory traversal in resource: protocol",
+        "description": "Security researcher Soroush Dalili reported that the resource: protocol could be exploited to allow directory traversal on Windows and the potential loading of resources from non-permitted locations. The impact would depend on whether interesting files existed in predictable locations in a useful format. For example, the existence or non-existence of particular images might indicate whether certain software was installed."
+      }
+    ],
+    "CVE-2011-0073": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-13.html",
+        "title": "Multiple dangling pointer vulnerabilities",
+        "description": "Security researcher regenrecht reported several dangling pointer vulnerabilities via TippingPoint's Zero Day Initiative. Firefox 4 was not affected by these issues."
+      }
+    ],
+    "CVE-2011-0083": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-23.html",
+        "title": "Multiple dangling pointer vulnerabilities",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative two instances of code which modifies SVG element lists failed to account for changes made to the list by user-supplied callbacks before accessing list elements. If a user-supplied callback deleted such an object, the element-modifying code could wind up accessing deleted memory and potentially executing attacker-controlled memory. regenrecht also reported via TippingPoint's Zero Day Initiative that a XUL document could force the nsXULCommandDispatcher to remove all command updaters from the queue, including the one currently in use. This could result in the execution of deleted memory which an attacker could use to run arbitrary code on a victim's computer. Firefox 4 and SeaMonkey 2.1 and newer were not affected by these issues."
+      }
+    ],
+    "CVE-2011-0085": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-23.html",
+        "title": "Multiple dangling pointer vulnerabilities",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative two instances of code which modifies SVG element lists failed to account for changes made to the list by user-supplied callbacks before accessing list elements. If a user-supplied callback deleted such an object, the element-modifying code could wind up accessing deleted memory and potentially executing attacker-controlled memory. regenrecht also reported via TippingPoint's Zero Day Initiative that a XUL document could force the nsXULCommandDispatcher to remove all command updaters from the queue, including the one currently in use. This could result in the execution of deleted memory which an attacker could use to run arbitrary code on a victim's computer. Firefox 4 and SeaMonkey 2.1 and newer were not affected by these issues."
+      }
+    ],
+    "CVE-2011-1187": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2012/mfsa2012-32.html",
+        "title": "HTTP Redirections and remote content can be read by javascript errors",
+        "description": "Security researcher Daniel Divricean reported that a defect in the error handling of javascript errors can leak the file names and location of javascript files on a server, leading to inadvertent information disclosure and a vector for further attacks."
+      }
+    ],
+    "CVE-2011-1300": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-17.html",
+        "title": "WebGLES vulnerabilities",
+        "description": "Two crashes that could potentially be exploited to run malicious code were found in the WebGL feature and fixed in Firefox 4.0.1. In addition the WebGLES libraries could potentially be used to bypass a security feature of recent Windows versions. The WebGL feature was introduced in Firefox 4; older versions are not affected by these issues. Nils reported that the WebGLES libraries in the Windows version of Firefox were compiled without ASLR protection. An attacker who found an exploitable memory corruption flaw could then use these libraries to bypass ASLR on Windows Vista and Windows 7, making the flaw as exploitable on those platforms as it would be on Windows XP or other platforms. https://bugzilla.mozilla.org/show_bug.cgi?id=641630 Mozilla researcher Christoph Diehl reported a potentially exploitable buffer overflow in the WebGLES library https://bugzilla.mozilla.org/show_bug.cgi?id=623791 CVE-2011-1302 Yuri Ko reported a potentially exploitable overwrite in the WebGLES library to the Chrome Secuity Team. We thank them for coordinating with us on this fix. https://bugzilla.mozilla.org/show_bug.cgi?id=623791 Chromium bug 78524 CVE-2011-1300"
+      }
+    ],
+    "CVE-2011-1712": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-18.html",
+        "title": "XSLT generate-id() function heap address leak",
+        "description": "Chris Evans of the Chrome Security Team reported that the XSLT generate-id() function returned a string that revealed a specific valid address of an object on the memory heap. It is possible that in some cases this address would be valuable information that could be used by an attacker while exploiting a different memory corruption but, in order to make an exploit more reliable or work around mitigation features in the browser or operating system. https://bugzilla.mozilla.org/show_bug.cgi?id=640339 CVE-2011-1202"
+      }
+    ],
+    "CVE-2011-2362": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-24.html",
+        "title": "Cookie isolation error",
+        "description": "Mozilla security researcher David Chan reported that cookies set for example.com. (note the trailing dot) and example.com were treated as interchangeable. This is a violation of same-origin conventions and could potentially lead to leakage of cookie data to the wrong party. This issue did not affect Firefox 4, SeaMonkey 2.1, or newer Mozilla-based products."
+      }
+    ],
+    "CVE-2011-2363": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-23.html",
+        "title": "Multiple dangling pointer vulnerabilities",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative two instances of code which modifies SVG element lists failed to account for changes made to the list by user-supplied callbacks before accessing list elements. If a user-supplied callback deleted such an object, the element-modifying code could wind up accessing deleted memory and potentially executing attacker-controlled memory. regenrecht also reported via TippingPoint's Zero Day Initiative that a XUL document could force the nsXULCommandDispatcher to remove all command updaters from the queue, including the one currently in use. This could result in the execution of deleted memory which an attacker could use to run arbitrary code on a victim's computer. Firefox 4 and SeaMonkey 2.1 and newer were not affected by these issues."
+      }
+    ],
+    "CVE-2011-2366": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-25.html",
+        "title": "Stealing of cross-domain images using WebGL textures",
+        "description": "Security research firm Context IS discovered that an image from a different domain could be loaded into a WebGL texture, and then each pixel could be rendered into a canvas element with a shader program, creating an approximation of the image in a form that was readable by the creator of the WebGL texture. This could be used to steal image data from a different site and is considered a violation of the same-origin policy. The WebGL functionality was introduced in the browser engine used by Firefox 4 and SeaMonkey 2.1; the vulnerability does not affect earlier versions."
+      }
+    ],
+    "CVE-2011-2367": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-26.html",
+        "title": "Multiple WebGL crashes",
+        "description": "Mozilla security researcher Christoph Diehl reported two crashes in WebGL code. One crash was the result of an out-of-bounds read and could be used to read data from other processes who had stored data in the GPU. The severity of this issue was determined to be high. The second crash was the result of an invalid write and could be used to execute arbitrary code. The severity of this issue was determined to be critical. The WebGL functionality was introduced in the browser engine used by Firefox 4 and SeaMonkey 2.1; the vulnerability does not affect earlier versions."
+      }
+    ],
+    "CVE-2011-2368": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-26.html",
+        "title": "Multiple WebGL crashes",
+        "description": "Mozilla security researcher Christoph Diehl reported two crashes in WebGL code. One crash was the result of an out-of-bounds read and could be used to read data from other processes who had stored data in the GPU. The severity of this issue was determined to be high. The second crash was the result of an invalid write and could be used to execute arbitrary code. The severity of this issue was determined to be critical. The WebGL functionality was introduced in the browser engine used by Firefox 4 and SeaMonkey 2.1; the vulnerability does not affect earlier versions."
+      }
+    ],
+    "CVE-2011-2369": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-27.html",
+        "title": "XSS encoding hazard with inline SVG",
+        "description": "Security researcher Mario Heiderich reported that HTML-encoded entities were being improperly decoded when displayed inside SVG elements. This could lead to XSS attacks on sites relying on HTML encoding of user-supplied content. The inline SVG feature was introduced in the browser engine used by Firefox 4 and SeaMonkey 2.1; the vulnerability does not affect earlier versions."
+      }
+    ],
+    "CVE-2011-2370": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-28.html",
+        "title": "Non-whitelisted site can trigger xpinstall",
+        "description": "Mozilla security researcher moz_bug_r_a4 reported that it was possible for a non-whitelisted site to trigger an install dialog for add-ons and themes. This vulnerability was introduced in the browser engine used by Firefox 4 and SeaMonkey 2.1; it does not affect earlier versions."
+      }
+    ],
+    "CVE-2011-2371": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-22.html",
+        "title": "Integer overflow and arbitrary code execution in Array.reduceRight()",
+        "description": "Security researchers Chris Rohlf and Yan Ivnitskiy of Matasano Security reported that when a JavaScript Array object had its length set to an extremely large value, the iteration of array elements that occurs when its reduceRight method was subsequently called could result in the execution of attacker controlled memory due to an invalid index value being used to access element properties."
+      }
+    ],
+    "CVE-2011-2372": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-40.html",
+        "title": "Code installation through holding down Enter",
+        "description": "Mariusz Mlynski reported that if you could convince a user to hold down the Enter key--as part of a game or test, perhaps--a malicious page could pop up a download dialog where the held key would then activate the default Open action. For some file types this would be merely annoying (the equivalent of a pop-up) but other file types have powerful scripting capabilities. And this would provide an avenue for an attacker to exploit a vulnerability in applications not normally exposed to potentially hostile internet content. Mariusz also reported a similar flaw with manual plugin installation using the PLUGINSPAGE attribute. It was possible to create an internal error that suppressed a confirmation dialog, such that holding enter would lead to the installation of an arbitrary add-on. (This variant did not affect Firefox 3.6)"
+      }
+    ],
+    "CVE-2011-2373": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-20.html",
+        "title": "Use-after-free vulnerability when viewing XUL document with script disabled",
+        "description": "Security researcher Martin Barbella reported that under certain conditions, viewing a XUL document while JavaScript was disabled caused deleted memory to be accessed. This flaw could potentially be used by an attacker to crash a victim's browser and run arbitrary code on their computer. XUL document support was disabled by default in Firefox 4 and SeaMonkey 2.1 and users of those versions are not generally at risk. It is possible for add-ons to re-enable the feature for specific sites (for example, to support a legacy intranet XUL application) which would have introduced this vulnerability while browsing those sites."
+      }
+    ],
+    "CVE-2011-2377": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-21.html",
+        "title": "Memory corruption due to multipart/x-mixed-replace images",
+        "description": "Security researcher Jordi Chancel reported a crash on multipart/x-mixed-replace images due to memory corruption."
+      }
+    ],
+    "CVE-2011-2605": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-19.html",
+        "title": "Miscellaneous memory safety hazards (rv:3.0/1.9.2.18)",
+        "description": "Mozilla developers identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2011-2998": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-37.html",
+        "title": "Integer underflow when using JavaScript RegExp",
+        "description": "Mark Kaplan reported a potentially exploitable crash due to integer underflow when using a large JavaScript RegExp expression. We would also like to thank Mark for contributing the fix for this problem. The Regular Expression engine was replaced in Firefox 4 and the newer engine does not suffer from this bug."
+      }
+    ],
+    "CVE-2011-2999": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-38.html",
+        "title": "XSS via plugins and shadowed window.location object",
+        "description": "Mozilla developer Boris Zbarsky reported that a frame named \"location\" could shadow the window.location object unless a script in a page grabbed a reference to the true object before the frame was created. Because some plugins use the value of window.location to determine the page origin this could fool the plugin into granting the plugin content access to another site or the local file system in violation of the Same Origin Policy. This flaw allows circumvention of the fix added for MFSA 2010-10."
+      }
+    ],
+    "CVE-2011-3000": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-39.html",
+        "title": "Defense against multiple Location headers due to CRLF Injection",
+        "description": "Ian Graham of Citrix Online reported that when multiple Location headers were present in a redirect response Mozilla behavior differed from other browsers: Mozilla would use the second Location header while Chrome and Internet Explorer would use the first. Two copies of this header with different values could be a symptom of a CRLF injection attack against a vulnerable server. Most commonly it is the Location header itself that is vulnerable to the response splitting and therefore the copy preferred by Mozilla is more likely to be the malicious one. It is possible, however, that the first copy was the injected one depending on the nature of the server vulnerability. The Mozilla browser engine has been changed to treat two copies of this header with different values as an error condition. The same has been done with the headers Content-Length and Content-Disposition"
+      }
+    ],
+    "CVE-2011-3001": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-40.html",
+        "title": "Code installation through holding down Enter",
+        "description": "Mariusz Mlynski reported that if you could convince a user to hold down the Enter key--as part of a game or test, perhaps--a malicious page could pop up a download dialog where the held key would then activate the default Open action. For some file types this would be merely annoying (the equivalent of a pop-up) but other file types have powerful scripting capabilities. And this would provide an avenue for an attacker to exploit a vulnerability in applications not normally exposed to potentially hostile internet content. Mariusz also reported a similar flaw with manual plugin installation using the PLUGINSPAGE attribute. It was possible to create an internal error that suppressed a confirmation dialog, such that holding enter would lead to the installation of an arbitrary add-on. (This variant did not affect Firefox 3.6)"
+      }
+    ],
+    "CVE-2011-3002": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-41.html",
+        "title": "Potentially exploitable WebGL crashes",
+        "description": "Michael Jordon of Context IS reported that in the ANGLE library used by WebGL the return value from GrowAtomTable() was not checked for errors. If an attacker could cause requests that exceeded the available memeory those would fail and potentially lead to a buffer overrun as subsequent code wrote into the non-allocated space. Ben Hawkes of the Google Security Team reported a WebGL test case that demonstrated an out of bounds write after an allocation failed."
+      }
+    ],
+    "CVE-2011-3003": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-41.html",
+        "title": "Potentially exploitable WebGL crashes",
+        "description": "Michael Jordon of Context IS reported that in the ANGLE library used by WebGL the return value from GrowAtomTable() was not checked for errors. If an attacker could cause requests that exceeded the available memeory those would fail and potentially lead to a buffer overrun as subsequent code wrote into the non-allocated space. Ben Hawkes of the Google Security Team reported a WebGL test case that demonstrated an out of bounds write after an allocation failed."
+      }
+    ],
+    "CVE-2011-3004": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-43.html",
+        "title": "loadSubScript unwraps XPCNativeWrapper scope parameter",
+        "description": "David Rees reported that the JSSubScriptLoader (a feature used by some add-ons) was \"unwrapping\" XPCNativeWrappers when they were used as the scope parameter to loadSubScript(). Without the protection of the wrappers the add-on could be vulnerable to privilege escalation attacks from malicious web content. Whether any given add-on were vulnerable would depend on how the add-on used the feature and whether it interacted directly with web content, but we did find at least one vulnerable add-on and presume there are more. The unwrapping behavior was a change introduced during Firefox 4 development. Firefox 3.6 and earlier versions are not affected."
+      }
+    ],
+    "CVE-2011-3005": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-44.html",
+        "title": "Use after free reading OGG headers",
+        "description": "sczimmer reported that Firefox crashed when loading a particular .ogg file. This was due to a use-after-free condition and could potentially be exploited to install malware. This vulnerability does not affect Firefox 3.6 or earlier."
+      }
+    ],
+    "CVE-2011-3079": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-57.html",
+        "title": "Privilege escalation through IPC channel messages",
+        "description": "Mozilla Developer Jed Davis and Mozilla security engineer Christoph Diehl reported that Mozilla had inherited a Inter-process Communication (IPC) vulnerability when IPC was introduced into Mozilla products through third-party code. This could allow for privilege escalation through IPC channels due to lack of message validation in the listener process. This issue only affects systems running Windows, leaving Linux and OS X unaffected."
+      }
+    ],
+    "CVE-2011-3232": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-42.html",
+        "title": "Potentially exploitable crash in the YARR regular expression library",
+        "description": "Security researcher Aki Helin reported a potentially exploitable crash in the YARR regular expression library used by JavaScript."
+      }
+    ],
+    "CVE-2011-3647": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-46.html",
+        "title": "loadSubScript unwraps XPCNativeWrapper scope parameter (1.9.2 branch)",
+        "description": "Mozilla security researcher moz_bug_r_a4 reported that the problem described in MFSA 2011-43 and fixed in Firefox 7 also affected Firefox 3.6: a malicious page could potentially exploit a Firefox user who had installed an add-on that used loadSubscript in vulnerable ways."
+      }
+    ],
+    "CVE-2011-3648": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-47.html",
+        "title": "Potential XSS against sites using Shift-JIS",
+        "description": "Yosuke Hasegawa reported that the Mozilla browser engine mishandled invalid sequences in the Shift-JIS encoding. When encountering an invalid pair Mozilla would turn the entire two-byte sequence into a single unknown character rather than an unknown character followed by a valid single-byte character. On some sites attackers may have been able to end their input with the first byte of a two byte sequence; when that input was later put into a page context it might cause the following delimiter (such as a double-quote) to be consumed, breaking the format of the page. Depending on the page this could potentially be used to steal data or inject script into the page."
+      }
+    ],
+    "CVE-2011-3649": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-50.html",
+        "title": "Cross-origin data theft using canvas and Windows D2D",
+        "description": "Mozilla developer Bas Schouten reported that the introduction of the \"Azure\" graphics back-end on Windows in Firefox 7 re-introduced the cross-origin data theft issue reported by nasalislarvatus3000 as described in MFSA 2011-29."
+      }
+    ],
+    "CVE-2011-3650": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-49.html",
+        "title": "Memory corruption while profiling using Firebug",
+        "description": "Marc Schoenefeld reported a crash when using Firebug to profile a JavaScript file with many functions. It may be possible to trigger this crash without the use of debugging APIs, and if so this could be exploitable."
+      }
+    ],
+    "CVE-2011-3652": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-48.html",
+        "title": "Miscellaneous memory safety hazards (rv:8.0)",
+        "description": "Mozilla developers fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2011-3653": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-51.html",
+        "title": "Cross-origin image theft on Mac with integrated Intel GPU",
+        "description": "Claus Wahlers reported that random images from GPU memory were showing up in WebGL textures. Once incorporated into the WebGL graphics it is possible for a site to programatically read the image data and potentially gain sensitive data from other things that had been displayed earlier. This problem is due to a bug in the driver for Intel integrated GPUs on recent Mac OS X hardware, and the problem can be seen in WebGL implementations from other vendors. Mozilla has implemented a work-around to prevent this from happening with this hardware-driver combination."
+      }
+    ],
+    "CVE-2011-3654": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-48.html",
+        "title": "Miscellaneous memory safety hazards (rv:8.0)",
+        "description": "Mozilla developers fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2011-3655": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-52.html",
+        "title": "Code execution via NoWaiverWrapper",
+        "description": "Mozilla security researcher moz_bug_r_a4 reported that an internal privilege check failed to respect the NoWaiverWrappers introduced with Firefox 4. This could result in elevated privilege being granted to web content."
+      }
+    ],
+    "CVE-2011-3658": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-55.html",
+        "title": "nsSVGValue out-of-bounds access",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative that a flaw in the Mozilla SVG implementation could result in an out-of-bounds memory access if SVG elements were removed during a DOMAttrModified event handler. This vulnerability does not affect products prior to Firefox 8 and SeaMonkey 2.5. Thunderbird 8 users would be vulnerable only if using a browser-like feature that allowed scripts to run; users are not at risk while reading mail."
+      }
+    ],
+    "CVE-2011-3659": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2012/mfsa2012-04.html",
+        "title": "Child nodes from nsDOMAttribute still accessible after removal of nodes",
+        "description": "Security researcher regenrecht reported via TippingPoint's Zero Day Initiative that removed child nodes of nsDOMAttribute can be accessed under certain circumstances because of a premature notification of AttributeChildRemoved. This use-after-free of the child nodes could possibly allow for remote code execution."
+      }
+    ],
+    "CVE-2011-3661": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-54.html",
+        "title": "Potentially exploitable crash in the YARR regular expression library",
+        "description": "Security researcher Aki Helin reported a crash in the YARR regular expression library that could be triggered by javascript in web content. The YARR library was not used in older versions of the Mozilla browser engine. This vulnerability does not affect Firefox 3.6 or Thunderbird 3.1"
+      }
+    ],
+    "CVE-2011-3663": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-56.html",
+        "title": "Key detection without JavaScript via SVG animation",
+        "description": "Security researcher Mario Heiderich reported it was possible to use SVG animation accessKey events to detect key strokes even when JavaScript was disabled. Since web pages can normally detect key events through script and most users have scripting enabled this does not present a risk for most users. In contexts where the user knows scripting is disabled (reading mail, for example, or NoScript users) this could allow a malicious web page to fool a user into interacting with a prompt thinking it came from the browser or mail program. Accessing remote content is disabled by default When reading mail in Thunderbird and SeaMonkey. Successfully capturing keystrokes remotely would require some social engineering to convince the user to turn it on. SVG animation is not supported in Thunderbird 3.1 or Firefox 3.6."
+      }
+    ],
+    "CVE-2011-3665": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-58.html",
+        "title": "Crash scaling <video> to extreme sizes",
+        "description": "sczimmer reported a crash when scaling an OGG <video> element to extreme sizes. Firefox 3.6 is not affected by this vulnerability"
+      }
+    ],
+    "CVE-2011-3666": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-59.html",
+        "title": ".jar not treated as executable in Firefox 3.6 on Mac",
+        "description": "Part of the fix for MFSA 2011-40, reported by Mariusz Mlynski, was to treat .jar files as executables. This is necessary because Java treats downloaded .jar files as fully-featured \"Applications\" rather than restricting them to the limited privileges of in-browser \"Applets\". The fix taken in Firefox 3.6 was discovered to be incorrect for the Mac OS X version."
+      }
+    ],
+    "CVE-2011-3670": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2012/mfsa2012-02.html",
+        "title": "Overly permissive IPv6 literal syntax",
+        "description": "For historical reasons Firefox has been generous in its interpretation of web addresses containing square brackets around the host. If this host was not a valid IPv6 literal address, Firefox attempted to interpret the host as a regular domain name. Gregory Fleischer reported that requests made using IPv6 syntax using XMLHttpRequest objects through a proxy may generate errors depending on proxy configuration for IPv6. The resulting error messages from the proxy may disclose sensitive data because Same-Origin Policy (SOP) will allow the XMLHttpRequest object to read these error messages, allowing user privacy to be eroded. Firefox now enforces RFC 3986 IPv6 literal syntax and that may break links written using the non-standard Firefox-only forms that were previously accepted. This was fixed previously for Firefox 7.0, Thunderbird 7.0, and SeaMonkey 2.4 but only fixed in Firefox 3.6.26 and Thunderbird 3.1.18 during 2012."
+      }
+    ],
+    "CVE-2011-3671": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2012/mfsa2012-41.html",
+        "title": "Use-after-free in nsHTMLSelectElement",
+        "description": "Security researcher regenrecht reported a flaw that affected Firefox versions 4 through 8 via TippingPoint's Zero Day Initiative. This flaw is a use-after-free in nsHTMLSelectElement when the parent node of the element is no longer active and could allow for possible remote code execution. Firefox 3.6 is not affected by this vulnerability."
+      }
+    ],
+    "CVE-2011-3866": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2011/mfsa2011-45.html",
+        "title": "Inferring keystrokes from motion data",
+        "description": "University of California, Davis researchers Liang Cai and Hao Chen presented a paper at the 2011 USENIX HotSec workshop on inferring keystrokes from device motion data on mobile devices. Web pages can now receive data similar to the apps studied in that paper and likely present a similar risk. We have decided to limit motion data events to the currently-active tab to prevent the possibility of background tabs attempting to decipher keystrokes the user is entering into the foreground tab."
+      }
+    ]
+  }
 }

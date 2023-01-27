@@ -1,6 +1,369 @@
 {
   "year": 2007,
-  "total": 0,
+  "total": 52,
   "reference": "usn.ubuntu.com",
-  "reports": {}
+  "reports": {
+    "CVE-2007-1285": [
+      {
+        "url": "https://usn.ubuntu.com/549-1/",
+        "title": "USN-549-1: PHP vulnerabilities",
+        "body": "Stefan Esser discovered that deeply nested arrays could be made to fill stack space. A remote attacker could exploit this to cause a crash or monopolize CPU resources, resulting in a denial of service. (CVE-2007-1285, CVE-2007-4670)"
+      }
+    ],
+    "CVE-2007-1659": [
+      {
+        "url": "https://usn.ubuntu.com/547-1/",
+        "title": "USN-547-1: PCRE vulnerabilities",
+        "body": "Tavis Ormandy and Will Drewry discovered multiple flaws in the regular expression handling of PCRE. By tricking a user or service into running specially crafted expressions via applications linked against libpcre3, a remote attacker could crash the application, monopolize CPU resources, or possibly execute arbitrary code with the application’s privileges."
+      }
+    ],
+    "CVE-2007-1660": [
+      {
+        "url": "https://usn.ubuntu.com/547-1/",
+        "title": "USN-547-1: PCRE vulnerabilities",
+        "body": "Tavis Ormandy and Will Drewry discovered multiple flaws in the regular expression handling of PCRE. By tricking a user or service into running specially crafted expressions via applications linked against libpcre3, a remote attacker could crash the application, monopolize CPU resources, or possibly execute arbitrary code with the application’s privileges."
+      }
+    ],
+    "CVE-2007-2292": [
+      {
+        "url": "https://usn.ubuntu.com/535-1/",
+        "title": "USN-535-1: Firefox vulnerabilities",
+        "body": "Stefano Di Paola discovered that Firefox did not correctly request Digest Authentications. A malicious web site could exploit this to inject arbitrary HTTP headers or perform session splitting attacks against proxies. (CVE-2007-2292)"
+      }
+    ],
+    "CVE-2007-2583": [
+      {
+        "url": "https://usn.ubuntu.com/528-1/",
+        "title": "USN-528-1: MySQL vulnerabilities",
+        "body": "Neil Kettle discovered that MySQL could be made to dereference a NULL pointer and divide by zero. An authenticated user could exploit this with a crafted IF clause, leading to a denial of service. (CVE-2007-2583)"
+      }
+    ],
+    "CVE-2007-2872": [
+      {
+        "url": "https://usn.ubuntu.com/549-1/",
+        "title": "USN-549-1: PHP vulnerabilities",
+        "body": "Gerhard Wagner discovered that the chunk_split function did not correctly handle long strings. A remote attacker could exploit this to execute arbitrary code with application privileges. (CVE-2007-2872, CVE-2007-4660, CVE-2007-4661)"
+      }
+    ],
+    "CVE-2007-3278": [
+      {
+        "url": "https://usn.ubuntu.com/568-1/",
+        "title": "USN-568-1: PostgreSQL vulnerabilities",
+        "body": "Nico Leidecker discovered that PostgreSQL did not properly restrict dblink functions. An authenticated user could exploit this flaw to access arbitrary accounts and execute arbitrary SQL queries. (CVE-2007-3278, CVE-2007-6601)"
+      }
+    ],
+    "CVE-2007-3780": [
+      {
+        "url": "https://usn.ubuntu.com/528-1/",
+        "title": "USN-528-1: MySQL vulnerabilities",
+        "body": "It was discovered that MySQL could be made to overflow a signed char during authentication. Remote attackers could use crafted authentication requests to cause a denial of service. (CVE-2007-3780)"
+      }
+    ],
+    "CVE-2007-3782": [
+      {
+        "url": "https://usn.ubuntu.com/528-1/",
+        "title": "USN-528-1: MySQL vulnerabilities",
+        "body": "Phil Anderton discovered that MySQL did not properly verify access privileges when accessing external tables. As a result, authenticated users could exploit this to obtain UPDATE privileges to external tables. (CVE-2007-3782)"
+      }
+    ],
+    "CVE-2007-3799": [
+      {
+        "url": "https://usn.ubuntu.com/549-1/",
+        "title": "USN-549-1: PHP vulnerabilities",
+        "body": "It was discovered that certain characters in session cookies were not handled correctly. A remote attacker could injection values which could lead to altered application behavior, potentially gaining additional privileges. (CVE-2007-3799)"
+      }
+    ],
+    "CVE-2007-3998": [
+      {
+        "url": "https://usn.ubuntu.com/549-1/",
+        "title": "USN-549-1: PHP vulnerabilities",
+        "body": "It was discovered that the wordwrap function did not correctly check lengths. Remote attackers could exploit this to cause a crash or monopolize CPU resources, resulting in a denial of service. (CVE-2007-3998)"
+      }
+    ],
+    "CVE-2007-4351": [
+      {
+        "url": "https://usn.ubuntu.com/539-1/",
+        "title": "USN-539-1: CUPS vulnerability",
+        "body": "Alin Rad Pop discovered that CUPS did not correctly validate buffer lengths when processing IPP tags. Remote attackers successfully exploiting this vulnerability would gain access to the non-root CUPS user in Ubuntu 6.06 LTS, 6.10, and 7.04. In Ubuntu 7.10, attackers would be isolated by the AppArmor CUPS profile."
+      }
+    ],
+    "CVE-2007-4567": [
+      {
+        "url": "https://usn.ubuntu.com/558-1/",
+        "title": "USN-558-1: Linux kernel vulnerabilities",
+        "body": "Eric Sesterhenn and Victor Julien discovered that the hop-by-hop IPv6 extended header was not correctly validated. If a system was configured for IPv6, a remote attacker could send a specially crafted IPv6 packet and cause the kernel to panic, leading to a denial of service. This was only vulnerable in Ubuntu 7.04. (CVE-2007-4567)"
+      }
+    ],
+    "CVE-2007-4572": [
+      {
+        "url": "https://usn.ubuntu.com/544-1/",
+        "title": "USN-544-1: Samba vulnerabilities",
+        "body": "Samba developers discovered that nmbd could be made to overrun a buffer during the processing of GETDC logon server requests. When samba is configured as a Primary or Backup Domain Controller, a remote attacker could send malicious logon requests and possibly cause a denial of service. (CVE-2007-4572)"
+      }
+    ],
+    "CVE-2007-4657": [
+      {
+        "url": "https://usn.ubuntu.com/549-1/",
+        "title": "USN-549-1: PHP vulnerabilities",
+        "body": "Integer overflows were discovered in the strspn and strcspn functions. Attackers could exploit this to read arbitrary areas of memory, possibly gaining access to sensitive information. (CVE-2007-4657)"
+      }
+    ],
+    "CVE-2007-4660": [
+      {
+        "url": "https://usn.ubuntu.com/549-1/",
+        "title": "USN-549-1: PHP vulnerabilities",
+        "body": "Gerhard Wagner discovered that the chunk_split function did not correctly handle long strings. A remote attacker could exploit this to execute arbitrary code with application privileges. (CVE-2007-2872, CVE-2007-4660, CVE-2007-4661)"
+      }
+    ],
+    "CVE-2007-4661": [
+      {
+        "url": "https://usn.ubuntu.com/549-1/",
+        "title": "USN-549-1: PHP vulnerabilities",
+        "body": "Gerhard Wagner discovered that the chunk_split function did not correctly handle long strings. A remote attacker could exploit this to execute arbitrary code with application privileges. (CVE-2007-2872, CVE-2007-4660, CVE-2007-4661)"
+      }
+    ],
+    "CVE-2007-4662": [
+      {
+        "url": "https://usn.ubuntu.com/549-1/",
+        "title": "USN-549-1: PHP vulnerabilities",
+        "body": "It was discovered that the php_openssl_make_REQ function did not correctly check buffer lengths. A remote attacker could send a specially crafted message and execute arbitrary code with application privileges. (CVE-2007-4662)"
+      }
+    ],
+    "CVE-2007-4766": [
+      {
+        "url": "https://usn.ubuntu.com/547-1/",
+        "title": "USN-547-1: PCRE vulnerabilities",
+        "body": "Tavis Ormandy and Will Drewry discovered multiple flaws in the regular expression handling of PCRE. By tricking a user or service into running specially crafted expressions via applications linked against libpcre3, a remote attacker could crash the application, monopolize CPU resources, or possibly execute arbitrary code with the application’s privileges."
+      }
+    ],
+    "CVE-2007-4768": [
+      {
+        "url": "https://usn.ubuntu.com/547-1/",
+        "title": "USN-547-1: PCRE vulnerabilities",
+        "body": "Tavis Ormandy and Will Drewry discovered multiple flaws in the regular expression handling of PCRE. By tricking a user or service into running specially crafted expressions via applications linked against libpcre3, a remote attacker could crash the application, monopolize CPU resources, or possibly execute arbitrary code with the application’s privileges."
+      }
+    ],
+    "CVE-2007-4769": [
+      {
+        "url": "https://usn.ubuntu.com/568-1/",
+        "title": "USN-568-1: PostgreSQL vulnerabilities",
+        "body": "It was discovered that the TCL regular expression parser used by PostgreSQL did not properly check its input. An attacker could send crafted regular expressions to PostgreSQL and cause a denial of service via resource exhaustion or database crash. (CVE-2007-4769, CVE-2007-4772, CVE-2007-6067)"
+      }
+    ],
+    "CVE-2007-4772": [
+      {
+        "url": "https://usn.ubuntu.com/568-1/",
+        "title": "USN-568-1: PostgreSQL vulnerabilities",
+        "body": "It was discovered that the TCL regular expression parser used by PostgreSQL did not properly check its input. An attacker could send crafted regular expressions to PostgreSQL and cause a denial of service via resource exhaustion or database crash. (CVE-2007-4769, CVE-2007-4772, CVE-2007-6067)"
+      }
+    ],
+    "CVE-2007-4995": [
+      {
+        "url": "https://usn.ubuntu.com/534-1/",
+        "title": "USN-534-1: OpenSSL vulnerability",
+        "body": "Andy Polyakov discovered that the DTLS implementation in OpenSSL was vulnerable. A remote attacker could send a specially crafted connection request to services using DTLS and execute arbitrary code with the service’s privileges. There are no known Ubuntu applications that are currently using DTLS."
+      }
+    ],
+    "CVE-2007-5135": [
+      {
+        "url": "https://usn.ubuntu.com/522-1/",
+        "title": "USN-522-1: openssl vulnerabilities",
+        "body": "Moritz Jodeit discovered that OpenSSL’s SSL_get_shared_ciphers function did not correctly check the size of the buffer it was writing to. A remote attacker could exploit this to write one NULL byte past the end of an application’s cipher list buffer, possibly leading to arbitrary code execution or a denial of service. (CVE-2007-5135)"
+      }
+    ],
+    "CVE-2007-5208": [
+      {
+        "url": "https://usn.ubuntu.com/530-1/",
+        "title": "USN-530-1: hplip vulnerability",
+        "body": "It was discovered that the hpssd tool of hplip did not correctly handle shell meta-characters. A local attacker could exploit this to execute arbitrary commands as the hplip user."
+      }
+    ],
+    "CVE-2007-5335": [
+      {
+        "url": "https://usn.ubuntu.com/535-1/",
+        "title": "USN-535-1: Firefox vulnerabilities",
+        "body": "Various flaws were discovered in the layout and JavaScript engines. By tricking a user into opening a malicious web page, an attacker could execute arbitrary code with the user’s privileges. (CVE-2007-5336, CVE-2007-5339, CVE-2007-5340) Michal Zalewski discovered that the onUnload event handlers were incorrectly able to access information outside the old page content. A malicious web site could exploit this to modify the contents, or steal confidential data (such as passwords), of the next loaded web page. (CVE-2007-1095) Stefano Di Paola discovered that Firefox did not correctly request Digest Authentications. A malicious web site could exploit this to inject arbitrary HTTP headers or perform session splitting attacks against proxies. (CVE-2007-2292) Flaws were discovered in the file upload form control. By tricking a user into opening a malicious web page, an attacker could force arbitrary files from the user’s computer to be uploaded without their consent. (CVE-2006-2894, CVE-2007-3511) Eli Friedman discovered that XUL could be used to hide a window’s titlebar. A malicious web site could exploit this to enhance their attempts at creating phishing web sites. (CVE-2007-5334) Georgi Guninski discovered that Firefox would allow file-system based web pages to access additional files. By tricking a user into opening a malicious web page from a gnome-vfs location, an attacker could steal arbitrary files from the user’s computer. (CVE-2007-5337) It was discovered that the XPCNativeWrappers were not safe in certain situations. By tricking a user into opening a malicious web page, an attacker could run arbitrary JavaScript with the user’s privileges. (CVE-2007-5338)"
+      }
+    ],
+    "CVE-2007-5337": [
+      {
+        "url": "https://usn.ubuntu.com/535-1/",
+        "title": "USN-535-1: Firefox vulnerabilities",
+        "body": "Georgi Guninski discovered that Firefox would allow file-system based web pages to access additional files. By tricking a user into opening a malicious web page from a gnome-vfs location, an attacker could steal arbitrary files from the user’s computer. (CVE-2007-5337)"
+      }
+    ],
+    "CVE-2007-5338": [
+      {
+        "url": "https://usn.ubuntu.com/535-1/",
+        "title": "USN-535-1: Firefox vulnerabilities",
+        "body": "It was discovered that the XPCNativeWrappers were not safe in certain situations. By tricking a user into opening a malicious web page, an attacker could run arbitrary JavaScript with the user’s privileges. (CVE-2007-5338)"
+      }
+    ],
+    "CVE-2007-5339": [
+      {
+        "url": "https://usn.ubuntu.com/535-1/",
+        "title": "USN-535-1: Firefox vulnerabilities",
+        "body": "Various flaws were discovered in the layout and JavaScript engines. By tricking a user into opening a malicious web page, an attacker could execute arbitrary code with the user’s privileges. (CVE-2007-5336, CVE-2007-5339, CVE-2007-5340)"
+      }
+    ],
+    "CVE-2007-5340": [
+      {
+        "url": "https://usn.ubuntu.com/535-1/",
+        "title": "USN-535-1: Firefox vulnerabilities",
+        "body": "Various flaws were discovered in the layout and JavaScript engines. By tricking a user into opening a malicious web page, an attacker could execute arbitrary code with the user’s privileges. (CVE-2007-5336, CVE-2007-5339, CVE-2007-5340)"
+      }
+    ],
+    "CVE-2007-5398": [
+      {
+        "url": "https://usn.ubuntu.com/544-1/",
+        "title": "USN-544-1: Samba vulnerabilities",
+        "body": "Alin Rad Pop of Secunia Research discovered that nmbd did not properly check the length of netbios packets. When samba is configured as a WINS server, a remote attacker could send multiple crafted requests resulting in the execution of arbitrary code with root privileges. (CVE-2007-5398)"
+      }
+    ],
+    "CVE-2007-5503": [
+      {
+        "url": "https://usn.ubuntu.com/550-2/",
+        "title": "USN-550-2: Cairo regression",
+        "body": "USN-550-1 fixed vulnerabilities in Cairo. The upstream fixes were incomplete, and under certain situations, applications using Cairo would crash with a floating point error. This update fixes the problem. We apologize for the inconvenience. Original advisory details: Peter Valchev discovered that Cairo did not correctly decode PNG image data. By tricking a user or automated system into processing a specially crafted PNG with Cairo, a remote attacker could execute arbitrary code with user privileges."
+      },
+      {
+        "url": "https://usn.ubuntu.com/550-1/",
+        "title": "USN-550-1: Cairo vulnerability",
+        "body": "Peter Valchev discovered that Cairo did not correctly decode PNG image data. By tricking a user or automated system into processing a specially crafted PNG with Cairo, a remote attacker could execute arbitrary code with user privileges."
+      }
+    ],
+    "CVE-2007-5899": [
+      {
+        "url": "https://usn.ubuntu.com/549-1/",
+        "title": "USN-549-1: PHP vulnerabilities",
+        "body": "It was discovered that the output_add_rewrite_var fucntion would sometimes leak session id information to forms targeting remote URLs. Malicious remote sites could use this information to gain access to a PHP application user’s login credentials. (CVE-2007-5899)"
+      }
+    ],
+    "CVE-2007-5925": [
+      {
+        "url": "https://usn.ubuntu.com/559-1/",
+        "title": "USN-559-1: MySQL vulnerabilities",
+        "body": "Joe Gallo and Artem Russakovskii discovered that the InnoDB engine in MySQL did not properly perform input validation. An authenticated user could use a crafted CONTAINS statement to cause a denial of service. (CVE-2007-5925)"
+      }
+    ],
+    "CVE-2007-5935": [
+      {
+        "url": "https://usn.ubuntu.com/554-1/",
+        "title": "USN-554-1: teTeX and TeX Live vulnerabilities",
+        "body": "Bastien Roucaries discovered that dvips as included in tetex-bin and texlive-bin did not properly perform bounds checking. If a user or automated system were tricked into processing a specially crafted dvi file, dvips could be made to crash and execute code as the user invoking the program. (CVE-2007-5935)"
+      }
+    ],
+    "CVE-2007-5936": [
+      {
+        "url": "https://usn.ubuntu.com/554-1/",
+        "title": "USN-554-1: teTeX and TeX Live vulnerabilities",
+        "body": "Joachim Schrod discovered that the dviljk utilities created temporary files in an insecure way. Local users could exploit a race condition to create or overwrite files with the privileges of the user invoking the program. (CVE-2007-5936)"
+      }
+    ],
+    "CVE-2007-5937": [
+      {
+        "url": "https://usn.ubuntu.com/554-1/",
+        "title": "USN-554-1: teTeX and TeX Live vulnerabilities",
+        "body": "Joachim Schrod discovered that the dviljk utilities did not perform bounds checking in many instances. If a user or automated system were tricked into processing a specially crafted dvi file, the dviljk utilities could be made to crash and execute code as the user invoking the program. (CVE-2007-5937)"
+      }
+    ],
+    "CVE-2007-5947": [
+      {
+        "url": "https://usn.ubuntu.com/546-1/",
+        "title": "USN-546-1: Firefox vulnerabilities",
+        "body": "It was discovered that Firefox incorrectly associated redirected sites as the origin of “jar:” contents. A malicious web site could exploit this to modify or steal confidential data (such as passwords) from other web sites. (CVE-2007-5947)"
+      }
+    ],
+    "CVE-2007-5958": [
+      {
+        "url": "https://usn.ubuntu.com/571-1/",
+        "title": "USN-571-1: X.org vulnerabilities",
+        "body": "It was discovered that the X.org server did not use user privileges when attempting to open security policy files. Local attackers could exploit this to probe for files in directories they would not normally be able to access. (CVE-2007-5958)"
+      }
+    ],
+    "CVE-2007-5960": [
+      {
+        "url": "https://usn.ubuntu.com/546-1/",
+        "title": "USN-546-1: Firefox vulnerabilities",
+        "body": "Gregory Fleischer discovered that it was possible to use JavaScript to manipulate Firefox’s Referer header. A malicious web site could exploit this to conduct cross-site request forgeries against sites that relied only on Referer headers for protection from such attacks. (CVE-2007-5960)"
+      }
+    ],
+    "CVE-2007-5969": [
+      {
+        "url": "https://usn.ubuntu.com/559-1/",
+        "title": "USN-559-1: MySQL vulnerabilities",
+        "body": "It was discovered that under certain conditions MySQL could be made to overwrite system table information. An authenticated user could use a crafted RENAME statement to escalate privileges. (CVE-2007-5969)"
+      }
+    ],
+    "CVE-2007-6067": [
+      {
+        "url": "https://usn.ubuntu.com/568-1/",
+        "title": "USN-568-1: PostgreSQL vulnerabilities",
+        "body": "It was discovered that the TCL regular expression parser used by PostgreSQL did not properly check its input. An attacker could send crafted regular expressions to PostgreSQL and cause a denial of service via resource exhaustion or database crash. (CVE-2007-4769, CVE-2007-4772, CVE-2007-6067)"
+      }
+    ],
+    "CVE-2007-6109": [
+      {
+        "url": "https://usn.ubuntu.com/607-1/",
+        "title": "USN-607-1: Emacs vulnerabilities",
+        "body": "It was discovered that Emacs did not account for precision when formatting integers. If a user were tricked into opening a specially crafted file, an attacker could cause a denial of service or possibly other unspecified actions. This issue does not affect Ubuntu 8.04. (CVE-2007-6109)"
+      }
+    ],
+    "CVE-2007-6284": [
+      {
+        "url": "https://usn.ubuntu.com/569-1/",
+        "title": "USN-569-1: libxml2 vulnerability",
+        "body": "Brad Fitzpatrick discovered that libxml2 did not correctly handle certain UTF-8 sequences. If a remote attacker were able to trick a user or automated system into processing a specially crafted XML document, the application linked against libxml2 could enter an infinite loop, leading to a denial of service via CPU resource consumption."
+      }
+    ],
+    "CVE-2007-6341": [
+      {
+        "url": "https://usn.ubuntu.com/594-1/",
+        "title": "USN-594-1: libnet-dns-perl vulnerability",
+        "body": "It was discovered that Net::DNS did not correctly validate the size of DNS replies. A remote attacker could send a specially crafted DNS response and cause applications using Net::DNS to abort, leading to a denial of service."
+      }
+    ],
+    "CVE-2007-6427": [
+      {
+        "url": "https://usn.ubuntu.com/571-1/",
+        "title": "USN-571-1: X.org vulnerabilities",
+        "body": "Multiple overflows were discovered in the XFree86-Misc, XInput-Misc, TOG-CUP, EVI, and MIT-SHM extensions which did not correctly validate function arguments. An authenticated attacker could send specially crafted requests and gain root privileges. (CVE-2007-5760, CVE-2007-6427, CVE-2007-6428, CVE-2007-6429)"
+      }
+    ],
+    "CVE-2007-6429": [
+      {
+        "url": "https://usn.ubuntu.com/571-1/",
+        "title": "USN-571-1: X.org vulnerabilities",
+        "body": "Multiple overflows were discovered in the XFree86-Misc, XInput-Misc, TOG-CUP, EVI, and MIT-SHM extensions which did not correctly validate function arguments. An authenticated attacker could send specially crafted requests and gain root privileges. (CVE-2007-5760, CVE-2007-6427, CVE-2007-6428, CVE-2007-6429)"
+      }
+    ],
+    "CVE-2007-6600": [
+      {
+        "url": "https://usn.ubuntu.com/568-1/",
+        "title": "USN-568-1: PostgreSQL vulnerabilities",
+        "body": "It was discovered that PostgreSQL executed VACUUM and ANALYZE operations within index functions with superuser privileges and also allowed SET ROLE and SET SESSION AUTHORIZATION within index functions. A remote authenticated user could exploit these flaws to gain privileges. (CVE-2007-6600)"
+      }
+    ],
+    "CVE-2007-6601": [
+      {
+        "url": "https://usn.ubuntu.com/568-1/",
+        "title": "USN-568-1: PostgreSQL vulnerabilities",
+        "body": "Nico Leidecker discovered that PostgreSQL did not properly restrict dblink functions. An authenticated user could exploit this flaw to access arbitrary accounts and execute arbitrary SQL queries. (CVE-2007-3278, CVE-2007-6601)"
+      }
+    ],
+    "CVE-2007-6694": [
+      {
+        "url": "https://usn.ubuntu.com/614-1/",
+        "title": "USN-614-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that PowerPC kernels did not correctly handle reporting certain system details. By requesting a specific set of information, a local attacker could cause a system crash resulting in a denial of service. (CVE-2007-6694)"
+      }
+    ],
+    "CVE-2007-6725": [
+      {
+        "url": "https://usn.ubuntu.com/757-1/",
+        "title": "USN-757-1: Ghostscript vulnerabilities",
+        "body": "It was discovered that Ghostscript contained a buffer underflow in its CCITTFax decoding filter. If a user or automated system were tricked into opening a crafted PDF file, an attacker could cause a denial of service or execute arbitrary code with privileges of the user invoking the program. (CVE-2007-6725)"
+      }
+    ]
+  }
 }

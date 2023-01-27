@@ -1,6 +1,838 @@
 {
   "year": 2015,
-  "total": 0,
+  "total": 119,
   "reference": "mozilla.org",
-  "reports": {}
+  "reports": {
+    "CVE-2015-0798": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-43.html",
+        "title": "Loading privileged content through Reader mode",
+        "description": "Security researcher Armin Razmdjou reported a flaw in Reader mode on Firefox for Android. Reader mode reformats web content for easy readability and operates as unprivileged content that is the equivalent of the formatted content. When Reader mode is unable to process content, it displays the original web pages. Since it is unprivileged, there are no restrictions on pages linking to or framing Reader mode content. The reported flaw is that privileged URLs can be passed to Reader mode and bypass the normal restrictions that prevent web pages from obtaining references to privileged contexts. If this issue was combined with another flaw that allowed for a violation of the same-origin policy, then the resulting combination could lead to arbitrary code execution. This flaw only affects Firefox for Android and pre-release versions of Desktop Firefox. The released version of desktop Firefox does not have reader mode and is not affected."
+      }
+    ],
+    "CVE-2015-0799": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-44.html",
+        "title": "Certificate verification bypass through the HTTP/2 Alt-Svc header",
+        "description": "Security researcher Muneaki Nishimura discovered a flaw in the Mozilla's HTTP Alternative Services implementation. If an Alt-Svc header is specified in the HTTP/2 response, SSL certificate verification can be bypassed for the specified alternate server. As a result of this, warnings of invalid SSL certificates will not be displayed and an attacker could potentially impersonate another site through a man-in-the-middle (MTIM), replacing the original certificate with their own."
+      }
+    ],
+    "CVE-2015-0800": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-41.html",
+        "title": "PRNG weakness allows for DNS poisoning on Android",
+        "description": "Mozilla developer Daniel Stenberg reported that the DNS resolver in Firefox for Android uses an insufficiently random algorithm when generating random numbers for the unique identifier. This was derived from an old version of the Bionic libc library and suffered from insufficient randomness in the pseudo-random number generator (PRNG) as described by Roee Hay and Roi Saltzman. This leaves Firefox on Android potentially vulnerable to DNS poisoning attacks because an attacker may be able to predict the identifier used, allowing for the spoofing of web sites and cookie theft. This flaw did not affect desktop versions of Mozilla products and only Firefox for Android was affected."
+      }
+    ],
+    "CVE-2015-0801": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-40.html",
+        "title": "Same-origin bypass through anchor navigation",
+        "description": "Mozilla developer Olli Pettay reported that while investigating Mozilla Foundation Security Advisory 2015-28, he and Mozilla developer Boris Zbarsky found an alternate way to trigger a similar vulnerability. The previously reported flaw used an issue with SVG content navigation to bypass same-origin policy protections to run scripts in a privileged context. This newer variant found that the same flaw could be used during anchor navigation of a page, allowing bypassing of same-origin policy protections. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-0802": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-42.html",
+        "title": "Windows can retain access to privileged content on navigation to unprivileged pages",
+        "description": "Mozilla developer Bobby Holley reported that windows created to hold privileged UI content retained access to privileged internal methods if later navigated to unprivileged content. If a separate flaw was found that allowed for web content to reference these privileged windows, an attacker could use this reference to navigate them to their own content allowing for an escalation of privilege and arbitrary code execution. On its own, this flaw does not allow for privilege escalation by web content."
+      }
+    ],
+    "CVE-2015-0803": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-39.html",
+        "title": "Use-after-free due to type confusion flaws",
+        "description": "Security researcher Nils used the Address Sanitizer tool to discover two type confusion flaws. The first of these occurs while setting specific attributes of a source element resulting in incorrect object casting. The second flaw occurs when binding a source to a tree when the function fails to validate the namespace. These flaws lead to use-after-free errors, resulting in potentially exploitable crashes."
+      }
+    ],
+    "CVE-2015-0804": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-39.html",
+        "title": "Use-after-free due to type confusion flaws",
+        "description": "Security researcher Nils used the Address Sanitizer tool to discover two type confusion flaws. The first of these occurs while setting specific attributes of a source element resulting in incorrect object casting. The second flaw occurs when binding a source to a tree when the function fails to validate the namespace. These flaws lead to use-after-free errors, resulting in potentially exploitable crashes."
+      }
+    ],
+    "CVE-2015-0807": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-37.html",
+        "title": "CORS requests should not follow 30x redirections after preflight",
+        "description": "Mozilla developer Christoph Kerschbaumer discovered an issue while investigating Mozilla Foundation Security Advisory 2015-03, previously reported by security researcher Muneaki Nishimura. This flaw was that a cross-origin resource sharing (CORS) request should not follow 30x redirections after preflight according to the specification. This only affects sendBeacon() requests but could allow for a potential Cross-site request forgery (XSRF) attack from malicious websites. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-0810": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-35.html",
+        "title": "Cursor clickjacking with flash and images",
+        "description": "Security researcher Jordi Chancel reported a mechanism that made cursor invisible through flash content and then replaced it through the layering of HTML content. This flaw can be in used in combination with an image of the cursor manipulated through JavaScript, leading to clickjacking during subsequent interactions with HTML content. This flaw only affects OS X systems. Windows and Linux installations are unaffected."
+      }
+    ],
+    "CVE-2015-0811": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-34.html",
+        "title": "Out of bounds read in QCMS library",
+        "description": "Security researcher Felix Gröbert of Google used the Address Sanitizer tool to discover an out of bounds read in the QCMS color management library while transforming images with certain parameters. This could lead to information disclosure."
+      }
+    ],
+    "CVE-2015-0816": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-33.html",
+        "title": "resource:// documents can load privileged pages",
+        "description": "Security researcher Mariusz Mlynski reported, through HP Zero Day Initiative's Pwn2Own contest, that documents loaded though a resource: URL, such as Mozilla's PDF.js PDF file viewer, were able to subsequently load privileged chrome pages. The privilege restrictions on resource: URLs was handled incorrectly and these restrictions could be bypassed if this flaw was combined with a separate vulnerability allowing for same-origin policy violation, it could be used to run arbitrary code. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-0818": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-28.html",
+        "title": "Privilege escalation through SVG navigation",
+        "description": "Security researcher Mariusz Mlynski reported, through HP Zero Day Initiative's Pwn2Own contest, a method to run arbitrary scripts in a privileged context. This bypassed the same-origin policy protections by using a flaw in the processing of SVG format content navigation. An incomplete version of this fix was shipped in Firefox 36.0.3 and Firefox ESR 31.5.2."
+      }
+    ],
+    "CVE-2015-0821": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-25.html",
+        "title": "Local files or privileged URLs in pages can be opened into new tabs",
+        "description": "Security researcher Armin Razmdjou reported that opening hyperlinks on a page with the mouse and specific keyboard key combinations could allow a Chrome privileged URL to be opened without context restrictions being preserved. This could also allow for local files or resources from a known location to be opened with local privileges, bypassing security protections."
+      }
+    ],
+    "CVE-2015-0822": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-24.html",
+        "title": "Reading of local files through manipulation of form autocomplete",
+        "description": "Security researcher Armin Razmdjou reported that a user readable file in a known local path could be uploaded to a malicious site. This was done by manipulating the autocomplete feature in a form and user interaction with it. While the local file is not visibly uploaded through the form, its contents are made available through the Document Object Model (DOM) to script content on the attacking page, leading to information disclosure. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-0824": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-22.html",
+        "title": "Crash using DrawTarget in Cairo graphics library",
+        "description": "Security researcher Atte Kettunen used the Address Sanitizer tool to discover a crash while drawing images through the Cairo graphics library while using the DrawTarget function. This can result in a segmentation fault due to zero-ing out of memory outside the bounds of the image."
+      }
+    ],
+    "CVE-2015-0825": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-21.html",
+        "title": "Buffer underflow during MP3 playback",
+        "description": "Security researcher Atte Kettunen used the Address Sanitizer tool to discover a buffer underflow during audio playback of a badly formatted MP3 audio files. Through memory allocation manipulation it may be possible to incorporate parts of Firefox memory into an MP3 stream accessible to scripts on the page."
+      }
+    ],
+    "CVE-2015-0826": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-20.html",
+        "title": "Buffer overflow during CSS restyling",
+        "description": "Security researcher Atte Kettunen used the Address Sanitizer tool to discover an out-of-bounds read during the application of restyling and reflowing changes of web content using CSS. This results in a potentially exploitable crash."
+      }
+    ],
+    "CVE-2015-0827": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-19.html",
+        "title": "Out-of-bounds read and write while rendering SVG content",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to report an out-of-bounds read and an out-of-bounds write when rendering an improperly formatted SVG graphic. This could potentially allow the attacker to read uninitialized memory. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-0829": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-17.html",
+        "title": "Buffer overflow in libstagefright during MP4 video playback",
+        "description": "Security researcher Pantrombka reported a buffer overflow in the libstagefright library during video playback when certain invalid MP4 video files led to the allocation of a buffer that was too small for the content. This led to a potentially exploitable crash."
+      }
+    ],
+    "CVE-2015-0830": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-14.html",
+        "title": "Malicious WebGL content crash when writing strings",
+        "description": "Security researcher Daniele Di Proietto discovered that when WebGL content crafted in a specific manner wrote strings, it would cause a crash when this content was run."
+      }
+    ],
+    "CVE-2015-0834": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-15.html",
+        "title": "TLS TURN and STUN connections silently fail to simple TCP connections",
+        "description": "Security researcher Alexander Kolesnik reported while the Mozilla platform does not yet support TLS connections to TURN and STUN servers, the WebRTC implementation would accept turns: and stuns: URIs and then attempt plaintext connections to the servers when these were used. This can lead to disclosure of credentials through a Man-in-the-middle (MITM) attack as the connection is not encrypted."
+      }
+    ],
+    "CVE-2015-2710": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-48.html",
+        "title": "Buffer overflow with SVG content and CSS",
+        "description": "Using the Address Sanitizer tool, security researcher Atte Kettunen found a buffer overflow during the rendering of SVG format graphics when combined with specific CSS properties on a page. This results in a potentially exploitable crash. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-2711": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-49.html",
+        "title": "Referrer policy ignored when links opened by middle-click and context menu",
+        "description": "Security researcher Alex Verstak reported that <meta name=\"referrer\"> is ignored when a link is opened through the context menu or a middle-click by mouse. This means that, in some situations, the referrer policy is ignored when opening links in new tabs and may cause some pages to open without an HTTP Referer header being set according to the author's intended policy."
+      }
+    ],
+    "CVE-2015-2712": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-50.html",
+        "title": "Out-of-bounds read and write in asm.js validation",
+        "description": "Security researcher Dougall Johnson reported an out-of-bounds read and write in asm.js during JavaScript validation due to an error in how heap lengths are defined. This results in a potentially exploitable crash and could allow for the reading of random memory which may contain sensitive data."
+      }
+    ],
+    "CVE-2015-2714": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-52.html",
+        "title": "Sensitive URL encoded information written to Android logcat",
+        "description": "Security researcher Muneaki Nishimura reported that Firefox for Android would write potentially sensitive data to the Android logcat that was encoded as part of logged URL strings. On Android 4.0 or earlier systems, logcat data is available to any application having READ_LOGS permission, leading to potential privacy violations. This does not affect non-Android versions of Firefox and is mitigated in versions of Android higher than 4.0."
+      }
+    ],
+    "CVE-2015-2716": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-54.html",
+        "title": "Buffer overflow when parsing compressed XML",
+        "description": "Security researcher Ucha Gobejishvili used the Address Sanitizer tool to find a buffer overflow while parsing compressed XML content. This was due to an error in how buffer space is created and modified when handling large amounts of XML data. This results in a potentially exploitable crash. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-2717": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-55.html",
+        "title": "Buffer overflow and out-of-bounds read while parsing MP4 video metadata",
+        "description": "Security researcher laf.intel reported a buffer overflow and out-of-bounds read in the libstagefright library while parsing invalid metadata in MPEG4 video files. This can lead to a potentially exploitable crash."
+      }
+    ],
+    "CVE-2015-2718": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-56.html",
+        "title": "Untrusted site hosting trusted page can intercept webchannel responses",
+        "description": "Mozilla developer Mark Hammond reported a flaw in how WebChannel.jsm handles message traffic. He found that when a trusted page is hosted within an <iframe> on an untrusted third-party untrusted framing page, the untrusted page could intercept webchannel responses meant for the trusted page, bypassing origin restrictions."
+      }
+    ],
+    "CVE-2015-2721": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-71.html",
+        "title": "NSS incorrectly permits skipping of ServerKeyExchange",
+        "description": "Security researcher Karthikeyan Bhargavan reported an issue in Network Security Services (NSS) where the client allows for a ECDHE_ECDSA exchange where the server does not send its ServerKeyExchange message instead of aborting the handshake. Instead, the NSS client will take the EC key from the ECDSA certificate. This violates the TLS protocol and also has some security implications for forward secrecy. In this situation, the browser thinks it is engaged in an ECDHE exchange, but has been silently downgraded to a non-forward secret mixed-ECDH exchange instead. As a result, if False Start is enabled, the browser will start sending data encrypted under these non-forward-secret connection keys. This issue was fixed in NSS version 3.19.1."
+      }
+    ],
+    "CVE-2015-2724": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-59.html",
+        "title": "Miscellaneous memory safety hazards (rv:39.0 / rv:31.8 / rv:38.1)",
+        "description": "Mozilla developers and community identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code. In general these flaws cannot be exploited through email in the Thunderbird product because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-2725": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-59.html",
+        "title": "Miscellaneous memory safety hazards (rv:39.0 / rv:31.8 / rv:38.1)",
+        "description": "Mozilla developers and community identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code. In general these flaws cannot be exploited through email in the Thunderbird product because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-2726": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-59.html",
+        "title": "Miscellaneous memory safety hazards (rv:39.0 / rv:31.8 / rv:38.1)",
+        "description": "Mozilla developers and community identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code. In general these flaws cannot be exploited through email in the Thunderbird product because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-2727": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-60.html",
+        "title": "Local files or privileged URLs in pages can be opened into new tabs",
+        "description": "Security researcher Jann Horn reported that when Mozilla Foundation Security Advisory 2015-25 was fixed in Firefox 37, an error was made that caused the fix to not be applied to Firefox 38, effectively causing the bug to be unfixed in Firefox 38 (and Firefox ESR38) once it shipped. As Armin Razmdjou reported for that issue, opening hyperlinks on a page with the mouse and specific keyboard key combinations could allow a Chrome privileged URL to be opened without context restrictions being preserved. This could allow for local files or resources from a known location to be opened with local privileges, bypassing security protections."
+      }
+    ],
+    "CVE-2015-2729": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-62.html",
+        "title": "Out-of-bound read while computing an oscillator rendering range in Web Audio",
+        "description": "Security researcher Holger Fuhrmannek used the Address Sanitizer tool to discover an out-of-bound read while computing an oscillator rendering range in Web Audio. This could allow an attacker to infer the contents of four bytes of memory."
+      }
+    ],
+    "CVE-2015-2730": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-64.html",
+        "title": "ECDSA signature validation fails to handle some signatures correctly",
+        "description": "Mozilla community member Watson Ladd reported that the implementation of Elliptical Curve Cryptography (ECC) multiplication for Elliptic Curve Digital Signature Algorithm (ECDSA) signature validation in Network Security Services (NSS) did not handle exceptional cases correctly. This could potentially allow for signature forgery. This issue was fixed in NSS version 3.19.1."
+      }
+    ],
+    "CVE-2015-2739": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-66.html",
+        "title": "Vulnerabilities found through code inspection",
+        "description": "Security researcher Ronald Crane reported seven vulnerabilities affecting released code that he found through code inspection. These included three uses of uninitialized memory, one poor validation leading to an exploitable crash, one read of unowned memory in zip files, and two buffer overflows. These do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them."
+      }
+    ],
+    "CVE-2015-2740": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-66.html",
+        "title": "Vulnerabilities found through code inspection",
+        "description": "Security researcher Ronald Crane reported seven vulnerabilities affecting released code that he found through code inspection. These included three uses of uninitialized memory, one poor validation leading to an exploitable crash, one read of unowned memory in zip files, and two buffer overflows. These do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them."
+      }
+    ],
+    "CVE-2015-2741": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-67.html",
+        "title": "Key pinning is ignored when overridable errors are encountered",
+        "description": "Mozilla security engineer David Keeler reported that when an overridable error is encountered, such as those for expired certificates or a host name does not match a certificate, pinning checks can be be skipped. This would allow for a user to override a pinned certificate when they should not be able to do so. This issue does not allow for third parties to cause a certificate to be overridden and the user would still have to manually do so. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-2742": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-68.html",
+        "title": "OS X crash reports may contain entered key press information",
+        "description": "Mozilla developer David Parks discovered while reviewing Firefox crash reports that personal data can sometimes be contained in reports from OS X systems. This is because these OS X crash reports will contain the native key that triggered the crash and this can sometimes contain key press information that was being entered when the crash occurred. This issue does not affect Linux or Windows installations of Firefox."
+      }
+    ],
+    "CVE-2015-2744": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-72.html",
+        "title": "Remote HTML tag injection in Gaia Search app",
+        "description": "Security researcher Muneaki Nishimura reported an issue with Gaia's Search app which allows an attacker to inject HTML code into the System app's context via specially-crafted search links. The injection occurs when the user opens such malicious link in the browser and then re-opens the browser or opens the tab view."
+      }
+    ],
+    "CVE-2015-2745": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-73.html",
+        "title": "Remote HTML tag injection in Gaia System app",
+        "description": "Security researcher Muneaki Nishimura reported an issue with Gaia's System app which allows an attacker to inject HTML code into the System app's context via specially-crafted search links. The injection occurs when the user opens such malicious link in the browser and then presses the HOME button or uses the Show Windows function."
+      }
+    ],
+    "CVE-2015-4000": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-70.html",
+        "title": "NSS accepts export-length DHE keys with regular DHE cipher suites",
+        "description": "Security researcher Matthew Green reported a Diffie–Hellman (DHE) key processing issue in Network Security Services (NSS) where a man-in-the-middle (MITM) attacker can force a server to downgrade TLS connections to 512-bit export-grade cryptography by modifying client requests to include only export-grade cipher suites. The resulting weak key can then be leveraged to impersonate the server. This attack is detailed in the \"Imperfect Forward Secrecy: How Diffie-Hellman Fails in Practice\" paper and is known as the \"Logjam Attack.\" This issue was fixed in NSS version 3.19.1 by limiting the lower strength of supported DHE keys to use 1023 bit primes."
+      }
+    ],
+    "CVE-2015-4473": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-79.html",
+        "title": "Miscellaneous memory safety hazards (rv:40.0 / rv:38.2)",
+        "description": "Mozilla developers and community identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2015-4475": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-80.html",
+        "title": "Out-of-bounds read with malformed MP3 file",
+        "description": "Security researcher Aki Helin used the Address Sanitizer tool to discover an out-of-bounds read during playback of a malformed MP3 format audio file which switches sample formats. This could trigger a potentially exploitable crash or the reading of out-of-bounds memory content in some circumstances."
+      }
+    ],
+    "CVE-2015-4478": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-82.html",
+        "title": "Redefinition of non-configurable JavaScript object properties",
+        "description": "Security researcher André Bargull reported non-configurable properties on JavaScript objects can be redefined while parsing JSON in violation of the ECMAScript 6 standard. This allows malicious web content to bypass same-origin policy by editing these properties to arbitrary values."
+      }
+    ],
+    "CVE-2015-4479": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-83.html",
+        "title": "Overflow issues in libstagefright",
+        "description": "An anonymous researcher reported, via TippingPoint's Zero Day Initiative, two integer overflows in the libstagefright library that could be triggered by a malicious 'saio' chunk in an MPEG4 video. These overflows allowed for potential arbitrary code execution. This issue was independently reported by security researcher laf.intel. Security researcher Massimiliano Tomassoli also discovered an integer overflow issue when parsing an invalid MPEG4 video. Mozilla security engineers Tyson Smith and Christoph Diehl used the Address Sanitizer to find a buffer overflow when parsing an MPEG4 video with an invalid size in an ESDS chunk lead to memory corruption. Each of these reported issues result in potentially exploitable crashes that could allow for remote code execution."
+      }
+    ],
+    "CVE-2015-4480": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-83.html",
+        "title": "Overflow issues in libstagefright",
+        "description": "An anonymous researcher reported, via TippingPoint's Zero Day Initiative, two integer overflows in the libstagefright library that could be triggered by a malicious 'saio' chunk in an MPEG4 video. These overflows allowed for potential arbitrary code execution. This issue was independently reported by security researcher laf.intel. Security researcher Massimiliano Tomassoli also discovered an integer overflow issue when parsing an invalid MPEG4 video. Mozilla security engineers Tyson Smith and Christoph Diehl used the Address Sanitizer to find a buffer overflow when parsing an MPEG4 video with an invalid size in an ESDS chunk lead to memory corruption. Each of these reported issues result in potentially exploitable crashes that could allow for remote code execution."
+      }
+    ],
+    "CVE-2015-4482": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-85.html",
+        "title": "Out-of-bounds write with Updater and malicious MAR file",
+        "description": "Security researcher Holger Fuhrmannek reported that if the Updater opens a MAR format file with a specially crafted name, an out-of-bounds write will occur. This can lead to a potentially exploitable crash but requires that the malicious MAR format file be present on the local system and the Updater to be run to use it."
+      }
+    ],
+    "CVE-2015-4483": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-86.html",
+        "title": "Feed protocol with POST bypasses mixed content protections",
+        "description": "Security researcher Masato Kinugawa reported that opening a target page using a POST to the url prefixed with the feed: protocol disables the mixed content blocker for that page. This could allow for the risk of a man-in-the-middle (MITM) scripting attack on pages that accidentally include insecure content which would otherwise be blocked."
+      }
+    ],
+    "CVE-2015-4484": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-87.html",
+        "title": "Crash when using shared memory in JavaScript",
+        "description": "Security researcher Jukka Jylänki reported a crash that occurs because JavaScript, when using shared memory, does not properly gate access to Atomics or SharedArrayBuffer views in some contexts. This leads to a non-exploitable crash."
+      }
+    ],
+    "CVE-2015-4485": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-89.html",
+        "title": "Buffer overflows on Libvpx when decoding WebM video",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover two buffer overflow issues in the Libvpx library used for WebM video when decoding a malformed WebM video file. These buffer overflows result in potentially exploitable crashes."
+      }
+    ],
+    "CVE-2015-4486": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-89.html",
+        "title": "Buffer overflows on Libvpx when decoding WebM video",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover two buffer overflow issues in the Libvpx library used for WebM video when decoding a malformed WebM video file. These buffer overflows result in potentially exploitable crashes."
+      }
+    ],
+    "CVE-2015-4487": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-90.html",
+        "title": "Vulnerabilities found through code inspection",
+        "description": "Security researcher Ronald Crane reported three vulnerabilities affecting released code that were found through code inspection. These included one use of unowned memory, one use of a deleted object, and one memory safety bug. These do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them."
+      }
+    ],
+    "CVE-2015-4489": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-90.html",
+        "title": "Vulnerabilities found through code inspection",
+        "description": "Security researcher Ronald Crane reported three vulnerabilities affecting released code that were found through code inspection. These included one use of unowned memory, one use of a deleted object, and one memory safety bug. These do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them."
+      }
+    ],
+    "CVE-2015-4490": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-91.html",
+        "title": "Mozilla Content Security Policy allows for asterisk wildcards in violation of CSP specification",
+        "description": "Mozilla security engineer Christoph Kerschbaumer reported a discrepancy in Mozilla's implementation of Content Security Policy and the CSP specification. The specification states that blob:, data:, and filesystem: URLs should be excluded in case of a wildcard when matching source expressions but Mozilla's implementation allows these in the case of an asterisk wildcard. This could allow for more permissive CSP usage than expected by a web developer, possibly allowing for cross-site scripting (XSS) attacks."
+      }
+    ],
+    "CVE-2015-4491": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-88.html",
+        "title": "Heap overflow in gdk-pixbuf when scaling bitmap images",
+        "description": "Security researcher Gustavo Grieco reported a heap overflow in gdk-pixbuf affecting Linux systems using Gnome. This issue is triggered by the scaling of a malformed bitmap format image and results in a potentially exploitable crash. This issue only affects Linux systems running Gnome. Windows and OS X operating systems are unaffected."
+      }
+    ],
+    "CVE-2015-4493": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-83.html",
+        "title": "Overflow issues in libstagefright",
+        "description": "An anonymous researcher reported, via TippingPoint's Zero Day Initiative, two integer overflows in the libstagefright library that could be triggered by a malicious 'saio' chunk in an MPEG4 video. These overflows allowed for potential arbitrary code execution. This issue was independently reported by security researcher laf.intel. Security researcher Massimiliano Tomassoli also discovered an integer overflow issue when parsing an invalid MPEG4 video. Mozilla security engineers Tyson Smith and Christoph Diehl used the Address Sanitizer to find a buffer overflow when parsing an MPEG4 video with an invalid size in an ESDS chunk lead to memory corruption. Each of these reported issues result in potentially exploitable crashes that could allow for remote code execution."
+      }
+    ],
+    "CVE-2015-4494": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-76.html",
+        "title": "Wifi direct system messages don't require a permission",
+        "description": "Paul Theriault of Mozilla discovered a privacy issue with a WiFi-related system message that wasn't properly restricted to apps with the \"wifi-manage\" permission. As a result, even unprivileged apps could have received those messages, allowing them to extract limited information from a vulnerable Firefox OS device under certain rare conditions."
+      }
+    ],
+    "CVE-2015-4495": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-78.html",
+        "title": "Same origin violation and local file stealing via PDF reader",
+        "description": "Security researcher Cody Crews reported on a way to violate the same origin policy and inject script into a non-privileged part of the built-in PDF Viewer. This would allow an attacker to read and steal sensitive local files on the victim's computer. Mozilla has received reports that an exploit based on this vulnerability has been found in the wild."
+      }
+    ],
+    "CVE-2015-4496": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-93.html",
+        "title": "Integer overflows in libstagefright while processing MP4 video metadata",
+        "description": "Security researcher Joshua Drake reported potential integer overflows in the libstagefright library while processing video sample metadata in MPEG4 video files. This can lead to a potentially exploitable crash."
+      }
+    ],
+    "CVE-2015-4500": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-96.html",
+        "title": "Miscellaneous memory safety hazards (rv:41.0 / rv:38.3)",
+        "description": "Mozilla developers and community identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2015-4501": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-96.html",
+        "title": "Miscellaneous memory safety hazards (rv:41.0 / rv:38.3)",
+        "description": "Mozilla developers and community identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2015-4503": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-97.html",
+        "title": "Memory leak in mozTCPSocket to servers",
+        "description": "Security researcher David Chan reported that Mozilla's mozTCPSocket implementation could leak data past the end of an array, allowing for the potential exposure of memory or private data to malicious servers. This feature is used by Firefox OS and is disabled by default in Firefox on other operating systems."
+      }
+    ],
+    "CVE-2015-4504": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-98.html",
+        "title": "Out of bounds read in QCMS library with ICC V4 profile attributes",
+        "description": "Security researcher Felix Gröbert of Google discovered an out of bounds read in the QCMS color management library while manipulating an image with specific attributes in its ICC V4 profile. This causes a crash and could lead to information disclosure."
+      }
+    ],
+    "CVE-2015-4505": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-100.html",
+        "title": "Arbitrary file manipulation by local user through Mozilla updater",
+        "description": "Security researcher Holger Fuhrmannek reported that when the Mozilla updater is run, the updater can be manipulated to load the updated files from a working directory under user control in concert with junctions. When the updates are run by the Mozilla Maintenance Service on Windows, these malicious files can be run with elevated privileges and be used to replace arbitrary files on the system. This could allow for arbitrary code execution by a malicious user with local system access but does not allow for exploitation by web content. This issue is specific to Windows and does not affect Linux or OS X systems."
+      }
+    ],
+    "CVE-2015-4506": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-101.html",
+        "title": "Buffer overflow in libvpx while parsing vp9 format video",
+        "description": "Security researcher Khalil Zhani reported that a maliciously crafted vp9 format video could be used to trigger a buffer overflow while parsing the file. This leads to a potentially exploitable crash due to a flaw in the libvpx library. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-4511": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-105.html",
+        "title": "Buffer overflow while decoding WebM video",
+        "description": "Using the Address Sanitizer tool, security researcher Atte Kettunen discovered a buffer overflow in the nestegg library when decoding a WebM format video with maliciously formatted headers. This leads to a potentially exploitable crash. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-4512": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-107.html",
+        "title": "Out-of-bounds read during 2D canvas display on Linux 16-bit color depth systems",
+        "description": "Security researcher Francisco Alonso of the NowSecure Research Team used the Address Sanitizer tool to discover an out-of-bounds read issue during 2D canvas rendering. This was due to an issue in the cairo graphics library when surfaces are created with 32-bit color depth but displayed on a 16-bit color depth system, which is unsupported. This allows an attacker to read an amount of random memory following the heap for the 16-bit surface leading to information disclosure. This issue is specific to Linux in certain configurations and does not affect Windows or OS X systems."
+      }
+    ],
+    "CVE-2015-4513": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-116.html",
+        "title": "Miscellaneous memory safety hazards (rv:42.0 / rv:38.4)",
+        "description": "Mozilla developers and community identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2015-4514": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-116.html",
+        "title": "Miscellaneous memory safety hazards (rv:42.0 / rv:38.4)",
+        "description": "Mozilla developers and community identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2015-4515": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-117.html",
+        "title": "Information disclosure through NTLM authentication",
+        "description": "Security researcher Tim Brown reported that Firefox discloses the hostname and possibly the Windows domain through NTLM-based HTTP authentication when sending type 3 messages as part of the authentication exchange. This is because the Workstation field is populated with the hostname of the system making the request. An attacker can craft a malicious page to send a silent NTLM request that will disclose the information without visibility in the client, leading to information disclosure. This is mitigated because NTLM v1 is disabled by default configurations."
+      }
+    ],
+    "CVE-2015-4517": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-112.html",
+        "title": "Vulnerabilities found through code inspection",
+        "description": "Security researcher Ronald Crane reported eight vulnerabilities affecting released code that were found through code inspection. These included several potential memory safety issues resulting from the use of snprintf, one use of unowned memory, one use of a string without overflow checks, and five memory safety bugs. These do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-4518": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-118.html",
+        "title": "CSP bypass due to permissive Reader mode whitelist",
+        "description": "Security researcher Mario Heiderich reported an issue where the security protections of Reader mode in Firefox can be bypassed, allowing scripts to be run. Mozilla developer Frederik Braun independently discovered and reported this same issue as well. This issue happens even though Reader View explicitly disables script for rendered pages through a whitelist of allowed HTML content. Mario discovered that the whitelist was too permissive and a malicious site could manipulate content to bypass CSP protections, allowing for possible cross-site scripting (XSS) attacks."
+      }
+    ],
+    "CVE-2015-4519": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-110.html",
+        "title": "Dragging and dropping images exposes final URL after redirects",
+        "description": "Security researcher Mario Gomes reported that when a previously loaded image on a page is drag and dropped into content after a redirect, the redirected URL is available to scripts. This is a violation of the Fetch specification's defined behavior for \"Atomic HTTP redirect handling\" which states that redirected URLs are not exposed to any APIs. This can allow for information leakage. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-4521": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-112.html",
+        "title": "Vulnerabilities found through code inspection",
+        "description": "Security researcher Ronald Crane reported eight vulnerabilities affecting released code that were found through code inspection. These included several potential memory safety issues resulting from the use of snprintf, one use of unowned memory, one use of a string without overflow checks, and five memory safety bugs. These do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-4522": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-112.html",
+        "title": "Vulnerabilities found through code inspection",
+        "description": "Security researcher Ronald Crane reported eight vulnerabilities affecting released code that were found through code inspection. These included several potential memory safety issues resulting from the use of snprintf, one use of unowned memory, one use of a string without overflow checks, and five memory safety bugs. These do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-5961": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-75.html",
+        "title": "COPPA error screen in FxAccounts signup allows loading arbitrary web content into B2G root process",
+        "description": "Kartikaya Gupta of Mozilla reported an issue within the Firefox Accounts setup dialog that would embed content from a static external URI into the System process. An attacker in a position to control a vulnerable device's network connection could use this to inject arbitrary web content into the System app."
+      }
+    ],
+    "CVE-2015-5962": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-77.html",
+        "title": "Upper bound check bypass due to signed compare in SharedBufferManagerParent::RecvAllocateGrallocBuffer",
+        "description": "Mozilla intern Julian Hector discovered a regression in the graphics buffer management of Firefox OS's graphics layer that would lead to graphics memory corruption by providing negative size parameters. JavaScript can not access the graphics layer in a way required to trigger this vulnerability, but it could be potentially used in a staged attack."
+      }
+    ],
+    "CVE-2015-7174": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-112.html",
+        "title": "Vulnerabilities found through code inspection",
+        "description": "Security researcher Ronald Crane reported eight vulnerabilities affecting released code that were found through code inspection. These included several potential memory safety issues resulting from the use of snprintf, one use of unowned memory, one use of a string without overflow checks, and five memory safety bugs. These do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-7175": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-112.html",
+        "title": "Vulnerabilities found through code inspection",
+        "description": "Security researcher Ronald Crane reported eight vulnerabilities affecting released code that were found through code inspection. These included several potential memory safety issues resulting from the use of snprintf, one use of unowned memory, one use of a string without overflow checks, and five memory safety bugs. These do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-7176": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-112.html",
+        "title": "Vulnerabilities found through code inspection",
+        "description": "Security researcher Ronald Crane reported eight vulnerabilities affecting released code that were found through code inspection. These included several potential memory safety issues resulting from the use of snprintf, one use of unowned memory, one use of a string without overflow checks, and five memory safety bugs. These do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-7177": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-112.html",
+        "title": "Vulnerabilities found through code inspection",
+        "description": "Security researcher Ronald Crane reported eight vulnerabilities affecting released code that were found through code inspection. These included several potential memory safety issues resulting from the use of snprintf, one use of unowned memory, one use of a string without overflow checks, and five memory safety bugs. These do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-7178": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-113.html",
+        "title": "Memory safety errors in libGLES in the ANGLE graphics library",
+        "description": "Security researcher Ronald Crane reported two issues in the libGLES portions of the ANGLE graphics library, used for WebGL and OpenGL content on Windows systems. The first of these is a missing bounds check leading to memory safety errors when manipulating shaders which could result in the writing to unowned memory. The second issue also affects shaders when insufficient memory is allocated for a shader attribute array, leading to a buffer overflow. Both of these issues can lead to a potentially exploitable crash. These issues are specific to Windows and does not affect Linux or OS X systems. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-7179": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-113.html",
+        "title": "Memory safety errors in libGLES in the ANGLE graphics library",
+        "description": "Security researcher Ronald Crane reported two issues in the libGLES portions of the ANGLE graphics library, used for WebGL and OpenGL content on Windows systems. The first of these is a missing bounds check leading to memory safety errors when manipulating shaders which could result in the writing to unowned memory. The second issue also affects shaders when insufficient memory is allocated for a shader attribute array, leading to a buffer overflow. Both of these issues can lead to a potentially exploitable crash. These issues are specific to Windows and does not affect Linux or OS X systems. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-7180": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-112.html",
+        "title": "Vulnerabilities found through code inspection",
+        "description": "Security researcher Ronald Crane reported eight vulnerabilities affecting released code that were found through code inspection. These included several potential memory safety issues resulting from the use of snprintf, one use of unowned memory, one use of a string without overflow checks, and five memory safety bugs. These do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-7181": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-133.html",
+        "title": "NSS and NSPR memory corruption issues",
+        "description": "Mozilla engineers Tyson Smith and David Keeler reported a use-after-poison and buffer overflow in the ASN.1 decoder in Network Security Services (NSS). These issues were in octet string parsing and were found through fuzzing and code inspection. If these issues were triggered, they would lead to a potentially exploitable crash. These issues were fixed in NSS version 3.19.2.1 and 3.19.4, shipped in Firefox and Firefox ESR, respectively, as well as NSS 3.20.1. Google security engineer Ryan Sleevi reported an integer overflow in the Netscape Portable Runtime (NSPR) due to a lack of checks during memory allocation. This leads to a potentially exploitable crash. This issue is fixed in NSPR 4.10.10. The NSPR library is a required component of NSS."
+      }
+    ],
+    "CVE-2015-7182": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-133.html",
+        "title": "NSS and NSPR memory corruption issues",
+        "description": "Mozilla engineers Tyson Smith and David Keeler reported a use-after-poison and buffer overflow in the ASN.1 decoder in Network Security Services (NSS). These issues were in octet string parsing and were found through fuzzing and code inspection. If these issues were triggered, they would lead to a potentially exploitable crash. These issues were fixed in NSS version 3.19.2.1 and 3.19.4, shipped in Firefox and Firefox ESR, respectively, as well as NSS 3.20.1. Google security engineer Ryan Sleevi reported an integer overflow in the Netscape Portable Runtime (NSPR) due to a lack of checks during memory allocation. This leads to a potentially exploitable crash. This issue is fixed in NSPR 4.10.10. The NSPR library is a required component of NSS."
+      }
+    ],
+    "CVE-2015-7183": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-133.html",
+        "title": "NSS and NSPR memory corruption issues",
+        "description": "Mozilla engineers Tyson Smith and David Keeler reported a use-after-poison and buffer overflow in the ASN.1 decoder in Network Security Services (NSS). These issues were in octet string parsing and were found through fuzzing and code inspection. If these issues were triggered, they would lead to a potentially exploitable crash. These issues were fixed in NSS version 3.19.2.1 and 3.19.4, shipped in Firefox and Firefox ESR, respectively, as well as NSS 3.20.1. Google security engineer Ryan Sleevi reported an integer overflow in the Netscape Portable Runtime (NSPR) due to a lack of checks during memory allocation. This leads to a potentially exploitable crash. This issue is fixed in NSPR 4.10.10. The NSPR library is a required component of NSS."
+      }
+    ],
+    "CVE-2015-7186": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-120.html",
+        "title": "Reading sensitive profile files through local HTML file on Android",
+        "description": "Security researcher Jordi Chancel reported an issue in Firefox for Android where a locally saved HTML file could use file: URIs to trigger the download of additional files or opening of cached profile data without user awareness. This issue only affects Firefox for Android. Firefox on other operating systems is not affected."
+      }
+    ],
+    "CVE-2015-7189": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-123.html",
+        "title": "Buffer overflow during image interactions in canvas",
+        "description": "Security researcher Looben Yang reported a buffer overflow in the JPEGEncoder function during script interactions with a canvas element. This is caused by a race condition and incorrectly matched sizes following image interactions. This leads to a potentially exploitable crash. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-7190": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-124.html",
+        "title": "Android intents can be used on Firefox for Android to open privileged files",
+        "description": "Security researcher Muneaki Nishimura reported that on Firefox for Android, a search engine can be registered and used to launch Firefox through an Android intent. When Firefox for Android is launched, the URL can executed with Firefox's system privileges if the crash reporter is used. This allows for the reading of local log files within Firefox, potentially leaking private information, and the loading of local HTML files through file: URIs. This issue only affects Firefox for Android on Android 4.4 or earlier. It does not affect more recent versions of Android except for causing a non-exploitable crash. Firefox on other operating systems is not affected."
+      }
+    ],
+    "CVE-2015-7191": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-125.html",
+        "title": "XSS attack through intents on Firefox for Android",
+        "description": "Security researcher Muneaki Nishimura reported that on Firefox for Android that it is possible to create a cross-site script (XSS) attack through the use of Android intents and fallback navigation. This issue is caused by improper sterilization of opened addresses sent to Firefox through intents. This issue only affects Firefox for Android. Firefox on other operating systems is not affected."
+      }
+    ],
+    "CVE-2015-7194": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-128.html",
+        "title": "Memory corruption in libjar through zip files",
+        "description": "Security researcher Gustavo Grieco reported a buffer underflow in libjar triggered through a maliciously crafted ZIP format file. This results in a potentially exploitable crash. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-7195": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-129.html",
+        "title": "Certain escaped characters in host of Location-header are being treated as non-escaped",
+        "description": "Security researcher Frans Rosén reported that URLs with certain escaped characters in hostnames are parsed incorrectly. This leads to parsing being abandoned when an effected escaped character is encountered followed by a navigation to the previously parsed version of the URL. When combined with a site allowing for navigation redirection that allows for escaped characters, this could lead to potential extraction of site specific tokens."
+      }
+    ],
+    "CVE-2015-7197": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-132.html",
+        "title": "Mixed content WebSocket policy bypass through workers",
+        "description": "Mozilla developer Ehsan Akhgari reported a mechanism through which a web worker could be used to bypass secure requirements for WebSockets when workers are used to create WebSockets. This allows for the bypassing of mixed content WebSocket policy. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-7198": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-131.html",
+        "title": "Vulnerabilities found through code inspection",
+        "description": "Security researcher Ronald Crane reported three vulnerabilities affecting released code that were found through code inspection. These included a buffer overflow in the ANGLE graphics library and two issues of missing status checks in SVG rendering and during cryptographic key manipulation. These do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-7199": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-131.html",
+        "title": "Vulnerabilities found through code inspection",
+        "description": "Security researcher Ronald Crane reported three vulnerabilities affecting released code that were found through code inspection. These included a buffer overflow in the ANGLE graphics library and two issues of missing status checks in SVG rendering and during cryptographic key manipulation. These do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-7201": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-134.html",
+        "title": "Miscellaneous memory safety hazards (rv:43.0 / rv:38.5)",
+        "description": "Mozilla developers and community identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2015-7202": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-134.html",
+        "title": "Miscellaneous memory safety hazards (rv:43.0 / rv:38.5)",
+        "description": "Mozilla developers and community identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code."
+      }
+    ],
+    "CVE-2015-7203": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-144.html",
+        "title": "Buffer overflows found through code inspection",
+        "description": "Security researcher Ronald Crane reported three buffer overflows affecting released code that were found through code inspection. They do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them."
+      }
+    ],
+    "CVE-2015-7205": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-145.html",
+        "title": "Underflow through code inspection",
+        "description": "Security researcher Ronald Crane reported an underflow found through code inspection. This does not all have a clear mechanism to be exploited through web content but could be vulnerable if a means can be found to trigger it. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-7207": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-136.html",
+        "title": "Same-origin policy violation using performance.getEntries and history navigation",
+        "description": "Security researcher cgvwzq reported that it is possible to read cross-origin URLs following a redirect if performance.getEntries() is used along with an iframe to host a page. Navigating back in history through script, content is pulled from the browser cache for the redirected location instead of going to the original location. This is a same-origin policy violation and could allow for data theft. This issue affects other browsers as well and is not limited to Mozilla products."
+      }
+    ],
+    "CVE-2015-7208": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-137.html",
+        "title": "Firefox allows for control characters to be set in cookies",
+        "description": "Security researcher musicDespiteEverything reported an issue when ASCII code 11 for vertical tab is stored in a cookie in violation of RFC6265. This may result in incorrect cookie handling by servers, resulting in the potential ability to set cookie values and read cookie data from users in concert with some web servers if the vertical tab character is mishandled during parsing."
+      },
+      {
+        "url": "http://www.mozilla.org/security/announce/2016/mfsa2016-04.html",
+        "title": "Firefox allows for control characters to be set in cookie names",
+        "description": "Security researcher musicDespiteEverything previously reported an issue where illegal control characters were stored in as cookie values in violation of RFC6265. While fixing this issue, Mozilla developer Nicholas Hurley realized that the same issue applied to the names of cookies. These characters have now been disallowed in cookie names. This issue could result in incorrect cookie handling by web servers."
+      }
+    ],
+    "CVE-2015-7211": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-141.html",
+        "title": "Hash in data URI is incorrectly parsed",
+        "description": "Security researcher Abdulrahman Alqabandi reported that when a data: URI is parsed, the hash ('#') symbol is incorrectly handled, allowing for spoofing attacks. This issue could result in the wrong URI being displayed as a location, which can mislead users to believe they are on a different site than the one loaded."
+      }
+    ],
+    "CVE-2015-7212": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-139.html",
+        "title": "Integer overflow allocating extremely large textures",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover an integer overflow when when allocating textures of extremely larges sizes during graphics operations. This results in a potentially exploitable crash when triggered. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-7213": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-146.html",
+        "title": "Integer overflow in MP4 playback in 64-bit versions",
+        "description": "Security researcher Ronald Crane reported a vulnerability found through code inspection. This issue is an integer overflow while processing an MP4 format video file when an a erroneously-small buffer is allocated and then overrun, resulting in a potentially exploitable crash. This issue only affects 64-bit versions with 32-bit versions being unaffected. In general this flaw cannot be exploited through email in the Thunderbird product, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-7214": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-149.html",
+        "title": "Cross-site reading attack through data and view-source URIs",
+        "description": "Security researcher Tsubasa Iinuma reported a mechanism to violate same-origin policy to content using data: and view-source: URIs to confuse protections and bypass restrictions. This resulted in the ability to read data from cross-site URLs and local files. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-7215": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-140.html",
+        "title": "Cross-origin information leak through web workers error events",
+        "description": "Security researcher Masato Kinugawa reported a cross-origin information leak through the error events in web workers. This violates same-origin policy and the leaked information could potentially be used by a malicious party to gather authentication tokens and other data from third-party websites. This issue affects other browsers as well and is not limited to Mozilla products."
+      }
+    ],
+    "CVE-2015-7216": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-143.html",
+        "title": "Linux file chooser crashes on malformed images due to flaws in Jasper library",
+        "description": "Security researcher Gustavo Grieco reported that on Linux Gnome systems the dialog for choosing local files uses the operating system's gdk-pixbuf library to render thumbnails for image file types. This library supports various image decoders, and Grieco reported that the Jasper and TGA decoders were unmaintained and have several known vulnerabilities. Firefox has disabled the use of those decoders in gdk-pixbuf. This issue only affects Linux systems running Gnome. Windows, OS X, and Android operating systems are unaffected."
+      }
+    ],
+    "CVE-2015-7217": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-143.html",
+        "title": "Linux file chooser crashes on malformed images due to flaws in Jasper library",
+        "description": "Security researcher Gustavo Grieco reported that on Linux Gnome systems the dialog for choosing local files uses the operating system's gdk-pixbuf library to render thumbnails for image file types. This library supports various image decoders, and Grieco reported that the Jasper and TGA decoders were unmaintained and have several known vulnerabilities. Firefox has disabled the use of those decoders in gdk-pixbuf. This issue only affects Linux systems running Gnome. Windows, OS X, and Android operating systems are unaffected."
+      }
+    ],
+    "CVE-2015-7218": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-142.html",
+        "title": "DOS due to malformed frames in HTTP/2",
+        "description": "Security researcher Stuart Larsen reported two issues with HTTP/2 resulting in integer underflows that lead to intentional aborts when the errors are detected. In the first issue, if a malformed HTTP2 header frame is received with only a single byte, an integer underflow can be created in some circumstances. In the second issue, a malformed HTTP2 PushPromse frame is received and the length of the decompressed buffer is miscalculated, leading to another integer underflow. In both of these instances, more memory is allocated than is allowed, triggering assertions and intentional aborts (a denial of service) but no exploitable crashes."
+      }
+    ],
+    "CVE-2015-7219": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-142.html",
+        "title": "DOS due to malformed frames in HTTP/2",
+        "description": "Security researcher Stuart Larsen reported two issues with HTTP/2 resulting in integer underflows that lead to intentional aborts when the errors are detected. In the first issue, if a malformed HTTP2 header frame is received with only a single byte, an integer underflow can be created in some circumstances. In the second issue, a malformed HTTP2 PushPromse frame is received and the length of the decompressed buffer is miscalculated, leading to another integer underflow. In both of these instances, more memory is allocated than is allowed, triggering assertions and intentional aborts (a denial of service) but no exploitable crashes."
+      }
+    ],
+    "CVE-2015-7220": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-144.html",
+        "title": "Buffer overflows found through code inspection",
+        "description": "Security researcher Ronald Crane reported three buffer overflows affecting released code that were found through code inspection. They do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them."
+      }
+    ],
+    "CVE-2015-7221": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-144.html",
+        "title": "Buffer overflows found through code inspection",
+        "description": "Security researcher Ronald Crane reported three buffer overflows affecting released code that were found through code inspection. They do not all have clear mechanisms to be exploited through web content but are vulnerable if a mechanism can be found to trigger them."
+      }
+    ],
+    "CVE-2015-7222": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-147.html",
+        "title": "Integer underflow and buffer overflow processing MP4 metadata in libstagefright",
+        "description": "Mozilla developer Gerald Squelart fixed an integer underflow in the libstagefright library initially reported by Joshua Drake to Google. The issues occurred in MP4 format video file while parsing cover metadata, leading to a buffer overflow. This results in a potentially exploitable crash and can be triggered by a malformed MP4 file served by web content. In general this flaw cannot be exploited through email in the Thunderbird product, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2015-7223": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-148.html",
+        "title": "Privilege escalation vulnerabilities in WebExtension APIs",
+        "description": "Mozilla developer Kris Maglione reported a mechanism where WebExtension APIs could be used to escalate privilege. This could allow arbitrary web content to execute code with the privileges of a particular WebExtension when using these API calls. Depending on the privileges of the extension used, this could result in personal information theft and cross-site scripting (XSS) attacks, including theft of browser cookies. This is mitigated by the requirement to have a WebExtension installed that is vulnerable to this issue."
+      }
+    ],
+    "CVE-2015-7327": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-114.html",
+        "title": "Information disclosure via the High Resolution Time API",
+        "description": "Security researchers Yossef Oren, Vasileios P. Kemerlis, Simha Sethumadhavan, Angelos D. Keromytis of Columbia University's Network Security Lab reported a method of using the High Resolution Time API for side channel attacks. This attack uses JavaScript loaded through a hostile web page to track access to the last-level cache over a period of time as a user engages in other browser activity. This attack takes advantage of the performance.now() API's use of single nanosecond resolution for timing. Security researcher Amit Klein independently reported use of the performance.now() API on Windows systems to extract the Windows counter frequency as an avenue for side channel attacks. Both of these flaws allow for the disclosure of private information, user fingerprinting, and data leakage. They have been addressed by reducing the resolution of the performance.now() API to 5 microseconds to remove the precision in resolution available to attackers. The Windows counter frequency issue does not affect Linux or OS X systems."
+      }
+    ],
+    "CVE-2015-8510": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2015/mfsa2015-153.html",
+        "title": "HTML injection in homescreen app bypassing DOM sanitizer",
+        "description": "Mozilla fixed a bug in the l10n localization of the default homescreen app of Firefox OS reported by security researcher Muneaki Nishimura. Exploiting this issue requires tricking the user into bookmarking a specially crafted web page via the 'Add to home screen' functionality. As a result, an iframe controlled by the attacker would be executed with homescreen privileges, potentially leading to further system compromise."
+      }
+    ]
+  }
 }

@@ -1,6 +1,467 @@
 {
   "year": 2009,
-  "total": 0,
+  "total": 66,
   "reference": "mozilla.org",
-  "reports": {}
+  "reports": {
+    "CVE-2009-0354": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-02.html",
+        "title": "XSS using a chrome XBL method and window.eval",
+        "description": "Mozilla security researcher moz_bug_r_a4 reported that a chrome XBL method can be used in conjuction with window.eval to execute arbitrary JavaScript within the context of another website, violating the same origin policy. Firefox 2 releases are not affected. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-0355": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-03.html",
+        "title": "Local file stealing with SessionStore",
+        "description": "Mozilla security researcher moz_bug_r_a4 reported that a form input control's type could be changed during the restoration of a closed tab. An attacker could set an input control's text value to the path of a local file whose location was known to the attacker. If the tab was then closed and the victim persuaded to re-open it, upon restoring the tab the attacker could use this vulnerability to change the input type to file. Scripts in the page could then automatically submit the form and steal the contents of the user's local file."
+      }
+    ],
+    "CVE-2009-0357": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-05.html",
+        "title": "XMLHttpRequest allows reading HTTPOnly cookies",
+        "description": "Developer and Mozilla community member Wladimir Palant reported that cookies marked HTTPOnly were readable by JavaScript via the XMLHttpRequest.getResponseHeader and XMLHttpRequest.getAllResponseHeaders APIs. This vulnerability bypasses the security mechanism provided by the HTTPOnly flag which intends to restrict JavaScript access to document.cookie. The fix prevents the XMLHttpRequest feature from accessing the Set-Cookie and Set-Cookie2 headers of any response whether or not the HTTPOnly flag was set for those cookies."
+      }
+    ],
+    "CVE-2009-0358": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-06.html",
+        "title": "Directives to not cache pages ignored",
+        "description": "Paul Nel reported that certain HTTP directives to not cache web pages, Cache-Control: no-store and Cache-Control: no-cache for HTTPS pages, were being ignored by Firefox 3. On a shared system, applications relying upon these HTTP directives could potentially expose private data. Another user on the system could use this vulnerability to view improperly cached pages containing private data by navigating the browser back. Firefox 2 releases are not affected."
+      }
+    ],
+    "CVE-2009-0689": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-59.html",
+        "title": "Heap buffer overflow in string to number conversion",
+        "description": "Security researcher Alin Rad Pop of Secunia Research reported a heap-based buffer overflow in Mozilla's string to floating point number conversion routines. Using this vulnerability an attacker could craft some malicious JavaScript code containing a very long string to be converted to a floating point number which would result in improper memory allocation and the execution of an arbitrary memory location. This vulnerability could thus be leveraged by the attacker to run arbitrary code on a victim's computer. Update: The underlying flaw in the dtoa routines used by Mozilla appears to be essentially the same as that reported against the libc gdtoa routine by Maksymilian Arciemowicz. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-0771": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-07.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.0.7)",
+        "description": "Mozilla developers identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Without further investigation we cannot rule out the possibility that for some of these an attacker might be able to prepare memory for exploitation through some means other than JavaScript such as large images. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-0772": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-07.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.0.7)",
+        "description": "Mozilla developers identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Without further investigation we cannot rule out the possibility that for some of these an attacker might be able to prepare memory for exploitation through some means other than JavaScript such as large images. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-0773": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-07.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.0.7)",
+        "description": "Mozilla developers identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Without further investigation we cannot rule out the possibility that for some of these an attacker might be able to prepare memory for exploitation through some means other than JavaScript such as large images. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-0774": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-07.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.0.7)",
+        "description": "Mozilla developers identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Without further investigation we cannot rule out the possibility that for some of these an attacker might be able to prepare memory for exploitation through some means other than JavaScript such as large images. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-0775": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-08.html",
+        "title": "Mozilla Firefox XUL Linked Clones Double Free Vulnerability",
+        "description": "An anonymous researcher, via TippingPoint's Zero Day Initiative program, reported a vulnerability in Mozilla's garbage collection process. The vulnerability was caused by improper memory management of a set of cloned XUL DOM elements which were linked as a parent and child. After reloading the browser on a page with such linked elements, the browser would crash when attempting to access an object which was already destroyed. An attacker could use this crash to run arbitrary code on the victim's computer. This vulnerability does not affect Firefox 2, Thunderbird 2, or released versions of SeaMonkey."
+      }
+    ],
+    "CVE-2009-0776": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-09.html",
+        "title": "XML data theft via RDFXMLDataSource and cross-domain redirect",
+        "description": "Mozilla security researcher Georgi Guninski reported that a website could use nsIRDFService and a cross-domain redirect to steal arbitrary XML data from another domain, a violation of the same-origin policy. This vulnerability could be used by a malicious website to steal private data from users authenticated to the redirected website. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-0777": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-11.html",
+        "title": "URL spoofing with invisible control characters",
+        "description": "Mozilla contributor Masahiro Yamada reported that certain invisible control characters were being decoded when displayed in the location bar, resulting in fewer visible characters than were present in the actual location. An attacker could use this vulnerability to spoof the location bar and display a misleading URL for their malicious web page. The initial version of this advisory incorrectly listed Thunderbird and SeaMonkey as affected products. Firefox is the only product affected by this vulnerability."
+      }
+    ],
+    "CVE-2009-1044": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-13.html",
+        "title": "Arbitrary code execution via XUL tree element",
+        "description": "Security researcher Nils reported via TippingPoint's Zero Day Initiative that the XUL tree method _moveToEdgeShift was in some cases triggering garbage collection routines on objects which were still in use. In such cases, the browser would crash when attempting to access a previously destroyed object and this crash could be used by an attacker to run arbitrary code on a victim's computer. This vulnerability was used by the reporter to win the 2009 CanSecWest Pwn2Own contest. This vulnerability does not affect Firefox 2, Thunderbird 2, or released versions of SeaMonkey."
+      }
+    ],
+    "CVE-2009-1169": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-12.html",
+        "title": "XSL Transformation vulnerability",
+        "description": "Security researcher Guido Landi discovered that a XSL stylesheet could be used to crash the browser during a XSL transformation. An attacker could potentially use this crash to run arbitrary code on a victim's computer. This vulnerability was also previously reported as a stability problem by Ubuntu community member, Andre. Ubuntu community member Michael Rooney reported Andre's findings to Mozilla, and Mozilla community member Martin helped reduce Andre's original testcase and contributed a patch to fix the vulnerability."
+      }
+    ],
+    "CVE-2009-1194": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-36.html",
+        "title": "Heap/integer overflows in font glyph rendering libraries",
+        "description": "oCERT security researcher Will Drewry reported a series of heap and integer overflow vulnerabilities which independently affected multiple font glyph rendering libraries. On Linux platforms libpango was susceptible to the vulnerabilities while on OS X CoreGraphics was similarly vulnerable. An attacker could trigger these overflows by constructing a very large text run for the browser to display. Such an overflow can result in a crash which the attacker could potentially use to run arbitrary code on a victim's computer. The open-source nature of Linux meant that Mozilla was able to work with the libpango maintainers to implement the correct fix in version 1.24 of that system library which was distributed with OS security updates. On Mac OS X Firefox works around the CoreGraphics flaw by limiting the length of text runs passed to the system."
+      }
+    ],
+    "CVE-2009-1302": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-14.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.0.9)",
+        "description": "Mozilla developers identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Without further investigation we cannot rule out the possibility that for some of these an attacker might be able to prepare memory for exploitation through some means other than JavaScript such as large images. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-1304": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-14.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.0.9)",
+        "description": "Mozilla developers identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Without further investigation we cannot rule out the possibility that for some of these an attacker might be able to prepare memory for exploitation through some means other than JavaScript such as large images. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-1305": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-14.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.0.9)",
+        "description": "Mozilla developers identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Without further investigation we cannot rule out the possibility that for some of these an attacker might be able to prepare memory for exploitation through some means other than JavaScript such as large images. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-1307": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-17.html",
+        "title": "Same-origin violations when Adobe Flash loaded via view-source: scheme",
+        "description": "Security researcher Gregory Fleischer reported that when an Adobe Flash file is loaded via the view-source: scheme, the Flash plugin misinterprets the origin of the content as localhost, leading to two specific vulnerabilities: The Flash file can bypass restrictions imposed by the crossdomain.xml mechanism and initiate HTTP requests to arbitrary third-party sites. This vulnerability could be used by an attacker to perform CSRF attacks against these sites. The Flash file, being treated as a local resource, can read and write Local Shared Objects on a user's machine. This vulnerability could be used by an attacker to place cookie-like objects on a user's computer and track them across multiple sites. Additonally, Fleischer reported that the jar: protocol could be used to bypass restrictions normally preventing content loaded via view-source: from being rendered. Thunderbird shares the browser engine with Firefox and could be vulnerable if plugins were to be enabled in mail. This is not the default setting and we strongly discourage users from enabling plugins in mail."
+      }
+    ],
+    "CVE-2009-1308": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-18.html",
+        "title": "XSS hazard using third-party stylesheets and XBL bindings",
+        "description": "Web developer Cefn Hoile reported that sites which allow users to embed third-party stylesheets are vulnerable to script injection attacks using XBL bindings. While this behavior was documented previously, it was determined that this particular risk was not well-understood by some websites. To mitigate this risk Mozilla added a restriction that requires XBL bindings to come from the same origin as the bound document. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail."
+      }
+    ],
+    "CVE-2009-1310": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-20.html",
+        "title": "Malicious search plugins can inject code into arbitrary sites",
+        "description": "Security researcher Prateek Saxena reported that a malicious MozSearch plugin could be created using a javascript: URI in the SearchForm value. This URI is used as the default landing page when an empty search is performed. If an attacker could get a user to install the malicious plugin and perform an empty search, the SearchForm javascript: URI would be executed within the context of the currently open page."
+      }
+    ],
+    "CVE-2009-1311": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-21.html",
+        "title": "POST data sent to wrong site when saving web page with embedded frame",
+        "description": "Developer and Mozilla community member Paolo Amadini reported that when saving the inner frame of a web page as a file when the outer page has POST data associated with it, the POST data will be incorrectly sent to the URL of the inner frame. This could potentially result in a user's sensitive data being sent to a site for which it was not intended."
+      }
+    ],
+    "CVE-2009-1313": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-23.html",
+        "title": "Crash in nsTextFrame::ClearTextRun()",
+        "description": "One of the security fixes in Firefox 3.0.9 introduced a regression that caused some users to experience frequent crashes. Users of the HTML Validator add-on were particularly affected, but other users also experienced this crash in some situations. In analyzing this crash we discovered that it was due to memory corruption similar to cases that have been identified as security vulnerabilities in the past."
+      }
+    ],
+    "CVE-2009-1392": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-24.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.0.11)",
+        "description": "Mozilla developers and community members identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Without further investigation we cannot rule out the possibility that for some of these an attacker might be able to prepare memory for exploitation through some means other than JavaScript such as large images. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-1571": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-03.html",
+        "title": "Use-after-free crash in HTML parser",
+        "description": "Security researcher Alin Rad Pop of Secunia Research reported that the HTML parser incorrectly freed used memory when insufficient space was available to process remaining input. Under such circumstances, memory occupied by in-use objects was freed and could later be filled with attacker-controlled text. These conditions could result in the execution or arbitrary code if methods on the freed objects were subsequently called."
+      }
+    ],
+    "CVE-2009-1832": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-24.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.0.11)",
+        "description": "Mozilla developers and community members identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Without further investigation we cannot rule out the possibility that for some of these an attacker might be able to prepare memory for exploitation through some means other than JavaScript such as large images. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-1833": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-24.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.0.11)",
+        "description": "Mozilla developers and community members identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail. Without further investigation we cannot rule out the possibility that for some of these an attacker might be able to prepare memory for exploitation through some means other than JavaScript such as large images. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-1834": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-25.html",
+        "title": "URL spoofing with invalid unicode characters",
+        "description": "Mozilla add-on developer Pavel Cvrcek reported that certain invalid unicode characters, when used as part of an IDN, are displayed as whitespace in the location bar. This whitespace could be used to force part of the URL out of view in the location bar. An attacker could use this vulnerability to spoof the location bar and display a misleading URL for their malicious web page."
+      }
+    ],
+    "CVE-2009-1835": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-26.html",
+        "title": "Arbitrary domain cookie access by local file: resources",
+        "description": "Security researcher Gregory Fleischer reported that local resources loaded via the file: protocol can access any domain's cookies which have been saved on a user's machine. Fleischer demonstrated that a local document's domain was being calculated incorrectly from its URL. If a victim could be persuaded to download a malicious file and then open that file in their browser, the malicious file could then steal arbitrary cookies from the victim's computer. Due to the interaction required for this attack, the severity of the issue was determined to be moderate."
+      }
+    ],
+    "CVE-2009-1836": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-27.html",
+        "title": "SSL tampering via non-200 responses to proxy CONNECT requests",
+        "description": "Microsoft security researchers Shuo Chen, Ziqing Mao, Yi-Min Wang, and Ming Zhang reported that when a CONNECT request is sent to a proxy server and a non-200 response is returned, then the body of the response is incorrectly rendered within the context of the request Host: header. An active network attacker could use this vulnerability to intercept a CONNECT request and reply with a non-200 response containing malicious code which would be executed within the context of the victim's requested SSL-protected domain. Since this attack requires the victim to have a proxy configured, the severity of this issue was determined to be high. Thunderbird mail messages are not vulnerable to this flaw, but if Thunderbird were being used in a browser-like manner (through Add-ons, perhaps) and JavaScript were enabled (not the default settng) then users could be vulnerable to this flaw in older versions."
+      }
+    ],
+    "CVE-2009-1838": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-29.html",
+        "title": "Arbitrary code execution using event listeners attached to an element whose owner document is null",
+        "description": "Mozilla security researcher moz_bug_r_a4 reported that the owner document of an element can become null after garbage collection. In such cases, event listeners may be executed within the wrong JavaScript context. An attacker could potentially use this vulnerability to have a malicious event handler execute arbitrary JavaScript with chrome privileges. Thunderbird shares the browser engine with Firefox and could be vulnerable if JavaScript were to be enabled in mail. This is not the default setting and we strongly discourage users from running JavaScript in mail."
+      }
+    ],
+    "CVE-2009-1839": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-30.html",
+        "title": "Incorrect principal set for file: resources loaded via location bar",
+        "description": "Security researchers Adam Barth and Collin Jackson reported that when a file: resource is loaded via the location bar it inherits the principal of the previously loaded document. This vulnerability can potentially give the newly loaded document additional privileges to access the contents of other local files that it wouldn't otherwise have permission to read. A potential victim would first have to have downloaded the attackers document to their local machine. Then the victim would have to open another document in a directory of interest to the attacker before opening the attacker's file in the same window. Prior to version 3.0, Firefox (like browsers from other vendors) treated all local files as having the same origin without restriction. This vulnerability is a partial bypass of the restrictions implemented in Firefox 3.0"
+      }
+    ],
+    "CVE-2009-1840": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-31.html",
+        "title": "XUL scripts bypass content-policy checks",
+        "description": "Mozilla add-on developer and community member Wladimir Palant reported that content-loading policies were not checked before loading external script files into XUL documents. The severity of this problem would depend on the reasons behind the content policy check, which include privacy from \"web bugs\" in Thunderbird mail messages, blocking of Ads and Ad-server tracking in AdBlock Plus. The original version of this advisory incorrectly claimed that NoScript protection could by bypassed; NoScript was unaffected."
+      }
+    ],
+    "CVE-2009-1841": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-32.html",
+        "title": "JavaScript chrome privilege escalation",
+        "description": "Mozilla security researcher moz_bug_r_a4 reported a vulnerability which allows scripts from page content to run with elevated privileges. Using this vulnerability, an attacker could cause a chrome privileged object, such as the browser sidebar or the FeedWriter, to interact with web content in such a way that attacker controlled code may be executed with the object's chrome privileges. Thunderbird supports neither the sidebar nor BrowserFeedWriter objects and is not vulnerable in its default configuration. Thunderbird might be vulnerable if the user has installed any add-on which adds a similarly implemented feature and then enables JavaScript in mail messages. This is not the default setting and we strongly discourage users from running JavaScript in mail. Workaround Disable JavaScript until a version containing this fix can be installed."
+      }
+    ],
+    "CVE-2009-2404": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-43.html",
+        "title": "Heap overflow in certificate regexp parsing",
+        "description": "Moxie Marlinspike reported a heap overflow vulnerability in the code that handles regular expressions in certificate names. This vulnerability could be used to compromise the browser and run arbitrary code by presenting a specially crafted certificate to the client. This code provided compatibility with the non-standard regular expression syntax historically supported by Netscape clients and servers. With version 3.5 Firefox switched to the more limited industry-standard wildcard syntax instead and is not vulnerable to this flaw."
+      }
+    ],
+    "CVE-2009-2408": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-42.html",
+        "title": "Compromise of SSL-protected communication",
+        "description": "IOActive security researcher Dan Kaminsky reported a mismatch in the treatment of domain names in SSL certificates between SSL clients and the Certificate Authorities (CA) which issue server certificates. In particular, if a malicious person requested a certificate for a host name with an invalid null character in it most CAs would issue the certificate if the requester owned the domain specified after the null, while most SSL clients (browsers) ignored that part of the name and used the unvalidated part in front of the null. This made it possible for attackers to obtain certificates that would function for any site they wished to target. These certificates could be used to intercept and potentially alter encrypted communication between the client and a server such as sensitive bank account transactions. This vulnerability was independently reported to us by researcher Moxie Marlinspike who also noted that since Firefox relies on SSL to protect the integrity of security updates this attack could be used to serve malicious updates. Mozilla would like to thank Dan and the Microsoft Vulnerability Research team for coordinating a multiple-vendor response to this problem. Workaround Users of unfixed versions of Firefox 3.0 who are concerned about the potential for this attack on their network should download the latest Firefox 3.5 from our web site, and on Windows ensure that the installer is signed and that \"Mozilla Corporation\" is the publisher."
+      }
+    ],
+    "CVE-2009-2462": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-34.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.1/1.9.0.12)",
+        "description": "Mozilla developers and community members identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-2463": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-34.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.1/1.9.0.12)",
+        "description": "Mozilla developers and community members identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      },
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-07.html",
+        "title": "Fixes for potentially exploitable crashes ported to the legacy branch",
+        "description": "Mozilla developers took fixes from previously fixed memory safety bugs in newer Mozilla-based products and ported them to the Mozilla 1.8.1 branch so they can be utilized by Thunderbird 2 and SeaMonkey 1.1."
+      }
+    ],
+    "CVE-2009-2464": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-34.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.1/1.9.0.12)",
+        "description": "Mozilla developers and community members identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-2465": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-34.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.1/1.9.0.12)",
+        "description": "Mozilla developers and community members identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-2466": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-34.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.1/1.9.0.12)",
+        "description": "Mozilla developers and community members identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-2468": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-36.html",
+        "title": "Heap/integer overflows in font glyph rendering libraries",
+        "description": "oCERT security researcher Will Drewry reported a series of heap and integer overflow vulnerabilities which independently affected multiple font glyph rendering libraries. On Linux platforms libpango was susceptible to the vulnerabilities while on OS X CoreGraphics was similarly vulnerable. An attacker could trigger these overflows by constructing a very large text run for the browser to display. Such an overflow can result in a crash which the attacker could potentially use to run arbitrary code on a victim's computer. The open-source nature of Linux meant that Mozilla was able to work with the libpango maintainers to implement the correct fix in version 1.24 of that system library which was distributed with OS security updates. On Mac OS X Firefox works around the CoreGraphics flaw by limiting the length of text runs passed to the system."
+      }
+    ],
+    "CVE-2009-2469": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-37.html",
+        "title": "Crash and remote code execution using watch and __defineSetter__ on SVG element",
+        "description": "Security researcher PenPal reported a crash involving a SVG element on which a watch function and __defineSetter__ function have been set for a particular property. The crash showed evidence of memory corruption and could potentially be used by an attacker to run arbitrary code on a victim's computer. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-2470": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-38.html",
+        "title": "Data corruption with SOCKS5 reply containing DNS name longer than 15 characters",
+        "description": "Andrej Andolsek reported that when Firefox receives a reply from a SOCKS5 proxy which contains a DNS name longer than 15 characters, the subsequent data stream in the response can become corrupted. There was no evidence of memory corruption, however, and the severity of the issue was determined to be low."
+      }
+    ],
+    "CVE-2009-2472": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-40.html",
+        "title": "Multiple cross origin wrapper bypasses",
+        "description": "Mozilla security researcher moz_bug_r_a4 reported a series of vulnerabilities in which objects that normally receive a XPCCrossOriginWrapper are constructed without the wrapper. This can lead to cases where JavaScript from one website may unsafely access properties of such an object which had been set by a different website. A malicious website could use this vulnerability to launch a XSS attack and run arbitrary JavaScript within the context of another site. Workaround Disable JavaScript until a version containing this fix can be installed."
+      }
+    ],
+    "CVE-2009-2477": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-41.html",
+        "title": "Corrupt JIT state after deep return from native function",
+        "description": "Firefox user zbyte reported a crash that we determined could result in an exploitable memory corruption problem. In certain cases after a return from a native function, such as escape(), the Just-in-Time (JIT) compiler could get into a corrupt state. This could be exploited by an attacker to run arbitrary code such as installing malware. We would like to thank community members Lucas Kruijswijk and Nochum Sossonko for isolating the problematic script from the original crashing site. This vulnerability does not affect earlier versions of Firefox which do not support the JIT feature. Workaround Users of Firefox 3.5 can avoid this vulnerability by disabling the Just-in-Time compiler as described in the Mozilla Security Blog. That workaround is not necessary in Firefox 3.5.1 and can be reverted."
+      }
+    ],
+    "CVE-2009-2654": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-44.html",
+        "title": "Location bar and SSL indicator spoofing via window.open() on invalid URL",
+        "description": "Security researcher Juan Pablo Lopez Yacubian reported that an attacker could call window.open() on an invalid URL which looks similar to a legitimate URL and then use document.write() to place content within the new document, appearing to have come from the spoofed location. Additionally, if the spoofed document was created by a document with a valid SSL certificate, the SSL indicators would be carried over into the spoofed document. An attacker could use these issues to display misleading location and SSL information for a malicious web page."
+      }
+    ],
+    "CVE-2009-2662": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-45.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.1.2/1.9.0.13)",
+        "description": "Mozilla developers and community members identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-2663": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-45.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.1.2/1.9.0.13)",
+        "description": "Mozilla developers and community members identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-2664": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-45.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.1.2/1.9.0.13)",
+        "description": "Mozilla developers and community members identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-2665": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-46.html",
+        "title": "Chrome privilege escalation due to incorrectly cached wrapper",
+        "description": "Mozilla add-on developer and community member Wladimir Palant reported broken functionality on pages that had a Link: HTTP header when an add-on was installed which implemented a Content Policy in JavaScript, such as AdBlock Plus or NoScript. Mozilla security researcher moz_bug_r_a4 demonstrated that the broken functionality was due to the window's global object receiving an incorrect security wrapper and that this issue could be used to execute arbitrary JavaScript with chrome privileges. This vulnerability does not affect Firefox prior to version 3.5"
+      }
+    ],
+    "CVE-2009-3077": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-49.html",
+        "title": "TreeColumns dangling pointer vulnerability",
+        "description": "An anonymous security researcher, via TippingPoint's Zero Day Initiative, reported that the columns of a XUL tree element could be manipulated in a particular way which would leave a pointer owned by the column pointing to freed memory. An attacker could potentially use this vulnerability to crash a victim's browser and run arbitrary code on the victim's computer."
+      }
+    ],
+    "CVE-2009-3078": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-50.html",
+        "title": "Location bar spoofing via tall line-height Unicode characters",
+        "description": "Security researcher Juan Pablo Lopez Yacubian reported that the default Windows font used to render the locationbar and other text fields was improperly displaying certain Unicode characters with tall line-height. In such cases the tall line-height would cause the rest of the text in the input field to be scrolled vertically out of view. An attacker could use this vulnerability to prevent a user from seeing the URL of a malicious site. Corrie Sloot also independently reported this issue to Mozilla."
+      }
+    ],
+    "CVE-2009-3079": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-51.html",
+        "title": "Chrome privilege escalation with FeedWriter",
+        "description": "Mozilla security researcher moz_bug_r_a4 reported that the BrowserFeedWriter could be leveraged to run JavaScript code from web content with elevated privileges. Using this vulnerability, an attacker could construct an object containing malicious JavaScript and cause the FeedWriter to process the object, running the malicious code with chrome privileges. Thunderbird does not support the BrowserFeedWriter object and is not vulnerable in its default configuration. Thunderbird might be vulnerable if the user has installed any add-on which adds a similarly implemented feature and then enables JavaScript in mail messages. This is not the default setting and we strongly discourage users from running JavaScript in mail. Workaround Disable JavaScript until a version containing this fix can be installed."
+      }
+    ],
+    "CVE-2009-3371": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-54.html",
+        "title": "Crash with recursive web-worker calls",
+        "description": "Security researcher Orlando Berrera of Sec Theory reported that recursive creation of JavaScript web-workers can be used to create a set of objects whose memory could be freed prior to their use. These conditions often result in a crash which could potentially be used by an attacker to run arbitrary code on a victim's computer. Web Workers were introduced in Firefox 3.5 so this vulnerability did not affect earlier releases such as Firefox 3."
+      }
+    ],
+    "CVE-2009-3373": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-56.html",
+        "title": "Heap buffer overflow in GIF color map parser",
+        "description": "Security research firm iDefense reported that researcher regenrecht discovered a heap-based buffer overflow in Mozilla's GIF image parser. This vulnerability could potentially be used by an attacker to crash a victim's browser and run arbitrary code on their computer."
+      }
+    ],
+    "CVE-2009-3374": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-57.html",
+        "title": "Chrome privilege escalation in XPCVariant::VariantDataToJS()",
+        "description": "Mozilla security researcher moz_bug_r_a4 reported that the XPCOM utility XPCVariant::VariantDataToJS unwrapped doubly-wrapped objects before returning them to chrome callers. This could result in chrome privileged code calling methods on an object which had previously been created or modified by web content, potentially executing malicious JavaScript code with chrome privileges. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-3375": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-61.html",
+        "title": "Cross-origin data theft through document.getSelection()",
+        "description": "Security researcher Gregory Fleischer reported that text within a selection on a web page can be read by JavaScript in a different domain using the document.getSelection function, violating the same-origin policy. Since this vulnerability requires user interaction to exploit, its severity was determined to be moderate."
+      }
+    ],
+    "CVE-2009-3385": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-06.html",
+        "title": "Scriptable plugin execution in SeaMonkey mail",
+        "description": "Security researcher Georgi Guninski reported that scriptable plugin content, such as Flash objects, could be loaded and executed in SeaMonkey mail messages by embedding the content in an iframe inside the message. If a user were to reply to or forward such a message, malicious JavaScript embedded in the plugin content could potentially steal the contents of the message or files from the local filesystem. Thunderbird was not affected by this issue."
+      }
+    ],
+    "CVE-2009-3388": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-66.html",
+        "title": "Memory safety fixes in liboggplay media library",
+        "description": "Mozilla discovered several bugs in liboggplay which posed potential memory safety issues. The bugs which were fixed could potentially be used by an attacker to crash a victim's browser and execute arbitrary code on their computer. Audio and Video capabilities were added to the Mozilla browser engine in Firefox 3.5, SeaMonkey 2.0, and Thunderbird 3.0; prior releases of these products were not affected."
+      }
+    ],
+    "CVE-2009-3389": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-67.html",
+        "title": "Integer overflow, crash in libtheora video library",
+        "description": "Security researcher Dan Kaminsky reported an integer overflow in the Theora video library. A video's dimensions were being multiplied together and used in particular memory allocations. When the video dimensions were sufficiently large, the multiplication could overflow a 32-bit integer resulting in too small a memory buffer being allocated for the video. An attacker could use a specially crafted video to write data past the bounds of this buffer, causing a crash and potentially running arbitrary code on a victim's computer. Mozilla intern David Keeler also independently reported this issue as well as an additional crash which was determined to be a denial-of-service. Video capabilities were added to the Mozilla browser engine in Firefox 3.5, SeaMonkey 2.0, and Thunderbird 3.0; prior releases of these products were not affected. These bugs were fixed upstream in Theora version 1.1 (\"Thusnelda\") but the older version used in Firefox 3.5 needed this patch."
+      }
+    ],
+    "CVE-2009-3980": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-65.html",
+        "title": "Crashes with evidence of memory corruption (rv:1.9.1.6/ 1.9.0.16)",
+        "description": "Mozilla developers and community members identified and fixed several stability bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these crashes showed evidence of memory corruption under certain circumstances and we presume that with enough effort at least some of these could be exploited to run arbitrary code. Workaround Disable JavaScript until a version containing these fixes can be installed."
+      }
+    ],
+    "CVE-2009-3986": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-70.html",
+        "title": "Privilege escalation via chrome window.opener",
+        "description": "Security researcher David James reported that a content window which is opened by a chrome window retains a reference to the chrome window via the window.opener property. Using this reference, content in the new window can access functions inside the chrome window, such as eval, and use these functions to run arbitrary JavaScript code with chrome privileges. In a stock Mozilla browser a remote attacker can not cause these application dialogs to appear nor to automatically load the attack code that takes advantage of this flaw in window.opener. There may be add-ons which open potentially hostile web-content in this way, and combined with such an add-on the severity of this flaw could be upgraded to Critical."
+      }
+    ],
+    "CVE-2009-3987": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2009/mfsa2009-71.html",
+        "title": "GeckoActiveXObject exception messages can be used to enumerate installed COM objects",
+        "description": "Security researcher Gregory Fleischer reported that the exception messages generated by Mozilla's GeckoActiveXObject differ based on whether or not the requested COM object's ProgID is present in the system registry. A malicious site could use this vulnerability to enumerate a list of COM objects installed on a user's system and create a profile to track the user across browsing sessions."
+      }
+    ],
+    "CVE-2009-3988": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2010/mfsa2010-04.html",
+        "title": "XSS due to window.dialogArguments being readable cross-domain",
+        "description": "Security researcher Hidetake Jo of Microsoft Vulnerability Research reported that the properties set on an object passed to showModalDialog were readable by the document contained in the dialog, even when the document was from a different domain. This is a violation of the same-origin policy and could result in a website running untrusted JavaScript if it assumed the dialogArguments could not be initialized by another site. An anonymous security researcher, via TippingPoint's Zero Day Initiative, also independently reported this issue to Mozilla."
+      }
+    ]
+  }
 }

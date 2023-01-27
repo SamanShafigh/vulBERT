@@ -1,6 +1,50 @@
 {
   "year": 2021,
-  "total": 0,
+  "total": 7,
   "reference": "ubuntu.com",
-  "reports": {}
+  "reports": {
+    "CVE-2021-3489": [
+      {
+        "url": "https://ubuntu.com/security/notices/USN-4949-1",
+        "title": "USN-4949-1: Linux kernel vulnerabilities",
+        "body": "Ryota Shiga discovered that the eBPF implementation in the Linux kernel didnot properly verify that a BPF program only reserved as much memory for aring buffer as was allocated. A local attacker could use this to cause adenial of service (system crash) or execute arbitrary code. (CVE-2021-3489)"
+      },
+      {
+        "url": "https://ubuntu.com/security/notices/USN-4950-1",
+        "title": "USN-4950-1: Linux kernel vulnerabilities",
+        "body": "Ryota Shiga discovered that the eBPF implementation in the Linux kernel didnot properly verify that a BPF program only reserved as much memory for aring buffer as was allocated. A local attacker could use this to cause adenial of service (system crash) or execute arbitrary code. (CVE-2021-3489)"
+      }
+    ],
+    "CVE-2021-3490": [
+      {
+        "url": "https://ubuntu.com/security/notices/USN-4949-1",
+        "title": "USN-4949-1: Linux kernel vulnerabilities",
+        "body": "Manfred Paul discovered that the eBPF implementation in the Linux kerneldid not properly track bounds on bitwise operations. A local attacker coulduse this to cause a denial of service (system crash) or execute arbitrarycode. (CVE-2021-3490)"
+      },
+      {
+        "url": "https://ubuntu.com/security/notices/USN-4950-1",
+        "title": "USN-4950-1: Linux kernel vulnerabilities",
+        "body": "Manfred Paul discovered that the eBPF implementation in the Linux kerneldid not properly track bounds on bitwise operations. A local attacker coulduse this to cause a denial of service (system crash) or execute arbitrarycode. (CVE-2021-3490)"
+      }
+    ],
+    "CVE-2021-3491": [
+      {
+        "url": "https://ubuntu.com/security/notices/USN-4949-1",
+        "title": "USN-4949-1: Linux kernel vulnerabilities",
+        "body": "Billy Jheng Bing-Jhong discovered that the io_uring implementation of theLinux kernel did not properly enforce the MAX_RW_COUNT limit in somesituations. A local attacker could use this to cause a denial of service(system crash) or execute arbitrary code. (CVE-2021-3491)"
+      },
+      {
+        "url": "https://ubuntu.com/security/notices/USN-4950-1",
+        "title": "USN-4950-1: Linux kernel vulnerabilities",
+        "body": "Billy Jheng Bing-Jhong discovered that the io_uring implementation of theLinux kernel did not properly enforce the MAX_RW_COUNT limit in somesituations. A local attacker could use this to cause a denial of service(system crash) or execute arbitrary code. (CVE-2021-3491)"
+      }
+    ],
+    "CVE-2021-3493": [
+      {
+        "url": "https://ubuntu.com/security/notices/USN-4917-1",
+        "title": "USN-4917-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that the overlayfs implementation in the Linux kernel didnot properly validate the application of file system capabilities withrespect to user namespaces. A local attacker could use this to gainelevated privileges. (CVE-2021-3493)"
+      }
+    ]
+  }
 }

@@ -1,6 +1,252 @@
 {
   "year": 2009,
-  "total": 0,
+  "total": 35,
   "reference": "usn.ubuntu.com",
-  "reports": {}
+  "reports": {
+    "CVE-2009-0022": [
+      {
+        "url": "https://usn.ubuntu.com/702-1/",
+        "title": "USN-702-1: Samba vulnerability",
+        "body": "Gunter Höckel discovered that Samba with registry shares enabled did not properly validate share names. An authenticated user could gain access to the root filesystem by using an older version of smbclient and specifying an empty string as a share name. This is only an issue if registry shares are enabled on the server by setting “registry shares = yes”, “include = registry”, or “config backend = registry”, which is not the default."
+      }
+    ],
+    "CVE-2009-0159": [
+      {
+        "url": "https://usn.ubuntu.com/777-1/",
+        "title": "USN-777-1: Ntp vulnerabilities",
+        "body": "A stack-based buffer overflow was discovered in ntpq. If a user were tricked into connecting to a malicious ntp server, a remote attacker could cause a denial of service in ntpq, or possibly execute arbitrary code with the privileges of the user invoking the program. (CVE-2009-0159)"
+      }
+    ],
+    "CVE-2009-0196": [
+      {
+        "url": "https://usn.ubuntu.com/757-1/",
+        "title": "USN-757-1: Ghostscript vulnerabilities",
+        "body": "Alin Rad Pop discovered that Ghostscript contained a buffer overflow in the jbig2dec library. If a user or automated system were tricked into opening a crafted PDF file, an attacker could cause a denial of service or execute arbitrary code with privileges of the user invoking the program. (CVE-2009-0196)"
+      }
+    ],
+    "CVE-2009-0260": [
+      {
+        "url": "https://usn.ubuntu.com/716-1/",
+        "title": "USN-716-1: MoinMoin vulnerabilities",
+        "body": "It was discovered that MoinMoin did not properly sanitize its input when attaching files and using the rename parameter, resulting in cross-site scripting vulnerabilities. (CVE-2009-0260)"
+      }
+    ],
+    "CVE-2009-0312": [
+      {
+        "url": "https://usn.ubuntu.com/716-1/",
+        "title": "USN-716-1: MoinMoin vulnerabilities",
+        "body": "It was discovered that MoinMoin did not properly sanitize its input when displaying error messages after processing spam, resulting in cross-site scripting vulnerabilities. (CVE-2009-0312)"
+      }
+    ],
+    "CVE-2009-0352": [
+      {
+        "url": "https://usn.ubuntu.com/741-1/",
+        "title": "USN-741-1: Thunderbird vulnerabilities",
+        "body": "Several flaws were discovered in the browser engine. If Javascript were enabled, an attacker could exploit these flaws to crash Thunderbird and possibly execute arbitrary code with user privileges. (CVE-2009-0352)"
+      }
+    ],
+    "CVE-2009-0583": [
+      {
+        "url": "https://usn.ubuntu.com/757-1/",
+        "title": "USN-757-1: Ghostscript vulnerabilities",
+        "body": "Original advisory details: It was discovered that Ghostscript contained multiple integer overflows in its ICC color management library. If a user or automated system were tricked into opening a crafted Postscript file, an attacker could cause a denial of service or execute arbitrary code with privileges of the user invoking the program. (CVE-2009-0583)"
+      }
+    ],
+    "CVE-2009-0584": [
+      {
+        "url": "https://usn.ubuntu.com/757-1/",
+        "title": "USN-757-1: Ghostscript vulnerabilities",
+        "body": "It was discovered that Ghostscript did not properly perform bounds checking in its ICC color management library. If a user or automated system were tricked into opening a crafted Postscript file, an attacker could cause a denial of service or execute arbitrary code with privileges of the user invoking the program. (CVE-2009-0584)"
+      }
+    ],
+    "CVE-2009-0772": [
+      {
+        "url": "https://usn.ubuntu.com/741-1/",
+        "title": "USN-741-1: Thunderbird vulnerabilities",
+        "body": "Jesse Ruderman and Gary Kwong discovered flaws in the browser engine. If a user had Javascript enabled, these problems could allow a remote attacker to cause a denial of service or possibly execute arbitrary code with the privileges of the user invoking the program. (CVE-2009-0772, CVE-2009-0774)"
+      }
+    ],
+    "CVE-2009-0774": [
+      {
+        "url": "https://usn.ubuntu.com/741-1/",
+        "title": "USN-741-1: Thunderbird vulnerabilities",
+        "body": "Jesse Ruderman and Gary Kwong discovered flaws in the browser engine. If a user had Javascript enabled, these problems could allow a remote attacker to cause a denial of service or possibly execute arbitrary code with the privileges of the user invoking the program. (CVE-2009-0772, CVE-2009-0774)"
+      }
+    ],
+    "CVE-2009-0776": [
+      {
+        "url": "https://usn.ubuntu.com/741-1/",
+        "title": "USN-741-1: Thunderbird vulnerabilities",
+        "body": "Georgi Guninski discovered a flaw when Thunderbird performed a cross-domain redirect. If a user had Javascript enabled, an attacker could bypass the same-origin policy in Thunderbird by utilizing nsIRDFService and steal private data from users authenticated to the redirected website. (CVE-2009-0776)"
+      }
+    ],
+    "CVE-2009-0792": [
+      {
+        "url": "https://usn.ubuntu.com/757-1/",
+        "title": "USN-757-1: Ghostscript vulnerabilities",
+        "body": "It was discovered that Ghostscript contained additional integer overflows in its ICC color management library. If a user or automated system were tricked into opening a crafted Postscript or PDF file, an attacker could cause a denial of service or execute arbitrary code with privileges of the user invoking the program. (CVE-2009-0792)"
+      }
+    ],
+    "CVE-2009-0945": [
+      {
+        "url": "https://usn.ubuntu.com/823-1/",
+        "title": "USN-823-1: KDE-Graphics vulnerabilities",
+        "body": "It was discovered that KDE-Graphics did not properly handle certain malformed SVG images. If a user were tricked into opening a specially crafted SVG image, an attacker could cause a denial of service or possibly execute arbitrary code with the privileges of the user invoking the program."
+      }
+    ],
+    "CVE-2009-1171": [
+      {
+        "url": "https://usn.ubuntu.com/791-2/",
+        "title": "USN-791-2: Moodle vulnerability",
+        "body": "Christian Eibl discovered that the TeX filter in Moodle allowed any function to be used. An authenticated remote attacker could post a specially crafted TeX formula to execute arbitrary TeX functions, potentially reading any file accessible to the web server user, leading to a loss of privacy. (CVE-2009-1171, MSA-09-0009)"
+      }
+    ],
+    "CVE-2009-1189": [
+      {
+        "url": "https://usn.ubuntu.com/799-1/",
+        "title": "USN-799-1: D-Bus vulnerability",
+        "body": "It was discovered that the D-Bus library did not correctly validate signatures. If a local user sent a specially crafted D-Bus key, they could spoof a valid signature and bypass security policies."
+      }
+    ],
+    "CVE-2009-1252": [
+      {
+        "url": "https://usn.ubuntu.com/777-1/",
+        "title": "USN-777-1: Ntp vulnerabilities",
+        "body": "Chris Ries discovered a stack-based overflow in ntp. If ntp was configured to use autokey, a remote attacker could send a crafted packet to cause a denial of service, or possibly execute arbitrary code. (CVE-2009-1252)"
+      }
+    ],
+    "CVE-2009-1300": [
+      {
+        "url": "https://usn.ubuntu.com/762-1/",
+        "title": "USN-762-1: APT vulnerabilities",
+        "body": "Alexandre Martani discovered that the APT daily cron script did not check the return code of the date command. If a machine is configured for automatic updates and is in a time zone where DST occurs at midnight, under certain circumstances automatic updates might not be applied and could become permanently disabled. (CVE-2009-1300)"
+      }
+    ],
+    "CVE-2009-1302": [
+      {
+        "url": "https://usn.ubuntu.com/764-1/",
+        "title": "USN-764-1: Firefox and Xulrunner vulnerabilities",
+        "body": "Several flaws were discovered in the browser engine. If a user were tricked into viewing a malicious website, a remote attacker could cause a denial of service or possibly execute arbitrary code with the privileges of the user invoking the program. (CVE-2009-1302, CVE-2009-1303, CVE-2009-1304, CVE-2009-1305)"
+      }
+    ],
+    "CVE-2009-1304": [
+      {
+        "url": "https://usn.ubuntu.com/764-1/",
+        "title": "USN-764-1: Firefox and Xulrunner vulnerabilities",
+        "body": "Several flaws were discovered in the browser engine. If a user were tricked into viewing a malicious website, a remote attacker could cause a denial of service or possibly execute arbitrary code with the privileges of the user invoking the program. (CVE-2009-1302, CVE-2009-1303, CVE-2009-1304, CVE-2009-1305)"
+      }
+    ],
+    "CVE-2009-1305": [
+      {
+        "url": "https://usn.ubuntu.com/764-1/",
+        "title": "USN-764-1: Firefox and Xulrunner vulnerabilities",
+        "body": "Several flaws were discovered in the browser engine. If a user were tricked into viewing a malicious website, a remote attacker could cause a denial of service or possibly execute arbitrary code with the privileges of the user invoking the program. (CVE-2009-1302, CVE-2009-1303, CVE-2009-1304, CVE-2009-1305)"
+      }
+    ],
+    "CVE-2009-1307": [
+      {
+        "url": "https://usn.ubuntu.com/764-1/",
+        "title": "USN-764-1: Firefox and Xulrunner vulnerabilities",
+        "body": "Several flaws were discovered in the way Firefox processed malformed URI schemes. If a user were tricked into viewing a malicious website, a remote attacker could execute arbitrary JavaScript or steal private data. (CVE-2009-1306, CVE-2009-1307, CVE-2009-1309, CVE-2009-1310, CVE-2009-1312)"
+      }
+    ],
+    "CVE-2009-1308": [
+      {
+        "url": "https://usn.ubuntu.com/764-1/",
+        "title": "USN-764-1: Firefox and Xulrunner vulnerabilities",
+        "body": "Cefn Hoile discovered Firefox did not adequately protect against embedded third-party stylesheets. An attacker could exploit this to perform script injection attacks using XBL bindings. (CVE-2009-1308)"
+      }
+    ],
+    "CVE-2009-1310": [
+      {
+        "url": "https://usn.ubuntu.com/764-1/",
+        "title": "USN-764-1: Firefox and Xulrunner vulnerabilities",
+        "body": "Several flaws were discovered in the way Firefox processed malformed URI schemes. If a user were tricked into viewing a malicious website, a remote attacker could execute arbitrary JavaScript or steal private data. (CVE-2009-1306, CVE-2009-1307, CVE-2009-1309, CVE-2009-1310, CVE-2009-1312)"
+      }
+    ],
+    "CVE-2009-1311": [
+      {
+        "url": "https://usn.ubuntu.com/764-1/",
+        "title": "USN-764-1: Firefox and Xulrunner vulnerabilities",
+        "body": "Paolo Amadini discovered that Firefox would submit POST data when reloading an inner frame of a web page. If a user were tricked into viewing a malicious website, a remote attacker could steal private data. (CVE-2009-1311)"
+      }
+    ],
+    "CVE-2009-1391": [
+      {
+        "url": "https://usn.ubuntu.com/794-1/",
+        "title": "USN-794-1: Perl vulnerability",
+        "body": "It was discovered that the Compress::Raw::Zlib Perl module incorrectly handled certain zlib compressed streams. If a user or automated system were tricked into processing a specially crafted compressed stream or file, a remote attacker could crash the application, leading to a denial of service."
+      }
+    ],
+    "CVE-2009-1709": [
+      {
+        "url": "https://usn.ubuntu.com/823-1/",
+        "title": "USN-823-1: KDE-Graphics vulnerabilities",
+        "body": "It was discovered that KDE-Graphics did not properly handle certain malformed SVG images. If a user were tricked into opening a specially crafted SVG image, an attacker could cause a denial of service or possibly execute arbitrary code with the privileges of the user invoking the program."
+      }
+    ],
+    "CVE-2009-1882": [
+      {
+        "url": "https://usn.ubuntu.com/784-1/",
+        "title": "USN-784-1: ImageMagick vulnerability",
+        "body": "It was discovered that ImageMagick did not properly verify the dimensions of TIFF files. If a user or automated system were tricked into opening a crafted TIFF file, an attacker could cause a denial of service or possibly execute arbitrary code with the privileges of the user invoking the program."
+      }
+    ],
+    "CVE-2009-2285": [
+      {
+        "url": "https://usn.ubuntu.com/797-1/",
+        "title": "USN-797-1: tiff vulnerability",
+        "body": "It was discovered that the TIFF library did not correctly handle certain malformed TIFF images. If a user or automated system were tricked into processing a malicious image, a remote attacker could cause an application linked against libtiff to crash, leading to a denial of service."
+      }
+    ],
+    "CVE-2009-2404": [
+      {
+        "url": "https://usn.ubuntu.com/810-2/",
+        "title": "USN-810-2: NSPR update",
+        "body": "Moxie Marlinspike discovered that NSS did not properly handle regular expressions in certificate names. A remote attacker could create a specially crafted certificate to cause a denial of service (via application crash) or execute arbitrary code as the user invoking the program. (CVE-2009-2404)"
+      }
+    ],
+    "CVE-2009-2408": [
+      {
+        "url": "https://usn.ubuntu.com/810-2/",
+        "title": "USN-810-2: NSPR update",
+        "body": "Moxie Marlinspike and Dan Kaminsky independently discovered that NSS did not properly handle certificates with NULL characters in the certificate name. An attacker could exploit this to perform a man in the middle attack to view sensitive information or alter encrypted communications. (CVE-2009-2408)"
+      }
+    ],
+    "CVE-2009-2409": [
+      {
+        "url": "https://usn.ubuntu.com/810-2/",
+        "title": "USN-810-2: NSPR update",
+        "body": "Dan Kaminsky discovered NSS would still accept certificates with MD2 hash signatures. As a result, an attacker could potentially create a malicious trusted certificate to impersonate another site. (CVE-2009-2409)"
+      }
+    ],
+    "CVE-2009-2654": [
+      {
+        "url": "https://usn.ubuntu.com/811-1/",
+        "title": "USN-811-1: Firefox and Xulrunner vulnerability",
+        "body": "Juan Pablo Lopez Yacubian discovered that Firefox did not properly display invalid URLs. If a user were tricked into accessing a malicious website, an attacker could exploit this to spoof the location bar, such as in a phishing attack. Furthermore, if the malicious website had a valid SSL certificate, Firefox would display the spoofed page as trusted."
+      }
+    ],
+    "CVE-2009-2663": [
+      {
+        "url": "https://usn.ubuntu.com/825-1/",
+        "title": "USN-825-1: libvorbis vulnerability",
+        "body": "It was discovered that libvorbis did not correctly handle certain malformed ogg files. If a user were tricked into opening a specially crafted ogg file with an application that uses libvorbis, an attacker could execute arbitrary code with the user’s privileges. (CVE-2009-2663)"
+      }
+    ],
+    "CVE-2009-2687": [
+      {
+        "url": "https://usn.ubuntu.com/824-1/",
+        "title": "USN-824-1: PHP vulnerability",
+        "body": "It was discovered that PHP did not properly handle certain malformed JPEG images when being parsed by the Exif module. A remote attacker could exploit this flaw and cause the PHP server to crash, resulting in a denial of service."
+      }
+    ],
+    "CVE-2009-3232": [
+      {
+        "url": "https://usn.ubuntu.com/828-1/",
+        "title": "USN-828-1: PAM vulnerability",
+        "body": "Russell Senior discovered that the system authentication module selection mechanism for PAM did not safely handle an empty selection. If an administrator had specifically removed the default list of modules or failed to chose a module when operating debconf in a very unlikely non-default configuration, PAM would allow any authentication attempt, which could lead to remote attackers gaining access to a system with arbitrary privileges. This did not affect default Ubuntu installations."
+      }
+    ]
+  }
 }

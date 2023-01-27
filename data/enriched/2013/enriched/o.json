@@ -1,6 +1,805 @@
 {
   "year": 2013,
-  "total": 0,
-  "reference": "mozilla.org",
-  "reports": {}
+  "total": 114,
+  "reference": "support.f5.com",
+  "reports": {
+    "CVE-2013-0744": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-05.html",
+        "title": "Use-after-free when displaying table with many columns and column groups",
+        "description": "Using the Address Sanitizer tool, security researcher Atte Kettunen from OUSPG discovered that the combination of large numbers of columns and column groups in a table could cause the array containing the columns during rendering to overwrite itself. This can lead to a user-after-free causing a potentially exploitable crash. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0745": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-08.html",
+        "title": "AutoWrapperChanger fails to keep objects alive during garbage collection",
+        "description": "Mozilla developer Olli Pettay discovered that the AutoWrapperChanger class fails to keep some javascript objects alive during garbage collection. This can lead to an exploitable crash allowing for arbitrary code execution. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0747": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-10.html",
+        "title": "Event manipulation in plugin handler to bypass same-origin policy",
+        "description": "Mozilla security researcher Jesse Ruderman reported that events in the plugin handler can be manipulated by web content to bypass same-origin policy (SOP) restrictions. This can allow for clickjacking on malicious web pages. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0748": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-11.html",
+        "title": "Address space layout leaked in XBL objects",
+        "description": "Mozilla security researcher Jesse Ruderman discovered that using the toString function of XBL objects can lead to inappropriate information leakage by revealing the address space layout instead of just the ID of the object. This layout information could potentially be used to bypass ASLR and other security protections. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0750": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-12.html",
+        "title": "Buffer overflow in Javascript string concatenation",
+        "description": "Security researcher pa_kt reported a flaw via TippingPoint's Zero Day Initiative that an integer overflow is possible when calculating the length for a Javascript string concatenation, which is then used for memory allocation. This results in a buffer overflow, leading to a potentially exploitable memory corruption. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0751": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-06.html",
+        "title": "Touch events are shared across iframes",
+        "description": "Mozilla developer Wesley Johnston reported that when there are two or more iframes on the same HTML page, an iframe is able to see the touch events and their targets that occur within the other iframes on the page. If the iframes are from the same origin, they can also access the properties and methods of the targets of other iframes but same-origin policy (SOP) restricts access across domains. This allows for information leakage and possibilities for cross-site scripting (XSS) if another vulnerability can be used to get around SOP restrictions. These touch events are only currently used in Firefox for Android and other products should not be exposed these this vulnerability."
+      }
+    ],
+    "CVE-2013-0752": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-13.html",
+        "title": "Memory corruption in XBL with XML bindings containing SVG",
+        "description": "Security researcher Sviatoslav Chagaev reported that when using an XBL file containing multiple XML bindings with SVG content, a memory corruption can occur. In concern with remote XUL, this can lead to an exploitable crash. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0753": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-16.html",
+        "title": "Use-after-free in serializeToStream",
+        "description": "Security researcher regenrecht reported, via TippingPoint's Zero Day Initiative, a use-after-free in XMLSerializer by the exposing of serializeToStream to web content. This can lead to arbitrary code execution when exploited. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0754": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-17.html",
+        "title": "Use-after-free in ListenerManager",
+        "description": "Security researcher regenrecht reported, via TippingPoint's Zero Day Initiative, a use-after-free within the ListenerManager when garbage collection is forced after data in listener objects have been allocated in some circumstances. This results in a use-after-free which can lead to arbitrary code execution. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0755": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-18.html",
+        "title": "Use-after-free in Vibrate",
+        "description": "Security researcher regenrecht reported, via TippingPoint's Zero Day Initiative, a use-after-free using the domDoc pointer within Vibrate library. This can lead to arbitrary code execution when exploited. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0756": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-19.html",
+        "title": "Use-after-free in Javascript Proxy objects",
+        "description": "Security researcher regenrecht reported, via TippingPoint's Zero Day Initiative, a garbage collection flaw in Javascript Proxy objects. This can lead to a use-after-free leading to arbitrary code execution. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0757": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-14.html",
+        "title": "Chrome Object Wrapper (COW) bypass through changing prototype",
+        "description": "Security researcher Mariusz Mlynski reported that it is possible to change the prototype of an object and bypass Chrome Object Wrappers (COW) to gain access to chrome privileged functions. This could allow for arbitrary code execution. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0758": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-15.html",
+        "title": "Privilege escalation through plugin objects",
+        "description": "Security researcher Mariusz Mlynski reported that it is possible to open a chrome privileged web page through plugin objects through interaction with SVG elements. This could allow for arbitrary code execution. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0759": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-04.html",
+        "title": "URL spoofing in addressbar during page loads",
+        "description": "Security researcher Masato Kinugawa found a flaw in which the displayed URL values within the addressbar can be spoofed by a page during loading. This allows for phishing attacks where a malicious page can spoof the identify of another site. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0761": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-02.html",
+        "title": "Use-after-free and buffer overflow issues found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team discovered a series critically rated of use-after-free, out of bounds read, and buffer overflow issues using the Address Sanitizer tool in shipped software. These issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting three additional user-after-free and out of bounds read flaws introduced during Firefox development that were fixed before general release. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0762": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-02.html",
+        "title": "Use-after-free and buffer overflow issues found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team discovered a series critically rated of use-after-free, out of bounds read, and buffer overflow issues using the Address Sanitizer tool in shipped software. These issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting three additional user-after-free and out of bounds read flaws introduced during Firefox development that were fixed before general release. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0763": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-02.html",
+        "title": "Use-after-free and buffer overflow issues found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team discovered a series critically rated of use-after-free, out of bounds read, and buffer overflow issues using the Address Sanitizer tool in shipped software. These issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting three additional user-after-free and out of bounds read flaws introduced during Firefox development that were fixed before general release. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0766": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-02.html",
+        "title": "Use-after-free and buffer overflow issues found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team discovered a series critically rated of use-after-free, out of bounds read, and buffer overflow issues using the Address Sanitizer tool in shipped software. These issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting three additional user-after-free and out of bounds read flaws introduced during Firefox development that were fixed before general release. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0767": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-02.html",
+        "title": "Use-after-free and buffer overflow issues found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team discovered a series critically rated of use-after-free, out of bounds read, and buffer overflow issues using the Address Sanitizer tool in shipped software. These issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting three additional user-after-free and out of bounds read flaws introduced during Firefox development that were fixed before general release. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0768": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-03.html",
+        "title": "Buffer Overflow in Canvas",
+        "description": "Security researcher miaubiz used the Address Sanitizer tool to discover a buffer overflow in Canvas when specific bad height and width values were given through HTML. This could lead to a potentially exploitable crash. Miaubiz also found a potentially exploitable crash when 2D and 3D content was mixed which was introduced during Firefox development and fixed before general release. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0771": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-02.html",
+        "title": "Use-after-free and buffer overflow issues found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team discovered a series critically rated of use-after-free, out of bounds read, and buffer overflow issues using the Address Sanitizer tool in shipped software. These issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting three additional user-after-free and out of bounds read flaws introduced during Firefox development that were fixed before general release. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0772": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-22.html",
+        "title": "Out-of-bounds read in image rendering",
+        "description": "Using the Address Sanitizer tool, security researcher Atte Kettunen from OUSPG found an out-of-bounds read while rendering GIF format images. This could cause a non-exploitable crash and could also attempt to render normally inaccesible data as part of the image."
+      }
+    ],
+    "CVE-2013-0775": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-26.html",
+        "title": "Use-after-free in nsImageLoadingContent",
+        "description": "Security researcher Nils reported a use-after-free in nsImageLoadingContent when content script is executed. This could allow for arbitrary code execution. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0777": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-28.html",
+        "title": "Use-after-free, out of bounds read, and buffer overflow issues found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover a series of use-after-free, out of bounds read, and buffer overflow problems rated as low to critical security issues in shipped software. Some of these issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting four additional use-after-free and out of bounds write flaws introduced during Firefox development that were fixed before general release. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0778": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-28.html",
+        "title": "Use-after-free, out of bounds read, and buffer overflow issues found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover a series of use-after-free, out of bounds read, and buffer overflow problems rated as low to critical security issues in shipped software. Some of these issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting four additional use-after-free and out of bounds write flaws introduced during Firefox development that were fixed before general release. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0779": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-28.html",
+        "title": "Use-after-free, out of bounds read, and buffer overflow issues found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover a series of use-after-free, out of bounds read, and buffer overflow problems rated as low to critical security issues in shipped software. Some of these issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting four additional use-after-free and out of bounds write flaws introduced during Firefox development that were fixed before general release. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0780": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-28.html",
+        "title": "Use-after-free, out of bounds read, and buffer overflow issues found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover a series of use-after-free, out of bounds read, and buffer overflow problems rated as low to critical security issues in shipped software. Some of these issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting four additional use-after-free and out of bounds write flaws introduced during Firefox development that were fixed before general release. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0781": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-28.html",
+        "title": "Use-after-free, out of bounds read, and buffer overflow issues found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover a series of use-after-free, out of bounds read, and buffer overflow problems rated as low to critical security issues in shipped software. Some of these issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting four additional use-after-free and out of bounds write flaws introduced during Firefox development that were fixed before general release. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0782": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-28.html",
+        "title": "Use-after-free, out of bounds read, and buffer overflow issues found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover a series of use-after-free, out of bounds read, and buffer overflow problems rated as low to critical security issues in shipped software. Some of these issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting four additional use-after-free and out of bounds write flaws introduced during Firefox development that were fixed before general release. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0787": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-29.html",
+        "title": "Use-after-free in HTML Editor",
+        "description": "VUPEN Security, via TippingPoint's Zero Day Initiative, reported a use-after-free within the HTML editor when content script is run by the document.execCommand() function while internal editor operations are occurring. This could allow for arbitrary code execution."
+      }
+    ],
+    "CVE-2013-0791": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-40.html",
+        "title": "Out-of-bounds array read in CERT_DecodeCertPackage",
+        "description": "Mozilla community member Ambroz Bizjak reported an out-of-bounds array read in the CERT_DecodeCertPackage function of the Network Security Services (NSS) libary when decoding a certificate. When this occurs, it will lead to memory corruption and a non-exploitable crash."
+      }
+    ],
+    "CVE-2013-0792": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-39.html",
+        "title": "Memory corruption while rendering grayscale PNG images",
+        "description": "Mozilla community member Tobias Schula reported that if gfx.color_management.enablev4 preference is enabled manually in about:config, some grayscale PNG images will be rendered incorrectly and cause memory corruption during PNG decoding when certain color profiles are in use. A crafted PNG image could use this flaw to leak data through rendered images drawing from random memory. By default, this preference is not enabled."
+      }
+    ],
+    "CVE-2013-0793": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-38.html",
+        "title": "Cross-site scripting (XSS) using timed history navigations",
+        "description": "Security researcher Mariusz Mlynski reported a method to use browser navigations through history to load an arbitrary website with that page's baseURI property pointing to another site instead of the seemingly loaded one. The user will continue to see the incorrect site in the addressbar of the browser. This allows for a cross-site scripting (XSS) attack or the theft of data through a phishing attack. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0795": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-36.html",
+        "title": "Bypass of SOW protections allows cloning of protected nodes",
+        "description": "Security researcher Cody Crews reported a mechanism to use the cloneNode method to bypass System Only Wrappers (SOW) and clone a protected node. This allows violation of the browser's same origin policy and could also lead to privilege escalation and the execution of arbitrary code. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-0798": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-33.html",
+        "title": "World read and write access to app_tmp directory on Android",
+        "description": "Security researcher Shuichiro Suzuki of the Fourteenforty Research Institute reported the app_tmp directory is set to be world readable and writeable by Firefox for Android. This potentially allows for third party applications to replace or alter Firefox add-ons when downloaded because they are temporarily stored in the app_tmp directory before installation. This vulnerability only affects Firefox for Android."
+      }
+    ],
+    "CVE-2013-0799": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-32.html",
+        "title": "Privilege escalation through Mozilla Maintenance Service",
+        "description": "Security researcher Frédéric Hoguin discovered that the Mozilla Maintenance Service on Windows was vulnerable to a buffer overflow. This system is used to update software without invoking the User Account Control (UAC) prompt. The Mozilla Maintenance Service is configured to allow unprivileged users to start it with arbitrary arguments. By manipulating the data passed in these arguments, an attacker can execute arbitrary code with the system privileges used by the service. This issue requires local file system access to be exploitable."
+      }
+    ],
+    "CVE-2013-1670": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-42.html",
+        "title": "Privileged access for content level constructor",
+        "description": "Security researcher Cody Crews reported a method to call a content level constructor that allows for this constructor to have chrome privileged accesss. This affects chrome object wrappers (COW) and allows for write actions on objects when only read actions should be allowed. This can lead to cross-site scripting (XSS) attacks. In general these flaws cannot be exploited through email in the Thunderbird product because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1671": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-43.html",
+        "title": "File input control has access to full path",
+        "description": "Mozilla security researcher moz_bug_r_a4 reported a mechanism to exploit the <input> control when set to the file type in order to get the full path. This can lead to information leakage and could be combined with other exploits to target attacks on the local file system."
+      }
+    ],
+    "CVE-2013-1672": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-44.html",
+        "title": "Local privilege escalation through Mozilla Maintenance Service",
+        "description": "Security researcher Seb Patane reported an issue with the Mozilla Maintenance Service on Windows. This issue allows unprivileged users to local privilege escalation through the system privileges used by the service when interacting with local malicious software. This allows the user to bypass integrity checks leading to local privilege escalation. Local file system access is necessary in order for this issue to be exploitable and it cannot be triggered through web content."
+      }
+    ],
+    "CVE-2013-1673": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-45.html",
+        "title": "Mozilla Updater fails to update some Windows Registry entries",
+        "description": "Security researcher Robert Kugler discovered that in some instances the Mozilla Maintenance Service on Windows will be vulnerable to some previously fixed privilege escalation attacks that allowed for local privilege escalation. This was caused by the Mozilla Updater not updating Windows Registry entries for the Mozilla Maintenance Service, which fixed the earlier issues present if Firefox 12 had been installed. New installations of Firefox after version 12 are not affected by this issue. Local file system access is necessary in order for this issue to be exploitable and it cannot be triggered through web content."
+      }
+    ],
+    "CVE-2013-1674": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-46.html",
+        "title": "Use-after-free with video and onresize event",
+        "description": "Security researcher Nils reported a use-after-free when resizing video while playing. This could allow for arbitrary code execution. In general these flaws cannot be exploited through email in the Thunderbird product because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1675": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-47.html",
+        "title": "Uninitialized functions in DOMSVGZoomEvent",
+        "description": "Mozilla community member Ms2ger discovered that some DOMSVGZoomEvent functions are used without being properly initialized, causing uninitialized memory to be used when they are called by web content. This could lead to a information leakage to sites depending on the contents of this uninitialized memory. In general these flaws cannot be exploited through email in the Thunderbird product because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1676": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-48.html",
+        "title": "Memory corruption found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover a series of use-after-free, out of bounds read, and invalid write problems rated as moderate to critical as security issues in shipped software. Some of these issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting additional use-after-free flaws in dir=auto code introduced during Firefox development. These were fixed before general release."
+      }
+    ],
+    "CVE-2013-1677": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-48.html",
+        "title": "Memory corruption found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover a series of use-after-free, out of bounds read, and invalid write problems rated as moderate to critical as security issues in shipped software. Some of these issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting additional use-after-free flaws in dir=auto code introduced during Firefox development. These were fixed before general release."
+      }
+    ],
+    "CVE-2013-1678": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-48.html",
+        "title": "Memory corruption found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover a series of use-after-free, out of bounds read, and invalid write problems rated as moderate to critical as security issues in shipped software. Some of these issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting additional use-after-free flaws in dir=auto code introduced during Firefox development. These were fixed before general release."
+      }
+    ],
+    "CVE-2013-1679": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-48.html",
+        "title": "Memory corruption found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover a series of use-after-free, out of bounds read, and invalid write problems rated as moderate to critical as security issues in shipped software. Some of these issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting additional use-after-free flaws in dir=auto code introduced during Firefox development. These were fixed before general release."
+      }
+    ],
+    "CVE-2013-1680": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-48.html",
+        "title": "Memory corruption found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover a series of use-after-free, out of bounds read, and invalid write problems rated as moderate to critical as security issues in shipped software. Some of these issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting additional use-after-free flaws in dir=auto code introduced during Firefox development. These were fixed before general release."
+      }
+    ],
+    "CVE-2013-1681": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-48.html",
+        "title": "Memory corruption found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover a series of use-after-free, out of bounds read, and invalid write problems rated as moderate to critical as security issues in shipped software. Some of these issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting additional use-after-free flaws in dir=auto code introduced during Firefox development. These were fixed before general release."
+      }
+    ],
+    "CVE-2013-1684": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-50.html",
+        "title": "Memory corruption found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover a series of use-after-free problems rated critical as security issues in shipped software. Some of these issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting additional use-after-free and buffer overflow flaws in code introduced during Firefox development. These were fixed before general release. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-1685": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-50.html",
+        "title": "Memory corruption found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover a series of use-after-free problems rated critical as security issues in shipped software. Some of these issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting additional use-after-free and buffer overflow flaws in code introduced during Firefox development. These were fixed before general release. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-1686": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-50.html",
+        "title": "Memory corruption found using Address Sanitizer",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover a series of use-after-free problems rated critical as security issues in shipped software. Some of these issues are potentially exploitable, allowing for remote code execution. We would also like to thank Abhishek for reporting additional use-after-free and buffer overflow flaws in code introduced during Firefox development. These were fixed before general release. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-1687": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-51.html",
+        "title": "Privileged content access and execution via XBL",
+        "description": "Security researcher Mariusz Mlynski reported that it is possible to compile a user-defined function in the XBL scope of a specific element and then trigger an event within this scope to run code. In some circumstances, when this code is run, it can access content protected by System Only Wrappers (SOW) and chrome-privileged pages. This could potentially lead to arbitrary code execution. Additionally, Chrome Object Wrappers (COW) can be bypassed by web content to access privileged methods, leading to a cross-site scripting (XSS) attack from privileged pages. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-1688": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-52.html",
+        "title": "Arbitrary code execution within Profiler",
+        "description": "Security researcher Mariusz Mlynski reported that when a user examines the profiler output on a malicious website containing specially crafted code, it is possible for arbitrary code execution to occur. This occurs because the profiler user interface runs in a special iframe that parses data from the profiler to render the UI, leaving it susceptible to manipulation."
+      }
+    ],
+    "CVE-2013-1690": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-53.html",
+        "title": "Execution of unmapped memory through onreadystatechange event",
+        "description": "Security researcher Nils reported that specially crafted web content using the onreadystatechange event and reloading of pages could sometimes cause a crash when unmapped memory is executed. This crash is potentially exploitable. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-1692": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-54.html",
+        "title": "Data in the body of XHR HEAD requests leads to CSRF attacks",
+        "description": "Security researcher Johnathan Kuskos reported that Firefox is sending data in the body of XMLHttpRequest (XHR) HEAD requests, which goes agains the XHR specification. This can potentially be used for Cross-Site Request Forgery (CSRF) attacks against sites which do not distinguish between HEAD and POST requests. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-1693": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-55.html",
+        "title": "SVG filters can lead to information disclosure",
+        "description": "Security researcher Paul Stone of Context Information Security discovered that timing differences in the processing of SVG format images with filters could allow for pixel values to be read. This could potentially allow for text values to be read across domains, leading to information disclosure. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-1694": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-56.html",
+        "title": "PreserveWrapper has inconsistent behavior",
+        "description": "Mozilla developer Boris Zbarsky found that when PreserveWrapper was used in cases where a wrapper is not set, the preserved-wrapper flag on the wrapper cache is cleared. This could potentially lead to an exploitable crash. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-1695": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-57.html",
+        "title": "Sandbox restrictions not applied to nested frame elements",
+        "description": "Mozilla community member Bob Owen reported that <iframe sandbox> restrictions are not applied to a frame element contained within a sandboxed iframe. As a result, content hosted within a sandboxed iframe could use a frame element to bypass the restrictions that should be applied."
+      }
+    ],
+    "CVE-2013-1696": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-58.html",
+        "title": "X-Frame-Options ignored when using server push with multi-part responses",
+        "description": "Bugzilla developer Frédéric Buclin reported that the X-Frame-Options header is ignored when server push is used in multi-part responses. This can lead to potential clickjacking on sites that use X-Frame-Options as a protection."
+      }
+    ],
+    "CVE-2013-1697": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-59.html",
+        "title": "XrayWrappers can be bypassed to run user defined methods in a privileged context",
+        "description": "Mozilla security researcher moz_bug_r_a4 reported that XrayWrappers can be bypassed to call content-defined toString and valueOf methods through DefaultValue. This can lead to unexpected behavior when privileged code acts on the incorrect values. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-1698": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-60.html",
+        "title": "getUserMedia permission dialog incorrectly displays location",
+        "description": "Mozilla engineer Matt Wobensmith discovered that when the getUserMedia permission dialog for an iframe appears in one domain, it will display its origin as that of the top-level document and not the calling framed page. This could lead to users incorrectly giving camera or microphone permissions when confusing the requesting page's location for a hosting one's."
+      }
+    ],
+    "CVE-2013-1699": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-61.html",
+        "title": "Homograph domain spoofing in .com, .net and .name",
+        "description": "Security researcher 3ric Johanson reported in discussions with Richard Newman and Holt Sorenson that Verisign's prevention measures for homograph attacks using Internationalized Domain Names (IDN) were insufficiently rigorous, and this led to a limited possibility for domain spoofing in Firefox. IDN allows non-English speakers to use domains in their local language. Many supported characters are similar or identical to others in English, allowing for the potential spoofing of domain names and for phishing attacks when not blocked. In consultation with Verisign, Mozilla had added .com, .net, and .name top-level domains to its IDN whitelist, allowing for IDN use in those top-level domains without restrictions. However, it became clear that a number of historical dangerous registrations continued to be valid. This issue has been fixed by removing the .com, .net, and .name top-level domains from the IDN whitelist, and supplementing the whitelist implementation with technical restrictions against script-mixing in domain labels. These restrictions apply to all non-whitelisted top-level domains. More information on the exact algorithm used can be found here."
+      }
+    ],
+    "CVE-2013-1700": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-62.html",
+        "title": "Inaccessible updater can lead to local privilege escalation",
+        "description": "Security researcher Seb Patane reported an issue with the Mozilla Maintenance Service on Windows. He discovered that when the Mozilla Updater executable was inaccessible, the Maintenance Service will behave incorrectly and can be made to use an updater at an arbitrary location. This updater will run with the system privileges used by the Maintenance Service, allowing for local privilege escalation. Local file system access is necessary in order for this issue to be exploitable and it cannot be triggered through web content."
+      }
+    ],
+    "CVE-2013-1704": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-64.html",
+        "title": "Use after free mutating DOM during SetBody",
+        "description": "Security researcher Nils used the Address Sanitizer to discover a use-after-free problem when the Document Object Model is modified during a SetBody mutation event. This causes a potentially exploitable crash. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-1705": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-65.html",
+        "title": "Buffer underflow when generating CRMF requests",
+        "description": "Security researcher Nils used the Address Sanitizer to discover a use-after-free problem when generating a Certificate Request Message Format (CRMF) request with certain parameters. This causes a potentially exploitable crash. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-1706": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-66.html",
+        "title": "Buffer overflow in Mozilla Maintenance Service and Mozilla Updater",
+        "description": "Security researcher Seb Patane reported stack buffer overflows in both the Maintenance Service and the Mozilla Updater when unexpectedly long paths were encountered. A local attacker could pass these as command-line arguments to the Maintenance Service to crash either program and potentially lead to arbitrary code being run with the Administrator privileges used by the Maintenance Service and inherited by the Updater."
+      }
+    ],
+    "CVE-2013-1707": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-66.html",
+        "title": "Buffer overflow in Mozilla Maintenance Service and Mozilla Updater",
+        "description": "Security researcher Seb Patane reported stack buffer overflows in both the Maintenance Service and the Mozilla Updater when unexpectedly long paths were encountered. A local attacker could pass these as command-line arguments to the Maintenance Service to crash either program and potentially lead to arbitrary code being run with the Administrator privileges used by the Maintenance Service and inherited by the Updater."
+      }
+    ],
+    "CVE-2013-1709": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-68.html",
+        "title": "Document URI misrepresentation and masquerading",
+        "description": "Mozilla security researcher moz_bug_r_a4 reported that through an interaction of frames and browser history it was possible to make the browser believe attacker-supplied content came from the location of a previous page in browser history. This allows for cross-site scripting (XSS) attacks by loading scripts from a misrepresented malicious site through relative locations and the potential access of stored credentials of a spoofed site. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-1710": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-69.html",
+        "title": "CRMF requests allow for code execution and XSS attacks",
+        "description": "Mozilla security researcher moz_bug_r_a4 reported a mechanism to execute arbitrary code or a cross-site scripting (XSS) attack when Certificate Request Message Format (CRMF) request is generated in certain circumstances. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-1711": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-70.html",
+        "title": "Bypass of XrayWrappers using XBL Scopes",
+        "description": "Mozilla Developer Bobby Holley and Mozilla security researcher moz_bug_r_a4 discovered a mechanism where XBL scopes can be be used to circumvent XrayWrappers from within the Chrome on unprivileged objects. This allows web content to potentially confuse privileged code and weaken invariants and can lead to cross-site scripting (XSS) attacks. In general these flaws cannot be exploited through email in the Thunderbird and SeaMonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts in those products."
+      }
+    ],
+    "CVE-2013-1713": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-72.html",
+        "title": "Wrong principal used for validating URI for some Javascript components",
+        "description": "Security researcher Cody Crews reported that some Javascript components will perform checks against the wrong uniform resource identifier (URI) before performing security sensitive actions. This will return an incorrect location for the originator of the call. This could be used to bypass same-origin policy, allowing for cross-site scripting (XSS) or the installation of malicious add-ons from third-party pages. In general these flaws cannot be exploited through email in the Thunderbird product because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1714": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-73.html",
+        "title": "Same-origin bypass with web workers and XMLHttpRequest",
+        "description": "Mozilla community member Federico Lanusse reported a mechanism where a web worker can violate same-origin policy and bypass cross-origin checks through XMLHttpRequest. This could allow for cross-site scripting (XSS) attacks by web workers. In general these flaws cannot be exploited through email in the Thunderbird product because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1717": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-75.html",
+        "title": "Local Java applets may read contents of local file system",
+        "description": "Security researcher Georgi Guninski reported an issue with Java applets where in some circumstances the applet could access files on the local system when loaded using the a file:/// URI and violate file origin policy due to interaction with the codebase parameter. This affects applets running on the local file system. Mozilla developer John Schoenick later discovered that fixes for this issue were inadequate and allowed the invocation of Java applets to bypass security checks in additional circumstances. This could lead to untrusted Java applets having read-only access on the local files system if used in conjunction with a method to download a file to a known or guessable path. In general these flaws cannot be exploited through email in the Thunderbird product because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1718": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-76.html",
+        "title": "Miscellaneous memory safety hazards (rv:24.0 / rv:17.0.9)",
+        "description": "Mozilla developers identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code. In general these flaws cannot be exploited through email in the Thunderbird product because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1719": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-76.html",
+        "title": "Miscellaneous memory safety hazards (rv:24.0 / rv:17.0.9)",
+        "description": "Mozilla developers identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code. In general these flaws cannot be exploited through email in the Thunderbird product because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1720": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-77.html",
+        "title": "Improper state in HTML5 Tree Builder with templates",
+        "description": "Using the Address Sanitizer tool, security researcher Atte Kettunen from OUSPG found that the HTML5 Tree Builder does not properly store state when interacting with template elements. Because some stack information is incorrectly stored, the template insertion mode stack can be used when it is empty. This could possibly lead to code execution in some circumstances. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1721": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-78.html",
+        "title": "Integer overflow in ANGLE library",
+        "description": "Security researcher Alex Chapman reported that the Almost Native Graphics Layer Engine (ANGLE) library used by Mozilla is vulnerable to an integer overflow. This vulnerability is present because of insufficient bounds checking in the drawLineLoop function, which can be driven by web content to overflow allocated memory, leading to a potentially exploitable crash. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1722": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-79.html",
+        "title": "Use-after-free in Animation Manager during stylesheet cloning",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover a use-after-free problem in the Animation Manager during the cloning of stylesheets. This can lead to a potentially exploitable crash. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1723": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-80.html",
+        "title": "NativeKey continues handling key messages after widget is destroyed",
+        "description": "Mozilla developer Masayuki Nakano discovered that the NativeKey widget continues handling key messages even when it is destroyed by dispatched event listeners. This could result in some key events being applied to other objects or plugins if the widget memory is reallocated to them, leading to a non-exploitable crash. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1724": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-81.html",
+        "title": "Use-after-free with select element",
+        "description": "Security researcher Scott Bell used the Address Sanitizer tool to discover a use-after-free when using a <select> element in a form after it has been destroyed. This could lead to a potentially exploitable crash. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1725": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-82.html",
+        "title": "Calling scope for new Javascript objects can lead to memory corruption",
+        "description": "Mozilla community member Ms2ger found a mechanism where a new Javascript object with a compartment is uninitialized could be entered through web content. When the scope for this object is called, it leads to a potentially exploitable crash. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1726": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-83.html",
+        "title": "Mozilla Updater does not lock MAR file after signature verification",
+        "description": "Security researcher Seb Patane reported that the Mozilla Updater does not write-lock the MAR update file when it is in use by the Updater. This leaves open the possibility of altering the contents of the MAR file after the signature on the file has been verified as valid but before it has been used. This could allow an attacker with access to the local system to silently replace the contents of the update MAR file and either replace the installed software with their own or extract and run executables files with the same privileges as that of the Mozilla Updater."
+      }
+    ],
+    "CVE-2013-1727": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-84.html",
+        "title": "Same-origin bypass through symbolic links",
+        "description": "Security researcher Takeshi Terada reported a mechanism to violate same-origin policy for local files using file:// through the use of symbolic links. This problem only affects web pages loaded from the local filesystem. This could allow for cross-site scripting (XSS) and access to locally stored Firefox files containing passwords and cookies. This problem is specific to Firefox for Android."
+      }
+    ],
+    "CVE-2013-1728": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-85.html",
+        "title": "Uninitialized data in IonMonkey",
+        "description": "Software developer Dan Gohman of Google reported uninitialized data and variables in the IonMonkey Javascript engine when running the engine in Valgrind mode. This could be combined with additional exploits to allow the reading and use of previously allocated memory in some circumstances."
+      }
+    ],
+    "CVE-2013-1729": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-86.html",
+        "title": "WebGL Information disclosure through OS X NVIDIA graphic drivers",
+        "description": "Mozilla developer Victor Porof reported a flaw in the NVIDIA OS X graphic drivers that would allow portions of a user's desktop or other visible applications to be incorporated into WebGL canvases. This could result in personal information becoming available to web content."
+      }
+    ],
+    "CVE-2013-1730": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-88.html",
+        "title": "Compartment mismatch re-attaching XBL-backed nodes",
+        "description": "Security researcher Sachin Shinde reported that moving certain XBL-backed nodes from a document into the replacement document created by document.open() can cause a JavaScript compartment mismatch which can often lead to exploitable conditions. Starting with Firefox 20 this condition was turned into a run-time assertion that would crash the browser in an unexploitable way, and in Firefox 24 the underlying cause was fixed. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1731": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-87.html",
+        "title": "Shared object library loading from writable location",
+        "description": "Mozilla developer Vladimir Vukicevic reported that Firefox for Android will optionally load a shared object (.so) library in order to enable GL tracing. When this is occurs, it can be from a world writable location, allowing for it to be replaced by malicious third party applications before it is loaded by Firefox. This would allow for accessing of all Firefox data or for malicious code to be run by Firefox. This flaw requires malicious software to be loaded on the device and is not accessible by web content."
+      }
+    ],
+    "CVE-2013-1732": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-89.html",
+        "title": "Buffer overflow with multi-column, lists, and floats",
+        "description": "Security researcher Aki Helin reported that combining lists, floats, and multiple columns could trigger a potentially exploitable buffer overflow. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1735": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-90.html",
+        "title": "Memory corruption involving scrolling",
+        "description": "Security researcher Nils reported two potentially exploitable memory corruption bugs involving scrolling. The first was a use-after-free condition due to scrolling an image document. The second was due to nodes in a range request being added as children of two different parents. In general these flaws cannot be exploited through email in the Thunderbird product because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1736": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-90.html",
+        "title": "Memory corruption involving scrolling",
+        "description": "Security researcher Nils reported two potentially exploitable memory corruption bugs involving scrolling. The first was a use-after-free condition due to scrolling an image document. The second was due to nodes in a range request being added as children of two different parents. In general these flaws cannot be exploited through email in the Thunderbird product because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1737": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-91.html",
+        "title": "User-defined properties on DOM proxies get the wrong \"this\" object",
+        "description": "Mozilla developer Boris Zbarsky reported that user-defined getters on DOM proxies would incorrectly get the expando object as this. It is unlikely that this is directly exploitable but could lead to JavaScript client or add-on code making incorrect security sensitive decisions based on hacker supplied values. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1738": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-92.html",
+        "title": "GC hazard with default compartments and frame chain restoration",
+        "description": "Security researcher Nils reported a potentially exploitable use-after-free in an early test version of Firefox 25. Mozilla developer Bobby Holley found that the cause was an older garbage collection bug that a more recent change made easier to trigger. In general this flaw cannot be exploited through email in the Thunderbird product because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-1741": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-103.html",
+        "title": "Miscellaneous Network Security Services (NSS) vulnerabilities",
+        "description": "Mozilla has updated the version of Network Security Services (NSS) library used in Mozilla projects to NSS 3.15.3 with the exception of ESR17-based releases, which have been updated to NSS 3.14.5. This addresses several moderate to critical rated networking security issues. Google developer Andrew Tinits reported a potentially exploitable buffer overflow that was fixed in both NSS 3.15.3 and NSS 3.14.5. Null Cipher buffer overflow (CVE-2013-5605) Mozilla developer Camilo Viecco discovered that if the verifylog feature was used when validating certificates then certificates with incompatible key usage constraints were not rejected. This did not directly affect Firefox but might affect other software using the NSS library CERT_VerifyCert can SECSuccess for bad certificates (CVE-2013-5606) Google security researcher Tavis Ormandy reported a runaway memset in certificate parsing on 64-bit computers leading to a crash by attempting to write 4Gb of nulls. Integer truncation in certificate parsing (CVE-2013-1741) Pascal Cuoq, RedHat developer Kamil Dudka, and Google developer Wan-Teh Chang found equivalent Netscape Portable Runtime (NSPR) library code suffered the same integer truncation. Avoid unsigned integer wrapping in PL_ArenaAllocate (CVE-2013-5607) NSS lowered the priority of RC4 in cipher suite advertisement so that more secure ciphers instead of RC4 are likely to be chosen by the server. This can help address the problem described by Nadhem AlFardan, Dan Bernstein, Kenny Paterson, Bertram Poettering and Jacob Schuldt in their paper \"On the Security of RC4 in TLS.\" \"On the Security of RC4 in TLS\" plaintext recovery attack (CVE-2013-2566)"
+      }
+    ],
+    "CVE-2013-5593": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-94.html",
+        "title": "Spoofing addressbar though SELECT element",
+        "description": "Security researcher Jordi Chancel discovered a method to put arbitrary HTML content within <select> elements and place it in arbitrary locations. This can be used to spoof the displayed addressbar, leading to clickjacking and other spoofing attacks. In general this flaw cannot be exploited through email in the Thunderbird and Seamonkey products because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-5595": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-96.html",
+        "title": "Improperly initialized memory and overflows in some JavaScript functions",
+        "description": "Compiler Engineer Dan Gohman of Google discovered a flaw in the JavaScript engine where memory was being incorrectly allocated for some functions and the calls for allocations were not always properly checked for overflow, leading to potential buffer overflows. When combined with other vulnerabilities, these flaws could be potentially exploitable. In general this flaw cannot be exploited through email in the Thunderbird and Seamonkey products because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-5596": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-97.html",
+        "title": "Writing to cycle collected object during image decoding",
+        "description": "Mozilla community member Ezra Pool reported a potentially exploitable crash on extremely large pages. This was caused when a cycle collected image object was released on the wrong thread during decoding, creating a race condition. In general this flaw cannot be exploited through email in the Thunderbird and Seamonkey products because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-5598": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-99.html",
+        "title": "Security bypass of PDF.js checks using iframes",
+        "description": "Security researcher Cody Crews discovered a method to append an iframe into an embedded PDF object rendered with the chrome privileged PDF.js. This can used to bypass security restrictions to load local or chrome privileged files and objects within the embedded PDF object. This can lead to information disclosure of local system files. In general this flaw cannot be exploited through email in the Thunderbird and Seamonkey products because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-5602": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-101.html",
+        "title": "Memory corruption in workers",
+        "description": "Security researcher Nils used the Address Sanitizer tool while fuzzing to discover a memory corruption issue with the JavaScript engine when using workers with direct proxies. This results in a potentially exploitable crash. In general this flaw cannot be exploited through email in the Thunderbird and Seamonkey products because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-5604": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-95.html",
+        "title": "Access violation with XSLT and uninitialized data",
+        "description": "Security researcher Abhishek Arya (Inferno) of the Google Chrome Security Team used the Address Sanitizer tool to discover an access violation due to uninitialized data during Extensible Stylesheet Language Transformation (XSLT) processing. This leads to a potentially exploitable crash. In general this flaw cannot be exploited through email in the Thunderbird and Seamonkey products because scripting is disabled, but is potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-5605": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-103.html",
+        "title": "Miscellaneous Network Security Services (NSS) vulnerabilities",
+        "description": "Mozilla has updated the version of Network Security Services (NSS) library used in Mozilla projects to NSS 3.15.3 with the exception of ESR17-based releases, which have been updated to NSS 3.14.5. This addresses several moderate to critical rated networking security issues. Google developer Andrew Tinits reported a potentially exploitable buffer overflow that was fixed in both NSS 3.15.3 and NSS 3.14.5. Null Cipher buffer overflow (CVE-2013-5605) Mozilla developer Camilo Viecco discovered that if the verifylog feature was used when validating certificates then certificates with incompatible key usage constraints were not rejected. This did not directly affect Firefox but might affect other software using the NSS library CERT_VerifyCert can SECSuccess for bad certificates (CVE-2013-5606) Google security researcher Tavis Ormandy reported a runaway memset in certificate parsing on 64-bit computers leading to a crash by attempting to write 4Gb of nulls. Integer truncation in certificate parsing (CVE-2013-1741) Pascal Cuoq, RedHat developer Kamil Dudka, and Google developer Wan-Teh Chang found equivalent Netscape Portable Runtime (NSPR) library code suffered the same integer truncation. Avoid unsigned integer wrapping in PL_ArenaAllocate (CVE-2013-5607) NSS lowered the priority of RC4 in cipher suite advertisement so that more secure ciphers instead of RC4 are likely to be chosen by the server. This can help address the problem described by Nadhem AlFardan, Dan Bernstein, Kenny Paterson, Bertram Poettering and Jacob Schuldt in their paper \"On the Security of RC4 in TLS.\" \"On the Security of RC4 in TLS\" plaintext recovery attack (CVE-2013-2566)"
+      }
+    ],
+    "CVE-2013-5606": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-103.html",
+        "title": "Miscellaneous Network Security Services (NSS) vulnerabilities",
+        "description": "Mozilla has updated the version of Network Security Services (NSS) library used in Mozilla projects to NSS 3.15.3 with the exception of ESR17-based releases, which have been updated to NSS 3.14.5. This addresses several moderate to critical rated networking security issues. Google developer Andrew Tinits reported a potentially exploitable buffer overflow that was fixed in both NSS 3.15.3 and NSS 3.14.5. Null Cipher buffer overflow (CVE-2013-5605) Mozilla developer Camilo Viecco discovered that if the verifylog feature was used when validating certificates then certificates with incompatible key usage constraints were not rejected. This did not directly affect Firefox but might affect other software using the NSS library CERT_VerifyCert can SECSuccess for bad certificates (CVE-2013-5606) Google security researcher Tavis Ormandy reported a runaway memset in certificate parsing on 64-bit computers leading to a crash by attempting to write 4Gb of nulls. Integer truncation in certificate parsing (CVE-2013-1741) Pascal Cuoq, RedHat developer Kamil Dudka, and Google developer Wan-Teh Chang found equivalent Netscape Portable Runtime (NSPR) library code suffered the same integer truncation. Avoid unsigned integer wrapping in PL_ArenaAllocate (CVE-2013-5607) NSS lowered the priority of RC4 in cipher suite advertisement so that more secure ciphers instead of RC4 are likely to be chosen by the server. This can help address the problem described by Nadhem AlFardan, Dan Bernstein, Kenny Paterson, Bertram Poettering and Jacob Schuldt in their paper \"On the Security of RC4 in TLS.\" \"On the Security of RC4 in TLS\" plaintext recovery attack (CVE-2013-2566)"
+      }
+    ],
+    "CVE-2013-5607": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-103.html",
+        "title": "Miscellaneous Network Security Services (NSS) vulnerabilities",
+        "description": "Mozilla has updated the version of Network Security Services (NSS) library used in Mozilla projects to NSS 3.15.3 with the exception of ESR17-based releases, which have been updated to NSS 3.14.5. This addresses several moderate to critical rated networking security issues. Google developer Andrew Tinits reported a potentially exploitable buffer overflow that was fixed in both NSS 3.15.3 and NSS 3.14.5. Null Cipher buffer overflow (CVE-2013-5605) Mozilla developer Camilo Viecco discovered that if the verifylog feature was used when validating certificates then certificates with incompatible key usage constraints were not rejected. This did not directly affect Firefox but might affect other software using the NSS library CERT_VerifyCert can SECSuccess for bad certificates (CVE-2013-5606) Google security researcher Tavis Ormandy reported a runaway memset in certificate parsing on 64-bit computers leading to a crash by attempting to write 4Gb of nulls. Integer truncation in certificate parsing (CVE-2013-1741) Pascal Cuoq, RedHat developer Kamil Dudka, and Google developer Wan-Teh Chang found equivalent Netscape Portable Runtime (NSPR) library code suffered the same integer truncation. Avoid unsigned integer wrapping in PL_ArenaAllocate (CVE-2013-5607) NSS lowered the priority of RC4 in cipher suite advertisement so that more secure ciphers instead of RC4 are likely to be chosen by the server. This can help address the problem described by Nadhem AlFardan, Dan Bernstein, Kenny Paterson, Bertram Poettering and Jacob Schuldt in their paper \"On the Security of RC4 in TLS.\" \"On the Security of RC4 in TLS\" plaintext recovery attack (CVE-2013-2566)"
+      }
+    ],
+    "CVE-2013-5610": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-104.html",
+        "title": "Miscellaneous memory safety hazards (rv:26.0 / rv:24.2)",
+        "description": "Mozilla developers identified and fixed several memory safety bugs in the browser engine used in Firefox and other Mozilla-based products. Some of these bugs showed evidence of memory corruption under certain circumstances, and we presume that with enough effort at least some of these could be exploited to run arbitrary code. In general these flaws cannot be exploited through email in the Thunderbird and Seamonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-5612": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-106.html",
+        "title": "Character encoding cross-origin XSS attack",
+        "description": "Security researcher Masato Kinugawa discovered that if a web page is missing character set encoding information it can inherit character encodings across navigations into another domain from an earlier site. Only same-origin inheritance is allowed according to the HTML5 specification. This issue allows an attacker to add content that will be interpreted one way on the victim site, but which may then behave differently, evading cross-site scripting (XSS) filtering, when forced into an unexpected character set. Web site authors should always explicitly declare a character encoding to avoid similar issues. In general these flaws cannot be exploited through email in the Thunderbird and Seamonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-5613": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-114.html",
+        "title": "Use-after-free in synthetic mouse movement",
+        "description": "Security researchers Tyson Smith and Jesse Schwartzentruber of the BlackBerry Security Automated Analysis Team used the Address Sanitizer tool while fuzzing to discover a user-after-free in the functions for synthetic mouse movement handling. Security researcher Atte Kettunen from OUSPG also reported a variant of the same flaw. This issue leads to a potentially exploitable crash. In general these flaws cannot be exploited through email in the Thunderbird and Seamonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-5616": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-108.html",
+        "title": "Use-after-free in event listeners",
+        "description": "Security researchers Tyson Smith and Jesse Schwartzentruber of the BlackBerry Security Automated Analysis Team used the Address Sanitizer tool while fuzzing to discover a user-after-free when interacting with event listeners from the mListeners array. This leads to a potentially exploitable crash. In general these flaws cannot be exploited through email in the Thunderbird and Seamonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-5618": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-109.html",
+        "title": "Use-after-free during Table Editing",
+        "description": "Security researcher Nils used the Address Sanitizer tool while fuzzing to discover a use-after-free problem in the table editing user interface of the editor during garbage collection. This leads to a potentially exploitable crash."
+      }
+    ],
+    "CVE-2013-5619": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-110.html",
+        "title": "Potential overflow in JavaScript binary search algorithms",
+        "description": "Compiler Engineer Dan Gohman of Google reported that binary search algorithms in the SpiderMonkey JavaScript engine were prone to overflow in several places, leading to potential out-of-bounds array access. While none of these are known to be directly exploitable, they are unsafe in theory and have been changed as part of general security improvements. In general these flaws cannot be exploited through email in the Thunderbird and Seamonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-6629": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-116.html",
+        "title": "JPEG information leak",
+        "description": "Google security researcher Michal Zalewski reported issues with JPEG format image processing with Start Of Scan (SOS) and Define Huffman Table (DHT) markers in the libjpeg library. This could allow for the possible reading of arbitrary memory content as well as cross-domain image theft."
+      }
+    ],
+    "CVE-2013-6630": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-116.html",
+        "title": "JPEG information leak",
+        "description": "Google security researcher Michal Zalewski reported issues with JPEG format image processing with Start Of Scan (SOS) and Define Huffman Table (DHT) markers in the libjpeg library. This could allow for the possible reading of arbitrary memory content as well as cross-domain image theft."
+      }
+    ],
+    "CVE-2013-6671": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-111.html",
+        "title": "Segmentation violation when replacing ordered list elements",
+        "description": "Security researchers Tyson Smith and Jesse Schwartzentruber of the BlackBerry Security Automated Analysis Team used the Address Sanitizer tool while fuzzing to discover a mechanism where inserting an ordered list into a document through script could lead to a potentially exploitable crash that can be triggered by web content. In general these flaws cannot be exploited through email in the Thunderbird and Seamonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-6672": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-112.html",
+        "title": "Linux clipboard information disclosure though selection paste",
+        "description": "Mozilla community member Vincent Lefevre reported that on Linux systems, web content can access data saved to the clipboard when a user attempts to paste a selection with a middle-click instead of pasting the selection content. This allows for possibly private data in the clipboard to be inadvertently disclosed to web content. Windows and OS X systems are not affected by this issue. In general these flaws cannot be exploited through email in the Thunderbird and Seamonkey products because scripting is disabled, but are potentially a risk in browser or browser-like contexts."
+      }
+    ],
+    "CVE-2013-6673": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2013/mfsa2013-113.html",
+        "title": "Trust settings for built-in roots ignored during EV certificate validation",
+        "description": "Firefox user Sijie Xia reported that if a user explicitly removes the trust for extended validation (EV) capable root certificates in the certificate manager, the change is not properly used when validating EV certificates, causing the setting to be ignored. This removes the ability of users to explicitly untrust root certificates from specific certificate authorities. This flaw does not affect certificates that are not extended validation certificates. All other certificate validation checks do occur, the error is the assumption that if Mozilla trusted the certificate, the user would also."
+      }
+    ],
+    "CVE-2013-6674": [
+      {
+        "url": "http://www.mozilla.org/security/announce/2014/mfsa2014-14.html",
+        "title": "Script execution in HTML mail replies",
+        "description": "Security researcher Fabián Cuchietti discovered that it was possible to bypass the restriction on JavaScript execution in mail by embedding an <iframe> with a data: URL within a message. If the victim replied or forwarded the mail after receiving it, quoting it \"in-line\" using Thunderbird's HTML mail editor, it would run the attached script. The running script would be restricted to the mail composition window where it could observe and potentially modify the content of the mail before it was sent. Scripts were not executed if the recipient merely viewed the mail, only if it was edited as HTML. Turning off HTML composition prevented the vulnerability and forwarding the mail \"as attachment\" prevented the forwarding variant. Ateeq ur Rehman Khan of Vulnerability Labs reported additional variants of this attack involving the use of the <object> tag and which could be used to attach object data types such as images, audio, or video. This affected the Thunderbird 17 branch. It was fixed in all versions based on Gecko 23 or later. Thunderbird 24 and later are not affected by this vulnerability."
+      }
+    ]
+  }
 }

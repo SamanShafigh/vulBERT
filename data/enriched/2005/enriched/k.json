@@ -1,6 +1,255 @@
 {
   "year": 2005,
-  "total": 0,
+  "total": 36,
   "reference": "usn.ubuntu.com",
-  "reports": {}
+  "reports": {
+    "CVE-2005-0449": [
+      {
+        "url": "https://usn.ubuntu.com/82-1/",
+        "title": "USN-82-1: Linux kernel vulnerabilities",
+        "body": "CAN-2004-0176: Michael Kerrisk noticed an insufficient permission checking in the shmctl() function. Any process was permitted to lock/unlock any System V shared memory segment that fell within the the RLIMIT_MEMLOCK limit (that is the maximum size of shared memory that unprivileged users can acquire). This allowed am unprivileged user process to unlock locked memory of other processes, thereby allowing them to be swapped out. Usually locked shared memory is used to store passphrases and other sensitive content which must not be written to the swap space (where it could be read out even after a reboot). CAN-2005-0177: OGAWA Hirofumi noticed that the table sizes in nls_ascii.c were incorrectly set to 128 instead of 256. This caused a buffer overflow in some cases which could be exploited to crash the kernel. CAN-2005-0178: A race condition was found in the terminal handling of the “setsid()” function, which is used to start new process sessions. http://oss.sgi.com/archives/netdev/2005-01/msg01036.html: David Coulson noticed a design flaw in the netfilter/iptables module. By sending specially crafted packets, a remote attacker could exploit this to crash the kernel or to bypass firewall rules. Fixing this vulnerability required a change in the Application Binary Interface (ABI) of the kernel. This means that third party user installed modules might not work any more with the new kernel, so this fixed kernel has a new ABI version number. You have to recompile and reinstall all third party modules."
+      }
+    ],
+    "CVE-2005-0709": [
+      {
+        "url": "https://usn.ubuntu.com/96-1/",
+        "title": "USN-96-1: mySQL vulnerabilities",
+        "body": "Stefano Di Paola discovered three privilege escalation flaws in the MySQLserver: If an authenticated user had INSERT privileges on the ‘mysql’ administrativedatabase, the CREATE FUNCTION command allowed that user to use libc functionsto execute arbitrary code with the privileges of the database server (user‘mysql’). (CAN-2005-0709)If an authenticated user had INSERT privileges on the ‘mysql’ administrativedatabase, it was possible to load a library located in an arbitrary directoryby using INSERT INTO mysql.func instead of CREATE FUNCTION. This allowed theuser to execute arbitrary code with the privileges of the database server (user‘mysql’). (CAN-2005-0710)Temporary files belonging to tables created with CREATE TEMPORARY TABLE werehandled in an insecure way. This allowed any local computer user to overwritearbitrary files with the privileges of the database server. (CAN-2005-0711) Matt Brubeck discovered that the directory /usr/share/mysql/ was owned andwritable by the database server user ‘mysql’. This directory contains scriptswhich are usually run by root. This allowed a local attacker who already hasmysql privileges to gain full root access by modifying a script and trickingroot into executing it."
+      }
+    ],
+    "CVE-2005-0756": [
+      {
+        "url": "https://usn.ubuntu.com/137-1/",
+        "title": "USN-137-1: Linux kernel vulnerabilities",
+        "body": "Alexander Nyberg discovered that ptrace() insufficiently validatedaddresses on the amd64 platform so that it was possible to set aninvalid segment base. A local attacker could exploit this to crash thekernel. This does not affect the i386 and powerpc platforms in anyway. (CAN-2005-0756) Chris Wright discovered that the mmap() function could create illegalmemory maps (using the “mmap” function) with the start addresspointing beyond the end address. A local user could exploit this tocrash the kernel or possibly even execute arbitrary code with kernelprivileges. (CAN-2005-1265)"
+      }
+    ],
+    "CVE-2005-1689": [
+      {
+        "url": "https://usn.ubuntu.com/224-1/",
+        "title": "USN-224-1: Kerberos vulnerabilities",
+        "body": "Magnus Hagander discovered that the krb5_recvauth() function attemptedto free previously freed memory in some situations. A remote attackercould possibly exploit this to run arbitrary code with the privilegesof the program that called this function. Most imporantly, thisaffects the following daemons: kpropd (from the krb5-kdc package),klogind, and kshd (both from the krb5-rsh-server package).(CVE-2005-1689)"
+      }
+    ],
+    "CVE-2005-1704": [
+      {
+        "url": "https://usn.ubuntu.com/136-1/",
+        "title": "USN-136-1: binutils vulnerability",
+        "body": "Tavis Ormandy found an integer overflow in the Binary File Descriptor(BFD) parser in the GNU debugger. The same vulnerable code is alsopresent in binutils. By tricking an user into processing a speciallycrafted executable with the binutils tools (strings, objdump, nm,readelf, etc.), an attacker could exploit this to execute arbitrarycode with the privileges of the user running the affected program."
+      }
+    ],
+    "CVE-2005-2099": [
+      {
+        "url": "https://usn.ubuntu.com/169-1/",
+        "title": "USN-169-1: Linux kernel vulnerabilities",
+        "body": "David Howells discovered a local Denial of Service vulnerability in the key session joining function. Under certain user-triggerableconditions, a semaphore was not released properly, which causedprocesses which also attempted to join a key session to hang forever.This only affects Ubuntu 5.04 (Hoary Hedgehog). (CAN-2005-2098) David Howells discovered a local Denial of Service vulnerability inthe keyring allocator. A local attacker could exploit this to crashthe kernel by attempting to add a specially crafted invalid keyring.This only affects Ubuntu 5.04 (Hoary Hedgehog). (CAN-2005-2099) Balazs Scheidler discovered a local Denial of Service vulnerability inthe xfrm_compile_policy() function. By calling setsockopt() with aninvalid xfrm_user policy message, a local attacker could cause thekernel to write to an array beyond its boundaries, thus causing akernel crash. (CAN-2005-2456) Tim Yamin discovered that the driver for compressed ISO file systemsdid not sufficiently validate the iput data. By tricking an user intomounting a malicious CD-ROM with a specially crafted compressed ISOfile system, he could cause a kernel crash. (CAN-2005-2457) It was discovered that the kernel’s embedded zlib compression librarywas still vulnerable to two old vulnerabilities of the standalone zliblibrary. This library is used by various drivers and can also be usedby third party modules, so the impact varies. (CAN-2005-2458,CAN-2005-2459) Peter Sandstrom discovered a remote Denial of Service vulnerability inthe SNMP handler. Certain UDP packages lead to a function call withthe wrong argument, which resulted in a crash of the network stack.This only affects Ubuntu 4.10 (Warty Warthog). (CAN-2005-2548) Herbert Xu discovered that the setsockopt() function was notrestricted to privileged users. This allowed a local attacker tobypass intended IPSec policies, set invalid policies to exploit flawslike CAN-2005-2456, or cause a Denial of Service by adding policiesuntil kernel memory is exhausted. Now the call is restricted toprocesses with the CAP_NET_ADMIN capability. (CAN-2005-2555) The Ubuntu 5.04 kernel update also fixes a memory leak in the “md”(Software RAID) driver which eventually lead to kernel memoryexhaustion. Ubuntu 4.10 is not affected by this.(http://bugs.debian.org/317787)"
+      }
+    ],
+    "CVE-2005-2459": [
+      {
+        "url": "https://usn.ubuntu.com/169-1/",
+        "title": "USN-169-1: Linux kernel vulnerabilities",
+        "body": "David Howells discovered a local Denial of Service vulnerability in the key session joining function. Under certain user-triggerableconditions, a semaphore was not released properly, which causedprocesses which also attempted to join a key session to hang forever.This only affects Ubuntu 5.04 (Hoary Hedgehog). (CAN-2005-2098) David Howells discovered a local Denial of Service vulnerability inthe keyring allocator. A local attacker could exploit this to crashthe kernel by attempting to add a specially crafted invalid keyring.This only affects Ubuntu 5.04 (Hoary Hedgehog). (CAN-2005-2099) Balazs Scheidler discovered a local Denial of Service vulnerability inthe xfrm_compile_policy() function. By calling setsockopt() with aninvalid xfrm_user policy message, a local attacker could cause thekernel to write to an array beyond its boundaries, thus causing akernel crash. (CAN-2005-2456) Tim Yamin discovered that the driver for compressed ISO file systemsdid not sufficiently validate the iput data. By tricking an user intomounting a malicious CD-ROM with a specially crafted compressed ISOfile system, he could cause a kernel crash. (CAN-2005-2457) It was discovered that the kernel’s embedded zlib compression librarywas still vulnerable to two old vulnerabilities of the standalone zliblibrary. This library is used by various drivers and can also be usedby third party modules, so the impact varies. (CAN-2005-2458,CAN-2005-2459) Peter Sandstrom discovered a remote Denial of Service vulnerability inthe SNMP handler. Certain UDP packages lead to a function call withthe wrong argument, which resulted in a crash of the network stack.This only affects Ubuntu 4.10 (Warty Warthog). (CAN-2005-2548) Herbert Xu discovered that the setsockopt() function was notrestricted to privileged users. This allowed a local attacker tobypass intended IPSec policies, set invalid policies to exploit flawslike CAN-2005-2456, or cause a Denial of Service by adding policiesuntil kernel memory is exhausted. Now the call is restricted toprocesses with the CAP_NET_ADMIN capability. (CAN-2005-2555) The Ubuntu 5.04 kernel update also fixes a memory leak in the “md”(Software RAID) driver which eventually lead to kernel memoryexhaustion. Ubuntu 4.10 is not affected by this.(http://bugs.debian.org/317787)"
+      }
+    ],
+    "CVE-2005-2548": [
+      {
+        "url": "https://usn.ubuntu.com/169-1/",
+        "title": "USN-169-1: Linux kernel vulnerabilities",
+        "body": "David Howells discovered a local Denial of Service vulnerability in the key session joining function. Under certain user-triggerableconditions, a semaphore was not released properly, which causedprocesses which also attempted to join a key session to hang forever.This only affects Ubuntu 5.04 (Hoary Hedgehog). (CAN-2005-2098) David Howells discovered a local Denial of Service vulnerability inthe keyring allocator. A local attacker could exploit this to crashthe kernel by attempting to add a specially crafted invalid keyring.This only affects Ubuntu 5.04 (Hoary Hedgehog). (CAN-2005-2099) Balazs Scheidler discovered a local Denial of Service vulnerability inthe xfrm_compile_policy() function. By calling setsockopt() with aninvalid xfrm_user policy message, a local attacker could cause thekernel to write to an array beyond its boundaries, thus causing akernel crash. (CAN-2005-2456) Tim Yamin discovered that the driver for compressed ISO file systemsdid not sufficiently validate the iput data. By tricking an user intomounting a malicious CD-ROM with a specially crafted compressed ISOfile system, he could cause a kernel crash. (CAN-2005-2457) It was discovered that the kernel’s embedded zlib compression librarywas still vulnerable to two old vulnerabilities of the standalone zliblibrary. This library is used by various drivers and can also be usedby third party modules, so the impact varies. (CAN-2005-2458,CAN-2005-2459) Peter Sandstrom discovered a remote Denial of Service vulnerability inthe SNMP handler. Certain UDP packages lead to a function call withthe wrong argument, which resulted in a crash of the network stack.This only affects Ubuntu 4.10 (Warty Warthog). (CAN-2005-2548) Herbert Xu discovered that the setsockopt() function was notrestricted to privileged users. This allowed a local attacker tobypass intended IPSec policies, set invalid policies to exploit flawslike CAN-2005-2456, or cause a Denial of Service by adding policiesuntil kernel memory is exhausted. Now the call is restricted toprocesses with the CAP_NET_ADMIN capability. (CAN-2005-2555) The Ubuntu 5.04 kernel update also fixes a memory leak in the “md”(Software RAID) driver which eventually lead to kernel memoryexhaustion. Ubuntu 4.10 is not affected by this.(http://bugs.debian.org/317787)"
+      }
+    ],
+    "CVE-2005-2555": [
+      {
+        "url": "https://usn.ubuntu.com/169-1/",
+        "title": "USN-169-1: Linux kernel vulnerabilities",
+        "body": "David Howells discovered a local Denial of Service vulnerability in the key session joining function. Under certain user-triggerableconditions, a semaphore was not released properly, which causedprocesses which also attempted to join a key session to hang forever.This only affects Ubuntu 5.04 (Hoary Hedgehog). (CAN-2005-2098) David Howells discovered a local Denial of Service vulnerability inthe keyring allocator. A local attacker could exploit this to crashthe kernel by attempting to add a specially crafted invalid keyring.This only affects Ubuntu 5.04 (Hoary Hedgehog). (CAN-2005-2099) Balazs Scheidler discovered a local Denial of Service vulnerability inthe xfrm_compile_policy() function. By calling setsockopt() with aninvalid xfrm_user policy message, a local attacker could cause thekernel to write to an array beyond its boundaries, thus causing akernel crash. (CAN-2005-2456) Tim Yamin discovered that the driver for compressed ISO file systemsdid not sufficiently validate the iput data. By tricking an user intomounting a malicious CD-ROM with a specially crafted compressed ISOfile system, he could cause a kernel crash. (CAN-2005-2457) It was discovered that the kernel’s embedded zlib compression librarywas still vulnerable to two old vulnerabilities of the standalone zliblibrary. This library is used by various drivers and can also be usedby third party modules, so the impact varies. (CAN-2005-2458,CAN-2005-2459) Peter Sandstrom discovered a remote Denial of Service vulnerability inthe SNMP handler. Certain UDP packages lead to a function call withthe wrong argument, which resulted in a crash of the network stack.This only affects Ubuntu 4.10 (Warty Warthog). (CAN-2005-2548) Herbert Xu discovered that the setsockopt() function was notrestricted to privileged users. This allowed a local attacker tobypass intended IPSec policies, set invalid policies to exploit flawslike CAN-2005-2456, or cause a Denial of Service by adding policiesuntil kernel memory is exhausted. Now the call is restricted toprocesses with the CAP_NET_ADMIN capability. (CAN-2005-2555) The Ubuntu 5.04 kernel update also fixes a memory leak in the “md”(Software RAID) driver which eventually lead to kernel memoryexhaustion. Ubuntu 4.10 is not affected by this.(http://bugs.debian.org/317787)"
+      }
+    ],
+    "CVE-2005-2709": [
+      {
+        "url": "https://usn.ubuntu.com/219-1/",
+        "title": "USN-219-1: Linux kernel vulnerabilities",
+        "body": ""
+      }
+    ],
+    "CVE-2005-2959": [
+      {
+        "url": "https://usn.ubuntu.com/213-1/",
+        "title": "USN-213-1: sudo vulnerability",
+        "body": "Tavis Ormandy discovered a privilege escalation vulnerability in sudo.On executing shell scripts with sudo, the “P4” and “SHELLOPTS”environment variables were not cleaned properly. If sudo is set up togrant limited sudo privileges to normal users this could be exploitedto run arbitrary commands as the target user. Updated packags for Ubuntu 4.10:"
+      }
+    ],
+    "CVE-2005-2972": [
+      {
+        "url": "https://usn.ubuntu.com/203-1/",
+        "title": "USN-203-1: Abiword vulnerabilities",
+        "body": "Chris Evans discovered several buffer overflows in the RTF importmodule of AbiWord. By tricking a user into opening an RTF file withspecially crafted long identifiers, an attacker could exploit this toexecute arbitrary code with the privileges of the AbiWord user."
+      }
+    ],
+    "CVE-2005-3055": [
+      {
+        "url": "https://usn.ubuntu.com/219-1/",
+        "title": "USN-219-1: Linux kernel vulnerabilities",
+        "body": ""
+      }
+    ],
+    "CVE-2005-3088": [
+      {
+        "url": "https://usn.ubuntu.com/215-1/",
+        "title": "USN-215-1: fetchmailconf vulnerability",
+        "body": "Thomas Wolff and Miloslav Trmac discovered a race condition in thefetchmailconf program. The output configuration file was initiallycreated with insecure permissions, and secure permissions were appliedafter writing the configuration into the file. During this time, thefile was world readable on a standard system (unless the user manuallytightened his umask setting), which could expose email passwords tolocal users."
+      }
+    ],
+    "CVE-2005-3183": [
+      {
+        "url": "https://usn.ubuntu.com/220-1/",
+        "title": "USN-220-1: w3c-libwww vulnerability",
+        "body": "Sam Varshavchik discovered several buffer overflows in theHTBoundary_put_block() function. By sending specially crafted HTTPmultipart/byteranges MIME messages, a malicious HTTP server couldtrigger an out of bounds memory access in the libwww library, whichcauses the program that uses the library to crash."
+      }
+    ],
+    "CVE-2005-3185": [
+      {
+        "url": "https://usn.ubuntu.com/205-1/",
+        "title": "USN-205-1: Curl and wget vulnerabilities",
+        "body": "A buffer overflow has been found in the NTLM authentication handler ofthe Curl library and wget. By tricking an user or automatic systemthat uses the Curl library, the curl application, or wget intovisiting a specially-crafted web site, a remote attacker could exploitthis to execute arbitrary code with the privileges of the callinguser. The Ubuntu 4.10 and 5.04 versions of wget are not affected by this."
+      }
+    ],
+    "CVE-2005-3257": [
+      {
+        "url": "https://usn.ubuntu.com/231-1/",
+        "title": "USN-231-1: Linux kernel vulnerabilities",
+        "body": "Rudolf Polzer reported an abuse of the ‘loadkeys’ command. Byredefining one or more keys and tricking another user (like root) intologging in on a text console and typing something that involves theredefined keys, a local user could cause execution of arbitrarycommands with the privileges of the target user. The updated kernelrestricts the usage of ‘loadkeys’ to root. (CVE-2005-3257)"
+      }
+    ],
+    "CVE-2005-3273": [
+      {
+        "url": "https://usn.ubuntu.com/219-1/",
+        "title": "USN-219-1: Linux kernel vulnerabilities",
+        "body": ""
+      }
+    ],
+    "CVE-2005-3534": [
+      {
+        "url": "https://usn.ubuntu.com/237-1/",
+        "title": "USN-237-1: nbd vulnerability",
+        "body": "Kurt Fitzner discovered that the NBD (network block device) server didnot correctly verify the maximum size of request packets. By sendingspecially crafted large request packets, a remote attacker who isallowed to access the server could exploit this to execute arbitrarycode with root privileges."
+      }
+    ],
+    "CVE-2005-3624": [
+      {
+        "url": "https://usn.ubuntu.com/236-1/",
+        "title": "USN-236-1: xpdf vulnerabilities",
+        "body": "Chris Evans discovered several integer overflows in the XPDF code,which is present in xpdf, the Poppler library, and tetex-bin. Bytricking an user into opening a specially crafted PDF file, anattacker could exploit this to execute arbitrary code with theprivileges of the application that processes the document. The CUPS printing system also uses XPDF code to convert PDF files toPostScript. By attempting to print such a crafted PDF file, a remoteattacker could execute arbitrary code with the privileges of theprinter server (user ‘cupsys’)."
+      }
+    ],
+    "CVE-2005-3625": [
+      {
+        "url": "https://usn.ubuntu.com/236-1/",
+        "title": "USN-236-1: xpdf vulnerabilities",
+        "body": "Chris Evans discovered several integer overflows in the XPDF code,which is present in xpdf, the Poppler library, and tetex-bin. Bytricking an user into opening a specially crafted PDF file, anattacker could exploit this to execute arbitrary code with theprivileges of the application that processes the document. The CUPS printing system also uses XPDF code to convert PDF files toPostScript. By attempting to print such a crafted PDF file, a remoteattacker could execute arbitrary code with the privileges of theprinter server (user ‘cupsys’)."
+      }
+    ],
+    "CVE-2005-3626": [
+      {
+        "url": "https://usn.ubuntu.com/236-1/",
+        "title": "USN-236-1: xpdf vulnerabilities",
+        "body": "Chris Evans discovered several integer overflows in the XPDF code,which is present in xpdf, the Poppler library, and tetex-bin. Bytricking an user into opening a specially crafted PDF file, anattacker could exploit this to execute arbitrary code with theprivileges of the application that processes the document. The CUPS printing system also uses XPDF code to convert PDF files toPostScript. By attempting to print such a crafted PDF file, a remoteattacker could execute arbitrary code with the privileges of theprinter server (user ‘cupsys’)."
+      }
+    ],
+    "CVE-2005-3627": [
+      {
+        "url": "https://usn.ubuntu.com/236-1/",
+        "title": "USN-236-1: xpdf vulnerabilities",
+        "body": "Chris Evans discovered several integer overflows in the XPDF code,which is present in xpdf, the Poppler library, and tetex-bin. Bytricking an user into opening a specially crafted PDF file, anattacker could exploit this to execute arbitrary code with theprivileges of the application that processes the document. The CUPS printing system also uses XPDF code to convert PDF files toPostScript. By attempting to print such a crafted PDF file, a remoteattacker could execute arbitrary code with the privileges of theprinter server (user ‘cupsys’)."
+      }
+    ],
+    "CVE-2005-3662": [
+      {
+        "url": "https://usn.ubuntu.com/218-1/",
+        "title": "USN-218-1: netpbm vulnerabilities",
+        "body": "Two buffer overflows were discovered in the ‘pnmtopng’ tool, whichwere triggered by processing an image with exactly 256 colors whenusing the -alpha option (CVE-2005-3662) or by processing a text filewith very long lines when using the -text option (CVE-2005-3632)."
+      }
+    ],
+    "CVE-2005-3732": [
+      {
+        "url": "https://usn.ubuntu.com/221-1/",
+        "title": "USN-221-1: racoon vulnerability",
+        "body": "The Oulu University Secure Programming Group discovered a remoteDenial of Service vulnerability in the racoon daemon. When the daemonis configured to use aggressive mode, then it did not check whetherthe peer sent all required payloads during the IKE negotiation phase.A malicious IPsec peer could exploit this to crash the racoon daemon. Please be aware that racoon is not officially supported by Ubuntu, thepackage is in the ‘universe’ component of the archive."
+      }
+    ],
+    "CVE-2005-3784": [
+      {
+        "url": "https://usn.ubuntu.com/231-1/",
+        "title": "USN-231-1: Linux kernel vulnerabilities",
+        "body": "A Denial of Service vulnerability was found in the handler thatautomatically cleans up and terminates child processes that are notcorrectly handled by their parent process (“auto-reaper”). The checkdid not correctly handle processes which were currently traced byanother process. A local attacker could exploit this to cause a kernelcrash. (CVE-2005-3784)"
+      }
+    ],
+    "CVE-2005-3806": [
+      {
+        "url": "https://usn.ubuntu.com/231-1/",
+        "title": "USN-231-1: Linux kernel vulnerabilities",
+        "body": "A Denial of Service vulnerability was discovered in the IPv6 flowlabelhandling code. By invoking setsockopt(IPV6_FLOWLABEL_MGR) in a specialway, a local attacker could cause memory corruption which eventuallyled to a kernel crash. (CVE-2005-3806)"
+      }
+    ],
+    "CVE-2005-3857": [
+      {
+        "url": "https://usn.ubuntu.com/231-1/",
+        "title": "USN-231-1: Linux kernel vulnerabilities",
+        "body": "Chris Wrigth found a Denial of Service vulnerability in thetime_out_leases() function. By allocating a large number of VFS filelock leases and having them timeout at the same time, a large numberof ‘printk’ debugging statements was generated at the same time, whichcould exhaust kernel memory. (CVE-2005-3857)"
+      }
+    ],
+    "CVE-2005-3962": [
+      {
+        "url": "https://usn.ubuntu.com/222-1/",
+        "title": "USN-222-1: Perl vulnerability",
+        "body": "Jack Louis of Dyad Security discovered that Perl did not sufficientlycheck the explicit length argument in format strings. Speciallycrafted format strings with overly large length arguments led to acrash of the Perl interpreter or even to execution of arbitraryattacker-defined code with the privileges of the user running the Perlprogram. However, this attack was only possible in insecure Perl programs whichuse variables with user-defined values in string interpolationswithout checking their validity."
+      }
+    ],
+    "CVE-2005-4048": [
+      {
+        "url": "https://usn.ubuntu.com/230-2/",
+        "title": "USN-230-2: ffmpeg/xine-lib vulnerability",
+        "body": "USN-230-1 fixed a vulnerability in the ffmpeg library. The Xinelibrary contains a copy of the ffmpeg code, thus it is vulnerable tothe same flaw. For reference, this is the original advisory: Simon Kilvington discovered a buffer overflow in the avcodec_default_get_buffer() function of the ffmpeg library. By tricking an user into opening a malicious movie which contains specially crafted PNG images, this could be exploited to execute arbitrary code with the user’s privileges."
+      },
+      {
+        "url": "https://usn.ubuntu.com/230-1/",
+        "title": "USN-230-1: ffmpeg vulnerability",
+        "body": "Simon Kilvington discovered a buffer overflow in theavcodec_default_get_buffer() function of the ffmpeg library. Bytricking an user into opening a malicious movie which containsspecially crafted PNG images, this could be exploited to executearbitrary code with the user’s privileges."
+      }
+    ],
+    "CVE-2005-4077": [
+      {
+        "url": "https://usn.ubuntu.com/228-1/",
+        "title": "USN-228-1: curl library vulnerability",
+        "body": "Stefan Esser discovered several buffer overflows in the handling ofURLs. By attempting to load an URL with a specially crafted invalidhostname, a local attacker could exploit this to execute arbitrarycode with the privileges of the application that uses the cURLlibrary. It is not possible to trick cURL into loading a malicious URL with anHTTP redirect, so this vulnerability was usually not exploitableremotely. However, it could be exploited locally to e. g. circumventPHP security restrictions."
+      }
+    ],
+    "CVE-2005-4268": [
+      {
+        "url": "https://usn.ubuntu.com/234-1/",
+        "title": "USN-234-1: cpio vulnerability",
+        "body": "Richard Harms discovered that cpio did not sufficiently validate fileproperties when creating archives. Files with e. g. a very large sizecaused a buffer overflow. By tricking a user or an automatic backupsystem into putting a specially crafted file into a cpio archive, alocal attacker could probably exploit this to execute arbitrary codewith the privileges of the target user (which is likely root in anautomatic backup system)."
+      }
+    ],
+    "CVE-2005-4348": [
+      {
+        "url": "https://usn.ubuntu.com/233-1/",
+        "title": "USN-233-1: fetchmail vulnerability",
+        "body": "Steve Fosdick discovered a remote Denial of Service vulnerability infetchmail. When using fetchmail in ‘multidrop’ mode, a malicious emailserver could cause a crash by sending an email without any headers.Since fetchmail is commonly called automatically (with cron, forexample), this crash could go unnoticed."
+      }
+    ],
+    "CVE-2005-4667": [
+      {
+        "url": "https://usn.ubuntu.com/248-2/",
+        "title": "USN-248-2: unzip regression fix",
+        "body": "USN-248-1 fixed a vulnerability in unzip. However, that updateinadvertedly changed the field order in the contents listing output,which broke unzip frontends like file-roller. The updated packages fixthis regression."
+      },
+      {
+        "url": "https://usn.ubuntu.com/248-1/",
+        "title": "USN-248-1: unzip vulnerability",
+        "body": "A buffer overflow was discovered in the handling of file namearguments. By tricking a user or automated system into processing aspecially crafted, excessively long file name with unzip, an attackercould exploit this to execute arbitrary code with the user’sprivileges."
+      }
+    ]
+  }
 }

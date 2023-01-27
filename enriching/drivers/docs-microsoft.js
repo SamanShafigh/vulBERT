@@ -12,7 +12,9 @@ exports.extract = async function extract({ url }) {
   let extra = '';
   const title = document.querySelector("h2").textContent;
   try {
-    if (querySelectorContains('strong', 'Tested Software and Security Update Download Locations:')[0]) {
+    if (document.querySelector("#executive-summary")) {
+      body = cleanText(queryFromToSelector('Executive Summary', 'Affected Software', '#executive-summary'));
+    } else if (querySelectorContains('strong', 'Tested Software and Security Update Download Locations:')[0]) {
       body = cleanText(queryFromToSelector('Summary', 'Tested Software and Security Update Download Locations:', '#summary'));
       extra = cleanText(queryFromToSelector('Executive Summary:', 'Severity Ratings and Vulnerability Identifiers:', 'strong', 1));
     } else if (document.querySelector("#technical-details")) {
@@ -33,6 +35,6 @@ exports.extract = async function extract({ url }) {
   }
 };
 
-// exports.extract({ url: 'https://docs.microsoft.com/en-us/security-updates/securitybulletins/2007/ms07-041'}).then(res => {
+// exports.extract({ url: 'https://docs.microsoft.com/en-us/security-updates/securitybulletins/2015/ms15-001'}).then(res => {
 //   console.log(res)
 // })

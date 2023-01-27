@@ -1,6 +1,43 @@
 {
   "year": 2005,
-  "total": 0,
+  "total": 7,
   "reference": "git.kernel.org",
-  "reports": {}
+  "reports": {
+    "CVE-2005-4881": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/stable/linux-2.4.37.y.git;a=commit;h=0f3f2328f63c521fe4b435f148687452f98b2349",
+        "notValid": true
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/stable/linux-2.4.37.y.git;a=commit;h=30e744716c4a6cc4e8ecaaddf68f20057c03dc8d",
+        "notValid": true
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=9ef1d4c7c7aca1cd436612b6ca785b726ffb8ed8",
+        "title": "[NETLINK]: Missing initializations in dumped data",
+        "description": "Mostly missing initialization of padding fields of 1 or 2 bytes length, two instances of uninitialized nlmsgerr->msg of 16 bytes length. Signed-off-by: Patrick McHardy <kaber@trash.net> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=8a47077a0b5aa2649751c46e7a27884e6686ccbf",
+        "title": "[NETLINK]: Missing padding fields in dumped structures",
+        "description": "Plug holes with padding fields and initialized them to zero. Signed-off-by: Patrick McHardy <kaber@trash.net> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/stable/linux-2.4.37.y.git;a=commit;h=3408cce0c2f380884070896420ca566704452fb5",
+        "notValid": true
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=b3563c4fbff906991a1b4ef4609f99cca2a0de6a",
+        "title": "[NETLINK]: Clear padding in netlink messages",
+        "description": "Signed-off-by: Patrick McHardy <kaber@trash.net> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2005-4886": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=0d3d077cd4f1154e63a9858e47fe3fb1ad0c03e5",
+        "title": "[SELINUX]: Fix ipv6_skip_exthdr() invocation causing OOPS.",
+        "description": "The SELinux hooks invoke ipv6_skip_exthdr() with an incorrect length final argument. However, the length argument turns out to be superfluous. I was just reading ipv6_skip_exthdr and it occured to me that we can get rid of len altogether. The only place where len is used is to check whether the skb has two bytes for ipv6_opt_hdr. This check is done by skb_header_pointer/skb_copy_bits anyway. Now it might appear that we've made the code slower by deferring the check to skb_copy_bits. However, this check should not trigger in the common case so this is OK. Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ]
+  }
 }

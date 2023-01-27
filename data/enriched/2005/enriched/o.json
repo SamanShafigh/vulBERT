@@ -1,6 +1,21 @@
 {
   "year": 2005,
-  "total": 0,
+  "total": 2,
   "reference": "mozilla.org",
-  "reports": {}
+  "reports": {
+    "CVE-2005-1155": [
+      {
+        "url": "http://www.mozilla.org/security/announce/mfsa2005-37.html",
+        "title": "Code execution through javascript: favicons",
+        "description": "Firefox and the Mozilla Suite support custom \"favicons\" through the <LINK rel=\"icon\"> tag. If a link tag is added to the page programmatically and a javascript: url is used, then script will run with elevated privileges and could run or install malicious software. Workaround Disable javascript."
+      }
+    ],
+    "CVE-2005-1532": [
+      {
+        "url": "http://www.mozilla.org/security/announce/mfsa2005-44.html",
+        "title": "Privilege escalation via non-DOM property overrides",
+        "description": "Additional checks were added to make sure Javascript eval and Script objects are run with the privileges of the context that created them, not the potentially elevated privilege of the context calling them in order to protect against an additional variant of MFSA 2005-41. Workaround Upgrade to Firefox 1.0.4 or Mozilla 1.7.8"
+      }
+    ]
+  }
 }

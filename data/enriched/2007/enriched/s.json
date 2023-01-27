@@ -1,6 +1,117 @@
 {
   "year": 2007,
-  "total": 0,
+  "total": 17,
   "reference": "git.kernel.org",
-  "reports": {}
+  "reports": {
+    "CVE-2007-1592": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=d35690beda1429544d46c8eb34b2e3a8c37ab299",
+        "title": "[IPV6]: ipv6_fl_socklist is inadvertently shared.",
+        "description": "The ipv6_fl_socklist from listening socket is inadvertently shared with new socket created for connection. This leads to a variety of interesting, but fatal, bugs. For example, removing one of the sockets may lead to the other socket's encountering a page fault when the now freed list is referenced. The fix is to not share the flow label list with the new socket. Signed-off-by: Masayuki Nakagawa <nakagawa.msy@ncos.nec.co.jp> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2007-3642": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=25845b5155b55cd77e42655ec24161ba3feffa47",
+        "title": "[NETFILTER]: nf_conntrack_h323: add checking of out-of-range on choices' index values",
+        "description": "Choices' index values may be out of range while still encoded in the fixed length bit-field. This bug may cause access to undefined types (NULL pointers) and thus crashes (Reported by Zhongling Wen). This patch also adds checking of decode flag when decoding SEQUENCEs. Signed-off-by: Jing Min Zhao <zhaojingmin@vivecode.com> Signed-off-by: Patrick McHardy <kaber@trash.net> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2007-3731": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=29eb51101c02df517ca64ec472d7501127ad1da8",
+        "title": "Handle bogus %cs selector in single-step instruction decoding",
+        "description": "The code for LDT segment selectors was not robust in the face of a bogus selector set in %cs via ptrace before the single-step was done. Signed-off-by: Roland McGrath <roland@redhat.com> Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=a10d9a71bafd3a283da240d2868e71346d2aef6f",
+        "title": "i386: fixup TRACE_IRQ breakage",
+        "description": "The TRACE_IRQS_ON function in iret_exc: calls a C function without ensuring that the segments are set properly. Move the trace function and the enabling of interrupt into the C stub. Signed-off-by: Peter Zijlstra <a.p.zijlstra@chello.nl> Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2007-3850": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=721151d004dcf01a71b12bb6b893f9160284cf6e",
+        "title": "[POWERPC] Allow drivers to map individual 4k pages to userspace",
+        "description": "Some drivers have resources that they want to be able to map into userspace that are 4k in size. On a kernel configured with 64k pages we currently end up mapping the 4k we want plus another 60k of physical address space, which could contain anything. This can introduce security problems, for example in the case of an infiniband adaptor where the other 60k could contain registers that some other program is using for its communications. This patch adds a new function, remap_4k_pfn, which drivers can use to map a single 4k page to userspace regardless of whether the kernel is using a 4k or a 64k page size. Like remap_pfn_range, it would typically be called in a driver's mmap function. It only maps a single 4k page, which on a 64k page kernel appears replicated 16 times throughout a 64k page. On a 4k page kernel it reduces to a call to remap_pfn_range. The way this works on a 64k kernel is that a new bit, _PAGE_4K_PFN, gets set on the linux PTE. This alters the way that __hash_page_4K computes the real address to put in the HPTE. The RPN field of the linux PTE becomes the 4k RPN directly rather than being interpreted as a 64k RPN. Since the RPN field is 32 bits, this means that physical addresses being mapped with remap_4k_pfn have to be below 2^44, i.e. 0x100000000000. The patch also factors out the code in arch/powerpc/mm/hash_utils_64.c that deals with demoting a process to use 4k pages into one function that gets called in the various different places where we need to do that. There were some discrepancies between exactly what was done in the various places, such as a call to spu_flush_all_slbs in one case but not in others. Signed-off-by: Paul Mackerras <paulus@samba.org>"
+      }
+    ],
+    "CVE-2007-4311": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/stable/linux-2.4.34.y.git;a=commit;h=bd67d4c7b11cc33ebdc346bc8926d255b354cd64",
+        "notValid": true
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/stable/linux-2.4.34.y.git;a=commit;h=faa3369ac2ea7feb0dd266b6a5e8d6ab153cf925",
+        "notValid": true
+      }
+    ],
+    "CVE-2007-4567": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=e76b2b2567b83448c2ee85a896433b96150c92e6",
+        "title": "[IPV6]: Do no rely on skb->dst before it is assigned.",
+        "description": "Because skb->dst is assigned in ip6_route_input(), it is really bad to use it in hop-by-hop option handler(s). Closes: Bug #8450 (Eric Sesterhenn <snakebyte@gmx.de>) Signed-off-by: YOSHIFUJI Hideaki <yoshfuji@linux-ipv6.org> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2007-4997": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/avi/kvm.git;a=commitdiff;h=04045f98e0457aba7d4e6736f37eed189c48a5f7",
+        "title": "[IEEE80211]: avoid integer underflow for runt rx frames",
+        "description": "Reported by Chris Evans <scarybeasts@gmail.com>: > The summary is that an evil 80211 frame can crash out a victim's > machine. It only applies to drivers using the 80211 wireless code, and > only then to certain drivers (and even then depends on a card's > firmware not dropping a dubious packet). I must confess I'm not > keeping track of Linux wireless support, and the different protocol > stacks etc. > > Details are as follows: > > ieee80211_rx() does not explicitly check that \"skb->len >= hdrlen\". > There are other skb->len checks, but not enough to prevent a subtle > off-by-two error if the frame has the IEEE80211_STYPE_QOS_DATA flag > set. > > This leads to integer underflow and crash here: > > if (frag != 0) > flen -= hdrlen; > > (flen is subsequently used as a memcpy length parameter). How about this? Signed-off-by: John W. Linville <linville@tuxdriver.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2007-5087": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/stable/linux-2.4.35.y.git;a=commitdiff;h=b7ae15e7707050baafe5a35e3d4f2d175197d222",
+        "notValid": true
+      }
+    ],
+    "CVE-2007-5501": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=96a2d41a3e495734b63bff4e5dd0112741b93b38",
+        "title": "[TCP]: Make sure write_queue_from does not begin with NULL ptr",
+        "description": "NULL ptr can be returned from tcp_write_queue_head to cached_skb and then assigned to skb if packets_out was zero. Without this, system is vulnerable to a carefully crafted ACKs which obviously is remotely triggerable. Besides, there's very little that needs to be done in sacktag if there weren't any packets outstanding, just skipping the rest doesn't hurt. Signed-off-by: Ilpo J�rvinen <ilpo.jarvinen@helsinki.fi> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2007-5904": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/sfrench/cifs-2.6.git;a=commitdiff;h=133672efbc1085f9af990bdc145e1822ea93bcf3",
+        "notValid": true
+      }
+    ],
+    "CVE-2007-6151": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=eafe1aa37e6ec2d56f14732b5240c4dd09f0613a",
+        "title": "I4L: fix isdn_ioctl memory overrun vulnerability",
+        "description": "Fix possible memory overrun issue in the isdn ioctl code. Found by ADLAB <adlab@venustech.com.cn> Signed-off-by: Karsten Keil <kkeil@suse.de> Cc: ADLAB <adlab@venustech.com.cn> Cc: <stable@kernel.org> Signed-off-by: Andrew Morton <akpm@linux-foundation.org> Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2007-6206": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=c46f739dd39db3b07ab5deb4e3ec81e1c04a91af",
+        "title": "vfs: coredumping fix",
+        "description": "fix: http://bugzilla.kernel.org/show_bug.cgi?id=3043 only allow coredumping to the same uid that the coredumping task runs under. Signed-off-by: Ingo Molnar <mingo@elte.hu> Acked-by: Alan Cox <alan@redhat.com> Acked-by: Christoph Hellwig <hch@lst.de> Acked-by: Al Viro <viro@ftp.linux.org.uk> Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2007-6712": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/chris/linux-2.6.git;a=commitdiff;h=13788ccc41ceea5893f9c747c59bc0b28f2416c2",
+        "notValid": true
+      }
+    ],
+    "CVE-2007-6761": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=0b29669c065f60501e7289e1950fa2a618962358",
+        "title": "V4L/DVB (6751): V4L: Memory leak! Fix count in videobuf-vmalloc mmap",
+        "description": "This is pretty serious bug. map->count is never initialized after the call to kmalloc making the count start at some random trash value. The end result is leaking videobufs. Also, fix up the debug statements to print unsigned values. Pushed to http://ifup.org/hg/v4l-dvb too Signed-off-by: Brandon Philips <bphilips@suse.de> Signed-off-by: Mauro Carvalho Chehab <mchehab@infradead.org>"
+      }
+    ],
+    "CVE-2007-6762": [
+      {
+        "url": "https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=2a2f11c227bdf292b3a2900ad04139d301b56ac4",
+        "title": "NetLabel: correct CIPSO tag handling when adding new DOI definitions",
+        "description": "The current netlbl_cipsov4_add_common() function has two problems which are fixed with this patch. The first is an off-by-one bug where it is possibile to overflow the doi_def->tags[] array. The second is a bug where the same doi_def->tags[] array was not always fully initialized, which caused sporadic failures. Signed-off-by: Paul Moore <paul.moore@hp.com> Signed-off-by: James Morris <jmorris@namei.org>"
+      }
+    ]
+  }
 }

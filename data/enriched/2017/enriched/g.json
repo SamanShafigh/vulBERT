@@ -1,6 +1,130 @@
 {
   "year": 2017,
-  "total": 0,
+  "total": 19,
   "reference": "ubuntu.com",
-  "reports": {}
+  "reports": {
+    "CVE-2017-0553": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3311-2",
+        "title": "USN-3311-2: libnl vulnerability",
+        "body": "USN-3311-1 fixed a vulnerability in libnl. This update provides thecorresponding update for Ubuntu 12.04 ESM.Original advisory details:It was discovered that libnl incorrectly handled memory when performing certain operations. A local attacker could possibly use this issue to cause libnl to crash, resulting in a denial of service, or execute arbitrary code."
+      }
+    ],
+    "CVE-2017-14491": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3430-2",
+        "title": "USN-3430-2: Dnsmasq vulnerabilities",
+        "body": "Felix Wilhelm, Fermin J. Serna, Gabriel Campana and Kevin Hamacher discovered that Dnsmasq incorrectly handled DNS requests. A remote attacker could use this issue to cause Dnsmasq to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2017-14491)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3430-1",
+        "title": "USN-3430-1: Dnsmasq vulnerabilities",
+        "body": "Felix Wilhelm, Fermin J. Serna, Gabriel Campana and Kevin Hamacherdiscovered that Dnsmasq incorrectly handled DNS requests. A remote attackercould use this issue to cause Dnsmasq to crash, resulting in a denial ofservice, or possibly execute arbitrary code. (CVE-2017-14491)"
+      }
+    ],
+    "CVE-2017-14492": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3430-2",
+        "title": "USN-3430-2: Dnsmasq vulnerabilities",
+        "body": "Felix Wilhelm, Fermin J. Serna, Gabriel Campana and Kevin Hamacher discovered that Dnsmasq incorrectly handled IPv6 router advertisements. A remote attacker could use this issue to cause Dnsmasq to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2017-14492)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3430-1",
+        "title": "USN-3430-1: Dnsmasq vulnerabilities",
+        "body": "Felix Wilhelm, Fermin J. Serna, Gabriel Campana and Kevin Hamacherdiscovered that Dnsmasq incorrectly handled IPv6 router advertisements. Aremote attacker could use this issue to cause Dnsmasq to crash, resultingin a denial of service, or possibly execute arbitrary code.(CVE-2017-14492)"
+      }
+    ],
+    "CVE-2017-14493": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3430-2",
+        "title": "USN-3430-2: Dnsmasq vulnerabilities",
+        "body": "Felix Wilhelm, Fermin J. Serna, Gabriel Campana and Kevin Hamacher discovered that Dnsmasq incorrectly handled DHCPv6 requests. A remote attacker could use this issue to cause Dnsmasq to crash, resulting in a denial of service, or possibly execute arbitrary code. (CVE-2017-14493)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3430-1",
+        "title": "USN-3430-1: Dnsmasq vulnerabilities",
+        "body": "Felix Wilhelm, Fermin J. Serna, Gabriel Campana and Kevin Hamacherdiscovered that Dnsmasq incorrectly handled DHCPv6 requests. A remoteattacker could use this issue to cause Dnsmasq to crash, resulting in adenial of service, or possibly execute arbitrary code. (CVE-2017-14493)"
+      }
+    ],
+    "CVE-2017-14494": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3430-2",
+        "title": "USN-3430-2: Dnsmasq vulnerabilities",
+        "body": "Felix Wilhelm, Fermin J. Serna, Gabriel Campana and Kevin Hamacher discovered that Dnsmasq incorrectly handled DHCPv6 packets. A remote attacker could use this issue to possibly obtain sensitive memory contents. (CVE-2017-14494)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3430-1",
+        "title": "USN-3430-1: Dnsmasq vulnerabilities",
+        "body": "Felix Wilhelm, Fermin J. Serna, Gabriel Campana and Kevin Hamacherdiscovered that Dnsmasq incorrectly handled DHCPv6 packets. A remoteattacker could use this issue to possibly obtain sensitive memory contents.(CVE-2017-14494)"
+      }
+    ],
+    "CVE-2017-14746": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3486-1",
+        "title": "USN-3486-1: Samba vulnerabilities",
+        "body": "Yihan Lian and Zhibin Hu discovered that Samba incorrectly handled memorywhen processing certain SMB1 requests. A remote attacker could possibly usethis issue to execute arbitrary code. (CVE-2017-14746)"
+      }
+    ],
+    "CVE-2017-15275": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3486-2",
+        "title": "USN-3486-2: Samba vulnerability",
+        "body": "Volker Lendecke discovered that Samba incorrectly cleared memory when returning data to a client. A remote attacker could possibly use this issue to obtain sensitive information. (CVE-2017-15275)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3486-1",
+        "title": "USN-3486-1: Samba vulnerabilities",
+        "body": "Volker Lendecke discovered that Samba incorrectly cleared memory whenreturning data to a client. A remote attacker could possibly use this issueto obtain sensitive information. (CVE-2017-15275)"
+      }
+    ],
+    "CVE-2017-16612": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3501-1",
+        "title": "USN-3501-1: libxcursor vulnerability",
+        "body": "It was discovered that libxcursor incorrectly handled certain files. Anattacker could use these issues to cause libxcursor to crash, resulting ina denial of service, or possibly execute arbitrary code."
+      }
+    ],
+    "CVE-2017-5331": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3178-1",
+        "title": "USN-3178-1: icoutils vulnerabilities",
+        "body": "It was discovered that icoutils incorrectly handled memory when processingcertain files. If a user or automated system were tricked into opening aspecially crafted file, an attacker could cause icoutils to crash,resulting in a denial of service, or possibly execute arbitrary code."
+      }
+    ],
+    "CVE-2017-5332": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3178-1",
+        "title": "USN-3178-1: icoutils vulnerabilities",
+        "body": "It was discovered that icoutils incorrectly handled memory when processingcertain files. If a user or automated system were tricked into opening aspecially crafted file, an attacker could cause icoutils to crash,resulting in a denial of service, or possibly execute arbitrary code."
+      }
+    ],
+    "CVE-2017-5333": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3178-1",
+        "title": "USN-3178-1: icoutils vulnerabilities",
+        "body": "It was discovered that icoutils incorrectly handled memory when processingcertain files. If a user or automated system were tricked into opening aspecially crafted file, an attacker could cause icoutils to crash,resulting in a denial of service, or possibly execute arbitrary code."
+      }
+    ],
+    "CVE-2017-7358": [
+      {
+        "url": "https://www.ubuntu.com/usn/usn-3255-1/",
+        "title": "USN-3255-1: LightDM vulnerability",
+        "body": "It was discovered that LightDM incorrectly handled home directory creation forguest users. A local attacker could use this issue to gain ownership ofarbitrary directory paths and possibly gain administrative privileges."
+      }
+    ],
+    "CVE-2017-7980": [
+      {
+        "url": "http://ubuntu.com/usn/usn-3289-1",
+        "title": "USN-3289-1: QEMU vulnerabilities",
+        "body": "Li Qiang and Jiangxin discovered that QEMU incorrectly handled the CirrusVGA device when being used with a VNC connection. A privileged attackerinside the guest could use this issue to cause QEMU to crash, resulting ina denial of service, or possibly execute arbitrary code on the host. In thedefault installation, when QEMU is used with libvirt, attackers would beisolated by the libvirt AppArmor profile. (CVE-2017-7980)"
+      }
+    ],
+    "CVE-2017-9022": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-3301-1",
+        "title": "USN-3301-1: strongSwan vulnerabilities",
+        "body": "It was discovered that the strongSwan gmp plugin incorrectly validated RSApublic keys. A remote attacker could use this issue to cause strongSwan tocrash, resulting in a denial of service. (CVE-2017-9022)"
+      }
+    ]
+  }
 }

@@ -1,6 +1,14 @@
 {
   "year": 2006,
-  "total": 0,
+  "total": 1,
   "reference": "git.kernel.org",
-  "reports": {}
+  "reports": {
+    "CVE-2006-3635": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=4dcc29e1574d88f4465ba865ed82800032f76418",
+        "title": "[IA64] Workaround for RSE issue",
+        "description": "Problem: An application violating the architectural rules regarding operation dependencies and having specific Register Stack Engine (RSE) state at the time of the violation, may result in an illegal operation fault and invalid RSE state. Such faults may initiate a cascade of repeated illegal operation faults within OS interruption handlers. The specific behavior is OS dependent. Implication: An application causing an illegal operation fault with specific RSE state may result in a series of illegal operation faults and an eventual OS stack overflow condition. Workaround: OS interruption handlers that switch to kernel backing store implement a check for invalid RSE state to avoid the series of illegal operation faults. The core of the workaround is the RSE_WORKAROUND code sequence inserted into each invocation of the SAVE_MIN_WITH_COVER and SAVE_MIN_WITH_COVER_R19 macros. This sequence includes hard-coded constants that depend on the number of stacked physical registers being 96. The rest of this patch consists of code to disable this workaround should this not be the case (with the presumption that if a future Itanium processor increases the number of registers, it would also remove the need for this patch). Move the start of the RBS up to a mod32 boundary to avoid some corner cases. The dispatch_illegal_op_fault code outgrew the spot it was squatting in when built with this patch and CONFIG_VIRT_CPU_ACCOUNTING=y Move it out to the end of the ivt. Signed-off-by: Tony Luck <tony.luck@intel.com>"
+      }
+    ]
+  }
 }

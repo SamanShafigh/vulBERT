@@ -1,6 +1,730 @@
 {
   "year": 2010,
-  "total": 0,
+  "total": 113,
   "reference": "git.kernel.org",
-  "reports": {}
+  "reports": {
+    "CVE-2010-0003": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=b45c6e76bc2c72f6426c14bed64fdcbc9bf37cb0",
+        "title": "kernel/signal.c: fix kernel information leak with print-fatal-signals=1",
+        "description": "When print-fatal-signals is enabled it's possible to dump any memory reachable by the kernel to the log by simply jumping to that address from user space. Or crash the system if there's some hardware with read side effects. The fatal signals handler will dump 16 bytes at the execution address, which is fully controlled by ring 3. In addition when something jumps to a unmapped address there will be up to 16 additional useless page faults, which might be potentially slow (and at least is not very efficient) Fortunately this option is off by default and only there on i386. But fix it by checking for kernel addresses and also stopping when there's a page fault. Signed-off-by: Andi Kleen <ak@linux.intel.com> Cc: Ingo Molnar <mingo@elte.hu> Cc: Oleg Nesterov <oleg@redhat.com> Cc: <stable@kernel.org> Signed-off-by: Andrew Morton <akpm@linux-foundation.org> Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2010-0006": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=2570a4f5428bcdb1077622342181755741e7fa60",
+        "title": "ipv6: skb_dst() can be NULL in ipv6_hop_jumbo().",
+        "description": "This fixes CERT-FI FICORA #341748 Discovered by Olli Jarva and Tuomo Untinen from the CROSS project at Codenomicon Ltd. Just like in CVE-2007-4567, we can't rely upon skb_dst() being non-NULL at this point. We fixed that in commit e76b2b2567b83448c2ee85a896433b96150c92e6 (\"[IPV6]: Do no rely on skb->dst before it is assigned.\") However commit 483a47d2fe794328d29950fe00ce26dd405d9437 (\"ipv6: added net argument to IP6_INC_STATS_BH\") put a new version of the same bug into this function. Complicating analysis further, this bug can only trigger when network namespaces are enabled in the build. When namespaces are turned off, the dev_net() does not evaluate it's argument, so the dereference would not occur. So, for a long time, namespaces couldn't be turned on unless SYSFS was disabled. Therefore, this code has largely been disabled except by people turning it on explicitly for namespace development. With help from Eugene Teo <eugene@redhat.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-0007": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=dce766af541f6605fa9889892c0280bab31c66ab",
+        "title": "netfilter: ebtables: enforce CAP_NET_ADMIN",
+        "description": "normal users are currently allowed to set/modify ebtables rules. Restrict it to processes with CAP_NET_ADMIN. Note that this cannot be reproduced with unmodified ebtables binary because it uses SOCK_RAW. Signed-off-by: Florian Westphal <fwestphal@astaro.com> Cc: stable@kernel.org Signed-off-by: Patrick McHardy <kaber@trash.net>"
+      }
+    ],
+    "CVE-2010-0008": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=ece25dfa0991f65c4e1d26beb1c3c45bda4239b8",
+        "title": "SCTP: Clean up OOTB handling and fix infinite loop processing",
+        "description": "While processing OOTB chunks as well as chunks with an invalid length of 0, it was possible to SCTP to get wedged inside an infinite loop because we didn't catch the condition correctly, or didn't mark the packet for discard correctly. This work is based on original findings and work by Wei Yongjun <yjwei@cn.fujitsu.com> Signed-off-by: Vlad Yasevich <vladislav.yasevich@hp.com>"
+      }
+    ],
+    "CVE-2010-0291": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=0067bd8a55862ac9dd212bd1c4f6f5bff1ca1301",
+        "title": "Cut hugetlb case early for 32bit on ia64",
+        "description": "It won't work anyway (hugetlb addresses there are way beyond 4Gb) and it's easier to stop it here. Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=935874141df839c706cd6cdc438e85eb69d1525e",
+        "title": "fix pgoff in \"have to relocate\" case of mremap()",
+        "description": "Acked-by: Hugh Dickins <hugh.dickins@tiscali.co.uk> Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=aa65607373a4daf2010e8c3867b6317619f3c1a3",
+        "title": "Add missing alignment check in arch/score sys_mmap()",
+        "description": "Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=f8b7256096a20436f6d0926747e3ac3d64c81d24",
+        "title": "Unify sys_mmap*",
+        "description": "New helper - sys_mmap_pgoff(); switch syscalls to using it. Acked-by: David S. Miller <davem@davemloft.net> Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=0ec62d290912bb4b989be7563851bc364ec73b56",
+        "title": "kill useless checks in sparc mremap variants",
+        "description": "Acked-by: David S. Miller <davem@davemloft.net> Acked-by: Hugh Dickins <hugh.dickins@tiscali.co.uk> Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=c4caa778157dbbf04116f0ac2111e389b5cd7a29",
+        "title": "file ->get_unmapped_area() shouldn't duplicate work of get_unmapped_area()",
+        "description": "... we should call mm ->get_unmapped_area() instead and let our caller do the final checks. Acked-by: David S. Miller <davem@davemloft.net> Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=f106af4e90eadd76cfc0b5325f659619e08fb762",
+        "title": "fix checks for expand-in-place mremap",
+        "description": "Acked-by: Russell King <rmk+kernel@arm.linux.org.uk> Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=2c6a10161d0b5fc047b5bd81b03693b9af99fab5",
+        "title": "switch do_brk() to get_unmapped_area()",
+        "description": "Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=9206de95b1ea68357996ec02be5db0638a0de2c1",
+        "title": "Take arch_mmap_check() into get_unmapped_area()",
+        "description": "Acked-by: Hugh Dickins <hugh.dickins@tiscali.co.uk> Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=8c7b49b3ecd48923eb64ff57e07a1cdb74782970",
+        "title": "fix a struct file leak in do_mmap_pgoff()",
+        "description": "Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=54f5de709984bae0d31d823ff03de755f9dcac54",
+        "title": "untangling do_mremap(), part 1",
+        "description": "Take locating vma and checks on it to a separate helper (it will be shared between MREMAP_FIXED/non-MREMAP_FIXED cases when we split them in the next patch) Acked-by: Russell King <rmk+kernel@arm.linux.org.uk> Acked-by: Hugh Dickins <hugh.dickins@tiscali.co.uk> Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=1a0ef85f84feb13f07b604fcf5b90ef7c2b5c82f",
+        "title": "do_mremap() untangling, part 3",
+        "description": "Take the check for being able to expand vma in place into a separate helper. Acked-by: Russell King <rmk+kernel@arm.linux.org.uk> Acked-by: Hugh Dickins <hugh.dickins@tiscali.co.uk> Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=097eed103862f9c6a97f2e415e21d1134017b135",
+        "title": "fix the arch checks in MREMAP_FIXED case",
+        "description": "Acked-by: Russell King <rmk+kernel@arm.linux.org.uk> Acked-by: Hugh Dickins <hugh.dickins@tiscali.co.uk> Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=e77414e0aad6a1b063ba5e5750c582c75327ea6a",
+        "title": "fix broken aliasing checks for MAP_FIXED on sparc32, mips, arm and sh",
+        "description": "We want addr - (pgoff << PAGE_SHIFT) consistently coloured... Acked-by: Paul Mundt <lethal@linux-sh.org> Acked-by: Hugh Dickins <hugh.dickins@tiscali.co.uk> Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=05d72faa6d13c9d857478a5d35c85db9adada685",
+        "title": "sparc_brk() is not needed anymore",
+        "description": "the checks it's doing are duplicated in sys_brk() and failing them early makes no sense, AFAICT. Acked-by: David S. Miller <davem@davemloft.net> Acked-by: Hugh Dickins <hugh.dickins@tiscali.co.uk> Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=2ea1d13f64efdf49319e86c87d9ba38c30902782",
+        "title": "arm: add arch_mmap_check(), get rid of sys_arm_mremap()",
+        "description": "Acked-by: Russell King <rmk+kernel@arm.linux.org.uk> Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=ecc1a8993751de4e82eb18640d631dae1f626bd6",
+        "title": "do_mremap() untangling, part 2",
+        "description": "Take the MREMAP_FIXED into a separate helper, simplify the living hell out of conditions in both cases. Acked-by: Russell King <rmk+kernel@arm.linux.org.uk> Acked-by: Hugh Dickins <hugh.dickins@tiscali.co.uk> Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=bb52d6694002b9d632bb355f64daa045c6293a4e",
+        "title": "Get rid of open-coding in ia64_brk()",
+        "description": "The comment in there used to be true, but these days do_brk() does the arch-specific check that covers what we open-coded here. So we can use sys_brk() just fine, only need to do force_successful_syscall_return() after it. See commit 3a459756810912d2c2bf188cef566af255936b4d - that's when the checks in do_brk() had been originally added. Acked-by: Hugh Dickins <hugh.dickins@tiscali.co.uk> Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=564b3bffc619dcbdd160de597b0547a7017ea010",
+        "title": "arch_mmap_check() on mn10300",
+        "description": "Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=570dcf2c15463842e384eb597a87c1e39bead99b",
+        "title": "Kill ancient crap in s390 compat mmap",
+        "description": "We've had TASK_SIZE set to 1<<31 for 31bit tasks since May 2004. Before that old32_mmap() had to deal with do_mmap_pgoff() giving it an address out of range. It had tried to do that by checking return value and doing do_munmap() (at wrong address, BTW). IOW, that code had been dead for 5.5 years (and bogus - for 8). Kill. Acked-by: Hugh Dickins <hugh.dickins@tiscali.co.uk> Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      }
+    ],
+    "CVE-2010-0410": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=f98bfbd78c37c5946cc53089da32a5f741efdeb7",
+        "title": "connector: Delete buggy notification code.",
+        "description": "On Tue, Feb 02, 2010 at 02:57:14PM -0800, Greg KH (gregkh@suse.de) wrote: > > There are at least two ways to fix it: using a big cannon and a small > > one. The former way is to disable notification registration, since it is > > not used by anyone at all. Second way is to check whether calling > > process is root and its destination group is -1 (kind of priveledged > > one) before command is dispatched to workqueue. > > Well if no one is using it, removing it makes the most sense, right? > > No objection from me, care to make up a patch either way for this? Getting it is not used, let's drop support for notifications about (un)registered events from connector. Another option was to check credentials on receiving, but we can always restore it without bugs if needed, but genetlink has a wider code base and none complained, that userspace can not get notification when some other clients were (un)registered. Kudos for Sebastian Krahmer <krahmer@suse.de>, who found a bug in the code. Signed-off-by: Evgeniy Polyakov <zbr@ioremap.net> Acked-by: Greg Kroah-Hartman <gregkh@suse.de> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-0741": [
+      {
+        "url": "http://git.kernel.org/?p=virt/kvm/qemu-kvm.git;a=commit;h=184bd0484533b725194fa517ddc271ffd74da7c9",
+        "title": "whitelist host virtio networking features",
+        "description": "This patch is a followup to 8eca6b1bc770982595db2f7207c65051572436cb, fixing crashes when guests with 2.6.25 virtio drivers have saturated virtio network connections. https://bugs.edge.launchpad.net/ubuntu/+source/qemu-kvm/+bug/458521 That patch should have been whitelisting *_HOST_* rather than the the *_GUEST_* features. I tested this by running an Ubuntu 8.04 Hardy guest (2.6.24 kernel + 2.6.25-virtio driver). I saturated both the incoming, and outgoing network connection with nc, seeing sustained 6MB/s up and 6MB/s down bitrates for ~20 minutes. Previously, this crashed immediately. Now, the guest does not crash and maintains network connectivity throughout the test. Signed-off-by: Dustin Kirkland <kirkland@canonical.com> Signed-off-by: Mark McLoughlin <markmc@redhat.com> Signed-off-by: Anthony Liguori <aliguori@us.ibm.com>"
+      }
+    ],
+    "CVE-2010-1084": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=101545f6fef4a0a3ea8daf0b5b880df2c6a92a69",
+        "title": "Bluetooth: Fix potential bad memory access with sysfs files",
+        "description": "When creating a high number of Bluetooth sockets (L2CAP, SCO and RFCOMM) it is possible to scribble repeatedly on arbitrary pages of memory. Ensure that the content of these sysfs files is always less than one page. Even if this means truncating. The files in question are scheduled to be moved over to debugfs in the future anyway. Based on initial patches from Neil Brown and Linus Torvalds Reported-by: Neil Brown <neilb@suse.de> Signed-off-by: Marcel Holtmann <marcel@holtmann.org>"
+      }
+    ],
+    "CVE-2010-1086": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=29e1fa3565a7951cc415c634eb2b78dbdbee151d",
+        "title": "dvb-core: Fix DoS bug in ULE decapsulation code that can be triggered by an invalid Payload Pointer",
+        "description": "ULE (Unidirectional Lightweight Encapsulation RFC 4326) decapsulation has a bug that causes endless loop when Payload Pointer of MPEG2-TS frame is 182 or 183. Anyone who sends malicious MPEG2-TS frame will cause the receiver of ULE SNDU to go into endless loop. This patch was generated and tested against linux-2.6.32.9 and should apply cleanly to linux-2.6.33 as well because there was only one typo fix to dvb_net.c since v2.6.32. This bug was brought to you by modern day Santa Claus who decided to shower the satellite dish at Keio University with heavy snow causing huge burst of errors. We, receiver end, received Santa Claus's gift in the form of kernel bug. Care has been taken not to introduce more bug by fixing this bug, but please scrutinize the code for I always produces buggy code. Signed-off-by: Ang Way Chuang <wcang79@gmail.com> Acked-by: Mauro Carvalho Chehab <mchehab@redhat.com> Cc: stable@kernel.org Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2010-1173": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/davem/net-2.6.git;a=commit;h=5fa782c2f5ef6c2e4f04d3e228412c9b4a4c8809",
+        "notValid": true
+      }
+    ],
+    "CVE-2010-1187": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/davem/net-2.6.git;a=commitdiff;h=d0021b252eaf65ca07ed14f0d66425dd9ccab9a6;hp=6d55cb91a0020ac0d78edcad61efd6c8cf5785a3",
+        "notValid": true
+      }
+    ],
+    "CVE-2010-1188": [
+      {
+        "url": "http://git.kernel.org/linus/fb7e2399ec17f1004c0e0ccfd17439f8759ede01",
+        "title": "[TCP]: skb is unexpectedly freed.",
+        "description": "I encountered a kernel panic with my test program, which is a very simple IPv6 client-server program. The server side sets IPV6_RECVPKTINFO on a listening socket, and the client side just sends a message to the server. Then the kernel panic occurs on the server. (If you need the test program, please let me know. I can provide it.) This problem happens because a skb is forcibly freed in tcp_rcv_state_process(). When a socket in listening state(TCP_LISTEN) receives a syn packet, then tcp_v6_conn_request() will be called from tcp_rcv_state_process(). If the tcp_v6_conn_request() successfully returns, the skb would be discarded by __kfree_skb(). However, in case of a listening socket which was already set IPV6_RECVPKTINFO, an address of the skb will be stored in treq->pktopts and a ref count of the skb will be incremented in tcp_v6_conn_request(). But, even if the skb is still in use, the skb will be freed. Then someone still using the freed skb will cause the kernel panic. I suggest to use kfree_skb() instead of __kfree_skb(). Signed-off-by: Masayuki Nakagawa <nakagawa.msy@ncos.nec.co.jp> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-1488": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=b95c35e76b29ba812e5dabdd91592e25ec640e93",
+        "title": "oom: fix the unsafe usage of badness() in proc_oom_score()",
+        "description": "proc_oom_score(task) has a reference to task_struct, but that is all. If this task was already released before we take tasklist_lock - we can't use task->group_leader, it points to nowhere - it is not safe to call badness() even if this task is ->group_leader, has_intersects_mems_allowed() assumes it is safe to iterate over ->thread_group list. - even worse, badness() can hit ->signal == NULL Add the pid_alive() check to ensure __unhash_process() was not called. Also, use \"task\" instead of task->group_leader. badness() should return the same result for any sub-thread. Currently this is not true, but this should be changed anyway. Signed-off-by: Oleg Nesterov <oleg@redhat.com> Cc: stable@kernel.org Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2010-1636": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=5dc6416414fb3ec6e2825fd4d20c8bf1d7fe0395",
+        "title": "Btrfs: check for read permission on src file in the clone ioctl",
+        "description": "The existing code would have allowed you to clone a file that was only open for writing Signed-off-by: Chris Mason <chris.mason@oracle.com>"
+      }
+    ],
+    "CVE-2010-1641": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=7df0e0397b9a18358573274db9fdab991941062f",
+        "title": "GFS2: Fix permissions checking for setflags ioctl()",
+        "description": "We should be checking for the ownership of the file for which flags are being set, rather than just for write access. Reported-by: Dan Rosenberg <dan.j.rosenberg@gmail.com> Signed-off-by: Steven Whitehouse <swhiteho@redhat.com>"
+      }
+    ],
+    "CVE-2010-2071": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=2f26afba",
+        "title": "Btrfs: should add a permission check for setfacl",
+        "description": "On btrfs, do the following ------------------ # su user1 # cd btrfs-part/ # touch aaa # getfacl aaa # file: aaa # owner: user1 # group: user1 user::rw- group::rw- other::r-- # su user2 # cd btrfs-part/ # setfacl -m u::rwx aaa # getfacl aaa # file: aaa # owner: user1 # group: user1 user::rwx <- successed to setfacl group::rw- other::r-- ------------------ but we should prohibit it that user2 changing user1's acl. In fact, on ext3 and other fs, a message occurs: setfacl: aaa: Operation not permitted This patch fixed it. Signed-off-by: Shi Weihua <shiwh@cn.fujitsu.com> Signed-off-by: Chris Mason <chris.mason@oracle.com>"
+      }
+    ],
+    "CVE-2010-2226": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=1817176a86352f65210139d4c794ad2d19fc6b63",
+        "title": "xfs: prevent swapext from operating on write-only files",
+        "description": "This patch prevents user \"foo\" from using the SWAPEXT ioctl to swap a write-only file owned by user \"bar\" into a file owned by \"foo\" and subsequently reading it. It does so by checking that the file descriptors passed to the ioctl are also opened for reading. Signed-off-by: Dan Rosenberg <dan.j.rosenberg@gmail.com> Reviewed-by: Christoph Hellwig <hch@lst.de>"
+      }
+    ],
+    "CVE-2010-2240": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=320b2b8de12698082609ebbc1a17165727f4c893",
+        "title": "mm: keep a guard page below a grow-down stack segment",
+        "description": "This is a rather minimally invasive patch to solve the problem of the user stack growing into a memory mapped area below it. Whenever we fill the first page of the stack segment, expand the segment down by one page. Now, admittedly some odd application might _want_ the stack to grow down into the preceding memory mapping, and so we may at some point need to make this a process tunable (some people might also want to have more than a single page of guarding), but let's try the minimal approach first. Tested with trivial application that maps a single page just below the stack, and then starts recursing. Without this, we will get a SIGSEGV _after_ the stack has smashed the mapping. With this patch, we'll get a nice SIGBUS just as the stack touches the page just above the mapping. Requested-by: Keith Packard <keithp@keithp.com> Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2010-2243": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ad6759fbf35d104dbf573cd6f4c6784ad6823f7e",
+        "title": "timekeeping: Prevent oops when GENERIC_TIME=n",
+        "description": "Aaro Koskinen reported an issue in kernel.org bugzilla #15366, where on non-GENERIC_TIME systems, accessing /sys/devices/system/clocksource/clocksource0/current_clocksource results in an oops. It seems the timekeeper/clocksource rework missed initializing the curr_clocksource value in the !GENERIC_TIME case. Thanks to Aaro for reporting and diagnosing the issue as well as testing the fix! Reported-by: Aaro Koskinen <aaro.koskinen@iki.fi> Signed-off-by: John Stultz <johnstul@us.ibm.com> Cc: Martin Schwidefsky <schwidefsky@de.ibm.com> Cc: stable@kernel.org LKML-Reference: <1267475683.4216.61.camel@localhost.localdomain> Signed-off-by: Thomas Gleixner <tglx@linutronix.de>"
+      }
+    ],
+    "CVE-2010-2248": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=6513a81e9325d712f1bfb9a1d7b750134e49ff18",
+        "title": "cifs: Fix a kernel BUG with remote OS/2 server (try #3)",
+        "description": "While chasing a bug report involving a OS/2 server, I noticed the server sets pSMBr->CountHigh to a incorrect value even in case of normal writes. This results in 'nbytes' being computed wrongly and triggers a kernel BUG at mm/filemap.c. void iov_iter_advance(struct iov_iter *i, size_t bytes) { BUG_ON(i->count < bytes); <--- BUG here Why the server is setting 'CountHigh' is not clear but only does so after writing 64k bytes. Though this looks like the server bug, the client side crash may not be acceptable. The workaround is to mask off high 16 bits if the number of bytes written as returned by the server is greater than the bytes requested by the client as suggested by Jeff Layton. CC: Stable <stable@kernel.org> Reviewed-by: Jeff Layton <jlayton@samba.org> Signed-off-by: Suresh Jayaraman <sjayaraman@suse.de> Signed-off-by: Steve French <sfrench@us.ibm.com>"
+      }
+    ],
+    "CVE-2010-2478": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=db048b69037e7fa6a7d9e95a1271a50dc08ae233",
+        "title": "ethtool: Fix potential kernel buffer overflow in ETHTOOL_GRXCLSRLALL",
+        "description": "On a 32-bit machine, info.rule_cnt >= 0x40000000 leads to integer overflow and the buffer may be smaller than needed. Since ETHTOOL_GRXCLSRLALL is unprivileged, this can presumably be used for at least denial of service. Signed-off-by: Ben Hutchings <bhutchings@solarflare.com> Cc: stable@kernel.org Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-2495": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=3feec9095d12e311b7d4eb7fe7e5dfa75d4a72a5",
+        "title": "l2tp: Fix oops in pppol2tp_xmit",
+        "description": "When transmitting L2TP frames, we derive the outgoing interface's UDP checksum hardware assist capabilities from the tunnel dst dev. This can sometimes be NULL, especially when routing protocols are used and routing changes occur. This patch just checks for NULL dst or dev pointers when checking for netdev hardware assist features. BUG: unable to handle kernel NULL pointer dereference at 0000000c IP: [<f89d074c>] pppol2tp_xmit+0x341/0x4da [pppol2tp] *pde = 00000000 Oops: 0000 [#1] SMP last sysfs file: /sys/class/net/lo/operstate Modules linked in: pppol2tp pppox ppp_generic slhc ipv6 dummy loop snd_hda_codec_atihdmi snd_hda_intel snd_hda_codec snd_pcm snd_timer snd soundcore snd_page_alloc evdev psmouse serio_raw processor button i2c_piix4 i2c_core ati_agp agpgart pcspkr ext3 jbd mbcache sd_mod ide_pci_generic atiixp ide_core ahci ata_generic floppy ehci_hcd ohci_hcd libata e1000e scsi_mod usbcore nls_base thermal fan thermal_sys [last unloaded: scsi_wait_scan] Pid: 0, comm: swapper Not tainted (2.6.32.8 #1) EIP: 0060:[<f89d074c>] EFLAGS: 00010297 CPU: 3 EIP is at pppol2tp_xmit+0x341/0x4da [pppol2tp] EAX: 00000000 EBX: f64d1680 ECX: 000005b9 EDX: 00000000 ESI: f6b91850 EDI: f64d16ac EBP: f6a0c4c0 ESP: f70a9cac DS: 007b ES: 007b FS: 00d8 GS: 0000 SS: 0068 Process swapper (pid: 0, ti=f70a8000 task=f70a31c0 task.ti=f70a8000) Stack: 000005a9 000005b9 f734c400 f66652c0 f7352e00 f67dc800 00000000 f6b91800 <0> 000005a3 f70ef6c4 f67dcda9 000005a3 f89b192e 00000246 000005a3 f64d1680 <0> f63633e0 f6363320 f64d1680 f65a7320 f65a7364 f65856c0 f64d1680 f679f02f Call Trace: [<f89b192e>] ? ppp_push+0x459/0x50e [ppp_generic] [<f89b217f>] ? ppp_xmit_process+0x3b6/0x430 [ppp_generic] [<f89b2306>] ? ppp_start_xmit+0x10d/0x120 [ppp_generic] [<c11c15cb>] ? dev_hard_start_xmit+0x21f/0x2b2 [<c11d0947>] ? sch_direct_xmit+0x48/0x10e [<c11c19a0>] ? dev_queue_xmit+0x263/0x3a6 [<c11e2a9f>] ? ip_finish_output+0x1f7/0x221 [<c11df682>] ? ip_forward_finish+0x2e/0x30 [<c11de645>] ? ip_rcv_finish+0x295/0x2a9 [<c11c0b19>] ? netif_receive_skb+0x3e9/0x404 [<f814b791>] ? e1000_clean_rx_irq+0x253/0x2fc [e1000e] [<f814cb7a>] ? e1000_clean+0x63/0x1fc [e1000e] [<c1047eff>] ? sched_clock_local+0x15/0x11b [<c11c1095>] ? net_rx_action+0x96/0x195 [<c1035750>] ? __do_softirq+0xaa/0x151 [<c1035828>] ? do_softirq+0x31/0x3c [<c10358fe>] ? irq_exit+0x26/0x58 [<c1004b21>] ? do_IRQ+0x78/0x89 [<c1003729>] ? common_interrupt+0x29/0x30 [<c101ac28>] ? native_safe_halt+0x2/0x3 [<c1008c54>] ? default_idle+0x55/0x75 [<c1009045>] ? c1e_idle+0xd2/0xd5 [<c100233c>] ? cpu_idle+0x46/0x62 Code: 8d 45 08 f0 ff 45 08 89 6b 08 c7 43 68 7e fb 9c f8 8a 45 24 83 e0 0c 3c 04 75 09 80 63 64 f3 e9 b4 00 00 00 8b 43 18 8b 4c 24 04 <8b> 40 0c 8d 79 11 f6 40 44 0e 8a 43 64 75 51 6a 00 8b 4c 24 08 EIP: [<f89d074c>] pppol2tp_xmit+0x341/0x4da [pppol2tp] SS:ESP 0068:f70a9cac CR2: 000000000000000c Signed-off-by: James Chapman <jchapman@katalix.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-2521": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=2bc3c1179c781b359d4f2f3439cb3df72afc17fc",
+        "title": "nfsd4: bug in read_buf",
+        "description": "When read_buf is called to move over to the next page in the pagelist of an NFSv4 request, it sets argp->end to essentially a random number, certainly not an address within the page which argp->p now points to. So subsequent calls to READ_BUF will think there is much more than a page of spare space (the cast to u32 ensures an unsigned comparison) so we can expect to fall off the end of the second page. We never encountered thsi in testing because typically the only operations which use more than two pages are write-like operations, which have their own decoding logic. Something like a getattr after a write may cross a page boundary, but it would be very unusual for it to cross another boundary after that. Cc: stable@kernel.org Signed-off-by: J. Bruce Fields <bfields@citi.umich.edu>"
+      }
+    ],
+    "CVE-2010-2538": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=2ebc3464781ad24474abcbd2274e6254689853b5",
+        "title": "Btrfs: fix checks in BTRFS_IOC_CLONE_RANGE",
+        "description": "1. The BTRFS_IOC_CLONE and BTRFS_IOC_CLONE_RANGE ioctls should check whether the donor file is append-only before writing to it. 2. The BTRFS_IOC_CLONE_RANGE ioctl appears to have an integer overflow that allows a user to specify an out-of-bounds range to copy from the source file (if off + len wraps around). I haven't been able to successfully exploit this, but I'd imagine that a clever attacker could use this to read things he shouldn't. Even if it's not exploitable, it couldn't hurt to be safe. Signed-off-by: Dan Rosenberg <dan.j.rosenberg@gmail.com> cc: stable@kernel.org Signed-off-by: Chris Mason <chris.mason@oracle.com>"
+      }
+    ],
+    "CVE-2010-2542": [
+      {
+        "url": "http://git.kernel.org/?p=git/git.git;a=commit;h=3c9d0414ed2db0167e6c828b547be8fc9f88fccc",
+        "title": "Check size of path buffer before writing into it",
+        "description": "This prevents a buffer overrun that could otherwise be triggered by creating a file called '.git' with contents gitdir: (something really long) Signed-off-by: Greg Brockman <gdb@mit.edu> Signed-off-by: Junio C Hamano <gitster@pobox.com>"
+      }
+    ],
+    "CVE-2010-2798": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=728a756b8fcd22d80e2dbba8117a8a3aafd3f203",
+        "title": "GFS2: rename causes kernel Oops",
+        "description": "This patch fixes a kernel Oops in the GFS2 rename code. The problem was in the way the gfs2 directory code was trying to re-use sentinel directory entries. In the failing case, gfs2's rename function was renaming a file to another name that had the same non-trivial length. The file being renamed happened to be the first directory entry on the leaf block. First, the rename code (gfs2_rename in ops_inode.c) found the original directory entry and decided it could do its job by simply replacing the directory entry with another. Therefore it determined correctly that no block allocations were needed. Next, the rename code deleted the old directory entry prior to replacing it with the new name. Therefore, the soon-to-be replaced directory entry was temporarily made into a directory entry \"sentinel\" or a place holder at the start of a leaf block. Lastly, it went to re-add the replacement directory entry in that leaf block. However, when gfs2_dirent_find_space was looking for space in the leaf block, it used the wrong value for the sentinel. That threw off its calculations so later it decides it can't really re-use the sentinel and therefore must allocate a new leaf block. But because it previously decided to re-use the directory entry, it didn't waste the time to grab a new block allocation for the inode. Therefore, the inode's i_alloc pointer was still NULL and it crashes trying to reference it. In the case of sentinel directory entries, the entire dirent is reused, not just the \"free space\" portion of it, and therefore the function gfs2_dirent_find_space should use the value 0 rather than GFS2_DIRENT_SIZE(0) for the actual dirent size. Fixing this calculation enables the reproducer programs to work properly. Signed-off-by: Bob Peterson <rpeterso@redhat.com> Signed-off-by: Steven Whitehouse <swhiteho@redhat.com>"
+      }
+    ],
+    "CVE-2010-2803": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=b9f0aee83335db1f3915f4e42a5e21b351740afd",
+        "title": "drm: stop information leak of old kernel stack.",
+        "description": "non-critical issue, CVE-2010-2803 Userspace controls the amount of memory to be allocate, so it can get the ioctl to allocate more memory than the kernel uses, and get access to kernel stack. This can only be done for processes authenticated to the X server for DRI access, and if the user has DRI access. Fix is to just memset the data to 0 if the user doesn't copy into it in the first place. Reported-by: Kees Cook <kees@ubuntu.com> Signed-off-by: Dave Airlie <airlied@redhat.com>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/airlied/drm-2.6.git;a=commit;h=b9f0aee83335db1f3915f4e42a5e21b351740afd",
+        "notValid": true
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/airlied/drm-2.6.git;a=commit;h=1b2f1489633888d4a06028315dc19d65768a1c05",
+        "notValid": true
+      }
+    ],
+    "CVE-2010-2943": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=7124fe0a5b619d65b739477b3b55a20bf805b06d",
+        "title": "xfs: validate untrusted inode numbers during lookup",
+        "description": "When we decode a handle or do a bulkstat lookup, we are using an inode number we cannot trust to be valid. If we are deleting inode chunks from disk (default noikeep mode), then we cannot trust the on disk inode buffer for any given inode number to correctly reflect whether the inode has been unlinked as the di_mode nor the generation number may have been updated on disk. This is due to the fact that when we delete an inode chunk, we do not write the clusters back to disk when they are removed - instead we mark them stale to avoid them being written back potentially over the top of something that has been subsequently allocated at that location. The result is that we can have locations of disk that look like they contain valid inodes but in reality do not. Hence we cannot simply convert the inode number to a block number and read the location from disk to determine if the inode is valid or not. As a result, and XFS_IGET_BULKSTAT lookup needs to actually look the inode up in the inode allocation btree to determine if the inode number is valid or not. It should be noted even on ikeep filesystems, there is the possibility that blocks on disk may look like valid inode clusters. e.g. if there are filesystem images hosted on the filesystem. Hence even for ikeep filesystems we really need to validate that the inode number is valid before issuing the inode buffer read. Signed-off-by: Dave Chinner <dchinner@redhat.com> Reviewed-by: Christoph Hellwig <hch@lst.de>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=7b6259e7a83647948fa33a736cc832310c8d85aa",
+        "title": "xfs: remove block number from inode lookup code",
+        "description": "The block number comes from bulkstat based inode lookups to shortcut the mapping calculations. We ar enot able to trust anything from bulkstat, so drop the block number as well so that the correct lookups and mappings are always done. Signed-off-by: Dave Chinner <dchinner@redhat.com> Reviewed-by: Christoph Hellwig <hch@lst.de>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=1920779e67cbf5ea8afef317777c5bf2b8096188",
+        "title": "xfs: rename XFS_IGET_BULKSTAT to XFS_IGET_UNTRUSTED",
+        "description": "Inode numbers may come from somewhere external to the filesystem (e.g. file handles, bulkstat information) and so are inherently untrusted. Rename the flag we use for these lookups to make it obvious we are doing a lookup of an untrusted inode number and need to verify it completely before trying to read it from disk. Signed-off-by: Dave Chinner <dchinner@redhat.com> Reviewed-by: Christoph Hellwig <hch@lst.de>"
+      }
+    ],
+    "CVE-2010-2946": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=aca0fa34bdaba39bfddddba8ca70dba4782e8fe6",
+        "title": "jfs: don't allow os2 xattr namespace overlap with others",
+        "description": "It's currently possible to bypass xattr namespace access rules by prefixing valid xattr names with \"os2.\", since the os2 namespace stores extended attributes in a legacy format with no prefix. This patch adds checking to deny access to any valid namespace prefix following \"os2.\". Signed-off-by: Dave Kleikamp <shaggy@linux.vnet.ibm.com> Reported-by: Sergey Vlasov <vsu@altlinux.ru> Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2010-2954": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/davem/net-2.6.git;a=commit;h=628e300cccaa628d8fb92aa28cb7530a3d5f2257",
+        "notValid": true
+      }
+    ],
+    "CVE-2010-2959": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=5b75c4973ce779520b9d1e392483207d6f842cde",
+        "title": "can: add limit for nframes and clean up signed/unsigned variables",
+        "description": "This patch adds a limit for nframes as the number of frames in TX_SETUP and RX_SETUP are derived from a single byte multiplex value by default. Use-cases that would require to send/filter more than 256 CAN frames should be implemented in userspace for complexity reasons anyway. Additionally the assignments of unsigned values from userspace to signed values in kernelspace and vice versa are fixed by using unsigned values in kernelspace consistently. Signed-off-by: Oliver Hartkopp <socketcan@hartkopp.net> Reported-by: Ben Hawkes <hawkes@google.com> Acked-by: Urs Thuermann <urs.thuermann@volkswagen.de> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-2962": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=ce9d419dbecc292cc3e06e8b1d6d123d3fa813a4",
+        "title": "drm/i915: Sanity check pread/pwrite",
+        "description": "Move the access control up from the fast paths, which are no longer universally taken first, up into the caller. This then duplicates some sanity checking along the slow paths, but is much simpler. Tracked as CVE-2010-2962. Reported-by: Kees Cook <kees@ubuntu.com> Signed-off-by: Chris Wilson <chris@chris-wilson.co.uk> Cc: stable@kernel.org"
+      }
+    ],
+    "CVE-2010-2963": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=3e645d6b485446c54c6745c5e2cf5c528fe4deec",
+        "title": "v4l1: fix 32-bit compat microcode loading translation",
+        "description": "The compat code for the VIDIOCSMICROCODE ioctl is totally buggered. It's only used by the VIDEO_STRADIS driver, and that one is scheduled to staging and eventually removed unless somebody steps up to maintain it (at which point it should use request_firmware() rather than some magic ioctl). So we'll get rid of it eventually. But in the meantime, the compatibility ioctl code is broken, and this tries to get it to at least limp along (even if Mauro suggested just deleting it entirely, which may be the right thing to do - I don't think the compatibility translation code has ever worked unless you were very lucky). Reported-by: Kees Cook <kees.cook@canonical.com> Cc: Mauro Carvalho Chehab <mchehab@infradead.org> Cc: stable@kernel.org Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2010-3015": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=731eb1a03a8445cde2cb23ecfb3580c6fa7bb690",
+        "title": "ext4: consolidate in_range() definitions",
+        "description": "There are duplicate macro definitions of in_range() in mballoc.h and balloc.c. This consolidates these two definitions into ext4.h, and changes extents.c to use in_range() as well. Signed-off-by: Akinobu Mita <akinobu.mita@gmail.com> Signed-off-by: \"Theodore Ts'o\" <tytso@mit.edu> Cc: Andreas Dilger <adilger@sun.com>"
+      }
+    ],
+    "CVE-2010-3067": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=75e1c70fc31490ef8a373ea2a4bea2524099b478",
+        "title": "aio: check for multiplication overflow in do_io_submit",
+        "description": "Tavis Ormandy pointed out that do_io_submit does not do proper bounds checking on the passed-in iocb array: if (unlikely(nr < 0)) return -EINVAL; if (unlikely(!access_ok(VERIFY_READ, iocbpp, (nr*sizeof(iocbpp))))) return -EFAULT; ^^^^^^^^^^^^^^^^^^ The attached patch checks for overflow, and if it is detected, the number of iocbs submitted is scaled down to a number that will fit in the long. This is an ok thing to do, as sys_io_submit is documented as returning the number of iocbs submitted, so callers should handle a return value of less than the 'nr' argument passed in. Reported-by: Tavis Ormandy <taviso@cmpxchg8b.com> Signed-off-by: Jeff Moyer <jmoyer@redhat.com> Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2010-3078": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=a122eb2fdfd78b58c6dd992d6f4b1aaef667eef9",
+        "title": "xfs: prevent reading uninitialized stack memory",
+        "description": "The XFS_IOC_FSGETXATTR ioctl allows unprivileged users to read 12 bytes of uninitialized stack memory, because the fsxattr struct declared on the stack in xfs_ioc_fsgetxattr() does not alter (or zero) the 12-byte fsx_pad member before copying it back to the user. This patch takes care of it. Signed-off-by: Dan Rosenberg <dan.j.rosenberg@gmail.com> Reviewed-by: Eric Sandeen <sandeen@redhat.com> Signed-off-by: Alex Elder <aelder@sgi.com>"
+      }
+    ],
+    "CVE-2010-3079": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=9c55cb12c1c172e2d51e85fbb5a4796ca86b77e7",
+        "title": "tracing: Do not allow llseek to set_ftrace_filter",
+        "description": "Reading the file set_ftrace_filter does three things. 1) shows whether or not filters are set for the function tracer 2) shows what functions are set for the function tracer 3) shows what triggers are set on any functions 3 is independent from 1 and 2. The way this file currently works is that it is a state machine, and as you read it, it may change state. But this assumption breaks when you use lseek() on the file. The state machine gets out of sync and the t_show() may use the wrong pointer and cause a kernel oops. Luckily, this will only kill the app that does the lseek, but the app dies while holding a mutex. This prevents anyone else from using the set_ftrace_filter file (or any other function tracing file for that matter). A real fix for this is to rewrite the code, but that is too much for a -rc release or stable. This patch simply disables llseek on the set_ftrace_filter() file for now, and we can do the proper fix for the next major release. Reported-by: Robert Swiecki <swiecki@google.com> Cc: Chris Wright <chrisw@sous-sol.org> Cc: Tavis Ormandy <taviso@google.com> Cc: Eugene Teo <eugene@redhat.com> Cc: vendor-sec@lst.de Cc: <stable@kernel.org> Signed-off-by: Steven Rostedt <rostedt@goodmis.org>"
+      }
+    ],
+    "CVE-2010-3081": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=c41d68a513c71e35a14f66d71782d27a79a81ea6",
+        "title": "compat: Make compat_alloc_user_space() incorporate the access_ok()",
+        "description": "compat_alloc_user_space() expects the caller to independently call access_ok() to verify the returned area. A missing call could introduce problems on some architectures. This patch incorporates the access_ok() check into compat_alloc_user_space() and also adds a sanity check on the length. The existing compat_alloc_user_space() implementations are renamed arch_compat_alloc_user_space() and are used as part of the implementation of the new global function. This patch assumes NULL will cause __get_user()/__put_user() to either fail or access userspace on all architectures. This should be followed by checking the return value of compat_access_user_space() for NULL in the callers, at which time the access_ok() in the callers can also be removed. Reported-by: Ben Hawkes <hawkes@sota.gen.nz> Signed-off-by: H. Peter Anvin <hpa@linux.intel.com> Acked-by: Benjamin Herrenschmidt <benh@kernel.crashing.org> Acked-by: Chris Metcalf <cmetcalf@tilera.com> Acked-by: David S. Miller <davem@davemloft.net> Acked-by: Ingo Molnar <mingo@elte.hu> Acked-by: Thomas Gleixner <tglx@linutronix.de> Acked-by: Tony Luck <tony.luck@intel.com> Cc: Andrew Morton <akpm@linux-foundation.org> Cc: Arnd Bergmann <arnd@arndb.de> Cc: Fenghua Yu <fenghua.yu@intel.com> Cc: H. Peter Anvin <hpa@zytor.com> Cc: Heiko Carstens <heiko.carstens@de.ibm.com> Cc: Helge Deller <deller@gmx.de> Cc: James Bottomley <jejb@parisc-linux.org> Cc: Kyle McMartin <kyle@mcmartin.ca> Cc: Martin Schwidefsky <schwidefsky@de.ibm.com> Cc: Paul Mackerras <paulus@samba.org> Cc: Ralf Baechle <ralf@linux-mips.org> Cc: <stable@kernel.org>"
+      }
+    ],
+    "CVE-2010-3084": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=ee9c5cfad29c8a13199962614b9b16f1c4137ac9",
+        "title": "niu: Fix kernel buffer overflow for ETHTOOL_GRXCLSRLALL",
+        "description": "niu_get_ethtool_tcam_all() assumes that its output buffer is the right size, and warns before returning if it is not. However, the output buffer size is under user control and ETHTOOL_GRXCLSRLALL is an unprivileged ethtool command. Therefore this is at least a local denial-of-service vulnerability. Change it to check before writing each entry and to return an error if the buffer is already full. Compile-tested only. Signed-off-by: Ben Hutchings <bhutchings@solarflare.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-3296": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/davem/net-2.6.git;a=commit;h=49c37c0334a9b85d30ab3d6b5d1acb05ef2ef6de",
+        "notValid": true
+      }
+    ],
+    "CVE-2010-3298": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/davem/net-2.6.git;a=commit;h=7011e660938fc44ed86319c18a5954e95a82ab3e",
+        "notValid": true
+      }
+    ],
+    "CVE-2010-3301": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=36d001c70d8a0144ac1d038f6876c484849a74de",
+        "title": "x86-64, compat: Test %rax for the syscall number, not %eax",
+        "description": "On 64 bits, we always, by necessity, jump through the system call table via %rax. For 32-bit system calls, in theory the system call number is stored in %eax, and the code was testing %eax for a valid system call number. At one point we loaded the stored value back from the stack to enforce zero-extension, but that was removed in checkin d4d67150165df8bf1cc05e532f6efca96f907cab. An actual 32-bit process will not be able to introduce a non-zero-extended number, but it can happen via ptrace. Instead of re-introducing the zero-extension, test what we are actually going to use, i.e. %rax. This only adds a handful of REX prefixes to the code. Reported-by: Ben Hawkes <hawkes@sota.gen.nz> Signed-off-by: H. Peter Anvin <hpa@linux.intel.com> Cc: <stable@kernel.org> Cc: Roland McGrath <roland@redhat.com> Cc: Andrew Morton <akpm@linux-foundation.org>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=eefdca043e8391dcd719711716492063030b55ac",
+        "title": "x86-64, compat: Retruncate rax after ia32 syscall entry tracing",
+        "description": "In commit d4d6715, we reopened an old hole for a 64-bit ptracer touching a 32-bit tracee in system call entry. A %rax value set via ptrace at the entry tracing stop gets used whole as a 32-bit syscall number, while we only check the low 32 bits for validity. Fix it by truncating %rax back to 32 bits after syscall_trace_enter, in addition to testing the full 64 bits as has already been added. Reported-by: Ben Hawkes <hawkes@sota.gen.nz> Signed-off-by: Roland McGrath <roland@redhat.com> Signed-off-by: H. Peter Anvin <hpa@linux.intel.com>"
+      }
+    ],
+    "CVE-2010-3310": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/davem/net-2.6.git;a=commit;h=9828e6e6e3f19efcb476c567b9999891d051f52f",
+        "notValid": true
+      }
+    ],
+    "CVE-2010-3432": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=4bdab43323b459900578b200a4b8cf9713ac8fab",
+        "title": "sctp: Do not reset the packet during sctp_packet_config().",
+        "description": "sctp_packet_config() is called when getting the packet ready for appending of chunks. The function should not touch the current state, since it's possible to ping-pong between two transports when sending, and that can result packet corruption followed by skb overlfow crash. Reported-by: Thomas Dreibholz <dreibh@iem.uni-due.de> Signed-off-by: Vlad Yasevich <vladislav.yasevich@hp.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-3437": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=252a52aa4fa22a668f019e55b3aac3ff71ec1c29",
+        "title": "Fix pktcdvd ioctl dev_minor range check",
+        "description": "The PKT_CTRL_CMD_STATUS device ioctl retrieves a pointer to a pktcdvd_device from the global pkt_devs array. The index into this array is provided directly by the user and is a signed integer, so the comparison to ensure that it falls within the bounds of this array will fail when provided with a negative index. This can be used to read arbitrary kernel memory or cause a crash due to an invalid pointer dereference. This can be exploited by users with permission to open /dev/pktcdvd/control (on many distributions, this is readable by group \"cdrom\"). Signed-off-by: Dan Rosenberg <dan.j.rosenberg@gmail.com> [ Rather than add a cast, just make the function take the right type -Linus ] Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2010-3442": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/tiwai/sound-2.6.git;a=commit;h=5591bf07225523600450edd9e6ad258bb877b779",
+        "notValid": true
+      }
+    ],
+    "CVE-2010-3448": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=b525c06cdbd8a3963f0173ccd23f9147d4c384b5",
+        "title": "thinkpad-acpi: lock down video output state access",
+        "description": "Given the right combination of ThinkPad and X.org, just reading the video output control state is enough to hard-crash X.org. Until the day I somehow find out a model or BIOS cut date to not provide this feature to ThinkPads that can do video switching through X RandR, change permissions so that only processes with CAP_SYS_ADMIN can access any sort of video output control state. This bug could be considered a local DoS I suppose, as it allows any non-privledged local user to cause some versions of X.org to hard-crash some ThinkPads. Reported-by: Jidanni <jidanni@jidanni.org> Signed-off-by: Henrique de Moraes Holschuh <hmh@hmh.eng.br> Cc: stable@kernel.org"
+      }
+    ],
+    "CVE-2010-3477": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/davem/net-2.6.git;a=commit;h=0f04cfd098fb81fded74e78ea1a1b86cc6c6c31e",
+        "notValid": true
+      }
+    ],
+    "CVE-2010-3848": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=a27e13d370415add3487949c60810e36069a23a6",
+        "title": "econet: fix CVE-2010-3848",
+        "description": "Don't declare variable sized array of iovecs on the stack since this could cause stack overflow if msg->msgiovlen is large. Instead, coalesce the user-supplied data into a new buffer and use a single iovec for it. Signed-off-by: Phil Blundell <philb@gnu.org> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-3849": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=fa0e846494792e722d817b9d3d625a4ef4896c96",
+        "title": "econet: disallow NULL remote addr for sendmsg(), fixes CVE-2010-3849",
+        "description": "Later parts of econet_sendmsg() rely on saddr != NULL, so return early with EINVAL if NULL was passed otherwise an oops may occur. Signed-off-by: Phil Blundell <philb@gnu.org> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-3859": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=8acfe468b0384e834a303f08ebc4953d72fb690a",
+        "title": "net: Limit socket I/O iovec total length to INT_MAX.",
+        "description": "This helps protect us from overflow issues down in the individual protocol sendmsg/recvmsg handlers. Once we hit INT_MAX we truncate out the rest of the iovec by setting the iov_len members to zero. This works because: 1) For SOCK_STREAM and SOCK_SEQPACKET sockets, partial writes are allowed and the application will just continue with another write to send the rest of the data. 2) For datagram oriented sockets, where there must be a one-to-one correspondance between write() calls and packets on the wire, INT_MAX is going to be far larger than the packet size limit the protocol is going to check for and signal with -EMSGSIZE. Based upon a patch by Linus Torvalds. Signed-off-by: David S. Miller <davem@davemloft.net>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=253eacc070b114c2ec1f81b067d2fed7305467b0",
+        "title": "net: Truncate recvfrom and sendto length to INT_MAX.",
+        "description": "Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-3861": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=ae6df5f96a51818d6376da5307d773baeece4014",
+        "title": "net: clear heap allocation for ETHTOOL_GRXCLSRLALL",
+        "description": "Calling ETHTOOL_GRXCLSRLALL with a large rule_cnt will allocate kernel heap without clearing it. For the one driver (niu) that implements it, it will leave the unused portion of heap unchanged and copy the full contents back to userspace. Signed-off-by: Kees Cook <kees.cook@canonical.com> Acked-by: Ben Hutchings <bhutchings@solarflare.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-3873": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=a6331d6f9a4298173b413cf99a40cc86a9d92c37",
+        "title": "memory corruption in X.25 facilities parsing",
+        "description": "Signed-of-by: Andrew Hendry <andrew.hendry@gmail.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-3874": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=0597d1b99fcfc2c0eada09a698f85ed413d4ba84",
+        "title": "can-bcm: fix minor heap overflow",
+        "description": "On 64-bit platforms the ASCII representation of a pointer may be up to 17 bytes long. This patch increases the length of the buffer accordingly. http://marc.info/?l=linux-netdev&m=128872251418192&w=2 Reported-by: Dan Rosenberg <drosenberg@vsecurity.com> Signed-off-by: Oliver Hartkopp <socketcan@hartkopp.net> CC: Linus Torvalds <torvalds@linux-foundation.org> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-3875": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=fe10ae53384e48c51996941b7720ee16995cbcb7",
+        "title": "net: ax25: fix information leak to userland",
+        "description": "Sometimes ax25_getname() doesn't initialize all members of fsa_digipeater field of fsa struct, also the struct has padding bytes between sax25_call and sax25_ndigis fields. This structure is then copied to userland. It leads to leaking of contents of kernel stack memory. Signed-off-by: Vasiliy Kulikov <segooon@gmail.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-3881": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=97e69aa62f8b5d338d6cff49be09e37cc1262838",
+        "title": "KVM: x86: fix information leak to userland",
+        "description": "Structures kvm_vcpu_events, kvm_debugregs, kvm_pit_state2 and kvm_clock_data are copied to userland with some padding and reserved fields unitialized. It leads to leaking of contents of kernel stack memory. We have to initialize them to zero. In patch v1 Jan Kiszka suggested to fill reserved fields with zeros instead of memset'ting the whole struct. It makes sense as these fields are explicitly marked as padding. No more fields need zeroing. KVM-Stable-Tag. Signed-off-by: Vasiliy Kulikov <segooon@gmail.com> Signed-off-by: Marcelo Tosatti <mtosatti@redhat.com>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=virt/kvm/kvm.git;a=commit;h=831d9d02f9522e739825a51a11e3bc5aa531a905",
+        "title": "KVM: x86: fix information leak to userland",
+        "description": "Structures kvm_vcpu_events, kvm_debugregs, kvm_pit_state2 and kvm_clock_data are copied to userland with some padding and reserved fields unitialized. It leads to leaking of contents of kernel stack memory. We have to initialize them to zero. In patch v1 Jan Kiszka suggested to fill reserved fields with zeros instead of memset'ting the whole struct. It makes sense as these fields are explicitly marked as padding. No more fields need zeroing. KVM-Stable-Tag. Signed-off-by: Vasiliy Kulikov <segooon@gmail.com> Signed-off-by: Marcelo Tosatti <mtosatti@redhat.com>"
+      }
+    ],
+    "CVE-2010-3904": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=799c10559d60f159ab2232203f222f18fa3c4a5f",
+        "title": "De-pessimize rds_page_copy_user",
+        "description": "Don't try to \"optimize\" rds_page_copy_user() by using kmap_atomic() and the unsafe atomic user mode accessor functions. It's actually slower than the straightforward code on any reasonable modern CPU. Back when the code was written (although probably not by the time it was actually merged, though), 32-bit x86 may have been the dominant architecture. And there kmap_atomic() can be a lot faster than kmap() (unless you have very good locality, in which case the virtual address caching by kmap() can overcome all the downsides). But these days, x86-64 may not be more populous, but it's getting there (and if you care about performance, it's definitely already there - you'd have upgraded your CPU's already in the last few years). And on x86-64, the non-kmap_atomic() version is faster, simply because the code is simpler and doesn't have the \"re-try page fault\" case. People with old hardware are not likely to care about RDS anyway, and the optimization for the 32-bit case is simply buggy, since it doesn't verify the user addresses properly. Reported-by: Dan Rosenberg <drosenberg@vsecurity.com> Acked-by: Andrew Morton <akpm@linux-foundation.org> Cc: stable@kernel.org Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2010-4072": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=3af54c9bd9e6f14f896aac1bb0e8405ae0bc7a44",
+        "title": "ipc: shm: fix information leak to userland",
+        "description": "The shmid_ds structure is copied to userland with shm_unused{,2,3} fields unitialized. It leads to leaking of contents of kernel stack memory. Signed-off-by: Vasiliy Kulikov <segooon@gmail.com> Acked-by: Al Viro <viro@ZenIV.linux.org.uk> Cc: stable@kernel.org Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2010-4073": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=03145beb455cf5c20a761e8451e30b8a74ba58d9",
+        "title": "ipc: initialize structure memory to zero for compat functions",
+        "description": "This takes care of leaking uninitialized kernel stack memory to userspace from non-zeroed fields in structs in compat ipc functions. Signed-off-by: Dan Rosenberg <drosenberg@vsecurity.com> Cc: Manfred Spraul <manfred@colorfullife.com> Cc: Arnd Bergmann <arnd@arndb.de> Cc: <stable@kernel.org> Signed-off-by: Andrew Morton <akpm@linux-foundation.org> Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2010-4074": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=a0846f1868b11cd827bdfeaf4527d8b1b1c0b098",
+        "title": "USB: serial/mos*: prevent reading uninitialized stack memory",
+        "description": "The TIOCGICOUNT device ioctl in both mos7720.c and mos7840.c allows unprivileged users to read uninitialized stack memory, because the \"reserved\" member of the serial_icounter_struct struct declared on the stack is not altered or zeroed before being copied back to the user. This patch takes care of it. Signed-off-by: Dan Rosenberg <dan.j.rosenberg@gmail.com> Cc: stable <stable@kernel.org> Signed-off-by: Greg Kroah-Hartman <gregkh@suse.de>"
+      }
+    ],
+    "CVE-2010-4075": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=d281da7ff6f70efca0553c288bb883e8605b3862",
+        "title": "tty: Make tiocgicount a handler",
+        "description": "Dan Rosenberg noted that various drivers return the struct with uncleared fields. Instead of spending forever trying to stomp all the drivers that get it wrong (and every new driver) do the job in one place. This first patch adds the needed operations and hooks them up, including the needed USB midlayer and serial core plumbing. Signed-off-by: Alan Cox <alan@linux.intel.com> Signed-off-by: Greg Kroah-Hartman <gregkh@suse.de>"
+      }
+    ],
+    "CVE-2010-4076": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=d281da7ff6f70efca0553c288bb883e8605b3862",
+        "title": "tty: Make tiocgicount a handler",
+        "description": "Dan Rosenberg noted that various drivers return the struct with uncleared fields. Instead of spending forever trying to stomp all the drivers that get it wrong (and every new driver) do the job in one place. This first patch adds the needed operations and hooks them up, including the needed USB midlayer and serial core plumbing. Signed-off-by: Alan Cox <alan@linux.intel.com> Signed-off-by: Greg Kroah-Hartman <gregkh@suse.de>"
+      }
+    ],
+    "CVE-2010-4077": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=d281da7ff6f70efca0553c288bb883e8605b3862",
+        "title": "tty: Make tiocgicount a handler",
+        "description": "Dan Rosenberg noted that various drivers return the struct with uncleared fields. Instead of spending forever trying to stomp all the drivers that get it wrong (and every new driver) do the job in one place. This first patch adds the needed operations and hooks them up, including the needed USB midlayer and serial core plumbing. Signed-off-by: Alan Cox <alan@linux.intel.com> Signed-off-by: Greg Kroah-Hartman <gregkh@suse.de>"
+      }
+    ],
+    "CVE-2010-4079": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=405707985594169cfd0b1d97d29fcb4b4c6f2ac9",
+        "title": "V4L/DVB: ivtvfb: prevent reading uninitialized stack memory",
+        "description": "The FBIOGET_VBLANK device ioctl allows unprivileged users to read 16 bytes of uninitialized stack memory, because the \"reserved\" member of the fb_vblank struct declared on the stack is not altered or zeroed before being copied back to the user. This patch takes care of it. Signed-off-by: Dan Rosenberg <dan.j.rosenberg@gmail.com> Signed-off-by: Andy Walls <awalls@md.metrocast.net> Signed-off-by: Mauro Carvalho Chehab <mchehab@redhat.com>"
+      }
+    ],
+    "CVE-2010-4080": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=e68d3b316ab7b02a074edc4f770e6a746390cb7d",
+        "title": "ALSA: sound/pci/rme9652: prevent reading uninitialized stack memory",
+        "description": "The SNDRV_HDSP_IOCTL_GET_CONFIG_INFO and SNDRV_HDSP_IOCTL_GET_CONFIG_INFO ioctls in hdspm.c and hdsp.c allow unprivileged users to read uninitialized kernel stack memory, because several fields of the hdsp{m}_config_info structs declared on the stack are not altered or zeroed before being copied back to the user. This patch takes care of it. Signed-off-by: Dan Rosenberg <dan.j.rosenberg@gmail.com> Cc: <stable@kernel.org> Signed-off-by: Takashi Iwai <tiwai@suse.de>"
+      }
+    ],
+    "CVE-2010-4157": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=f63ae56e4e97fb12053590e41a4fa59e7daa74a4",
+        "title": "[SCSI] gdth: integer overflow in ioctl",
+        "description": "gdth_ioctl_alloc() takes the size variable as an int. copy_from_user() takes the size variable as an unsigned long. gen.data_len and gen.sense_len are unsigned longs. On x86_64 longs are 64 bit and ints are 32 bit. We could pass in a very large number and the allocation would truncate the size to 32 bits and allocate a small buffer. Then when we do the copy_from_user(), it would result in a memory corruption. CC: stable@kernel.org Signed-off-by: Dan Carpenter <error27@gmail.com> Signed-off-by: James Bottomley <James.Bottomley@suse.de>"
+      }
+    ],
+    "CVE-2010-4158": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=57fe93b374a6b8711995c2d466c502af9f3a08bb",
+        "title": "filter: make sure filters dont read uninitialized memory",
+        "description": "There is a possibility malicious users can get limited information about uninitialized stack mem array. Even if sk_run_filter() result is bound to packet length (0 .. 65535), we could imagine this can be used by hostile user. Initializing mem[] array, like Dan Rosenberg suggested in his patch is expensive since most filters dont even use this array. Its hard to make the filter validation in sk_chk_filter(), because of the jumps. This might be done later. In this patch, I use a bitmap (a single long var) so that only filters using mem[] loads/stores pay the price of added security checks. For other filters, additional cost is a single instruction. [ Since we access fentry->k a lot now, cache it in a local variable and mark filter entry pointer as const. -DaveM ] Reported-by: Dan Rosenberg <drosenberg@vsecurity.com> Signed-off-by: Eric Dumazet <eric.dumazet@gmail.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-4160": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=8acfe468b0384e834a303f08ebc4953d72fb690a",
+        "title": "net: Limit socket I/O iovec total length to INT_MAX.",
+        "description": "This helps protect us from overflow issues down in the individual protocol sendmsg/recvmsg handlers. Once we hit INT_MAX we truncate out the rest of the iovec by setting the iov_len members to zero. This works because: 1) For SOCK_STREAM and SOCK_SEQPACKET sockets, partial writes are allowed and the application will just continue with another write to send the rest of the data. 2) For datagram oriented sockets, where there must be a one-to-one correspondance between write() calls and packets on the wire, INT_MAX is going to be far larger than the packet size limit the protocol is going to check for and signal with -EMSGSIZE. Based upon a patch by Linus Torvalds. Signed-off-by: David S. Miller <davem@davemloft.net>"
+      },
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=253eacc070b114c2ec1f81b067d2fed7305467b0",
+        "title": "net: Truncate recvfrom and sendto length to INT_MAX.",
+        "description": "Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-4162": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=cb4644cac4a2797afc847e6c92736664d4b0ea34",
+        "title": "bio: take care not overflow page count when mapping/copying user data",
+        "description": "If the iovec is being set up in a way that causes uaddr + PAGE_SIZE to overflow, we could end up attempting to map a huge number of pages. Check for this invalid input type. Reported-by: Dan Rosenberg <drosenberg@vsecurity.com> Cc: stable@kernel.org Signed-off-by: Jens Axboe <jaxboe@fusionio.com>"
+      }
+    ],
+    "CVE-2010-4163": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=9284bcf4e335e5f18a8bc7b26461c33ab60d0689",
+        "title": "block: check for proper length of iov entries in blk_rq_map_user_iov()",
+        "description": "Ensure that we pass down properly validated iov segments before calling into the mapping or copy functions. Reported-by: Dan Rosenberg <drosenberg@vsecurity.com> Cc: stable@kernel.org Signed-off-by: Jens Axboe <jaxboe@fusionio.com>"
+      }
+    ],
+    "CVE-2010-4169": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=63bfd7384b119409685a17d5c58f0b56e5dc03da",
+        "title": "perf_events: Fix perf_counter_mmap() hook in mprotect()",
+        "description": "As pointed out by Linus, commit dab5855 (\"perf_counter: Add mmap event hooks to mprotect()\") is fundamentally wrong as mprotect_fixup() can free 'vma' due to merging. Fix the problem by moving perf_event_mmap() hook to mprotect_fixup(). Note: there's another successful return path from mprotect_fixup() if old flags equal to new flags. We don't, however, need to call perf_event_mmap() there because 'perf' already knows the VMA is executable. Reported-by: Dave Jones <davej@redhat.com> Analyzed-by: Linus Torvalds <torvalds@linux-foundation.org> Cc: Ingo Molnar <mingo@elte.hu> Reviewed-by: Peter Zijlstra <a.p.zijlstra@chello.nl> Signed-off-by: Pekka Enberg <penberg@kernel.org> Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2010-4250": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=a2ae4cc9a16e211c8a128ba10d22a85431f093ab",
+        "title": "inotify: stop kernel memory leak on file creation failure",
+        "description": "If inotify_init is unable to allocate a new file for the new inotify group we leak the new group. This patch drops the reference on the group on file allocation failure. Reported-by: Vegard Nossum <vegard.nossum@gmail.com> cc: stable@kernel.org Signed-off-by: Eric Paris <eparis@redhat.com>"
+      }
+    ],
+    "CVE-2010-4256": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=c66fb347946ebdd5b10908866ecc9fa05ee2cf3d",
+        "title": "Export 'get_pipe_info()' to other users",
+        "description": "And in particular, use it in 'pipe_fcntl()'. The other pipe functions do not need to use the 'careful' version, since they are only ever called for things that are already known to be pipes. The normal read/write/ioctl functions are called through the file operations structures, so if a file isn't a pipe, they'd never get called. But pipe_fcntl() is special, and called directly from the generic fcntl code, and needs to use the same careful function that the splice code is using. Cc: Jens Axboe <jaxboe@fusionio.com> Cc: Andrew Morton <akpm@linux-foundation.org> Cc: Al Viro <viro@zeniv.linux.org.uk> Cc: Dave Jones <davej@redhat.com> Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2010-4258": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=33dd94ae1ccbfb7bf0fb6c692bc3d1c4269e6177",
+        "title": "do_exit(): make sure that we run with get_fs() == USER_DS",
+        "description": "If a user manages to trigger an oops with fs set to KERNEL_DS, fs is not otherwise reset before do_exit(). do_exit may later (via mm_release in fork.c) do a put_user to a user-controlled address, potentially allowing a user to leverage an oops into a controlled write into kernel memory. This is only triggerable in the presence of another bug, but this potentially turns a lot of DoS bugs into privilege escalations, so it's worth fixing. I have proof-of-concept code which uses this bug along with CVE-2010-3849 to write a zero to an arbitrary kernel address, so I've tested that this is not theoretical. A more logical place to put this fix might be when we know an oops has occurred, before we call do_exit(), but that would involve changing every architecture, in multiple places. Let's just stick it in do_exit instead. [akpm@linux-foundation.org: update code comment] Signed-off-by: Nelson Elhage <nelhage@ksplice.com> Cc: KOSAKI Motohiro <kosaki.motohiro@jp.fujitsu.com> Cc: <stable@kernel.org> Signed-off-by: Andrew Morton <akpm@linux-foundation.org> Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2010-4263": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=31b24b955c3ebbb6f3008a6374e61cf7c05a193c",
+        "title": "igb: only use vlan_gro_receive if vlans are registered",
+        "description": "This change makes it so that vlan_gro_receive is only used if vlans have been registered to the adapter structure. Previously we were just sending all vlan tagged frames in via this function but this results in a null pointer dereference when vlans are not registered. [ This fixes bugzilla entry 15582 -Eric Dumazet] Signed-off-by: Alexander Duyck <alexander.h.duyck@intel.com> Signed-off-by: Jeff Kirsher <jeffrey.t.kirsher@intel.com> Acked-by: Eric Dumazet <eric.dumazet@gmail.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-4342": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=4e085e76cbe558b79b54cbab772f61185879bc64",
+        "title": "econet: Fix crash in aun_incoming().",
+        "description": "Unconditional use of skb->dev won't work here, try to fetch the econet device via skb_dst()->dev instead. Suggested by Eric Dumazet. Reported-by: Nelson Elhage <nelhage@ksplice.com> Tested-by: Nelson Elhage <nelhage@ksplice.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2010-4346": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=462e635e5b73ba9a4c03913b77138cd57ce4b050",
+        "title": "install_special_mapping skips security_file_mmap check.",
+        "description": "The install_special_mapping routine (used, for example, to setup the vdso) skips the security check before insert_vm_struct, allowing a local attacker to bypass the mmap_min_addr security restriction by limiting the available pages for special mappings. bprm_mm_init() also skips the check, and although I don't think this can be used to bypass any restrictions, I don't see any reason not to have the security check. $ uname -m x86_64 $ cat /proc/sys/vm/mmap_min_addr 65536 $ cat install_special_mapping.s section .bss resb BSS_SIZE section .text global _start _start: mov eax, __NR_pause int 0x80 $ nasm -D__NR_pause=29 -DBSS_SIZE=0xfffed000 -f elf -o install_special_mapping.o install_special_mapping.s $ ld -m elf_i386 -Ttext=0x10000 -Tbss=0x11000 -o install_special_mapping install_special_mapping.o $ ./install_special_mapping & [1] 14303 $ cat /proc/14303/maps 0000f000-00010000 r-xp 00000000 00:00 0 [vdso] 00010000-00011000 r-xp 00001000 00:19 2453665 /home/taviso/install_special_mapping 00011000-ffffe000 rwxp 00000000 00:00 0 [stack] It's worth noting that Red Hat are shipping with mmap_min_addr set to 4096. Signed-off-by: Tavis Ormandy <taviso@google.com> Acked-by: Kees Cook <kees@ubuntu.com> Acked-by: Robert Swiecki <swiecki@google.com> [ Changed to not drop the error code - akpm ] Reviewed-by: James Morris <jmorris@namei.org> Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2010-4347": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=ed3aada1bf34c5a9e98af167f125f8a740fc726a",
+        "title": "ACPI: debugfs custom_method open to non-root",
+        "description": "Currently we have: --w--w--w-. 1 root root 0 2010-11-11 14:56 /sys/kernel/debug/acpi/custom_method which is just crazy. Change this to --w-------. Signed-off-by: Dave Jones <davej@redhat.com> Signed-off-by: Len Brown <len.brown@intel.com> Cc: stable@kernel.org (for 2.6.36) Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2010-4649": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=7182afea8d1afd432a17c18162cc3fd441d0da93",
+        "title": "IB/uverbs: Handle large number of entries in poll CQ",
+        "description": "In ib_uverbs_poll_cq() code there is a potential integer overflow if userspace passes in a large cmd.ne. The calls to kmalloc() would allocate smaller buffers than intended, leading to memory corruption. There iss also an information leak if resp wasn't all used. Unprivileged userspace may call this function, although only if an RDMA device that uses this function is present. Fix this by copying CQ entries one at a time, which avoids the allocation entirely, and also by moving this copying into a function that makes sure to initialize all memory copied to userspace. Special thanks to Jason Gunthorpe <jgunthorpe@obsidianresearch.com> for his help and advice. Cc: <stable@kernel.org> Signed-off-by: Dan Carpenter <error27@gmail.com> [ Monkey around with things a bit to avoid bad code generation by gcc when designated initializers are used. - Roland ] Signed-off-by: Roland Dreier <rolandd@cisco.com>"
+      }
+    ],
+    "CVE-2010-4650": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=7572777eef78ebdee1ecb7c258c0ef94d35bad16",
+        "title": "fuse: verify ioctl retries",
+        "description": "Verify that the total length of the iovec returned in FUSE_IOCTL_RETRY doesn't overflow iov_length(). Signed-off-by: Miklos Szeredi <mszeredi@suse.cz> CC: Tejun Heo <tj@kernel.org> CC: <stable@kernel.org> [2.6.31+]"
+      }
+    ],
+    "CVE-2010-4656": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=3ed780117dbe5acb64280d218f0347f238dafed0",
+        "title": "usb: iowarrior: don't trust report_size for buffer size",
+        "description": "If the iowarrior devices in this case statement support more than 8 bytes per report, it is possible to write past the end of a kernel heap allocation. This will probably never be possible, but change the allocation to be more defensive anyway. Signed-off-by: Kees Cook <kees.cook@canonical.com> Signed-off-by: Greg Kroah-Hartman <gregkh@suse.de>"
+      }
+    ],
+    "CVE-2010-5328": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=fa2755e20ab0c7215d99c2dc7c262e98a09b01df",
+        "title": "INIT_TASK() should initialize ->thread_group list",
+        "description": "The trivial /sbin/init doing int main(void) { kill(0, SIGKILL) } crashes the kernel. This happens because __kill_pgrp_info(init_struct_pid) also sends SIGKILL to the swapper process which runs with the uninitialized ->thread_group. Change INIT_TASK() to initialize ->thread_group properly. Note: the real problem is that the swapper process must not be visible to signals, see the next patch. But this change is right anyway and fixes the crash. Reported-and-tested-by: Mathias Krause <mathias.krause@secunet.com> Signed-off-by: Oleg Nesterov <oleg@redhat.com> Cc: Cedric Le Goater <clg@fr.ibm.com> Cc: Dave Hansen <haveblue@us.ibm.com> Cc: Eric Biederman <ebiederm@xmission.com> Cc: Herbert Poetzl <herbert@13thfloor.at> Cc: Mathias Krause <Mathias.Krause@secunet.com> Acked-by: Roland McGrath <roland@redhat.com> Acked-by: Serge Hallyn <serue@us.ibm.com> Acked-by: Sukadev Bhattiprolu <sukadev@us.ibm.com> Signed-off-by: Andrew Morton <akpm@linux-foundation.org> Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      },
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=f20011457f41c11edb5ea5038ad0c8ea9f392023",
+        "title": "pids: init_struct_pid.tasks should never see the swapper process",
+        "description": "\"statically initialize struct pid for swapper\" commit 820e45db says: Statically initialize a struct pid for the swapper process (pid_t == 0) and attach it to init_task. This is needed so task_pid(), task_pgrp() and task_session() interfaces work on the swapper process also. OK, but: - it doesn't make sense to add init_task.pids[].node into init_struct_pid.tasks[], and in fact this just wrong. idle threads are special, they shouldn't be visible on any global list. In particular do_each_pid_task(init_struct_pid) shouldn't see swapper. This is the actual reason why kill(0, SIGKILL) from /sbin/init (which starts with 0,0 special pids) crashes the kernel. The signal sent to pgid/sid == 0 must never see idle threads, even if the previous patch fixed the crash itself. - we have other idle threads running on the non-boot CPUs, see the next patch. Change INIT_STRUCT_PID/INIT_PID_LINK to create the empty/unhashed hlist_head/hlist_node. Like any other idle thread swapper can never exit, so detach_pid()->__hlist_del() is not possible, but we could change INIT_PID_LINK() to set pprev = &next if needed. All we need is the valid swapper->pids[].pid == &init_struct_pid. Reported-by: Mathias Krause <mathias.krause@secunet.com> Signed-off-by: Oleg Nesterov <oleg@redhat.com> Cc: Cedric Le Goater <clg@fr.ibm.com> Cc: Dave Hansen <haveblue@us.ibm.com> Cc: Eric Biederman <ebiederm@xmission.com> Cc: Herbert Poetzl <herbert@13thfloor.at> Cc: Mathias Krause <Mathias.Krause@secunet.com> Acked-by: Roland McGrath <roland@redhat.com> Acked-by: Serge Hallyn <serue@us.ibm.com> Cc: Sukadev Bhattiprolu <sukadev@us.ibm.com> Signed-off-by: Andrew Morton <akpm@linux-foundation.org> Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      },
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=f106eee10038c2ee5b6056aaf3f6d5229be6dcdd",
+        "title": "pids: fix fork_idle() to setup ->pids correctly",
+        "description": "copy_process(pid => &init_struct_pid) doesn't do attach_pid/etc. It shouldn't, but this means that the idle threads run with the wrong pids copied from the caller's task_struct. In x86 case the caller is either kernel_init() thread or keventd. In particular, this means that after the series of cpu_up/cpu_down an idle thread (which never exits) can run with .pid pointing to nowhere. Change fork_idle() to initialize idle->pids[] correctly. We only set .pid = &init_struct_pid but do not add .node to list, INIT_TASK() does the same for the boot-cpu idle thread (swapper). Signed-off-by: Oleg Nesterov <oleg@redhat.com> Cc: Cedric Le Goater <clg@fr.ibm.com> Cc: Dave Hansen <haveblue@us.ibm.com> Cc: Eric Biederman <ebiederm@xmission.com> Cc: Herbert Poetzl <herbert@13thfloor.at> Cc: Mathias Krause <Mathias.Krause@secunet.com> Acked-by: Roland McGrath <roland@redhat.com> Acked-by: Serge Hallyn <serue@us.ibm.com> Cc: Sukadev Bhattiprolu <sukadev@us.ibm.com> Signed-off-by: Andrew Morton <akpm@linux-foundation.org> Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2010-5329": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=fc0a80798576f80ca10b3f6c9c7097f12fd1d64e",
+        "title": "[media] v4l: Share code between video_usercopy and video_ioctl2",
+        "description": "The two functions are mostly identical. They handle the copy_from_user and copy_to_user operations related with V4L2 ioctls and call the real ioctl handler. Create a __video_usercopy function that implements the core of video_usercopy and video_ioctl2, and call that function from both. Signed-off-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com> Acked-by: Hans Verkuil <hverkuil@xs4all.nl> Signed-off-by: Mauro Carvalho Chehab <mchehab@redhat.com>"
+      }
+    ],
+    "CVE-2010-5332": [
+      {
+        "url": "https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=0926f91083f34d047abc74f1ca4fa6a9c161f7db",
+        "title": "mlx4_en: Fix out of bounds array access",
+        "description": "When searching for a free entry in either mlx4_register_vlan() or mlx4_register_mac(), and there is no free entry, the loop terminates without updating the local variable free thus causing out of array bounds access. Fix this by adding a proper check outside the loop. Signed-off-by: Eli Cohen <eli@mellanox.co.il> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ]
+  }
 }

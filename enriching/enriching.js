@@ -1,5 +1,5 @@
 const { drivers } = require('./drivers');
-const { global: { years, enrichedDataPath: path, refrensesConfig } } = require('../config');
+const { global: { years, enrichedDataPath: path, referencesConfig } } = require('../config');
 const { readJsonFileSync, writeJsonFileSync } = require('../util');
 
 async function enrich({ year, referenceSymbol }) {
@@ -12,28 +12,34 @@ async function enrich({ year, referenceSymbol }) {
     let hasEnreached = false;
     for (const ref of report.references) {
       const driver = drivers[ref.hostname];
-      const { symbol } = refrensesConfig[ref.hostname];
-      if (ref && !ref.enriched && driver && !ref.error && (!referenceSymbol || referenceSymbol === symbol)) {
+      const { symbol } = referencesConfig[ref.hostname];
+      if (ref && !ref.enriched && driver && (!referenceSymbol || referenceSymbol === symbol)) {
         hasEnreached = true;
         try {
           const extractData = await driver.extract({ url: ref.url, cveId: report.cveId });
+          if (extractData === false) {
+            ref.enriched = true;
+            ref.notValid = true;
 
-          const enrichedData = readJsonFileSync(`../${path}/${year}/enriched/${symbol}.json`);
-          enrichedData.total++;
-
-          if (!enrichedData.reports[report.cveId]) {
-            enrichedData.reports[report.cveId] = [];
+            console.log(`${year} - Enriched not valid: ${report.cveId}, Symbol: ${referenceSymbol? referenceSymbol : 'N/A'}  Host: ${ref.hostname} Total left: ${count}`)
+          } else {
+            const enrichedData = readJsonFileSync(`../${path}/${year}/enriched/${symbol}.json`);
+            enrichedData.total++;
+  
+            if (!enrichedData.reports[report.cveId]) {
+              enrichedData.reports[report.cveId] = [];
+            }
+  
+            enrichedData.reports[report.cveId].push({
+              url: ref.url,
+              ...extractData,
+            });
+            
+            writeJsonFileSync(`../${path}/${year}/enriched/${symbol}.json`, enrichedData);
+  
+            ref.enriched = true;
+            console.log(`${year} - Enriched: ${report.cveId}, Symbol: ${referenceSymbol? referenceSymbol : 'N/A'}  Host: ${ref.hostname} Total left: ${count}`)
           }
-
-          enrichedData.reports[report.cveId].push({
-            url: ref.url,
-            ...extractData,
-          });
-          
-          writeJsonFileSync(`../${path}/${year}/enriched/${symbol}.json`, enrichedData);
-
-          ref.enriched = true;
-          console.log(`${year} - Enriched: ${report.cveId}, Symbol: ${referenceSymbol? referenceSymbol : 'N/A'}  Host: ${ref.hostname} Total left: ${count}`)
         } catch(e) {
           ref.error = true;
           console.error('Error: ', e);
@@ -41,18 +47,20 @@ async function enrich({ year, referenceSymbol }) {
       }
     }
 
-    if (hasEnreached) {
-      processReport(report, year);
+    const notEnriched = report.references.filter(r => !r.enriched);
+    const fullyEnreached = notEnriched.length === 0
+
+    if (hasEnreached || fullyEnreached) {
+      processReport(fullyEnreached, report, year);
     }
   }
 }
 
-function processReport(report, year) {
-  const notEnriched = report.references.filter(r => !r.enriched);
+function processReport(fullyEnreached, report, year) {
   const initData = readJsonFileSync(`../${path}/${year}/init.json`);
   const indexOfReport = initData.reports.findIndex(r => r.cveId === report.cveId);
 
-  if (notEnriched.length === 0) {
+  if (fullyEnreached) {
     initData.total--;
     initData.reports.splice(indexOfReport, 1);
 
@@ -71,13 +79,13 @@ async function main() {
   if (process.env.YEAR) {
     await enrich({ 
       year: process.env.YEAR, 
-      referenceSymbol: process.env.REF_SYMBOL 
+      referenceSymbol: process.env.REF_SYMBOL,
     });
   } else {
     for (let year of years) {
       await enrich({ 
         year, 
-        referenceSymbol: process.env.REF_SYMBOL 
+        referenceSymbol: process.env.REF_SYMBOL,
       });
     } 
   }

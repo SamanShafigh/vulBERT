@@ -1,6 +1,1297 @@
 {
   "year": 2011,
-  "total": 0,
+  "total": 192,
   "reference": "ubuntu.com",
-  "reports": {}
+  "reports": {
+    "CVE-2011-0010": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1046-1",
+        "title": "USN-1046-1: Sudo vulnerability",
+        "body": "Alexander Kurtz discovered that sudo would not prompt for a password whena group was specified in the Runas_Spec. A local attacker could exploitthis to execute arbitrary code as the specified group if sudo wasconfigured to allow the attacker to use a program as this group. The groupRunas_Spec is not used in the default installation of Ubuntu."
+      }
+    ],
+    "CVE-2011-0011": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1063-1",
+        "title": "USN-1063-1: QEMU vulnerability",
+        "body": "Neil Wilson discovered that if VNC passwords were blank in QEMUconfigurations, access to VNC sessions was allowed without a passwordinstead of being disabled. A remote attacker could connect to runningVNC sessions of QEMU and directly control the system. By default, QEMUdoes not start VNC sessions."
+      }
+    ],
+    "CVE-2011-0014": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1064-1",
+        "title": "USN-1064-1: OpenSSL vulnerability",
+        "body": "Neel Mehta discovered that incorrectly formatted ClientHello handshakemessages could cause OpenSSL to parse past the end of the message.This could allow a remote attacker to cause a crash and denial ofservice by triggering invalid memory accesses."
+      }
+    ],
+    "CVE-2011-0017": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1060-1",
+        "title": "USN-1060-1: Exim vulnerabilities",
+        "body": "It was discovered that Exim incorrectly handled certain return values whenhandling logging. An attacker that obtained privileges of the \"Debian-exim\"user could use this flaw to obtain root privileges. (CVE-2011-0017)"
+      }
+    ],
+    "CVE-2011-0025": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1055-1",
+        "title": "USN-1055-1: OpenJDK vulnerabilities",
+        "body": "It was discovered that IcedTea for Java did not properly verifysignatures when handling multiply signed or partially signed JAR files,allowing an attacker to cause code to execute that appeared to comefrom a verified source. (CVE-2011-0025)"
+      }
+    ],
+    "CVE-2011-0083": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1149-1",
+        "title": "USN-1149-1: Firefox and Xulrunner vulnerabilities",
+        "body": "Multiple use-after-free vulnerabilities were discovered. An attacker couldpotentially use these to execute arbitrary code with the privileges of theuser invoking Firefox. (CVE-2011-0083, CVE-2011-0085, CVE-2011-2363)"
+      }
+    ],
+    "CVE-2011-0085": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1149-1",
+        "title": "USN-1149-1: Firefox and Xulrunner vulnerabilities",
+        "body": "Multiple use-after-free vulnerabilities were discovered. An attacker couldpotentially use these to execute arbitrary code with the privileges of theuser invoking Firefox. (CVE-2011-0083, CVE-2011-0085, CVE-2011-2363)"
+      }
+    ],
+    "CVE-2011-0284": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1088-1",
+        "title": "USN-1088-1: Kerberos vulnerability",
+        "body": "Cameron Meadors discovered that the MIT Kerberos 5 Key DistributionCenter (KDC) daemon is vulnerable to a double-free condition ifthe Public Key Cryptography for Initial Authentication (PKINIT)capability is enabled. This could allow a remote attacker to causea denial of service."
+      }
+    ],
+    "CVE-2011-0414": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1070-1",
+        "title": "USN-1070-1: Bind vulnerability",
+        "body": "It was discovered that Bind incorrectly handled IXFR transfers and dynamicupdates while under heavy load when used as an authoritative server. Aremote attacker could use this flaw to cause Bind to stop responding,resulting in a denial of service."
+      }
+    ],
+    "CVE-2011-0463": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1146-1",
+        "title": "USN-1146-1: Linux kernel vulnerabilities",
+        "body": "Goldwyn Rodrigues discovered that the OCFS2 filesystem did not correctlyclear memory when writing certain file holes. A local attacker couldexploit this to read uninitialized data from the disk, leading to a loss ofprivacy. (CVE-2011-0463)"
+      }
+    ],
+    "CVE-2011-0465": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1107-1",
+        "title": "USN-1107-1: x11-xserver-utils vulnerability",
+        "body": "Sebastian Krahmer discovered that the xrdb utility incorrectly filteredcrafted hostnames. An attacker could use this flaw with a maliciousDHCP server or with a remote xdmcp login and execute arbitrary code,resulting in root privilege escalation."
+      }
+    ],
+    "CVE-2011-0528": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1365-1",
+        "title": "USN-1365-1: Puppet vulnerability",
+        "body": "It was discovered that Puppet would allow remote ralsh under certaincircumstances. An attacker on an authenticated puppet node could exploitthis to view or manipulate resources on other Puppet nodes."
+      }
+    ],
+    "CVE-2011-0696": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1066-1",
+        "title": "USN-1066-1: Django vulnerabilities",
+        "body": "It was discovered that Django did not properly validate HTTP requests thatcontain an X-Requested-With header. An attacker could exploit thisvulnerability to perform cross-site request forgery (CSRF) attacks.(CVE-2011-0696)"
+      }
+    ],
+    "CVE-2011-0697": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1066-1",
+        "title": "USN-1066-1: Django vulnerabilities",
+        "body": "It was discovered that Django did not properly sanitize its input whenperforming file uploads, resulting in cross-site scripting (XSS)vulnerabilities. With cross-site scripting vulnerabilities, if a user weretricked into viewing server output during a crafted server request, aremote attacker could exploit this to modify the contents, or stealconfidential data, within the same domain. (CVE-2011-0697)"
+      }
+    ],
+    "CVE-2011-0707": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1069-1",
+        "title": "USN-1069-1: Mailman vulnerabilities",
+        "body": "It was discovered that Mailman did not properly sanitize certain fields,resulting in cross-site scripting (XSS) vulnerabilities. With cross-sitescripting vulnerabilities, if a user were tricked into viewing serveroutput during a crafted server request, a remote attacker could exploitthis to modify the contents, or steal confidential data, within the samedomain."
+      }
+    ],
+    "CVE-2011-0719": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1075-1",
+        "title": "USN-1075-1: Samba vulnerability",
+        "body": "Volker Lendecke discovered that Samba incorrectly handled certain filedescriptors. A remote attacker could send a specially crafted request tothe server and cause Samba to crash or hang, resulting in a denial ofservice."
+      }
+    ],
+    "CVE-2011-0721": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1065-1",
+        "title": "USN-1065-1: shadow vulnerability",
+        "body": "Kees Cook discovered that some shadow utilities did not correctly validateuser input. A local attacker could exploit this flaw to inject newlines intothe /etc/passwd file. If the system was configured to use NIS, this couldlead to existing NIS groups or users gaining or losing access to the system,resulting in a denial of service or unauthorized access."
+      }
+    ],
+    "CVE-2011-0722": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-1104-1/",
+        "title": "USN-1104-1: FFmpeg vulnerabilities",
+        "body": "Dan Rosenberg discovered that FFmpeg incorrectly handled certain malformedRealMedia files. If a user were tricked into opening a crafted RealMediafile, an attacker could cause a denial of service via application crash, orpossibly execute arbitrary code with the privileges of the user invokingthe program. This issue only affected Ubuntu 8.04 LTS, 9.10 and 10.04 LTS.(CVE-2011-0722)"
+      }
+    ],
+    "CVE-2011-0723": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-1104-1/",
+        "title": "USN-1104-1: FFmpeg vulnerabilities",
+        "body": "Dan Rosenberg discovered that FFmpeg incorrectly handled certain malformedVC1 files. If a user were tricked into opening a crafted VC1 file, anattacker could cause a denial of service via application crash, or possiblyexecute arbitrary code with the privileges of the user invoking theprogram. (CVE-2011-0723)"
+      }
+    ],
+    "CVE-2011-0724": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1061-1",
+        "title": "USN-1061-1: iTALC vulnerability",
+        "body": "Stéphane Graber discovered that the iTALC private keys shipped with theEdubuntu Live DVD were not correctly regenerated once Edubuntu wasinstalled. If an iTALC client was installed with the vulnerable keys, aremote attacker could gain control of the system. Only systems using keysfrom the Edubuntu Live DVD were affected."
+      }
+    ],
+    "CVE-2011-0725": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1068-1",
+        "title": "USN-1068-1: Aptdaemon vulnerability",
+        "body": "Sergey Nizovtsev discovered that Aptdaemon incorrectly filtered certainarguments when using its D-Bus interface. A local attacker could use thisflaw to bypass security restrictions and view sensitive information byreading arbitrary files."
+      }
+    ],
+    "CVE-2011-0729": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1115-1/",
+        "title": "USN-1115-1: language-selector vulnerability",
+        "body": "Romain Perier discovered that the language-selector D-Bus backend did notcorrectly check for Policy Kit authorizations. A local attacker could exploitthis to inject shell commands into the system-wide locale configuration file,leading to root privilege escalation."
+      }
+    ],
+    "CVE-2011-0730": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1137-1",
+        "title": "USN-1137-1: Eucalyptus vulnerability",
+        "body": "Juraj Somorovsky, Jorg Schwenk, Meiko Jensen and Xiaofeng Lou discoveredthat Eucalyptus did not properly validate SOAP requests. An unauthenticatedremote attacker could exploit this to submit arbitrary commands to theEucalyptus SOAP interface in the context of an authenticated user."
+      }
+    ],
+    "CVE-2011-0764": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1316-1",
+        "title": "USN-1316-1: t1lib vulnerability",
+        "body": "Jonathan Brossard discovered that t1lib did not correctly handle certainmalformed font files. If a user were tricked into using a specially craftedfont file, a remote attacker could cause t1lib to crash or possibly executearbitrary code with user privileges."
+      }
+    ],
+    "CVE-2011-0904": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-1128-1/",
+        "title": "USN-1128-1: Vino vulnerabilities",
+        "body": "Kevin Chen discovered that Vino incorrectly handled certain clientframebuffer requests. A remote attacker could use this flaw to cause Vinoto crash, leading to a denial of service."
+      }
+    ],
+    "CVE-2011-0905": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-1128-1/",
+        "title": "USN-1128-1: Vino vulnerabilities",
+        "body": "Kevin Chen discovered that Vino incorrectly handled certain clientframebuffer requests. A remote attacker could use this flaw to cause Vinoto crash, leading to a denial of service."
+      }
+    ],
+    "CVE-2011-0997": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1108-1",
+        "title": "USN-1108-1: DHCP vulnerability",
+        "body": "Sebastian Krahmer discovered that the dhclient utility incorrectly filteredcrafted responses. An attacker could use this flaw with a malicious DHCPserver to execute arbitrary code, resulting in root privilege escalation."
+      }
+    ],
+    "CVE-2011-1000": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1067-1",
+        "title": "USN-1067-1: Telepathy Gabble vulnerability",
+        "body": "It was discovered that Gabble did not verify the from field of googlejingleinfo updates. This could allow a remote attacker to perform manin the middle attacks (MITM) on streamed media."
+      }
+    ],
+    "CVE-2011-1002": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1084-1",
+        "title": "USN-1084-1: avahi vulnerability",
+        "body": "It was discovered that Avahi incorrectly handled empty UDP packets. Aremote attacker could send a specially-crafted packet and cause Avahi tohang, resulting in a denial of service."
+      }
+    ],
+    "CVE-2011-1003": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1076-1",
+        "title": "USN-1076-1: ClamAV vulnerability",
+        "body": "It was discovered that the Microsoft Office processing code in libclamavimproperly handled certain Visual Basic for Applications (VBA) data. Thiscould allow a remote attacker to craft a document that could crash clamavor possibly execute arbitrary code.In the default installation, attackers would be isolated by theClamAV AppArmor profile."
+      }
+    ],
+    "CVE-2011-1015": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1596-1",
+        "title": "USN-1596-1: Python 2.6 vulnerabilities",
+        "body": "It was discovered that the CGIHTTPServer module did not properly performinput validation on certain HTTP GET requests. A remote attacker couldpotentially obtain access to CGI script source files. (CVE-2011-1015)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1613-2",
+        "title": "USN-1613-2: Python 2.4 vulnerabilities",
+        "body": "It was discovered that the CGIHTTPServer module did not properly perform input validation on certain HTTP GET requests. A remote attacker could potentially obtain access to CGI script source files. (CVE-2011-1015)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1613-1",
+        "title": "USN-1613-1: Python 2.5 vulnerabilities",
+        "body": "It was discovered that the CGIHTTPServer module did not properly performinput validation on certain HTTP GET requests. A remote attacker couldpotentially obtain access to CGI script source files. (CVE-2011-1015)"
+      }
+    ],
+    "CVE-2011-1017": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1146-1",
+        "title": "USN-1146-1: Linux kernel vulnerabilities",
+        "body": "Timo Warns discovered that the LDM disk partition handling code did notcorrectly handle certain values. By inserting a specially crafted diskdevice, a local attacker could exploit this to gain root privileges.(CVE-2011-1017)"
+      }
+    ],
+    "CVE-2011-1018": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1078-1",
+        "title": "USN-1078-1: Logwatch vulnerability",
+        "body": "Dominik George discovered that logwatch did not properly sanitizelog file names that were passed to the shell as part of a command.If a remote attacker were able to generate specially crafted filenames(for example, via Samba logging), they could execute arbitrary codewith root privileges."
+      }
+    ],
+    "CVE-2011-1024": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1100-1",
+        "title": "USN-1100-1: OpenLDAP vulnerabilities",
+        "body": "It was discovered that OpenLDAP did not properly check forwardedauthentication failures when using a slave server and chain overlay. IfOpenLDAP were configured in this manner, an attacker could bypassauthentication checks by sending an invalid password to a slave server.(CVE-2011-1024)"
+      }
+    ],
+    "CVE-2011-1025": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1100-1",
+        "title": "USN-1100-1: OpenLDAP vulnerabilities",
+        "body": "It was discovered that OpenLDAP did not properly perform authenticationchecks to the rootdn when using the back-ndb backend. An attacker couldexploit this to access the directory by sending an arbitrary password.Ubuntu does not ship OpenLDAP with back-ndb support by default. This issuedid not affect Ubuntu 8.04 LTS. (CVE-2011-1025)"
+      }
+    ],
+    "CVE-2011-1058": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1604-1",
+        "title": "USN-1604-1: MoinMoin vulnerabilities",
+        "body": "It was discovered that MoinMoin did not properly sanitize certain input,resulting in a cross-site scripting (XSS) vulnerability. With cross-sitescripting vulnerabilities, if a user were tricked into viewing serveroutput during a crafted server request, a remote attacker could exploitthis to modify the contents, or steal confidential data, within the samedomain. (CVE-2011-1058)"
+      }
+    ],
+    "CVE-2011-1081": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1100-1",
+        "title": "USN-1100-1: OpenLDAP vulnerabilities",
+        "body": "It was discovered that OpenLDAP did not properly validate modrdn requests.An unauthenticated remote user could use this to cause a denial of servicevia application crash. (CVE-2011-1081)"
+      }
+    ],
+    "CVE-2011-1094": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1110-1",
+        "title": "USN-1110-1: KDE-Libs vulnerabilities",
+        "body": "It was discovered that KDE KSSL did not properly verify X.509 certificateswhen the certificate was issued for an IP address. An attacker couldexploit this to perform a man in the middle attack to view sensitiveinformation or alter encrypted communications. (CVE-2011-1094)"
+      }
+    ],
+    "CVE-2011-1146": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1094-1",
+        "title": "USN-1094-1: Libvirt vulnerability",
+        "body": "Petr Matousek discovered that libvirt did not always honor read-onlyconnections. An attacker who is authorized to connect to the libvirt daemoncould exploit this to cause a denial of service via application crash."
+      }
+    ],
+    "CVE-2011-1167": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1102-1",
+        "title": "USN-1102-1: tiff vulnerability",
+        "body": "Martin Barbella discovered that the thunder (aka ThunderScan) decoder inthe TIFF library incorrectly handled an unexpected BitsPerSample value. Ifa user or automated system were tricked into opening a specially craftedTIFF image, a remote attacker could execute arbitrary code with userprivileges, or crash the application, leading to a denial of service."
+      }
+    ],
+    "CVE-2011-1168": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1110-1",
+        "title": "USN-1110-1: KDE-Libs vulnerabilities",
+        "body": "Tim Brown discovered that KDE KHTML did not properly escape URLs fromexternally generated error pages. An attacker could expoit this to conductcross-site scripting attacks. With cross-site scripting vulnerabilities, ifa user were tricked into viewing server output during a crafted serverrequest, a remote attacker could exploit this to modify the contents, orsteal confidential data (such as passwords), within the same domain.(CVE-2011-1168)"
+      }
+    ],
+    "CVE-2011-1398": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1569-1",
+        "title": "USN-1569-1: PHP vulnerabilities",
+        "body": "It was discovered that PHP incorrectly handled certain character sequenceswhen applying HTTP response-splitting protection. A remote attacker couldcreate a specially-crafted URL and inject arbitrary headers.(CVE-2011-1398, CVE-2012-4388)"
+      }
+    ],
+    "CVE-2011-1407": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1135-1",
+        "title": "USN-1135-1: Exim vulnerability",
+        "body": "It was discovered that the Exim daemon did not correctly handle certainDKIM identities. A remote attacker could send specially crafted email torun arbitrary code as the Exim user."
+      }
+    ],
+    "CVE-2011-1486": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1152-1",
+        "title": "USN-1152-1: libvirt vulnerabilities",
+        "body": "It was discovered that libvirt did not use thread-safe error reporting. Aremote attacker could exploit this to cause a denial of service viaapplication crash. (CVE-2011-1486)"
+      }
+    ],
+    "CVE-2011-1521": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1596-1",
+        "title": "USN-1596-1: Python 2.6 vulnerabilities",
+        "body": "Niels Heinen discovered that the urllib and urllib2 modules would processLocation headers that specify a redirection to file: URLs. A remoteattacker could exploit this to obtain sensitive information or cause adenial of service. This issue only affected Ubuntu 11.04. (CVE-2011-1521)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1613-2",
+        "title": "USN-1613-2: Python 2.4 vulnerabilities",
+        "body": "Niels Heinen discovered that the urllib and urllib2 modules would process Location headers that specify a redirection to file: URLs. A remote attacker could exploit this to obtain sensitive information or cause a denial of service. (CVE-2011-1521)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1592-1",
+        "title": "USN-1592-1: Python 2.7 vulnerabilities",
+        "body": "Niels Heinen discovered that the urllib and urllib2 modules would processLocation headers that specify a redirection to file: URLs. A remoteattacker could exploit this to obtain sensitive information or cause adenial of service. This issue only affected Ubuntu 11.04. (CVE-2011-1521)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1613-1",
+        "title": "USN-1613-1: Python 2.5 vulnerabilities",
+        "body": "Niels Heinen discovered that the urllib and urllib2 modules would processLocation headers that specify a redirection to file: URLs. A remoteattacker could exploit this to obtain sensitive information or cause adenial of service. (CVE-2011-1521)"
+      }
+    ],
+    "CVE-2011-1523": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1151-1",
+        "title": "USN-1151-1: Nagios vulnerabilities",
+        "body": "Stefan Schurtz discovered than Nagios did not properly sanitize its inputwhen processing certain requests, resulting in cross-site scripting (XSS)vulnerabilities. With cross-site scripting vulnerabilities, if a user weretricked into viewing server output during a crafted server request, aremote attacker could exploit this to modify the contents, or stealconfidential data, within the same domain."
+      }
+    ],
+    "CVE-2011-1574": [
+      {
+        "url": "https://www.ubuntu.com/usn/USN-1148-1/",
+        "title": "USN-1148-1: libmodplug vulnerabilities",
+        "body": "It was discovered that libmodplug did not correctly handle certainmalformed S3M media files. If a user or automated system were tricked intoopening a crafted S3M file, an attacker could cause a denial of service orpossibly execute arbitrary code with privileges of the user invoking theprogram. (CVE-2011-1574)"
+      }
+    ],
+    "CVE-2011-1586": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-1114-1/",
+        "title": "USN-1114-1: KDENetwork vulnerability",
+        "body": "It was discovered that KGet did not properly perform input validation whenprocessing metalink files. If a user were tricked into opening a craftedmetalink file, a remote attacker could overwrite files via directorytraversal, which could eventually lead to arbitrary code execution."
+      }
+    ],
+    "CVE-2011-1593": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1146-1",
+        "title": "USN-1146-1: Linux kernel vulnerabilities",
+        "body": "Tavis Ormandy discovered that the pidmap function did not correctly handlelarge requests. A local attacker could exploit this to crash the system,leading to a denial of service. (CVE-2011-1593)"
+      }
+    ],
+    "CVE-2011-1595": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1136-1",
+        "title": "USN-1136-1: rdesktop vulnerability",
+        "body": "It was discovered that rdesktop incorrectly handled specially craftedpaths when using disk redirection. If a user were tricked into connectingto a malicious server, an attacker could access arbitrary files on theuser's filesystem."
+      }
+    ],
+    "CVE-2011-1709": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1142-1",
+        "title": "USN-1142-1: GDM vulnerability",
+        "body": "Henne Vogelsang discovered that under certain PolicyKit configurations, GDMcould be made to launch a browser. A local attacker could exploit this togain access to files with the privileges of the gdm user. PolicyKit is notconfigured in this manner in Ubuntu by default."
+      }
+    ],
+    "CVE-2011-1720": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-1131-1",
+        "title": "USN-1131-1: Postfix vulnerability",
+        "body": "Thomas Jarosch discovered that Postfix incorrectly handled authenticationmechanisms other than PLAIN and LOGIN when the Cyrus SASL library is used.A remote attacker could use this to cause Postfix to crash, leading to adenial of service, or possibly execute arbitrary code as the postfix user."
+      }
+    ],
+    "CVE-2011-1750": [
+      {
+        "url": "https://www.ubuntu.com/usn/USN-1145-1/",
+        "title": "USN-1145-1: QEMU vulnerabilities",
+        "body": "It was discovered that QEMU did not properly perform validation of I/Ooperations from the guest which could lead to heap corruption. An attackercould exploit this to cause a denial of service of the guest or possiblyexecute code with the privileges of the user invoking the program.(CVE-2011-1750)"
+      }
+    ],
+    "CVE-2011-1751": [
+      {
+        "url": "https://www.ubuntu.com/usn/USN-1145-1/",
+        "title": "USN-1145-1: QEMU vulnerabilities",
+        "body": "Nelson Elhage discoverd that QEMU did not properly handle memory whenremoving ISA devices. An attacker could exploit this to cause a denial ofservice of the guest or possibly execute code with the privileges of theuser invoking the program. (CVE-2011-1751)"
+      }
+    ],
+    "CVE-2011-1752": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1144-1",
+        "title": "USN-1144-1: Subversion vulnerabilities",
+        "body": "Joe Schaefer discovered that the Subversion mod_dav_svn module for Apachedid not properly handle certain baselined WebDAV resource requests. Aremote attacker could use this flaw to cause the service to crash, leadingto a denial of service. (CVE-2011-1752)"
+      }
+    ],
+    "CVE-2011-1760": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1166-1",
+        "title": "USN-1166-1: OProfile vulnerabilities",
+        "body": "Stephane Chauveau discovered that OProfile did not properly perform inputvalidation when processing arguments to opcontrol. A local user who isallowed to run opcontrol with privileges could exploit this to runarbitrary commands as the privileged user. (CVE-2011-1760, CVE-2011-2471)"
+      }
+    ],
+    "CVE-2011-1761": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1148-1",
+        "title": "USN-1148-1: libmodplug vulnerabilities",
+        "body": "It was discovered that libmodplug did not correctly handle certainmalformed ABC media files. If a user or automated system were tricked intoopening a crafted ABC file, an attacker could cause a denial of service orpossibly execute arbitrary code with privileges of the user invoking theprogram. (CVE-2011-1761)"
+      }
+    ],
+    "CVE-2011-1828": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-1127-1/",
+        "title": "USN-1127-1: usb-creator vulnerability",
+        "body": "Evan Broder discovered that usb-creator did not properly enforcerestrictions when performing privileged disk operations. A local attackercould use this flaw to perform certain disk operations, such as unmountarbitrary mountpoints."
+      }
+    ],
+    "CVE-2011-1829": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1169-1",
+        "title": "USN-1169-1: APT vulnerability",
+        "body": "William Grant discovered that APT incorrectly validated inline GPGsignatures. If a remote attacker were able to perform a man-in-the-middleattack, this flaw could potentially be used to install altered packages."
+      }
+    ],
+    "CVE-2011-1831": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1188-1",
+        "title": "USN-1188-1: eCryptfs vulnerabilities",
+        "body": "Vasiliy Kulikov and Dan Rosenberg discovered that eCryptfs incorrectlyvalidated permissions on the requested mountpoint. A local attacker coulduse this flaw to mount to arbitrary locations, leading to privilegeescalation. (CVE-2011-1831)"
+      }
+    ],
+    "CVE-2011-1832": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1188-1",
+        "title": "USN-1188-1: eCryptfs vulnerabilities",
+        "body": "Vasiliy Kulikov and Dan Rosenberg discovered that eCryptfs incorrectlyvalidated permissions on the requested mountpoint. A local attacker coulduse this flaw to unmount to arbitrary locations, leading to a denial ofservice. (CVE-2011-1832)"
+      }
+    ],
+    "CVE-2011-1833": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1188-1",
+        "title": "USN-1188-1: eCryptfs vulnerabilities",
+        "body": "Vasiliy Kulikov and Dan Rosenberg discovered that eCryptfs incorrectlyvalidated permissions on the requested source directory. A local attackercould use this flaw to mount an arbitrary directory, possibly leading toinformation disclosure. A pending kernel update will provide the otherhalf of the fix for this issue. (CVE-2011-1833)"
+      }
+    ],
+    "CVE-2011-1834": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1188-1",
+        "title": "USN-1188-1: eCryptfs vulnerabilities",
+        "body": "Dan Rosenberg and Marc Deslauriers discovered that eCryptfs incorrectlyhandled modifications to the mtab file when an error occurs. A localattacker could use this flaw to corrupt the mtab file, and possibly unmountarbitrary locations, leading to a denial of service. (CVE-2011-1834)"
+      }
+    ],
+    "CVE-2011-1836": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1188-1",
+        "title": "USN-1188-1: eCryptfs vulnerabilities",
+        "body": "Marc Deslauriers discovered that eCryptfs incorrectly handled permissionsduring recovery. A local attacker could use this flaw to possibly accessanother user's data during the recovery process. This issue only applied toUbuntu 11.04. (CVE-2011-1836)"
+      }
+    ],
+    "CVE-2011-1837": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1188-1",
+        "title": "USN-1188-1: eCryptfs vulnerabilities",
+        "body": "Vasiliy Kulikov discovered that eCryptfs incorrectly handled lock counters.A local attacker could use this flaw to possibly overwrite arbitrary files.The default symlink restrictions in Ubuntu 10.10 and 11.04 should protectagainst this issue. (CVE-2011-1837)"
+      }
+    ],
+    "CVE-2011-1842": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1115-1/",
+        "title": "USN-1115-1: language-selector vulnerability",
+        "body": "Romain Perier discovered that the language-selector D-Bus backend did notcorrectly check for Policy Kit authorizations. A local attacker could exploitthis to inject shell commands into the system-wide locale configuration file,leading to root privilege escalation."
+      }
+    ],
+    "CVE-2011-1921": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1144-1",
+        "title": "USN-1144-1: Subversion vulnerabilities",
+        "body": "Kamesh Jayachandran discovered that the Subversion mod_dav_svn module forApache did not properly handle access control in certain situations. Aremote user could use this flaw to gain access to files that wouldotherwise be unreadable. (CVE-2011-1921)"
+      }
+    ],
+    "CVE-2011-1929": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1143-1",
+        "title": "USN-1143-1: Dovecot vulnerability",
+        "body": "It was discovered that the message header parser in Dovecot did notproperly handle '\\0' characters in header names. This could allow aremote attacker to cause a denial of service through a crafted emailmessage by crashing the Dovecot daemon or corrupting mailboxes."
+      }
+    ],
+    "CVE-2011-1944": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1153-1",
+        "title": "USN-1153-1: libxml2 vulnerability",
+        "body": "Chris Evans discovered that libxml2 incorrectly handled memory allocation.If an application using libxml2 opened a specially crafted XML file, anattacker could cause a denial of service or possibly execute code as theuser invoking the program."
+      }
+    ],
+    "CVE-2011-2179": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1151-1",
+        "title": "USN-1151-1: Nagios vulnerabilities",
+        "body": "Stefan Schurtz discovered than Nagios did not properly sanitize its inputwhen processing certain requests, resulting in cross-site scripting (XSS)vulnerabilities. With cross-site scripting vulnerabilities, if a user weretricked into viewing server output during a crafted server request, aremote attacker could exploit this to modify the contents, or stealconfidential data, within the same domain."
+      }
+    ],
+    "CVE-2011-2203": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1328-1",
+        "title": "USN-1328-1: Linux kernel (Marvell DOVE) vulnerabilities",
+        "body": "Clement Lecigne discovered a bug in the HFS filesystem. A local attackercould exploit this to cause a kernel oops. (CVE-2011-2203)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1324-1",
+        "title": "USN-1324-1: Linux kernel (EC2) vulnerabilities",
+        "body": "Clement Lecigne discovered a bug in the HFS filesystem. A local attackercould exploit this to cause a kernel oops. (CVE-2011-2203)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1344-1",
+        "title": "USN-1344-1: Linux kernel vulnerabilities",
+        "body": "Clement Lecigne discovered a bug in the HFS filesystem. A local attackercould exploit this to cause a kernel oops. (CVE-2011-2203)"
+      }
+    ],
+    "CVE-2011-2212": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1165-1",
+        "title": "USN-1165-1: QEMU vulnerabilities",
+        "body": "Nelson Elhage discoverd that QEMU did not properly validate certainvirtqueue requests from the guest. An attacker could exploit this to causea denial of service of the guest or possibly execute code with theprivileges of the user invoking the program. (CVE-2011-2212)"
+      }
+    ],
+    "CVE-2011-2329": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1137-1",
+        "title": "USN-1137-1: Eucalyptus vulnerability",
+        "body": "Juraj Somorovsky, Jorg Schwenk, Meiko Jensen and Xiaofeng Lou discoveredthat Eucalyptus did not properly validate SOAP requests. An unauthenticatedremote attacker could exploit this to submit arbitrary commands to theEucalyptus SOAP interface in the context of an authenticated user."
+      }
+    ],
+    "CVE-2011-2362": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1149-1",
+        "title": "USN-1149-1: Firefox and Xulrunner vulnerabilities",
+        "body": "David Chan discovered that cookies did not honor same-origin conventions.This could potentially lead to cookie data being leaked to a third party.(CVE-2011-2362)"
+      }
+    ],
+    "CVE-2011-2363": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1149-1",
+        "title": "USN-1149-1: Firefox and Xulrunner vulnerabilities",
+        "body": "Multiple use-after-free vulnerabilities were discovered. An attacker couldpotentially use these to execute arbitrary code with the privileges of theuser invoking Firefox. (CVE-2011-0083, CVE-2011-0085, CVE-2011-2363)"
+      }
+    ],
+    "CVE-2011-2371": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1149-1",
+        "title": "USN-1149-1: Firefox and Xulrunner vulnerabilities",
+        "body": "Chris Rohlf and Yan Ivnitskiy discovered an integer overflow vulnerabilityin JavaScript Arrays. An attacker could potentially use this to executearbitrary code with the privileges of the user invoking Firefox.(CVE-2011-2371)"
+      }
+    ],
+    "CVE-2011-2373": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1149-1",
+        "title": "USN-1149-1: Firefox and Xulrunner vulnerabilities",
+        "body": "Martin Barbella discovered that under certain conditions, viewing a XULdocument while JavaScript was disabled caused deleted memory to beaccessed. An attacker could potentially use this to crash Firefox orexecute arbitrary code with the privileges of the user invoking Firefox.(CVE-2011-2373)"
+      }
+    ],
+    "CVE-2011-2377": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1149-1",
+        "title": "USN-1149-1: Firefox and Xulrunner vulnerabilities",
+        "body": "Jordi Chancel discovered a vulnerability on multipart/x-mixed-replaceimages due to memory corruption. An attacker could potentially use this tocrash Firefox or execute arbitrary code with the privileges of the userinvoking Firefox. (CVE-2011-2377)"
+      }
+    ],
+    "CVE-2011-2467": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1171-1",
+        "title": "USN-1171-1: Likewise Open vulnerability",
+        "body": "It was discovered that an SQL injection vulnerability exists in theLikewise Security Authority (lsass) local authentication provider. Alocal attacker could use this to gain elevated privileges."
+      }
+    ],
+    "CVE-2011-2471": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1166-1",
+        "title": "USN-1166-1: OProfile vulnerabilities",
+        "body": "Stephane Chauveau discovered that OProfile did not properly perform inputvalidation when processing arguments to opcontrol. A local user who isallowed to run opcontrol with privileges could exploit this to runarbitrary commands as the privileged user. (CVE-2011-1760, CVE-2011-2471)"
+      }
+    ],
+    "CVE-2011-2472": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1166-1",
+        "title": "USN-1166-1: OProfile vulnerabilities",
+        "body": "Stephane Chauveau discovered a directory traversal vulnerability inOProfile when processing the --save argument to opcontrol. A local usercould exploit this to overwrite arbitrary files with the privileges ofthe user invoking the program. (CVE-2011-2472)"
+      }
+    ],
+    "CVE-2011-2483": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1229-1",
+        "title": "USN-1229-1: PostgreSQL vulnerability",
+        "body": "It was discovered that the blowfish algorithm in the pgcrypto moduleincorrectly handled certain 8-bit characters, resulting in the passwordhashes being easier to crack than expected. An attacker who could obtainthe password hashes would be able to recover the plaintext with lesseffort."
+      }
+    ],
+    "CVE-2011-2501": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1175-1",
+        "title": "USN-1175-1: libpng vulnerabilities",
+        "body": "Frank Busse discovered that libpng did not properly handle certainmalformed PNG images. If a user or automated system were tricked intoopening a crafted PNG file, an attacker could cause libpng to crash,resulting in a denial of service. This issue only affected Ubuntu10.04 LTS, 10.10, and 11.04. (CVE-2011-2501)"
+      }
+    ],
+    "CVE-2011-2511": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1180-1",
+        "title": "USN-1180-1: libvirt vulnerability",
+        "body": "Eric Blake discovered an integer overflow flaw in libvirt. A remoteauthenticated attacker could exploit this by sending a crafted VCPU RPCcall and cause a denial of service via application crash."
+      }
+    ],
+    "CVE-2011-2512": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1165-1",
+        "title": "USN-1165-1: QEMU vulnerabilities",
+        "body": "Stefan Hajnoczi discovered that QEMU did not properly perform integercomparisons when performing virtqueue input validation. An attacker couldexploit this to cause a denial of service of the guest or possibly executecode with the privileges of the user invoking the program. (CVE-2011-2512)"
+      }
+    ],
+    "CVE-2011-2513": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1178-1",
+        "title": "USN-1178-1: IcedTea-Web, OpenJDK 6 vulnerabilities",
+        "body": "Omair Majid discovered that an unsigned Web Start applicationor applet could determine the path to the cache directory usedto store downloaded class and jar files by querying class loaderproperties. This could allow a remote attacker to discover a user'sname and home directory path. (CVE-2011-2513)"
+      }
+    ],
+    "CVE-2011-2514": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1178-1",
+        "title": "USN-1178-1: IcedTea-Web, OpenJDK 6 vulnerabilities",
+        "body": "Omair Majid discovered that an unsigned Web Start application couldmanipulate the content of the security warning dialog message to showdifferent file names in prompts. This could allow a remote attackerto confuse a user into granting access to a different file than theybelieve they are granting access to. This issue only affected Ubuntu11.04. (CVE-2011-2514)"
+      }
+    ],
+    "CVE-2011-2522": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1182-1",
+        "title": "USN-1182-1: Samba vulnerabilities",
+        "body": "Yoshihiro Ishikawa discovered that the Samba Web Administration Tool (SWAT)was vulnerable to cross-site request forgeries (CSRF). If a Sambaadministrator were tricked into clicking a link on a specially crafted webpage, an attacker could trigger commands that could modify the Sambaconfiguration. (CVE-2011-2522)"
+      }
+    ],
+    "CVE-2011-2524": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1181-1",
+        "title": "USN-1181-1: libsoup vulnerability",
+        "body": "It was discovered that libsoup did not properly validate its input whenprocessing SoupServer requests. A remote attacker could exploit this toaccess files via directory traversal."
+      }
+    ],
+    "CVE-2011-2527": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1177-1",
+        "title": "USN-1177-1: QEMU vulnerability",
+        "body": "Andrew Griffiths discovered that QEMU did not correctly drop privilegeswhen using the 'runas' argument. Under certain circumstances a localattacker could exploit this to escalate privileges."
+      }
+    ],
+    "CVE-2011-2692": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1175-1",
+        "title": "USN-1175-1: libpng vulnerabilities",
+        "body": "Frank Busse discovered that libpng did not properly handle certain PNGimages with invalid sCAL chunks. If a user or automated system were trickedinto opening a crafted PNG file, an attacker could cause a denial ofservice or possibly execute arbitrary code with the privileges of the userinvoking the program. (CVE-2011-2692)"
+      }
+    ],
+    "CVE-2011-2694": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1182-1",
+        "title": "USN-1182-1: Samba vulnerabilities",
+        "body": "Nobuhiro Tsuji discovered that the Samba Web Administration Tool (SWAT) didnot properly sanitize its input when processing password change requests,resulting in cross-site scripting (XSS) vulnerabilities. With cross-sitescripting vulnerabilities, if a user were tricked into viewing serveroutput during a crafted server request, a remote attacker could exploitthis to modify the contents, or steal confidential data, within the samedomain. (CVE-2011-2694)"
+      }
+    ],
+    "CVE-2011-2696": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1174-1",
+        "title": "USN-1174-1: libsndfile vulnerability",
+        "body": "Hossein Lotfi discovered that libsndfile did not properly verify the headerlength and number of channels for PARIS Audio Format (PAF) audio files. Anattacker could exploit this to cause a denial of service via applicationcrash, or possibly execute arbitrary code with the privileges of the userinvoking the program."
+      }
+    ],
+    "CVE-2011-2697": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1194-1",
+        "title": "USN-1194-1: Foomatic filters vulnerabilities",
+        "body": "It was discovered that the foomatic-rip Foomatic filter incorrectlyhandled command-line options. An attacker could use this flaw to causeFoomatic to execute arbitrary code as the \"lp\" user.In the default installation, attackers would be isolated by the CUPSAppArmor profile."
+      }
+    ],
+    "CVE-2011-2721": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1179-1",
+        "title": "USN-1179-1: ClamAV vulnerability",
+        "body": "It was discovered that the hash processing code in libclamav improperlyhandled messages with certain hashes. This could allow a remote attacker tocraft a document that could cause clamav to crash, resulting in a denial ofservice."
+      }
+    ],
+    "CVE-2011-2725": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1276-1",
+        "title": "USN-1276-1: KDE Utilities vulnerability",
+        "body": "Tim Brown discovered that Ark did not properly perform input validationwhen previewing archive files. If a user were tricked into opening acrafted archive file, an attacker could remove files via directorytraversal."
+      }
+    ],
+    "CVE-2011-2748": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1190-1",
+        "title": "USN-1190-1: DHCP vulnerabilities",
+        "body": "David Zych discovered that DHCP incorrectly handled certain malformedpackets. A remote attacker could use this issue to cause DHCP to crash,resulting in a denial of service."
+      }
+    ],
+    "CVE-2011-2749": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1190-1",
+        "title": "USN-1190-1: DHCP vulnerabilities",
+        "body": "David Zych discovered that DHCP incorrectly handled certain malformedpackets. A remote attacker could use this issue to cause DHCP to crash,resulting in a denial of service."
+      }
+    ],
+    "CVE-2011-2895": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1191-1",
+        "title": "USN-1191-1: libXfont vulnerability",
+        "body": "Tomas Hoger discovered that libXfont incorrectly handled certain malformedcompressed fonts. An attacker could use a specially crafted font file tocause libXfont to crash, or possibly execute arbitrary code in order togain privileges."
+      }
+    ],
+    "CVE-2011-2896": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1207-1",
+        "title": "USN-1207-1: CUPS vulnerabilities",
+        "body": "Tomas Hoger discovered that the CUPS image library incorrectly handled LZWstreams. A remote attacker could use this flaw to cause a denial of serviceor possibly execute arbitrary code."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1214-1",
+        "title": "USN-1214-1: GIMP vulnerability",
+        "body": "Tomas Hoger discovered that GIMP incorrectly handled malformed LZW streams.If a user were tricked into opening a specially crafted GIF image file, anattacker could cause GIMP to crash, or possibly execute arbitrary code withthe user's privileges."
+      }
+    ],
+    "CVE-2011-2911": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1255-1",
+        "title": "USN-1255-1: libmodplug vulnerabilities",
+        "body": "Hossein Lotfi discovered that libmodplug did not correctly handle certainmalformed media files. If a user or automated system were tricked intoopening a crafted media file, an attacker could cause a denial of serviceor possibly execute arbitrary code with privileges of the user invoking theprogram. (CVE-2011-2911, CVE-2011-2912, CVE-2011-2913)"
+      }
+    ],
+    "CVE-2011-2912": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1255-1",
+        "title": "USN-1255-1: libmodplug vulnerabilities",
+        "body": "Hossein Lotfi discovered that libmodplug did not correctly handle certainmalformed media files. If a user or automated system were tricked intoopening a crafted media file, an attacker could cause a denial of serviceor possibly execute arbitrary code with privileges of the user invoking theprogram. (CVE-2011-2911, CVE-2011-2912, CVE-2011-2913)"
+      }
+    ],
+    "CVE-2011-2913": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1255-1",
+        "title": "USN-1255-1: libmodplug vulnerabilities",
+        "body": "Hossein Lotfi discovered that libmodplug did not correctly handle certainmalformed media files. If a user or automated system were tricked intoopening a crafted media file, an attacker could cause a denial of serviceor possibly execute arbitrary code with privileges of the user invoking theprogram. (CVE-2011-2911, CVE-2011-2912, CVE-2011-2913)"
+      }
+    ],
+    "CVE-2011-2914": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1255-1",
+        "title": "USN-1255-1: libmodplug vulnerabilities",
+        "body": "It was discovered that libmodplug did not correctly handle certainmalformed media files. If a user or automated system were tricked intoopening a crafted media file, an attacker could cause a denial of serviceor possibly execute arbitrary code with privileges of the user invoking theprogram. (CVE-2011-2914, CVE-2011-2915)"
+      }
+    ],
+    "CVE-2011-2915": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1255-1",
+        "title": "USN-1255-1: libmodplug vulnerabilities",
+        "body": "It was discovered that libmodplug did not correctly handle certainmalformed media files. If a user or automated system were tricked intoopening a crafted media file, an attacker could cause a denial of serviceor possibly execute arbitrary code with privileges of the user invoking theprogram. (CVE-2011-2914, CVE-2011-2915)"
+      }
+    ],
+    "CVE-2011-2939": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1643-1",
+        "title": "USN-1643-1: Perl vulnerabilities",
+        "body": "It was discovered that the decode_xs function in the Encode module isvulnerable to a heap-based buffer overflow via a crafted Unicode string.An attacker could use this overflow to cause a denial of service.(CVE-2011-2939)"
+      }
+    ],
+    "CVE-2011-2964": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1194-1",
+        "title": "USN-1194-1: Foomatic filters vulnerabilities",
+        "body": "It was discovered that the foomatic-rip Foomatic filter incorrectlyhandled command-line options. An attacker could use this flaw to causeFoomatic to execute arbitrary code as the \"lp\" user.In the default installation, attackers would be isolated by the CUPSAppArmor profile."
+      }
+    ],
+    "CVE-2011-3048": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1417-1",
+        "title": "USN-1417-1: libpng vulnerability",
+        "body": "It was discovered that libpng incorrectly handled certain memoryoperations. If a user or automated system using libpng were tricked intoopening a specially crafted image, an attacker could exploit this to causea denial of service or execute code with the privileges of the userinvoking the program."
+      }
+    ],
+    "CVE-2011-3148": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1237-1",
+        "title": "USN-1237-1: PAM vulnerabilities",
+        "body": "Kees Cook discovered that the PAM pam_env module incorrectly handledcertain malformed environment files. A local attacker could use this flawto cause a denial of service, or possibly gain privileges. The defaultcompiler options for affected releases should reduce the vulnerability to adenial of service. (CVE-2011-3148)"
+      }
+    ],
+    "CVE-2011-3149": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1237-1",
+        "title": "USN-1237-1: PAM vulnerabilities",
+        "body": "Kees Cook discovered that the PAM pam_env module incorrectly handledvariable expansion. A local attacker could use this flaw to cause a denialof service. (CVE-2011-3149)"
+      }
+    ],
+    "CVE-2011-3150": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1270-1",
+        "title": "USN-1270-1: Software Center vulnerability",
+        "body": "David B. discovered that Software Center incorrectly validated servercertificates when performing secure connections. If a remote attacker wereable to perform a man-in-the-middle attack, this flaw could be exploited toview sensitive information or install altered packages and repositories."
+      }
+    ],
+    "CVE-2011-3152": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1284-1",
+        "title": "USN-1284-1: Update Manager vulnerabilities",
+        "body": "David Black discovered that Update Manager incorrectly extracted thedownloaded upgrade tarball before verifying its GPG signature. If a remoteattacker were able to perform a man-in-the-middle attack, this flaw couldpotentially be used to replace arbitrary files. (CVE-2011-3152)"
+      }
+    ],
+    "CVE-2011-3170": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1207-1",
+        "title": "USN-1207-1: CUPS vulnerabilities",
+        "body": "Tomas Hoger discovered that the CUPS image library incorrectly handled LZWstreams. A remote attacker could use this flaw to cause a denial of serviceor possibly execute arbitrary code."
+      }
+    ],
+    "CVE-2011-3192": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1199-1",
+        "title": "USN-1199-1: Apache vulnerability",
+        "body": "A flaw was discovered in the byterange filter in Apache. A remote attackercould exploit this to cause a denial of service via resource exhaustion."
+      }
+    ],
+    "CVE-2011-3193": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1504-1",
+        "title": "USN-1504-1: Qt vulnerabilities",
+        "body": "A heap-based buffer overflow was discovered in the HarfBuzz module. If auser were tricked into opening a crafted font file in a Qt application,an attacker could cause a denial of service or possibly execute arbitrarycode with the privileges of the user invoking the program. (CVE-2011-3193)"
+      }
+    ],
+    "CVE-2011-3194": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1504-1",
+        "title": "USN-1504-1: Qt vulnerabilities",
+        "body": "It was discovered that Qt did not properly handle greyscale TIFF images.If a Qt application could be made to process a crafted TIFF file, anattacker could cause a denial of service. (CVE-2011-3194)"
+      }
+    ],
+    "CVE-2011-3354": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1200-1",
+        "title": "USN-1200-1: Quassel vulnerability",
+        "body": "It was discovered that Quassel did not properly handle CTCP requests. Aremote attacker could exploit this to cause a denial of service viaapplication crash."
+      }
+    ],
+    "CVE-2011-3361": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1249-1",
+        "title": "USN-1249-1: BackupPC vulnerabilities",
+        "body": "It was discovered that BackupPC did not properly sanitize its input whenprocessing backup browser error messages, resulting in a cross-sitescripting (XSS) vulnerability. With cross-site scripting vulnerabilities,if a user were tricked into viewing server output during a crafted serverrequest, a remote attacker could exploit this to modify the contents, orsteal confidential data, within the same domain. This issue did not affectUbuntu 11.10. (CVE-2011-3361)"
+      }
+    ],
+    "CVE-2011-3377": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1263-1",
+        "title": "USN-1263-1: IcedTea-Web, OpenJDK 6 vulnerabilities",
+        "body": "Deepak Bhole discovered a flaw in the Same Origin Policy (SOP)implementation in the IcedTea web browser plugin. This could allow aremote attacker to open connections to certain hosts that shouldnot be permitted. (CVE-2011-3377)"
+      }
+    ],
+    "CVE-2011-3378": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1695-1",
+        "title": "USN-1695-1: RPM vulnerabilities",
+        "body": "It was discovered that RPM incorrectly handled certain package headers. Ifa user or automated system were tricked into installing a specially craftedRPM package, an attacker could cause RPM to crash, resulting in a denial ofservice, or possibly execute arbitrary code."
+      }
+    ],
+    "CVE-2011-3389": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1263-1",
+        "title": "USN-1263-1: IcedTea-Web, OpenJDK 6 vulnerabilities",
+        "body": "Juliano Rizzo and Thai Duong discovered that the block-wise AESencryption algorithm block-wise as used in TLS/SSL was vulnerable toa chosen-plaintext attack. This could allow a remote attacker to viewconfidential data. (CVE-2011-3389)"
+      }
+    ],
+    "CVE-2011-3504": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1333-1",
+        "title": "USN-1333-1: Libav vulnerabilities",
+        "body": "Steve Manzuik discovered that Libav incorrectly handled certain malformedMatroska files. If a user were tricked into opening a crafted Matroskafile, an attacker could cause a denial of service via application crash, orpossibly execute arbitrary code with the privileges of the user invokingthe program. This issue only affected Ubuntu 11.04. (CVE-2011-3504)"
+      },
+      {
+        "url": "http://ubuntu.com/usn/usn-1320-1",
+        "title": "USN-1320-1: FFmpeg vulnerabilities",
+        "body": "Steve Manzuik discovered that FFmpeg incorrectly handled certain malformedMatroska files. If a user were tricked into opening a crafted Matroskafile, an attacker could cause a denial of service via application crash, orpossibly execute arbitrary code with the privileges of the user invokingthe program. (CVE-2011-3504)"
+      }
+    ],
+    "CVE-2011-3597": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1643-1",
+        "title": "USN-1643-1: Perl vulnerabilities",
+        "body": "It was discovered that the 'new' constructor in the Digest module isvulnerable to an eval injection. An attacker could use this to executearbitrary code. (CVE-2011-3597)"
+      }
+    ],
+    "CVE-2011-3601": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1257-1",
+        "title": "USN-1257-1: radvd vulnerabilities",
+        "body": "Vasiliy Kulikov discovered that radvd incorrectly parsed theND_OPT_DNSSL_INFORMATION option. A remote attacker could exploit this witha specially-crafted request and cause the radvd daemon to crash, orpossibly execute arbitrary code. The default compiler options for affectedreleases should reduce the vulnerability to a denial of service. This issueonly affected Ubuntu 11.04 and 11.10. (CVE-2011-3601)"
+      }
+    ],
+    "CVE-2011-3602": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1257-1",
+        "title": "USN-1257-1: radvd vulnerabilities",
+        "body": "Vasiliy Kulikov discovered that radvd incorrectly filtered interface nameswhen creating certain files. A local attacker could exploit this tooverwrite certain files on the system, bypassing intended permissions.(CVE-2011-3602)"
+      }
+    ],
+    "CVE-2011-3604": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1257-1",
+        "title": "USN-1257-1: radvd vulnerabilities",
+        "body": "Vasiliy Kulikov discovered that radvd incorrectly handled certain lengths.A remote attacker could exploit this to cause the radvd daemon to crash,resulting in a denial of service. (CVE-2011-3604)"
+      }
+    ],
+    "CVE-2011-3605": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1257-1",
+        "title": "USN-1257-1: radvd vulnerabilities",
+        "body": "Vasiliy Kulikov discovered that radvd incorrectly handled delays when usedin unicast mode, which is not the default in Ubuntu. If used in unicastmode, a remote attacker could cause radvd outages, resulting in a denial ofservice. (CVE-2011-3605)"
+      }
+    ],
+    "CVE-2011-3627": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1258-1",
+        "title": "USN-1258-1: ClamAV vulnerability",
+        "body": "Stephane Chazelas discovered the bytecode engine of ClamAV improperlyhandled recursion under certain circumstances. This could allow a remoteattacker to craft a file that could cause ClamAV to crash, resulting in adenial of service."
+      }
+    ],
+    "CVE-2011-3634": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1283-1",
+        "title": "USN-1283-1: APT vulnerability",
+        "body": "It was discovered that APT incorrectly handled the Verify-Hostconfiguration option. If a remote attacker were able to perform aman-in-the-middle attack, this flaw could potentially be used to stealrepository credentials. This issue only affected Ubuntu 10.04 LTS and10.10. (CVE-2011-3634)"
+      }
+    ],
+    "CVE-2011-3658": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1401-1",
+        "title": "USN-1401-1: Xulrunner vulnerabilities",
+        "body": "It was discovered that a flaw in the Mozilla SVG implementation couldresult in an out-of-bounds memory access if SVG elements were removedduring a DOMAttrModified event handler. If the user were tricked intoopening a specially crafted page, an attacker could exploit this to cause adenial of service via application crash. (CVE-2011-3658)"
+      }
+    ],
+    "CVE-2011-3848": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1217-1",
+        "title": "USN-1217-1: Puppet vulnerability",
+        "body": "Kristian Erik Hermansen discovered a directory traversal vulnerability inthe SSLFile indirection base class. A remote attacker could exploit this tooverwrite files with the privileges of the Puppet Master."
+      }
+    ],
+    "CVE-2011-3871": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1223-1",
+        "title": "USN-1223-1: Puppet vulnerabilities",
+        "body": "It was discovered that Puppet used a predictable filename when using the--edit resource. A local attacker could exploit this to edit arbitraryfiles or run arbitrary code as the user invoking the program, typicallyroot. (CVE-2011-3871)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1223-2",
+        "title": "USN-1223-2: Puppet regression",
+        "body": "It was discovered that Puppet used a predictable filename when using the --edit resource. A local attacker could exploit this to edit arbitrary files or run arbitrary code as the user invoking the program, typically root. (CVE-2011-3871)"
+      }
+    ],
+    "CVE-2011-3872": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1238-1",
+        "title": "USN-1238-1: Puppet vulnerability",
+        "body": "It was discovered that Puppet incorrectly handled the non-default\"certdnsnames\" option when generating certificates. If this setting wasadded to puppet.conf, the puppet master’s DNS alt names were added to theX.509 Subject Alternative Name field of all certificates, not just thepuppet master’s certificate. An attacker that has an incorrect agentcertificate in his possession can use it to impersonate the puppet masterin a man-in-the-middle attack."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1238-2",
+        "title": "USN-1238-2: Puppet regression",
+        "body": "USN-1238-1 fixed vulnerabilities in Puppet. The upstream patch introduced aregression in Ubuntu 11.04 when executing certain commands. This updatefixes the problem.We apologize for the inconvenience.Original advisory details:It was discovered that Puppet incorrectly handled the non-default \"certdnsnames\" option when generating certificates. If this setting was added to puppet.conf, the puppet master’s DNS alt names were added to the X.509 Subject Alternative Name field of all certificates, not just the puppet master’s certificate. An attacker that has an incorrect agent certificate in his possession can use it to impersonate the puppet master in a man-in-the-middle attack."
+      }
+    ],
+    "CVE-2011-3929": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1479-1",
+        "title": "USN-1479-1: FFmpeg vulnerabilities",
+        "body": "Mateusz Jurczyk and Gynvael Coldwind discovered that FFmpeg incorrectlyhandled certain malformed DV files. If a user were tricked into opening acrafted DV file, an attacker could cause a denial of service viaapplication crash, or possibly execute arbitrary code with the privilegesof the user invoking the program. (CVE-2011-3929, CVE-2011-3936)"
+      }
+    ],
+    "CVE-2011-3936": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1479-1",
+        "title": "USN-1479-1: FFmpeg vulnerabilities",
+        "body": "Mateusz Jurczyk and Gynvael Coldwind discovered that FFmpeg incorrectlyhandled certain malformed DV files. If a user were tricked into opening acrafted DV file, an attacker could cause a denial of service viaapplication crash, or possibly execute arbitrary code with the privilegesof the user invoking the program. (CVE-2011-3929, CVE-2011-3936)"
+      }
+    ],
+    "CVE-2011-3940": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1479-1",
+        "title": "USN-1479-1: FFmpeg vulnerabilities",
+        "body": "Mateusz Jurczyk and Gynvael Coldwind discovered that FFmpeg incorrectlyhandled certain malformed NSV files. If a user were tricked into opening acrafted NSV file, an attacker could cause a denial of service viaapplication crash, or possibly execute arbitrary code with the privilegesof the user invoking the program. (CVE-2011-3940)"
+      }
+    ],
+    "CVE-2011-3947": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1479-1",
+        "title": "USN-1479-1: FFmpeg vulnerabilities",
+        "body": "Mateusz Jurczyk and Gynvael Coldwind discovered that FFmpeg incorrectlyhandled certain malformed MJPEG-B files. If a user were tricked intoopening a crafted MJPEG-B file, an attacker could cause a denial of servicevia application crash, or possibly execute arbitrary code with theprivileges of the user invoking the program. (CVE-2011-3947)"
+      }
+    ],
+    "CVE-2011-3951": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1479-1",
+        "title": "USN-1479-1: FFmpeg vulnerabilities",
+        "body": "Mateusz Jurczyk and Gynvael Coldwind discovered that FFmpeg incorrectlyhandled certain malformed DPCM files. If a user were tricked into opening acrafted DPCM file, an attacker could cause a denial of service viaapplication crash, or possibly execute arbitrary code with the privilegesof the user invoking the program. (CVE-2011-3951)"
+      }
+    ],
+    "CVE-2011-3952": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1479-1",
+        "title": "USN-1479-1: FFmpeg vulnerabilities",
+        "body": "Mateusz Jurczyk and Gynvael Coldwind discovered that FFmpeg incorrectlyhandled certain malformed KMVC files. If a user were tricked into opening acrafted KMVC file, an attacker could cause a denial of service viaapplication crash, or possibly execute arbitrary code with the privilegesof the user invoking the program. (CVE-2011-3952)"
+      }
+    ],
+    "CVE-2011-4079": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1266-1",
+        "title": "USN-1266-1: OpenLDAP vulnerability",
+        "body": "It was discovered that slapd contained an off-by-one error. Anauthenticated attacker could potentially exploit this by sending acrafted crafted LDIF entry containing an empty postalAddress."
+      }
+    ],
+    "CVE-2011-4089": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1308-1",
+        "title": "USN-1308-1: bzip2 vulnerability",
+        "body": "vladz discovered that executables compressed by bzexe insecurely createtemporary files when they are ran. A local attacker could exploit this issue toexecute arbitrary code as the user running a compressed executable."
+      }
+    ],
+    "CVE-2011-4110": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1328-1",
+        "title": "USN-1328-1: Linux kernel (Marvell DOVE) vulnerabilities",
+        "body": "A flaw was found in how the Linux kernel handles user-defined key types. Anunprivileged local user could exploit this to crash the system.(CVE-2011-4110)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1324-1",
+        "title": "USN-1324-1: Linux kernel (EC2) vulnerabilities",
+        "body": "A flaw was found in how the Linux kernel handles user-defined key types. Anunprivileged local user could exploit this to crash the system.(CVE-2011-4110)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1344-1",
+        "title": "USN-1344-1: Linux kernel vulnerabilities",
+        "body": "A flaw was found in how the Linux kernel handles user-defined key types. Anunprivileged local user could exploit this to crash the system.(CVE-2011-4110)"
+      }
+    ],
+    "CVE-2011-4128": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1418-1",
+        "title": "USN-1418-1: GnuTLS vulnerabilities",
+        "body": "Alban Crequy discovered that the GnuTLS library incorrectly checked arraybounds when copying TLS session data. A remote attacker could crash a clientapplication, leading to a denial of service, as the client application preparedfor TLS session resumption. (CVE-2011-4128)"
+      }
+    ],
+    "CVE-2011-4349": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1289-1",
+        "title": "USN-1289-1: colord vulnerability",
+        "body": "It was discovered that colord incorrectly handled certain SQL queries. Alocal attacker could exploit this to modify arbitrary sqlite databases. OnUbuntu, colord runs as its own user by default, so standard filepermissions would limit which databases could be altered."
+      }
+    ],
+    "CVE-2011-4352": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1333-1",
+        "title": "USN-1333-1: Libav vulnerabilities",
+        "body": "Phillip Langlois discovered that Libav incorrectly handled certainmalformed VP3 streams. If a user were tricked into opening a crafted file,an attacker could cause a denial of service via application crash, orpossibly execute arbitrary code with the privileges of the user invokingthe program. (CVE-2011-4352)"
+      },
+      {
+        "url": "http://ubuntu.com/usn/usn-1320-1",
+        "title": "USN-1320-1: FFmpeg vulnerabilities",
+        "body": "Phillip Langlois discovered that FFmpeg incorrectly handled certainmalformed VP3 streams. If a user were tricked into opening a crafted file,an attacker could cause a denial of service via application crash, orpossibly execute arbitrary code with the privileges of the user invokingthe program. This issue only affected Ubuntu 10.10. (CVE-2011-4352)"
+      }
+    ],
+    "CVE-2011-4353": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1320-1",
+        "title": "USN-1320-1: FFmpeg vulnerabilities",
+        "body": "Phillip Langlois discovered that FFmpeg incorrectly handled certainmalformed VP5 and VP6 streams. If a user were tricked into opening acrafted file, an attacker could cause a denial of service via applicationcrash, or possibly execute arbitrary code with the privileges of the userinvoking the program. (CVE-2011-4353)"
+      },
+      {
+        "url": "http://ubuntu.com/usn/usn-1333-1",
+        "title": "USN-1333-1: Libav vulnerabilities",
+        "body": "Phillip Langlois discovered that Libav incorrectly handled certainmalformed VP5 and VP6 streams. If a user were tricked into opening acrafted file, an attacker could cause a denial of service via applicationcrash, or possibly execute arbitrary code with the privileges of the userinvoking the program. (CVE-2011-4353)"
+      }
+    ],
+    "CVE-2011-4364": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1333-1",
+        "title": "USN-1333-1: Libav vulnerabilities",
+        "body": "It was discovered that Libav incorrectly handled certain malformed VMDfiles. If a user were tricked into opening a crafted VMD file, an attackercould cause a denial of service via application crash, or possibly executearbitrary code with the privileges of the user invoking the program.(CVE-2011-4364)"
+      },
+      {
+        "url": "http://ubuntu.com/usn/usn-1320-1",
+        "title": "USN-1320-1: FFmpeg vulnerabilities",
+        "body": "It was discovered that FFmpeg incorrectly handled certain malformed VMDfiles. If a user were tricked into opening a crafted VMD file, an attackercould cause a denial of service via application crash, or possibly executearbitrary code with the privileges of the user invoking the program.(CVE-2011-4364)"
+      }
+    ],
+    "CVE-2011-4405": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1265-1",
+        "title": "USN-1265-1: system-config-printer vulnerability",
+        "body": "Marc Deslauriers discovered that system-config-printer's cupshelpersscripts used by the Ubuntu automatic printer driver download servicequeried the OpenPrinting database using an insecure connection. If a remoteattacker were able to perform a man-in-the-middle attack, this flaw couldbe exploited to install altered packages and repositories."
+      }
+    ],
+    "CVE-2011-4406": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1351-1",
+        "title": "USN-1351-1: AccountsService vulnerability",
+        "body": "Hayawardh Vijayakumar discovered that AccountsService incorrectly handledprivileges when modifying the language settings on Ubuntu. A local attackercould exploit this issue to modify arbitrary files, and possibly create adenial of service or obtain increased privileges."
+      }
+    ],
+    "CVE-2011-4407": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1352-1",
+        "title": "USN-1352-1: Software Properties vulnerability",
+        "body": "David Black discovered that Software Properties incorrectly validatedserver certificates when performing secure connections to download PPA GPGkey fingerprints. If a remote attacker were able to perform aman-in-the-middle attack, this flaw could be exploited to install alteredpackage repository GPG keys."
+      }
+    ],
+    "CVE-2011-4409": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1465-2",
+        "title": "USN-1465-2: Ubuntu One storage protocol update",
+        "body": "USN-1465-1 fixed a vulnerability in the Ubuntu One Client. This update addsa required fix to the Ubuntu One storage protocol library.Original advisory details:It was discovered that the Ubuntu One Client incorrectly validated server certificates when using HTTPS connections. If a remote attacker were able to perform a man-in-the-middle attack, this flaw could be exploited to alter or compromise confidential information."
+      },
+      {
+        "url": "http://ubuntu.com/usn/usn-1465-1",
+        "title": "USN-1465-1: Ubuntu One Client vulnerability",
+        "body": "It was discovered that the Ubuntu One Client incorrectly validated servercertificates when using HTTPS connections. If a remote attacker were ableto perform a man-in-the-middle attack, this flaw could be exploited toalter or compromise confidential information."
+      },
+      {
+        "url": "http://ubuntu.com/usn/usn-1465-3",
+        "title": "USN-1465-3: Ubuntu One Client regression",
+        "body": "USN-1465-1 fixed vulnerabilities in Ubuntu One Client. The update failed toinstall on certain Ubuntu 10.04 LTS systems that had a legacy Python 2.5package installed. This update fixes the problem.We apologize for the inconvenience.Original advisory details:It was discovered that the Ubuntu One Client incorrectly validated server certificates when using HTTPS connections. If a remote attacker were able to perform a man-in-the-middle attack, this flaw could be exploited to alter or compromise confidential information."
+      }
+    ],
+    "CVE-2011-4461": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1429-1",
+        "title": "USN-1429-1: Jetty vulnerability",
+        "body": "It was discovered that Jetty computed hash values for form parameterswithout restricting the ability to trigger hash collisions predictably.This could allow a remote attacker to cause a denial of service bysending many crafted parameters."
+      }
+    ],
+    "CVE-2011-4516": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1315-1",
+        "title": "USN-1315-1: JasPer vulnerabilities",
+        "body": "Jonathan Foote discovered that JasPer incorrectly handled certain malformedJPEG-2000 image files. If a user were tricked into opening a speciallycrafted JPEG-2000 image file, a remote attacker could cause JasPer to crashor possibly execute arbitrary code with user privileges."
+      }
+    ],
+    "CVE-2011-4517": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1315-1",
+        "title": "USN-1315-1: JasPer vulnerabilities",
+        "body": "Jonathan Foote discovered that JasPer incorrectly handled certain malformedJPEG-2000 image files. If a user were tricked into opening a speciallycrafted JPEG-2000 image file, a remote attacker could cause JasPer to crashor possibly execute arbitrary code with user privileges."
+      }
+    ],
+    "CVE-2011-4539": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1309-1",
+        "title": "USN-1309-1: DHCP vulnerability",
+        "body": "It was discovered that the DHCP server incorrectly handled certainmalformed packets when configured to evaluate regular expressions. A remoteattacker could use this issue to cause DHCP to crash, resulting in a denialof service."
+      }
+    ],
+    "CVE-2011-4566": [
+      {
+        "url": "https://www.ubuntu.com/usn/USN-1307-1/",
+        "title": "USN-1307-1: PHP vulnerability",
+        "body": "Florent Hochwelker discovered that PHP incorrectly handled certain EXIFheaders in JPEG files. A remote attacker could exploit this issue toview sensitive information or cause the PHP server to crash."
+      }
+    ],
+    "CVE-2011-4579": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1333-1",
+        "title": "USN-1333-1: Libav vulnerabilities",
+        "body": "Phillip Langlois discovered that Libav incorrectly handled certainmalformed SVQ1 streams. If a user were tricked into opening a crafted SVQ1stream file, an attacker could cause a denial of service via applicationcrash, or possibly execute arbitrary code with the privileges of the userinvoking the program. (CVE-2011-4579)"
+      },
+      {
+        "url": "http://ubuntu.com/usn/usn-1320-1",
+        "title": "USN-1320-1: FFmpeg vulnerabilities",
+        "body": "Phillip Langlois discovered that FFmpeg incorrectly handled certainmalformed SVQ1 streams. If a user were tricked into opening a crafted SVQ1stream file, an attacker could cause a denial of service via applicationcrash, or possibly execute arbitrary code with the privileges of the userinvoking the program. (CVE-2011-4579)"
+      }
+    ],
+    "CVE-2011-4599": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1348-1",
+        "title": "USN-1348-1: ICU vulnerability",
+        "body": "It was discovered that ICU did not properly handle invalid locale dataduring Unicode conversion. If an application using ICU processed crafteddata, an attacker could cause it to crash or potentially execute arbitrarycode with the privileges of the user invoking the program."
+      }
+    ],
+    "CVE-2011-4613": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1349-1",
+        "title": "USN-1349-1: X.Org vulnerability",
+        "body": "It was discovered that the X wrapper incorrectly checked certain consolepermissions when launched by unprivileged users. An attacker connectedremotely could use this flaw to start X, bypassing the console permissionscheck."
+      }
+    ],
+    "CVE-2011-4623": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1338-1",
+        "title": "USN-1338-1: Rsyslog vulnerability",
+        "body": "Peter Eisentraut discovered that Rsyslog would not properly perform inputvalidation when configured to use imfile. If an attacker were able tocraft messages in a file that Rsyslog monitored, an attacker could cause adenial of service. The imfile module is disabled by default in Ubuntu."
+      }
+    ],
+    "CVE-2011-4923": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1249-1",
+        "title": "USN-1249-1: BackupPC vulnerabilities",
+        "body": "It was discovered that BackupPC did not properly sanitize its input whenprocessing backup browser error messages, resulting in a cross-sitescripting (XSS) vulnerability. With cross-site scripting vulnerabilities,if a user were tricked into viewing server output during a crafted serverrequest, a remote attacker could exploit this to modify the contents, orsteal confidential data, within the same domain. This issue did not affectUbuntu 11.10. (CVE-2011-3361)Jamie Strandboge discovered that BackupPC did not properly sanitize itsinput when processing log file viewer error messages, resulting incross-site scripting (XSS) vulnerabilities."
+      }
+    ],
+    "CVE-2011-4940": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1596-1",
+        "title": "USN-1596-1: Python 2.6 vulnerabilities",
+        "body": "It was discovered that SimpleHTTPServer did not use a charset parameter inthe Content-Type HTTP header. An attacker could potentially exploit thisto conduct cross-site scripting (XSS) attacks against Internet Explorer 7users. This issue only affected Ubuntu 11.04. (CVE-2011-4940)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1613-2",
+        "title": "USN-1613-2: Python 2.4 vulnerabilities",
+        "body": "It was discovered that SimpleHTTPServer did not use a charset parameter in the Content-Type HTTP header. An attacker could potentially exploit this to conduct cross-site scripting (XSS) attacks against Internet Explorer 7 users. (CVE-2011-4940)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1613-1",
+        "title": "USN-1613-1: Python 2.5 vulnerabilities",
+        "body": "It was discovered that SimpleHTTPServer did not use a charset parameter inthe Content-Type HTTP header. An attacker could potentially exploit thisto conduct cross-site scripting (XSS) attacks against Internet Explorer 7users. (CVE-2011-4940)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1592-1",
+        "title": "USN-1592-1: Python 2.7 vulnerabilities",
+        "body": "It was discovered that SimpleHTTPServer did not use a charset parameter inthe Content-Type HTTP header. An attacker could potentially exploit thisto conduct cross-site scripting (XSS) attacks against Internet Explorer 7users. This issue only affected Ubuntu 11.04. (CVE-2011-4940)"
+      }
+    ],
+    "CVE-2011-4944": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1596-1",
+        "title": "USN-1596-1: Python 2.6 vulnerabilities",
+        "body": "It was discovered that Python distutils contained a race condition whencreating the ~/.pypirc file. A local attacker could exploit this to obtainsensitive information. (CVE-2011-4944)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1613-2",
+        "title": "USN-1613-2: Python 2.4 vulnerabilities",
+        "body": "It was discovered that Python distutils contained a race condition when creating the ~/.pypirc file. A local attacker could exploit this to obtain sensitive information. (CVE-2011-4944)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1613-1",
+        "title": "USN-1613-1: Python 2.5 vulnerabilities",
+        "body": "It was discovered that Python distutils contained a race condition whencreating the ~/.pypirc file. A local attacker could exploit this to obtainsensitive information. (CVE-2011-4944)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1592-1",
+        "title": "USN-1592-1: Python 2.7 vulnerabilities",
+        "body": "It was discovered that Python distutils contained a race condition whencreating the ~/.pypirc file. A local attacker could exploit this to obtainsensitive information. (CVE-2011-4944)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1615-1",
+        "title": "USN-1615-1: Python 3.2 vulnerabilities",
+        "body": "It was discovered that Python distutils contained a race condition whencreating the ~/.pypirc file. A local attacker could exploit this to obtainsensitive information. (CVE-2011-4944)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1616-1",
+        "title": "USN-1616-1: Python 3.1 vulnerabilities",
+        "body": "It was discovered that Python distutils contained a race condition whencreating the ~/.pypirc file. A local attacker could exploit this to obtainsensitive information. (CVE-2011-4944)"
+      }
+    ],
+    "CVE-2011-4969": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1722-1",
+        "title": "USN-1722-1: jQuery vulnerability",
+        "body": "It was discovered that jQuery incorrectly handled selecting elements usinglocation.hash, resulting in a possible cross-site scripting (XSS) issue.With cross-site scripting vulnerabilities, if a user were tricked intoviewing a specially crafted page, a remote attacker could exploit this tomodify the contents, or steal confidential data, within the same domain."
+      }
+    ],
+    "CVE-2011-4971": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-2080-1",
+        "title": "USN-2080-1: Memcached vulnerabilities",
+        "body": "Stefan Bucur discovered that Memcached incorrectly handled certain largebody lengths. A remote attacker could use this issue to cause Memcached tocrash, resulting in a denial of service. (CVE-2011-4971)"
+      }
+    ]
+  }
 }

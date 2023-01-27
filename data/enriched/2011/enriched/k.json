@@ -1,6 +1,26 @@
 {
   "year": 2011,
-  "total": 0,
+  "total": 3,
   "reference": "usn.ubuntu.com",
-  "reports": {}
+  "reports": {
+    "CVE-2011-5325": [
+      {
+        "url": "https://usn.ubuntu.com/3935-1/",
+        "title": "USN-3935-1: BusyBox vulnerabilities",
+        "body": "Tyler Hicks discovered that BusyBox incorrectly handled symlinks inside tar archives. If a user or automated system were tricked into processing a specially crafted tar archive, a remote attacker could overwrite arbitrary files outside of the current directory. This issue only affected Ubuntu 14.04 LTS and Ubuntu 16.04 LTS. (CVE-2011-5325)"
+      }
+    ],
+    "CVE-2011-2767": [
+      {
+        "url": "https://usn.ubuntu.com/3825-1/",
+        "title": "USN-3825-1: mod_perl vulnerability",
+        "body": "Details Jan Ingvoldstad discovered that mod_perl incorrectly handled configuration options to disable being used by unprivileged users, contrary to the documentation. A local attacker could possibly use this issue to execute arbitrary Perl code."
+      },
+      {
+        "url": "https://usn.ubuntu.com/3825-2/",
+        "title": "USN-3825-2: mod_perl vulnerability",
+        "body": "Details USN-3825-1 fixed a vulnerability in mod_perl. This update provides the corresponding update for Ubuntu 12.04 ESM. Original advisory details: Jan Ingvoldstad discovered that mod_perl incorrectly handled configuration options to disable being used by unprivileged users, contrary to the documentation. A local attacker could possibly use this issue to execute arbitrary Perl code."
+      }
+    ]
+  }
 }

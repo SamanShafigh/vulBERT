@@ -1,6 +1,98 @@
 {
   "year": 2006,
-  "total": 0,
+  "total": 14,
   "reference": "bugzilla.mozilla.org",
-  "reports": {}
+  "reports": {
+    "CVE-2006-0236": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=300246",
+        "title": "Spoofing via attachment dragging",
+        "description": "From Andreas Sandblad, Secunia Research -- SA15907: Mozilla Thunderbird Attachment Spoofing Vulnerability -- Secunia Research has discovered a vulnerability in Thunderbird, which can be exploited by malicious people to trick users into downloading malicious attachments. The vulnerability is caused due to attachments not being displayed correctly in mails. This can be exploited to spoof the file extension and the associated file type icon via a combination of overly long filenames containing whitespaces and \"Content-Type\" headers not matching the file extension. Successful exploitation may lead to malware being saved to e.g. the desktop. NOTE: Attachments can be saved by dragging the attachment or using the \"Save As...\" or \"Save All...\" functionality. For files on the desktop the icon can be spoofed if it e.g. is a \".exe\" or \".lnk\" file. -- PoC (Proof of Concept) -- The raw mail source to be sent can be found in mail.txt (in poc.zip). It is recommended to send it manually via a telnet session. E.g: telnet <SMTP server> 25 HELO <SMTP server> MAIL FROM: <FROM> RCPT TO: <TO> DATA <mail.txt> . QUIT Open mail, drag attachment to desktop and double click on it (see attached screendumps). \"You are vulnerable!\" should be displayed in a dos window. -- The vulnerability has been confirmed in Thunderbird 1.0.2 for Windows. Other versions may also be affected. Discovered by: Andreas Sandblad, Secunia Research"
+      }
+    ],
+    "CVE-2006-0914": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=312498",
+        "title": "[SECURITY] editparams.cgi doesn't check whether 'whinedays' and 'mostfreqthreshold' are numeric",
+        "description": "Inadvertently writting '4r' instead of '4' for the 'whinedays' param caused whineatnews.pl to crash: whineatnews.pl: DBD::mysql::st execute failed: Unknown column '4r' in 'where clause' [for Statement \"SELECT bug_id, short_desc, login_name FROM bugs INNER JOIN profiles ON userid = assigned_to WHERE (bug_status = 'NEW' OR bug_status = 'REOPENED') AND TO_DAYS(NOW()) - TO_DAYS(delta_ts) > 4r ORDER BY bug_id\"] at Bugzilla/DB.pm line 84 editparams.cgi should make sure that a valid numeric value is given."
+      }
+    ],
+    "CVE-2006-1725": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=327014",
+        "title": "Clicking <html:a> link in XUL document makes a browser window invisible",
+        "description": "Clicking <html:a> link in XUL document makes a browser window invisible. XUL-DOC: <window xmlns=\"http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul\"> <p xmlns=\"http://www.w3.org/1999/xhtml\"> <a href=\"about:blank\">a</a> </p> </window> 1. w = open(\"XUL-DOC\"); 2. Click the link on XUL-DOC. Then about:blank is loaded. 3. Move mouse. Then XUL-DOC's browser window becomes invisible. 4. w.history.back(); Then the browser UI is still invisible, but XUL-DOC's content elements are displayed onto the browser UI. Note: 1.5.0.1 and trunk are affected. 1.0.x is not affected. When bfcache is disabled, this bug is not reproducible. On Linux, this bug is not reproducible. (I've tested on Windows XP and Linux.) This bug could be used to exploit. For example, if an attacker created a JavaScript game page and could convince a user to drag and drop two links (about:config and javascript:...) onto the invisible Bookmarks Toolbar, and click those bookmarks in sequence, then an attacker could run arbitrary code."
+      }
+    ],
+    "CVE-2006-1739": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=265736",
+        "title": "crash [@ QBCurve::SubDivide ][@ QBCurve::MidPointDivide ][@ nsCSSRendering::DrawTableBorderSegment]",
+        "description": "User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.3) Gecko/20041022 Firefox/1.0 Build Identifier: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.3) Gecko/20041022 Firefox/1.0 After visiting the URl Firefox terminates without any warning. Reproducible: Always Steps to Reproduce: 1. go to the URL: http://www.home.karneval.cz/10000565/test.html Actual Results: Firefox terminates Expected Results: Firefox should not terminate I found this page using the mangle.cgi script. I'll attach a testcase soon."
+      }
+    ],
+    "CVE-2006-2420": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=313441",
+        "title": "[SECURITY] Query RSS should HTML-escape summary in <title>",
+        "description": "While it's formally correct and to-spec to have an RSS 1.0 <title> that includes &lt; when it isn't starting HTML markup, since the spec calls for plain text, practically speaking the title element has been so polluted with HTML that virtually all consumers treat it as HTML, and a literal < has to be double-escaped as &amp;lt; to not be treated as markup, and either filtered out or interpreted. With <title>Wrong DOM-tree with &lt;form&gt; and &lt;button&gt; elements.</title>, my cautious RSS reader and Google Reader both display \"Wrong DOM-tree with and elements.\", but the very popular Bloglines reader treats them both as HTML, and displays an actual button with the text \"elements.\" Switching to \"FILTER html\" instead of \"FILTER xml\" to get &amp;lt;form&amp;gt; would wind up displaying \"&lt;form&gt;\" in strict constructionist RSS readers, but anyone using them is surely used to that by now."
+      }
+    ],
+    "CVE-2006-2613": [
+      {
+        "url": "https://bugzilla.mozilla.org/attachment.cgi?id=164547",
+        "description": "While it's formally correct and to-spec to have an RSS 1.0 <title> that includes &lt; when it isn't starting HTML markup, since the spec calls for plain text, practically speaking the title element has been so polluted with HTML that virtually all consumers treat it as HTML, and a literal < has to be double-escaped as &amp;lt; to not be treated as markup, and either filtered out or interpreted. With <title>Wrong DOM-tree with &lt;form&gt; and &lt;button&gt; elements.</title>, my cautious RSS reader and Google Reader both display \"Wrong DOM-tree with and elements.\", but the very popular Bloglines reader treats them both as HTML, and displays an actual button with the text \"elements.\" Switching to \"FILTER html\" instead of \"FILTER xml\" to get &amp;lt;form&amp;gt; would wind up displaying \"&lt;form&gt;\" in strict constructionist RSS readers, but anyone using them is surely used to that by now."
+      },
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=267645",
+        "title": "Page can obtain path to Mozilla installation or possibly profile by examining JavaScript exceptions",
+        "description": "User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.0; cs-CZ; rv:1.7.3) Gecko/20040910 Build Identifier: Mozilla/5.0 (Windows; U; Windows NT 5.0; cs-CZ; rv:1.7.3) Gecko/20040910 I am not sure if this should be considered as security bug. If you don't think so, open it. Page which call window.sidebar.addSearchEngine() with bad agruments (bad suffix, protocol) can catch the exception of the Mozilla code and from it obtain path to the Mozilla installlation. Problem is in the nsSidebar.js (in Mozilla and Firefox too) containing line: this.promptService.alert(null, \"Failed to add the search engine.\"); there is missing the 3th alert argument (text of the dialog), which raises expception e.g.: [Exception... \"Not enough arguments [nsIPromptService.alert]\" nsresult: \"0x80570001 (NS_ERROR_XPC_NOT_ENOUGH_ARGS)\" location: \"JS frame :: file:///C:/Program%20Files/mozilla.org/Mozilla/components/nsSidebar.js :: anonymous :: line 266\" data: no] HTML page can catch this exception and obtain the path of the problematic file (i.e. the path of Mozilla installation). Revealing the path to the nsSidebar.js is not probably critical problem, but what if the exception raises in some extension in the user profile and the page can catch path to the user profile (and the user login)? So problem is propably more general. Should be the HTML page able to catch exceptions from the Mozilla code? And if should, should it obtain a full text of the expections (including file path)? Reproducible: Always Steps to Reproduce:"
+      }
+    ],
+    "CVE-2006-2788": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=321598",
+        "title": "Double memory free in nsIX509::getRawDER when called from JavaScript",
+        "description": "User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8) Gecko/20051224 Debian/1.5.dfsg-3 Firefox/1.5 Build Identifier: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8) Gecko/20051224 Debian/1.5.dfsg-3 Firefox/1.5 While i call the getRawDER function of nsIX509Cert (security/manager/ssl/public) it freeze in all mozilla browser and firefox (except 1.5 [windows/linux] and mozilla 1.8b1 [linux] no extension installed success, opening other bug request for these); I'm call the function in a javascript and native mode, but both freeze the browser. ---------------- JavaScript ---------------- try{ netscape.security.PrivilegeManager.enablePrivilege( \"UniversalXPConnect\"); ... if(cert instanceof Components.interfaces.nsIX509Cert){ var length = {value:0}; var data=[]; data = cert.getRawDER(length);// <-- travamento } }catch(err){ alert(\"Erro: \" + err); } ----------------- C++ ----------------- /* void getCertBase64 (in nsIX509Cert cert, [retval] out string textbase64); */ NS_IMETHODIMP BRTIWebSignatureVerifier::GetCertBase64(nsIX509Cert *cert, char **textbase64) { nsresult rv; PRUint32 length = 0; PRUint8 *data = nsnull; //verifica parametro if(cert == nsnull){ rv = NS_ERROR_INVALID_ARG; goto fim; } //GetRawDER(PRUint32 *length, PRUint8 **data) rv = cert->GetRawDER(&length, &data);// <-- travamento if (rv != NS_OK){ goto fim; } //codifica base64 rv = encode(data, length, textbase64); if (rv != NS_OK){ goto fim; } fim: //if (data) nsMemory::Free(data); return rv; } Reproducible: Always Steps to Reproduce: 1. Open http://www.nerdgroup.org/staff/fernando/html/ns/index-env.html 2. Install the extension in botton page with root user 3. Write any text message in the 'text' area. 4. Click in 'Enviar' button. Actual Results: It freeze the browser. Expected Results: show encrypted message in other text area."
+      }
+    ],
+    "CVE-2006-2894": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=290478",
+        "title": "malicious webpage can filter keyboard strokes and specify a file for uploading from client",
+        "description": "User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.6) Gecko/20050317 Firefox/1.0.2 Build Identifier: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.6) Gecko/20050317 Firefox/1.0.2 In the page at www.lemure.net/~chuck/hiddenForm_moz.html you can see a sample code that demonstrates this problem. By filtering out keyboard events in a specific order, it is possible to for a webpage to specify the file wanted for upload. By combining this with CSS, the upload dialog becomes invisible and the user in unaware of the fact that they are entering a file. If this is combined with a website related to technical discussion or similar that has users entering a lot of / \\ and : then it becomes somewhat trivial to upload files. Reproducible: Always Steps to Reproduce: In the problem url specified, enter text into the text box. If a user types the correct character, it will be captured and send focus to the file upload dialog. This allows a webpage to specifiy a file name, in this example, C:\\boot.ini. Actual Results: file upload Expected Results: Prevent shifting focus to/from file upload widget."
+      },
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=56236",
+        "title": "possible to selectively allow chars into file upload control by disabling control onkeydown",
+        "description": "I can choose what characters typed into a input type=\"file\" are accepted by looking at each character typed during onkeydown, and quickly disabling and re- enabling the control if I want to reject a character. (Mozilla is already much more secure than IE with these controls, btw.) What's Mozilla's general strategy for file controls? From what I can tell, it's \"make it hard for css and javascript to do things to file controls\". This blocks most of the methods of attack I tried, but still doesn't guarantee that the user is aware that something is being uploaded."
+      },
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=370092",
+        "title": "Focus change between onKeyDown and onKeyPress, allowing to read arbitary files using <input type=file> (Zalewski Firefox focus stealing vulnerability)",
+        "description": "Focus change allowed between onKeyDown and onKeyPress, allowing attacker to read arbitary files, abusing <input type=file> with user input From: Michal Zalewski <lcamtuf@dione.ids.pl> To: bugtraq@securityfocus.com, full-disclosure@lists.grok.org.uk Date: Sun, 11 Feb 2007 21:00:45 +0100 (CET) Message-ID: <Pine.LNX.4.58.0702112047050.30989@dione> There is an interesting logic flaw in Mozilla Firefox web browser. The vulnerability allows the attacker to silently redirect focus of selected key press events to an otherwise protected file upload form field. This is possible because of how onKeyDown / onKeyPress events are handled, allowing the focus to be moved between the two. If exploited, this enables the attacker to read arbitrary files on victim's system. This was tested with 2.0.0.1. Opera is most likely not vulnerable; Microsoft Internet Explorer is not vulnerable as-is, but might be vulnerable to a variant of the attack. All INPUT TYPE=FILE form fields enjoy the benefits of added protection to prvent scripts from arbitrarily choosing local files to be uploaded to the server, and automatically submitting the form. For example, .value parameter cannot be set or changed, and any changes to .type reset the contents of the field. Unfortunately, Firefox allows a malicious script to redirect carefully selected, individual user keystrokes to a hidden file upload field, in order to compose a particular filename, then submit the form. User interaction is required, limiting the impact somewhat - but any website where the user can be reasonably expected to enter some text (a keyboard-controlled web game, a blog posting or commenting interface) can attempt to exploit the vulnerability, and eventually succeed with one user or another. A quick and naive demonstration of the problem (Firefox on Windows is required; depends on scancode values, so not all keyboards may be supported): http://lcamtuf.coredump.cx/focusbug/ (Ta-dah again) /mz --- And indeed - here's a MSIE 7.0 demo: http://lcamtuf.coredump.cx/focusbug/ieversion.html Somewhat less pretty and straightforward, but equally sad. /mz --- pdp (architect) wrote: > > here is an idea... we can combine both techniques into a single > > attack... the hardest part of your hack is to force the user to type > > :// plus several other / Actually, MSIE doesn't require drive specification in the filename, and will probably accept relative paths as well (so you might not need \\ either when picking files from the desktop or 'my documents' or whatnot). Firefox won't settle for a path without drive specification (but it will accept SMB requests ;-) . On *nix systems, of course, aiming /etc/passwd is easier than C:\\whatever. The problem with intercepting address bar input is that you can't echo the entered text back there without unloading the current document and its scripts; in my examples, I tried to make sure that it's hard for the user to notice that his input is not going where it should (in MSIE example, this includes simulation of a blinking cursor). --- [Similar is IE bug] MS00-093, but that's long fixed. [...] /mz --- On Sun, 11 Feb 2007, Michal Zalewski wrote: > > http://lcamtuf.coredump.cx/focusbug/index.html (FF) > > http://lcamtuf.coredump.cx/focusbug/ieversion.html (MSIE) Paul Szabo pointed out that this is related to exploits posted by Charles McAuley and Bart van Arnhem in June 2006 (CVE-2006-2894). These guys did not demonstrate a complete attack, and their examples do not seem to work well with MSIE 7 (which might be because of a half-assed attempt to fix the problem, or perhaps not) - but a credit quite certainly is due. Original postings: http://lists.grok.org.uk/pipermail/full-disclosure/2006-June/046610.html http://lists.grok.org.uk/pipermail/full-disclosure/2006-June/046699.html Cheers, /mz"
+      }
+    ],
+    "CVE-2006-4253": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=348514",
+        "title": "Crash at http://lcamtuf.coredump.cx/ffoxdie.html (NOT due to too-much-recursion) [@ nsTextFrame::PrepareUnicodeText] [@ nsAutoIndexBuffer::~nsAutoIndexBuffer] (CVE-2006-4253)",
+        "description": "Found a link that says \"Flaw in Firefox 1.5.0.6: remote code execution\", clicked on link and firefox (trunk) crashed and produced TB22044224Y. Stack Signature SelectorMatches b51e851e Product ID FirefoxTrunk Build ID 2006081204 Trigger Time 2006-08-13 05:00:00.0 Platform Win32 Operating System Windows NT 5.1 build 2600 Module firefox.exe + (00264494) URL visited User Comments Since Last Crash 3224 sec Total Uptime 3224 sec Trigger Reason Stack overflow Source File, Line No. c:\\builds\\tinderbox\\fx-trunk-cairo\\winnt_5.2_depend\\mozilla\\layout\\style\\nscssruleprocessor.cpp, line 1333 Stack Trace SelectorMatches nsGenericElement::GetID 0x8d50006a Found this link in the same thread: http://www.securityfocus.com/bid/19488/discuss and tH on irc said to post this link along with this: http://lists.grok.org.uk/pipermail/full-disclosure/2006-August/048711.html"
+      }
+    ],
+    "CVE-2006-4568": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=343168",
+        "title": "frame spoofing using document.open()",
+        "description": "You can replace framed contents using target.frames[n].document.open(). Something similar to bug 13871, bug 20682, bug 246448, and bug 296850."
+      }
+    ],
+    "CVE-2006-6971": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=356355",
+        "title": "numeric domain normalization only happens on enchash table values",
+        "description": "We should be normalizing numeric domains (hex/oct/dec form) for urls that appear on -url and -domain tables. For example, goog-black-url currently has http://24.172.137.213/http.www.paypal.com/cgi-bin/webscrcmd=_login-run/ , but a warning doesn't trigger on the following: http://0x18.0xac.0x89.0xd5/http.www.paypal.com/cgi-bin/webscrcmd=_login-run/ http://030.0254.0211.0325/http.www.paypal.com/cgi-bin/webscrcmd=_login-run/ http://0x18ac89d5/http.www.paypal.com/cgi-bin/webscrcmd=_login-run/ http://413960661/http.www.paypal.com/cgi-bin/webscrcmd=_login-run/ http://03053104725/http.www.paypal.com/cgi-bin/webscrcmd=_login-run/"
+      }
+    ]
+  }
 }

@@ -1,6 +1,6 @@
 {
   "year": 2007,
-  "total": 8,
+  "total": 106,
   "reference": "bugzilla.redhat.com",
   "reports": {
     "CVE-2007-0004": [
@@ -57,6 +57,670 @@
         "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=231684",
         "title": "CVE-2007-1667 XGetPixel() integer overflow",
         "description": "A bug recently showed up in the Debian BTS that describes an integer overflow inX's XGetPixel() functionhttp://bugs.debian.org/cgi-bin/bugreport.cgi?bug=414045The report incorrectly states it is a buffer overflow. The bug also has aproposed patch and reproducer for this flaw.The issue is that the XInitImage() function allows the caller to supply sillyvalues, which can cause several integer overflow. A call to XGetPixel() canalso result in integer overflows. While one would expect the callingapplication to sanitize the data passed to XInitImage(), the library should alsobe smart enough to prevent the caller from giving it bad data."
+      }
+    ],
+    "CVE-2007-1865": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=232045",
+        "title": "CVE-2007-1865 ipv6_getsockopt_sticky copy_to_user leak",
+        "description": "A user can supply len < 0 in ipv6_getsockopt_sticky and cause a leak of kernelmemory."
+      }
+    ],
+    "CVE-2007-2052": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=235093",
+        "title": "CVE-2007-2052 python off-by-one locale.strxfrm() (possible memory disclosure)",
+        "description": "Description of problem:Modules/_localemodule.c:361356 n1 = strlen(s) + 1;357 buf = PyMem_Malloc(n1);358 if (!buf)359 return PyErr_NoMemory();360 n2 = strxfrm(buf, s, n1);In case the transformed string is longer than original string...(see the PoC for an exapmle)361 if (n2 > n1) {362 /* more space needed */We allocate n2 bytes here:363 buf = PyMem_Realloc(buf, n2);364 if (!buf)365 return PyErr_NoMemory();And here the string will be n2 chars long and terminating NUL won'tfit and thus the string won't be terminated what can lead to aninformation leak in certain rare cases (see the original Debian reportfor details).366 strxfrm(buf, s, n2);367 }368 result = PyString_FromString(buf);369 PyMem_Free(buf);370 return result;371 }372373 #if defined(MS_WINDOWS)374 static PyObject*375 PyLocale_getdefaultlocale(PyObject* self)Version-Release number of selected component (if applicable):FC5, FC6, RHEL2.1, RHEL3, RHEL4, RHEL5How reproducible:Proof of concept code attached.Additional info:See the URL for an original bug report to Debian and PoC by Piotr Engelking.It contains details on how to reproduce and recognize the flaw."
+      }
+    ],
+    "CVE-2007-2356": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=238422",
+        "title": "CVE-2007-2356 Stack overflow in gimp's sunras plugin",
+        "description": "+++ This bug was initially created as a clone of Bug #238420 +++Description of problem:There is a possible stack-based buffer overrun in functionplug-ins/common/sunras.c:set_color_table() that can be exploited by anattacker to trigger execution of arbitrary code via crafted Sun RAS file.Version-Release number of selected component (if applicable): Affects: RHEL2.1 Affects: RHEL3 Affects: RHEL4 Affects: RHEL5 Affects: FC5 Affects: FC6Steps to Reproduce:Either use the program referred to in URL to generate a POC, or use onethat is attached to this bug.Additional info:Though I have reproduced a crash on all supported systems, as enumeratedabove, for some unknown reason gdb was detaching from the plugin run withGIMP_PLUGIN_DEBUG=sunras, so I was unable to do a depth-in investigation.I deduce, that it is a stack overflow because core dumps showed evidenceof corrupt stack, with ssp glibc detects a stack smashing, and Secuniaadvisory also states the same:http://secunia.com/advisories/25012/?answer=57-- Additional comment from lkundrak@redhat.com on 2007-04-30 08:32 EST --Created an attachment (id=153788)Malformed Sun RAS file, that overflows stack in gimp's sunras plugin"
+      }
+    ],
+    "CVE-2007-2799": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=241022",
+        "title": "CVE-2007-2799 file integer overflow",
+        "description": "Colin Percival discovered that the fix for CVE-2007-1536 created an integeroverflow flaw in file. This new flaw has been assigned CVE-2007-2799.Here is the information from Colin:+ len = ms->o.size - ms->o.left;+ /* * 4 is for octal representation, + 1 is for NUL */+ psize = len * 4 + 1;+ assert(psize > len);On a 32-bit system, if len is 1.35GB, len * 4 + 1 = 5.4GB == 1.4GB, sothe assert will pass. The buffer will then be overflowed (by as muchas the attacker wants, although of course he'll run into unwriteableaddresses eventually). This looks pretty exploitable...I think the right solution is to apply- assert(psize > len);+ if (len > (SIZE_T_MAX - 1) / 4) {+ file_oomem(ms);+ return NULL;+ }and add#include <limits.h> to the top (in place of the #include <assert.h> whichthe earlier patch adds)."
+      }
+    ],
+    "CVE-2007-3104": [
+      {
+        "url": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=242558",
+        "title": "CVE-2007-3104 Null pointer to an inode in a dentry can cause an oops in sysfs_readdir",
+        "description": "This bug has been copied from bug 237861 and has been proposed to be backportedto 4.5 z-stream (EUS)."
+      }
+    ],
+    "CVE-2007-3106": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=245991",
+        "title": "CVE-2007-3106 libvorbis array boundary condition",
+        "description": "Chris Montgomery has informed us of a bug found in libvorbis.The patch is in revision 13160 from http://svn.xiph.org/trunk/vorbis(svn diff -r 13159:13160 http://svn.xiph.org/trunk/vorbis)I'm calling this bug an \"array boundary condition flaw\". It's the bestdefinition I could find that matched up with something MITRE uses. Theissue in question is related to the usage of a function pointer table.Here is an example:_mapping_P[ci->map_type[i]]->free_info(ci->map_param[i]);What happens is the value of 'ci->map_type[i]' can be an attackercontrolled 16 bit unsigned integer. The amount of play with the thatfunction pointer is a bit suspect I admit, but I suspect it's stillexploitable (some peer review from someone better at this sort of thingwould be helpful).The code in question is called when libvorbis starts to clean things upafter receiving bad data."
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=249780",
+        "title": "CVE-2007-4065 Multiple libvorbis flaws (CVE-2007-4066, CVE-2007-4029)",
+        "description": "Multiple flaws have been found in libvorbis. These are fixed via libvorbisversion 1.2.0.It should be noted that libvorbis 1.2.0 also fixes the issue described in bug245991.The id number of each flaw is the subversion commit id. The descriptions wereprovided by Chris Montgomery. The libvorbis subversion repository is located here:http://svn.xiph.org/trunk/vorbis13217: possible seek infinite loop in libvorbisfile13215: multiplexed/non Vorbis stream support [heap read, potential heap write]13211: better return value checking of seeks [heap read, potential heap write]13179: check legal maximum blocksize [static array read]13169,13170,13172: correctly handle codebooks with zero entires [heap read/write]13168: low bitrate static mode declaration error [static read, heap read,potential heap write]13151,13153,13154,13155,13167: residue decode vector overflow [heap read/write]13162: static initializer declarations, check-before-free error fixes [heapread/write]13149: check legal minimum blocksize [static array read]"
+      }
+    ],
+    "CVE-2007-3387": [
+      {
+        "url": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=248194",
+        "title": "CVE-2007-3387 xpdf integer overflow",
+        "description": "Maurycy Prodeus discovered an integer overflow flaw in the way xpdf processesPDF files. It's possible this flaw could be used to execute arbitrary code asthe user running the application using the xpdf source."
+      }
+    ],
+    "CVE-2007-3472": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=277421",
+        "title": "CVE-2007-3472 CVE-2007-3473 CVE-2007-3474 CVE-2007-3475 CVE-2007-3476 CVE-2007-3477 CVE-2007-3478 gd various flaws [FC6]",
+        "description": "FC6 tracking bug: see blocks bug list for full details of the security issue(s).[bug automatically created by: add-tracking-bugs]"
+      }
+    ],
+    "CVE-2007-3476": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=277421",
+        "title": "CVE-2007-3472 CVE-2007-3473 CVE-2007-3474 CVE-2007-3475 CVE-2007-3476 CVE-2007-3477 CVE-2007-3478 gd various flaws [FC6]",
+        "description": "FC6 tracking bug: see blocks bug list for full details of the security issue(s).[bug automatically created by: add-tracking-bugs]"
+      }
+    ],
+    "CVE-2007-3477": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=277421",
+        "title": "CVE-2007-3472 CVE-2007-3473 CVE-2007-3474 CVE-2007-3475 CVE-2007-3476 CVE-2007-3477 CVE-2007-3478 gd various flaws [FC6]",
+        "description": "FC6 tracking bug: see blocks bug list for full details of the security issue(s).[bug automatically created by: add-tracking-bugs]"
+      }
+    ],
+    "CVE-2007-3731": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=248324",
+        "title": "CVE-2007-3731 NULL pointer dereference triggered by ptrace",
+        "description": "From Evan Teran:http://bugzilla.kernel.org/show_bug.cgi?id=8765It is possible to cause the kernel to reference a null pointer with simpleptrace code. the OOPS seems to indicate that it occurs in arch_ptrace. Inoticed when working on my debugger, that if i set the childs CS to certaininvalid values, instead of a segfault (i believe this is the correct responseto invalid cs). Not only would the ptraced app crash, but so would thedebugger. After further investigation, I realized that the debugger crash wasthe kernel terminating the ptracer due to a null pointer in one of the ptracefunctions.BUG: unable to handle kernel NULL pointer dereference at virtual address000000fc printing eip:c0104b84*pde = 00000000Oops: 0000 [#1]Modules linked in: rtc 3c59x mii ide_cd cdrom yenta_socket rsrc_nonstaticpcmcia_core psmouse uhci_hcd usbcore evdev pcspkrCPU: 0EIP: 0060:[<c0104b84>] Not tainted VLIEFLAGS: 00010202 (2.6.20-gentoo-r8 #1)EIP is at arch_ptrace+0x5ea/0x828eax: 000000f8 ebx: f6dfd580 ecx: 000000ff edx: f6f1a030esi: 000000ff edi: b7fad410 ebp: 00000000 esp: c2209f68ds: 007b es: 007b ss: 0068Process test (pid: 28205, ti=c2208000 task=f6dc8550 task.ti=c2208000)Stack: c020850a f6c9f380 f6f1a030 00000000 0000000b 00000001 00000046 c01163b5 f6f1a030 00000000 00000009 00000000 c0119033 00000000 00000000 00000009 00000000 b7fa3ff4 c2208000 c01028be 00000009 00006e2e 00000000 00000000Call Trace: [<c020850a>] net_tx_action+0x3b/0xba [<c01163b5>] __do_softirq+0x3e/0x83 [<c0119033>] sys_ptrace+0x63/0x89 [<c01028be>] sysenter_past_esp+0x5f/0x85 [<c0240033>] sysctl_tcp_congestion_control+0x7b/0x83 =======================Code: 00 ff 8b 5c 01 00 00 79 0b 8d 83 5c 01 00 00 e8 d7 81 14 00 8b 54 24 088b 9a 80 00 00 00 89 f0 25 f8 ff 00 00 03 83 6c 01 00 00 <8b> 48 04 89 fa 81 e2ff ff 00 00 f7 c1 00 00 40 00 0f 44 fa 0fEIP: [<c0104b84>] arch_ptrace+0x5ea/0x828 SS:ESP 0068:c2209f68"
+      }
+    ],
+    "CVE-2007-3739": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=253313",
+        "title": "CVE-2007-3739 LTC36188-Don't allow the stack to grow into hugetlb reserved regions",
+        "description": "From Adam Litke's mail to LKML (http://lkml.org/lkml/2007/1/29/180):[PATCH] Don't allow the stack to grow into hugetlb reserved regions When expanding the stack, we don't currently check if the VMA will cross into an area of the address space that is reserved for hugetlb pages. Subsequent faults on the expanded portion of such a VMA will confuse the low-level MMU code, resulting in an OOPS. Check for this."
+      }
+    ],
+    "CVE-2007-3740": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=253314",
+        "title": "CVE-2007-3740 CIFS should honor umask",
+        "description": "CIFS apparently does not currently honor the umask for a task. There's anupstream patch to make it do so:commit 3ce53fc4c57603d99c330a6ee2fe96d94f2d350fAuthor: Steve French <sfrench@us.ibm.com>Date: Fri Jun 8 14:55:14 2007 +0000 [CIFS] CIFS should honour umask This patch makes CIFS honour a process' umask like other filesystems. Of course the server is still free to munge the permissions if it wants to; but the client will send the \"right\" permissions to begin with. A few caveats: 1) It only applies to filesystems that have CAP_UNIX (aka support unix extensions) 2) It applies the correct mode to the follow up CIFSSMBUnixSetPerms() after remote creation When mode to CIFS/NTFS ACL mapping is complete we can do the same thing for that case for servers which do not support the Unix Extensions. Signed-off-by: Matt Keenen <matt@opcode-solutions.com> Signed-off-by: Steve French <sfrench@us.ibm.com>"
+      }
+    ],
+    "CVE-2007-3849": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=236923",
+        "title": "CVE-2007-3849 Rebase aide to 0.13.1",
+        "description": "Description of problem:Several bugs have been fixed in recent version of aide (0.13.1) that we shouldpull in to RHEL5. The upstream version of aide has all but 1 of our aidepatches, so rebasing would allow us to simplify things. 0.13.1 is overwhelminglythe work that we did for xattr support. But there are a few bug fixes.Version-Release number of selected component (if applicable):aide-0.12-8.el5"
+      }
+    ],
+    "CVE-2007-3999": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=250973",
+        "title": "CVE-2007-3999 krb5 RPC library buffer overflow",
+        "description": "MIT notified us of kadmind RPC lib buffer overflow, uninitialized pointer. Willbe public on 04 September 2007, at 14:00 US/Eastern time.This issue has not been triaged as it may well affect recent RHEL distributionswith a different severity (flaw type is likely caught by fortify_source)"
+      }
+    ],
+    "CVE-2007-4000": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=250976",
+        "title": "CVE-2007-4000 krb5 kadmind uninitialized pointer",
+        "description": "MIT notified us of a kadmind uninitialized pointer. Will be public on 04September 2007, at 14:00 US/Eastern time.This issue has not been triaged as it may well affect recent RHEL distributionswith a different severity (flaw type is likely caught by fortify_source)"
+      }
+    ],
+    "CVE-2007-4033": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=303021",
+        "title": "CVE-2007-4033 Buffer overflow in t1lib triggerable by long filename string",
+        "description": "Description of problem:Please see [1] and [2] for more information, [3] contains the patch.[1] http://www.bugtraq.ir/adv/t1lib.txt[2] http://secunia.com/advisories/26241/[3] http://bugs.gentoo.org/show_bug.cgi?id=193437Additional info:This is most likely not exploitable on Fedora, due to FORTIFY_SOURCE protection,as the overflow is strcat() call which is protected.According to the Gentoo bug, the CVE identifier for this was requested."
+      }
+    ],
+    "CVE-2007-4066": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=249780",
+        "title": "CVE-2007-4065 Multiple libvorbis flaws (CVE-2007-4066, CVE-2007-4029)",
+        "description": "Multiple flaws have been found in libvorbis. These are fixed via libvorbisversion 1.2.0.It should be noted that libvorbis 1.2.0 also fixes the issue described in bug245991.The id number of each flaw is the subversion commit id. The descriptions wereprovided by Chris Montgomery. The libvorbis subversion repository is located here:http://svn.xiph.org/trunk/vorbis13217: possible seek infinite loop in libvorbisfile13215: multiplexed/non Vorbis stream support [heap read, potential heap write]13211: better return value checking of seeks [heap read, potential heap write]13179: check legal maximum blocksize [static array read]13169,13170,13172: correctly handle codebooks with zero entires [heap read/write]13168: low bitrate static mode declaration error [static read, heap read,potential heap write]13151,13153,13154,13155,13167: residue decode vector overflow [heap read/write]13162: static initializer declarations, check-before-free error fixes [heapread/write]13149: check legal minimum blocksize [static array read]"
+      }
+    ],
+    "CVE-2007-4130": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=179665",
+        "title": "CVE-2007-4130 panic caused by set_mempolicy with MPOL_BIND",
+        "description": "From Bugzilla Helper:User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.8) Gecko/20050511 Firefox/1.0.4Description of problem:The following simple reproducer causes a panic on ia64 when run as any user. Due to this I am considering this a security sensitive problem.This is another situation where bad arguments to set_mempolicy causes a system panic. I have verified this on ia64 running the latest kernel however it is likey not a recent regression.I have not had a chance to dig into the code to narrow down the issue but it is easily reproducable (on ia64 at least, would be interested in seeing if it can be hit elsewhere).VM: killing process a.outUnable to handle kernel NULL pointer dereference (address 0000000000000000)a.out[7796]: Oops 8847632629764 [1]Modules linked in: nfs lockd nfs_acl md5 ipv6 parport_pc lp parport autofs4 i2c_dev i2c_core sunrpc ds yenta_socket pcmcia_core scsi_dump diskdump zlib_deflate vfat fat dm_multipath button ohci_hcd ehci_hcd e1000 dm_snapshot dm_zero dm_mirror ext3 jbd dm_mod qla2300 qla2xxx lpfc scsi_transport_fc mptscsih mptsas mptspi mptfc mptscsi mptbase sd_mod scsi_modPid: 7796, CPU 0, comm: a.outpsr : 0000101008126010 ifs : 800000000000cc18 ip : [<a00000010024e650>] Not taintedip is at __copy_user+0xb0/0x940unat: 0000000000000000 pfs : 0000000000000a99 rsc : 0000000000000003rnat: 0000000000000001 bsps: 0000000000000000 pr : 00000001aa6a0b19ldrs: 0000000000000000 ccv : 0000000000000000 fpsr: 0009804c0270033fcsd : 0000000000000000 ssd : 0000000000000000b0 : a0000001002fcfe0 b6 : a0000001002f7940 b7 : a0000001002fcc00f6 : 0ffff8000000000000000 f7 : 000000000000000000000f8 : 000000000000000000000 f9 : 000000000000000000000f10 : 000000000000000000000 f11 : 000000000000000000000r1 : a0000001009adda0 r2 : 0000000000000000 r3 : 00000000000c0221r8 : 0000000000000000 r9 : ffffffffffffffff r10 : 0000000000000000r11 : 00000001aa6a0a59 r12 : e00000002c0afd70 r13 : e00000002c0a8000r14 : e00000002c0afde0 r15 : 0000000000000000 r16 : 0000000000000050r17 : e00000002c0afde0 r18 : e00000002c0afde1 r19 : 0000000000000000r20 : e00000002c0afde0 r21 : e00000002c0afdb8 r22 : a0000001006638d0r23 : a0000001007ae9a8 r24 : e00000002c0afdd0 r25 : e00000002c0afdc8r26 : 0000000000000000 r27 : 0000001008126010 r28 : 0000000000000000r29 : 0000000000000000 r30 : 0000000000000008 r31 : 0000000000000a99Call Trace: [<a000000100016b20>] show_stack+0x80/0xa0 sp=e00000002c0af900 bsp=e00000002c0a91e0 [<a000000100017430>] show_regs+0x890/0x8c0 sp=e00000002c0afad0 bsp=e00000002c0a9198 [<a00000010003dbb0>] die+0x150/0x240 sp=e00000002c0afaf0 bsp=e00000002c0a9158 [<a000000100061e80>] ia64_do_page_fault+0x8c0/0xbc0 sp=e00000002c0afaf0 bsp=e00000002c0a90f0 [<a00000010000f540>] ia64_leave_kernel+0x0/0x260 sp=e00000002c0afba0 bsp=e00000002c0a90f0 [<a00000010024e650>] __copy_user+0xb0/0x940 sp=e00000002c0afd70 bsp=e00000002c0a9030 [<a0000001002fcfe0>] write_chan+0x3e0/0xc20 sp=e00000002c0afd70 bsp=e00000002c0a8f80 [<a0000001002ed940>] tty_write+0x440/0x640 sp=e00000002c0afe20 bsp=e00000002c0a8f00 [<a0000001001202d0>] vfs_write+0x290/0x360 sp=e00000002c0afe20 bsp=e00000002c0a8eb0 [<a0000001001204f0>] sys_write+0x70/0xe0 sp=e00000002c0afe20 bsp=e00000002c0a8e38 [<a00000010000f3e0>] ia64_ret_from_syscall+0x0/0x20 sp=e00000002c0afe30 bsp=e00000002c0a8e38 [<a000000000010640>] 0xa000000000010640 sp=e00000002c0b0000 bsp=e00000002c0a8e38Version-Release number of selected component (if applicable):kernel-2.6.9-30.ELHow reproducible:AlwaysSteps to Reproduce:1. compile the reproducer with cc foo.c -lnuma2. ./a.out3. watch smoke fly Actual Results: panicExpected Results: no panic!Additional info:"
+      }
+    ],
+    "CVE-2007-4137": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=269001",
+        "title": "CVE-2007-4137 QT off by one buffer overflow",
+        "description": "Dirk Mueller reported an off by one buffer overflow flaw in the way QT parsescertain unicode strings.To quote Dirk: I`ve found a off-by-one buffer overflow in QUtf8Decoder::toUnicode(). It is not exploitable with Qt 4.x or above because there is an additional QChar(0) being allocated in QString, however it is still a bug there, as the array returned by utf16() etc is no longer terminated properly."
+      }
+    ],
+    "CVE-2007-4351": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=361661",
+        "title": "CVE-2007-4351 cups boundary error [F7]",
+        "description": "F7 tracking bug: see blocks bug list for full details of the security issue(s).[bug automatically created by: add-tracking-bugs]"
+      }
+    ],
+    "CVE-2007-4476": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=280961",
+        "title": "CVE-2007-4476 tar/cpio stack crashing in safer_name_suffix",
+        "description": "Common Vulnerabilities and Exposures assigned an identifier CVE-2007-4476to the following vulnerability:Bug in the safer_name_suffix function in GNU tar may lead to a \"crashingstack\". It can be used to crash tar while extracting archive containing filewith long name containing unsafe prefix.Affected function is also part of cpio source code.References:http://www.novell.com/linux/security/advisories/2007_18_sr.htmlhttp://lists.gnu.org/archive/html/bug-cpio/2007-08/msg00002.html"
+      }
+    ],
+    "CVE-2007-4559": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=263261",
+        "title": "CVE-2007-4559 python tarfile module directory traversal",
+        "description": "Common Vulnerabilities and Exposures assigned an identifier CVE-2007-4559to the following vulnerability:Directory traversal vulnerability in the (1) extract and (2) extractallfunctions in the tarfile module in Python allows user-assisted remote attackersto overwrite arbitrary files via a .. (dot dot) sequence in filenames in a TARarchive, a related issue to CVE-2001-1267.References:Issue and additional attack vectors were discussed in following thread onpython-dev mailinglist:http://mail.python.org/pipermail/python-dev/2007-August/074290.htmlUpstream bug tracking possible fixes for the issue:http://bugs.python.org/issue1044"
+      }
+    ],
+    "CVE-2007-4567": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=548641",
+        "title": "CVE-2007-4567 kernel: ipv6_hop_jumbo remote system crash",
+        "description": "Originally discovered by Victor Julien that there is a way to crash the Linux kernel by sending a single IPv6 packet at it.1) The CVE-2007-4567 issue was reported to Red Hat in September 2007. Red Hat Enterprise Linux 5 was found not to be affected.2) On December 18, 2009, a customer reported to us that Red Hat Enterprise Linux 5 was vulnerable to CVE-2007-4567.3) Investigations showed that the issue was introduced in the RHBA-2008-0314 update on May 21, 2008 via a backport of a collection of patches for DoD IPv6 conformance.4) Updates released on January 7, 2010 for Red Hat Enterprise Linux 5, resolving CVE-2007-4567.Note that the Linux kernels as shipped with Red Hat Enterprise Linux 3, 4, and Red Hat Enterprise MRG are not affected.Upstream commit:http://git.kernel.org/linus/e76b2b2567b83448c2ee85a896433b96150c92e6Reference:http://rhn.redhat.com/errata/RHBA-2008-0314.htmlhttps://rhn.redhat.com/errata/RHSA-2010-0019.html"
+      }
+    ],
+    "CVE-2007-4570": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=288201",
+        "title": "CVE-2007-4570 mctransd DoS",
+        "description": "Reported via secalert@redhat.com: There is an algorithmic complexity weakness in the way the MCStranslation daemon handles ranges of compartments in sensitivity labels.When translating a security context that includes a range of categoriesseparated by a period, e.g. \"c0.c10\", the daemon calls thesubstitute_range() function to replace the range with an explicitdeclaration of each category, e.g. \"c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,10\".The vulnerable logic in this function is shown below (with some lineswrapped for readability): while (tok) { if ((r=strchr(tok, '.')) !=0) { int begin=atoi(&tok[1]); ++r; int end=atoi(&r[1]); for (;begin<end+1;begin++) { tmp=sub; if (asprintf(&sub, \"%sc%d,\", sub, begin) < 0) { error=1; break; } free(tmp); } } else { tmp=sub; if (asprintf(&sub, \"%s%s,\", sub, tok) < 0) { error=1; break; } free(tmp); } tok=strtok_r(NULL, \",\", &ptr); }The attacker supplies the input string for this function, and the valuesof 'begin' and 'end' are not checked. Consequently, by supplying anabnormally long range, an attacker can cause the program to remain inthe above loop for an extremely long period of time. Since mcstransd isa single-threaded, single-process daemon, it supports only oneconcurrent request. This weakness allows a local attacker to trivially prevent the daemonfrom responding to requests for an extended period of time (hours ordays). When the mcstrans service is enabled, the system calls uponmcstransd for user logins and the execution of many programs. Ifmcstransd does not respond, those operations silently hang."
+      },
+      {
+        "url": "https://bugzilla.redhat.com/attachment.cgi?id=193951",
+        "description": "The prctl() function allows to set the value 2 for PR_SET_DUMPABLE byunprivileged processes. In case of a segmentation fault the core dump will thenbe owned by the user root.This could lead to a denial of service (disk consumption) or allow a local userto gain root privileges.The suid_dumpable support and prctl(PR_SET_DUMPABLE, 2) have been added with the2.6.13 kernel and Red Hat Enterprise Linux 4 contains a backport of it."
+      }
+    ],
+    "CVE-2007-4619": [
+      {
+        "url": "http://bugzilla.redhat.com/show_bug.cgi?id=331991",
+        "title": "CVE-2007-4619 FLAC Integer overflows",
+        "description": "Common Vulnerabilities and Exposures assigned an identifier CVE-2007-4619 to the following vulnerability:Multiple integer overflows in Free Lossless Audio Codec (FLAC) libFLAC before 1.2.1, as used in Winamp before 5.5 and other products, allow user-assisted remote attackers to execute arbitrary code via a malformed FLAC file that triggers improper memory allocation, resulting in a heap-based buffer overflow.References:http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=608http://flac.sourceforge.net/changelog.html#flac_1_2_1"
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=332571",
+        "title": "CVE-2007-4619 FLAC Integer overflows [F7]",
+        "description": "F7 tracking bug: see blocks bug list for full details of the security issue(s).[bug automatically created by: add-tracking-bugs]"
+      }
+    ],
+    "CVE-2007-4629": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=272081",
+        "title": "CVE-2007-4629 Buffer overflow via long strings passed to mapserver",
+        "description": "Name: CVE-2007-4629Status: CandidateURL: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4629Final-Decision:Interim-Decision:Modified:Proposed:Assigned: 20070830Category:Reference: CONFIRM:http://mapserver.gis.umn.edu/download/current/HISTORY.TXT/Reference: CONFIRM:http://trac.osgeo.org/mapserver/ticket/2252Reference: FRSIRT:ADV-2007-2974Reference: URL:http://www.frsirt.com/english/advisories/2007/2974Buffer overflow in the processLine funtion in maptemplate.c inMapServer before 4.10.3 allows attackers to cause a denial of serviceand possibly execute arbitrary code via a mapfile with a long layername, group name, or metadata entry name."
+      }
+    ],
+    "CVE-2007-4650": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=267421",
+        "title": "CVE-2007-4650 security update for gallery2",
+        "description": "Description of problem:gallery 2.2.3 has been released as security update."
+      }
+    ],
+    "CVE-2007-4727": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=284511",
+        "title": "CVE-2007-4727 FastCGI header overrun in lighttpd's mod_fastcgi",
+        "description": "Description of problem:New 1.4.18 release of lighttpd fixes an arbitrary code execution flaw inlighttpd's header parsing code. Please update the package.Additional info:http://secweb.se/en/advisories/lighttpd-fastcgi-remote-vulnerability/http://www.lighttpd.net/assets/2007/9/9/lighttpd_sa_2007_12.txt"
+      }
+    ],
+    "CVE-2007-4752": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=280471",
+        "title": "openssh falls back to the trusted x11 cookie if generation of an untrusted cookie fails [FC6]",
+        "description": "FC6 tracking bug: see blocks bug list for full details of the security issue(s).[bug automatically created by: add-tracking-bugs]"
+      }
+    ],
+    "CVE-2007-4770": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=429023",
+        "title": "CVE-2007-4770 libicu poor back reference validation",
+        "description": "Will Drewry reported a flaw in the way libicu processes certain regularexpressions. He reports: On regular expression compilation, illegal backreferences may refer to the non-existent capture group '0'. When these are builts, they will result in corrupt REStackFrames which will be used at a later point. Crashes may result in out of band reads or writes depending on the regular expression being executed."
+      }
+    ],
+    "CVE-2007-4771": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=429025",
+        "title": "CVE-2007-4771 libicu incomplete interval handling",
+        "description": "Will Drewry reported a flaw in the way libicu processes certain regularexpressions. He reports: In the function doInterval, regexcmp.cpp:976, there isno check to ensure than the upper interval is not -1. This is intentional as unbounded upper limits are allowed, however the remainder of the code does not gracefully handle this case. For instance, a heap overflow is possible due to the doubling of memory as RegexMatcher::StateSave continues to backtrack."
+      }
+    ],
+    "CVE-2007-4828": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=287881",
+        "title": "CVE-2007-4828 mediawiki cross-site scripting vulnerability",
+        "description": "Secunia published security advisory for mediawiki:http://secunia.com/advisories/26772/A vulnerability has been reported in MediaWiki, which can be exploited bymalicious people to conduct cross-site scripting attacks.Input passed to unspecified parameters in the API pretty-printing mode is notproperly sanitised before being returned to the user. This can be exploited toexecute arbitrary HTML and script code in a user's browser session in context ofan affected site.Successful exploitation requires that the API interface is enabled.The vulnerability is reported in the following versions:* 1.11 <= 1.11.0rc1* 1.10 <= 1.10.1* 1.9 <= 1.9.3* 1.8 <= 1.8.4 (if $wgEnableAPI has been switched on)Solution: Update to version 1.11.0, 1.10.2, 1.9.4, or 1.8.5.Versions currently in Fedora falls into \"affected\" range, even though there isfollowing note in changelog for release 1.9.3-34:- Update to 1.9.4.It only seems to be typo. If there's any other reason why Fedora packages arenot affected, feel free to close this bug with appropriate comment."
+      }
+    ],
+    "CVE-2007-4829": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=295021",
+        "title": "CVE-2007-4829 perl-Archive-Tar directory traversal flaws",
+        "description": "Directory traversal vulnerability in Archive::Tar perl module allowsuser-assisted remote attackers to overwrite arbitrary files writable by userrunning application using this module via an absolute path or a .. (dot dot)sequence in filenames in a TAR archive.Similar issues were reported and fixed for GNU tar during past several years,e.g.: CVE-2001-1267, CVE-2002-0399, CVE-2002-1216 and CVE-2007-4131.This issue is important when this module is used to extract tar archives fromuntrusted sources. However, some of such applications either implementworkarounds / own checks (sa-update in spamassassin) or dropped module supportat all (amavisd-new)."
+      }
+    ],
+    "CVE-2007-4893": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=285831",
+        "title": "Upstream security fixes available",
+        "description": "Description of problem:Yet again, new WordPress security issues have been detected. Thedevelopers have released a new version 2.2.3 that addresses theseissues: http://wordpress.org/development/2007/09/wordpress-223/According to the announcement \"Two of the fixes are high priority.\"I could not find any related CVEs.Version-Release number of selected component (if applicable):wordpress-2.2.2-0.fc7"
+      }
+    ],
+    "CVE-2007-4894": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=285831",
+        "title": "Upstream security fixes available",
+        "description": "Description of problem:Yet again, new WordPress security issues have been detected. Thedevelopers have released a new version 2.2.3 that addresses theseissues: http://wordpress.org/development/2007/09/wordpress-223/According to the announcement \"Two of the fixes are high priority.\"I could not find any related CVEs.Version-Release number of selected component (if applicable):wordpress-2.2.2-0.fc7"
+      }
+    ],
+    "CVE-2007-4897": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=292831",
+        "title": "CVE-2007-4897 ekiga GetHostAddress remote DoS",
+        "description": "Common Vulnerabilities and Exposures assigned an identifier CVE-2007-4897 to the following vulnerability:The SIPURL::GetHostAddress function in Ekiga (formerly GnomeMeeting) 2.0.5 andearlier allows remote attackers to cause a denial of service (applicationcrash) via unspecified vectors, related to \"bad management of memoryallocation.\"References:http://www.securityfocus.com/bid/25642http://www.s21sec.com/avisos/s21sec-036-en.txthttp://marc.info/?l=full-disclosure&m=118959114522339&w=2Note:Advisory posted to full-disclosure stated versions 2.0.5 and prior arevulnerable. s21sec site seems to have updated advisory stating version2.0.7 is also vulnerable."
+      }
+    ],
+    "CVE-2007-4924": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=296371",
+        "title": "CVE-2007-4924 ekiga remote crash caused by insufficient input validation",
+        "description": "JosÃ© Miguel Esparza discovered that insufficient input validation is performedon SIP protocol header field 'Content-Length' by opal library used by ekiga. This flaw can be used to write '\\0' byte to attacker-controlled address andcrash ekiga. Ekiga 2.0.10 using opal library 2.2.10 was released to addressthis issue.Ekiga 2.0.10 release notes:http://mail.gnome.org/archives/ekiga-list/2007-September/msg00103.htmlCVS commit pointed out by upstream:http://openh323.cvs.sourceforge.net/openh323/opal/src/sip/sippdu.cxx?r1=2.83.2.19&r2=2.83.2.20&pathrev=Phobos(some of the previous commits may be required to get complete checks / fix)"
+      }
+    ],
+    "CVE-2007-4974": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=296221",
+        "title": "CVE-2007-4974 Heap overflow in libsndfile triggerable by seeks",
+        "description": "Description of problem:To quote Robert Buchholz of Gentoo:The issue was already known upstream and a change in libsndfile-1.0.18pre17 [2] addressed it, but does not fix it robustly. Attached is a fix for 1.0.17 (line numbers are including Gentoo's FLAC patches [3]) that was approved by upstream.[2] http://www.mega-nerd.com/tmp/libsndfile-1.0.18pre17.tar.gz[3] http://distfiles.gentoo.org/distfiles/libsndfile-1.0.17+flac-1.1.3.patch.bz2Additional info:See URL for mor details. A CVE identifier for this issue was already requested."
+      }
+    ],
+    "CVE-2007-5001": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=326251",
+        "title": "CVE-2007-5001 kernel asynchronous IO on a FIFO kernel panic",
+        "description": "Using asynchronous IO on a FIFO causes RHEL 3U9 to kernel panic.(Does not occur in RHEL 4 as the pipe_write function has been re-written) This is a security issue because a local unprivileged user can cause a kernel panic.Reproducer in bz#311621"
+      }
+    ],
+    "CVE-2007-5007": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=297581",
+        "title": "CVE-2007-5007 balsa: IMAP server triggerred stack overflow",
+        "description": "Description of problem:A remote IMAP server can overflow a statically sized buffer on stack andpossible execute arbitrary code with privilegies of user running Balsa with along message name in response to FETCH command of IMAP protocol.Additional info:See URL for original Gnome Bugzilla entry which contains a patch."
+      }
+    ],
+    "CVE-2007-5034": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=297981",
+        "title": "CVE-2007-5034 elinks reveals POST data to HTTPS proxy [F7]",
+        "description": "F7 tracking bug: see blocks bug list for full details of the security issue(s).[bug automatically created by: add-tracking-bugs]"
+      }
+    ],
+    "CVE-2007-5038": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=299981",
+        "title": "CVE-2007-5038 Security Advisory for Bugzilla 3.0.1 and 3.1.1",
+        "description": "September 18, 2007Summary=======Bugzilla is a Web-based bug-tracking system, used by a large number ofsoftware projects.This advisory covers a critical security issue that has recently beenfixed in the Bugzilla code:* Even with account creation disabled, users can use the WebService to create an account.We strongly advise that 2.23.x and 3.0.x users upgrade to 3.0.2immediately. Users of CVS HEAD or 3.1.1 should upgrade to 3.1.2immediately. This is critical if you have a \"requirelogin\" installationand also have the WebService enabled.Vulnerability Details=====================Class: Unauthorized AccessVersions: 2.23.3 and above.Description: Bugzilla::WebService::User::offer_account_by_email does not check the \"createemailregexp\" parameter, and thus allows users to create accounts who would normally be denied account creation. The \"emailregexp\" parameter is still checked. If you do not have the SOAP::Lite Perl module installed on your Bugzilla system, your system is not vulnerable (because the Bugzilla WebService will not be enabled).Reference: https://bugzilla.mozilla.org/show_bug.cgi?id=395632Vulnerability Solutions=======================The fix for the security bug mentioned in this advisory isincluded in the 3.0.2 and 3.1.2 releases. Upgrading to thesereleases will protect installations from possible exploits of thisissue.Full release downloads, patches to upgrade Bugzilla from previousversions, and CVS upgrade instructions are available at: http://www.bugzilla.org/download/If you are unable to upgrade, you should IMMEDIATELY apply theappropriate patch for your version:2.23.x & 3.0.x: https://bugzilla.mozilla.org/attachment.cgi?id=280385 3.1.x: https://bugzilla.mozilla.org/attachment.cgi?id=280316Credits=======The Bugzilla team wish to thank the following people for theirassistance in locating, advising us of, and assisting us to fixthis issue:Sascha JensenFrÃƒÂ©dÃƒÂ©ric BuclinMax Kanat-AlexanderMarc SchumannGeneral information about the Bugzilla bug-tracking system can be foundat: http://www.bugzilla.org/Comments and follow-ups can be directed to the mozilla.support.bugzillanewsgroup or the support-bugzilla mailing list.http://www.bugzilla.org/support/ has directions for accessing theseforums."
+      }
+    ],
+    "CVE-2007-5116": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=323571",
+        "title": "CVE-2007-5116 perl regular expression UTF parsing errors",
+        "description": "Tavis Ormandy and Will Drewry have discovered a flaw in the way perl calculatesthe space needed to process a regular expression. It is possible to cause thetwo passes to mismatch. To quote their mail: The compile phase uses multiple passes (similar to older pcre releases), once to determine space requirements and another to actually compile the expression, however it's very simple to cause the two passes to mismatch. From the perl documentation: > The regular expression compiler produces polymorphic opcodes.That is, > the pattern adapts to the data and automatically switches to the Unicode > character scheme when presented with Unicode data--or instead uses a > traditional byte scheme when presented with byte data. This unfortunately means that you can cause the mode to switch at an arbitrary point, and then subsequent passes of any of the expression prior to this point switch will be passed differently, and thus potentially have their space requirements miscalculated.Acknowledgements:Red Hat would like to thank Tavis Ormandy and Will Drewry for properly disclosing this issue."
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=378131",
+        "title": "CVE-2007-5116 perl regular expression UTF parsing errors [f7]",
+        "description": "This is an automatically created tracking bug!It was created to ensure that one or more security vulnerabilities are fixed in all affected releases. You should not refer to it anywhere except in the update system as it is a private \"Fedora Project Contributors\" bug. The update system should close this bug it once the update is pushed.For comments that are specific to a vulnerability please use bugs filed against \"Security Response\" product referenced in \"Blocks\" field.bug #323571: CVE-2007-5116 perl regular expression UTF parsing errorsWhen creating an update for the version this this bug is reported against please include the bug IDs of respective bugs filed against \"Security Response\" product as well as of this bug. Please note that the update announcement will (and should) contain only references to \"Security Response\" bugs as long as the tracking bug is restricted to \"Fedora Project Contributors\".For more information see: http://fedoraproject.org/wiki/Security/TrackingBugs"
+      }
+    ],
+    "CVE-2007-5159": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=298651",
+        "title": "ntfs-3g allows access to partition the users normally should not have access to",
+        "description": "Description of problem:Fuse in general and Fedora's way to let only members of the group fuse accessand use fuse was discussed inhttps://www.redhat.com/archives/fedora-desktop-list/2007-September/msg00163.htmland mails below in that thread.There we noticed that members of the group fuse can get access to devices whichthey normally should not have access to. Seehttps://www.redhat.com/archives/fedora-desktop-list/2007-September/msg00163.html; the relevant parts of it:$ ls -l /dev/sda3brw-r----- 1 root disk 8, 3 14. Sep 16:10 /dev/sda3$ groupsthl fuse$ dd if=/dev/sda3 bs=512K count=1 | stringsdd: opening `/dev/sda3': Permission denied$ mkdir ntfs$ /sbin/mount.ntfs-3g /dev/sda3 ntfs/$ touch ntfs/foo$ ls -l ntfs/foo-rwxrwxrwx 1 thl thl 0 18. Sep 19:27 ntfs/foontfs-3g IMHO should fail, as the users should not get access to random deviceshe has no access to. Quoting Alexander Larsson fromhttps://www.redhat.com/archives/fedora-desktop-list/2007-September/msg00171.html>Thats quite weird. The way I undestand fuse is that you run the>filesystem as your user, and then that filesystem (via libfuse) spawns>fusermount to open the fuse device and attach to the mountpoint.>fusermount then passes the fd to the fuse device back the the filesystem>process (via a socket) which then handles all the requests. >>Reading the data source for the filesystem (if there is any) is only>done by the filesystem process, not by the setuid fusermount helper, so>it should not be able to read /dev/sda3.Further investigation showed that ntfs-3g gets installed SUID root:$ ls -l /sbin/mount.ntfs-3g -rwsr-xr-- 1 root fuse 40528 17. Sep 23:14 /sbin/mount.ntfs-3gThat might be wrong as that afaics makes it possible for ntfs-3g to accessdevices which the user normally would not have access to. Quoting Alexanderagain, this time fromhttps://www.redhat.com/archives/fedora-desktop-list/2007-September/msg00174.html>Oh. That seems like a bad idea to me. If this drops privs after opening>the device I think you can attach to the process using e.g. gdb and call>any read() operation on the device. If might even mean (with some>creative exploits) that any fuse group user can read any block on any>disk.Version-Release number of selected component (if applicable):ntfs-3g-1.913-1.fc8Please note that I as ex-maintainer of fuse stumbled into this by accident -- Idon't care much about fuse and ntfs-3g these days, but I think the behavior ofntfs-3g is a security bug."
+      }
+    ],
+    "CVE-2007-5162": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=313791",
+        "title": "CVE-2007-5162 ruby Net:HTTP insufficient verification of SSL certificate [F7]",
+        "description": "F7 tracking bug: see blocks bug list for full details of the security issue(s).[bug automatically created by: add-tracking-bugs]"
+      }
+    ],
+    "CVE-2007-5197": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=367471",
+        "title": "CVE-2007-5197: mono Math.BigInteger buffer overflow",
+        "description": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-5197\"Buffer overflow in the Mono.Math.BigInteger class in Mono allowscontext-dependent attackers to execute arbitrary code via unspecified vectors.\"Patch extracted from Debian's 1.2.2.1-1etch1 patchkit (attached) seems to applyto 1.2.5.1 in devel with some line offsets, I have done no further analysis."
+      }
+    ],
+    "CVE-2007-5201": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=293081",
+        "title": "CVE-2007-5201 Duplicity discloses password in FTP backend",
+        "description": "Description of problem:When duplicity's FTP backend calls ncftp, it passws the password argument viacommand line. That's bad -- anyone can see that. On the other side, it's a verygood practice to overwrite the password string in the address space wfter it'sused, though it can still be viewed under a time-dependent race condition,that's why I am cloning this to ncftp also.Additional info:See URL for the Deban BTS entry [1] for more details.[1] http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=442840"
+      }
+    ],
+    "CVE-2007-5208": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=319921",
+        "title": "CVE-2007-5208 hplip arbitrary command execution",
+        "description": "Kees Cook of the Ubuntu Security Team has informed us of following securityvulnerability in hplip:I just discovered that the hpssd daemon of hplip is vulnerable toarbitrary command injection via its use of popen3. Other local userscan run commands as the invoker of hpssd (usually root, hplip, or alocal user). By default, it only listens on localhost, but this isconfigurable via /etc/hp/hplip.conf, so in the worst-case it is possiblethis could allow remote root command execution.Both 2.x and 1.x series appear vulnerable (but not 0.x which used SMTP).The bug for this is: https://launchpad.net/bugs/149121"
+      }
+    ],
+    "CVE-2007-5226": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=319301",
+        "title": "CVE-2007-5226 dircproxy segfault on blank /me",
+        "description": "Blank /me messages sent by irssi on irc.freenode.net causes dircproxy tosegfault. Security implications?Program received signal SIGSEGV, Segmentation fault.0x000000000040c016 in _ircserver_data (p=0x45d74e0, sock=9) at irc_server.c:11571157 irclog_log(p, IRC_LOG_ACTION, logdest, msg.src.orig,(gdb) bt full#0 0x000000000040c016 in _ircserver_data (p=0x45d74e0, sock=9) at irc_server.c:1157 dccmsg = <value optimized out> rejmsg = 0x45d9008 \"Py]\\004\" rest = 0x32e454b960 \"\" file_stat = {st_dev = 73233632, st_ino = 218579122528, st_nlink =73234240, st_mode = 40, st_uid = 0, st_gid = 73233632, pad0 = 0, st_rdev = 0,st_size = 140733391467344, st_blksize = 4284782, st_blocks = 140733391467448, st_atim = {tv_sec = 0,tv_nsec = 73234240}, st_mtim = {tv_sec = 40, tv_nsec = 73233632}, st_ctim ={tv_sec = 0, tv_nsec = 140733391467344}, __unused = {4224354, 0, 0}} tmp = 0x8 <Address 0x8 out of bounds> ptr = 0x45d77e0 \"warren\" l_port = -464209568 t_port = <value optimized out> type = 0 r_addr = <value optimized out> r_port = 0 capfile = 0x0 str = 0x45d8c70 \":lmacken!i=lmacken@fedora/lmacken PRIVMSG#fedora-meeting :+\\001ACTION \\001\"#1 0x00000000004158bb in net_poll () at net.c:916 can_read = <value optimized out> can_write = 0 s = (struct sockinfo *) 0x45d8b50 ns = 3 nr = 0 sn = 2 now = 71 ufds = (struct pollfd *) 0x45d79c0 m_ns = 3#2 0x0000000000402bc3 in main (argc=<value optimized out>, argv=<valueoptimized out>) at main.c:319 ns = 3 nt = <value optimized out> status = 0 pid = <value optimized out> optc = <value optimized out> show_help = 3 show_version = 3 show_usage = 0 local_file = <value optimized out> cmd_listen_port = 0x0 cmd_pid_file = 0x0 inetd_mode = 0 no_daemon = 0#3 0x00000032e421d8a4 in __libc_start_main (main=0x402540 <main>, argc=3,ubp_av=0x7fff0bce96a8, init=<value optimized out>, fini=<value optimized out>, rtld_fini=<value optimized out>, stack_end=0x7fff0bce9698) at libc-start.c:231 result = <value optimized out> unwind_buf = {cancel_jmp_buf = {{jmp_buf = {218561092544,6919244002178149327, 0, 140733391476384, 0, 0, 6919332491586846239,6919244198205289360}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x4021d0, 0x6ffffe34}, data = {prev = 0x0, cleanup =0x0, canceltype = 4202960}}} not_first_call = <value optimized out>#4 0x00000000004021f9 in _start ()No symbol table info available."
+      }
+    ],
+    "CVE-2007-5269": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=327791",
+        "title": "CVE-2007-5269 libpng DoS via multiple out-of-bounds reads",
+        "description": "+++ This bug was initially created as a clone of Bug #324771 +++Common Vulnerabilities and Exposures assigned an identifier CVE-2007-5269 to thefollowing vulnerability:Certain chunk handlers in libpng before 1.0.29 and 1.2.x before 1.2.21allow remote attackers to cause a denial of service (crash) viacrafted (1) pCAL (png_handle_pCAL), (2) sCAL (png_handle_sCAL), (3)tEXt (png_push_read_tEXt), (4) iTXt (png_handle_iTXt), and (5) ztXT(png_handle_ztXt) chunking in PNG images, which trigger out-of-boundsread operations.http://secunia.com/advisories/27093http://www.frsirt.com/english/advisories/2007/3390http://sourceforge.net/mailarchive/forum.php?thread_name=3.0.6.32.20071004082318.012a7628%40mail.comcast.net&forum_name=png-mng-implementlibpng10 in FC-6 and F-7 is < 1.0.29 at the moment."
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=337461",
+        "title": "CVE-2007-5269 libpng DoS via multiple out-of-bounds reads [F7]",
+        "description": "F7 tracking bug: see blocks bug list for full details of the security issue(s).[bug automatically created by: add-tracking-bugs]"
+      }
+    ],
+    "CVE-2007-5360": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2007-5360",
+        "title": "CVE-2007-5360 tog-pegasus pam authentication buffer overflow",
+        "description": "VMWare reported a buffer overflow vulnerability in the PAM authentication codein the OpenPegasus CIM management server. This vulnerability can be exploitedremotely and results in arbitrary code execution with the privileges of thecimserver process.Details in next comment.Due to the nature of the bug, and the Red Hat changes to tog-pegasus package,it's quite likely it has a much reduced impact, this will have to be investigated.Current embargo is Dec 27th. I've asked for an extension to Jan 3rd at theearliest."
+      }
+    ],
+    "CVE-2007-5386": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=333661",
+        "title": "phpMyAdmin 2.11.1.2 is released (fixes CVE-2007-5386, CVE-2007-5589)",
+        "description": "Description of problem:PhpMyAdmin 2.11.1.1 was released on October 15th, 2007 and Fedora Development hangs still around the older 2.11.0. And the release 2.11.1.1 fixes a security issue: PMASA-2007-5Version-Release number of selected component (if applicable):phpMyAdmin-2.11.0-1Expected results:phpMyAdmin-2.11.1.1-1 or newer ;-)Additional info:A simple version bump did the trick for me."
+      }
+    ],
+    "CVE-2007-5395": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=371221",
+        "title": "CVE-2007-5395 link-grammar buffer overflow in tokenize.c",
+        "description": "Common Vulnerabilities and Exposures assigned an identifier CVE-2007-5395 to the following vulnerability:Stack-based buffer overflow in the separate_word function in tokenize.c in Link Grammar 4.1b and possibly other versions, as used in AbiWord Link Grammar 4.2.4, allows remote attackers to execute arbitrary code via a long word, as reachable through the separate_sentence function.References:http://secunia.com/secunia_research/2007-78/advisory/http://secunia.com/secunia_research/2007-79/advisory/http://secunia.com/advisories/27300http://secunia.com/advisories/27340"
+      }
+    ],
+    "CVE-2007-5494": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=315051",
+        "title": "CVE-2007-5494 open(O_ATOMICLOOKUP) leaks dentry",
+        "description": "Due issue described in https://bugzilla.redhat.com/show_bug.cgi?id=313681open(O_ATOMICLOOKUP) leaks the dentry on the filesystems where d_revalidate isimplemented.i.e open (\"/proc/self/exe\", O_RDONLY); open (\"/proc/self/exe\", O_RDONLY | 02000000);leaks one dentry.By this way it's possible to eat all the memory on the node or overflowdentry->d_count.Both RHEL4 and RHEL5 kernels are vulnerabledAcknowledgements:Red Hat would like to credit Vasily Averin for reporting this issue."
+      }
+    ],
+    "CVE-2007-5496": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=288271",
+        "title": "CVE-2007-5496 setroubleshoot log injection",
+        "description": "reported via secalert@redhat.com: The graphical sealert program interprets records in the setroubleshootdatabase as HTML when it displays them to the user. These recordsinclude arbitrary attacker-controlled values such as the names ofprocesses and files involved in AVC denial events, and the sealertdaemon fails to properly escape those values before passing them to itsHTML parser. This allows an unprivileged local attacker to injectarbitrary HTML tags into the alerts displayed by the sealert browser,altering an alert's appearance or inserting arbitrary links. There is nopreview bar to show a link's target URL. When a link in the alert isclicked, the program executes the following Python code, where 'arg2' isthe value of the link's href attribute: os.spawnl(os.P_NOWAIT, \"/usr/bin/htmlview\", \"htmlview\", arg2)The htmlview script executes the user's preferred web browser, whichdefaults to /usr/bin/firefox under RHEL 5. Since the attacker controlsonly one argument, it does not appear to be possible to inject arbitraryshell commands, or to cause Firefox to execute arbitrary JavaScript inchrome:/// context. However, in combination with security flaws inFirefox or any other web browser that htmlview may launch, this flawcould be used to execute arbitrary code or steal credentials."
+      }
+    ],
+    "CVE-2007-5498": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=369531",
+        "title": "CVE-2007-5498 missing sanity check in xen block backend driver",
+        "description": "Description of problem:The blkif_get_x86_32_req() and blkif_get_x86_64_req() functions don'tsanity-check the req->nr_segments value.The functions are part of the 32-on-64 support. They translate block I/Orequest structs from 32bit ABI to 64bit ABI and visa versa. They are used incase 32bit paravirtualized guests (or 32bit hvm guests with pv-on-hvm driversinstalled) are running on a 64bit host.Version-Release number of selected component (if applicable):RHEL 5.1 kernel."
+      }
+    ],
+    "CVE-2007-5503": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=387431",
+        "title": "CVE-2007-5503 cairo integer overflow",
+        "description": "Peter Valchev from the Google Security Team told the Cairo upstream project ofan integer overflow in the way Cairo decodes PNG image data. To quote the mailfrom Peter: As an example, cairo supports creating a new image surface from a PNG image file - see cairo-png.c, function cairo_image_surface_create_from_png(). It calls read_png(), where the input filename is parsed, and memory is allocated to hold the resulting surface as follows: cairo-png.c: read_png() .. png_get_IHDR (png, info, &png_width, &png_height, &depth, &color_type, &interlace, NULL, NULL); .. pixel_size = 4; data = malloc (png_width * png_height * pixel_size); .. Note that png_width and png_height come from libpng's IHDR. The image width and height are restricted in libpng's pngconf.h, and by default the restrictions are as follows: # define PNG_USER_WIDTH_MAX 1000000L # define PNG_USER_HEIGHT_MAX 1000000L so any width < 1000000 and height < 1000000 will pass through libpng, allowing an integer overflow in cairo's read_png() function above.The upstream fix can be found here:http://gitweb.freedesktop.org/?p=cairo;a=commitdiff;h=5c7d2d14d78e4dfb1ef6d2c40f0910f177e07360http://gitweb.freedesktop.org/?p=cairo;a=commitdiff;h=e49bcde27f88e21d5b8037a0089a226096f6514b"
+      }
+    ],
+    "CVE-2007-5585": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=336331",
+        "title": "CVE-2007-5585 password prompt crashes by gl hacks without gl helper",
+        "description": "Description of problem:xscreensaver has started crashing a few days agoVersion-Release number of selected component (if applicable):xscreensaver-5.03-10.fc7.src.rpmHow reproducible:sometimesSteps to Reproduce:1. lock screen2. leave computer3. come back and wiggle mouse if screen dark Actual results:screen unlocked without entering passwordExpected results:screen remains locked until I enter my passwordAdditional info:output of \"xscreensaver -sync -verbose -no-capture\" will be attached.stupidly enough I forgot to up the ulimit -c from 0.it's running in sync and verbose mode again after \"ulimit -c 2048\". Will updatethis BZ if it craps out again."
+      }
+    ],
+    "CVE-2007-5589": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=333661",
+        "title": "phpMyAdmin 2.11.1.2 is released (fixes CVE-2007-5386, CVE-2007-5589)",
+        "description": "Description of problem:PhpMyAdmin 2.11.1.1 was released on October 15th, 2007 and Fedora Development hangs still around the older 2.11.0. And the release 2.11.1.1 fixes a security issue: PMASA-2007-5Version-Release number of selected component (if applicable):phpMyAdmin-2.11.0-1Expected results:phpMyAdmin-2.11.1.1-1 or newer ;-)Additional info:A simple version bump did the trick for me."
+      }
+    ],
+    "CVE-2007-5623": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=348731",
+        "title": "CVE-2007-5623 nagios-plugins check_snmp possible buffer overflow",
+        "description": "Stack-based buffer overflow vulnerability was discovered in the way check_snmpparses output of snmpget command. Long reply from malicious SNMP server maycause check_snmp to crash or possible execute code.Problem is reported here:https://sourceforge.net/tracker/?func=detail&atid=397597&aid=1815362&group_id=29880SF.net contains patch proposed by reporter, but it has not yet been accepted toupstream CVS/SVN."
+      }
+    ],
+    "CVE-2007-5624": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=362791",
+        "title": "CVE-2007-5624 nagios possible XSS in version <2.10 [F7]",
+        "description": "F7 tracking bug: see blocks bug list for full details of the security issue(s).[bug automatically created by: add-tracking-bugs]"
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=362801",
+        "title": "CVE-2007-5624 nagios possible XSS in version <2.10 [F8]",
+        "description": "F8 tracking bug: see blocks bug list for full details of the security issue(s).[bug automatically created by: add-tracking-bugs]"
+      }
+    ],
+    "CVE-2007-5745": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=435678",
+        "title": "CVE-2007-5745 openoffice.org: Quattro Pro files handling heap overflows in Attribute and Font records",
+        "description": "Security issue found by anonymous researcher was reported via iDefense toOpenOffice.org upstream:Synopsis:Manipulated Quattro Pro files can lead to heap overflows and arbitrary codeexecutionImpact:A security vulnerability with the way OpenOffice.org 2 processes Quattro Profiles may allow a remote unprivileged user who provides a OpenOffice.orgdocument that is opened by a local user to execute arbitrary commands on thesystem with the privileges of the user running OpenOffice.org."
+      }
+    ],
+    "CVE-2007-5747": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=435681",
+        "title": "CVE-2007-5747 openoffice.org: Quattro Pro files parsing integer underflow",
+        "description": "Security issue found by anonymous researcher was reported via iDefense toOpenOffice.org upstream:Synopsis:Manipulated Quattro Pro files can lead to heap overflows and arbitrary codeexecutionImpact:A security vulnerability with the way OpenOffice.org 2 processes Quattro Profiles may allow a remote unprivileged user who provides a OpenOffice.orgdocument that is opened by a local user to execute arbitrary commands on thesystem with the privileges of the user running OpenOffice.org."
+      }
+    ],
+    "CVE-2007-5751": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=360641",
+        "title": "CVE-2007-5751 liferea weak permissions for the feedlist.opml backup file",
+        "description": "Common Vulnerabilities and Exposures assigned an identifier CVE-2007-5751 to thefollowing vulnerability:Liferea before 1.4.6 uses weak permissions (0644) for thefeedlist.opml backup file, which allows local users to obtaincredentials.References:http://sourceforge.net/project/shownotes.php?release_id=550468http://secunia.com/advisories/27438Issue is reported to be fixed in version 1.4.6. Current version in Fedora isfrom 1.2.x branch, however affected code also seems to exist there.This seems to be a relevant upstream SVN commit:http://liferea.svn.sourceforge.net/viewvc/liferea?view=rev&revision=3512"
+      }
+    ],
+    "CVE-2007-5770": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=362081",
+        "title": "CVE-2007-5770 ruby insufficient verification of SSL certificate in various net::* modules",
+        "description": "A flaw was discovered in a way various ruby net::* modules verify commonName(CN) attribute of SSL certificate provided by server against requested hostname,which makes it easier for remote attackers to intercept SSL transmissions via aman-in-the-middle attack or spoofed site.Issue was originally reported for net::http(s) module and was assigned CVE idCVE-2007-5162. However, similar issue also affects other modules: net::ftptls,net::telnets, net::imap and CVS versions of net::pop and net::smtp.Upstream SVN commit:http://svn.ruby-lang.org/cgi-bin/viewvc.cgi?view=rev&revision=13656"
+      }
+    ],
+    "CVE-2007-5935": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=368591",
+        "title": "CVE-2007-5935 dvips -z buffer overflow with long href",
+        "description": "Description of problem:DVI file that contains a hypertex reference with long title can trigger a stackbased buffer overflow of a statically sized char array when dvips is called with-z argument. This could possibly result in arbitrary code execution in case userwas tricked into open a specially crafted DVI file.Additional info:This issue affects the versions of the tetex package, as shippedwith Red Hat Enterprise Linux 3 and 4.This issue has no security impact on tetex package version, as shippedin Red Hat Enterprise Linux 5 due to _FORTIFY_SOURCE protection thatterminates the process before the memory corruption occurs.This issue has no security impact on texlive package versions,as shipped with Fedora releases of 11 and 12, due to _FORTIFY_SOURCEprotection that terminates the process before the memory corruption occurs.See URL field for the orginal bug report from Debian project."
+      }
+    ],
+    "CVE-2007-5936": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=368611",
+        "title": "CVE-2007-5936 dviljk uses insecure temporary file",
+        "description": "Description of problem:Dvips uses insecure tmpnam() function to create files for temporary data whileconverting a DVI file to laser jet printer format. A local attacker couldconduct a time-dependent attack by creating the files before dviljk uses themwhich could possibly lead into information leak and would permit the attacker tomodify the processed data.Additional info:See URL filed for Gentoo report.The attached file fixes this problem by using a secure temporary directorytogether with other issues."
+      }
+    ],
+    "CVE-2007-5937": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=368641",
+        "title": "CVE-2007-5937 Multiple dviljk buffer overflows",
+        "description": "Description of problem:dviljk contains multiple buffer overflow conditions that can be triggered by aDVI input file. This could possibly result in arbitrary code execution in caseuser was tricked into print a specially crafted DVI file.Additional info:See URL filed for Gentoo report.The attachment #249481 [details] fixes this bug together with bug #368611It will most likely need some mungling as whitespace changes make the fixes lessobvious."
+      }
+    ],
+    "CVE-2007-5961": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=396641",
+        "title": "CVE-2007-5961 RHN XSS flaw",
+        "description": "A Cross-site scripting issue was discovered in RHN when searching softwarechannels. This issue affects the live hosted RHN as well as Red HatNetwork Satellite."
+      }
+    ],
+    "CVE-2007-5962": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=397011",
+        "title": "CVE-2007-5962 vsftpd: memory leak when deny_file option is set",
+        "description": "Description of problem:There is a memory leak that causes memory to be allocated but not freed.When the deny_file option is set, it is possible to easily exploit this.This is a regression caused by applied patch in bz174764. Problem alsoexists in FC-6, F-7, F-8 and fedora/devel. Attached is a patch to solvethe problem.Version-Release number of selected component (if applicable):vsftpd-2.0.5-10.el5How reproducible:alwaysSteps to Reproduce:# echo deny_file=foo >> /etc/vsftpd/vsftpd.conf# service vsftpd restart$ cat > memtest.sh << EOF#!/bin/bashecho USER anonymousecho PASS foo@bar.comwhile [ 1 ]; do echo CWD pub echo CWD ..doneEOF$ chmod 700 memtest.sh$ ./memtest.sh | telnet localhost 21 > /dev/nullActual results:vsftpd starts to allocate memory that will never be freed.Expected results:Additional info:It is possible that the memory leak can be exploited by other means, orwith other vsftpd.conf options. This was not investigated into more depth."
+      }
+    ],
+    "CVE-2007-5965": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=427232",
+        "title": "CVE-2007-5965 qt4: QSslSocket may skip SSL certificate verification",
+        "description": "+++ This bug was initially created as a clone of Bug #411751 +++Thiago José Macieira of Trolltech informed us of following problem affecting QT4library:Qt 4 has a potential vulnerability in QSslSocket, which might cause acertificate verification in SSL connections not to be performed. As a consequence, code using QSslSocket might be mislead into thinking the certificate was verified correctly when it actually failed in one or more criteria.Versions affected: 4.3.0, 4.3.1 and 4.3.2-- Additional comment from thoger@redhat.com on 2007-12-05 05:03 EST --Created an attachment (id=277991)Upstream patch-- Additional comment from thoger@redhat.com on 2007-12-05 05:09 EST --This issue did not affect versions of qt and qt4 packages as shipped with RedHat Enterprise Linux 2.1, 3, 4, or 5.Packages shipped are in version < 4.3 and do not contain vulnerable code.-- Additional comment from thoger@redhat.com on 2008-01-02 03:06 EST --Public now:http://trolltech.com/company/newsroom/announcements/press.2007-12-21.2182567220-- Additional comment from thoger@redhat.com on 2008-01-02 03:07 EST --Fedora updates already built and available via testing repository:https://admin.fedoraproject.org/updates/F7/FEDORA-2007-4354https://admin.fedoraproject.org/updates/F8/FEDORA-2007-4285"
+      }
+    ],
+    "CVE-2007-6018": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=428625",
+        "title": "CVE-2007-6018 horde: input validation vulnerabilities",
+        "description": "Common Vulnerabilities and Exposures assigned an identifier CVE-2007-6018 to the following vulnerability:IMP Webmail Client 4.1.5, Horde Application Framework 3.1.5, and Horde Groupware Webmail Edition 1.0.3 does not validate unspecified HTTP requests, which allows remote attackers to (1) delete arbitrary e-mail messages via a modified numeric ID or (2) \"purge\" deleted emails via a crafted email message.References:http://secunia.com/secunia_research/2007-102/advisory/http://www.securityfocus.com/bid/27223http://secunia.com/advisories/28020"
+      }
+    ],
+    "CVE-2007-6025": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=292991",
+        "title": "CVE-2007-6025 Stack overflow when handling TSF from the driver",
+        "description": "Description of problem:Kees Cook reported this to the Debian BTS:There is a stack overflow in wpa_supplicant when handling TSF info fromdrivers that support it. Patch attached."
+      }
+    ],
+    "CVE-2007-6239": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=410181",
+        "title": "CVE-2007-6239 squid: DoS in cache updates",
+        "description": "Squid security advisory SQUID-2007:2 was published recently:http://www.squid-cache.org/Advisories/SQUID-2007_2.txtProblem Description: Due to incorrect bounds checking Squid is vulnerable to a denial of service check during some cache update reply processing.Severity: This problem allows any client trusted to use the service to perform a denial of service attack on the Squid service."
+      }
+    ],
+    "CVE-2007-6283": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2007-6283",
+        "title": "CVE-2007-6283 bind: /etc/rndc.key has 644 permissions by default",
+        "description": "Description of problem:/etc/rndc.key is readable for all, so any user can issue named commandslike \"rndc stop\" to shut named down or other things./usr/sbin/rndc is not readable for all users, but we usually then don'trestrict the binary in this way, but keep the binary openly available.(Does not really count to the above mentioned item, but might be somethingto look at for testing purposes.)regards,Florian La RocheVersion-Release number of selected component (if applicable):How reproducible:Steps to Reproduce:1.2.3. Actual results:Expected results:Additional info:"
+      }
+    ],
+    "CVE-2007-6284": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=425927",
+        "title": "CVE-2007-6284 libxml2: infinite loop in UTF-8 decoding",
+        "description": "Description:There exists a denial of service problem in libxml's UTF-8decoding functions. The xmlCurrentChar() function does not checkUTF-8 correctness and certain multibyte combinations can causethe library to enter an infinite loop and hang, consumingsystem resources. It is strongly recommended to upgrade ifyour application accepts arbitrary xml user input.Provided by:The issue was originally discovered at Google by Brad Fitzpatrickand further investigated by Peter Valchev and Will Drewry.Patch and debugging by Daniel Veillard (libxml).Acknowledgements:Red Hat would like to thank the Google Security Team for responsibly disclosing this issue."
+      }
+    ],
+    "CVE-2007-6352": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=425621",
+        "title": "CVE-2007-6351 CVE-2007-6352 libexif various flaws [F7]",
+        "description": "F7 tracking bug: see blocks bug list for full details of the security issue(s).[bug automatically created by: add-tracking-bugs]"
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=425631",
+        "title": "CVE-2007-6351 CVE-2007-6352 libexif various flaws [F8]",
+        "description": "F8 tracking bug: see blocks bug list for full details of the security issue(s).[bug automatically created by: add-tracking-bugs]"
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=425561",
+        "title": "CVE-2007-6352 libexif integer overflow",
+        "description": "An integer overflow flaw was found in libexif. This flaw could be leveraged byan attacker to execute arbitrary code withe the permissions of the applicationparsing the EXIF image data."
+      }
+    ],
+    "CVE-2007-6353": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=425921",
+        "title": "CVE-2007-6353 exiv2: integer overflow in EXIF parsing",
+        "description": "Meder Kydyraliev reported an integer overflow exiv2's EXIF parsing coderesulting in heap buffer oveflow. This can possibly lead to code execution asuser running application using exiv2 library to extract EXIF tags frommalicious image files.Upstream commit:http://dev.robotbattle.com/~cvsuser/cgi-bin/ns_viewcvs.cgi/exiv2/trunk/src/exif.cpp?rev=1346&r1=1231&r2=1346"
+      }
+    ],
+    "CVE-2007-6437": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=426173",
+        "title": "CVE-2007-6437 syslog-ng crash by message with invalid timestamp separator",
+        "description": "From Secunia:DESCRIPTION:A vulnerability has been reported in syslog-ng, which can beexploited by malicious people to cause a DoS (Denial of Service).The vulnerability is caused due to the improper processing ofincoming timestamps. This can be exploited to trigger a NULL pointerdereference via a specially crafted message containing a timestampwithout a terminating space character.The vulnerability is reported in syslog-ng versions prior to 2.0.6See URL for the original advisory and a patch.http://seclists.org/bugtraq/2007/Dec/0202.htmlhttp://git.balabit.hu/?p=bazsi/syslog-ng-2.0.git;a=commitdiff;h=3126ebad217e7fd6356f4733ca33f571aa87a170"
+      }
+    ],
+    "CVE-2007-6611": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=427277",
+        "title": "CVE-2007-6611 Mantis 1.1.0 fixes a cross-site scripting flaw",
+        "description": "Description of problem:From secunia:seiji has discovered a vulnerability in Mantis, which can be exploited bymalicious users to conduct script insertion attacks.Input passed as the filename for the uploaded file in bug_report.php is notproperly sanitised before being stored. This can be exploited to insertarbitrary HTML and script code, which is executed in a user's browser session incontext of an affected site when the malicious filename is viewed in view.php.Successful exploitation requires valid user credentials.The vulnerability is confirmed in version 1.0.8. Other versions may also beaffected.Version-Release number of selected component (if applicable):mantis-1.0.8-1Additional info:http://www.mantisbt.org/bugs/view.php?id=8679http://sourceforge.net/project/shownotes.php?release_id=562940There are more things marked \"[security]\" in the release notes -- I suggest thatyou rebase the package on 1.1.0."
+      }
+    ],
+    "CVE-2007-6613": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=427197",
+        "title": "CVE-2007-6613 libcdio: long Joliet file name buffer overflow",
+        "description": "Description of problem:A buffer overrun in cd-info and libcdio was uncovered when one reads adisk/image with a long joilet filename. Please see URL [1] and the Gentoobugreport [2] for more information and the patch (should be in upstream CVS now).Version-Release number of selected component (if applicable):dist-f8-updates:libcdio-0.78.2-3.fc8 dist-f9-build:libcdio-0.78.2-3.fc8dist-fc7-updates:libcdio-0.78.2-2.fc7Steps to Reproduce:mkdir -p tmp/dir1touch tmp/dir1/file_with_really_really_long_silly_name_to_test_iso_info_buffermkisofs -J -R -volid My_Image -o test.iso tmpiso-info -l test.iso Additional info:A fair number of applications link against libcdio (and also Livna ones). Pleasedo the update for all affected branches as soon as possible!kover-0:3-2.x86_64oxine-0:0.7.0-1.fc8.x86_64libcddb-0:1.3.0-2.fc8.i386libcddb-0:1.3.0-2.fc8.x86_64libcdio-devel-0:0.78.2-3.fc8.i386libcdio-0:0.78.2-3.fc8.x86_64libcdio-devel-0:0.78.2-3.fc8.x86_64libcdio-0:0.78.2-3.fc8.i386gstreamer-plugins-good-0:0.10.6-6.fc8.x86_64"
+      }
+    ],
+    "CVE-2007-6694": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=396751",
+        "title": "CVE-2007-6694 /proc/cpuinfo DoS on some ppc machines",
+        "description": "Description of problem:This patch does fix possible NULL pointer dereferenceinside of strncmp() if of_get_property() failed. This issue went public via: http://groups.google.com/group/linux.kernel/browse_thread/thread/d3573f2b305c1e6e?hl=en#d13e0770eadc48c5"
+      }
+    ],
+    "CVE-2007-6698": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=431203",
+        "title": "CVE-2007-6698 openldap: slapd crash on NOOP control operation on entry in bdb storage",
+        "description": "It was discovered that modify operation with NOOP control on an entry stored inBDB backed can cause OpenLDAP's slapd daemon to crash. Further details andpatch can be found in upstream bug / CVS: http://www.openldap.org/its/index.cgi/Software%20Bugs?id=4925 http://www.openldap.org/devel/cvsweb.cgi/servers/slapd/back-bdb/modify.c.diff?r1=1.124.2.16&r2=1.124.2.17&f=hNOOP control was introduced in OpenLDAP 2.1 branch as documented on roadmap page: http://www.openldap.org/software/roadmap.htmlThis issue was fixed upstream in version 2.3.36: http://www.openldap.org/devel/cvsweb.cgi/~checkout~/Attic/CHANGES?rev=1.5.8.414"
+      }
+    ],
+    "CVE-2007-6725": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=229174",
+        "title": "ghostscript dumps core when processing .pdf file",
+        "description": "rpm -qf `which gs`ghostscript-8.15.3-4.fc6 gs -dEPSFitPage -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=/tmp/y.ps/tmp/86.pdfESP Ghostscript 815.03 (2006-08-25)Copyright (C) 2004 artofcode LLC, Benicia, CA. All rights reserved.This software comes with NO WARRANTY: see the file PUBLIC for details.Processing pages 1 through 1.Page 1 **** Warning: stream operator not terminated by valid EOL. **** Warning: stream operator not terminated by valid EOL. **** Warning: File has insufficient data for an image.Segmentation fault"
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=493442",
+        "title": "CVE-2007-6725 ghostscript: DoS (crash) in CCITTFax decoding filter",
+        "description": "A denial of service flaw was found in Ghostscript's CCITTFax decoding filter.An attacker could create a specially-crafted PDF file which could cause Ghostscript to crash, or, potentially execute arbitrary code, when openedby the victim."
+      }
+    ],
+    "CVE-2007-6733": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=570863",
+        "title": "CVE-2010-0727 kernel: bug in GFS/GFS2 locking code leads to dos",
+        "description": "Reported internally.static intgfs_lock(struct file *file, int cmd, struct file_lock *fl){.. if ((ip->i_di.di_mode & (S_ISGID | S_IXGRP)) == S_ISGID) return -ENOLCK;..}This is a check for mandatory locking where the GFS locking code will skip the lock in case sgid bits are set for the file. This is similar to bz 218777 which affected RHEL 4 NFS shares on the client. The reproducer from https://bugzilla.redhat.com/show_bug.cgi?id=218777#c1 (private) can be used to crash a system mounting a GFS filesystem.I was able to reproduce this on 2.6.18-164.11.1 with kmod-gfs-0.1.34-2.el5----------- [cut here ] --------- [please bite here ] ---------Kernel BUG at fs/locks.c:2080invalid opcode: 0000 [1] SMP last sysfs file: /kernel/dlm/gfs-sachin/idCPU 0 Modules linked in: gfs(U) lock_dlm gfs2 dlm configfs netloop netbk blktap blkbk ipt_MASQUERADE iptable_nat ip_nat xt_state ip_conntrack nfnetlink ipt_REJECT xt_tcpudp iptable_filter ip_tables x_tables bridge autofs4 hidp rfcomm l2cap bluetooth lockd sunrpc iscsi_tcp bnx2i cnic uio cxgb3i cxgb3 8021q libiscsi_tcp ib_iser libiscsi2 scsi_transport_iscsi2 scsi_transport_iscsi ib_srp rds ib_sdp ib_ipoib ipoib_helper ipv6 xfrm_nalgo crypto_api rdma_ucm rdma_cm ib_ucm ib_uverbs ib_umad ib_cm iw_cm ib_addr ib_sa ib_mad ib_core loop dm_emc dm_round_robin dm_multipath scsi_dh video hwmon backlight sbs i2c_ec i2c_core button battery asus_acpi ac parport_pc lp parport sr_mod sg joydev pcspkr i5000_edac edac_mc qla2xxx bnx2 ata_piix libata scsi_transport_fc serial_core serio_raw ide_cd cdrom dm_raid45 dm_message dm_region_hash dm_mem_cache dm_snapshot dm_zero dm_mirror dm_log dm_mod usb_storage shpchp mptsas mptscsih mptbase scsi_transport_sas sd_mod scsi_mod ext3 jbd uhci_hcd ohci_hcd ehci_hcPid: 12585, comm: crash Tainted: G 2.6.18-164.11.1.HOTFIX.el5xen #1 RIP: e030:[<ffffffff80227976>] [<ffffffff80227976>] locks_remove_flock+0xe4/0x124RSP: e02b:ffff88003ff5de28 EFLAGS: 00010246RAX: ffff88005275b3f8 RBX: ffff88003fb405b0 RCX: 7fffffffffffffffRDX: 0000000000000000 RSI: 0000000000000007 RDI: ffffffff8052d800RBP: ffff8800512d23c0 R08: 0000000000000000 R09: 0000000000000000R10: ffff88003ff5de28 R11: 00000000000000b0 R12: ffff88003fb404b0R13: ffff88003fb404b0 R14: ffff8800545af0c0 R15: ffff88003fed64b0FS: 00002b71ceb65210(0000) GS:ffffffff805ca000(0000) knlGS:0000000000000000CS: e033 DS: 0000 ES: 0000Process crash (pid: 12585, threadinfo ffff88003ff5c000, task ffff880060288040)Stack: 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000003129 0000000000000000 0000000000000000 0000000000000000 Call Trace: [<ffffffff802132d8>] __fput+0x94/0x198 [<ffffffff802240af>] filp_close+0x5c/0x64 [<ffffffff8021e2c7>] sys_close+0x88/0xbd [<ffffffff802602f9>] tracesys+0xab/0xb6"
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=218777",
+        "title": "CVE-2007-6733 Kernel BUG at locks:1799",
+        "description": "This problem was reported by ASANO Masahiro for the upstream kernel. http://lkml.org/lkml/2005/12/21/334The change in locks_remove_flock for bz #160844 allows the local users to crashthe system. The nfs client prevents mandatory locking. The if statement checkingfor this will allow a user to get the nfs client to leave behind posix locks bychanging the mode before unlocking. The changes in locks_remove_flock causes itto throw a BUG().Run the attached reproducer a few times on a RHEL 4 U4 server to cause a crash."
+      }
+    ],
+    "CVE-2007-1861": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=237913",
+        "description": "The prctl() function allows to set the value 2 for PR_SET_DUMPABLE byunprivileged processes. In case of a segmentation fault the core dump will thenbe owned by the user root.This could lead to a denial of service (disk consumption) or allow a local userto gain root privileges.The suid_dumpable support and prctl(PR_SET_DUMPABLE, 2) have been added with the2.6.13 kernel and Red Hat Enterprise Linux 4 contains a backport of it."
+      }
+    ],
+    "CVE-2007-5333": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=532111",
+        "title": "Tracker bug for the EAP 4.2.0.cp08 release for RHEL-5.",
+        "description": "This is a tracker bug for the EAP 4.2.0.cp08 release. The Release notes is available at:http://www.redhat.com/docs/en-US/JBoss_Enterprise_Application_Platform/4.2.0.cp08/html-single/Release_Notes/index.html"
       }
     ]
   }

@@ -1,6 +1,21 @@
 {
   "year": 2016,
-  "total": 0,
+  "total": 2,
   "reference": "lists.apple.com",
-  "reports": {}
+  "reports": {
+    "CVE-2016-4676": [
+      {
+        "url": "https://lists.apple.com/archives/security-announce/2016/Oct/msg00002.html",
+        "description": "Multiple memory corruption issues were addressed through improved memory handling. CVE-2016-4666: Apple WebKit Available for: OS X Yosemite v10.10.5, OS X El Capitan v10.11.6, and macOS Sierra 10.12",
+        "impact": "Processing maliciously crafted web content may lead to arbitrary code execution"
+      }
+    ],
+    "CVE-2016-7626": [
+      {
+        "url": "https://lists.apple.com/archives/security-announce/2016/Dec/msg00001.html",
+        "description": "This issue was addressed through improved sanitization. CVE-2016-7651: Ju Zhu and Lilang Wu of Trend Micro Profiles Available for: All Apple Watch models",
+        "impact": "An issue existed which did not reset the authorization settings on app uninstall"
+      }
+    ]
+  }
 }

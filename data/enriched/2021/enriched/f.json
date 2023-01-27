@@ -1,6 +1,1658 @@
 {
   "year": 2021,
-  "total": 0,
+  "total": 127,
   "reference": "security.gentoo.org",
-  "reports": {}
+  "reports": {
+    "CVE-2021-0308": [
+      {
+        "url": "https://security.gentoo.org/glsa/202105-03",
+        "title": "GPT fdisk: Integer underflow — GLSA 202105-03",
+        "subTitle": "An integer underflow in sgdisk from GPT fdisk package might allow local attacker(s) to escalate privileges.",
+        "background": "GPT fdisk (consisting of the gdisk, cgdisk, sgdisk, and fixparts programs) is a set of text-mode partitioning tools for Linux, FreeBSD, Mac OS X, and Windows.",
+        "body": "It was discovered that ReadLogicalParts() function in basicmbr.cc was missing a bounds check.",
+        "extra": "A local attacker could entice a user to insert a malicious formatted block device (USB stick or SD card for example), that, when processed with sgdisk, possibly resulting in local escalation of privileges or a Denial of Service condition.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-20193": [
+      {
+        "url": "https://security.gentoo.org/glsa/202105-29",
+        "title": "Tar: Denial of service — GLSA 202105-29",
+        "subTitle": "A vulnerability in Tar could lead to a Denial of Service condition.",
+        "background": "The Tar program provides the ability to create and manipulate tar archives.",
+        "body": "It was discovered that GNU Tar had a memory leak when processing archive headers.",
+        "extra": "A remote attacker could entice a user to open a specially crafted archive using Tar, possibly resulting in a Denial of Service condition.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-20225": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-05",
+        "title": "GRUB: Multiple vulnerabilities — GLSA 202104-05",
+        "subTitle": "Multiple vulnerabilities have been found in GRUB, the worst might allow for circumvention of UEFI Secure Boot.",
+        "background": "GNU GRUB is a multiboot boot loader used by most Linux systems.",
+        "body": "Multiple vulnerabilities have been discovered in GRUB. Please review the CVE identifiers referenced below for details.",
+        "extra": "Please review the referenced CVE identifiers for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-20227": [
+      {
+        "url": "https://security.gentoo.org/glsa/202103-04",
+        "title": "SQLite: Remote code execution — GLSA 202103-04",
+        "subTitle": "A vulnerability in SQLite could lead to remote code execution.",
+        "background": "SQLite is a C library that implements an SQL database engine.",
+        "body": "It was discovered that SQLite incorrectly handled certain sub-queries.",
+        "extra": "A remote attacker could possibly execute arbitrary code with the privileges of the process, or cause a Denial of Service condition.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-20233": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-05",
+        "title": "GRUB: Multiple vulnerabilities — GLSA 202104-05",
+        "subTitle": "Multiple vulnerabilities have been found in GRUB, the worst might allow for circumvention of UEFI Secure Boot.",
+        "background": "GNU GRUB is a multiboot boot loader used by most Linux systems.",
+        "body": "Multiple vulnerabilities have been discovered in GRUB. Please review the CVE identifiers referenced below for details.",
+        "extra": "Please review the referenced CVE identifiers for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-20254": [
+      {
+        "url": "https://security.gentoo.org/glsa/202105-22",
+        "title": "Samba: Multiple vulnerabilities — GLSA 202105-22",
+        "subTitle": "Multiple vulnerabilities have been found in Samba, the worst of which could result in a Denial of Service condition.",
+        "background": "Samba is a suite of SMB and CIFS client/server programs.",
+        "body": "Multiple vulnerabilities have been discovered in Samba. Please review the CVE identifiers referenced below for details.",
+        "extra": "Please review the referenced CVE identifiers for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-20277": [
+      {
+        "url": "https://security.gentoo.org/glsa/202105-22",
+        "title": "Samba: Multiple vulnerabilities — GLSA 202105-22",
+        "subTitle": "Multiple vulnerabilities have been found in Samba, the worst of which could result in a Denial of Service condition.",
+        "background": "Samba is a suite of SMB and CIFS client/server programs.",
+        "body": "Multiple vulnerabilities have been discovered in Samba. Please review the CVE identifiers referenced below for details.",
+        "extra": "Please review the referenced CVE identifiers for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-20288": [
+      {
+        "url": "https://security.gentoo.org/glsa/202105-39",
+        "title": "Ceph: Multiple vulnerabilities — GLSA 202105-39",
+        "subTitle": "Multiple vulnerabilities have been found in Ceph, the worst of which could result in privilege escalation.",
+        "background": "Ceph is a distributed network file system designed to provide excellent performance, reliability, and scalability.",
+        "body": "Multiple vulnerabilities have been discovered in Ceph. Please review the CVE identifiers referenced below for details.",
+        "extra": "Please review the referenced CVE identifiers for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21106": [
+      {
+        "url": "https://security.gentoo.org/glsa/202101-05",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202101-05",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21107": [
+      {
+        "url": "https://security.gentoo.org/glsa/202101-05",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202101-05",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21108": [
+      {
+        "url": "https://security.gentoo.org/glsa/202101-05",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202101-05",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21109": [
+      {
+        "url": "https://security.gentoo.org/glsa/202101-05",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202101-05",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21110": [
+      {
+        "url": "https://security.gentoo.org/glsa/202101-05",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202101-05",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21112": [
+      {
+        "url": "https://security.gentoo.org/glsa/202101-05",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202101-05",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21113": [
+      {
+        "url": "https://security.gentoo.org/glsa/202101-05",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202101-05",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21114": [
+      {
+        "url": "https://security.gentoo.org/glsa/202101-05",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202101-05",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21115": [
+      {
+        "url": "https://security.gentoo.org/glsa/202101-05",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202101-05",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21116": [
+      {
+        "url": "https://security.gentoo.org/glsa/202101-05",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202101-05",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21142": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21143": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21144": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21145": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21146": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21148": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21149": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21150": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21151": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21152": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21153": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21154": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21155": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21156": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21157": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21159": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21160": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21161": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21162": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21165": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21166": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21167": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21169": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21177": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21179": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21180": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21188": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21189": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21191": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21192": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21193": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21194": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21195": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21196": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21197": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21198": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21199": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21201": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21202": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21203": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21204": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21206": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21207": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21208": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21213": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21214": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21217": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21219": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21220": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21221": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21222": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21223": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21225": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21226": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21227": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21232": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21233": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-08",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202104-08",
+        "subTitle": "Multiple vulnerabilities have been found in Chromium and Google Chrome, the worst of which could result in the arbitrary execution of code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21309": [
+      {
+        "url": "https://security.gentoo.org/glsa/202103-02",
+        "title": "Redis: Remote code execution — GLSA 202103-02",
+        "subTitle": "A vulnerability in Redis could lead to remote code execution.",
+        "background": "Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.",
+        "body": "It was discovered that there were a number of integer overflow issues in Redis.",
+        "extra": "A remote attacker, able to connect to a Redis instance, could send a malicious crafted large request possibly resulting in the execution of arbitrary code with the privileges of the process or a Denial of Service condition.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-21702": [
+      {
+        "url": "https://security.gentoo.org/glsa/202105-23",
+        "title": "PHP: Multiple vulnerabilities — GLSA 202105-23",
+        "subTitle": "Multiple vulnerabilities have been found in PHP, the worst of which could result in a Denial of Service condition.",
+        "background": "PHP is an open source general-purpose scripting language that is especially suited for web development.",
+        "body": "Multiple vulnerabilities have been discovered in PHP. Please review the CVE identifiers and bugs referenced below for details.",
+        "extra": "Please review the referenced CVE identifiers and bugs for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-22876": [
+      {
+        "url": "https://security.gentoo.org/glsa/202105-36",
+        "title": "cURL: Multiple vulnerabilities — GLSA 202105-36",
+        "subTitle": "Multiple vulnerabilities have been found in cURL, the worst of which could result in the arbitrary execution of code.",
+        "background": "A command line tool and library for transferring data with URLs.",
+        "body": "Multiple vulnerabilities have been discovered in cURL. Please review the CVE identifiers referenced below for details.",
+        "extra": "Please review the referenced CVE identifiers for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-23840": [
+      {
+        "url": "https://security.gentoo.org/glsa/202103-03",
+        "title": "OpenSSL: Multiple vulnerabilities — GLSA 202103-03",
+        "subTitle": "Multiple vulnerabilities have been found in OpenSSL, the worst of which could allow remote attackers to cause a Denial of Service condition.",
+        "background": "OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1/v1.1/v1.2/v1.3) as well as a general purpose cryptography library.",
+        "body": "Multiple vulnerabilities have been discovered in OpenSSL. Please review the CVE identifiers referenced below for details.",
+        "extra": "Please review the referenced CVE identifiers for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-23841": [
+      {
+        "url": "https://security.gentoo.org/glsa/202103-03",
+        "title": "OpenSSL: Multiple vulnerabilities — GLSA 202103-03",
+        "subTitle": "Multiple vulnerabilities have been found in OpenSSL, the worst of which could allow remote attackers to cause a Denial of Service condition.",
+        "background": "OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1/v1.1/v1.2/v1.3) as well as a general purpose cryptography library.",
+        "body": "Multiple vulnerabilities have been discovered in OpenSSL. Please review the CVE identifiers referenced below for details.",
+        "extra": "Please review the referenced CVE identifiers for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-25281": [
+      {
+        "url": "https://security.gentoo.org/glsa/202103-01",
+        "title": "Salt: Multiple vulnerabilities — GLSA 202103-01",
+        "subTitle": "Multiple vulnerabilities have been found in Salt, the worst of which could allow remote attacker to execute arbitrary commands.",
+        "background": "Salt is a fast, intelligent and scalable automation engine.",
+        "body": "Multiple vulnerabilities have been discovered in Salt. Please review the CVE identifiers referenced below for details.",
+        "extra": "A remote attacker could possibly execute arbitrary commands via salt-api, cause a Denial of Service condition, bypass access restrictions or disclose sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-25282": [
+      {
+        "url": "https://security.gentoo.org/glsa/202103-01",
+        "title": "Salt: Multiple vulnerabilities — GLSA 202103-01",
+        "subTitle": "Multiple vulnerabilities have been found in Salt, the worst of which could allow remote attacker to execute arbitrary commands.",
+        "background": "Salt is a fast, intelligent and scalable automation engine.",
+        "body": "Multiple vulnerabilities have been discovered in Salt. Please review the CVE identifiers referenced below for details.",
+        "extra": "A remote attacker could possibly execute arbitrary commands via salt-api, cause a Denial of Service condition, bypass access restrictions or disclose sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-25283": [
+      {
+        "url": "https://security.gentoo.org/glsa/202103-01",
+        "title": "Salt: Multiple vulnerabilities — GLSA 202103-01",
+        "subTitle": "Multiple vulnerabilities have been found in Salt, the worst of which could allow remote attacker to execute arbitrary commands.",
+        "background": "Salt is a fast, intelligent and scalable automation engine.",
+        "body": "Multiple vulnerabilities have been discovered in Salt. Please review the CVE identifiers referenced below for details.",
+        "extra": "A remote attacker could possibly execute arbitrary commands via salt-api, cause a Denial of Service condition, bypass access restrictions or disclose sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-26120": [
+      {
+        "url": "https://security.gentoo.org/glsa/202105-06",
+        "title": "Smarty: Multiple vulnerabilities — GLSA 202105-06",
+        "subTitle": "Multiple vulnerabilities in the Smarty template engine might allow remote attackers to execute arbitrary PHP code.",
+        "background": "Smarty is a template engine for PHP.",
+        "body": "Multiple vulnerabilities have been discovered in Smarty template engine. Please review the CVE identifiers referenced below for details.",
+        "extra": "Please review the referenced CVE identifiers for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-27928": [
+      {
+        "url": "https://security.gentoo.org/glsa/202105-28",
+        "title": "MariaDB: Multiple vulnerabilities — GLSA 202105-28",
+        "subTitle": "Multiple vulnerabilities have been found in MariaDB, the worst of which could result in the arbitrary execution of code.",
+        "background": "MariaDB is an enhanced, drop-in replacement for MySQL.",
+        "body": "Multiple vulnerabilities have been discovered in MariaDB. Please review the CVE identifiers referenced below for details.",
+        "extra": "Please review the referenced CVE identifiers for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-28116": [
+      {
+        "url": "https://security.gentoo.org/glsa/202105-14",
+        "title": "Squid: Multiple vulnerabilities — GLSA 202105-14",
+        "subTitle": "Multiple vulnerabilities have been found in Squid, the worst of which could result in a Denial of Service condition.",
+        "background": "Squid is a full-featured Web proxy cache designed to run on Unix systems. It supports proxying and caching of HTTP, FTP, and other URLs, as well as SSL support, cache hierarchies, transparent caching, access control lists and many other features.",
+        "body": "Multiple vulnerabilities have been discovered in Squid. Please review the CVE identifiers referenced below for details.",
+        "extra": "A remote attacker could send a specially crafted request, possibly resulting in a Denial of Service condition or information leak.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-28692": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-30",
+        "title": "Xen: Multiple vulnerabilities — GLSA 202107-30",
+        "subTitle": "Multiple vulnerabilities have been found in Xen, the worst of which could result in privilege escalation.",
+        "background": "Xen is a bare-metal hypervisor.",
+        "body": "Multiple vulnerabilities have been discovered in Xen. Please review the CVE identifiers referenced below for details.",
+        "extra": "Please review the referenced CVE identifiers for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30508": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30509": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30510": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30511": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30512": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30514": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30515": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30516": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30518": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30519": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30520": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30521": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30522": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30523": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30524": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30525": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30526": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30527": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30528": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30530": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30536": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30540": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30544": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30545": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30546": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30548": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30549": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30550": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30552": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30553": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30554": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30555": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30556": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-30557": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-06",
+        "title": "Chromium, Google Chrome: Multiple vulnerabilities — GLSA 202107-06",
+        "subTitle": "Multiple vulnerabillities have been found in Chromium and Google Chrome, the worst of which could allow remote attackers to execute arbitrary code.",
+        "background": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+        "body": "Google Chrome is one fast, simple, and secure browser for all your devices.",
+        "extra": "Multiple vulnerabilities have been discovered in Chromium and Google Chrome. Please review the CVE identifiers referenced below for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-32055": [
+      {
+        "url": "https://security.gentoo.org/glsa/202105-05",
+        "title": "Mutt, NeoMutt: Denial of service — GLSA 202105-05",
+        "subTitle": "A vulnerability in Mutt and NeoMutt could lead to a Denial of Service condition.",
+        "background": "Mutt is a small but very powerful text-based mail client.",
+        "body": "NeoMutt is a command line mail reader (or MUA). It’s a fork of Mutt with added features.",
+        "extra": "It was discovered that Mutt, and NeoMutt did not properly handle certain situations where an IMAP sequence set ends with a comma.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-33574": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-07",
+        "title": "glibc: Multiple vulnerabilities — GLSA 202107-07",
+        "subTitle": "Multiple vulnerabilities in glibc could result in Denial of Service.",
+        "background": "glibc is a package that contains the GNU C library.",
+        "body": "Multiple vulnerabilities have been discovered in glibc. Please review the CVE identifiers referenced below for details.",
+        "extra": "An attacker could cause a possible Denial of Service condition.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-3426": [
+      {
+        "url": "https://security.gentoo.org/glsa/202104-04",
+        "title": "Python: Multiple vulnerabilities — GLSA 202104-04",
+        "subTitle": "Multiple vulnerabilities have been found in Python, the worst of which might allow attackers to access sensitive information.",
+        "background": "Python is an interpreted, interactive, object-oriented programming language.",
+        "body": "Multiple vulnerabilities have been discovered in Python. Please review the CVE identifiers referenced below for details.",
+        "extra": "Please review the referenced CVE identifiers for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-3449": [
+      {
+        "url": "https://security.gentoo.org/glsa/202103-03",
+        "title": "OpenSSL: Multiple vulnerabilities — GLSA 202103-03",
+        "subTitle": "Multiple vulnerabilities have been found in OpenSSL, the worst of which could allow remote attackers to cause a Denial of Service condition.",
+        "background": "OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1/v1.1/v1.2/v1.3) as well as a general purpose cryptography library.",
+        "body": "Multiple vulnerabilities have been discovered in OpenSSL. Please review the CVE identifiers referenced below for details.",
+        "extra": "Please review the referenced CVE identifiers for details.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-3516": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-05",
+        "title": "libxml2: Multiple vulnerabilities — GLSA 202107-05",
+        "subTitle": "Multiple vulnerabilities have been found in libxml2, the worst of which could result in a Denial of Service condition.",
+        "background": "libxml2 is the XML (eXtended Markup Language) C parser and toolkit initially developed for the GNOME project.",
+        "body": "Multiple vulnerabilities have been discovered in libxml2. Please review the CVE identifiers referenced below for details.",
+        "extra": "A remote attacker could entice a user to process a specially crafted XML document using an application linked against libxml2, possibly resulting in a Denial of Service condition or obtaining sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ],
+    "CVE-2021-3517": [
+      {
+        "url": "https://security.gentoo.org/glsa/202107-05",
+        "title": "libxml2: Multiple vulnerabilities — GLSA 202107-05",
+        "subTitle": "Multiple vulnerabilities have been found in libxml2, the worst of which could result in a Denial of Service condition.",
+        "background": "libxml2 is the XML (eXtended Markup Language) C parser and toolkit initially developed for the GNOME project.",
+        "body": "Multiple vulnerabilities have been discovered in libxml2. Please review the CVE identifiers referenced below for details.",
+        "extra": "A remote attacker could entice a user to process a specially crafted XML document using an application linked against libxml2, possibly resulting in a Denial of Service condition or obtaining sensitive information.",
+        "meta": {
+          "extraType": "impact"
+        }
+      }
+    ]
+  }
 }

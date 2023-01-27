@@ -1,6 +1,2296 @@
 {
   "year": 2008,
-  "total": 0,
+  "total": 351,
   "reference": "ubuntu.com",
-  "reports": {}
+  "reports": {
+    "CVE-2008-0005": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-575-1",
+        "title": "USN-575-1: Apache vulnerabilities",
+        "body": "It was discovered that mod_proxy_ftp did not force a character set,which could result in browsers becoming vulnerable to cross-sitescripting attacks when processing the output. By default,mod_proxy_ftp is disabled in Ubuntu. (CVE-2008-0005)"
+      }
+    ],
+    "CVE-2008-0007": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-618-1",
+        "title": "USN-618-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that some device driver fault handlers did notcorrectly verify memory ranges. A local attacker could exploit thisto access sensitive kernel memory, possibly leading to a loss of privacy.(CVE-2008-0007)"
+      }
+    ],
+    "CVE-2008-0008": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-573-1",
+        "title": "USN-573-1: PulseAudio vulnerability",
+        "body": "It was discovered that PulseAudio did not properly drop privilegeswhen running as a daemon. Local users may be able to exploit thisand gain privileges. The default Ubuntu configuration is notaffected."
+      }
+    ],
+    "CVE-2008-0016": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-2",
+        "title": "USN-645-2: Firefox vulnerabilities",
+        "body": "Justin Schuh, Tom Cross and Peter Williams discovered errors in the Firefox URL parsing routines. If a user were tricked into opening a crafted hyperlink, an attacker could overflow a stack buffer and execute arbitrary code. (CVE-2008-0016)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-1",
+        "title": "USN-645-1: Firefox and xulrunner vulnerabilities",
+        "body": "Justin Schuh, Tom Cross and Peter Williams discovered errors in theFirefox URL parsing routines. If a user were tricked into opening acrafted hyperlink, an attacker could overflow a stack buffer andexecute arbitrary code. (CVE-2008-0016)"
+      }
+    ],
+    "CVE-2008-0017": [
+      {
+        "url": "http://ubuntu.com/usn/usn-667-1",
+        "title": "USN-667-1: Firefox and xulrunner vulnerabilities",
+        "body": "Justin Schuh discovered a flaw in Firefox's mime-type parsing. If auser were tricked into opening a malicious website, an attacker couldsend a crafted header in the HTTP index response, causing a browsercrash and execute arbitrary code with user privileges. (CVE-2008-0017)"
+      }
+    ],
+    "CVE-2008-0047": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-598-1",
+        "title": "USN-598-1: CUPS vulnerabilities",
+        "body": "It was discovered that the CUPS administration interface contained a heap-based overflow flaw. A local attacker, and a remote attacker if printersharing is enabled, could send a malicious request and possibly executearbitrary code as the non-root user in Ubuntu 6.06 LTS, 6.10, and 7.04.In Ubuntu 7.10, attackers would be isolated by the AppArmor CUPS profile.(CVE-2008-0047)"
+      }
+    ],
+    "CVE-2008-0053": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-598-1",
+        "title": "USN-598-1: CUPS vulnerabilities",
+        "body": "It was discovered that the hpgl filter in CUPS did not properly validateits input when parsing parameters. If a crafted HP-GL/2 file were printed,an attacker could possibly execute arbitrary code as the non-root userin Ubuntu 6.06 LTS, 6.10, and 7.04. In Ubuntu 7.10, attackers would beisolated by the AppArmor CUPS profile. (CVE-2008-0053)"
+      }
+    ],
+    "CVE-2008-0062": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-587-1",
+        "title": "USN-587-1: Kerberos vulnerabilities",
+        "body": "It was discovered that krb5 did not correctly handle certain krb4requests. An unauthenticated remote attacker could exploit this flawby sending a specially crafted traffic, which could expose sensitiveinformation, cause a crash, or execute arbitrary code. (CVE-2008-0062,CVE-2008-0063)"
+      }
+    ],
+    "CVE-2008-0063": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-587-1",
+        "title": "USN-587-1: Kerberos vulnerabilities",
+        "body": "It was discovered that krb5 did not correctly handle certain krb4requests. An unauthenticated remote attacker could exploit this flawby sending a specially crafted traffic, which could expose sensitiveinformation, cause a crash, or execute arbitrary code. (CVE-2008-0062,CVE-2008-0063)"
+      }
+    ],
+    "CVE-2008-0073": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-635-1",
+        "title": "USN-635-1: xine-lib vulnerabilities",
+        "body": "Alin Rad Pop discovered an array index vulnerability in the SDPparser. If a user or automated system were tricked into opening amalicious RTSP stream, a remote attacker may be able to executearbitrary code with the privileges of the user invoking the program.(CVE-2008-0073)"
+      }
+    ],
+    "CVE-2008-0166": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-612-1",
+        "title": "USN-612-1: OpenSSL vulnerability",
+        "body": "We consider this an extremely serious vulnerability, and urge allusers to act immediately to secure their systems. (CVE-2008-0166)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-612-2",
+        "title": "USN-612-2: OpenSSH vulnerability",
+        "body": "A weakness has been discovered in the random number generator usedby OpenSSL on Debian and Ubuntu systems. As a result of thisweakness, certain encryption keys are much more common than theyshould be, such that an attacker could guess the key through abrute-force attack given minimal knowledge of the system. Thisparticularly affects the use of encryption keys in OpenSSH.This vulnerability only affects operating systems which (likeUbuntu) are based on Debian. However, other systems can beindirectly affected if weak keys are imported into them.We consider this an extremely serious vulnerability, and urge allusers to act immediately to secure their systems."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-612-3",
+        "title": "USN-612-3: OpenVPN vulnerability",
+        "body": "A weakness has been discovered in the random number generator usedby OpenSSL on Debian and Ubuntu systems. As a result of thisweakness, certain encryption keys are much more common than theyshould be, such that an attacker could guess the key through abrute-force attack given minimal knowledge of the system. Thisparticularly affects the use of shared encryption keys and SSL/TLScertificates in OpenVPN.This vulnerability only affects operating systems which (likeUbuntu) are based on Debian. However, other systems can beindirectly affected if weak keys are imported into them.We consider this an extremely serious vulnerability, and urge allusers to act immediately to secure their systems."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-612-4",
+        "title": "USN-612-4: ssl-cert vulnerability",
+        "body": "We consider this an extremely serious vulnerability, and urge all users to act immediately to secure their systems. (CVE-2008-0166)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-612-7",
+        "title": "USN-612-7: OpenSSH update",
+        "body": "USN-612-2 introduced protections for OpenSSH, related to the OpenSSLvulnerabilities addressed by USN-612-1. This update provides thecorresponding updates for OpenSSH in Ubuntu 6.06 LTS. While the OpenSSLin Ubuntu 6.06 is not vulnerable, this update will block weak keysgenerated on systems that may have been affected themselves.Original advisory details:A weakness has been discovered in the random number generator used by OpenSSL on Debian and Ubuntu systems. As a result of this weakness, certain encryption keys are much more common than they should be, such that an attacker could guess the key through a brute-force attack given minimal knowledge of the system. This particularly affects the use of encryption keys in OpenSSH, OpenVPN and SSL certificates."
+      }
+    ],
+    "CVE-2008-0171": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-570-1",
+        "title": "USN-570-1: boost vulnerabilities",
+        "body": "Will Drewry and Tavis Ormandy discovered that the boost librarydid not properly perform input validation on regular expressions.An attacker could send a specially crafted regular expression toan application linked against boost and cause a denial of servicevia application crash."
+      }
+    ],
+    "CVE-2008-0172": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-570-1",
+        "title": "USN-570-1: boost vulnerabilities",
+        "body": "Will Drewry and Tavis Ormandy discovered that the boost librarydid not properly perform input validation on regular expressions.An attacker could send a specially crafted regular expression toan application linked against boost and cause a denial of servicevia application crash."
+      }
+    ],
+    "CVE-2008-0225": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-635-1",
+        "title": "USN-635-1: xine-lib vulnerabilities",
+        "body": "Luigi Auriemma discovered that xine-lib did not properly checkbuffer sizes in the RTSP header-handling code. If xine-lib opened anRTSP stream with crafted SDP attributes, a remote attacker may beable to execute arbitrary code with the privileges of the userinvoking the program. (CVE-2008-0225, CVE-2008-0238)"
+      }
+    ],
+    "CVE-2008-0226": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-588-1",
+        "title": "USN-588-1: MySQL vulnerabilities",
+        "body": "Luigi Auriemma discovered that yaSSL as included in MySQL did notproperly validate its input. A remote attacker could send craftedrequests and cause a denial of service or possibly execute arbitrarycode. This issue did not affect Ubuntu 6.06 in the default installation.(CVE-2008-0226, CVE-2008-0227)"
+      }
+    ],
+    "CVE-2008-0227": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-588-1",
+        "title": "USN-588-1: MySQL vulnerabilities",
+        "body": "Luigi Auriemma discovered that yaSSL as included in MySQL did notproperly validate its input. A remote attacker could send craftedrequests and cause a denial of service or possibly execute arbitrarycode. This issue did not affect Ubuntu 6.06 in the default installation.(CVE-2008-0226, CVE-2008-0227)"
+      }
+    ],
+    "CVE-2008-0238": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-635-1",
+        "title": "USN-635-1: xine-lib vulnerabilities",
+        "body": "Luigi Auriemma discovered that xine-lib did not properly checkbuffer sizes in the RTSP header-handling code. If xine-lib opened anRTSP stream with crafted SDP attributes, a remote attacker may beable to execute arbitrary code with the privileges of the userinvoking the program. (CVE-2008-0225, CVE-2008-0238)"
+      }
+    ],
+    "CVE-2008-0302": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-572-1",
+        "title": "USN-572-1: apt-listchanges vulnerability",
+        "body": "Felipe Sateler discovered that apt-listchanges did not use safe paths whenimporting additional Python libraries. A local attacker could exploitthis and execute arbitrary commands as the user running apt-listchanges."
+      }
+    ],
+    "CVE-2008-0304": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-582-1",
+        "title": "USN-582-1: Thunderbird vulnerabilities",
+        "body": "It was discovered that Thunderbird did not properly set the size of abuffer when parsing an external-body MIME-type. If a user were to opena specially crafted email, an attacker could cause a denial of servicevia application crash or possibly execute arbitrary code as the user.(CVE-2008-0304)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-582-2",
+        "title": "USN-582-2: Thunderbird regression",
+        "body": "It was discovered that Thunderbird did not properly set the size of a buffer when parsing an external-body MIME-type. If a user were to open a specially crafted email, an attacker could cause a denial of service via application crash or possibly execute arbitrary code as the user. (CVE-2008-0304)"
+      }
+    ],
+    "CVE-2008-0320": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-609-1",
+        "title": "USN-609-1: OpenOffice.org vulnerabilities",
+        "body": "Multiple memory overflow flaws were discovered in OpenOffice.org'shandling of Quattro Pro, EMF, and OLE files. If a user were trickedinto opening a specially crafted document, a remote attacker might beable to execute arbitrary code with user privileges. (CVE-2007-5745,CVE-2007-5746, CVE-2007-5747, CVE-2008-0320)"
+      }
+    ],
+    "CVE-2008-0411": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-599-1",
+        "title": "USN-599-1: Ghostscript vulnerability",
+        "body": "Chris Evans discovered that Ghostscript contained a buffer overflow inits color space handling code. If a user or automated system weretricked into opening a crafted Postscript file, an attacker could causea denial of service or execute arbitrary code with privileges of theuser invoking the program. (CVE-2008-0411)"
+      }
+    ],
+    "CVE-2008-0412": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-576-1",
+        "title": "USN-576-1: Firefox vulnerabilities",
+        "body": "Various flaws were discovered in the browser and JavaScript engine.By tricking a user into opening a malicious web page, an attackercould execute arbitrary code with the user's privileges.(CVE-2008-0412, CVE-2008-0413)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-582-1",
+        "title": "USN-582-1: Thunderbird vulnerabilities",
+        "body": "Various flaws were discovered in Thunderbird and its JavaScriptengine. By tricking a user into opening a malicious message, anattacker could execute arbitrary code with the user's privileges.(CVE-2008-0412, CVE-2008-0413)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-582-2",
+        "title": "USN-582-2: Thunderbird regression",
+        "body": "Various flaws were discovered in Thunderbird and its JavaScript engine. By tricking a user into opening a malicious message, an attacker could execute arbitrary code with the user's privileges. (CVE-2008-0412, CVE-2008-0413)"
+      }
+    ],
+    "CVE-2008-0413": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-576-1",
+        "title": "USN-576-1: Firefox vulnerabilities",
+        "body": "Various flaws were discovered in the browser and JavaScript engine.By tricking a user into opening a malicious web page, an attackercould execute arbitrary code with the user's privileges.(CVE-2008-0412, CVE-2008-0413)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-582-1",
+        "title": "USN-582-1: Thunderbird vulnerabilities",
+        "body": "Various flaws were discovered in Thunderbird and its JavaScriptengine. By tricking a user into opening a malicious message, anattacker could execute arbitrary code with the user's privileges.(CVE-2008-0412, CVE-2008-0413)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-582-2",
+        "title": "USN-582-2: Thunderbird regression",
+        "body": "Various flaws were discovered in Thunderbird and its JavaScript engine. By tricking a user into opening a malicious message, an attacker could execute arbitrary code with the user's privileges. (CVE-2008-0412, CVE-2008-0413)"
+      }
+    ],
+    "CVE-2008-0414": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-576-1",
+        "title": "USN-576-1: Firefox vulnerabilities",
+        "body": "Flaws were discovered in the file upload form control. A maliciouswebsite could force arbitrary files from the user's computer to beuploaded without consent. (CVE-2008-0414)"
+      }
+    ],
+    "CVE-2008-0415": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-576-1",
+        "title": "USN-576-1: Firefox vulnerabilities",
+        "body": "Various flaws were discovered in the JavaScript engine. By trickinga user into opening a malicious web page, an attacker could escalateprivileges within the browser, perform cross-site scripting attacksand/or execute arbitrary code with the user's privileges. (CVE-2008-0415)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-582-1",
+        "title": "USN-582-1: Thunderbird vulnerabilities",
+        "body": "Various flaws were discovered in the JavaScript engine. By trickinga user into opening a malicious message, an attacker could escalateprivileges within Thunderbird, perform cross-site scripting attacksand/or execute arbitrary code with the user's privileges. (CVE-2008-0415)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-582-2",
+        "title": "USN-582-2: Thunderbird regression",
+        "body": "Various flaws were discovered in the JavaScript engine. By tricking a user into opening a malicious message, an attacker could escalate privileges within Thunderbird, perform cross-site scripting attacks and/or execute arbitrary code with the user's privileges. (CVE-2008-0415)"
+      }
+    ],
+    "CVE-2008-0416": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-592-1",
+        "title": "USN-592-1: Firefox vulnerabilities",
+        "body": "Alexey Proskuryakov, Yosuke Hasegawa and Simon Montagu discovered flawsin Firefox's character encoding handling. If a user were tricked intoopening a malicious web page, an attacker could perform cross-sitescripting attacks. (CVE-2008-0416)"
+      }
+    ],
+    "CVE-2008-0417": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-576-1",
+        "title": "USN-576-1: Firefox vulnerabilities",
+        "body": "Justin Dolske discovered a flaw in the password saving mechanism. Bytricking a user into opening a malicious web page, an attacker couldcorrupt the user's stored passwords. (CVE-2008-0417)"
+      }
+    ],
+    "CVE-2008-0418": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-576-1",
+        "title": "USN-576-1: Firefox vulnerabilities",
+        "body": "Gerry Eisenhaur discovered that the chrome URI scheme did not properlyguard against directory traversal. Under certain circumstances, anattacker may be able to load files or steal session data. Ubuntu isnot vulnerable in the default installation. (CVE-2008-0418)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-582-1",
+        "title": "USN-582-1: Thunderbird vulnerabilities",
+        "body": "Gerry Eisenhaur discovered that the chrome URI scheme did not properlyguard against directory traversal. Under certain circumstances, anattacker may be able to load files or steal session data. Ubuntu is notvulnerable in the default installation. (CVE-2008-0418)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-582-2",
+        "title": "USN-582-2: Thunderbird regression",
+        "body": "Gerry Eisenhaur discovered that the chrome URI scheme did not properly guard against directory traversal. Under certain circumstances, an attacker may be able to load files or steal session data. Ubuntu is not vulnerable in the default installation. (CVE-2008-0418)"
+      }
+    ],
+    "CVE-2008-0419": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-576-1",
+        "title": "USN-576-1: Firefox vulnerabilities",
+        "body": "David Bloom discovered flaws in the way images are treated by thebrowser. A malicious website could exploit this to steal the user'shistory information, crash the browser and/or possibly executearbitrary code with the user's privileges. (CVE-2008-0419)"
+      }
+    ],
+    "CVE-2008-0420": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-582-1",
+        "title": "USN-582-1: Thunderbird vulnerabilities",
+        "body": "Flaws were discovered in the BMP decoder. By tricking a user intoopening a specially crafted BMP file, an attacker could obtainsensitive information. (CVE-2008-0420)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-582-2",
+        "title": "USN-582-2: Thunderbird regression",
+        "body": "Flaws were discovered in the BMP decoder. By tricking a user into opening a specially crafted BMP file, an attacker could obtain sensitive information. (CVE-2008-0420)"
+      }
+    ],
+    "CVE-2008-0486": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-635-1",
+        "title": "USN-635-1: xine-lib vulnerabilities",
+        "body": "Damian Frizza and Alfredo Ortega discovered that xine-lib did notproperly validate FLAC tags. If a user or automated system weretricked into opening a crafted FLAC file, a remote attacker may beable to execute arbitrary code with the privileges of the userinvoking the program. (CVE-2008-0486)"
+      }
+    ],
+    "CVE-2008-0544": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-595-1",
+        "title": "USN-595-1: SDL_image vulnerabilities",
+        "body": "David Raulo discovered that SDL_image did not correctly load ILBM images.If a user or automated system were tricked into processing a speciallycrafted ILBM, a remote attacker could execute arbitrary code or causea crash, leading to a denial of service. (CVE-2008-0544)"
+      }
+    ],
+    "CVE-2008-0553": [
+      {
+        "url": "http://ubuntu.com/usn/usn-664-1",
+        "title": "USN-664-1: Tk vulnerability",
+        "body": "It was discovered that Tk could be made to overrun a buffer when loadingcertain images. If a user were tricked into opening a specially craftedGIF image, remote attackers could cause a denial of service or executearbitrary code with user privileges."
+      }
+    ],
+    "CVE-2008-0554": [
+      {
+        "url": "http://ubuntu.com/usn/usn-665-1",
+        "title": "USN-665-1: Netpbm vulnerability",
+        "body": "It was discovered that Netpbm could be made to overrun a buffer when loadingcertain images. If a user were tricked into opening a specially craftedGIF image, remote attackers could cause a denial of service or executearbitrary code with user privileges."
+      }
+    ],
+    "CVE-2008-0564": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-586-1",
+        "title": "USN-586-1: mailman vulnerability",
+        "body": "Multiple cross-site scripting flaws were discovered in mailman.A malicious list administrator could exploit this to execute arbitraryJavaScript, potentially stealing user credentials."
+      }
+    ],
+    "CVE-2008-0593": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-576-1",
+        "title": "USN-576-1: Firefox vulnerabilities",
+        "body": "Martin Straka discovered flaws in stylesheet handling after a 302redirect. By tricking a user into opening a malicious web page, anattacker could obtain sensitive URL parameters. (CVE-2008-0593)"
+      }
+    ],
+    "CVE-2008-0595": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-653-1",
+        "title": "USN-653-1: D-Bus vulnerabilities",
+        "body": "Havoc Pennington discovered that the D-Bus daemon did not correctlyvalidate certain security policies. If a local user sent a speciallycrafted D-Bus request, they could bypass security policies that had a\"send_interface\" defined. (CVE-2008-0595)"
+      }
+    ],
+    "CVE-2008-0598": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-625-1",
+        "title": "USN-625-1: Linux kernel vulnerabilities",
+        "body": "Tavis Ormandy discovered that the ia32 emulation under 64bit kernels didnot fully clear uninitialized data. A local attacker could read privatekernel memory, leading to a loss of privacy. (CVE-2008-0598)"
+      }
+    ],
+    "CVE-2008-0600": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-577-1",
+        "title": "USN-577-1: Linux kernel vulnerability",
+        "body": "Wojciech Purczynski discovered that the vmsplice system call didnot properly perform verification of user-memory pointers. A localattacker could exploit this to overwrite arbitrary kernel memoryand gain root privileges. (CVE-2008-0600)"
+      }
+    ],
+    "CVE-2008-0658": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-584-1",
+        "title": "USN-584-1: OpenLDAP vulnerabilities",
+        "body": "Jonathan Clarke discovered that the OpenLDAP slapd server did notproperly handle modify requests when using the Berkeley DB backendand specifying the NOOP control. An authenticated user with modifypermissions could send a crafted modify request and cause a denialof service via application crash. Ubuntu 7.10 is not affected bythis issue. (CVE-2007-6698)Ralf Haferkamp discovered that the OpenLDAP slapd server did notproperly handle modrdn requests when using the Berkeley DB backendand specifying the NOOP control. An authenticated user with modrdnpermissions could send a crafted modrdn request and possibly cause adenial of service via application crash. (CVE-2007-6698)"
+      }
+    ],
+    "CVE-2008-0668": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-604-1",
+        "title": "USN-604-1: Gnumeric vulnerability",
+        "body": "Thilo Pfennig and Morten Welinder discovered that the XLS spreadsheethandling code in Gnumeric did not correctly calculate needed memory sizes.If a user or automated system were tricked into loading a specially craftedXLS document, a remote attacker could execute arbitrary code with userprivileges."
+      }
+    ],
+    "CVE-2008-0882": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-598-1",
+        "title": "USN-598-1: CUPS vulnerabilities",
+        "body": "It was discovered that CUPS had a flaw in its managing of remote sharedprinters via IPP. A remote attacker could send a crafted UDP packet andcause a denial of service or possibly execute arbitrary code as thenon-root user in Ubuntu 6.06 LTS, 6.10, and 7.04. In Ubuntu 7.10,attackers would be isolated by the AppArmor CUPS profile. (CVE-2008-0882)"
+      }
+    ],
+    "CVE-2008-0888": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-589-1",
+        "title": "USN-589-1: unzip vulnerability",
+        "body": "Tavis Ormandy discovered that unzip did not correctly clean up pointers.If a user or automated service was tricked into processing a speciallycrafted ZIP archive, a remote attacker could execute arbitrary code withuser privileges."
+      }
+    ],
+    "CVE-2008-0891": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-620-1",
+        "title": "USN-620-1: OpenSSL vulnerabilities",
+        "body": "It was discovered that OpenSSL was vulnerable to a double-freewhen using TLS server extensions. A remote attacker could send acrafted packet and cause a denial of service via application crashin applications linked against OpenSSL. Ubuntu 8.04 LTS does notcompile TLS server extensions by default. (CVE-2008-0891)"
+      }
+    ],
+    "CVE-2008-0947": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-587-1",
+        "title": "USN-587-1: Kerberos vulnerabilities",
+        "body": "A flaw was discovered in the kadmind service's handling of filedescriptors. An unauthenticated remote attacker could send speciallycrafted requests that would cause a crash, resulting in a denial ofservice. Only systems with configurations allowing large numbers ofopen file descriptors were vulnerable. (CVE-2008-0947)"
+      }
+    ],
+    "CVE-2008-0960": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-685-1",
+        "title": "USN-685-1: Net-SNMP vulnerabilities",
+        "body": "Wes Hardaker discovered that the SNMP service did not correctly validateHMAC authentication requests. An unauthenticated remote attackercould send specially crafted SNMPv3 traffic with a valid usernameand gain access to the user's views without a valid authenticationpassphrase. (CVE-2008-0960)"
+      }
+    ],
+    "CVE-2008-1036": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-747-1",
+        "title": "USN-747-1: ICU vulnerability",
+        "body": "It was discovered that libicu did not correctly handle certain invalidencoded data. If a user or automated system were tricked into processingspecially crafted data with applications linked against libicu, certaincontent filters could be bypassed."
+      }
+    ],
+    "CVE-2008-1096": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-681-1",
+        "title": "USN-681-1: ImageMagick vulnerability",
+        "body": "It was discovered that ImageMagick did not correctly handle certainmalformed XCF images. If a user were tricked into opening a speciallycrafted image with an application that uses ImageMagick, an attackercould cause a denial of service and possibly execute arbitrary code withthe user's privileges."
+      }
+    ],
+    "CVE-2008-1105": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-617-2",
+        "title": "USN-617-2: Samba regression",
+        "body": "Alin Rad Pop of Secunia Research discovered that Samba did not properly perform bounds checking when parsing SMB replies. A remote attacker could send crafted SMB packets and execute arbitrary code. (CVE-2008-1105)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-617-1",
+        "title": "USN-617-1: Samba vulnerabilities",
+        "body": "Alin Rad Pop of Secunia Research discovered that Samba did notproperly perform bounds checking when parsing SMB replies. A remoteattacker could send crafted SMB packets and execute arbitrary code.(CVE-2008-1105)"
+      }
+    ],
+    "CVE-2008-1108": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-615-1",
+        "title": "USN-615-1: Evolution vulnerabilities",
+        "body": "Alin Rad Pop of Secunia Research discovered that Evolution did notproperly validate timezone data when processing iCalendar attachments.If a user disabled the ITip Formatter plugin and viewed a craftediCalendar attachment, an attacker could cause a denial of service orpossibly execute code with user privileges. Note that the ITipFormatter plugin is enabled by default in Ubuntu. (CVE-2008-1108)"
+      }
+    ],
+    "CVE-2008-1109": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-615-1",
+        "title": "USN-615-1: Evolution vulnerabilities",
+        "body": "Alin Rad Pop of Secunia Research discovered that Evolution did notproperly validate the DESCRIPTION field when processing iCalendarattachments. If a user were tricked into accepting a craftediCalendar attachment and replied to it from the calendar window, anattacker code cause a denial of service or execute code with userprivileges. (CVE-2008-1109)"
+      }
+    ],
+    "CVE-2008-1110": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-635-1",
+        "title": "USN-635-1: xine-lib vulnerabilities",
+        "body": "It was discovered that the ASF demuxer in xine-lib did not properlycheck the length if the ASF header. If a user or automated systemwere tricked into opening a crafted ASF file, a remote attackercould cause a denial of service or possibly execute arbitrary codewith the privileges of the user invoking the program. (CVE-2008-1110)"
+      }
+    ],
+    "CVE-2008-1161": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-635-1",
+        "title": "USN-635-1: xine-lib vulnerabilities",
+        "body": "It was discovered that the Matroska demuxer in xine-lib did notproperly verify frame sizes. If xine-lib opened a crafted ASF file,a remote attacker could cause a denial of service or possiblyexecute arbitrary code with the privileges of the user invokingthe program. (CVE-2008-1161)"
+      }
+    ],
+    "CVE-2008-1233": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-592-1",
+        "title": "USN-592-1: Firefox vulnerabilities",
+        "body": "Various flaws were discovered in the JavaScript engine. By trickinga user into opening a malicious web page, an attacker could escalateprivileges within the browser, perform cross-site scripting attacksand/or execute arbitrary code with the user's privileges.(CVE-2008-1233, CVE-2008-1234, CVE-2008-1235)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-605-1",
+        "title": "USN-605-1: Thunderbird vulnerabilities",
+        "body": "Various flaws were discovered in the JavaScript engine. If a user hadJavaScript enabled and were tricked into opening a malicious email,an attacker could escalate privileges within Thunderbird, performcross-site scripting attacks and/or execute arbitrary code with theuser's privileges. (CVE-2008-1233, CVE-2008-1234, CVE-2008-1235)"
+      }
+    ],
+    "CVE-2008-1234": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-592-1",
+        "title": "USN-592-1: Firefox vulnerabilities",
+        "body": "Various flaws were discovered in the JavaScript engine. By trickinga user into opening a malicious web page, an attacker could escalateprivileges within the browser, perform cross-site scripting attacksand/or execute arbitrary code with the user's privileges.(CVE-2008-1233, CVE-2008-1234, CVE-2008-1235)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-605-1",
+        "title": "USN-605-1: Thunderbird vulnerabilities",
+        "body": "Various flaws were discovered in the JavaScript engine. If a user hadJavaScript enabled and were tricked into opening a malicious email,an attacker could escalate privileges within Thunderbird, performcross-site scripting attacks and/or execute arbitrary code with theuser's privileges. (CVE-2008-1233, CVE-2008-1234, CVE-2008-1235)"
+      }
+    ],
+    "CVE-2008-1236": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-592-1",
+        "title": "USN-592-1: Firefox vulnerabilities",
+        "body": "Several problems were discovered in Firefox which could lead to crashesand memory corruption. If a user were tricked into opening a maliciousweb page, an attacker may be able to execute arbitrary code with theuser's privileges. (CVE-2008-1236, CVE-2008-1237)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-605-1",
+        "title": "USN-605-1: Thunderbird vulnerabilities",
+        "body": "Several problems were discovered in Thunderbird which could lead tocrashes and memory corruption. If a user had JavaScript enabled andwere tricked into opening a malicious email, an attacker may be ableto execute arbitrary code with the user's privileges. (CVE-2008-1236,CVE-2008-1237)"
+      }
+    ],
+    "CVE-2008-1237": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-592-1",
+        "title": "USN-592-1: Firefox vulnerabilities",
+        "body": "Several problems were discovered in Firefox which could lead to crashesand memory corruption. If a user were tricked into opening a maliciousweb page, an attacker may be able to execute arbitrary code with theuser's privileges. (CVE-2008-1236, CVE-2008-1237)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-605-1",
+        "title": "USN-605-1: Thunderbird vulnerabilities",
+        "body": "Several problems were discovered in Thunderbird which could lead tocrashes and memory corruption. If a user had JavaScript enabled andwere tricked into opening a malicious email, an attacker may be ableto execute arbitrary code with the user's privileges. (CVE-2008-1236,CVE-2008-1237)"
+      }
+    ],
+    "CVE-2008-1238": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-592-1",
+        "title": "USN-592-1: Firefox vulnerabilities",
+        "body": "Gregory Fleischer discovered Firefox did not properly process HTTPReferrer headers when they were sent with with requests to URLscontaining Basic Authentication credentials with empty usernames. Anattacker could exploit this vulnerability to perform cross-site requestforgery attacks. (CVE-2008-1238)"
+      }
+    ],
+    "CVE-2008-1294": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-618-1",
+        "title": "USN-618-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that CPU resource limits could be bypassed.A malicious local user could exploit this to avoid administrativelyimposed resource limits. (CVE-2008-1294)"
+      }
+    ],
+    "CVE-2008-1373": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-598-1",
+        "title": "USN-598-1: CUPS vulnerabilities",
+        "body": "It was discovered that CUPS did not properly perform bounds checking inits GIF decoding routines. If a crafted GIF file were printed, an attackercould possibly execute arbitrary code as the non-root user in Ubuntu 6.06LTS, 6.10, and 7.04. In Ubuntu 7.10, attackers would be isolated by theAppArmor CUPS profile. (CVE-2008-1373)"
+      }
+    ],
+    "CVE-2008-1377": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-616-1",
+        "title": "USN-616-1: X.org vulnerabilities",
+        "body": "Multiple flaws were found in the RENDER, RECORD, and Securityextensions of X.org which did not correctly validate function arguments.An authenticated attacker could send specially crafted requests and gainroot privileges or crash X. (CVE-2008-1377, CVE-2008-2360, CVE-2008-2361,CVE-2008-2362)"
+      }
+    ],
+    "CVE-2008-1379": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-616-1",
+        "title": "USN-616-1: X.org vulnerabilities",
+        "body": "It was discovered that the MIT-SHM extension of X.org did not correctlyvalidate the location of memory during an image copy. An authenticatedattacker could exploit this to read arbitrary memory locations within X,exposing sensitive information. (CVE-2008-1379)"
+      }
+    ],
+    "CVE-2008-1380": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-602-1",
+        "title": "USN-602-1: Firefox vulnerabilities",
+        "body": "Flaws were discovered in Firefox which could lead to crashes duringJavaScript garbage collection. If a user were tricked into opening amalicious web page, an attacker may be able to crash the browser orpossibly execute arbitrary code with the user's privileges.(CVE-2008-1380)"
+      }
+    ],
+    "CVE-2008-1384": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-628-1",
+        "title": "USN-628-1: PHP vulnerabilities",
+        "body": "An integer overflow was discovered in the php_sprintf_appendstringfunction. Attackers could exploit this to cause a denial of service.(CVE-2008-1384)"
+      }
+    ],
+    "CVE-2008-1419": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-682-1",
+        "title": "USN-682-1: libvorbis vulnerabilities",
+        "body": "It was discovered that libvorbis did not correctly handle certain malformedsound files. If a user were tricked into opening a specially crafted soundfile with an application that uses libvorbis, an attacker could executearbitrary code with the user's privileges."
+      }
+    ],
+    "CVE-2008-1420": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-682-1",
+        "title": "USN-682-1: libvorbis vulnerabilities",
+        "body": "It was discovered that libvorbis did not correctly handle certain malformedsound files. If a user were tricked into opening a specially crafted soundfile with an application that uses libvorbis, an attacker could executearbitrary code with the user's privileges."
+      }
+    ],
+    "CVE-2008-1423": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-682-1",
+        "title": "USN-682-1: libvorbis vulnerabilities",
+        "body": "It was discovered that libvorbis did not correctly handle certain malformedsound files. If a user were tricked into opening a specially crafted soundfile with an application that uses libvorbis, an attacker could executearbitrary code with the user's privileges."
+      }
+    ],
+    "CVE-2008-1482": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-635-1",
+        "title": "USN-635-1: xine-lib vulnerabilities",
+        "body": "Luigi Auriemma discovered multiple integer overflows in xine-lib. Ifa user or automated system were tricked into opening a crafted FLV,MOV, RM, MVE, MKV or CAK file, a remote attacker may be able toexecute arbitrary code with the privileges of the user invoking theprogram. (CVE-2008-1482)"
+      }
+    ],
+    "CVE-2008-1612": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-601-1",
+        "title": "USN-601-1: Squid vulnerability",
+        "body": "It was discovered that Squid did not perform proper bounds checking whenprocessing cache update replies. A remote authenticated user may be ableto trigger an assertion error and cause a denial of service. Thisvulnerability is due to an incorrect upstream fix for CVE-2007-6239.(CVE-2008-1612)"
+      }
+    ],
+    "CVE-2008-1615": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-625-1",
+        "title": "USN-625-1: Linux kernel vulnerabilities",
+        "body": "Jan Kratochvil discovered that PTRACE did not correctly handle certaincalls when running under 64bit kernels. A local attacker could exploit thisto crash the system, leading to a denial of service. (CVE-2008-1615)"
+      }
+    ],
+    "CVE-2008-1657": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-649-1",
+        "title": "USN-649-1: OpenSSH vulnerabilities",
+        "body": "It was discovered that the ForceCommand directive could be bypassed.If a local user created a malicious ~/.ssh/rc file, they could executearbitrary commands as their user id. This only affected Ubuntu 7.10.(CVE-2008-1657)"
+      }
+    ],
+    "CVE-2008-1669": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-618-1",
+        "title": "USN-618-1: Linux kernel vulnerabilities",
+        "body": "On SMP systems, a race condition existed in fcntl(). Local attackerscould perform malicious locks, causing system crashes and leading toa denial of service. (CVE-2008-1669)"
+      }
+    ],
+    "CVE-2008-1672": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-620-1",
+        "title": "USN-620-1: OpenSSL vulnerabilities",
+        "body": "It was discovered that OpenSSL could dereference a NULL pointer.If a user or automated system were tricked into connecting to amalicious server with particular cipher suites, a remote attackercould cause a denial of service via application crash.(CVE-2008-1672)"
+      }
+    ],
+    "CVE-2008-1673": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-625-1",
+        "title": "USN-625-1: Linux kernel vulnerabilities",
+        "body": "Wei Wang discovered that the ASN.1 decoding routines in CIFS and SNMP NATdid not correctly handle certain length values. Remote attackers couldexploit this to execute arbitrary code or crash the system. (CVE-2008-1673)"
+      }
+    ],
+    "CVE-2008-1678": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-731-1",
+        "title": "USN-731-1: Apache vulnerabilities",
+        "body": "It was discovered that Apache had a memory leak when using mod_ssl withcompression. A remote attacker could exploit this to exhaust server memory,leading to a denial of service. This issue only affected Ubuntu 7.10.(CVE-2008-1678)"
+      }
+    ],
+    "CVE-2008-1679": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-632-1",
+        "title": "USN-632-1: Python vulnerabilities",
+        "body": "It was discovered that there were new integer overflows in the imageopmodule. If an attacker were able to trick a Python application intoprocessing a specially crafted image, they could execute arbitrary codewith user privileges. (CVE-2008-1679)"
+      }
+    ],
+    "CVE-2008-1686": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-611-1",
+        "title": "USN-611-1: Speex vulnerability",
+        "body": "It was discovered that Speex did not properly validate its input whenprocessing Speex file headers. If a user or automated system weretricked into opening a specially crafted Speex file, an attacker couldcreate a denial of service in applications linked against Speex orpossibly execute arbitrary code as the user invoking the program."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-611-2",
+        "title": "USN-611-2: vorbis-tools vulnerability",
+        "body": "USN-611-1 fixed a vulnerability in Speex. This update provides thecorresponding update for ogg123, part of vorbis-tools.Original advisory details:It was discovered that Speex did not properly validate its input when processing Speex file headers. If a user or automated system were tricked into opening a specially crafted Speex file, an attacker could create a denial of service in applications linked against Speex or possibly execute arbitrary code as the user invoking the program."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-611-3",
+        "title": "USN-611-3: GStreamer Good Plugins vulnerability",
+        "body": "USN-611-1 fixed a vulnerability in Speex. This update provides thecorresponding update for GStreamer Good Plugins.Original advisory details:It was discovered that Speex did not properly validate its input when processing Speex file headers. If a user or automated system were tricked into opening a specially crafted Speex file, an attacker could create a denial of service in applications linked against Speex or possibly execute arbitrary code as the user invoking the program."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-635-1",
+        "title": "USN-635-1: xine-lib vulnerabilities",
+        "body": "It was discovered that xine-lib did not properly validate its inputwhen processing Speex file headers. If a user or automated systemwere tricked into opening a specially crafted Speex file, anattacker could create a denial of service or possibly executearbitrary code as the user invoking the program. (CVE-2008-1686)"
+      }
+    ],
+    "CVE-2008-1693": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-603-1",
+        "title": "USN-603-1: poppler vulnerability",
+        "body": "It was discovered that the poppler PDF library did not correctly handlecertain malformed embedded fonts. If a user or an automated system weretricked into opening a malicious PDF, a remote attacker could executearbitrary code with user privileges."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-603-2",
+        "title": "USN-603-2: KOffice vulnerability",
+        "body": "USN-603-1 fixed vulnerabilities in poppler. This update provides thecorresponding updates for KWord, part of KOffice.Original advisory details:It was discovered that the poppler PDF library did not correctly handle certain malformed embedded fonts. If a user or an automated system were tricked into opening a malicious PDF, a remote attacker could execute arbitrary code with user privileges."
+      }
+    ],
+    "CVE-2008-1721": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-632-1",
+        "title": "USN-632-1: Python vulnerabilities",
+        "body": "Justin Ferguson discovered that the zlib module did not correctlyhandle certain archives. If an attacker were able to trick a Pythonapplication into processing a specially crafted archive file, they couldexecute arbitrary code with user privileges. (CVE-2008-1721)"
+      }
+    ],
+    "CVE-2008-1722": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-606-1",
+        "title": "USN-606-1: CUPS vulnerability",
+        "body": "Thomas Pollet discovered that CUPS did not properly validate the size ofPNG images. A local attacker, and a remote attacker if printer sharingis enabled, could send a crafted file and cause a denial of service orpossibly execute arbitrary code as the non-root user in Ubuntu 6.06 LTSand 7.04. In Ubuntu 7.10, attackers would be isolated by the AppArmorCUPS profile. (CVE-2008-1722)"
+      }
+    ],
+    "CVE-2008-1767": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-633-1",
+        "title": "USN-633-1: libxslt vulnerabilities",
+        "body": "It was discovered that long transformation matches in libxslt couldoverflow. If an attacker were able to make an application linked againstlibxslt process malicious XSL style sheet input, they could executearbitrary code with user privileges or cause the application to crash,leading to a denial of serivce. (CVE-2008-1767)"
+      }
+    ],
+    "CVE-2008-1801": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-646-1",
+        "title": "USN-646-1: rdesktop vulnerabilities",
+        "body": "It was discovered that rdesktop did not properly validate the lengthof packet headers when processing RDP requests. If a user were trickedinto connecting to a malicious server, an attacker could cause adenial of service or possible execute arbitrary code with theprivileges of the user. (CVE-2008-1801)"
+      }
+    ],
+    "CVE-2008-1802": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-646-1",
+        "title": "USN-646-1: rdesktop vulnerabilities",
+        "body": "Multiple buffer overflows were discovered in rdesktop when processingRDP redirect requests. If a user were tricked into connecting to amalicious server, an attacker could cause a denial of service orpossible execute arbitrary code with the privileges of the user.(CVE-2008-1802)"
+      }
+    ],
+    "CVE-2008-1803": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-646-1",
+        "title": "USN-646-1: rdesktop vulnerabilities",
+        "body": "It was discovered that rdesktop did not properly validate the lengthof packet headers when processing RDP requests. If a user were trickedinto connecting to a malicious server, an attacker could cause adenial of service or possible execute arbitrary code with theprivileges of the user. (CVE-2008-1801)Multiple buffer overflows were discovered in rdesktop when processingRDP redirect requests. If a user were tricked into connecting to amalicious server, an attacker could cause a denial of service orpossible execute arbitrary code with the privileges of the user.(CVE-2008-1802)It was discovered that rdesktop performed a signed integer comparisonwhen reallocating dynamic buffers which could result in a heap-basedoverflow. If a user were tricked into connecting to a maliciousserver, an attacker could cause a denial of service or possibleexecute arbitrary code with the privileges of the user.(CVE-2008-1802)"
+      }
+    ],
+    "CVE-2008-1806": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-643-1",
+        "title": "USN-643-1: FreeType vulnerabilities",
+        "body": "Multiple flaws were discovered in the PFB and TTF font handling codein freetype. If a user were tricked into using a specially craftedfont file, a remote attacker could execute arbitrary code with userprivileges or cause the application linked against freetype to crash,leading to a denial of service."
+      }
+    ],
+    "CVE-2008-1807": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-643-1",
+        "title": "USN-643-1: FreeType vulnerabilities",
+        "body": "Multiple flaws were discovered in the PFB and TTF font handling codein freetype. If a user were tricked into using a specially craftedfont file, a remote attacker could execute arbitrary code with userprivileges or cause the application linked against freetype to crash,leading to a denial of service."
+      }
+    ],
+    "CVE-2008-1808": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-643-1",
+        "title": "USN-643-1: FreeType vulnerabilities",
+        "body": "Multiple flaws were discovered in the PFB and TTF font handling codein freetype. If a user were tricked into using a specially craftedfont file, a remote attacker could execute arbitrary code with userprivileges or cause the application linked against freetype to crash,leading to a denial of service."
+      }
+    ],
+    "CVE-2008-1878": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-635-1",
+        "title": "USN-635-1: xine-lib vulnerabilities",
+        "body": "Guido Landi discovered a stack-based buffer overflow in xine-libwhen processing NSF files. If xine-lib opened a specially craftedNSF file with a long NSF title, an attacker could create a denial ofservice or possibly execute arbitrary code as the user invoking theprogram. (CVE-2008-1878)"
+      }
+    ],
+    "CVE-2008-1887": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-632-1",
+        "title": "USN-632-1: Python vulnerabilities",
+        "body": "Justin Ferguson discovered that certain string manipulations in Pythoncould be made to overflow. If an attacker were able to pass a speciallycrafted string through the PyString_FromStringAndSize function, theycould execute arbitrary code with user privileges. (CVE-2008-1887)"
+      }
+    ],
+    "CVE-2008-1927": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-700-1",
+        "title": "USN-700-1: Perl vulnerabilities",
+        "body": "Tavis Ormandy and Will Drewry discovered that Perl did not correctlyhandle certain utf8 characters in regular expressions. If a user orautomated system were tricked into using a specially crafted expression,a remote attacker could crash the application, leading to a denialof service. Ubuntu 8.10 was not affected by this issue. (CVE-2008-1927)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-700-2",
+        "title": "USN-700-2: Perl regression",
+        "body": "Tavis Ormandy and Will Drewry discovered that Perl did not correctly handle certain utf8 characters in regular expressions. If a user or automated system were tricked into using a specially crafted expression, a remote attacker could crash the application, leading to a denial of service. Ubuntu 8.10 was not affected by this issue. (CVE-2008-1927)"
+      }
+    ],
+    "CVE-2008-1948": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-613-1",
+        "title": "USN-613-1: GnuTLS vulnerabilities",
+        "body": "Multiple flaws were discovered in the connection handling of GnuTLS.A remote attacker could exploit this to crash applications linkedagainst GnuTLS, or possibly execute arbitrary code with permissions ofthe application's user."
+      }
+    ],
+    "CVE-2008-1949": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-613-1",
+        "title": "USN-613-1: GnuTLS vulnerabilities",
+        "body": "Multiple flaws were discovered in the connection handling of GnuTLS.A remote attacker could exploit this to crash applications linkedagainst GnuTLS, or possibly execute arbitrary code with permissions ofthe application's user."
+      }
+    ],
+    "CVE-2008-1950": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-613-1",
+        "title": "USN-613-1: GnuTLS vulnerabilities",
+        "body": "Multiple flaws were discovered in the connection handling of GnuTLS.A remote attacker could exploit this to crash applications linkedagainst GnuTLS, or possibly execute arbitrary code with permissions ofthe application's user."
+      }
+    ],
+    "CVE-2008-2004": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-776-1",
+        "title": "USN-776-1: KVM vulnerabilities",
+        "body": "Avi Kivity discovered that KVM did not correctly handle certain diskformats. A local attacker could attach a malicious partition thatwould allow the guest VM to read files on the VM host. (CVE-2008-1945,CVE-2008-2004)"
+      }
+    ],
+    "CVE-2008-2050": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-628-1",
+        "title": "USN-628-1: PHP vulnerabilities",
+        "body": "Andrei Nigmatulin discovered stack-based overflows in the FastCGI SAPIof PHP. An attacker may be able to leverage this issue to performattacks against PHP applications. (CVE-2008-2050)"
+      }
+    ],
+    "CVE-2008-2079": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-671-1",
+        "title": "USN-671-1: MySQL vulnerabilities",
+        "body": "It was discovered that MySQL could be made to overwrite existing tablefiles in the data directory. An authenticated user could use theDATA DIRECTORY and INDEX DIRECTORY options to possibly bypass privilegechecks. This update alters table creation behaviour by disallowing theuse of the MySQL data directory in DATA DIRECTORY and INDEX DIRECTORYoptions. (CVE-2008-2079, CVE-2008-4097 and CVE-2008-4098)"
+      }
+    ],
+    "CVE-2008-2107": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-628-1",
+        "title": "USN-628-1: PHP vulnerabilities",
+        "body": "It was discovered that the GENERATE_SEED macro produced a predictableseed under certain circumstances. Attackers may by able to easilypredict the results of the rand and mt_rand functions.(CVE-2008-2107, CVE-2008-2108)"
+      }
+    ],
+    "CVE-2008-2108": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-628-1",
+        "title": "USN-628-1: PHP vulnerabilities",
+        "body": "It was discovered that the GENERATE_SEED macro produced a predictableseed under certain circumstances. Attackers may by able to easilypredict the results of the rand and mt_rand functions.(CVE-2008-2107, CVE-2008-2108)"
+      }
+    ],
+    "CVE-2008-2136": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-625-1",
+        "title": "USN-625-1: Linux kernel vulnerabilities",
+        "body": "Paul Marks discovered that the SIT interfaces did not correctly manageallocated memory. A remote attacker could exploit this to fill allavailable memory, leading to a denial of service. (CVE-2008-2136)"
+      }
+    ],
+    "CVE-2008-2137": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-625-1",
+        "title": "USN-625-1: Linux kernel vulnerabilities",
+        "body": "David Miller and Jan Lieskovsky discovered that the Sparc kernel did notcorrectly range-check memory regions allocated with mmap. A local attackercould exploit this to crash the system, leading to a denial of service.(CVE-2008-2137)"
+      }
+    ],
+    "CVE-2008-2148": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-625-1",
+        "title": "USN-625-1: Linux kernel vulnerabilities",
+        "body": "The sys_utimensat system call did not correctly check file permissions incertain situations. A local attacker could exploit this to modify the filetimes of arbitrary files which could lead to a denial of service.(CVE-2008-2148)"
+      }
+    ],
+    "CVE-2008-2168": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-731-1",
+        "title": "USN-731-1: Apache vulnerabilities",
+        "body": "It was discovered that in certain conditions, Apache did not specify a defaultcharacter set when returning certain error messages containing UTF-7 encodeddata, which could result in browsers becoming vulnerable to cross-site scriptingattacks when processing the output. This issue only affected Ubuntu 6.06 LTS and7.10. (CVE-2008-2168)"
+      }
+    ],
+    "CVE-2008-2237": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-677-2",
+        "title": "USN-677-2: OpenOffice.org Internationalization update",
+        "body": "Multiple memory overflow flaws were discovered in OpenOffice.org's handling of WMF and EMF files. If a user were tricked into opening a specially crafted document, a remote attacker might be able to execute arbitrary code with user privileges. (CVE-2008-2237, CVE-2008-2238)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-677-1",
+        "title": "USN-677-1: OpenOffice.org vulnerabilities",
+        "body": "Multiple memory overflow flaws were discovered in OpenOffice.org's handling ofWMF and EMF files. If a user were tricked into opening a specially crafteddocument, a remote attacker might be able to execute arbitrary code with userprivileges. (CVE-2008-2237, CVE-2008-2238)"
+      }
+    ],
+    "CVE-2008-2238": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-677-2",
+        "title": "USN-677-2: OpenOffice.org Internationalization update",
+        "body": "Multiple memory overflow flaws were discovered in OpenOffice.org's handling of WMF and EMF files. If a user were tricked into opening a specially crafted document, a remote attacker might be able to execute arbitrary code with user privileges. (CVE-2008-2237, CVE-2008-2238)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-677-1",
+        "title": "USN-677-1: OpenOffice.org vulnerabilities",
+        "body": "Multiple memory overflow flaws were discovered in OpenOffice.org's handling ofWMF and EMF files. If a user were tricked into opening a specially crafteddocument, a remote attacker might be able to execute arbitrary code with userprivileges. (CVE-2008-2237, CVE-2008-2238)"
+      }
+    ],
+    "CVE-2008-2285": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-612-5",
+        "title": "USN-612-5: OpenSSH update",
+        "body": "Matt Zimmerman discovered that entries in ~/.ssh/authorized_keyswith options (such as \"no-port-forwarding\" or forced commands) wereignored by the new ssh-vulnkey tool introduced in OpenSSH (seeUSN-612-2). This could cause some compromised keys not to belisted in ssh-vulnkey's output.This update also adds more information to ssh-vulnkey's manual page.Original advisory details:A weakness has been discovered in the random number generator used by OpenSSL on Debian and Ubuntu systems. As a result of this weakness, certain encryption keys are much more common than they should be, such that an attacker could guess the key through a brute-force attack given minimal knowledge of the system. This particularly affects the use of encryption keys in OpenSSH, OpenVPN and SSL certificates."
+      }
+    ],
+    "CVE-2008-2292": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-685-1",
+        "title": "USN-685-1: Net-SNMP vulnerabilities",
+        "body": "John Kortink discovered that the Net-SNMP Perl module did not correctlycheck the size of returned values. If a user or automated system weretricked into querying a malicious SNMP server, the application usingthe Perl module could be made to crash, leading to a denial of service.This did not affect Ubuntu 8.10. (CVE-2008-2292)"
+      }
+    ],
+    "CVE-2008-2315": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-632-1",
+        "title": "USN-632-1: Python vulnerabilities",
+        "body": "Multiple integer overflows were discovered in Python's core and modulesincluding hashlib, binascii, pickle, md5, stringobject, unicodeobject,bufferobject, longobject, tupleobject, stropmodule, gcmodule, andmmapmodule. If an attacker were able to exploit these flaws they couldexecute arbitrary code with user privileges or cause Python applicationsto crash, leading to a denial of service. (CVE-2008-2315, CVE-2008-2316,CVE-2008-3142, CVE-2008-3143, CVE-2008-3144)."
+      }
+    ],
+    "CVE-2008-2316": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-632-1",
+        "title": "USN-632-1: Python vulnerabilities",
+        "body": "Multiple integer overflows were discovered in Python's core and modulesincluding hashlib, binascii, pickle, md5, stringobject, unicodeobject,bufferobject, longobject, tupleobject, stropmodule, gcmodule, andmmapmodule. If an attacker were able to exploit these flaws they couldexecute arbitrary code with user privileges or cause Python applicationsto crash, leading to a denial of service. (CVE-2008-2315, CVE-2008-2316,CVE-2008-3142, CVE-2008-3143, CVE-2008-3144)."
+      }
+    ],
+    "CVE-2008-2327": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-639-1",
+        "title": "USN-639-1: tiff vulnerability",
+        "body": "Drew Yao discovered that the TIFF library did not correctly validate LZWcompressed TIFF images. If a user or automated system were tricked intoprocessing a malicious image, a remote attacker could execute arbitrarycode or cause an application linked against libtiff to crash, leadingto a denial of service."
+      }
+    ],
+    "CVE-2008-2358": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-625-1",
+        "title": "USN-625-1: Linux kernel vulnerabilities",
+        "body": "Brandon Edwards discovered that the DCCP system in the kernel did notcorrectly check feature lengths. A remote attacker could exploit this toexecute arbitrary code. (CVE-2008-2358)"
+      }
+    ],
+    "CVE-2008-2360": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-616-1",
+        "title": "USN-616-1: X.org vulnerabilities",
+        "body": "Multiple flaws were found in the RENDER, RECORD, and Securityextensions of X.org which did not correctly validate function arguments.An authenticated attacker could send specially crafted requests and gainroot privileges or crash X. (CVE-2008-1377, CVE-2008-2360, CVE-2008-2361,CVE-2008-2362)"
+      }
+    ],
+    "CVE-2008-2361": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-616-1",
+        "title": "USN-616-1: X.org vulnerabilities",
+        "body": "Multiple flaws were found in the RENDER, RECORD, and Securityextensions of X.org which did not correctly validate function arguments.An authenticated attacker could send specially crafted requests and gainroot privileges or crash X. (CVE-2008-1377, CVE-2008-2360, CVE-2008-2361,CVE-2008-2362)"
+      }
+    ],
+    "CVE-2008-2362": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-616-1",
+        "title": "USN-616-1: X.org vulnerabilities",
+        "body": "Multiple flaws were found in the RENDER, RECORD, and Securityextensions of X.org which did not correctly validate function arguments.An authenticated attacker could send specially crafted requests and gainroot privileges or crash X. (CVE-2008-1377, CVE-2008-2360, CVE-2008-2361,CVE-2008-2362)"
+      }
+    ],
+    "CVE-2008-2364": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-731-1",
+        "title": "USN-731-1: Apache vulnerabilities",
+        "body": "It was discovered that when configured as a proxy server, Apache did not limitthe number of forwarded interim responses. A malicious remote server could senda large number of interim responses and cause a denial of service via memoryexhaustion. (CVE-2008-2364)"
+      }
+    ],
+    "CVE-2008-2371": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-624-1",
+        "title": "USN-624-1: PCRE vulnerability",
+        "body": "Tavis Ormandy discovered that the PCRE library did not correctly handlecertain in-pattern options. An attacker could cause applications linkedagainst pcre3 to crash, leading to a denial of service."
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-628-1",
+        "title": "USN-628-1: PHP vulnerabilities",
+        "body": "Tavis Ormandy discovered that the PCRE library did not correctlyhandle certain in-pattern options. An attacker could cause PHPapplications using pcre to crash, leading to a denial of service.USN-624-1 fixed vulnerabilities in the pcre3 library. This updateprovides the corresponding update for PHP. (CVE-2008-2371)"
+      },
+      {
+        "url": "http://ubuntu.com/usn/usn-624-2",
+        "title": "USN-624-2: Erlang vulnerability",
+        "body": "USN-624-1 fixed a vulnerability in PCRE. This update provides thecorresponding update for Erlang.Original advisory details:Tavis Ormandy discovered that the PCRE library did not correctly handle certain in-pattern options. An attacker could cause applications linked against pcre3 to crash, leading to a denial of service."
+      }
+    ],
+    "CVE-2008-2372": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-659-1",
+        "title": "USN-659-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that the disabling of the ZERO_PAGE optimization couldlead to large memory consumption. A local attacker could exploit this toallocate all available memory, leading to a denial of service.(CVE-2008-2372)"
+      }
+    ],
+    "CVE-2008-2382": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-776-1",
+        "title": "USN-776-1: KVM vulnerabilities",
+        "body": "Alfredo Ortega discovered that KVM's VNC protocol handler did notcorrectly validate certain messages. A remote attacker could sendspecially crafted VNC messages that would cause KVM to consume CPUresources, leading to a denial of service. (CVE-2008-2382)"
+      }
+    ],
+    "CVE-2008-2426": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-697-1",
+        "title": "USN-697-1: Imlib2 vulnerability",
+        "body": "It was discovered that Imlib2 did not correctly handle certain malformed XPMand PNG images. If a user were tricked into opening a specially crafted imagewith an application that uses Imlib2, an attacker could cause a denial ofservice and possibly execute arbitrary code with the user's privileges."
+      }
+    ],
+    "CVE-2008-2662": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-621-1",
+        "title": "USN-621-1: Ruby vulnerabilities",
+        "body": "Drew Yao discovered several vulnerabilities in Ruby which lead to integeroverflows. If a user or automated system were tricked into running amalicious script, an attacker could cause a denial of service or executearbitrary code with the privileges of the user invoking the program.(CVE-2008-2662, CVE-2008-2663, CVE-2008-2725, CVE-2008-2726)"
+      }
+    ],
+    "CVE-2008-2663": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-621-1",
+        "title": "USN-621-1: Ruby vulnerabilities",
+        "body": "Drew Yao discovered several vulnerabilities in Ruby which lead to integeroverflows. If a user or automated system were tricked into running amalicious script, an attacker could cause a denial of service or executearbitrary code with the privileges of the user invoking the program.(CVE-2008-2662, CVE-2008-2663, CVE-2008-2725, CVE-2008-2726)"
+      }
+    ],
+    "CVE-2008-2664": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-621-1",
+        "title": "USN-621-1: Ruby vulnerabilities",
+        "body": "Drew Yao discovered that Ruby did not sanitize its input when using ALLOCA.If a user or automated system were tricked into running a malicious script,an attacker could cause a denial of service via memory corruption.(CVE-2008-2664)"
+      }
+    ],
+    "CVE-2008-2696": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-655-1",
+        "title": "USN-655-1: exiv2 vulnerabilities",
+        "body": "Joakim Bildrulle discovered that exiv2 did not correctly handle Nikonlens EXIF information. If a user or automated system were tricked intoprocessing a specially crafted image, a remote attacker could cause theapplication linked against libexiv2 to crash, leading to a denial ofservice. (CVE-2008-2696)"
+      }
+    ],
+    "CVE-2008-2712": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-712-1",
+        "title": "USN-712-1: Vim vulnerabilities",
+        "body": "Jan Minar discovered that Vim did not properly sanitize inputs before invokingthe execute or system functions inside Vim scripts. If a user were trickedinto running Vim scripts with a specially crafted input, an attacker couldexecute arbitrary code with the privileges of the user invoking the program.(CVE-2008-2712)"
+      }
+    ],
+    "CVE-2008-2719": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-648-1",
+        "title": "USN-648-1: nasm vulnerability",
+        "body": "Philipp Thomas discovered that the ppscan function of nasm containedan off-by-one error. If a user or automated system were tricked intoassembling a specially crafted ASM file, a remote attacker could executearbitrary commands with user privileges."
+      }
+    ],
+    "CVE-2008-2725": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-621-1",
+        "title": "USN-621-1: Ruby vulnerabilities",
+        "body": "Drew Yao discovered several vulnerabilities in Ruby which lead to integeroverflows. If a user or automated system were tricked into running amalicious script, an attacker could cause a denial of service or executearbitrary code with the privileges of the user invoking the program.(CVE-2008-2662, CVE-2008-2663, CVE-2008-2725, CVE-2008-2726)"
+      }
+    ],
+    "CVE-2008-2726": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-621-1",
+        "title": "USN-621-1: Ruby vulnerabilities",
+        "body": "Drew Yao discovered several vulnerabilities in Ruby which lead to integeroverflows. If a user or automated system were tricked into running amalicious script, an attacker could cause a denial of service or executearbitrary code with the privileges of the user invoking the program.(CVE-2008-2662, CVE-2008-2663, CVE-2008-2725, CVE-2008-2726)"
+      }
+    ],
+    "CVE-2008-2729": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-625-1",
+        "title": "USN-625-1: Linux kernel vulnerabilities",
+        "body": "The copy_to_user routine in the kernel did not correctly clear memorydestination addresses when running on 64bit kernels. A local attacker couldexploit this to gain access to sensitive kernel memory, leading to a lossof privacy. (CVE-2008-2729)"
+      }
+    ],
+    "CVE-2008-2750": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-625-1",
+        "title": "USN-625-1: Linux kernel vulnerabilities",
+        "body": "The PPP over L2TP routines in the kernel did not correctly handle certainmessages. A remote attacker could send a specially crafted packet thatcould crash the system or execute arbitrary code. (CVE-2008-2750)"
+      }
+    ],
+    "CVE-2008-2785": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-629-1",
+        "title": "USN-629-1: Thunderbird vulnerabilities",
+        "body": "A flaw was discovered in the browser engine. A variable could be madeto overflow causing Thunderbird to crash. If a user enable Javascriptand was tricked into opening a malicious web page, an attacker couldcause a denial of service or possibly execute arbitrary code with theprivileges of the user invoking the program. (CVE-2008-2785)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-623-1",
+        "title": "USN-623-1: Firefox vulnerabilities",
+        "body": "A flaw was discovered in the browser engine. A variable could be made tooverflow causing the browser to crash. If a user were tricked into openinga malicious web page, an attacker could cause a denial of service orpossibly execute arbitrary code with the privileges of the user invokingthe program. (CVE-2008-2785)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-626-2",
+        "title": "USN-626-2: Devhelp, Epiphany, Midbrowser and Yelp update",
+        "body": "A flaw was discovered in the browser engine. A variable could be made to overflow causing the browser to crash. If a user were tricked into opening a malicious web page, an attacker could cause a denial of service or possibly execute arbitrary code with the privileges of the user invoking the program. (CVE-2008-2785)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-626-1",
+        "title": "USN-626-1: Firefox and xulrunner vulnerabilities",
+        "body": "A flaw was discovered in the browser engine. A variable could be made tooverflow causing the browser to crash. If a user were tricked into openinga malicious web page, an attacker could cause a denial of service orpossibly execute arbitrary code with the privileges of the user invokingthe program. (CVE-2008-2785)"
+      }
+    ],
+    "CVE-2008-2798": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-619-1",
+        "title": "USN-619-1: Firefox vulnerabilities",
+        "body": "Various flaws were discovered in the browser engine. By trickinga user into opening a malicious web page, an attacker could causea denial of service via application crash, or possibly executearbitrary code with the privileges of the user invoking theprogram. (CVE-2008-2798, CVE-2008-2799)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-629-1",
+        "title": "USN-629-1: Thunderbird vulnerabilities",
+        "body": "Various flaws were discovered in the browser engine. If a user hadJavascript enabled and were tricked into opening a malicious webpage, an attacker could cause a denial of service via applicationcrash, or possibly execute arbitrary code with the privileges of theuser invoking the program. (CVE-2008-2798, CVE-2008-2799)"
+      }
+    ],
+    "CVE-2008-2799": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-619-1",
+        "title": "USN-619-1: Firefox vulnerabilities",
+        "body": "Various flaws were discovered in the browser engine. By trickinga user into opening a malicious web page, an attacker could causea denial of service via application crash, or possibly executearbitrary code with the privileges of the user invoking theprogram. (CVE-2008-2798, CVE-2008-2799)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-629-1",
+        "title": "USN-629-1: Thunderbird vulnerabilities",
+        "body": "Various flaws were discovered in the browser engine. If a user hadJavascript enabled and were tricked into opening a malicious webpage, an attacker could cause a denial of service via applicationcrash, or possibly execute arbitrary code with the privileges of theuser invoking the program. (CVE-2008-2798, CVE-2008-2799)"
+      }
+    ],
+    "CVE-2008-2800": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-619-1",
+        "title": "USN-619-1: Firefox vulnerabilities",
+        "body": "Several problems were discovered in the JavaScript engine. If auser were tricked into opening a malicious web page, an attackercould perform cross-site scripting attacks. (CVE-2008-2800)"
+      }
+    ],
+    "CVE-2008-2801": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-619-1",
+        "title": "USN-619-1: Firefox vulnerabilities",
+        "body": "Collin Jackson discovered various flaws in the JavaScript enginewhich allowed JavaScript to be injected into signed JAR files. Ifa user were tricked into opening malicious web content, anattacker may be able to execute arbitrary code with the privilegesof a different website or link content within the JAR file to anattacker-controlled JavaScript file. (CVE-2008-2801)"
+      }
+    ],
+    "CVE-2008-2802": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-619-1",
+        "title": "USN-619-1: Firefox vulnerabilities",
+        "body": "It was discovered that Firefox would allow non-privileged XULdocuments to load chrome scripts from the fastload file. Thiscould allow an attacker to execute arbitrary JavaScript code withchrome privileges. (CVE-2008-2802)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-629-1",
+        "title": "USN-629-1: Thunderbird vulnerabilities",
+        "body": "It was discovered that Thunderbird would allow non-privileged XULdocuments to load chrome scripts from the fastload file if Javascriptwas enabled. This could allow an attacker to execute arbitraryJavascript code with chrome privileges. (CVE-2008-2802)"
+      }
+    ],
+    "CVE-2008-2803": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-619-1",
+        "title": "USN-619-1: Firefox vulnerabilities",
+        "body": "A flaw was discovered in Firefox that allowed overwriting trustedobjects via mozIJSSubScriptLoader.loadSubScript(). If a user weretricked into opening a malicious web page, an attacker couldexecute arbitrary code with the privileges of the user invoking theprogram. (CVE-2008-2803)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-629-1",
+        "title": "USN-629-1: Thunderbird vulnerabilities",
+        "body": "A flaw was discovered in Thunderbird that allowed overwriting trustedobjects via mozIJSSubScriptLoader.loadSubScript(). If a user hadJavascript enabled and was tricked into opening a malicious web page,an attacker could execute arbitrary code with the privileges of theuser invoking the program. (CVE-2008-2803)"
+      }
+    ],
+    "CVE-2008-2805": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-619-1",
+        "title": "USN-619-1: Firefox vulnerabilities",
+        "body": "Claudio Santambrogio discovered a vulnerability in Firefox whichcould lead to stealing of arbitrary files. If a user were trickedinto opening malicious content, an attacker could force the browserinto uploading local files to the remote server. (CVE-2008-2805)"
+      }
+    ],
+    "CVE-2008-2806": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-619-1",
+        "title": "USN-619-1: Firefox vulnerabilities",
+        "body": "Gregory Fleischer discovered a flaw in Java LiveConnect. An attackercould exploit this to bypass the same-origin policy and createarbitrary socket connections to other domains. (CVE-2008-2806)"
+      }
+    ],
+    "CVE-2008-2807": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-619-1",
+        "title": "USN-619-1: Firefox vulnerabilities",
+        "body": "Daniel Glazman found that an improperly encoded .properties filein an add-on can result in uninitialized memory being used. Ifa user were tricked into installing a malicious add-on, thebrowser may be able to see data from other programs.(CVE-2008-2807)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-629-1",
+        "title": "USN-629-1: Thunderbird vulnerabilities",
+        "body": "Daniel Glazman found that an improperly encoded .properties file inan add-on can result in uninitialized memory being used. If a userwere tricked into installing a malicious add-on, Thunderbird may beable to see data from other programs. (CVE-2008-2807)"
+      }
+    ],
+    "CVE-2008-2808": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-619-1",
+        "title": "USN-619-1: Firefox vulnerabilities",
+        "body": "Masahiro Yamada discovered that Firefox did not properly sanitizefile URLs in directory listings, resulting in files from directorylistings being opened in unintended ways or not being able to beopened by the browser at all. (CVE-2008-2808)"
+      }
+    ],
+    "CVE-2008-2809": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-619-1",
+        "title": "USN-619-1: Firefox vulnerabilities",
+        "body": "John G. Myers discovered a weakness in the trust model used byFirefox regarding alternate names on self-signed certificates. Ifa user were tricked into accepting a certificate containingalternate name entries, an attacker could impersonate anotherserver. (CVE-2008-2809)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-629-1",
+        "title": "USN-629-1: Thunderbird vulnerabilities",
+        "body": "John G. Myers discovered a weakness in the trust model used byThunderbird regarding alternate names on self-signed certificates.If a user were tricked into accepting a certificate containingalternate name entries, an attacker could impersonate anotherserver. (CVE-2008-2809)"
+      }
+    ],
+    "CVE-2008-2810": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-619-1",
+        "title": "USN-619-1: Firefox vulnerabilities",
+        "body": "A flaw was discovered in the way Firefox opened URL files. If a userwere tricked into opening a bookmark to a malicious web page, thepage could potentially read from local files on the user's computer.(CVE-2008-2810)"
+      }
+    ],
+    "CVE-2008-2811": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-619-1",
+        "title": "USN-619-1: Firefox vulnerabilities",
+        "body": "A vulnerability was discovered in the block reflow code of Firefox.This vulnerability could be used by an attacker to cause a denial ofservice via application crash, or execute arbitrary code with theprivileges of the user invoking the program. (CVE-2008-2811)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-629-1",
+        "title": "USN-629-1: Thunderbird vulnerabilities",
+        "body": "A vulnerability was discovered in the block reflow code ofThunderbird. If a user enabled Javascript, this vulnerability couldbe used by an attacker to cause a denial of service via applicationcrash, or execute arbitrary code with the privileges of the userinvoking the program. (CVE-2008-2811)"
+      }
+    ],
+    "CVE-2008-2826": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-625-1",
+        "title": "USN-625-1: Linux kernel vulnerabilities",
+        "body": "Gabriel Campana discovered that SCTP routines did not correctly check forlarge addresses. A local user could exploit this to allocate all availablememory, leading to a denial of service. (CVE-2008-2826)"
+      }
+    ],
+    "CVE-2008-2829": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-628-1",
+        "title": "USN-628-1: PHP vulnerabilities",
+        "body": "It was discovered that php_imap used obsolete API calls. If a PHPapplication were tricked into processing a malicious IMAP request,an attacker could cause a denial of service or possibly execute codewith application privileges. (CVE-2008-2829)"
+      }
+    ],
+    "CVE-2008-2927": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-675-1",
+        "title": "USN-675-1: Pidgin vulnerabilities",
+        "body": "It was discovered that Pidgin did not properly handle certain malformedmessages in the MSN protocol handler. A remote attacker could send a speciallycrafted message and possibly execute arbitrary code with user privileges.(CVE-2008-2927)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-675-2",
+        "title": "USN-675-2: Gaim vulnerability",
+        "body": "It was discovered that Gaim did not properly handle certain malformedmessages in the MSN protocol handler. A remote attacker could send a speciallycrafted message and possibly execute arbitrary code with user privileges.(CVE-2008-2927)"
+      }
+    ],
+    "CVE-2008-2933": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-626-2",
+        "title": "USN-626-2: Devhelp, Epiphany, Midbrowser and Yelp update",
+        "body": "Billy Rios discovered that Firefox and xulrunner, as used by browsers such as Epiphany, did not properly perform URI splitting with pipe symbols when passed a command-line URI. If Firefox or xulrunner were passed a malicious URL, an attacker may be able to execute local content with chrome privileges. (CVE-2008-2933)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-623-1",
+        "title": "USN-623-1: Firefox vulnerabilities",
+        "body": "Billy Rios discovered that Firefox did not properly perform URI splittingwith pipe symbols when passed a command-line URI. If Firefox were passeda malicious URL, an attacker may be able to execute local content withchrome privileges. (CVE-2008-2933)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-626-1",
+        "title": "USN-626-1: Firefox and xulrunner vulnerabilities",
+        "body": "Billy Rios discovered that Firefox and xulrunner, as used by browserssuch as Epiphany, did not properly perform URI splitting with pipesymbols when passed a command-line URI. If Firefox or xulrunner werepassed a malicious URL, an attacker may be able to execute localcontent with chrome privileges. (CVE-2008-2933)"
+      }
+    ],
+    "CVE-2008-2934": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-626-1",
+        "title": "USN-626-1: Firefox and xulrunner vulnerabilities",
+        "body": "A flaw was discovered in the browser engine. A variable could be made tooverflow causing the browser to crash. If a user were tricked into openinga malicious web page, an attacker could cause a denial of service orpossibly execute arbitrary code with the privileges of the user invokingthe program. (CVE-2008-2785)Billy Rios discovered that Firefox and xulrunner, as used by browserssuch as Epiphany, did not properly perform URI splitting with pipesymbols when passed a command-line URI. If Firefox or xulrunner werepassed a malicious URL, an attacker may be able to execute localcontent with chrome privileges. (CVE-2008-2933)"
+      }
+    ],
+    "CVE-2008-2935": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-633-1",
+        "title": "USN-633-1: libxslt vulnerabilities",
+        "body": "Chris Evans discovered that the RC4 processing code in libxslt did notcorrectly handle corrupted key information. If a remote attacker wereable to make an application linked against libxslt process maliciousXML input, they could crash the application, leading to a denial ofservice. (CVE-2008-2935)"
+      }
+    ],
+    "CVE-2008-2939": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-731-1",
+        "title": "USN-731-1: Apache vulnerabilities",
+        "body": "It was discovered that mod_proxy_ftp did not sanitize wildcard pathnames whenthey are returned in directory listings, which could result in browsers becomingvulnerable to cross-site scripting attacks when processing the output.(CVE-2008-2939)"
+      }
+    ],
+    "CVE-2008-2940": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-674-1",
+        "title": "USN-674-1: HPLIP vulnerabilities",
+        "body": "It was discovered that the hpssd tool of hplip did not validateprivileges in the alert-mailing function. A local attacker couldexploit this to gain privileges and send e-mail messages from theaccount of the hplip user. This update alters hplip behaviour bypreventing users from setting alerts and by moving alert configurationto a root-controlled /etc/hp/alerts.conf file. (CVE-2008-2940)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-674-2",
+        "title": "USN-674-2: HPLIP vulnerabilities",
+        "body": "It was discovered that the hpssd tool of hplip did not validate privileges in the alert-mailing function. A local attacker could exploit this to gain privileges and send e-mail messages from the account of the hplip user. This update alters hplip behaviour by preventing users from setting alerts and by moving alert configuration to a root-controlled /etc/hp/alerts.conf file. (CVE-2008-2940)"
+      }
+    ],
+    "CVE-2008-2941": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-674-1",
+        "title": "USN-674-1: HPLIP vulnerabilities",
+        "body": "It was discovered that the hpssd tool of hplip did not correctlyhandle certain commands. A local attacker could use a speciallycrafted packet to crash hpssd, leading to a denial of service.(CVE-2008-2941)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-674-2",
+        "title": "USN-674-2: HPLIP vulnerabilities",
+        "body": "It was discovered that the hpssd tool of hplip did not correctly handle certain commands. A local attacker could use a specially crafted packet to crash hpssd, leading to a denial of service. (CVE-2008-2941)"
+      }
+    ],
+    "CVE-2008-2950": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-631-1",
+        "title": "USN-631-1: poppler vulnerability",
+        "body": "Felipe Andres Manzano discovered that poppler did not correctly initializecertain page widgets. If a user were tricked into viewing a maliciousPDF file, a remote attacker could exploit this to crash applicationslinked against poppler, leading to a denial of service."
+      }
+    ],
+    "CVE-2008-2952": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-634-1",
+        "title": "USN-634-1: OpenLDAP vulnerability",
+        "body": "Cameron Hotchkies discovered that OpenLDAP did not correctly handlecertain ASN.1 BER data. A remote attacker could send a specially craftedpacket and crash slapd, leading to a denial of service."
+      }
+    ],
+    "CVE-2008-2955": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-675-1",
+        "title": "USN-675-1: Pidgin vulnerabilities",
+        "body": "It was discovered that Pidgin did not properly handle file transfers containinga long filename and special characters in the MSN protocol handler. A remoteattacker could send a specially crafted filename in a file transfer requestand cause Pidgin to crash, leading to a denial of service. (CVE-2008-2955)"
+      }
+    ],
+    "CVE-2008-2957": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-675-1",
+        "title": "USN-675-1: Pidgin vulnerabilities",
+        "body": "It was discovered that Pidgin did not impose resource limitations in the UPnPservice. A remote attacker could cause Pidgin to download arbitrary filesand cause a denial of service from memory or disk space exhaustion.(CVE-2008-2957)"
+      }
+    ],
+    "CVE-2008-3142": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-632-1",
+        "title": "USN-632-1: Python vulnerabilities",
+        "body": "Multiple integer overflows were discovered in Python's core and modulesincluding hashlib, binascii, pickle, md5, stringobject, unicodeobject,bufferobject, longobject, tupleobject, stropmodule, gcmodule, andmmapmodule. If an attacker were able to exploit these flaws they couldexecute arbitrary code with user privileges or cause Python applicationsto crash, leading to a denial of service. (CVE-2008-2315, CVE-2008-2316,CVE-2008-3142, CVE-2008-3143, CVE-2008-3144)."
+      }
+    ],
+    "CVE-2008-3143": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-632-1",
+        "title": "USN-632-1: Python vulnerabilities",
+        "body": "Multiple integer overflows were discovered in Python's core and modulesincluding hashlib, binascii, pickle, md5, stringobject, unicodeobject,bufferobject, longobject, tupleobject, stropmodule, gcmodule, andmmapmodule. If an attacker were able to exploit these flaws they couldexecute arbitrary code with user privileges or cause Python applicationsto crash, leading to a denial of service. (CVE-2008-2315, CVE-2008-2316,CVE-2008-3142, CVE-2008-3143, CVE-2008-3144)."
+      }
+    ],
+    "CVE-2008-3144": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-632-1",
+        "title": "USN-632-1: Python vulnerabilities",
+        "body": "Multiple integer overflows were discovered in Python's core and modulesincluding hashlib, binascii, pickle, md5, stringobject, unicodeobject,bufferobject, longobject, tupleobject, stropmodule, gcmodule, andmmapmodule. If an attacker were able to exploit these flaws they couldexecute arbitrary code with user privileges or cause Python applicationsto crash, leading to a denial of service. (CVE-2008-2315, CVE-2008-2316,CVE-2008-3142, CVE-2008-3143, CVE-2008-3144)."
+      }
+    ],
+    "CVE-2008-3162": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-630-1",
+        "title": "USN-630-1: ffmpeg vulnerability",
+        "body": "It was discovered that ffmpeg did not correctly handle STR filedemuxing. If a user were tricked into processing a malicious STR file,a remote attacker could execute arbitrary code with user privileges viaapplications linked against ffmpeg."
+      }
+    ],
+    "CVE-2008-3276": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-659-1",
+        "title": "USN-659-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that the Datagram Congestion Control Protocol (DCCP) didnot correctly validate its arguments. If DCCP was in use, a remote attackercould send specially crafted network traffic and cause a system crash,leading to a denial of service. (CVE-2008-3276)"
+      }
+    ],
+    "CVE-2008-3281": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-640-1",
+        "title": "USN-640-1: libxml2 vulnerability",
+        "body": "Andreas Solberg discovered that libxml2 did not handle recursive entitiessafely. If an application linked against libxml2 were made to processa specially crafted XML document, a remote attacker could exhaust thesystem's CPU resources, leading to a denial of service."
+      }
+    ],
+    "CVE-2008-3520": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-742-1",
+        "title": "USN-742-1: JasPer vulnerabilities",
+        "body": "It was discovered that JasPer did not correctly handle memory allocationwhen parsing certain malformed JPEG2000 images. If a user were tricked intoopening a specially crafted image with an application that uses libjasper,an attacker could cause a denial of service and possibly execute arbitrarycode with the user's privileges. (CVE-2008-3520)"
+      }
+    ],
+    "CVE-2008-3522": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-742-1",
+        "title": "USN-742-1: JasPer vulnerabilities",
+        "body": "It was discovered that JasPer did not correctly handle certain formattingoperations. If a user were tricked into opening a specially crafted imagewith an application that uses libjasper, an attacker could cause a denialof service and possibly execute arbitrary code with the user's privileges.(CVE-2008-3522)"
+      }
+    ],
+    "CVE-2008-3525": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-659-1",
+        "title": "USN-659-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that the SBNI WAN driver did not correctly check for theNET_ADMIN capability. A malicious local root user lacking CAP_NET_ADMINwould be able to change the WAN device configuration, leading to a denialof service. (CVE-2008-3525)"
+      }
+    ],
+    "CVE-2008-3526": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-659-1",
+        "title": "USN-659-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that the Stream Control Transmission Protocol (SCTP) didnot correctly validate the key length in the SCTP_AUTH_KEY option. If SCTPis in use, a remote attacker could send specially crafted network trafficthat would crash the system, leading to a denial of service.(CVE-2008-3526)"
+      }
+    ],
+    "CVE-2008-3528": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-662-1",
+        "title": "USN-662-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that the Linux kernel could be made to hang temporarilywhen mounting corrupted ext2/3 filesystems. If a user were tricked intomounting a specially crafted filesystem, a remote attacker could causesystem hangs, leading to a denial of service. (CVE-2008-3528)"
+      }
+    ],
+    "CVE-2008-3529": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-815-1",
+        "title": "USN-815-1: libxml2 vulnerabilities",
+        "body": "It was discovered that libxml2 did not correctly handle long entity names. If a user were tricked into processing a specially crafted XML document, a remote attacker could execute arbitrary code with user privileges or cause the application linked against libxml2 to crash, leading to a denial of service. (CVE-2008-3529)"
+      }
+    ],
+    "CVE-2008-3532": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-675-1",
+        "title": "USN-675-1: Pidgin vulnerabilities",
+        "body": "It was discovered that Pidgin did not validate SSL certificates when using asecure connection. If a remote attacker were able to perform aman-in-the-middle attack, this flaw could be exploited to view sensitiveinformation. This update alters Pidgin behaviour by asking users to confirmthe validity of a certificate upon initial login. (CVE-2008-3532)"
+      }
+    ],
+    "CVE-2008-3546": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-723-1",
+        "title": "USN-723-1: Git vulnerabilities",
+        "body": "It was discovered that Git did not properly handle long file paths. If a userwere tricked into performing commands on a specially crafted Git repository, anattacker could possibly execute arbitrary code with the privileges of the userinvoking the program. (CVE-2008-3546)"
+      }
+    ],
+    "CVE-2008-3632": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-676-1",
+        "title": "USN-676-1: WebKit vulnerability",
+        "body": "It was discovered that WebKit did not properly handle Cascading Style Sheets(CSS) import statements. If a user were tricked into opening a maliciouswebsite, an attacker could cause a browser crash and possibly executearbitrary code with user privileges."
+      }
+    ],
+    "CVE-2008-3651": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-641-1",
+        "title": "USN-641-1: Racoon vulnerabilities",
+        "body": "It was discovered that there were multiple ways to leak memory during theIKE negotiation when handling certain packets. If a remoteattacker sent repeated malicious requests, the \"racoon\" key exchangeserver could allocate large amounts of memory, possibly leading to adenial of service."
+      }
+    ],
+    "CVE-2008-3652": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-641-1",
+        "title": "USN-641-1: Racoon vulnerabilities",
+        "body": "It was discovered that there were multiple ways to leak memory during theIKE negotiation when handling certain packets. If a remoteattacker sent repeated malicious requests, the \"racoon\" key exchangeserver could allocate large amounts of memory, possibly leading to adenial of service."
+      }
+    ],
+    "CVE-2008-3714": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-686-1",
+        "title": "USN-686-1: AWStats vulnerability",
+        "body": "Morgan Todd discovered that AWStats did not correctly strip quotes fromcertain parameters, allowing for an XSS attack when running as a CGI.If a user was tricked by a remote attacker into following a speciallycrafted URL, the user's authentication information could be exposed forthe domain where AWStats was hosted."
+      }
+    ],
+    "CVE-2008-3831": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-659-1",
+        "title": "USN-659-1: Linux kernel vulnerabilities",
+        "body": "It was discovered the the i915 video driver did not correctly validatememory addresses. A local attacker could exploit this to remap memorythat could cause a system crash, leading to a denial of service.(CVE-2008-3831)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-679-1",
+        "title": "USN-679-1: Linux kernel vulnerabilities",
+        "body": "It was discovered the the i915 video driver did not correctly validatememory addresses. A local attacker could exploit this to remap memory thatcould cause a system crash, leading to a denial of service. This issue didnot affect Ubuntu 6.06 and was previous fixed for Ubuntu 7.10 and 8.04 inUSN-659-1. Ubuntu 8.10 has now been corrected as well. (CVE-2008-3831)"
+      }
+    ],
+    "CVE-2008-3834": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-653-1",
+        "title": "USN-653-1: D-Bus vulnerabilities",
+        "body": "It was discovered that the D-Bus library did not correctly validatecertain corrupted signatures. If a local user sent a specially craftedD-Bus request, they could crash applications linked against the D-Buslibrary, leading to a denial of service. (CVE-2008-3834)"
+      }
+    ],
+    "CVE-2008-3835": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-647-1",
+        "title": "USN-647-1: Thunderbird vulnerabilities",
+        "body": "It was discovered that the same-origin check in Thunderbird couldbe bypassed. If a user had JavaScript enabled and were tricked intoopening a malicious website, an attacker may be able to executeJavaScript in the context of a different website. (CVE-2008-3835)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-1",
+        "title": "USN-645-1: Firefox and xulrunner vulnerabilities",
+        "body": "It was discovered that the same-origin check in Firefox could bebypassed. If a user were tricked into opening a malicious website,an attacker may be able to execute JavaScript in the context of adifferent website. (CVE-2008-3835)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-2",
+        "title": "USN-645-2: Firefox vulnerabilities",
+        "body": "It was discovered that the same-origin check in Firefox could be bypassed. If a user were tricked into opening a malicious website, an attacker may be able to execute JavaScript in the context of a different website. (CVE-2008-3835)"
+      }
+    ],
+    "CVE-2008-3836": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-1",
+        "title": "USN-645-1: Firefox and xulrunner vulnerabilities",
+        "body": "Several problems were discovered in the JavaScript engine. Thiscould allow an attacker to execute scripts from page content withchrome privileges. (CVE-2008-3836)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-2",
+        "title": "USN-645-2: Firefox vulnerabilities",
+        "body": "Several problems were discovered in the JavaScript engine. This could allow an attacker to execute scripts from page content with chrome privileges. (CVE-2008-3836)"
+      }
+    ],
+    "CVE-2008-3863": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-660-1",
+        "title": "USN-660-1: enscript vulnerability",
+        "body": "Ulf Härnhammar discovered multiple stack overflows in enscript's handling ofspecial escape arguments. If a user or automated system were tricked intoprocessing a malicious file with the \"-e\" option enabled, a remote attackercould execute arbitrary code or cause enscript to crash, possibly leadingto a denial of service."
+      }
+    ],
+    "CVE-2008-3889": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-642-1",
+        "title": "USN-642-1: Postfix vulnerability",
+        "body": "Wietse Venema discovered that Postfix leaked internal file descriptorswhen executing non-Postfix commands. A local attacker could exploitthis to cause Postfix to run out of descriptors, leading to a denialof service."
+      }
+    ],
+    "CVE-2008-3915": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-659-1",
+        "title": "USN-659-1: Linux kernel vulnerabilities",
+        "body": "Johann Dahm and David Richter discovered that NFSv4 did not correctlyhandle certain file ACLs. If NFSv4 is in use, a local attacker could createa malicious ACL that could cause a system crash, leading to a denial ofservice. (CVE-2008-3915)"
+      }
+    ],
+    "CVE-2008-4058": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-647-1",
+        "title": "USN-647-1: Thunderbird vulnerabilities",
+        "body": "Several problems were discovered in the browser engine ofThunderbird. If a user had JavaScript enabled, this could allow anattacker to execute code with chrome privileges. (CVE-2008-4058,CVE-2008-4059, CVE-2008-4060)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-2",
+        "title": "USN-645-2: Firefox vulnerabilities",
+        "body": "Several problems were discovered in the browser engine. This could allow an attacker to execute code with chrome privileges. (CVE-2008-4058, CVE-2008-4059, CVE-2008-4060)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-1",
+        "title": "USN-645-1: Firefox and xulrunner vulnerabilities",
+        "body": "Several problems were discovered in the browser engine. This couldallow an attacker to execute code with chrome privileges.(CVE-2008-4058, CVE-2008-4059, CVE-2008-4060)"
+      }
+    ],
+    "CVE-2008-4059": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-647-1",
+        "title": "USN-647-1: Thunderbird vulnerabilities",
+        "body": "Several problems were discovered in the browser engine ofThunderbird. If a user had JavaScript enabled, this could allow anattacker to execute code with chrome privileges. (CVE-2008-4058,CVE-2008-4059, CVE-2008-4060)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-2",
+        "title": "USN-645-2: Firefox vulnerabilities",
+        "body": "Several problems were discovered in the browser engine. This could allow an attacker to execute code with chrome privileges. (CVE-2008-4058, CVE-2008-4059, CVE-2008-4060)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-1",
+        "title": "USN-645-1: Firefox and xulrunner vulnerabilities",
+        "body": "Several problems were discovered in the browser engine. This couldallow an attacker to execute code with chrome privileges.(CVE-2008-4058, CVE-2008-4059, CVE-2008-4060)"
+      }
+    ],
+    "CVE-2008-4060": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-647-1",
+        "title": "USN-647-1: Thunderbird vulnerabilities",
+        "body": "Several problems were discovered in the browser engine ofThunderbird. If a user had JavaScript enabled, this could allow anattacker to execute code with chrome privileges. (CVE-2008-4058,CVE-2008-4059, CVE-2008-4060)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-1",
+        "title": "USN-645-1: Firefox and xulrunner vulnerabilities",
+        "body": "Several problems were discovered in the browser engine. This couldallow an attacker to execute code with chrome privileges.(CVE-2008-4058, CVE-2008-4059, CVE-2008-4060)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-2",
+        "title": "USN-645-2: Firefox vulnerabilities",
+        "body": "Several problems were discovered in the browser engine. This could allow an attacker to execute code with chrome privileges. (CVE-2008-4058, CVE-2008-4059, CVE-2008-4060)"
+      }
+    ],
+    "CVE-2008-4061": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-647-1",
+        "title": "USN-647-1: Thunderbird vulnerabilities",
+        "body": "Drew Yao, David Maciejak and other Mozilla developers found severalproblems in the browser engine of Thunderbird. If a user hadJavaScript enabled and were tricked into opening a malicious webpage, an attacker could cause a denial of service or possiblyexecute arbitrary code with the privileges of the user invoking theprogram. (CVE-2008-4061, CVE-2008-4062, CVE-2008-4063, CVE-2008-4064)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-1",
+        "title": "USN-645-1: Firefox and xulrunner vulnerabilities",
+        "body": "Drew Yao, David Maciejak and other Mozilla developers found severalproblems in the browser engine of Firefox. If a user were trickedinto opening a malicious web page, an attacker could cause a denialof service or possibly execute arbitrary code with the privilegesof the user invoking the program. (CVE-2008-4061, CVE-2008-4062,CVE-2008-4063, CVE-2008-4064)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-2",
+        "title": "USN-645-2: Firefox vulnerabilities",
+        "body": "Drew Yao, David Maciejak and other Mozilla developers found several problems in the browser engine of Firefox. If a user were tricked into opening a malicious web page, an attacker could cause a denial of service or possibly execute arbitrary code with the privileges of the user invoking the program. (CVE-2008-4061, CVE-2008-4062, CVE-2008-4063, CVE-2008-4064)"
+      }
+    ],
+    "CVE-2008-4062": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-647-1",
+        "title": "USN-647-1: Thunderbird vulnerabilities",
+        "body": "Drew Yao, David Maciejak and other Mozilla developers found severalproblems in the browser engine of Thunderbird. If a user hadJavaScript enabled and were tricked into opening a malicious webpage, an attacker could cause a denial of service or possiblyexecute arbitrary code with the privileges of the user invoking theprogram. (CVE-2008-4061, CVE-2008-4062, CVE-2008-4063, CVE-2008-4064)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-2",
+        "title": "USN-645-2: Firefox vulnerabilities",
+        "body": "Drew Yao, David Maciejak and other Mozilla developers found several problems in the browser engine of Firefox. If a user were tricked into opening a malicious web page, an attacker could cause a denial of service or possibly execute arbitrary code with the privileges of the user invoking the program. (CVE-2008-4061, CVE-2008-4062, CVE-2008-4063, CVE-2008-4064)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-1",
+        "title": "USN-645-1: Firefox and xulrunner vulnerabilities",
+        "body": "Drew Yao, David Maciejak and other Mozilla developers found severalproblems in the browser engine of Firefox. If a user were trickedinto opening a malicious web page, an attacker could cause a denialof service or possibly execute arbitrary code with the privilegesof the user invoking the program. (CVE-2008-4061, CVE-2008-4062,CVE-2008-4063, CVE-2008-4064)"
+      }
+    ],
+    "CVE-2008-4064": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-647-1",
+        "title": "USN-647-1: Thunderbird vulnerabilities",
+        "body": "Drew Yao, David Maciejak and other Mozilla developers found severalproblems in the browser engine of Thunderbird. If a user hadJavaScript enabled and were tricked into opening a malicious webpage, an attacker could cause a denial of service or possiblyexecute arbitrary code with the privileges of the user invoking theprogram. (CVE-2008-4061, CVE-2008-4062, CVE-2008-4063, CVE-2008-4064)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-2",
+        "title": "USN-645-2: Firefox vulnerabilities",
+        "body": "Drew Yao, David Maciejak and other Mozilla developers found several problems in the browser engine of Firefox. If a user were tricked into opening a malicious web page, an attacker could cause a denial of service or possibly execute arbitrary code with the privileges of the user invoking the program. (CVE-2008-4061, CVE-2008-4062, CVE-2008-4063, CVE-2008-4064)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-1",
+        "title": "USN-645-1: Firefox and xulrunner vulnerabilities",
+        "body": "Drew Yao, David Maciejak and other Mozilla developers found severalproblems in the browser engine of Firefox. If a user were trickedinto opening a malicious web page, an attacker could cause a denialof service or possibly execute arbitrary code with the privilegesof the user invoking the program. (CVE-2008-4061, CVE-2008-4062,CVE-2008-4063, CVE-2008-4064)"
+      }
+    ],
+    "CVE-2008-4065": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-647-1",
+        "title": "USN-647-1: Thunderbird vulnerabilities",
+        "body": "Dave Reed discovered a flaw in the JavaScript parsing code whenprocessing certain BOM characters. An attacker could exploit thisto bypass script filters and perform cross-site scripting attacksif a user had JavaScript enabled. (CVE-2008-4065)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-2",
+        "title": "USN-645-2: Firefox vulnerabilities",
+        "body": "Dave Reed discovered a flaw in the JavaScript parsing code when processing certain BOM characters. An attacker could exploit this to bypass script filters and perform cross-site scripting attacks. (CVE-2008-4065)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-1",
+        "title": "USN-645-1: Firefox and xulrunner vulnerabilities",
+        "body": "Dave Reed discovered a flaw in the JavaScript parsing code whenprocessing certain BOM characters. An attacker could exploit thisto bypass script filters and perform cross-site scripting attacks.(CVE-2008-4065)"
+      }
+    ],
+    "CVE-2008-4066": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-647-1",
+        "title": "USN-647-1: Thunderbird vulnerabilities",
+        "body": "Gareth Heyes discovered a flaw in the HTML parser of Thunderbird. Ifa user had JavaScript enabled and were tricked into opening amalicious web page, an attacker could bypass script filtering andperform cross-site scripting attacks. (CVE-2008-4066)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-1",
+        "title": "USN-645-1: Firefox and xulrunner vulnerabilities",
+        "body": "Gareth Heyes discovered a flaw in the HTML parser of Firefox. If auser were tricked into opening a malicious web page, an attackercould bypass script filtering and perform cross-site scriptingattacks. (CVE-2008-4066)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-2",
+        "title": "USN-645-2: Firefox vulnerabilities",
+        "body": "Gareth Heyes discovered a flaw in the HTML parser of Firefox. If a user were tricked into opening a malicious web page, an attacker could bypass script filtering and perform cross-site scripting attacks. (CVE-2008-4066)"
+      }
+    ],
+    "CVE-2008-4067": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-647-1",
+        "title": "USN-647-1: Thunderbird vulnerabilities",
+        "body": "Boris Zbarsky and Georgi Guninski independently discovered flaws inthe resource: protocol. An attacker could exploit this to performdirectory traversal, read information about the system, and promptthe user to save information in a file. (CVE-2008-4067,CVE-2008-4068)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-1",
+        "title": "USN-645-1: Firefox and xulrunner vulnerabilities",
+        "body": "Boris Zbarsky and Georgi Guninski independently discovered flaws inthe resource: protocol. An attacker could exploit this to performdirectory traversal, read information about the system, and promptthe user to save information in a file. (CVE-2008-4067,CVE-2008-4068)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-2",
+        "title": "USN-645-2: Firefox vulnerabilities",
+        "body": "Boris Zbarsky and Georgi Guninski independently discovered flaws in the resource: protocol. An attacker could exploit this to perform directory traversal, read information about the system, and prompt the user to save information in a file. (CVE-2008-4067, CVE-2008-4068)"
+      }
+    ],
+    "CVE-2008-4068": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-647-1",
+        "title": "USN-647-1: Thunderbird vulnerabilities",
+        "body": "Boris Zbarsky and Georgi Guninski independently discovered flaws inthe resource: protocol. An attacker could exploit this to performdirectory traversal, read information about the system, and promptthe user to save information in a file. (CVE-2008-4067,CVE-2008-4068)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-2",
+        "title": "USN-645-2: Firefox vulnerabilities",
+        "body": "Boris Zbarsky and Georgi Guninski independently discovered flaws in the resource: protocol. An attacker could exploit this to perform directory traversal, read information about the system, and prompt the user to save information in a file. (CVE-2008-4067, CVE-2008-4068)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-1",
+        "title": "USN-645-1: Firefox and xulrunner vulnerabilities",
+        "body": "Boris Zbarsky and Georgi Guninski independently discovered flaws inthe resource: protocol. An attacker could exploit this to performdirectory traversal, read information about the system, and promptthe user to save information in a file. (CVE-2008-4067,CVE-2008-4068)"
+      }
+    ],
+    "CVE-2008-4069": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-1",
+        "title": "USN-645-1: Firefox and xulrunner vulnerabilities",
+        "body": "Billy Hoffman discovered a problem in the XBM decoder. If a user weretricked into opening a malicious web page or XBM file, an attackermay be able to cause a denial of service via application crash.(CVE-2008-4069)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-645-2",
+        "title": "USN-645-2: Firefox vulnerabilities",
+        "body": "Billy Hoffman discovered a problem in the XBM decoder. If a user were tricked into opening a malicious web page or XBM file, an attacker may be able to cause a denial of service via application crash. (CVE-2008-4069)"
+      }
+    ],
+    "CVE-2008-4070": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-647-1",
+        "title": "USN-647-1: Thunderbird vulnerabilities",
+        "body": "Georgi Guninski discovered that Thunderbird improperly handledcancelled newsgroup messages. If a user opened a crafted newsgroupmessage, an attacker could cause a buffer overrun and potentiallyexecute arbitrary code with the privileges of the user invoking theprogram. (CVE-2008-4070)"
+      }
+    ],
+    "CVE-2008-4097": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-671-1",
+        "title": "USN-671-1: MySQL vulnerabilities",
+        "body": "It was discovered that MySQL could be made to overwrite existing tablefiles in the data directory. An authenticated user could use theDATA DIRECTORY and INDEX DIRECTORY options to possibly bypass privilegechecks. This update alters table creation behaviour by disallowing theuse of the MySQL data directory in DATA DIRECTORY and INDEX DIRECTORYoptions. (CVE-2008-2079, CVE-2008-4097 and CVE-2008-4098)"
+      }
+    ],
+    "CVE-2008-4101": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-712-1",
+        "title": "USN-712-1: Vim vulnerabilities",
+        "body": "Ben Schmidt discovered that Vim did not properly escape characters whenperforming keyword or tag lookups. If a user were tricked into running speciallycrafted commands, an attacker could execute arbitrary code with the privilegesof the user invoking the program. (CVE-2008-4101)"
+      }
+    ],
+    "CVE-2008-4109": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-649-1",
+        "title": "USN-649-1: OpenSSH vulnerabilities",
+        "body": "USN-355-1 fixed vulnerabilities in OpenSSH. It was discovered that thefixes for this issue were incomplete. A remote attacker could attemptmultiple logins, filling all available connection slots, leading to adenial of service. This only affected Ubuntu 6.06 and 7.04.(CVE-2008-4109)"
+      }
+    ],
+    "CVE-2008-4113": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-659-1",
+        "title": "USN-659-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that SCTP did not correctly validate its userspacearguments. A local attacker could call certain sctp_* functions withmalicious options and cause a system crash, leading to a denial of service.(CVE-2008-3792, CVE-2008-4113, CVE-2008-4445)"
+      }
+    ],
+    "CVE-2008-4210": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-679-1",
+        "title": "USN-679-1: Linux kernel vulnerabilities",
+        "body": "David Watson discovered that the kernel did not correctly strip permissionswhen creating files in setgid directories. A local user could exploit thisto gain additional group privileges. This issue only affected Ubuntu 6.06.(CVE-2008-4210)"
+      }
+    ],
+    "CVE-2008-4225": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-673-1",
+        "title": "USN-673-1: libxml2 vulnerabilities",
+        "body": "Drew Yao discovered that libxml2 did not correctly handle certain corruptXML documents. If a user or automated system were tricked into processinga malicious XML document, a remote attacker could cause applicationslinked against libxml2 to enter an infinite loop, leading to a denialof service. (CVE-2008-4225)"
+      }
+    ],
+    "CVE-2008-4226": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-673-1",
+        "title": "USN-673-1: libxml2 vulnerabilities",
+        "body": "Drew Yao discovered that libxml2 did not correctly handle large memoryallocations. If a user or automated system were tricked into processing avery large XML document, a remote attacker could cause applications linkedagainst libxml2 to crash, leading to a denial of service. (CVE-2008-4226)"
+      }
+    ],
+    "CVE-2008-4306": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-660-1",
+        "title": "USN-660-1: enscript vulnerability",
+        "body": "Ulf Härnhammar discovered multiple stack overflows in enscript's handling ofspecial escape arguments. If a user or automated system were tricked intoprocessing a malicious file with the \"-e\" option enabled, a remote attackercould execute arbitrary code or cause enscript to crash, possibly leadingto a denial of service."
+      }
+    ],
+    "CVE-2008-4309": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-685-1",
+        "title": "USN-685-1: Net-SNMP vulnerabilities",
+        "body": "It was discovered that the SNMP service did not correctly handle largeGETBULK requests. If an unauthenticated remote attacker sent a speciallycrafted request, the SNMP service could be made to crash, leading to adenial of service. (CVE-2008-4309)"
+      }
+    ],
+    "CVE-2008-4314": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-680-1",
+        "title": "USN-680-1: Samba vulnerability",
+        "body": "It was discovered that Samba did not properly perform bounds checkingin certain operations. A remote attacker could possibly exploit this toread arbitrary memory contents of the smb process, which could containsensitive infomation or possibly have other impacts, such as a denial ofservice."
+      }
+    ],
+    "CVE-2008-4316": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-738-1",
+        "title": "USN-738-1: GLib vulnerability",
+        "body": "Diego Petteno discovered that the Base64 encoding functions in GLib did notproperly handle large strings. If a user or automated system were trickedinto processing a crafted Base64 string, an attacker could possibly executearbitrary code with the privileges of the user invoking the program."
+      }
+    ],
+    "CVE-2008-4395": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-662-1",
+        "title": "USN-662-1: Linux kernel vulnerabilities",
+        "body": "Anders Kaseorg discovered that ndiswrapper did not correctly handle longESSIDs. For a system using ndiswrapper, a physically near-by attackercould generate specially crafted wireless network traffic and executearbitrary code with root privileges. (CVE-2008-4395)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-662-2",
+        "title": "USN-662-2: Ubuntu kernel modules vulnerability",
+        "body": "Anders Kaseorg discovered that ndiswrapper did not correctly handle long ESSIDs. For a system using ndiswrapper, a physically near-by attacker could generate specially crafted wireless network traffic and execute arbitrary code with root privileges. (CVE-2008-4395)"
+      }
+    ],
+    "CVE-2008-4445": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-659-1",
+        "title": "USN-659-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that SCTP did not correctly validate its userspacearguments. A local attacker could call certain sctp_* functions withmalicious options and cause a system crash, leading to a denial of service.(CVE-2008-3792, CVE-2008-4113, CVE-2008-4445)"
+      }
+    ],
+    "CVE-2008-4456": [
+      {
+        "url": "http://ubuntu.com/usn/usn-897-1",
+        "title": "USN-897-1: MySQL vulnerabilities",
+        "body": "It was discovered that MySQL contained a cross-site scripting vulnerabilityin the command-line client when the --html option is enabled. An attackercould place arbitrary web script or html in a database cell, which wouldthen get placed in the html document output by the command-line tool. Thisissue only affected Ubuntu 6.06 LTS, 8.04 LTS, 8.10 and 9.04.(CVE-2008-4456)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/USN-1397-1",
+        "title": "USN-1397-1: MySQL vulnerabilities",
+        "body": "Multiple security issues were discovered in MySQL and this update includesnew upstream MySQL versions to fix these issues.MySQL has been updated to 5.1.61 in Ubuntu 10.04 LTS, Ubuntu 10.10,Ubuntu 11.04 and Ubuntu 11.10. Ubuntu 8.04 LTS has been updated toMySQL 5.0.95.In addition to security fixes, the updated packages contain bug fixes, newfeatures, and possibly incompatible changes.Please see the following for more information:http://dev.mysql.com/doc/refman/5.1/en/news-5-1-x.htmlhttp://dev.mysql.com/doc/refman/5.0/en/news-5-0-x.htmlhttp://www.oracle.com/technetwork/topics/security/cpujan2012-366304.html"
+      }
+    ],
+    "CVE-2008-4539": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-776-1",
+        "title": "USN-776-1: KVM vulnerabilities",
+        "body": "Jan Niehusmann discovered that KVM's Cirrus VGA implementation over VNCdid not correctly handle certain bitblt operations. A local attackercould exploit this flaw to potentially execute arbitrary code on the VMhost or crash KVM, leading to a denial of service. (CVE-2008-4539)"
+      }
+    ],
+    "CVE-2008-4552": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-687-1",
+        "title": "USN-687-1: nfs-utils vulnerability",
+        "body": "It was discovered that nfs-utils did not properly enforce netgrouprestrictions when using TCP Wrappers. Remote attackers could bypass thenetgroup restrictions enabled by the administrator and possibly gainaccess to sensitive information."
+      }
+    ],
+    "CVE-2008-4554": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-679-1",
+        "title": "USN-679-1: Linux kernel vulnerabilities",
+        "body": "Olaf Kirch and Miklos Szeredi discovered that the Linux kernel didnot correctly reject the \"append\" flag when handling file splicerequests. A local attacker could bypass append mode and make changes toarbitrary locations in a file. This issue only affected Ubuntu 7.10 and8.04. (CVE-2008-4554)"
+      }
+    ],
+    "CVE-2008-4576": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-679-1",
+        "title": "USN-679-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that the SCTP stack did not correctly handle INIT-ACK. Aremote user could exploit this by sending specially crafted SCTP trafficwhich would trigger a crash in the system, leading to a denial of service.This issue did not affect Ubuntu 8.10. (CVE-2008-4576)"
+      }
+    ],
+    "CVE-2008-4577": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-838-1",
+        "title": "USN-838-1: Dovecot vulnerabilities",
+        "body": "It was discovered that the ACL plugin in Dovecot would incorrectly handlenegative access rights. An attacker could exploit this flaw to access theDovecot server, bypassing the intended access restrictions. This onlyaffected Ubuntu 8.04 LTS. (CVE-2008-4577)"
+      }
+    ],
+    "CVE-2008-4582": [
+      {
+        "url": "http://ubuntu.com/usn/usn-667-1",
+        "title": "USN-667-1: Firefox and xulrunner vulnerabilities",
+        "body": "Liu Die Yu discovered an information disclosure vulnerability in Firefoxwhen using saved .url shortcut files. If a user were tricked intodownloading a crafted .url file and a crafted HTML file, an attackercould steal information from the user's cache. (CVE-2008-4582)"
+      }
+    ],
+    "CVE-2008-4610": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-734-1",
+        "title": "USN-734-1: FFmpeg vulnerabilities",
+        "body": "It was discovered that FFmpeg did not correctly handle certain malformedOgg Media (OGM) files. If a user were tricked into opening a crafted OggMedia file, an attacker could cause the application using FFmpeg to crash,leading to a denial of service. (CVE-2008-4610)"
+      }
+    ],
+    "CVE-2008-4618": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-679-1",
+        "title": "USN-679-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that the SCTP stack did not correctly handle bad packetlengths. A remote user could exploit this by sending specially crafted SCTPtraffic which would trigger a crash in the system, leading to a denial ofservice. This issue did not affect Ubuntu 8.10. (CVE-2008-4618)"
+      }
+    ],
+    "CVE-2008-4776": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-692-1",
+        "title": "USN-692-1: Gadu vulnerability",
+        "body": "It was discovered that the Gadu library, used by some Instant Messagingclients, did not correctly verify certain packet sizes from the server.If a user connected to a malicious server, clients using Gadu could bemade to crash, leading to a denial of service."
+      }
+    ],
+    "CVE-2008-4866": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-734-1",
+        "title": "USN-734-1: FFmpeg vulnerabilities",
+        "body": "It was discovered that FFmpeg did not correctly handle certain parameterswhen creating DTS streams. If a user were tricked into processing certaincommands, an attacker could cause a denial of service via applicationcrash, or possibly execute arbitrary code with the privileges of the userinvoking the program. This issue only affected Ubuntu 8.10. (CVE-2008-4866)"
+      }
+    ],
+    "CVE-2008-4867": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-734-1",
+        "title": "USN-734-1: FFmpeg vulnerabilities",
+        "body": "It was discovered that FFmpeg did not correctly handle certain malformedDTS Coherent Acoustics (DCA) files. If a user were tricked into opening acrafted DCA file, an attacker could cause a denial of service viaapplication crash, or possibly execute arbitrary code with the privilegesof the user invoking the program. (CVE-2008-4867)"
+      }
+    ],
+    "CVE-2008-4907": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-666-1",
+        "title": "USN-666-1: Dovecot vulnerability",
+        "body": "It was discovered that certain email headers were not correctly handledby Dovecot. If a remote attacker sent a specially crafted email to auser with a mailbox managed by Dovecot, that user's mailbox would becomeinaccessible through Dovecot, leading to a denial of service."
+      }
+    ],
+    "CVE-2008-4933": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-679-1",
+        "title": "USN-679-1: Linux kernel vulnerabilities",
+        "body": "Eric Sesterhenn discovered multiple flaws in the HFS+ filesystem. If alocal user or automated system were tricked into mounting a malicious HFS+filesystem, the system could crash, leading to a denial of service.(CVE-2008-4933, CVE-2008-4934, CVE-2008-5025)"
+      }
+    ],
+    "CVE-2008-4934": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-679-1",
+        "title": "USN-679-1: Linux kernel vulnerabilities",
+        "body": "Eric Sesterhenn discovered multiple flaws in the HFS+ filesystem. If alocal user or automated system were tricked into mounting a malicious HFS+filesystem, the system could crash, leading to a denial of service.(CVE-2008-4933, CVE-2008-4934, CVE-2008-5025)"
+      }
+    ],
+    "CVE-2008-5012": [
+      {
+        "url": "http://ubuntu.com/usn/usn-667-1",
+        "title": "USN-667-1: Firefox and xulrunner vulnerabilities",
+        "body": "Georgi Guninski, Michal Zalewsk and Chris Evans discovered that thesame-origin check in Firefox could be bypassed. If a user were trickedinto opening a malicious website, an attacker could obtain privateinformation from data stored in the images, or discover informationabout software on the user's computer. This issue only affects Firefox 2.(CVE-2008-5012)"
+      }
+    ],
+    "CVE-2008-5013": [
+      {
+        "url": "http://ubuntu.com/usn/usn-667-1",
+        "title": "USN-667-1: Firefox and xulrunner vulnerabilities",
+        "body": "It was discovered that Firefox did not properly check if the Flashmodule was properly unloaded. By tricking a user into opening a craftedSWF file, an attacker could cause Firefox to crash and possibly executearbitrary code with user privileges. This issue only affects Firefox 2.(CVE-2008-5013)"
+      }
+    ],
+    "CVE-2008-5014": [
+      {
+        "url": "http://ubuntu.com/usn/usn-667-1",
+        "title": "USN-667-1: Firefox and xulrunner vulnerabilities",
+        "body": "Jesse Ruderman discovered that Firefox did not properly guard locks onnon-native objects. If a user were tricked into opening a maliciouswebsite, an attacker could cause a browser crash and possibly executearbitrary code with user privileges. This issue only affects Firefox 2.(CVE-2008-5014)"
+      }
+    ],
+    "CVE-2008-5015": [
+      {
+        "url": "http://ubuntu.com/usn/usn-667-1",
+        "title": "USN-667-1: Firefox and xulrunner vulnerabilities",
+        "body": "Luke Bryan discovered that Firefox sometimes opened file URIs withchrome privileges. If a user saved malicious code locally, then openedthe file in the same tab as a privileged document, an attacker couldrun arbitrary JavaScript code with chrome privileges. This issue onlyaffects Firefox 3.0. (CVE-2008-5015)"
+      }
+    ],
+    "CVE-2008-5016": [
+      {
+        "url": "http://ubuntu.com/usn/usn-667-1",
+        "title": "USN-667-1: Firefox and xulrunner vulnerabilities",
+        "body": "Several problems were discovered in the browser, layout and JavaScriptengines. These problems could allow an attacker to crash the browserand possibly execute arbitrary code with user privileges.(CVE-2008-5016, CVE-2008-5017, CVE-2008-5018)"
+      }
+    ],
+    "CVE-2008-5017": [
+      {
+        "url": "http://ubuntu.com/usn/usn-667-1",
+        "title": "USN-667-1: Firefox and xulrunner vulnerabilities",
+        "body": "Several problems were discovered in the browser, layout and JavaScriptengines. These problems could allow an attacker to crash the browserand possibly execute arbitrary code with user privileges.(CVE-2008-5016, CVE-2008-5017, CVE-2008-5018)"
+      }
+    ],
+    "CVE-2008-5018": [
+      {
+        "url": "http://ubuntu.com/usn/usn-667-1",
+        "title": "USN-667-1: Firefox and xulrunner vulnerabilities",
+        "body": "Several problems were discovered in the browser, layout and JavaScriptengines. These problems could allow an attacker to crash the browserand possibly execute arbitrary code with user privileges.(CVE-2008-5016, CVE-2008-5017, CVE-2008-5018)"
+      }
+    ],
+    "CVE-2008-5019": [
+      {
+        "url": "http://ubuntu.com/usn/usn-667-1",
+        "title": "USN-667-1: Firefox and xulrunner vulnerabilities",
+        "body": "David Bloom discovered that the same-origin check in Firefox could bebypassed by utilizing the session restore feature. An attacker couldexploit this to run JavaScript in the context of another site orexecute arbitrary JavaScript code with chrome privileges.(CVE-2008-5019)"
+      }
+    ],
+    "CVE-2008-5021": [
+      {
+        "url": "http://ubuntu.com/usn/usn-667-1",
+        "title": "USN-667-1: Firefox and xulrunner vulnerabilities",
+        "body": "A flaw was discovered in Firefox's DOM constructing code. If a userwere tricked into opening a malicious website, an attacker couldcause the browser to crash and potentially execute arbitrary code withuser privileges. (CVE-2008-5021)"
+      }
+    ],
+    "CVE-2008-5022": [
+      {
+        "url": "http://ubuntu.com/usn/usn-667-1",
+        "title": "USN-667-1: Firefox and xulrunner vulnerabilities",
+        "body": "It was discovered that the same-origin check in Firefox could bebypassed. If a user were tricked into opening a malicious website, anattacker could execute JavaScript in the context of a different website.(CVE-2008-5022)"
+      }
+    ],
+    "CVE-2008-5023": [
+      {
+        "url": "http://ubuntu.com/usn/usn-667-1",
+        "title": "USN-667-1: Firefox and xulrunner vulnerabilities",
+        "body": "Collin Jackson discovered various flaws in Firefox when processingstylesheets which allowed JavaScript to be injected into signed JARfiles. If a user were tricked into opening malicious web content, anattacker could execute arbitrary code with the privileges of thesigned JAR or of a different website. (CVE-2008-5023)"
+      }
+    ],
+    "CVE-2008-5025": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-679-1",
+        "title": "USN-679-1: Linux kernel vulnerabilities",
+        "body": "Eric Sesterhenn discovered multiple flaws in the HFS+ filesystem. If alocal user or automated system were tricked into mounting a malicious HFS+filesystem, the system could crash, leading to a denial of service.(CVE-2008-4933, CVE-2008-4934, CVE-2008-5025)"
+      }
+    ],
+    "CVE-2008-5027": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-698-1",
+        "title": "USN-698-1: Nagios vulnerability",
+        "body": "It was discovered that Nagios did not properly parse commands submitted usingthe web interface. An authenticated user could use a custom form or a browseraddon to bypass security restrictions and submit unauthorized commands."
+      },
+      {
+        "url": "https://www.ubuntu.com/usn/USN-698-3/",
+        "title": "USN-698-3: Nagios vulnerabilities",
+        "body": "It was discovered that Nagios did not properly parse commands submitted usingthe web interface. An authenticated user could use a custom form or a browseraddon to bypass security restrictions and submit unauthorized commands.(CVE-2008-5027)"
+      }
+    ],
+    "CVE-2008-5028": [
+      {
+        "url": "https://www.ubuntu.com/usn/USN-698-3/",
+        "title": "USN-698-3: Nagios vulnerabilities",
+        "body": "It was discovered that Nagios was vulnerable to a Cross-site request forgery(CSRF) vulnerability. If an authenticated nagios user were tricked intoclicking a link on a specially crafted web page, an attacker could triggercommands to be processed by Nagios and execute arbitrary programs. Thisupdate alters Nagios behaviour by disabling submission of CMD_CHANGE commands.(CVE-2008-5028)"
+      }
+    ],
+    "CVE-2008-5033": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-679-1",
+        "title": "USN-679-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that the driver for simple i2c audio interfaces did notcorrectly validate certain function pointers. A local user could exploitthis to gain root privileges or crash the system, leading to a denial ofservice. (CVE-2008-5033)"
+      }
+    ],
+    "CVE-2008-5050": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-672-1",
+        "title": "USN-672-1: ClamAV vulnerability",
+        "body": "Moritz Jodeit discovered that ClamAV did not correctly handle certainstrings when examining a VBA project. If a remote attacker tricked ClamAVinto processing a malicious VBA file, ClamAV would crash, leading to adenial of service."
+      }
+    ],
+    "CVE-2008-5079": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-715-1",
+        "title": "USN-715-1: Linux kernel vulnerabilities",
+        "body": "Hugo Dias discovered that the ATM subsystem did not correctly managesocket counts. A local attacker could exploit this to cause a system hang,leading to a denial of service. (CVE-2008-5079)"
+      }
+    ],
+    "CVE-2008-5080": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-686-1",
+        "title": "USN-686-1: AWStats vulnerability",
+        "body": "Morgan Todd discovered that AWStats did not correctly strip quotes fromcertain parameters, allowing for an XSS attack when running as a CGI.If a user was tricked by a remote attacker into following a speciallycrafted URL, the user's authentication information could be exposed forthe domain where AWStats was hosted."
+      }
+    ],
+    "CVE-2008-5081": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-696-1",
+        "title": "USN-696-1: Avahi vulnerabilities",
+        "body": "Hugo Dias discovered that Avahi did not properly verify its input whenprocessing mDNS packets. A remote attacker could send a crafted mDNS packetand cause a denial of service (assertion failure). (CVE-2008-5081)"
+      }
+    ],
+    "CVE-2008-5187": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-683-1",
+        "title": "USN-683-1: Imlib2 vulnerability",
+        "body": "It was discovered that Imlib2 did not correctly handle certain malformedXPM images. If a user were tricked into opening a specially crafted imagewith an application that uses Imlib2, an attacker could cause a denial ofservice and possibly execute arbitrary code with the user's privileges."
+      }
+    ],
+    "CVE-2008-5300": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-715-1",
+        "title": "USN-715-1: Linux kernel vulnerabilities",
+        "body": "Dann Frazier discovered that in certain situations sendmsg did notcorrectly release allocated memory. A local attacker could exploitthis to force the system to run out of free memory, leading to a denialof service. (CVE-2008-5300)"
+      }
+    ],
+    "CVE-2008-5301": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-838-1",
+        "title": "USN-838-1: Dovecot vulnerabilities",
+        "body": "It was discovered that the ManageSieve service in Dovecot incorrectlyhandled \"..\" in script names. A remote attacker could exploit this to readand modify arbitrary sieve files on the server. This only affected Ubuntu8.10. (CVE-2008-5301)"
+      }
+    ],
+    "CVE-2008-5314": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-684-1",
+        "title": "USN-684-1: ClamAV vulnerability",
+        "body": "Ilja van Sprundel discovered that ClamAV did not handle recursive JPEGinformation. If a remote attacker sent a specially crafted JPEG file,ClamAV would crash, leading to a denial of service."
+      }
+    ],
+    "CVE-2008-5395": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-715-1",
+        "title": "USN-715-1: Linux kernel vulnerabilities",
+        "body": "Helge Deller discovered that PA-RISC stack unwinding was not handledcorrectly. A local attacker could exploit this to crash the system,leading do a denial of service. This did not affect official Ubuntukernels, but was fixed in the source for anyone performing HPPA kernelbuilds. (CVE-2008-5395)"
+      }
+    ],
+    "CVE-2008-5500": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-690-2",
+        "title": "USN-690-2: Firefox vulnerabilities",
+        "body": "Several flaws were discovered in the browser engine. These problems could allowan attacker to crash the browser and possibly execute arbitrary code with userprivileges. (CVE-2008-5500)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-701-2",
+        "title": "USN-701-2: Thunderbird vulnerabilities",
+        "body": "Several flaws were discovered in the browser engine. If a user had Javascriptenabled, these problems could allow an attacker to crash Thunderbird andpossibly execute arbitrary code with user privileges. (CVE-2008-5500)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-701-1",
+        "title": "USN-701-1: Thunderbird vulnerabilities",
+        "body": "Several flaws were discovered in the browser engine. If a user had Javascriptenabled, these problems could allow an attacker to crash Thunderbird andpossibly execute arbitrary code with user privileges. (CVE-2008-5500)"
+      }
+    ],
+    "CVE-2008-5504": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-690-2",
+        "title": "USN-690-2: Firefox vulnerabilities",
+        "body": "Several problems were discovered in the JavaScript engine. An attacker couldexploit feed preview vulnerabilities to execute scripts from page content withchrome privileges. (CVE-2008-5504)"
+      }
+    ],
+    "CVE-2008-5506": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-690-2",
+        "title": "USN-690-2: Firefox vulnerabilities",
+        "body": "Marius Schilder discovered that Firefox did not properly handle redirects toan outside domain when an XMLHttpRequest was made to a same-origin resource.It's possible that sensitive information could be revealed in theXMLHttpRequest response. (CVE-2008-5506)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-701-2",
+        "title": "USN-701-2: Thunderbird vulnerabilities",
+        "body": "Marius Schilder discovered that Thunderbird did not properly handle redirectsto an outside domain when an XMLHttpRequest was made to a same-origin resource.When Javascript is enabled, it's possible that sensitive information could berevealed in the XMLHttpRequest response. (CVE-2008-5506)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-701-1",
+        "title": "USN-701-1: Thunderbird vulnerabilities",
+        "body": "Marius Schilder discovered that Thunderbird did not properly handle redirectsto an outside domain when an XMLHttpRequest was made to a same-origin resource.When Javascript is enabled, it's possible that sensitive information could berevealed in the XMLHttpRequest response. (CVE-2008-5506)"
+      }
+    ],
+    "CVE-2008-5507": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-690-2",
+        "title": "USN-690-2: Firefox vulnerabilities",
+        "body": "Chris Evans discovered that Firefox did not properly protect a user's data whenaccessing a same-domain Javascript URL that is redirected to an unparsableJavascript off-site resource. If a user were tricked into opening a maliciouswebsite, an attacker may be able to steal a limited amount of private data.(CVE-2008-5507)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-701-2",
+        "title": "USN-701-2: Thunderbird vulnerabilities",
+        "body": "Chris Evans discovered that Thunderbird did not properly protect a user's datawhen accessing a same-domain Javascript URL that is redirected to an unparsableJavascript off-site resource. If a user were tricked into opening a maliciouswebsite and had Javascript enabled, an attacker may be able to steal a limitedamount of private data. (CVE-2008-5507)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-701-1",
+        "title": "USN-701-1: Thunderbird vulnerabilities",
+        "body": "Chris Evans discovered that Thunderbird did not properly protect a user's datawhen accessing a same-domain Javascript URL that is redirected to an unparsableJavascript off-site resource. If a user were tricked into opening a maliciouswebsite and had Javascript enabled, an attacker may be able to steal a limitedamount of private data. (CVE-2008-5507)"
+      }
+    ],
+    "CVE-2008-5508": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-690-2",
+        "title": "USN-690-2: Firefox vulnerabilities",
+        "body": "Chip Salzenberg, Justin Schuh, Tom Cross, and Peter William discovered Firefoxdid not properly parse URLs when processing certain control characters.(CVE-2008-5508)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-701-2",
+        "title": "USN-701-2: Thunderbird vulnerabilities",
+        "body": "Chip Salzenberg, Justin Schuh, Tom Cross, and Peter William discoveredThunderbird did not properly parse URLs when processing certain controlcharacters. (CVE-2008-5508)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-701-1",
+        "title": "USN-701-1: Thunderbird vulnerabilities",
+        "body": "Chip Salzenberg, Justin Schuh, Tom Cross, and Peter William discoveredThunderbird did not properly parse URLs when processing certain controlcharacters. (CVE-2008-5508)"
+      }
+    ],
+    "CVE-2008-5511": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-690-2",
+        "title": "USN-690-2: Firefox vulnerabilities",
+        "body": "Several flaws were discovered in the Javascript engine. If a user were trickedinto opening a malicious website, an attacker could exploit this to executearbitrary Javascript code within the context of another website or with chromeprivileges. (CVE-2008-5511, CVE-2008-5512)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-701-2",
+        "title": "USN-701-2: Thunderbird vulnerabilities",
+        "body": "Several flaws were discovered in the Javascript engine. If a user were trickedinto opening a malicious website and had Javascript enabled, an attacker couldexploit this to execute arbitrary Javascript code within the context of anotherwebsite or with chrome privileges. (CVE-2008-5511, CVE-2008-5512)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-701-1",
+        "title": "USN-701-1: Thunderbird vulnerabilities",
+        "body": "Several flaws were discovered in the Javascript engine. If a user were trickedinto opening a malicious website and had Javascript enabled, an attacker couldexploit this to execute arbitrary Javascript code within the context of anotherwebsite or with chrome privileges. (CVE-2008-5511, CVE-2008-5512)"
+      }
+    ],
+    "CVE-2008-5512": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-690-2",
+        "title": "USN-690-2: Firefox vulnerabilities",
+        "body": "Several flaws were discovered in the Javascript engine. If a user were trickedinto opening a malicious website, an attacker could exploit this to executearbitrary Javascript code within the context of another website or with chromeprivileges. (CVE-2008-5511, CVE-2008-5512)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-701-2",
+        "title": "USN-701-2: Thunderbird vulnerabilities",
+        "body": "Several flaws were discovered in the Javascript engine. If a user were trickedinto opening a malicious website and had Javascript enabled, an attacker couldexploit this to execute arbitrary Javascript code within the context of anotherwebsite or with chrome privileges. (CVE-2008-5511, CVE-2008-5512)"
+      },
+      {
+        "url": "http://www.ubuntu.com/usn/usn-701-1",
+        "title": "USN-701-1: Thunderbird vulnerabilities",
+        "body": "Several flaws were discovered in the Javascript engine. If a user were trickedinto opening a malicious website and had Javascript enabled, an attacker couldexploit this to execute arbitrary Javascript code within the context of anotherwebsite or with chrome privileges. (CVE-2008-5511, CVE-2008-5512)"
+      }
+    ],
+    "CVE-2008-5513": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-690-2",
+        "title": "USN-690-2: Firefox vulnerabilities",
+        "body": "Flaws were discovered in the session-restore feature of Firefox. If a user weretricked into opening a malicious website, an attacker could exploit this toperform cross-site scripting attacks or execute arbitrary Javascript code withchrome privileges. (CVE-2008-5513)"
+      }
+    ],
+    "CVE-2008-5516": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-723-1",
+        "title": "USN-723-1: Git vulnerabilities",
+        "body": "It was discovered that the Git web interface (gitweb) did not correctly handleshell metacharacters when processing certain commands. A remote attacker couldsend specially crafted commands to the Git server and execute arbitrary codewith the privileges of the Git web server. This issue only applied to Ubuntu7.10 and 8.04 LTS. (CVE-2008-5516, CVE-2008-5517)"
+      }
+    ],
+    "CVE-2008-5517": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-723-1",
+        "title": "USN-723-1: Git vulnerabilities",
+        "body": "It was discovered that the Git web interface (gitweb) did not correctly handleshell metacharacters when processing certain commands. A remote attacker couldsend specially crafted commands to the Git server and execute arbitrary codewith the privileges of the Git web server. This issue only applied to Ubuntu7.10 and 8.04 LTS. (CVE-2008-5516, CVE-2008-5517)"
+      }
+    ],
+    "CVE-2008-5700": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-715-1",
+        "title": "USN-715-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that the ATA subsystem did not correctly set timeouts. Alocal attacker could exploit this to cause a system hang, leading to adenial of service. (CVE-2008-5700)"
+      }
+    ],
+    "CVE-2008-5702": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-715-1",
+        "title": "USN-715-1: Linux kernel vulnerabilities",
+        "body": "It was discovered that the ib700 watchdog timer did not correctly checkbuffer sizes. A local attacker could send a specially crafted ioctlto the device to cause a system crash, leading to a denial of service.(CVE-2008-5702)"
+      }
+    ],
+    "CVE-2008-5714": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-776-1",
+        "title": "USN-776-1: KVM vulnerabilities",
+        "body": "It was discovered that KVM's VNC password checks did not use the correctlength. A remote attacker could exploit this flaw to cause KVM to crash,leading to a denial of service. (CVE-2008-5714)"
+      }
+    ],
+    "CVE-2008-5814": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-761-2",
+        "title": "USN-761-2: PHP vulnerabilities",
+        "body": "It was discovered that PHP did not sanitize certain error messages when display_errors is enabled, which could result in browsers becoming vulnerable to cross-site scripting attacks when processing the output. With cross-site scripting vulnerabilities, if a user were tricked into viewing server output during a crafted server request, a remote attacker could exploit this to modify the contents, or steal confidential data (such as passwords), within the same domain. (CVE-2008-5814)"
+      }
+    ],
+    "CVE-2008-5824": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-912-1",
+        "title": "USN-912-1: Audio File Library vulnerability",
+        "body": "It was discovered that Audio File Library contained a heap-based bufferoverflow. If a user or automated system processed a crafted WAV file, anattacker could cause a denial of service via application crash, or possiblyexecute arbitrary code with the privileges of the user invoking theprogram. The default compiler options for Ubuntu should reduce thisvulnerability to a denial of service."
+      }
+    ],
+    "CVE-2008-5905": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-711-1",
+        "title": "USN-711-1: KTorrent vulnerabilities",
+        "body": "It was discovered that KTorrent did not properly restrict access when using theweb interface plugin. A remote attacker could use a crafted http request andupload arbitrary torrent files to trigger the start of downloads and seeding.(CVE-2008-5905)"
+      }
+    ],
+    "CVE-2008-5906": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-711-1",
+        "title": "USN-711-1: KTorrent vulnerabilities",
+        "body": "It was discovered that KTorrent did not properly handle certain parameters whenusing the web interface plugin. A remote attacker could use crafted httprequests to execute arbitrary PHP code. (CVE-2008-5906)"
+      }
+    ],
+    "CVE-2008-5916": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-723-1",
+        "title": "USN-723-1: Git vulnerabilities",
+        "body": "It was discovered that the Git web interface (gitweb) did not properly restrictthe diff.external configuration parameter. A local attacker could exploit thisissue and execute arbitrary code with the privileges of the Git web server.This issue only applied to Ubuntu 8.04 LTS and 8.10. (CVE-2008-5916)"
+      }
+    ],
+    "CVE-2008-6107": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-751-1",
+        "title": "USN-751-1: Linux kernel vulnerabilities",
+        "body": "Sparc syscalls did not correctly check mmap regions. A local attackercould cause a system panic, leading to a denial of service. Ubuntu 8.10was not affected. (CVE-2008-6107)"
+      }
+    ],
+    "CVE-2008-6560": [
+      {
+        "url": "http://www.ubuntu.com/usn/USN-875-1",
+        "title": "USN-875-1: Red Hat Cluster Suite vulnerabilities",
+        "body": "It was discovered that CMAN did not properly handle malformed configurationfiles. An attacker could cause a denial of service (via CPU consumption andmemory corruption) in a node if the attacker were able to modify thecluster configuration for the node. (CVE-2008-6560)"
+      }
+    ],
+    "CVE-2008-6680": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-754-1",
+        "title": "USN-754-1: ClamAV vulnerabilities",
+        "body": "It was discovered that ClamAV did not properly validate Portable Executable(PE) files. A remote attacker could send a crafted PE file and cause adenial of service (divide by zero). (CVE-2008-6680)"
+      }
+    ],
+    "CVE-2008-6792": [
+      {
+        "url": "http://www.ubuntu.com/usn/usn-663-1",
+        "title": "USN-663-1: system-tools-backends regression",
+        "body": "It was discovered that passwords changed (or new users created) via the\"Users and Groups\" tool were created with 3DES hashing. This reduced thesecurity of stored user passwords, and was a regression from the correctMD5 hashing. This update fixes the problem; future password changeswill correct the hashing used. We apologize for the inconvenience."
+      }
+    ],
+    "CVE-2008-7270": [
+      {
+        "url": "http://ubuntu.com/usn/usn-1029-1",
+        "title": "USN-1029-1: OpenSSL vulnerabilities",
+        "body": "It was discovered that an old bug workaround in the SSL/TLSserver code allowed an attacker to modify the stored session cacheciphersuite. An attacker could possibly take advantage of this toforce the use of a disabled cipher. This vulnerability only affectsthe versions of OpenSSL in Ubuntu 6.06 LTS, Ubuntu 8.04 LTS, andUbuntu 9.10. (CVE-2008-7270)"
+      }
+    ]
+  }
 }

@@ -1,6 +1,84 @@
 {
   "year": 2020,
-  "total": 0,
+  "total": 13,
   "reference": "ubuntu.com",
-  "reports": {}
+  "reports": {
+    "CVE-2020-11933": [
+      {
+        "url": "https://ubuntu.com/USN-4424-1",
+        "title": "USN-4424-1: snapd vulnerabilities",
+        "body": "It was discovered that cloud-init as managed by snapd on Ubuntu Core 16 andUbuntu Core 18 devices ran on every boot without restrictions. A physicalattacker could exploit this to craft cloud-init user-data/meta-data viaexternal media to perform arbitrary changes on the device to bypassintended security mechanisms such as full disk encryption. This issue didnot affect traditional Ubuntu systems. (CVE-2020-11933)"
+      }
+    ],
+    "CVE-2020-15703": [
+      {
+        "url": "https://ubuntu.com/security/notices/USN-4537-1",
+        "title": "USN-4537-1: Aptdaemon vulnerability",
+        "body": "Vaisha Bernard discovered that Aptdaemon incorrectly handled the Localeproperty. A local attacker could use this issue to test for the presence oflocal files."
+      }
+    ],
+    "CVE-2020-15704": [
+      {
+        "url": "https://ubuntu.com/security/notices/USN-4451-2",
+        "title": "USN-4451-2: ppp vulnerability",
+        "body": "USN-4451-1 fixed a vulnerability in ppp. This update providesthe corresponding update for Ubuntu 12.04 ESM and Ubuntu 14.04 ESM.Original advisory details:Thomas Chauchefoin working with Trend Micro´s Zero Day Initiative, discovered that ppp incorrectly handled module loading. A local attacker could use this issue to load arbitrary kernel modules and possibly execute arbitrary code."
+      },
+      {
+        "url": "https://ubuntu.com/security/notices/USN-4451-1",
+        "title": "USN-4451-1: ppp vulnerability",
+        "body": "Thomas Chauchefoin working with Trend Micro´s Zero Day Initiative,discovered that ppp incorrectly handled module loading. A local attackercould use this issue to load arbitrary kernel modules and possibly executearbitrary code."
+      }
+    ],
+    "CVE-2020-15706": [
+      {
+        "url": "http://ubuntu.com/security/notices/USN-4432-1",
+        "title": "USN-4432-1: GRUB 2 vulnerabilities",
+        "body": "Chris Coulson discovered that the GRUB2 function handling code did notproperly handle a function being redefined, leading to a use-after-freevulnerability. A local attacker could use this to execute arbitrary codeand bypass UEFI Secure Boot restrictions. (CVE-2020-15706)"
+      }
+    ],
+    "CVE-2020-16119": [
+      {
+        "url": "https://ubuntu.com/USN-4580-1",
+        "title": "USN-4580-1: Linux kernel vulnerability",
+        "body": "Hadar Manor discovered that the DCCP protocol implementation in the Linuxkernel improperly handled socket reuse, leading to a use-after-freevulnerability. A local attacker could use this to cause a denial of service(system crash) or possibly execute arbitrary code."
+      },
+      {
+        "url": "https://ubuntu.com/USN-4578-1",
+        "title": "USN-4578-1: Linux kernel vulnerabilities",
+        "body": "Hadar Manor discovered that the DCCP protocol implementation in the Linuxkernel improperly handled socket reuse, leading to a use-after-freevulnerability. A local attacker could use this to cause a denial of service(system crash) or possibly execute arbitrary code. (CVE-2020-16119)"
+      },
+      {
+        "url": "https://ubuntu.com/USN-4579-1",
+        "title": "USN-4579-1: Linux kernel vulnerabilities",
+        "body": "Hadar Manor discovered that the DCCP protocol implementation in the Linuxkernel improperly handled socket reuse, leading to a use-after-freevulnerability. A local attacker could use this to cause a denial of service(system crash) or possibly execute arbitrary code. (CVE-2020-16119)"
+      },
+      {
+        "url": "https://ubuntu.com/USN-4576-1",
+        "title": "USN-4576-1: Linux kernel vulnerabilities",
+        "body": "Hadar Manor discovered that the DCCP protocol implementation in the Linuxkernel improperly handled socket reuse, leading to a use-after-freevulnerability. A local attacker could use this to cause a denial of service(system crash) or possibly execute arbitrary code. (CVE-2020-16119)"
+      },
+      {
+        "url": "https://ubuntu.com/USN-4577-1",
+        "title": "USN-4577-1: Linux kernel vulnerabilities",
+        "body": "Hadar Manor discovered that the DCCP protocol implementation in the Linuxkernel improperly handled socket reuse, leading to a use-after-freevulnerability. A local attacker could use this to cause a denial of service(system crash) or possibly execute arbitrary code. (CVE-2020-16119)"
+      }
+    ],
+    "CVE-2020-16120": [
+      {
+        "url": "https://ubuntu.com/USN-4578-1",
+        "title": "USN-4578-1: Linux kernel vulnerabilities",
+        "body": "Giuseppe Scrivano discovered that the overlay file system in the Linuxkernel did not properly perform permission checks in some situations. Alocal attacker could possibly use this to bypass intended restrictions andgain read access to restricted files. (CVE-2020-16120)"
+      },
+      {
+        "url": "https://ubuntu.com/USN-4576-1",
+        "title": "USN-4576-1: Linux kernel vulnerabilities",
+        "body": "Giuseppe Scrivano discovered that the overlay file system in the Linuxkernel did not properly perform permission checks in some situations. Alocal attacker could possibly use this to bypass intended restrictions andgain read access to restricted files. (CVE-2020-16120)"
+      },
+      {
+        "url": "https://ubuntu.com/USN-4577-1",
+        "title": "USN-4577-1: Linux kernel vulnerabilities",
+        "body": "Giuseppe Scrivano discovered that the overlay file system in the Linuxkernel did not properly perform permission checks in some situations. Alocal attacker could possibly use this to bypass intended restrictions andgain read access to restricted files. (CVE-2020-16120)"
+      }
+    ]
+  }
 }

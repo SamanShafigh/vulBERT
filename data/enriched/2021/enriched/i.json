@@ -1,6 +1,889 @@
 {
   "year": 2021,
-  "total": 0,
+  "total": 126,
   "reference": "bugzilla.redhat.com",
-  "reports": {}
+  "reports": {
+    "CVE-2021-20177": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1914719",
+        "title": "CVE-2021-20177 kernel: iptables string match rule could result in kernel panic",
+        "description": "Description Wade Mealing 2021-01-11 01:53:33 UTC A flaw was found in the Linux kernels implementation of string matching within a packet. A privileged user ( with root or CAP_NET_ADMIN ) when inserting iptables rules could insert a rule which can panic the system.This could lead to a denial of service or possibly worse. Further investigation is ongoing.Upstream patch:https://github.com/torvalds/linux/commit/ca58fbe06c54Upstream bugzilla:https://bugzilla.kernel.org/show_bug.cgi?id=209823"
+      }
+    ],
+    "CVE-2021-20181": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1927007",
+        "title": "CVE-2021-20181 qemu: 9pfs: TOCTOU privilege escalation vulnerability",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-02-09 20:14:51 UTC A flaw was found in QEMU in the way it handles a list of open file descriptors. Improper synchronization of this list can lead to a use-after-free.Reference:https://bugs.launchpad.net/qemu/+bug/1911666Upstream patch:https://git.qemu.org/?p=qemu.git;a=commit;h=89fbea8737e8f7b954745a1ffc4238d377055305"
+      }
+    ],
+    "CVE-2021-20193": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1917565",
+        "title": "CVE-2021-20193 tar: Memory leak in read_header() in list.c",
+        "description": "Description Pedro Sampaio 2021-01-18 18:35:40 UTC An issue was discovered in GNU Tar 1.33 and earlier. There is a memory leak in read_header() in list.c in the tar application.Upstream bug:https://savannah.gnu.org/bugs/?59897Upstream patch:https://git.savannah.gnu.org/cgit/tar.git/commit/?id=d9d4435692150fa8ff68e1b1a473d187cc3fd777"
+      }
+    ],
+    "CVE-2021-20194": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1912683",
+        "title": "CVE-2021-20194 kernel: heap overflow in __cgroup_bpf_run_filter_getsockopt()",
+        "description": "Description Dhananjay Arunesh 2021-01-05 07:53:19 UTC There is vulnerability in the linux kernel versions higher than 5.2 (if kernel compiled with config params CONFIG_BPF_SYSCALL=y , CONFIG_BPF=y , CONFIG_CGROUPS=y , CONFIG_CGROUP_BPF=y , CONFIG_HARDENED_USERCOPY not set, and BPF hook to getsockopt is registered). As result of BPF execution, the local user can trigger bug in __cgroup_bpf_run_filter_getsockopt() function that can lead to heap overflow (because of non-hardened usercopy). The impact of attack could be deny of service or possibly privileges escalation."
+      }
+    ],
+    "CVE-2021-20195": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1919143",
+        "title": "CVE-2021-20195 keycloak: The Account console allows stored self-XSS via impersonation mechanism",
+        "description": "Description Paramvir jindal 2021-01-22 08:56:59 UTC The Keycloak server is vulnerable to a Self Stored XSS attack vector, which can be escalated to a complete account takeover using additional attack techniques as specified below. Specifically, the Account page does not HTML-encode the user first name, and last name, which means a malicious HTML code, which executes malicious Javascript code, can be embedded into the Account page. Even though the malicious Javascript code is linked to the attacker user (Self-XSS), it can be exploited on the Keycloak admin browser, using the Impersonation functionality, and thus, the attacker is able to compromise Keycloak.https://issues.redhat.com/browse/KEYCLOAK-16890"
+      }
+    ],
+    "CVE-2021-20203": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1922441",
+        "title": "CVE-2021-20203 qemu: Failed malloc in vmxnet3_activate_device() in hw/net/vmxnet3.c",
+        "description": "Description Pedro Sampaio 2021-01-29 17:55:15 UTC An integer overflow issue was found in the vmxnet3 NIC emulator of the QEMU. It may occur if a guest was to supply invalid values for rx/tx queue size or other NIC parameters. A privileged guest user may use this flaw to crash the QEMU process on the host resulting in DoS scenario.Upstream patch:--------------- -> https://lists.gnu.org/archive/html/qemu-devel/2021-01/msg07935.html"
+      }
+    ],
+    "CVE-2021-20204": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1956348",
+        "title": "CVE-2021-20204 getdata: Use after free in _GD_Supports() in encoding.c",
+        "description": "Description Pedro Sampaio 2021-05-03 14:09:43 UTC A heap memory corruption problem (use after free) can be triggered in libgetdata v0.10.0 when processing maliciously crafted dirfile databases. This degrades the confidentiality, integrity and availability of third-party software that uses libgetdata as a library. This vulnerability may lead to arbitrary code execution or privilege escalation depending on input/skills of attacker.References:https://bugzilla.redhat.com/show_bug.cgi?id=1917635"
+      }
+    ],
+    "CVE-2021-20206": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1919391",
+        "title": "CVE-2021-20206 containernetworking-cni: Arbitrary path injection via type field in CNI configuration",
+        "description": "Description Pedro Sampaio 2021-01-22 18:36:12 UTC A flaw was found in libcni. A user may be able to change the \"type:\" field in a CNI configuration to an arbitrary path and could execute arbitrary binaries on a host.Upstream patch:https://github.com/containernetworking/cni/pull/808"
+      }
+    ],
+    "CVE-2021-20213": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1928739",
+        "title": "CVE-2021-20213 privoxy: dereference of a NULL-pointer that could result in a crash if accept-intercepted-requests was enabled",
+        "description": "Description msiddiqu 2021-02-15 13:22:42 UTC Dereference of a NULL-pointer that could result in a crash if accept-intercepted-requests was enabled, Privoxy failed to get the request destination from the Host header and a memory allocation failed.Upstream Patch:https://www.privoxy.org/gitweb/?p=privoxy.git;a=commit;h=7530132349External References:https://www.privoxy.org/3.0.29/user-manual/whatsnew.html"
+      }
+    ],
+    "CVE-2021-20218": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1923405",
+        "title": "CVE-2021-20218 fabric8-kubernetes-client: vulnerable to a path traversal leading to integrity and availability compromise",
+        "description": "Description Jonathan Christison 2021-02-01 16:46:25 UTC A flaw was found in the fabric8 kubernetes-client where a malicious pod/container may cause applications using the fabric8 kubernetes-client `copy` command to extract files outside the working path, the main impact of this flaw is to integrity and availability of the kubernetes-client host. Upstream report: https://github.com/fabric8io/kubernetes-client/issues/2715"
+      }
+    ],
+    "CVE-2021-20221": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1924601",
+        "title": "CVE-2021-20221 qemu: out-of-bound heap buffer access via an interrupt ID field",
+        "description": "Description Marian Rehak 2021-02-03 09:48:52 UTC An out-of-bound heap buffer access via an interrupt ID field resulting from undefined behaviour. The Interrupt ID of the SGI to forward to the specified CPU interfaces. The value of this field is the Interrupt ID, in the range 0-15, for example a value of 0b0011 specifies Interrupt ID 3.It requires unusual kernel start-up with 'kernel-irqchip=off'.This issue does not affect default configuration ie. kernel-irqchip=on.Upstream patch:--------------- -> https://gitlab.com/qemu-project/qemu/-/commit/edfe2eb4360cde4ed5d95bda7777edcb3510f76a"
+      }
+    ],
+    "CVE-2021-20222": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1924606",
+        "title": "CVE-2021-20222 keycloak: reflected XSS attack with referrer in new account console",
+        "description": "Description Paramvir jindal 2021-02-03 10:02:27 UTC Attacker can attach malicious code using the referrer URL using new account console.https://issues.redhat.com/browse/KEYCLOAK-17033"
+      }
+    ],
+    "CVE-2021-20225": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1924696",
+        "title": "CVE-2021-20225 grub2: Heap out-of-bounds write in short form option parser",
+        "description": "Description Marco Benatto 2021-02-03 13:26:08 UTC The option parser in grub2 allows an attacker to write past the end of a heap-allocated buffer by calling certain commands with a large number of specific short forms of options."
+      }
+    ],
+    "CVE-2021-20226": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1873476",
+        "title": "CVE-2021-20226 kernel: use-after-free in io_uring feature",
+        "description": "Description Guilherme de Almeida Suckevicz 2020-08-28 12:57:33 UTC A use-after-free flaw was found in io_grab_files in fs/io_uring.c in io_uring I/O access. This flaw could allow a local attacker with a user privilege to crash the system at device IORING_OP_CLOSE operation where a file reference counter was not incremented while in use. This vulnerability could even lead to a kernel information leak problem."
+      }
+    ],
+    "CVE-2021-20227": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1924886",
+        "title": "CVE-2021-20227 sqlite: potential use-after-free bug when processing a subquery with both a correlated WHERE clause and a \"HAVING 0\" clause and where the parent query is an aggregate",
+        "description": "Description Todd Cullum 2021-02-03 20:10:19 UTC SQLite 3.34.1 fixes a potential use-after-free bug when processing a subquery with both a correlated WHERE clause and a \"HAVING 0\" clause and where the parent query is an aggregate.References:https://sqlite.org/src/info/30a4c323650cc949https://www.sqlite.org/releaselog/3_34_1.html"
+      }
+    ],
+    "CVE-2021-20228": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1925002",
+        "title": "CVE-2021-20228 ansible: basic.py no_log with fallback option",
+        "description": "Description Tapas Jena 2021-02-04 07:31:36 UTC The return value of a specific module i.e. basic.py of ansible engine is not being masked by default while using the fallback sub-option.The return value may contain sensitive info like secret Or Credentials."
+      }
+    ],
+    "CVE-2021-20231": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1922276",
+        "title": "CVE-2021-20231 gnutls: Use after free in client key_share extension",
+        "description": "Description Pedro Sampaio 2021-01-29 15:18:30 UTC A flaw was found in gnutls. A use after free issue in client sending key_share extension may lead to memory corruption and other consequences."
+      }
+    ],
+    "CVE-2021-20232": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1922275",
+        "title": "CVE-2021-20232 gnutls: Use after free in client_send_params in lib/ext/pre_shared_key.c",
+        "description": "Description Pedro Sampaio 2021-01-29 15:15:43 UTC A flaw was found in gnutls. A use after free issue in client_send_params in lib/ext/pre_shared_key.c may lead to memory corruption and other potential consequences.References:https://gitlab.com/gnutls/gnutls/-/issues/1151"
+      }
+    ],
+    "CVE-2021-20233": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1926263",
+        "title": "CVE-2021-20233 grub2: Heap out-of-bounds write due to miscalculation of space required for quoting",
+        "description": "Description Marco Benatto 2021-02-08 14:18:19 UTC There's a flaw on grub2 menu rendering code setparam_prefix() in the menu rendering code performs a length calculation on the assumption that expressing a quoted single quote will require 3 characters, while it actually requires 4 characters. This allow an attacker to corrupt memory by one byte for each quote in the input."
+      }
+    ],
+    "CVE-2021-20235": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1921983",
+        "title": "CVE-2021-20235 zeromq: Heap overflow when receiving malformed ZMTP v1 packets",
+        "description": "Description Pedro Sampaio 2021-01-29 00:41:04 UTC A flaw was found in zeromq before 4.3.3. The use of a static allocator with ZMTP v1 packets may lead to a heap based overflow.References:https://github.com/zeromq/libzmq/pull/3902https://github.com/zeromq/libzmq/security/advisories/GHSA-fc3w-qxf5-7hp6https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=21984"
+      }
+    ],
+    "CVE-2021-20236": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1921976",
+        "title": "CVE-2021-20236 zeromq: Stack overflow on server running PUB/XPUB socket",
+        "description": "Description Pedro Sampaio 2021-01-29 00:28:37 UTC A flaw was found in zeromq before version 4.3.3. The PUB/XPUB subscription store (mtrie) is traversed using recursive function calls. In the remove (unsubscription) case, the recursive calls are NOT tail calls, so even with optimizations the stack grows linearly with the length of a subscription topic. Topics are under the control of remote clients - they can send a subscription to arbitrary length topics. An attacker can thus cause a server to create an mtrie sufficiently large such that, when unsubscribing, traversal will cause a stack overflow.References:https://github.com/zeromq/libzmq/pull/3959https://github.com/zeromq/libzmq/security/advisories/GHSA-qq65-x72m-9wr8https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=22488"
+      }
+    ],
+    "CVE-2021-20239": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1923636",
+        "title": "CVE-2021-20239 kernel: setsockopt System Call Untrusted Pointer Dereference Information Disclosure",
+        "description": "Description Pedro Sampaio 2021-02-01 17:21:42 UTC A flaw was found in the Linux kernels implementation of BPF. A local user with CAP_NET_ADMIN can attach an ebpf filter to setsockopt() syscall. This filter can be triggered under the right conditions to leak kernel internal information. This could allow an attacker to determine the layout of information in kernel memory to be used in future attacks.This flaw is also known as ZDI-21-100.References:https://www.zerodayinitiative.com/advisories/ZDI-21-100/https://gist.github.com/Ga-ryo/2ec958e78f55c5d18558960f3fe1c6ec"
+      }
+    ],
+    "CVE-2021-20240": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1926787",
+        "title": "CVE-2021-20240 gdk-pixbuf: integer wraparound in the GIF loader of gdk-pixbuf via crafted input leads to segmentation fault",
+        "description": "Description Marian Rehak 2021-02-09 13:09:33 UTC An integer wraparound bug was found in the GIF loader of gdk-pixbuf. Given a crafted input, it will abort with a segmentation fault.Reference:https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/issues/132"
+      }
+    ],
+    "CVE-2021-20247": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1928963",
+        "title": "CVE-2021-20247 isync/mbsync: mailbox names returned by IMAP LIST/LSUB not validated",
+        "description": "Description Pedro Sampaio 2021-02-15 21:50:04 UTC A flaw was found in mbsync before v1.3.5 and v1.4.1. mbsync doesn't validate the mailbox names returned by IMAP LIST/LSUB, which allows a malicious/compromised server to use specially crafted mailbox names containing '..' path components to access data outside the designated mailbox on the opposite end of the synchronization channel."
+      }
+    ],
+    "CVE-2021-20250": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1929479",
+        "title": "CVE-2021-20250 wildfly: Information disclosure due to publicly accessible privileged actions in JBoss EJB Client",
+        "description": "Description Kunjan Rathod 2021-02-17 02:45:02 UTC It was found that JBoss EJB client for WildFly has publicly accessible privileged actions which may lead to information disclosure vulnerability."
+      }
+    ],
+    "CVE-2021-20252": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1928302",
+        "title": "CVE-2021-20252 3scale: missing date range handling on database query",
+        "description": "Description Chess Hazlett 2021-02-12 22:52:02 UTC It was found that 3scale backend does not perform preventive handling on user-requested date ranges in certain queries. A malicious authenticated user could submit a request with a sufficiently large date range eventually yielding an internal server error, resulting in denial of service."
+      }
+    ],
+    "CVE-2021-20254": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1949442",
+        "title": "CVE-2021-20254 samba: Negative idmap cache entries can cause incorrect group entries in the Samba file server process token",
+        "description": "Description Huzaifa S. Sidhpurwala 2021-04-14 10:01:15 UTC As per upstream:The Samba smbd file server must map Windows group identities (SIDs) into unix group ids (gids). The code that performs this had a flaw that could allow it to read data beyond the end of the array in the case where a negative cache entry had been added to the mapping cache. This could cause the calling code to return those values into the process token that stores the group membership for a user.Most commonly this flaw caused the calling code to crash, but an alert user (Peter Eriksson, IT Department, Linköping University) found this flaw by noticing an unprivileged user was able to delete a file within a network share that they should have been disallowed access to.Analysis of the code paths has not allowed us to discover a way for a remote user to be able to trigger this flaw reproducibly or on demand, but this CVE has been issued out of an abundance of caution."
+      }
+    ],
+    "CVE-2021-20256": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1930926",
+        "title": "CVE-2021-20256 Satellite: BMC controller credential leak via API",
+        "description": "Description Yadnyawalk Tale 2021-02-19 19:41:41 UTC A password leak was identified on Red Hat Satellite which will expose BMC password in plaintext through the compute host API."
+      }
+    ],
+    "CVE-2021-20259": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1932144",
+        "title": "CVE-2021-20259 foreman: Proxmox compute resource credential leak to authenticated users",
+        "description": "Description Yadnyawalk Tale 2021-02-24 04:29:50 UTC A password leak was identified on Foreman project which will expose Proxmox compute resource password in plaintext through the compute host API."
+      }
+    ],
+    "CVE-2021-20266": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1927741",
+        "title": "CVE-2021-20266 rpm: missing length checks in hdrblobInit()",
+        "description": "Description msiddiqu 2021-02-11 13:09:42 UTC Missing length checks in `hdrblobInit()` which may be able to cause memory unsafety."
+      }
+    ],
+    "CVE-2021-20268": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1923816",
+        "title": "CVE-2021-20268 kernel: eBPF Improper Input Validation",
+        "description": "Description Pedro Sampaio 2021-02-02 01:13:10 UTC A flaw was found in the Linux kernel. Improper Input Validation in the handling of eBPF programs may lead to privilege escalation.References:https://www.zerodayinitiative.com/advisories/ZDI-21-101/"
+      }
+    ],
+    "CVE-2021-20273": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1936658",
+        "title": "CVE-2021-20273 privoxy: Crash can occur via a crafted CGI request if Privoxy is toggled off",
+        "description": "Description Pedro Sampaio 2021-03-08 21:10:15 UTC A flaw was found in privoxy before 3.0.32. A crash can occur via a crafted CGI request if Privoxy is toggled off.Upstream patch:https://www.privoxy.org/gitweb/?p=privoxy.git;a=commit;h=e711c505c48"
+      }
+    ],
+    "CVE-2021-20274": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1936662",
+        "title": "CVE-2021-20274 privoxy: NULL-pointer dereference when the socks server misbehaves",
+        "description": "Description Pedro Sampaio 2021-03-08 21:14:19 UTC A flaw was found in privoxy before 3.0.32. A crash may occur due a NULL-pointer dereference when the socks server misbehaves.Upstream patch:https://www.privoxy.org/gitweb/?p=privoxy.git;a=commit;h=85817cc55b9"
+      }
+    ],
+    "CVE-2021-20275": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1936666",
+        "title": "CVE-2021-20275 privoxy: Invalid read in chunked_body_is_complete()",
+        "description": "Description Pedro Sampaio 2021-03-08 21:18:56 UTC A flaw was found in privoxy before 3.0.32. A invalid read of size two may occur in chunked_body_is_complete() leading to denial of service.Upstream patch:https://www.privoxy.org/gitweb/?p=privoxy.git;a=commit;h=a912ba7bc9c"
+      }
+    ],
+    "CVE-2021-20276": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1936668",
+        "title": "CVE-2021-20276 privoxy: Invalid memory access with an invalid pattern passed to pcre_compile()",
+        "description": "Description Pedro Sampaio 2021-03-08 21:22:20 UTC A flaw was found in privoxy before 3.0.32. Invalid memory access with an invalid pattern passed to pcre_compile() may lead to denial of service.Upstream patch:https://www.privoxy.org/gitweb/?p=privoxy.git;a=commit;h=28512e5b624"
+      }
+    ],
+    "CVE-2021-20277": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1941402",
+        "title": "CVE-2021-20277 samba: Out of bounds read in AD DC LDAP server",
+        "description": "Description Huzaifa S. Sidhpurwala 2021-03-22 05:18:09 UTC As per upstream:A string in an LDAP attribute that contains multiple consecutive leading spaces can lead to a memmove() of out of bounds memory in ldb_handler_fold().ldb_handler_fold() is used by case insensitive strings - that is most string attributes - in Active Directory.As the search expression is normalised prior to matching any potential objects this in turn may crash the LDAP server process handling the request. It may be possible to leak the out of bounds memory by matching against it, but this is thought to be unlikely."
+      }
+    ],
+    "CVE-2021-20279": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939033",
+        "title": "CVE-2021-20279 moodle: Stored XSS via ID number user profile field",
+        "description": "Description Pedro Sampaio 2021-03-15 13:47:39 UTC The ID number user profile field required additional sanitizing to prevent a stored XSS risk.References:https://moodle.org/mod/forum/discuss.php?d=419650"
+      }
+    ],
+    "CVE-2021-20280": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939037",
+        "title": "CVE-2021-20280 moodle: Stored XSS and blind SSRF possible via feedback answer text",
+        "description": "Description Pedro Sampaio 2021-03-15 13:49:21 UTC Text-based feedback answers required additional sanitizing to prevent stored XSS and blind SSRF risks.References:https://moodle.org/mod/forum/discuss.php?d=419651"
+      }
+    ],
+    "CVE-2021-20281": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939041",
+        "title": "CVE-2021-20281 moodle: User full name disclosure within online users block",
+        "description": "Description Pedro Sampaio 2021-03-15 13:54:28 UTC It was possible for some users without permission to view other users' full names to do so via the online users block.References:https://moodle.org/mod/forum/discuss.php?d=419652"
+      }
+    ],
+    "CVE-2021-20284": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1937784",
+        "title": "CVE-2021-20284 binutils: Heap-based buffer overflow in _bfd_elf_slurp_secondary_reloc_section in elf.c",
+        "description": "Description Pedro Sampaio 2021-03-11 14:44:33 UTC A flaw was found in GNU Binutils 2.35.1. There is a heap-based buffer overflow in _bfd_elf_slurp_secondary_reloc_section in elf.c because the number of symbols is not caculated correctly.Upstream bug:https://sourceware.org/bugzilla/show_bug.cgi?id=26931"
+      }
+    ],
+    "CVE-2021-20285": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1937787",
+        "title": "CVE-2021-20285 upx: Illegal memory access in canPack function in p_lx_elf.cpp",
+        "description": "Description Pedro Sampaio 2021-03-11 14:52:39 UTC A flaw was found in upx canPack in p_lx_elf.cpp in UPX 3.96 that allows attackers to cause a denial of service (SEGV or buffer overflow, and application crash) or possibly have unspecified other impacts via a crafted ELF.Upstream issue:https://github.com/upx/upx/issues/421"
+      }
+    ],
+    "CVE-2021-20288": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1938031",
+        "title": "CVE-2021-20288 ceph: Unauthorized global_id reuse in cephx",
+        "description": "Description amctagga 2021-03-11 23:48:02 UTC The reuse of old keys to generate new ones, in conjunction with the ability for a user to request any global id, presents an opportunity for an attacker to request a previously valid global id without the corresponding prior key."
+      }
+    ],
+    "CVE-2021-20292": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939686",
+        "title": "CVE-2021-20292 kernel: DRM Memory Management Double Free Privilege Escalation Vulnerability",
+        "description": "Description Dhananjay Arunesh 2021-03-16 19:50:26 UTC There is a flaw reported in drivers/gpu/drm/nouveau/nouveau_sgdma.c in nouveau_sgdma_create_ttm in Nouveau DRM subsystem. The issue results from the lack of validating the existence of an object prior to performing operations on the object. An attacker with a local account with a root privilege, can leverage this vulnerability to escalate privileges and execute code in the context of the kernel.This has been already addressed in the upstream commit 5de5b6ecf97a021f29403aa272cb4e03318ef586 Note:Kernel with CONFIG_SLAB_FREELIST_HARDENED=y option enabled should not be affected with this flaw."
+      }
+    ],
+    "CVE-2021-20293": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1942819",
+        "title": "CVE-2021-20293 RESTEasy: PathParam in RESTEasy can lead to a reflected XSS attack",
+        "description": "Description Ted (Jong Seok) Won 2021-03-25 04:50:24 UTC A cross-site scripting (XSS) flaw was found in RESTEasy, where it did not properly handle URL encoding when calling @javax.ws.rs.PathParam without any @Produces MediaType. An attacker could use this flaw to launch a reflected XSS attack."
+      }
+    ],
+    "CVE-2021-20294": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1943533",
+        "title": "CVE-2021-20294 binutils: stack buffer overflow WRITE may lead to a DoS via a crafted ELF",
+        "description": "Description Marian Rehak 2021-03-26 11:24:06 UTC allows remote attackers to cause a denial of service (stack buffer overflow) or possibly have unspecified other impacts via a crafted ELFExternal Reference:https://sourceware.org/bugzilla/show_bug.cgi?id=26929"
+      }
+    ],
+    "CVE-2021-20296": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939141",
+        "title": "CVE-2021-20296 OpenEXR: Segv on unknown address in Imf_2_5::hufUncompress - Null Pointer dereference",
+        "description": "Description Michael Kaplan 2021-03-15 17:25:17 UTC Segv on unknown address in Imf_2_5::hufUncompress"
+      }
+    ],
+    "CVE-2021-20297": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1943282",
+        "title": "CVE-2021-20297 NetworkManager: Profile with match.path setting triggers crash",
+        "description": "Description Pedro Sampaio 2021-03-25 17:38:38 UTC A flaw was found in NetworkManager. Setting match.path and activating a profiles crashes NetworkManager.References:https://bugzilla.redhat.com/show_bug.cgi?id=1942741"
+      }
+    ],
+    "CVE-2021-20308": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1946289",
+        "title": "CVE-2021-20308 htmldoc: Integer overflow in image_load_gif()",
+        "description": "Description Pedro Sampaio 2021-04-05 17:36:20 UTC Integer overflow in the htmldoc 1.9.11 and before may allow attackers to execute arbitrary code and cause a denial of service that is similar to CVE-2017-9181.Upstream bug:https://github.com/michaelrsweet/htmldoc/issues/423"
+      }
+    ],
+    "CVE-2021-20312": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1946742",
+        "title": "CVE-2021-20312 ImageMagick: Integer overflow in WriteTHUMBNAILImage of coders/thumbnail.c",
+        "description": "Description Pedro Sampaio 2021-04-06 18:51:37 UTC A flaw was found in ImageMagick before version 7.0.11. A integer overflow in WriteTHUMBNAILImage of coders/thumbnail.c may trigger undefined behavior via crafted image file.Upstream patch:https://github.com/ImageMagick/ImageMagick/commit/70aa86f5d5d8aa605a918ed51f7574f433a18482"
+      }
+    ],
+    "CVE-2021-20313": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1947019",
+        "title": "CVE-2021-20313 ImageMagick: Cipher leak when the calculating signatures in TransformSignatureof MagickCore/signature.c",
+        "description": "Description Pedro Sampaio 2021-04-07 14:00:14 UTC Potential cipher leak when the calculate signatures in TransformSignature in MagickCore/signature.c in ImageMagick before version 7.0.11.Upstream patch:https://github.com/ImageMagick/ImageMagick/commit/70aa86f5d5d8aa605a918ed51f7574f433a18482"
+      }
+    ],
+    "CVE-2021-23169": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1947612",
+        "title": "CVE-2021-23169 OpenEXR: Heap-buffer-overflow in Imf_2_5::copyIntoFrameBuffer",
+        "description": "Description Pedro Sampaio 2021-04-08 18:10:28 UTC Heap-buffer-overflow in Imf_2_5::copyIntoFrameBufferReferences:https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=28051"
+      }
+    ],
+    "CVE-2021-23215": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1947586",
+        "title": "CVE-2021-23215 OpenEXR: Integer-overflow in Imf_2_5::DwaCompressor::initializeBuffers",
+        "description": "Description Pedro Sampaio 2021-04-08 17:55:45 UTC Integer-overflow in Imf_2_5::DwaCompressor::initializeBuffersReferences:https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=29653"
+      }
+    ],
+    "CVE-2021-30469": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1947433",
+        "title": "CVE-2021-30469 podofo: use-after-free in PoDoFo::PdfVecObjects::Clear() via crafted PDF file",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-04-08 13:19:02 UTC A flaw was found in PoDoFo. An use-after-free in PoDoFo::PdfVecObjects::Clear() function can cause a denial of service via a crafted PDF file.Reference:https://sourceforge.net/p/podofo/tickets/129/"
+      }
+    ],
+    "CVE-2021-30472": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1947458",
+        "title": "CVE-2021-30472 podofo: stack-based buffer overflow in PdfEncryptMD5Base::ComputeOwnerKey function in PdfEncrypt.cpp",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-04-08 14:06:03 UTC A flaw was found in PoDoFo. A stack-based buffer overflow in PdfEncryptMD5Base::ComputeOwnerKey function in PdfEncrypt.cpp is possible because of a improper check of the keyLength value.Reference:https://sourceforge.net/p/podofo/tickets/132/"
+      }
+    ],
+    "CVE-2021-30498": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1948675",
+        "title": "CVE-2021-30498 libcaca: Heap buffer overflow of export.c in function export_tga",
+        "description": "Description Pedro Sampaio 2021-04-12 18:16:42 UTC A flaw was found in libcaca. A heap buffer overflow in export.c in function export_tga might lead to memory corruption and other potential consequences.Upstream issue:https://github.com/cacalabs/libcaca/issues/53"
+      }
+    ],
+    "CVE-2021-30499": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1948679",
+        "title": "CVE-2021-30499 libcaca: Global buffer overflow of export.c in function export_troff",
+        "description": "Description Pedro Sampaio 2021-04-12 18:18:43 UTC A flaw was found in libcaca. A buffer overflow of export.c in function export_troff might lead to memory corruption and other potential consequences.Upstream issue:https://github.com/cacalabs/libcaca/issues/54"
+      }
+    ],
+    "CVE-2021-30500": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1948692",
+        "title": "CVE-2021-30500 upx: Null pointer dereference in PackLinuxElf::canUnpack() in p_lx_elf.cpp",
+        "description": "Description Pedro Sampaio 2021-04-12 18:37:55 UTC Null pointer dereference was found in upx PackLinuxElf::canUnpack() in p_lx_elf.cpp,in version UPX 4.0.0. That allow attackers to executearbitrary code and cause a denial of service via a crafted file.Upstream issue:https://github.com/upx/upx/issues/48Upstream patch:https://github.com/upx/upx/commit/90279abdfcd235172eab99651043051188938dcc"
+      }
+    ],
+    "CVE-2021-30501": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1948696",
+        "title": "CVE-2021-30501 upx: Assertion abort in function MemBuffer::alloc()",
+        "description": "Description Pedro Sampaio 2021-04-12 18:40:19 UTC An assertion abort was found in upx MemBuffer::alloc() in mem.cpp, in version UPX 4.0.0. The flow allows attackers to cause a denial of service (abort) via a crafted file.Upstream issue:https://github.com/upx/upx/issues/486Upstream patch:https://github.com/upx/upx/pull/487https://github.com/upx/upx/commit/28e761cd42211dfe0124b7a29b2f74730f453e46"
+      }
+    ],
+    "CVE-2021-31916": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1946965",
+        "title": "CVE-2021-31916 kernel: out of bounds array access in drivers/md/dm-ioctl.c",
+        "description": "Description Marian Rehak 2021-04-07 11:37:30 UTC An out-of-bounds (OOB) memory write flaw was found in list_devices in drivers/md/dm-ioctl.c in the Multi-device driver module in the Linux kernel. A bound check failure allows an attacker with special user (CAP_SYS_ADMIN) privilege to gain access to out-of-bounds memory leading to a system crash, a leak of internal kernel information, or a privilege escalation problem.References:https://github.com/torvalds/linux/commit/4edbe1d7bcffcd6269f3b5eb63f710393ff2ec7ahttps://seclists.org/oss-sec/2021/q1/268"
+      }
+    ],
+    "CVE-2021-31918": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1954250",
+        "title": "CVE-2021-31918 tripleo-ansible: ansible.log file is visible to unprivileged users",
+        "description": "Description Pedro Sampaio 2021-04-27 19:11:59 UTC Flaw was found in tripleo-ansible. Ansible log file is accessible to all users during stack update/creation.#getfacl /var/lib/mistral/overcloud/ansible.log# owner: 42430# group: 42430user::rw-group::r--other::r-- ========> This is the problemThis was discovered/reported in a related flaw: https://bugzilla.redhat.com/show_bug.cgi?id=1936278"
+      }
+    ],
+    "CVE-2021-32027": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1956876",
+        "title": "CVE-2021-32027 postgresql: Buffer overrun from integer overflow in array subscripting calculations",
+        "description": "Description Michael Kaplan 2021-05-04 15:13:26 UTC While modifying certain SQL array values, missing bounds checks letauthenticated database users write arbitrary bytes to a wide area of servermemory."
+      }
+    ],
+    "CVE-2021-32490": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1943693",
+        "title": "CVE-2021-32490 djvulibre: Out of bounds write in function DJVU::filter_bv() via crafted djvu file",
+        "description": "Description Pedro Sampaio 2021-03-26 20:05:35 UTC A flaw was found in latest djvulibre. An out of bounds write in function DJVU::filter_bv() via crafted djvu file may lead to application crash and other consequences.References:https://bugzilla.redhat.com/show_bug.cgi?id=1943408"
+      }
+    ],
+    "CVE-2021-32491": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1943684",
+        "title": "CVE-2021-32491 djvulibre: Integer overflow in function render() in tools/ddjvu via crafted djvu file",
+        "description": "Description Pedro Sampaio 2021-03-26 19:55:15 UTC A flaw was found in latest djvulibre. An integer overflow in function render() in tools/ddjvu via crafted djvu file may lead to application crash and other consequences.References:https://bugzilla.redhat.com/show_bug.cgi?id=1943409"
+      }
+    ],
+    "CVE-2021-32492": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1943686",
+        "title": "CVE-2021-32492 djvulibre: Out of bounds read in function DJVU::DataPool::has_data() via crafted djvu file",
+        "description": "Description Pedro Sampaio 2021-03-26 20:00:18 UTC A flaw was found in latest djvulibre. An out of bounds read in function DJVU::DataPool::has_data() via crafted djvu file may lead to application crash and other consequences.References:https://bugzilla.redhat.com/show_bug.cgi?id=1943410"
+      }
+    ],
+    "CVE-2021-32493": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1943690",
+        "title": "CVE-2021-32493 djvulibre: Heap buffer overflow in function DJVU::GBitmap::decode() via crafted djvu file",
+        "description": "Description Pedro Sampaio 2021-03-26 20:03:25 UTC A flaw was found in latest djavulibre. A heap buffer overflow in function DJVU::GBitmap::decode() via crafted djvu file may lead to application crash and other consequences.References:https://bugzilla.redhat.com/show_bug.cgi?id=1943424"
+      }
+    ],
+    "CVE-2021-32613": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1959939",
+        "title": "CVE-2021-32613 radare2: double free in pyc parse via creafted file",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-05-12 17:06:03 UTC In radare2 through 5.3.0 there is a double free vulnerability in the pyc parse via a crafted file which can lead to DoS.Reference:https://github.com/radareorg/radare2/issues/18679Upstream patch:https://github.com/radareorg/radare2/commit/049de62730f4954ef9a642f2eeebbca30a8eccdc"
+      }
+    ],
+    "CVE-2021-32614": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1959911",
+        "title": "CVE-2021-32614 dmg2img: OOB read in memcpy() for up to 204 bytes in fill_mishblk()",
+        "description": "Description Cedric Buissart 2021-05-12 15:32:55 UTC fill_mishblk() does not check the length of the read buffer, and copy 0xCC bytes from it. The length of the buffer is controlled by an attacker. By providing a length smaller than 0xCC, memcpy reaches out of the malloc'ed bound.This possibly leads to memory layout information leaking in the data. This might be used in a chain of vulnerability in order to reach code execution.```185 void fill_mishblk(char* c, struct _mishblk* m)186 {187 memset(m, 0, sizeof(struct _mishblk));188 memcpy(m, c, 0xCC);```In the above code, the memory allocated for `c` may be shorter than 0xCC bytes.Upstream bug report :https://github.com/Lekensteyn/dmg2img/issues/11"
+      }
+    ],
+    "CVE-2021-3392": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1924042",
+        "title": "CVE-2021-3392 QEMU: scsi: mptsas: use-after-free while processing io requests",
+        "description": "Description Prasad J Pandit 2021-02-02 13:22:04 UTC A use-after-free issue was found in the Megaraid emulator of the QEMU. It occurs while processing SCSI i/o requests because in case of an error mptsas_free_request() does not dequeue request object 'req' from a pending requests' queue. Which later gets processed resulting in the said use-after-free issue. A privileged guest user may use this flaw to crash the QEMU process on the host resulting in DoS scenario.Upstream patch:--------------- -> https://lists.gnu.org/archive/html/qemu-devel/2021-02/msg00488.html"
+      }
+    ],
+    "CVE-2021-3402": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1930175",
+        "title": "CVE-2021-3402 libyara: Integer overflow in libyara/modules/macho/macho.c via a malicious Mach-O file",
+        "description": "Description Michael Kaplan 2021-02-18 13:07:31 UTC Integer overflow in libyara/modules/macho/macho.c in yara v4.0.2 and earlier could allow an attacker to either cause denial of service or information disclosure via a malicious Mach-O file."
+      }
+    ],
+    "CVE-2021-3403": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1926967",
+        "title": "CVE-2021-3403 ytnef: double free in TNEFSubjectHandler function in lib/ytnef.c via crafted file",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-02-09 18:44:58 UTC In ytnef 1.9.3, the TNEFSubjectHandler function in lib/ytnef.c allows remote attackers to cause a denial-of-service (and potentially code execution) due to a double free which can be triggered via a crafted file.Reference:https://github.com/Yeraze/ytnef/issues/85"
+      }
+    ],
+    "CVE-2021-3404": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1926965",
+        "title": "CVE-2021-3404 ytnef: heap-based buffer overflow in SwapWord function in lib/ytnef.c via crafted file",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-02-09 18:44:55 UTC In ytnef 1.9.3, the SwapWord function in lib/ytnef.c allows remote attackers to cause a denial-of-service (and potentially code execution) due to a heap buffer overflow which can be triggered via a crafted file.Reference:https://github.com/Yeraze/ytnef/issues/86"
+      }
+    ],
+    "CVE-2021-3409": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1928146",
+        "title": "CVE-2021-3409 QEMU: sdhci: incomplete fix for CVE-2020-17380/CVE-2020-25085",
+        "description": "Description Mauro Matteo Cascella 2021-02-12 13:37:14 UTC Upstream commit [1] was supposed to fix CVE-2020-17380 and CVE-2020-25085, both involving a heap buffer overflow in the SDHCI controller emulation of QEMU. In fact, it turned out it was still possible to reproduce the same issue with specially crafted input, inducing a bogus transfer and subsequent out-of-bounds read/write access in sdhci_do_adma() or sdhci_sdma_transfer_multi_blocks().[1] https://git.qemu.org/?p=qemu.git;a=commit;h=dfba99f17feb6d4a129da19d38df1bcd8579d1c3"
+      }
+    ],
+    "CVE-2021-3410": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1928437",
+        "title": "There is an illegal WRITE memory access at libcaca/caca/canvas.c:475 (function:caca_resize)in libcaca latest version.",
+        "description": "Description 245 2021-02-14 01:58:52 UTC Created attachment 1756895 [details]The report contains verification steps and POCDescription of problem:Use a specific string to call caca_import_canvas_from_memory() the program will crashVersion-Release number of selected component (if applicable):libcaca - v0.99.beta19How reproducible:Steps to Reproduce:1.Get the source code of libcaca:2.Compile the libcaca.so library:$ cd libcaca$ apt-get install automake libtool pkg-config -y$ ./bootstrap$ ./configure$ make3.Copy the POC.c & POC_build.sh in /example folder4.Run POC_build.sh to compile POC.c5Run POCActual results:===================================================================20599==ERROR: AddressSanitizer: SEGV on unknown address 0x601f1009f400 (pc 0x7fd5a381ff76 bp 0x7ffdb2f550d0 sp 0x7ffdb2f54e40 T0)==20599==The signal is caused by a WRITE memory access.#0 0x7fd5a381ff75 in caca_resize /work/libcaca/caca/canvas.c:475:47#1 0x7fd5a384fdc3 in _import_ansi /work/libcaca/caca/codec/text.c:451:17#2 0x4f921c in main /work/libcaca/examples/POC.c:43:6#3 0x7fd5a34840b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)#4 0x41e34d in _start (/work/libcaca/examples/POC+0x41e34d)AddressSanitizer can not provide additional info.SUMMARY: AddressSanitizer: SEGV /work/2_libfuzzer_Assignment/question3/libcaca/caca/canvas.c:475:47 in caca_resize==20599==ABORTINGExpected results:Additional info:"
+      }
+    ],
+    "CVE-2021-3411": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1928236",
+        "title": "CVE-2021-3411 kernel: broken KRETPROBES reports corruption of .text section while running a FTRACE stress tester",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-02-12 17:16:15 UTC A violation of memory access flaw was found while detecting a padding of int3 in the linking state in function can_optimize in arch/x86/kernel/kprobes/opt.c. In this problem a local attacker with a special user privilege may cause a threat to a system Integrity and Confidentiality, and may even lead to a denial of service problem.Here a broken KRETPROBES reports corruption of .text section while running a FTRACE stress tester.[ 5388.259689] Kernel panic - not syncing: [p_lkrg] Kernel Integrity verification failed! Killing the kernel...[ 5388.269522] CPU: 17 PID: 138522 Comm: kworker/u69:1 Tainted: G W OE 5.4.62-std-debug-alt1 #1[ 5388.278997] Hardware name: Supermicro Super Server/H11DSi, BIOS 1.2 04/15/2019[ 5388.286243] Workqueue: events_unbound p_check_integrity [p_lkrg][ 5388.292255] Call Trace:[ 5388.294718] dump_stack+0xac/0xec[ 5388.298055] panic+0x119/0x31a[ 5388.301154] p_check_integrity.cold+0x1828/0x1e81 [p_lkrg][ 5388.306670] process_one_work+0x2ad/0x5e0[ 5388.310713] worker_thread+0x4d/0x3e0[ 5388.314389] ? process_one_work+0x5e0/0x5e0[ 5388.318586] kthread+0x133/0x150[ 5388.321832] ? kthread_mod_delayed_work+0xc0/0xc0[ 5388.326548] ret_from_fork+0x27/0x50[ 5388.330546] Kernel Offset: disabled[ 5388.339867] ---[ end Kernel panic - not syncing: [p_lkrg] Kernel Integrity verification failed! Killing the kernel... ]---Reference:http://blog.pi3.com.pl/?p=831"
+      }
+    ],
+    "CVE-2021-3413": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1930352",
+        "title": "CVE-2021-3413 Satellite: Azure compute resource secret_key leak to authenticated users",
+        "description": "Description Yadnyawalk Tale 2021-02-18 17:44:16 UTC A credential leak vulnerability was found in Red Hat Satellite through Azure Resource Manager. This flaw exposes the compute resources credentials with in the Satellite."
+      }
+    ],
+    "CVE-2021-3420": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1934088",
+        "title": "CVE-2021-3420 newlib: improper validation in memory allocation functions could lead to heap-based buffer overflow",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-03-02 13:47:09 UTC A flaw was found in newlib in versions prior to 4.0.0. Improper overflow validation in the memory allocation functions mEMALIGn, pvALLOc, nano_memalign, nano_valloc, nano_pvalloc could case an integer overflow, leading to an allocation of a small buffer and then to a heap-based buffer overflow.Reference and upstream patch:https://sourceware.org/git/?p=newlib-cygwin.git;a=commit;h=aa106b29a6a8a1b0df9e334704292cbc32f2d44e"
+      }
+    ],
+    "CVE-2021-3424": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1933320",
+        "title": "CVE-2021-3424 keycloak: Internationalized domain name (IDN) homograph attack to impersonate users",
+        "description": "Description Pedro Sampaio 2021-02-26 17:58:57 UTC A flaw was found in keycloak. Internationalized domain name (IDN) homograph attacks may be used to impersonate users.References:https://issues.redhat.com/browse/KEYCLOAK-17256"
+      }
+    ],
+    "CVE-2021-3426": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1935913",
+        "title": "CVE-2021-3426 python: information disclosure via pydoc",
+        "description": "Description msiddiqu 2021-03-05 19:20:02 UTC Running `pydoc -p` allows other local users to extract arbitrary files"
+      }
+    ],
+    "CVE-2021-3443": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939233",
+        "title": "CVE-2021-3443 jasper: NULL pointer dereference in jp2_decode() in jp2_dec.c",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-03-15 19:13:15 UTC A flaw was found in jasper before 2.0.26. A NULL pointer dereference in jp2_decode in jp2_dec.c may lead to program crash and denial of service.Reference:https://github.com/jasper-software/jasper/issues/269Upstream patch:https://github.com/jasper-software/jasper/commit/f94e7499a8b1471a4905c4f9c9e12e60fe88264b"
+      }
+    ],
+    "CVE-2021-3467": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1942097",
+        "title": "CVE-2021-3467 jasper: NULL pointer dereference in jp2_decode() in jp2_dec.c",
+        "description": "Description Tomas Hoger 2021-03-23 16:18:11 UTC A NULL pointer dereference flaw was reported in Jasper 2.0.25 in the JP2 decoder. The problem is related to insufficient validation of component references from CDEF boxes in the jp2_decode() function in src/libjasper/jp2/jp2_dec.c.Upstream issue:https://github.com/jasper-software/jasper/issues/268Upstream patch:https://github.com/jasper-software/jasper/commit/c4144a6fdb2660794136d1daaa80682ee40b138bThe fix was applied in version 2.0.26."
+      }
+    ],
+    "CVE-2021-3470": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1943623",
+        "title": "CVE-2021-3470 redis: potential heap overflow when using a heap allocator other than jemalloc or glibc's malloc",
+        "description": "Description Mauro Matteo Cascella 2021-03-26 16:30:19 UTC When using a system with no malloc_usable_size(), zmalloc_size() assumed that the heap allocator always returns blocks that are long-padded. This may not always be the case, and will result with zmalloc_size() returning a size that is bigger than allocated. At least in one case this leads to out of bound write, process crash and a potential security vulnerability. Effectively this does not affect the vast majority of users, who use jemalloc or glibc.Upstream pull request:https://github.com/redis/redis/pull/7963Upstream commit:https://github.com/redis/redis/commit/9824fe3e392caa04dc1b4071886e9ac402dd6d95Release notes:https://raw.githubusercontent.com/redis/redis/5.0.10/00-RELEASENOTEShttps://raw.githubusercontent.com/redis/redis/6.0.9/00-RELEASENOTES"
+      }
+    ],
+    "CVE-2021-3474": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939142",
+        "title": "CVE-2021-3474 OpenEXR: Undefined-shift in Imf_2_5::FastHufDecoder::FastHufDecoder",
+        "description": "Description Michael Kaplan 2021-03-15 17:25:28 UTC Undefined-shift in Imf_2_5::FastHufDecoder::FastHufDecoder"
+      }
+    ],
+    "CVE-2021-3475": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939144",
+        "title": "CVE-2021-3475 OpenEXR: Integer-overflow in Imf_2_5::calculateNumTiles",
+        "description": "Description Michael Kaplan 2021-03-15 17:25:45 UTC Integer-overflow in Imf_2_5::calculateNumTiles"
+      }
+    ],
+    "CVE-2021-3476": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939145",
+        "title": "CVE-2021-3476 OpenEXR: Undefined-shift in Imf_2_5::unpack14",
+        "description": "Description Michael Kaplan 2021-03-15 17:25:53 UTC Undefined-shift in Imf_2_5::unpack14"
+      }
+    ],
+    "CVE-2021-3477": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1939159",
+        "title": "CVE-2021-3477 OpenEXR: Heap-buffer-overflow in Imf_2_5::DeepTiledInputFile::readPixelSampleCounts",
+        "description": "Description Michael Kaplan 2021-03-15 17:27:40 UTC Heap-buffer-overflow in Imf_2_5::DeepTiledInputFile::readPixelSampleCounts"
+      }
+    ],
+    "CVE-2021-3480": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1944640",
+        "title": "CVE-2021-3480 slapi-nis: NULL dereference (DoS) with specially crafted Binding DN",
+        "description": "Description Cedric Buissart 2021-03-30 11:49:19 UTC The Schema Compatibility plugin for 389-ds-base / Directory Server, slapi-nis, can force 389-ds-base server to segfault over specially crafted Binding DN.The crash is a NULL dereference, and could be used as a Denial of Service attack."
+      }
+    ],
+    "CVE-2021-3482": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1946314",
+        "title": "CVE-2021-3482 exiv2: heap-based buffer overflow in Jp2Image::readMetadata() in jp2image.cpp",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-04-05 19:27:44 UTC A flaw was found in Exiv2. An improper check of the rawData.size property in Jp2Image::readMetadata() in jp2image.cpp can lead to a heap-based buffer overflow.Reference:https://github.com/Exiv2/exiv2/issues/1522"
+      }
+    ],
+    "CVE-2021-3483": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1948045",
+        "title": "CVE-2021-3483 kernel: use-after-free in nosy driver in nosy_ioctl() in drivers/firewire/nosy.c when a device is added twice",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-04-09 20:26:32 UTC A flaw was found in the Nosy driver in the Linux kernel in versions prior to v5.12-rc6. It allows a device to be inserted twice into a doubly linked list, leading to use-after-free when one of these devices is removed.Reference:https://www.openwall.com/lists/oss-security/2021/04/07/1Upstream patch:https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=829933ef05a951c8ff140e814656d73e74915faf"
+      }
+    ],
+    "CVE-2021-3486": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1947653",
+        "title": "CVE-2021-3486 glpi: Stored cross-site scripting via plugin metadata",
+        "description": "Description Pedro Sampaio 2021-04-08 19:46:41 UTC GLPi 9.5.4 does not sanitize the metadata. This is way its possible to insert XSS into plugins to execute JavaScript code. References:https://github.com/Kitsun3Sec/exploits/tree/master/cms/GLPI/GLPI-stored-XSShttps://n3k00n3.github.io/blog/09042021/glpi_xss.html"
+      }
+    ],
+    "CVE-2021-3487": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1947111",
+        "title": "CVE-2021-3487 binutils: excessive debug section size can cause excessive memory consumption in bfd's dwarf2.c read_section()",
+        "description": "Description Todd Cullum 2021-04-07 17:43:20 UTC read_section() in dwarf2.c of BFD could cause excessive memory consumption when handling corrupt DWARF debug sections. This could lead to an impact to system availability, denial of service, and/or a crash in applications linked with the BFD library's DWARF functionality if they parse files from untrusted sources.Reference:https://sourceware.org/bugzilla/show_bug.cgi?id=26946Upstream patch commit: https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=647cebce12a6b0a26960220caff96ff38978cf24"
+      }
+    ],
+    "CVE-2021-3496": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1949245",
+        "title": "CVE-2021-3496 jhead: heap-based buffer overflow in Get16u() in exif.c",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-04-13 19:13:03 UTC A heap-based buffer overflow was found in jhead in version 3.06 in Get16u() in exif.c when processing a crafted file.Reference:https://github.com/Matthias-Wandel/jhead/issues/33"
+      }
+    ],
+    "CVE-2021-3497": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1945339",
+        "title": "CVE-2021-3497 gstreamer-plugins-good: Use-after-free in matroska demuxing",
+        "description": "Description Pedro Sampaio 2021-03-31 17:36:32 UTC GStreamer before 1.18.4 might access already-freed memory in error code paths when demuxing certain malformed Matroska files.References:https://gstreamer.freedesktop.org/security/sa-2021-0002.htmlhttps://gstreamer.freedesktop.org/releases/1.18/#1.18.4"
+      }
+    ],
+    "CVE-2021-3498": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1945342",
+        "title": "CVE-2021-3498 gstreamer-plugins-good: Heap corruption in matroska demuxing",
+        "description": "Description Pedro Sampaio 2021-03-31 17:39:01 UTC GStreamer before 1.18.4 might cause heap corruption when parsing certain malformed Matroska files.References:https://gstreamer.freedesktop.org/security/sa-2021-0003.htmlhttps://gstreamer.freedesktop.org/releases/1.18/#1.18.4"
+      }
+    ],
+    "CVE-2021-3500": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1943685",
+        "title": "CVE-2021-3500 djvulibre: Stack overflow in function DJVU::DjVuDocument::get_djvu_file() via crafted djvu file",
+        "description": "Description Pedro Sampaio 2021-03-26 19:57:56 UTC A flaw was found in latest djvulibre. A Stack overflow in function DJVU::DjVuDocument::get_djvu_file() via crafted djvu file may lead to application crash and other consequences.References:https://bugzilla.redhat.com/show_bug.cgi?id=1943411"
+      }
+    ],
+    "CVE-2021-3501": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1950136",
+        "title": "CVE-2021-3501 kernel: userspace applications can misuse the KVM API to cause a write of 16 bytes at an offset up to 32 GB from vcpu->run",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-04-15 20:21:03 UTC A flaw was found in the Linux kernel. The value of internal.ndata, in the KVM API, is mapped to an array index, which can be updated by a user process at anytime which could lead to an out-of-bounds write. The highest threat from this vulnerability is to data integrity and system availability.__vmx_handle_exit() uses vcpu->run->internal.ndata, whose value is mapped to an array index and since vcpu->run can be updated in userspace, it allows a out-of-bounds write.Reference and upstream patch:https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=04c4f2ee3f68c9a4bf1653d15f1a9a435ae33f7a"
+      }
+    ],
+    "CVE-2021-3502": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1946914",
+        "title": "CVE-2021-3502 avahi: reachable assertion in avahi_s_host_name_resolver_start when trying to resolve badly-formatted hostnames",
+        "description": "Description Marian Rehak 2021-04-07 08:57:22 UTC A local Dos in avahi-daemon that can be triggered by trying to resolve badly-formatted hostnames on the /run/avahi-daemon/socket interface.References:https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=986018"
+      }
+    ],
+    "CVE-2021-3504": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1949687",
+        "title": "CVE-2021-3504 hivex: Buffer overflow when provided invalid node key length",
+        "description": "Description Pedro Sampaio 2021-04-14 19:48:38 UTC A flaw was found in libhivex. It's possible to provide a large length value for a node which can read past the end of the file leading to read of arbitrary memory and other potential consequences."
+      }
+    ],
+    "CVE-2021-3506": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1944298",
+        "title": "CVE-2021-3506 kernel: Out of bounds memory access bug in get_next_net_page() in fs/f2fs/node.c",
+        "description": "Description Pedro Sampaio 2021-03-29 17:46:04 UTC An out-of-bounds (OOB) memory access flaw was found in fs/f2fs/node.c in the f2fs module in the Linux kernel. A bounds check failure allows a local attacker to gain access to out-of-bounds memory leading to a system crash or a leak of internal kernel information. The highest threat from this vulnerability is to system availability.References:https://www.openwall.com/lists/oss-security/2021/03/28/2https://www.mail-archive.com/linux-kernel@vger.kernel.org/msg2520013.html"
+      }
+    ],
+    "CVE-2021-3507": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1951118",
+        "title": "CVE-2021-3507 QEMU: fdc: heap buffer overflow in DMA read data transfers",
+        "description": "Description Mauro Matteo Cascella 2021-04-19 16:50:57 UTC A heap buffer overflow was found in the floppy disk emulator of QEMU up to 6.0.0 (including). It could occur in fdctrl_transfer_handler() in hw/block/fdc.c while processing DMA read data transfers from the floppy drive to the guest system. A privileged guest user could use this flaw to crash the QEMU process on the host resulting in DoS scenario, or potential information leakage from the host memory."
+      }
+    ],
+    "CVE-2021-3509": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1950116",
+        "title": "CVE-2021-3509 ceph-dashboard: Cross-site scripting via token Cookie",
+        "description": "Description Pedro Sampaio 2021-04-15 19:10:02 UTC A flaw was found in ceph. In order to make the JWT token inaccessible through XSS, it was moved from localStorage to httpOnly Cookie (CVE-2020-27839). But token cookie are used in the body of the HTTP response for the documentation, which again makes it available to XSS.References:https://github.com/ceph/ceph/blob/f1557e8f62d31883d3d34ae241a1a26af11d923f/src/pybind/mgr/dashboard/controllers/docs.py#L394-L409"
+      }
+    ],
+    "CVE-2021-3516": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1954225",
+        "title": "CVE-2021-3516 libxml2: Use-after-free in xmlEncodeEntitiesInternal() in entities.c",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-04-27 18:45:30 UTC An use-after-free was found in xmllint when used with --html and --push options when processing crafted files.Reference:https://gitlab.gnome.org/GNOME/libxml2/-/issues/230Upstream patch:https://gitlab.gnome.org/GNOME/libxml2/-/commit/1358d157d0bd83be1dfe356a69213df9fac0b539"
+      }
+    ],
+    "CVE-2021-3517": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1954232",
+        "title": "CVE-2021-3517 libxml2: Heap-based buffer overflow in xmlEncodeEntitiesInternal() in entities.c",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-04-27 18:54:09 UTC A heap-based buffer overflow was found in libxml2 when processing truncated UTF-8 input.Reference:https://gitlab.gnome.org/GNOME/libxml2/-/issues/235Upstream patch:https://gitlab.gnome.org/GNOME/libxml2/-/commit/bf22713507fe1fc3a2c4b525cf0a88c2dc87a3a2"
+      }
+    ],
+    "CVE-2021-3518": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1954242",
+        "title": "CVE-2021-3518 libxml2: Use-after-free in xmlXIncludeDoProcess() in xinclude.c",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-04-27 19:03:06 UTC An use-after-free was found in libxml2 in xmlXIncludeDoProcess() in xinclude.c when processing crafted files.Reference:https://gitlab.gnome.org/GNOME/libxml2/-/issues/237Upstream patch:https://gitlab.gnome.org/GNOME/libxml2/-/commit/1098c30a040e72a4654968547f415be4e4c40fe7"
+      }
+    ],
+    "CVE-2021-3520": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1954559",
+        "title": "CVE-2021-3520 lz4: memory corruption due to an integer overflow bug caused by memmove argument",
+        "description": "Description Dhananjay Arunesh 2021-04-28 11:36:37 UTC A vulnerability was found in lz4, where a potential memory corruption due to an integer overflow bug which caused one of the memmove arguments to become negative. Depending on how the library was compiled this will hit an assert() inside the library and dump core, leaving a 4GB core file, or it wil go into libc and crash inside the memmove() function.Reference:https://github.com/lz4/lz4/pull/972"
+      }
+    ],
+    "CVE-2021-3522": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1954761",
+        "title": "CVE-2021-3522 gstreamer-plugins-base: out-of-bounds read when handling certain ID3v2 tags",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-04-28 18:16:38 UTC GStreamer before 1.18.4 might do an out-of-bounds read when handling certain ID3v2 tags.Reference:https://gstreamer.freedesktop.org/security/sa-2021-0001.html"
+      }
+    ],
+    "CVE-2021-3524": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1951674",
+        "title": "CVE-2021-3524 ceph object gateway: radosgw: CRLF injection",
+        "description": "Description amctagga 2021-04-20 17:30:57 UTC It was reported that \"newline\" character in the CORS xml configuration file in the ExposeHeader tag can lead to the header injection attack.When the CORS request is made the response contain the injected header. Using newline characters injected into the HTTP headers, it is possible for the malicious user to add arbitrary headers such as Set-Cookie to set arbitrary cookies.This impacts the RHCS RadosGW S3 API.For example malicious user could create a publicly-accessible S3 bucket with such CORS configuration and anyone that accessed that bucket would have these headers injected.In addition, in contrast to the prior fix, \\r can be used as a separator, and is not fixed in the prior patch, which only handled \\n separators."
+      }
+    ],
+    "CVE-2021-3529": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1950479",
+        "title": "CVE-2021-3529 noobaa-core: Cross-site scripting vulnerability with noobaa management URL",
+        "description": "Description Pedro Sampaio 2021-04-16 17:35:28 UTC The name of an arbitrarily supplied URL parameter is copied into the HTML document as plain text between tags on openshift-container-storage-4 with Noobaa. This results in an XSS attack, as this URL can include a payload script. References:https://bugzilla.redhat.com/show_bug.cgi?id=1943388"
+      }
+    ],
+    "CVE-2021-3531": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1955326",
+        "title": "CVE-2021-3531 ceph: RGW unauthenticated denial of service",
+        "description": "Description amctagga 2021-04-29 20:59:01 UTC A flaw was found in the Red Hat Ceph Storage RGW. When processing a GET Request for a swift URL that ends with two slashes it can cause the rgw to crash, resulting in a denial of service. As an example consider the following curl command:curl https://<rgw-url>/swift/v1/AUTH_a1c6e2f79c4b412f9e0335bc6120aeae/foo//<https://%3crgw-url%3e/swift/v1/AUTH_a1c6e2f79c4b412f9e0335bc6120aeae/foo/>the path before the bucket name (before \"foo\") must be valid for this to work.\"foo\" does not necessarily need to be a valid bucket name. If it is a valid bucket name it is irrelevant if the bucket itself is public or not.Additional query parameters in the URL still cause this issue (e.g. curl https://<rgw-url>/swift/v1/AUTH_a1c6e2f79c4b412f9e0335bc6120aeae/foo//?abc<https://%3crgw-url%3e/swift/v1/AUTH_a1c6e2f79c4b412f9e0335bc6120aeae/foo/?abc>)"
+      }
+    ],
+    "CVE-2021-3532": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1956464",
+        "title": "CVE-2021-3532 ansible: async_file sensitive information disclosure",
+        "description": "Description Tapas Jena 2021-05-03 18:18:01 UTC When an user changes the jobdir of async_files to a world readable directory, ansible writes the async status files directly into the world readable directory using umask to determine the file's permissions. The umask on most systems allow world readable files. This means that any secret information in an \"async_status\" file will be readable by a malicious user on that system."
+      }
+    ],
+    "CVE-2021-3536": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1948001",
+        "title": "CVE-2021-3536 wildfly: XSS via admin console when creating roles in domain mode",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-04-09 17:47:23 UTC A flaw was found in Wildfly. When creating a new role in domain mode via the admin console, is possible to add a payload in the name field, leading to XSS."
+      }
+    ],
+    "CVE-2021-3537": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1956522",
+        "title": "CVE-2021-3537 libxml2: NULL pointer dereference when post-validating mixed content parsed in recovery mode",
+        "description": "Description Pedro Sampaio 2021-05-03 20:32:55 UTC Parsing specially crafted Mixed Content while parsing XML data may lead to invalid data structure being created, as errors were not propagated. This could lead to several NULL Pointer Dereference when post-validating documents parsed in recovery mode. References:https://gitlab.gnome.org/GNOME/libxml2/-/issues/243https://gitlab.gnome.org/GNOME/libxml2/-/issues/244https://gitlab.gnome.org/GNOME/libxml2/-/issues/245Upstream fix:https://gitlab.gnome.org/GNOME/libxml2/-/commit/babe75030c7f64a37826bb3342317134568bef61"
+      }
+    ],
+    "CVE-2021-3543": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1953022",
+        "title": "CVE-2021-3543 kernel: nitro_enclaves stale file descriptors on failed usercopy",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-04-23 18:21:24 UTC A failing usercopy of the slot uid will lead to a stale entry in thefile descriptor table as put_unused_fd() won't release it. This enablesuserland to refer to a dangling 'file' object through that still validfile descriptor, leading to all kinds of use-after-free exploitationscenarios.Exchanging put_unused_fd() for close_fd(), ksys_close() or alike won'tsolve the underlying issue, as the file descriptor might have beenreplaced in the meantime, e.g. via userland calling close() on it(leading to a NULL pointer dereference in the error handling code as'fget(enclave_fd)' will return a NULL pointer) or by dup2()'ing acompletely different file object to that very file descriptor, leadingto the same situation: a dangling file descriptor pointing to a freedobject -- just in this case to a file object of user's choosing.Generally speaking, after the call to fd_install() the file descriptoris live and userland is free to do whatever with it. We cannot rely onit to still refer to our enclave object afterwards. In fact, by abusinguserfaultfd() userland can hit the condition without any racing andabuse the error handling in the nitro code as it pleases."
+      }
+    ],
+    "CVE-2021-3545": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1958955",
+        "title": "CVE-2021-3545 QEMU: vhost-user-gpu: information disclosure due to uninitialized memory read",
+        "description": "Description Mauro Matteo Cascella 2021-05-10 13:27:05 UTC An information disclosure vulnerability was found in the virtio vhost-user GPU device (vhost-user-gpu) of QEMU. The flaw exists in virgl_cmd_get_capset_info() in contrib/vhost-user-gpu/virgl.c and could occur due to the read of uninitialized memory. A malicious guest could exploit this issue to leak memory from the host.Patch series:https://lists.nongnu.org/archive/html/qemu-devel/2021-05/msg04536.htmlMemory disclosure in virgl_cmd_get_capset_info() in virgl.c:https://lists.nongnu.org/archive/html/qemu-devel/2021-05/msg04539.html"
+      }
+    ],
+    "CVE-2021-3546": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1958978",
+        "title": "CVE-2021-3546 QEMU: vhost-user-gpu: out-of-bounds write in virgl_cmd_get_capset()",
+        "description": "Description Mauro Matteo Cascella 2021-05-10 14:17:13 UTC An out-of-bounds write vulnerability was found in the virtio vhost-user GPU device (vhost-user-gpu) of QEMU. The flaw exists in virgl_cmd_get_capset() in contrib/vhost-user-gpu/virgl.c and could occur while processing the 'VIRTIO_GPU_CMD_GET_CAPSET' command. A malicious guest could use this flaw to crash the QEMU process on the host, resulting in a denial of service condition.This issue is analogous to CVE-2016-10028 in virtio-gpu-3d:https://bugzilla.redhat.com/show_bug.cgi?id=1406367Patch series:https://lists.nongnu.org/archive/html/qemu-devel/2021-05/msg04536.htmlOOB write in virgl_cmd_get_capset() in virgl.c:https://lists.nongnu.org/archive/html/qemu-devel/2021-05/msg04542.html"
+      }
+    ],
+    "CVE-2021-3548": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1959585",
+        "title": "CVE-2021-3548 dmg2img: OOB in dmg2img.c memcpy() causing undefined behavior",
+        "description": "Description Cedric Buissart 2021-05-11 20:15:09 UTC dmg2img did not validate the size of the read buffer during memcpy() inside the main() function. This possibly leads to memory layout information leaking in the data. This might be used in a chain of vulnerability in order to reach code execution.The vulnerability appears at the following code :```memcpy(parts[i].Data, base64data + 0xCC, parts[i].BlocksRunCount * 0x28);```An attacker could request a specially crafted DMG image to be converted by the dmg2img command. The attacker has the ability to control the size of the memcpy(), via `parts[i].BlocksRunCount` thus forcing an OOB read, and memory information to be written in the parts[i].Data allocation, or possibly crashing the command.Upstream bug report :https://github.com/Lekensteyn/dmg2img/issues/9"
+      }
+    ],
+    "CVE-2021-3549": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1960717",
+        "title": "CVE-2021-3549 binutils: heap-based buffer overflow in avr_elf32_load_records_from_section() via large section parameter",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-05-14 16:48:52 UTC A flaw was discovered in objdump as distributed in GNU Binutils version 2.36. A large section parameter can be passed to avr_elf32_load_records_from_section() leading to DoS and memory corruption.Reference:https://sourceware.org/bugzilla/show_bug.cgi?id=27294Upstream patch:https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=1cfcf3004e1830f8fe9112cfcd15285508d2c2b7"
+      }
+    ],
+    "CVE-2021-3559": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1962306",
+        "title": "CVE-2021-3559 libvirt: nodedev-list command may cause libvirt to crash on hosts with GRID driver installed",
+        "description": "Description Mauro Matteo Cascella 2021-05-19 17:36:17 UTC The virsh nodedev-list command may cause libvirt to crash on hosts with GRID driver installed. The flaw exists in the virConnectListAllNodeDevices API. This issue could be used by an unprivileged user with a read-only connection to perform a denial of service attack by leveraging the virConnectListAllNodeDevices API via nodedev-list.Fixed upstream in libvirt-v7.0.0:https://gitlab.com/libvirt/libvirt/-/commit/4c4d0e2da07b5a035b26a0ff13ec27070f7c7b1a"
+      }
+    ],
+    "CVE-2021-3561": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1955675",
+        "title": "CVE-2021-3561 fig2dev: Global buffer overflow in fig2dev/read.c in function read_objects",
+        "description": "Description Pedro Sampaio 2021-04-30 16:09:08 UTC A flaw was found in fig2dev version 3.2.8a. A global buffer overflow in fig2dev/read.c in function read_objects may lead to memory corruption and other potential consequences.Upstream bug:https://sourceforge.net/p/mcj/tickets/116/Upstream fix:https://sourceforge.net/p/mcj/fig2dev/ci/6827c09d2d6491cb2ae3ac7196439ff3aa791fd9/"
+      }
+    ],
+    "CVE-2021-3564": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1964139",
+        "title": "CVE-2021-3564 kernel: double free in bluetooth subsystem when the HCI device initialization fails",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-05-24 19:31:59 UTC A flaw was found in the Linux kernel in the BlueTooth subsystem when the HCI device initialization fails. It can lead to unexpected results, like double-free memory corruption vulnerability."
+      }
+    ],
+    "CVE-2021-3565": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1964427",
+        "title": "CVE-2021-3565 tpm2-tools: fixed AES wrapping key in tpm2_import",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-05-25 13:26:14 UTC During tpm2_import command invocation a fixed AES wrapping key is used. This presents a weakness in that, when no encrypted session with the TPM is used, the encrypted inner wrapper key is known and thus an entity performing an MITM on the TPM would be able to unwrap the inner portion and reveal the key being imported."
+      }
+    ],
+    "CVE-2021-3569": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1964358",
+        "title": "CVE-2021-3569 libtpms: stack corruption bug in RSA decryption",
+        "description": "Description Mauro Matteo Cascella 2021-05-25 10:14:13 UTC A stack corruption bug was found in libtpms while decrypting data using RSA. The bug exists in CryptRsaDecrypt() in src/tpm2/crypto/openssl/CryptRsa.c. This flaw could cause a SIGBUS (bad memory access) and termination of swtpm.Upstream commits:https://github.com/stefanberger/libtpms/commit/505ef841c00b4c096b1977c667cb957bec3a1d8b [v0.8.0]https://github.com/stefanberger/libtpms/commit/40cfe134c017d3aeaaed05ce71eaf9bfbe556b16 [v0.7.2]"
+      }
+    ],
+    "CVE-2021-3570": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1966240",
+        "title": "CVE-2021-3570 linuxptp: missing length check of forwarded messages",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-05-31 17:28:48 UTC When ptp4l is forwarding a PTP message between ports, it uses the messageLength field as the length of transmitted data, but it does not check if the value is not larger than the actual length of the received message. An attacker with access to the network can send a crafted message to cause ptp4l to send data past the message buffer, causing an information leak or crash. If ptp4l runs on a little-endian architecture, the attacker can also craft a management message which causes a heap memory corruption by converting fields from host to network order, potentially leading to remote code execution."
+      }
+    ],
+    "CVE-2021-3571": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1966241",
+        "title": "CVE-2021-3571 linuxptp: wrong length of one-step follow-up in transparent clock",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-05-31 17:31:39 UTC When ptp4l is operating on a little-endian architecture as a PTP tranparent clock and forwards a one-step sync message, it generates a follow-up message which has an incorrect length, sending data past the message buffer. An attacker with access to the network can send a one-step sync message to cause an information leak or crash."
+      }
+    ],
+    "CVE-2021-3598": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1970987",
+        "title": "CVE-2021-3598 OpenEXR: Heap buffer overflow in Imf_3_1::CharPtrIO::readChars",
+        "description": "Description Pedro Sampaio 2021-06-11 15:39:32 UTC A heap-buffer overflow was found in the readChars function of OpenEXR inversions before 3.0.3. An attacker could use this flaw to execute arbitrarycode with the permissions of the user running the application compiledagainst OpenEXR.Upstream issue：https://github.com/AcademySoftwareFoundation/openexr/issues/1033Upstream patch:https://github.com/AcademySoftwareFoundation/openexr/pull/1037/commits/b0eeb890016a8c9dc0830f0b7be5a9c52cb829d4"
+      }
+    ],
+    "CVE-2021-3612": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1974079",
+        "title": "CVE-2021-3612 kernel: joydev: zero size passed to joydev_handle_JSIOCSBTNMAP()",
+        "description": "Description Alex 2021-06-20 12:44:00 UTC If using ioctl JSIOCSBTNMAP (ex. for device /dev/input/js0) with incorrect input data (ex. buffer filled with values 0xff), then Linux kernel module crash (panic) happens with memory writing out of bounds.Bug exists in kernels after patch 182d679b2298 (ref. https://lore.kernel.org/linux-input/20210219083215.GS2087@kadam/ , so starting from upstream v5.12-rc1 ). Before this patch (before v5.12-rc1 ), bug existed too, but there was only possibility of reading out of stack that was less dangerous."
+      }
+    ],
+    "CVE-2021-3630": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1977427",
+        "title": "CVE-2021-3630 djvulibre: out-of-bounds write in DJVU::DjVuTXT::decode() in DjVuText.cpp",
+        "description": "Description Guilherme de Almeida Suckevicz 2021-06-29 17:56:05 UTC An out-of-bounds write vulnerability was found in DjVuLibre in DJVU::DjVuTXT::decode() in DjVuText.cpp via a crafted djvu file which may lead to crash and segmentation fault. This flaw affects DjVuLibre versions prior to 3.5.28.Reference:https://sourceforge.net/p/djvu/bugs/302/Upstream patch:https://sourceforge.net/p/djvu/djvulibre-git/ci/7b0ef20690e08f1fe124aebbf42f6310e2f40f81/"
+      }
+    ]
+  }
 }

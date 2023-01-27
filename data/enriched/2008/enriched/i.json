@@ -1,6 +1,1061 @@
 {
   "year": 2008,
-  "total": 0,
+  "total": 153,
   "reference": "bugzilla.redhat.com",
-  "reports": {}
+  "reports": {
+    "CVE-2008-0003": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=426578",
+        "title": "CVE-2008-0003 tog-pegasus pam authentication buffer overflow",
+        "description": "Whilst investigating a VMWare reported buffer overflow vulnerability (bug#426568) in the PAM authentication code in the OpenPegasus CIM management serverthat didn't affect Red Hat packages, I found another one that did.This vulnerability can be exploited remotely and results in arbitrary codeexecution with the privileges of the cimserver process. Note that we do shipwith a default SELinux policy for this package.Current embargo is unset. Likely to be 2nd week of Jan 2008."
+      }
+    ],
+    "CVE-2008-0006": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=428044",
+        "title": "CVE-2008-0006 Xorg / XFree86 PCF font parser buffer overflow",
+        "description": "Takuya Shiozaki of CodeBlog discovered a heap based buffer overflow flaw inX.org's PCF font handler.This flaw is being tracked as VU#203220 by CERT."
+      }
+    ],
+    "CVE-2008-0008": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=425481",
+        "title": "CVE-2008-0008 Pulseaudio ignores setuid() return value",
+        "description": "The SUSE bug [1] states that we don't check a return value of setuid() to see ifwe were able to drop privilegies. User can cause the call to fail by exhaustingthe resources in some cases, please add the check. Thanks![1] https://bugzilla.novell.com/show_bug.cgi?id=347822"
+      }
+    ],
+    "CVE-2008-0009": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=431206",
+        "title": "CVE-2008-0009 kernel: Inappropriate dereference of user-supplied memory pointers",
+        "description": "Description of problem:A new system call named vmsplice() was introduced in the 2.6.17release of the Linux kernel. Inappropriate dereference of user-supplied memory pointers in thecode beginning at line 1378 in the vmsplice_to_user() kernelfunction (fs/splice.c):The patch for this issue not provided by the reporter."
+      }
+    ],
+    "CVE-2008-0225": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=428620",
+        "title": "CVE-2008-0225 xine-lib: SDP attributes buffer overflow",
+        "description": "Common Vulnerabilities and Exposures assigned an identifier CVE-2008-0225 to the following vulnerability:Heap-based buffer overflow in the rmff_dump_cont function in input/libreal/rmff.c in xine-lib 1.1.9 and earlier allows remote attackers to execute arbitrary code via the SDP Abstract attribute, related to the rmff_dump_header function and related to disregarding the max field. NOTE: some of these details are obtained from third party information.References:http://aluigi.altervista.org/adv/xinermffhof-adv.txthttp://secunia.com/advisories/28384"
+      }
+    ],
+    "CVE-2008-0386": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=429513",
+        "title": "CVE-2008-0386 xdg-open allows to execute arbitrary commands",
+        "description": "Description of problem:The generic handler of xdg-open (i.e. when not running in KDE, GNOME or XFCE)has the following code: browser_with_arg=`echo \"$browser\" | sed s#%s#\"$1\"#` if [ x\"$browser_with_arg\" = x\"$browser\" ]; then \"$browser\" \"$1\"; else $browser_with_arg; fised interprets any commands in the argument and the result is executed by thescript.Version-Release number of selected component (if applicable):xdg-utils-1.0.2-2.fc8How reproducible:AlwaysSteps to Reproduce:1. uninstall perl-File-MimeInfo package (not necessary with xdg-utils-1.0.2-3)2. start plain X session3. xdg-open 'http://foo.org/bar#;g;sx$xtouch:foox' Actual results:File foo created.Expected results:The page opened in a web browser.Additional info:"
+      }
+    ],
+    "CVE-2008-0404": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=429552",
+        "title": "CVE-2008-0404 mantis: XSS via \"Most Active\" on \"Summary\" screen",
+        "description": "Description of problem:HTML tags are reportedly not escaped properly in \"Most Active\" section on\"Summary\" screen even if HTML tags are disabled via g_html_valid_tags, whichmakes it possible to conduct a cross-site scripting attack.Additional info:Original report: http://bugs.mantisbt.org/view.php?id=8756"
+      }
+    ],
+    "CVE-2008-0486": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=431541",
+        "title": "CVE-2008-0486 xine-lib / mplayer: array indexing vulnerability in FLAC parsing code",
+        "description": "Common Vulnerabilities and Exposures assigned an identifier CVE-2008-0486 to the following vulnerability:Array index vulnerability in libmpdemux/demux_audio.c in MPlayer1.0rc2 and SVN before r25917, and possibly earlier versions, as usedin Xine-lib 1.1.10, might allow remote attackers to execute arbitrarycode via a crafted FLAC tag, which triggers a buffer overflow.References:http://www.securityfocus.com/archive/1/archive/1/487501/100/0/threadedhttp://www.coresecurity.com/?action=item&id=2103http://www.securityfocus.com/bid/27441"
+      }
+    ],
+    "CVE-2008-0553": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=431518",
+        "title": "CVE-2008-0553 tk: GIF handling buffer overflow",
+        "description": "tk GIF handling code is based on the same code as used by gd and SDL_image andis affected by the overflow known as CVE-2006-4484 and CVE-2007-6697.ReadImage function in tkImgGIF.c does not properly check the value ofinitialCodeSize value read from GIF image before using it as upper bound duringthe initialization of append array. This can result in stack buffer overflow.Upstream fix:http://tktoolkit.cvs.sourceforge.net/tktoolkit/tk/generic/tkImgGIF.c?r1=1.40&r2=1.41This is expected to be included in upstream tk version 8.5.1.Related issues:CVE-2006-4484 (gd), CVE-2007-6697 (SDL_image), CVE-2008-0554 (netpbm)"
+      }
+    ],
+    "CVE-2008-0564": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=431526",
+        "title": "CVE-2008-0564 mailman: XSS triggerable by list administrator",
+        "description": "Common Vulnerabilities and Exposures assigned an identifier CVE-2008-0564 to the following vulnerability:Multiple cross-site scripting (XSS) vulnerabilities in Mailman before2.1.10b1 allow remote attackers to inject arbitrary web script or HTMLvia unspecified vectors related to (1) editing templates and (2) thelist's \"info attribute\" in the web administrator interface, adifferent vulnerability than CVE-2006-3636.References:http://mail.python.org/pipermail/mailman-announce/2008-February/000096.html"
+      }
+    ],
+    "CVE-2008-0598": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=433938",
+        "title": "CVE-2008-0598 kernel: linux x86_64 ia32 emulation leaks uninitialized data",
+        "description": "Description of problem:Tavis Ormandy has found a simple way how to leak data from other processes.See reproducer for more details."
+      }
+    ],
+    "CVE-2008-0600": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=432229",
+        "title": "[SECURITY] CVE-2008-0600 local escalation of privilege",
+        "description": "Description of problem:Local user can obtain root access (as described below).This bug is being actively exploited in the wild -- our server was just brokenin to by an attacker using it. (They got a user's password by previouslycompromising a machine somewhere else where that user had an account, andinstalled a modified ssh binary on it to record user names and passwords. Thenthey logged in to our site as that user, exploited CVE-2008-0010, and became root).It is EXTREMELY urgent that a fixed kernel be provided ASAP given that this bugis being actively exploited in the wild.There is a fix listed upstream in 2.6.23.15 and 2.6.24.1. However, even afterapplying that patch and recompiling the kernel, the escalation-of-privilegeexploit still worked so I am wondering if 2.6.23.15 does not completely fix it.Version-Release number of selected component (if applicable):All 2.6.23.x kernelsHow reproducible: 100%Steps to Reproduce:1. Download http://downloads.securityfocus.com/vulnerabilities/exploits/27704.c2. cc -o exploit 27704.c3. [as non-privileged user] ./exploit Actual results:Root shellExpected results:No root shell.Additional info:When I altered the kernel spec file for 2.6.23.14-115.fc8 to pull 2.6.23.15instead of 2.6.23.14 (and altered linux-2.6-highres-timers.patch to applycleanly, and removed the already-included-in-2.6.23.15 patcheslinux-2.6-net-silence-noisy-printks.patch andlinux-2.6-freezer-fix-apm-emulation-breakage.patch), rebuilt a new kernel RPM,installed it, and rebooted, the above exploit still worked. So it is possible anadditional patch is needed against 2.6.23, unless I just goofed somehow in mykernel rebuild. (I did check and the file fs/splice.c was correctly patched andincluded the lines that were suppose to fix this problem...)"
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=432517",
+        "title": "Vulnerability to CVE-2008-0600 (vmsplice)",
+        "description": "Description of problem:kernel-xen is still vulnerable to this vulnerability. Hack tested on my machine.Version-Release number of selected component (if applicable):kernel-xen-2.6.21-2952.fc8may be the .fc7 version tooHow reproducible:alwaysSteps to Reproduce:1. use the exploit Actual results:User root.Expected results:non hacked system :)Additional info:For more information see these bugs:https://bugzilla.redhat.com/show_bug.cgi?id=432229https://bugzilla.redhat.com/show_bug.cgi?id=432283I have a try to patch latest stable fedora kernel with patch from stable kernel.You can see my package here:http://www.salstar.sk/pub/fedora/testing/8/kernel-xen-2.6-2.6.21-2952.fc8.1.src.rpmIf you need patch and spec only, just tell me."
+      }
+    ],
+    "CVE-2008-0664": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=431547",
+        "title": "CVE-2008-0664 wordpress: XML-RPC interface vulnerability",
+        "description": "WordPress 2.3.3 was released with following announcement: WordPress 2.3.3 is an urgent security release. A flaw was found in our XML-RPC implementation such that a specially crafted request would allow any valid user to edit posts of any other user on that blog. http://wordpress.org/development/2008/02/wordpress-233/Upstream bug report:http://trac.wordpress.org/ticket/5313Some PoCs are already available publicly:http://www.village-idiot.org/archives/2008/02/02/wordpress-232-exploit-confirmed/"
+      }
+    ],
+    "CVE-2008-0674": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=431660",
+        "title": "CVE-2008-0674 pcre: buffer overflow via large UTF-8 character class",
+        "description": "PCRE 7.6 fixed following bug:1. A character class containing a very large number of characters with codepoints greater than 255 (in UTF-8 mode, of course) caused a buffer overflow.(http://pcre.org/changelog.txt)"
+      }
+    ],
+    "CVE-2008-0780": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=432747",
+        "title": "CVE-2008-0780 MoinMoin XSS in login action",
+        "description": "Description of problem:The following fix was commited to 1.5 branch in upstream repository:http://hg.moinmo.in/moin/1.5/rev/2f952fa361c7\"XSS fix for login action, thanks to Fernando Quintero for reporting this\""
+      }
+    ],
+    "CVE-2008-0781": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=432748",
+        "title": "CVE-2008-0781 MoinMoin multiple XSS in AttachFile action",
+        "description": "Description of problem:The following fix was commited to 1.5 branch in upstream repository:http://hg.moinmo.in/moin/1.5/rev/db212dfc58ef\"fix XSS issues in AttachFile action\""
+      }
+    ],
+    "CVE-2008-0783": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=432758",
+        "title": "cacti: multiple input saintization issues (CVE-2008-0783, CVE-2008-0784, CVE-2008-0785, CVE-2008-0786)",
+        "description": "Description of problem:Lack of input saintization can reportedly [1] [2] compose XSS, SQL injection orHTTP response splitting attack vector.[1] http://www.cacti.net/release_notes_0_8_7b.php[2] http://secunia.com/advisories/28872/"
+      }
+    ],
+    "CVE-2008-0784": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=432758",
+        "title": "cacti: multiple input saintization issues (CVE-2008-0783, CVE-2008-0784, CVE-2008-0785, CVE-2008-0786)",
+        "description": "Description of problem:Lack of input saintization can reportedly [1] [2] compose XSS, SQL injection orHTTP response splitting attack vector.[1] http://www.cacti.net/release_notes_0_8_7b.php[2] http://secunia.com/advisories/28872/"
+      }
+    ],
+    "CVE-2008-0785": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=432758",
+        "title": "cacti: multiple input saintization issues (CVE-2008-0783, CVE-2008-0784, CVE-2008-0785, CVE-2008-0786)",
+        "description": "Description of problem:Lack of input saintization can reportedly [1] [2] compose XSS, SQL injection orHTTP response splitting attack vector.[1] http://www.cacti.net/release_notes_0_8_7b.php[2] http://secunia.com/advisories/28872/"
+      }
+    ],
+    "CVE-2008-0786": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=432758",
+        "title": "cacti: multiple input saintization issues (CVE-2008-0783, CVE-2008-0784, CVE-2008-0785, CVE-2008-0786)",
+        "description": "Description of problem:Lack of input saintization can reportedly [1] [2] compose XSS, SQL injection orHTTP response splitting attack vector.[1] http://www.cacti.net/release_notes_0_8_7b.php[2] http://secunia.com/advisories/28872/"
+      }
+    ],
+    "CVE-2008-0807": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=432027",
+        "title": "CVE-2008-0807 turba: insufficient access checks",
+        "description": "It was reported that turba does not properly check permissions on address books,allowing users to modify addresses in other users' address books. This problemaffects both shared and non-shared address books. Knowing (or guessing) theobject_id seems to be sufficient to allow modification of other users' addresses.More information can be found in Debian bug report, which also contains someproposed patches:http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=464058Upstream bug report:http://bugs.horde.org/ticket/?id=6208"
+      }
+    ],
+    "CVE-2008-0882": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=433758",
+        "title": "CVE-2008-0882 cups: double free vulnerability in process_browse_data()",
+        "description": "Secunia has released and advisory affecting cups printing system: http://secunia.com/advisories/28994/ Description: A vulnerability has been discovered in CUPS, which can be exploited by malicious people to cause a DoS (Denial of Service) or to potentially compromise a vulnerable system. The vulnerability is caused due to an error within the \"process_browse_data()\" function when adding printers and classes. This can be exploited to free the same buffer twice by sending specially crafted browser packets to the UDP port on which cupsd is listening (by default port 631/UDP). Successful exploitation may allow execution of arbitrary code. The vulnerability is confirmed in version 1.3.5. Prior versions may also be affected. Solution: Update to version 1.3.6.Upstream bug report:http://www.cups.org/str.php?L2656Upstream patch:http://www.cups.org/strfiles/2656/str2656.patch"
+      }
+    ],
+    "CVE-2008-0884": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=435442",
+        "title": "CVE-2008-0884 system-auth-ac is world-writable",
+        "description": "The CAPP/LSPP config script causes a world-writable file for both IBM and HP certificationsftp://ftp.redhat.com/pub/redhat/linux/eal/EAL4_RHEL5/IBM/RPMS/lspp-eal4-config-ibm-0.65-1.el5.noarch.rpmftp://ftp.redhat.com/pub/redhat/linux/eal/EAL4_RHEL5/HP/RPMS/capp-lspp-eal4-config-hp-0.65-1.el5.noarch.rpmDetailed report in next comment"
+      }
+    ],
+    "CVE-2008-0892": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=437301",
+        "title": "CVE-2008-0892 Director Server: shell command injection in CGI replication monitor",
+        "description": "Richard Megginson discovered a shell command injection flaw in the AdminServer's replication monitor CGI perl script repl-monitor-cgi.pl. Scriptparameters were not properly sanitized prior to being passed to system()function. An attacker able to access replication monitor CGI script couldexecute arbitrary shell command with privileges of Admin Server.Affected versions:- Red Hat Directory Server 7.1 - Admin Server runs with root privileges- Red Hat Directory Server 8 - Admin Server runs under an unprivileged user, following users by default: - nobody on Red Hat Enterprise Linux and Solaris - daemon on HP-UX- Fedora Directory Server - Admin Server runs under an unprivileged user, nobody by default"
+      }
+    ],
+    "CVE-2008-0893": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=437320",
+        "title": "CVE-2008-0893 Directory Server: unrestricted access to CGI scripts",
+        "description": "Richard Megginson discovered that Admin Server as used by Red Hat DirectoryServer 8 and Fedora Directory Server does not properly restrict access to CGIscripts. This could allow unauthenticated user to get access to information orperform tasks that should be restricted to authenticated administrative users."
+      }
+    ],
+    "CVE-2008-0928": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=433560",
+        "title": "CVE-2008-0928 Qemu insufficient block device address range checking",
+        "description": "Ian Jackson discovered that accesses beyond end of qemu emulated disk devicescan result in accesses to emulator's virtual memory space accesses and thus canallow user with sufficient privilege in guest (root, as this would needmodification to kernel's driver) to break out of VM.http://marc.info/?l=debian-security&m=120343592917055&w=2"
+      }
+    ],
+    "CVE-2008-0932": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=433723",
+        "title": "CVE-2008-0932 sword: diatheke.pl command injection",
+        "description": "Description of problem:The Diatheke CGI allows arbitrary command execution in the context of the webserver, e.g. www-data by simply abusing the range parameter.For example, &range=`yes` will consume tons of resources on the affected webserver. Escalation of privleges and command shells are left as an exercise to the reader.From Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=466449"
+      }
+    ],
+    "CVE-2008-0960": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=447974",
+        "title": "CVE-2008-0960 net-snmp SNMPv3 authentication bypass (VU#877044)",
+        "description": "CERT has told us of an authentication bypass flaw in Net-SNMP and UCD-SNMP.According to net-snmp:\"The quick technical summary is that the SNMPv3 packet contains a truncated HMACauthentication code. The author that wrote the code very very long ago to checkthat HMAC code used the length of the packet's version of the HMAC code to dothe check. Thus if you send a single byte HMAC code, it'll only check it againstthe first byte of HMAC output. Thus it's fairly easy to spoof an authenticatedSNMPv3 packet.\""
+      }
+    ],
+    "CVE-2008-1096": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=286411",
+        "title": "CVE-2008-1096 Out of bound write in ImageMagick's XCF coder",
+        "description": "Description of problem:A fuzzed XCF file causes this to happen:Program received signal SIGSEGV, Segmentation fault.[Switching to Thread -1208990016 (LWP 5846)]0x00416f49 in load_tile (image=0x8d57e30, tile_image=0x8d60320,inDocInfo=0xbfbd5450, inLayerInfo=0x8d4bc90, data_length=8389203) atcoders/xcf.c:327327 q->red = ScaleCharToQuantum(xcfdata->red);(gdb) I tend to thing that this might be exploitable. Norm, could you please have acloser look?Additional info:This is the cycle where the overflow happens. 313 q=SetImagePixels(tile_image,0,0,tile_image->columns,tile_image->rows); 314 315 /* we have to copy the pixels individually since IM uses a different 316 format PixelPacket on different platforms - not to mention 317 different QuantumDepths! 318 */ 319 for ( i=0; i < (long) nmemb_read_successfully;i++ ) { 320 if ( inDocInfo->image_type == GIMP_GRAY ) { 321 q->red = ScaleCharToQuantum(*graydata); 322 q->green = ScaleCharToQuantum(*graydata); 323 q->blue = ScaleCharToQuantum(*graydata); 324 q->opacity = ScaleCharToQuantum((Quantum) (255-inLayerInfo->opacity)); 325 graydata++; 326 } else if ( inDocInfo->image_type == GIMP_RGB ) { 327 q->red = ScaleCharToQuantum(xcfdata->red); 328 q->green = ScaleCharToQuantum(xcfdata->green); 329 q->blue = ScaleCharToQuantum(xcfdata->blue); 330 q->opacity = (Quantum) ((int) xcfdata->opacity==0 ?TransparentOpacity : ScaleCharToQuantum((Quantum) (255-inLayerInfo->opacity))); 331 332 xcfdata++; 333 }; 334 335 q++; 336 }Version-Release number of selected component (if applicable):ImageMagick-6.2.8.0-3.el5.4"
+      }
+    ],
+    "CVE-2008-1097": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=285861",
+        "title": "CVE-2008-1097 Memory corruption in ImageMagick's PCX coder",
+        "description": "Description of the probem:Attemting to display a broken PCX file results in a heap corruption:Steps to reproduce:(gdb) run broken.pcx [Thread debugging using libthread_db enabled][New Thread -1208564032 (LWP 31972)]*** glibc detected *** /usr/bin/display: malloc(): memory corruption: 0x087e42c0 ***...Program received signal SIGABRT, Aborted.[Switching to Thread -1208564032 (LWP 31972)]0x00110402 in __kernel_vsyscall ()(gdb) Version-Release number of selected component (if applicable):ImageMagick-6.2.8.0-3.el5.4Additional information:Debian bug referenced in URL might contain more informaion."
+      }
+    ],
+    "CVE-2008-1227": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=372021",
+        "title": "CVE-2008-1227 Logging into silc account crashes pidgin",
+        "description": "Description of problem:pidgin crashes on login to a silc account. I tried setting it up fresh, and fromold setup. Both caused the crash.Version-Release number of selected component (if applicable):pidgin-2.2.2-1.fc8.x86_64How reproducible:EverytimeSteps to Reproduce:1. Install pidgin2. Run pidgin3. Setup silc account Actual results:CrashExpected results:Runs normallyAdditional info:If run from a terminal window it mentions a buffer overflow."
+      }
+    ],
+    "CVE-2008-1285": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=437082",
+        "title": "CVE-2008-1285 Cross-site scripting (XSS) vulnerability in Sun Java Server Faces",
+        "description": "Cross-site scripting (XSS) vulnerability in Sun Java Server Faces(JSF) 1.2 before 1.2_08 allows remote attackers to inject arbitraryweb script or HTML via unknown vectors.http://www.frsirt.com/english/advisories/2008/0808/referenceshttp://xforce.iss.net/xforce/xfdb/41081"
+      }
+    ],
+    "CVE-2008-1367": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=437312",
+        "title": "CVE-2008-1367 Kernel doesn't clear DF for signal handlers",
+        "description": "Description of problem:Jake Edge has reported the following gcc kernel related potentialsecurity issue on LWN:<cite>A change to GCC for a recent release coupled with a kernel bug has created amessy situation, with possible security implications. GCC changed someassumptions about x86 processor flags, in accordance with the ABI standard, thatcan lead to memory corruption for programs built with GCC 4.3.0. No one has comeup with a way to exploit the flaw, at least yet, but it clearly is a problemthat needs to be addressed.The problem revolves around the x86 direction flag (DF), which governs whetherblock memory operations operate forward through memory or backwards. The mainuse for the flag is to support overlapping memory copies, where workingbackwards through memory may be required so that the data being copied does notget overwritten as the copy progresses. Debian hacker Aurélien Jarno reportedthe problem to linux-kernel on March 5th, which was found when building SteelBank Common Lisp (SBCL) using the new compiler.GCC's most recent release, 4.3.0, assumes that the direction flag has beencleared (i.e. memory operations go in a forward direction) at the entry of eachfunction, as is specified by the ABI (which is, somewhat amusingly, found atsco.com [PDF]). Unfortunately, this clashes with Linux signal handlers, whichget called, incorrectly, with the flag in whatever state it was in when thesignal occurred. This has the effect of leaking one bit of state from the userspace process that was running when the signal occurred to the signal handler,which could be in another process.That, in itself, is a bug, seemingly with fairly minimal impact. Prior to 4.3,GCC would emit a cld (clear direction flag) opcode before doing inline string ormemory operations, so those operations would start from a known state. In 4.3,GCC relies on the ABI mandate that the direction flag is cleared before entry toa function, which means that the kernel needs to arrange that before calling asignal handler. It currently doesn't, but a small patch fixes that.The window of vulnerability is small, but was observed in SBCL. The sequence ofevents that would lead to memory corruption are as follows: * a user space program does an operation (memmove() for example) that sets DF * a signal occurs for some process * the kernel calls the signal handler * the signal handler does a memmove() in what it thinks is a forward direction * the memory is copied in the reverse direction, leading to corruption</cite>Link to the post:http://lwn.net/Articles/272048/#CommentsLink to upstream fix:http://git.kernel.org/?p=linux/kernel/git/x86/linux-2.6-x86.git;a=commitdiff;h=52c841e1012b8e73cc04b53f92fb933db580fb42"
+      }
+    ],
+    "CVE-2008-1419": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=440700",
+        "title": "CVE-2008-1419 vorbis: zero-dim codebooks can cause crash, infinite loop or heap overflow",
+        "description": "Will Drewry of the Google Security Team reported an issue in OGG Vorbis library,that can cause crash of the application using vorbis library, trigger aninfinite loop, or cause an integer overflow leading to possible heap overflow.Problem is caused by codebooks with codebook.dim == 0."
+      }
+    ],
+    "CVE-2008-1420": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=440706",
+        "title": "CVE-2008-1420 vorbis: integer overflow in partvals computation",
+        "description": "Will Drewry of the Google Security Team reported an issue in OGG Vorbis library,that can cause an integer overflow leading to possible heap overflow."
+      }
+    ],
+    "CVE-2008-1423": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=440709",
+        "title": "CVE-2008-1423 vorbis: integer oveflow caused by huge codebooks",
+        "description": "Will Drewry of the Google Security Team reported an issue in OGG Vorbis library,that can cause an integer overflow in the computation of quantvals and of thespace required for quantlist leading to a heap overflow.Check for the overflow added in the fix. Files are rejected if the totalvirtual space of the codebook exceeds 24 bits."
+      }
+    ],
+    "CVE-2008-1474": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=436546",
+        "title": "CVE-2008-1474 Roundup 1.4.4 contains security fixes",
+        "description": "1.) First one is this:http://sourceforge.net/tracker/index.php?func=detail&aid=1907211&group_id=31577&atid=402788The ticket more-or-less describes the fixThe pertinent changes are these:http://sourceforge.net/mailarchive/forum.php?thread_name=E1JXR7v-0000BC-C0%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkinshttp://sourceforge.net/mailarchive/forum.php?thread_name=E1JXR7v-0000B9-5n%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkinshttp://sourceforge.net/mailarchive/forum.php?thread_name=E1JXR7v-0000B8-5X%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkins2.) And second one will probably need some more thinking; all upstream says is\"security fix\"Documentation:http://sourceforge.net/mailarchive/forum.php?thread_name=E1JVMv3-0004gZ-HE%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkinshttp://sourceforge.net/mailarchive/forum.php?thread_name=E1JVMv3-0004gU-Dg%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkinshttp://sourceforge.net/mailarchive/forum.php?thread_name=E1JVMv3-0004gV-DP%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkinsSerious business:http://sourceforge.net/mailarchive/forum.php?thread_name=E1JVMv3-0004gf-J2%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkinshttp://sourceforge.net/mailarchive/forum.php?thread_name=E1JVMv3-0004gs-To%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkinshttp://sourceforge.net/mailarchive/forum.php?thread_name=E1JVMv3-0004gr-TW%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkinsI might have forgotten some as well:http://sourceforge.net/mailarchive/forum.php?forum_name=roundup-checkins"
+      }
+    ],
+    "CVE-2008-1475": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=436546",
+        "title": "CVE-2008-1474 Roundup 1.4.4 contains security fixes",
+        "description": "1.) First one is this:http://sourceforge.net/tracker/index.php?func=detail&aid=1907211&group_id=31577&atid=402788The ticket more-or-less describes the fixThe pertinent changes are these:http://sourceforge.net/mailarchive/forum.php?thread_name=E1JXR7v-0000BC-C0%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkinshttp://sourceforge.net/mailarchive/forum.php?thread_name=E1JXR7v-0000B9-5n%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkinshttp://sourceforge.net/mailarchive/forum.php?thread_name=E1JXR7v-0000B8-5X%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkins2.) And second one will probably need some more thinking; all upstream says is\"security fix\"Documentation:http://sourceforge.net/mailarchive/forum.php?thread_name=E1JVMv3-0004gZ-HE%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkinshttp://sourceforge.net/mailarchive/forum.php?thread_name=E1JVMv3-0004gU-Dg%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkinshttp://sourceforge.net/mailarchive/forum.php?thread_name=E1JVMv3-0004gV-DP%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkinsSerious business:http://sourceforge.net/mailarchive/forum.php?thread_name=E1JVMv3-0004gf-J2%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkinshttp://sourceforge.net/mailarchive/forum.php?thread_name=E1JVMv3-0004gs-To%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkinshttp://sourceforge.net/mailarchive/forum.php?thread_name=E1JVMv3-0004gr-TW%40sc8-pr-cvs9.sourceforge.net&forum_name=roundup-checkinsI might have forgotten some as well:http://sourceforge.net/mailarchive/forum.php?forum_name=roundup-checkins"
+      }
+    ],
+    "CVE-2008-1482": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=438663",
+        "title": "CVE-2008-1482 xine-lib Integer overflow flaws",
+        "description": "Multiple buffer overflow flaws were discovered in xine-lib.The vulnerabilities are caused due to integer overflow errors whenallocating memory in src/demuxers/demux_flv.c,src/demuxers/demux_qt.c, src/demuxers/demux_real.c,src/demuxers/demux_wc3movie.c, src/demuxers/ebml.c, andsrc/demuxers/demux_film.c. These can be exploited to cause heap-basedbuffer overflows via overly large fields included in e.g. FLV, MOV,RM, MVE, MKV, and CAK files.See original advisory for details:http://aluigi.altervista.org/adv/xinehof-adv.txtGentoo:FWIW, they should _all_ be fixed in 1.2 series, I suppose backporting therelevant changes, if possible, would solve the issue. 1.2 makes good use ofcalloc rather than using malloc directly."
+      }
+    ],
+    "CVE-2008-1514": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=438147",
+        "title": "CVE-2008-1514 kernel: ptrace: Padding area write - unprivileged kernel crash",
+        "description": "Description of problem:Jan Kratochvil has reported the following kernel ptrace related issue:Description of problem:Accidentally found one can crash the kernel.No root privileges are needed.Version-Release number of selected component (if applicable):kernel-2.6.9-68.19.EL.s390kernel-2.6.9-68.19.EL.s390x (for -m31 binaries)How reproducible:Always.Steps to Reproduce:1. wget -O user-area-padding.c'http://sources.redhat.com/cgi-bin/cvsweb.cgi/~checkout~/tests/ptrace-tests/tests/user-area-padding.c?cvsroot=systemtap'2. gcc -o user-area-padding user-area-padding.c -Wall -ggdb2 -D_GNU_SOURCE -m313. ./user-area-paddingActual results:Kernel 2.6.9-68.19.EL on an s390xz205 login:03/18/08 03:16:06 JobID:17819 Test:/distribution/reservesysUnable to handle kernel pointer dereference at virtual kernel address 000000008c8d8000Oops: 003b Ý#1¨CPU: 1 Not taintedProcess user-area-paddi (pid: 12275, task: 000000001c008040, ksp: 0000000010ba7c60)Krnl PSW : 0700200180000000 00000000000ff58a (exit_sem+0x26/0x1bc)Krnl GPRS: 0000000000200200 0000000000000001 000000001c008040 0000000000000002 0000000000040ef4 00000000008fa480 0000000010ba7f58 0000000010ba7e88 0000000000000001 0000000000000009 000000001c008040 000000001c7e5b58 000000008c8d8e8f 0000000000206ca8 0000000010ba7c60 0000000010ba7c20Krnl Code: 58 20 c0 00 18 32 1b 31 ba 23 c0 00 a7 44 ff fc 12 33 a7 74Call Trace:(Ý<000000001c7e5b58>¨ 0x1c7e5b58) Ý<0000000000040efe>¨ do_exit+0x382/0xf40 Ý<0000000000041be6>¨ do_group_exit+0xce/0xd0 Ý<000000000004d90a>¨ get_signal_to_deliver+0x3a2/0x3d0 Ý<000000000001c4d4>¨ do_signal+0xc0/0x620 Ý<000000000002f27e>¨ sysc_sigpending+0x12/0x1e Ý<0000000045b905f4>¨ 0x45b905f4 <0>Kernel panic - not syncing: Fatal exception: panic_on_oops00: HCPGSP2629I The virtual machine is placed in CP mode due to a SIGP stop from CPU 01.01: HCPGIR450W CP entered; disabled wait PSW 00020001 80000000 00000000 00017E06Kernel 2.6.9-68.19.EL on an s390z203 login:03/18/08 03:00:25 JobID:17818 Test:/distribution/reservesysspecification exception: 0006 Ý#1¨CPU: 1 Not taintedProcess user-area-paddi (pid: 14407, task: 1daee7e8, ksp: 0ad85db8)Krnl PSW : 07081000 800d8740 (exit_sem+0x28/0x1a0)Krnl GPRS: 00200200 00000001 fc77d074 fc77d073 8002faf8 1c99fa2c 77ff68e0 1daeeb4c 00000001 00000009 1daee7e8 1eb71d30 8c8d8e8f 800d871e 0ad85dc8 0ad85da0Krnl Code: a7 44 ff fc 12 33 a7 74 00 9e 18 8c a7 8a 00 08 bf af c0 08Call Trace:(Ý<000000001daee7e8>¨ 0x1daee7e8) Ý<000000000002fb00>¨ do_exit+0x300/0xdb0 Ý<00000000000306be>¨ do_group_exit+0xb6/0xe0 Ý<000000000003ad8c>¨ get_signal_to_deliver+0x30/0x380 Ý<000000000001bc6a>¨ do_signal+0xa2/0x55c Ý<000000000002037c>¨ sysc_sigpending+0x10/0x1c Ý<000000004ec845f4>¨ 0x4ec845f4 <0>Kernel panic - not syncing: Fatal exception: panic_on_oops00: HCPGSP2629I The virtual machine is placed in CP mode due to a SIGP stop from CPU 01.01: HCPGIR450W CP entered; disabled wait PSW 000A0000 8001758AExpected results:0Additional info:debugger-on-inferior-on-kernel:s390-on-s390-on-s390: crashs390-on-s390-on-s390x: crashs390x-on-s390x-on-s390x: SKIP (no padding area there)s390x-on-s390-on-s390x: not testedRHEL-5 does not crash (utrace there) but it returns 1 (FAIL) - Bug 431183."
+      }
+    ],
+    "CVE-2008-1532": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=439054",
+        "title": "CVE-2008-1532 Perlbal crashes upon empty buffered upload attempts",
+        "description": "Changelog for version 1.70 contains the following:SECURITY: patch from Jeremey James <jbj@forbidden.co.uk> to not crashon zero byte chunked upload when buffered uploads are enabled.References:http://bugs.gentoo.org/show_bug.cgi?id=214784http://search.cpan.org/src/BRADFITZ/Perlbal-1.70/CHANGES"
+      }
+    ],
+    "CVE-2008-1614": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=439687",
+        "title": "CVE-2008-1614 mod_suphp: local privilege escalation through symlinks",
+        "description": "Upstream found two local privilege escalation problems which include the use ofsymlink. in mod_suphp 0.6.2. Fixes for these bugs are included in 0.6.3.Upstream recommends an immediate update for all users.Short upstream report: http://www.suphp.org/Home.htmlDetailed report: http://article.gmane.org/gmane.comp.php.suphp.general/348"
+      }
+    ],
+    "CVE-2008-1677": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=444712",
+        "title": "CVE-2008-1677 Directory Server: insufficient buffer size for search patterns",
+        "description": "Nathan Kinder discovered that Red Hat / Fedora Directory Server uses fixed-sizebuffer for storing regular expressions used in LDAP searches. This buffer canoverflow when search pattern from user-supplied LDAP request is translated intoa regular expression, resulting in a slapd daemon crash, or, possibly, arbitrarycode execution. This issue can be triggered by any user permitted to performLDAP searches, including anonymous user if anonymous access is permitted by ACLs(permitted by default).Affected versions:Red Hat Directory Server 7.1Red Hat Directory Server 8Fedora Directory Server 1.1"
+      }
+    ],
+    "CVE-2008-1678": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=447268",
+        "title": "CVE-2008-1678 httpd: mod_ssl per-connection memory leak for connections with zlib compression",
+        "description": "Apache httpd web server's mod_ssl module linked against OpenSSL >= 0.9.8f canleak pre-connection memory when connecting client reports support for acompression algorithm in the initial handshake, causing httpd to run out ofmemory after certain amount of SSL connections.Upstream and Ubuntu bug reports:https://issues.apache.org/bugzilla/show_bug.cgi?id=44975https://bugs.launchpad.net/ubuntu/+source/apache2/+bug/224945Upstream fix:http://svn.apache.org/viewvc?view=rev&revision=654119"
+      }
+    ],
+    "CVE-2008-1943": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=443078",
+        "title": "CVE-2008-1943 PVFB backend fails to validate frontend's framebuffer description",
+        "description": "Description of problem:The PVFB backend is a user space program running as root in dom0. A buggy ormalicious frontend can describe its shared framebuffer to it in a way that makesit map an arbitrary amount of guest memory, malloc an arbitrarily large internalbuffer, or copy arbitrary memory to that buffer. A domU running a maliciousfrontend can abuse the former two for a denial of service attack against dom0. It can abuse all three to terminate or crash the backend. If there's anythingin the backend's address space that gets tickled the wrong way by being read,the last one is more serious, but I'm not aware of anything like that.Version-Release number of selected component (if applicable):I believe all versions are vulnerable to the first two abuses, and all versionssince 3.0.3-45.el5 are additionally vulnerable to the third one.How reproducible:Haven't tried, should be 100%.Steps to Reproduce:I can prepare a malicious frontend if necessary."
+      }
+    ],
+    "CVE-2008-1944": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=443390",
+        "title": "CVE-2008-1944 PVFB SDL backend chokes on bogus screen updates",
+        "description": "Description of problem:When using 'xm create' to start a paravirt guest, the SDL window oftendisappears part way through the boot.Version-Release number of selected component (if applicable):How reproducible:Steps to Reproduce:1. Configure a pv guest to use SDL graphics2. xm create <pv guest>3. wait for the guest to boot all the way up Actual results:I've seen the SDL window disappear on both i386 and ia64 about 20% of the time. I see nothing suspicious in xend.log. There is no output to xend-debug.log.Expected results:The SDL window should remain present every time a paravirt guest is started.Additional info:Looks similar to bz# 217635"
+      }
+    ],
+    "CVE-2008-1951": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=447705",
+        "title": "CVE-2008-1951 sblim: libraries built with insecure RPATH",
+        "description": "It was discovered that libraries shipped in sblim packages in Red Hat EnterpriseLinux 4 and 5 have RPATH set pointing to a directory in a world-writabletemporary directory:/var/tmp/sblim-<version>-<release>-root-brewbuilder//usr/lib . That directoryexisted on the build system during the package build, but is unlikely to existon systems where sblim packages are installed.This issue can be exploited by a local user to create fake library required bysblim libraries and execute arbitrary code with the privileges of theapplication using sblim such as tog-pegasus."
+      }
+    ],
+    "CVE-2008-2327": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=458674",
+        "title": "CVE-2008-2327 libtiff: use of uninitialized memory in LZW decoder",
+        "description": "Drew Yao of Apple Product Security reported a flaw in the LZW decoder used by libtiff to handle LZW-encoded images. Translation table used by decoding algorithm is not properly re-initialized after \"code clear\" code is read from the stream being decoded. When reading that code, decoder should discard previous translation table and start filling it again.Later during the processing, no longer valid table entries may be indexed by the input stream, causing libtiff to follow no longer valid pointer. This can result in crash, memory corruption and possibly allow code execution.References:http://www.remotesensing.org/libtiff/http://en.wikipedia.org/wiki/LzwAcknowledgements:Red Hat would like to thank Drew Yao of the Apple Product Security team forreporting this issue."
+      }
+    ],
+    "CVE-2008-2358": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=447389",
+        "title": "CVE-2008-2358 kernel: dccp: sanity check feature length",
+        "description": "Description of problem:Backport the feature length validation. Without this it's possible forrlen to ovelflow to 0, causing kmalloc(0), and a heap overflow duringDCCP feature reconciliation. rlen = 1 + opt->dccpop_len; rpref = kmalloc(rlen, GFP_ATOMIC); memcpy(&rpref[1], opt->dccpop_val, opt->dccpop_len); Thanks to Brandon Edwards of McAfee Avert labs for discovering this issue.Impact:A vulnerability exists in the DCCP implementation which can be setup andexploited by a local attacker. The vulnerability is an integer overflow whichleads to a kmalloc() for 0 bytes, followed by a memory copy into the returnedpointer for 255 bytes, which causes a heap overflow. This type of vulnerabilitycan be exploited by a local attacker to gain arbitrary code execution.Version-Release number of selected component (if applicable):2.6.17 <= x <= 2.6.20 (See the timeline for more details)Additional information:This vulnerability affects the dccp kernel module (shipped as part of theRHEL kernel updates)."
+      }
+    ],
+    "CVE-2008-2363": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=446902",
+        "title": "CVE-2008-2363 pan: heap overflow caused by large *.nzb files",
+        "description": "Description of problem:Version-Release number of selected component (if applicable):pan-0.132-2.fc8.x86_64How reproducible:AlwaysSteps to Reproduce: Start pan from the command line Actual results:pan: parts.cc:244: void pan::Parts::set_parts(const pan::PartBatch&): Assertion`pch == part_mid_buf + part_mid_buf_len' failed.AbortedExpected results:PAN startsAdditional info:"
+      }
+    ],
+    "CVE-2008-2367": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=451998",
+        "title": "CVE-2008-2367 Certificate System: insecure config file permissions",
+        "description": "It was discovered that Red Hat Certificate System use insecure default filepermissions on configuration files (such as password.conf) that may containauthentication credentials or other sensitive information that should only beaccessible to administrative and service users.This problem allows any local user to read Red Hat Certificate Systemconfiguration files."
+      }
+    ],
+    "CVE-2008-2384": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=480238",
+        "title": "CVE-2008-2384 mod_auth_mysql: character encoding SQL injection flaw",
+        "description": "Martin Joey Schulze discovered a flaw in the way mod_auth_mysql handles certain multibyte character encodings.If mod_auth_mysql is configured to use use a multibyte character set that allows the backslash '\\' character as part of the character encodings, it is possible to inject arbitrary SQL commands to the MySQL database server."
+      }
+    ],
+    "CVE-2008-2575": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=448285",
+        "title": "CVE-2008-2575 cbrpager: Command executions via improper shell escaping",
+        "description": "Mamoru Tasaka discovered, that cbrpager (Simple comic book pager for Linux) doesnot properly sanitize file names of the image archives before calling externaldecompression utilities unrar and unzip using system() libc library call. Opening a .zip or .rar archive with specially crafted filename can result in anexecution of the arbitrary code with the privileges of the user running cbrpager.Sample file name: test\";echo owned>bla;\".rar(same as for similar issue in comix -https://bugzilla.redhat.com/show_bug.cgi?id=430635#c4)Mamoru's patch accepted by upstream:http://cvs.fedoraproject.org/viewcvs/rpms/cbrpager/devel/cbrpager-0.9.16-filen-shell-escaping.patch?rev=1.2Fixed upstream in version 0.9.17:http://sourceforge.net/forum/forum.php?forum_id=827120http://www.jcoppens.com/soft/cbrpager/log.en.php"
+      }
+    ],
+    "CVE-2008-2725": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2008-2727",
+        "title": "CVE-2008-2727 ruby: integer overflow in rb_ary_replace() (ruby-1.6.x) - REALLOC_N",
+        "description": "Drew Yao of the Apple Product Security team reported an integer overflow leadingto a memory mis-allocation and heap overflow in the rb_ary_splice() functionused by ruby interpreter for handling arrays. For details, see: https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2008-2725Ruby 1.6.x does not have rb_ary_splice(), but the same vulnerable code exists inthe rb_ary_replace() function. This issue is a ruby 1.6.x equivalent ofCVE-2008-2725."
+      }
+    ],
+    "CVE-2008-2729": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=451271",
+        "title": "CVE-2008-2729 kernel: [x86_64] The string instruction version didn't zero the output on exception.",
+        "description": "Description of problem:=======================Andi Kleen has provided upstream fix for the following x86_64 archrelated issue:- Don't zero for __copy_from_user_inatomic following i386.This will prevent spurious zeros for parallel file system writers whenone does a exception- The string instruction version didn't zero the output onexception. Oops.Version-Release number of selected component (if applicable):All Linux kernel version prior 2.6.19How reproducible:Always Actual results:The possibility of potentially sensitive data leak.Expected results:No sensitive data leak.Additional info:Link to upstream commit:http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=3022d734a54cbd2b65eea9a024564821101b4a9a;hp=f0f4c3432e5e1087b3a8c0e6bd4113d3c37497ffThis issue discovered by Cai Qian in RH in process of RHSA-2008:0508 kernelQA testing."
+      }
+    ],
+    "CVE-2008-2927": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=453764",
+        "title": "CVE-2008-2927 pidgin MSN integer overflow",
+        "description": "An integer overflow in Pidgin's MSN protocol handler could allow malformed SLPmessage to cause an integer overflow, which could result in arbitrary codeexecution.This flaw is only exploitable by individuals who can message a user, which iscontrolled by the Pidgin privacy setting. The default setting is to only allowmessages from users in the buddy list."
+      }
+    ],
+    "CVE-2008-2928": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=453916",
+        "title": "CVE-2008-2928 Directory Server: CGI accept language buffer overflow",
+        "description": "A flaw was found in a Accept Language HTTP header parsers implemented inadminutil library used by various Red Hat Directory Server's AdministrationServer's CGI scripts. A remote attacker able to connect to AdministrationServer web interface could cause a CGI scripts to crash, or possibly execute anarbitrary code.Issue affects:- Red Hat Directory Server 7.1- adminutil packages shipped in Red Hat Directory Server 8 and Fedora DirectoryServer, prior to adminutil version 1.1.7"
+      }
+    ],
+    "CVE-2008-2929": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=454621",
+        "title": "CVE-2008-2929 Directory Server: multiple XSS issues",
+        "description": "It was discovered that multiple CGI scripts used by Red Hat / Fedora DirectoryServer did not properly sanitize %-escaped inputs, resulting in a possibility toconduct cross-site scripting (XSS) attacks.Issue was caused by a flow in an adminutil library that contain commonfunctionality used by multiple CGI scripts, such as affected GET / POST argumentparsing.Issue is know to affect some Administration Express scripts and Directory ServerGateway (DSGW) scripts.Affected version:Red Hat Directory Server 7.1Red Hat Directory Server 8 (flaw limited to Administration Express issues, asDSGW component is not shipped)Fedora Directory Server"
+      }
+    ],
+    "CVE-2008-2930": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=454065",
+        "title": "CVE-2008-2930 Directory Server: temporary DoS via crafted pattern searches",
+        "description": "It was discovered that Red Hat Directory Server and Fedora Directory Server isprone to a temporary denial of service attack (high CPU usage) via crafted LDAPsearch patterns. LDAP search patterns are internally translated to regularexpressions. If the regular expression is matched against specially craftedrecord already stored in the LDAP, it may cause regular expression NFA toiterate over large amount of states, causing one slapd thread to occupy CPU forexcessive amount of time.Additionally, due to a current design of the regular expression handling code,only one slapd thread can execute regular expression NFA code at the time. Because of that, during the processing of such CPU intensive search request, allother search requests using patterns are blocked.Affected version:Red Hat Directory Server 7.1 and 8Fedora Directory Server 1.1.1"
+      }
+    ],
+    "CVE-2008-2931": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=454388",
+        "title": "CVE-2008-2931 kernel: missing check before setting mount propagation",
+        "description": "The do_change_type routine has a missing check for capable(CAP_SYS_ADMIN). Eventhough the mount command restricts the changing of mountpoint type to only rootusers, it is possible for local unprivileged users to bypass and abuse this."
+      }
+    ],
+    "CVE-2008-2932": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=454662",
+        "title": "CVE-2008-2932 Directory Server: adminutil / CGI heap overflow",
+        "description": "adminutil is a library of common functions used by multiple CGI scripts shippedwith Red Hat / Fedora Directory Server.It was discovered that adminutil HTTP unescaping functions did not properlyhandle %-encoded inputs, resulting in a miscalculation of memory requirementneeded to hold processed string with special characters replaced with HTMLentities. This resulted in a heap-based overflow. An attacker with access tocertain Directory Server's CGI scripts could use this flaw to crash or possiblyexecute arbitrary code with the privileges of the Directory ServerAdministration Server (unprivileged user, nobody by default, in affectedDirectory Server versions).Problem was introduced by a bug fix included in adminutil 1.1.6, affectedpackages were only shipped in Fedora.Red Hat Directory Server 7.1 and 8 did not contain vulnerable code."
+      }
+    ],
+    "CVE-2008-2941": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=457052",
+        "title": "CVE-2008-2941 hplip hpssd.py Denial-Of-Service parsing vulnerability",
+        "description": "hplip is vulnerable to a Denial-Of-Service-Attack via it's listener port."
+      }
+    ],
+    "CVE-2008-2944": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=207002",
+        "title": "crash - mmput()/unmap_vmas() - gdb testsuite",
+        "description": "Description of problem:Running gdb testsuite crashes the machine. Only with kernel patched by theattached patch, though - so feel free to ignore this bugreport.I believe the patch is innocent and just enables the full functionality ofptrace/utrace Linux kernel debugging for gdb. The attachde patch should beobsoleted/contained in kernel-2.6.17-1.2633 as announced in Bug 205179.Version-Release number of selected component (if applicable):kernel-2.6.17-1.2630_jkratoch0.ia64gdb-6.5-7.srcHow reproducible:It crashed 3 times - each time I tried it.Steps to Reproduce:1. Install gdb-6.5-7.src.rpm2. (possibly not needed) patch gdb.spec<http://cvs.jankratochvil.net/viewcvs/nethome/src/gdb.spec-debug.patch?rev=HEAD3. rpmbuild -bc gdb.spec4. cd gdb-6.5/gdb/testsuite5. make checkActual results:Kernel crash.Expected results:No kernel crash, just userland testsuite PASSes/FAILs.Additional info:It was crashing while executing \"gdb.base/checkpoint.exp\".Removing \"gdb.base/checkpoint.exp\" testcase made the testsuite non-crashing.Running just specifically \"gdb.base/checkpoint.exp\" did not crash it, though."
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=449359",
+        "title": "CVE-2008-2365 kernel: ptrace: Crash on PTRACE_{ATTACH,DETACH} race",
+        "description": "Description of problem:Alexei Dobryanov has reported the following kernel utrace related issue(BZ#245735):1. late ptrace_may_attach() check static int ptrace_attach(struct task_struct *task) { ... engine = utrace_attach(task, (UTRACE_ATTACH_CREATE | UTRACE_ATTACH_EXCLUSIVE | UTRACE_ATTACH_MATCH_OPS), &ptrace_utrace_ops, 0); [error checking] if (ptrace_may_attach(task)) { [more attaching process] Doing may attach check there is asking for trouble, because utrace_attach() will happily create and modify \"struct utrace *\" and create and attach engines to it on task you don't have permissions. Order should be reverted. That's easy.2. race around &dead_engine_ops setting... I originally thought #1 would lead to memory leaks, however, written dumb PTRACE_ATTACH'er gave much more amazing results. The following program quickly (1 sec) oopses kernel when run against process you normally can't attach to (like normal user to getty processes)#include <stdlib.h>#include <sys/ptrace.h>int main(int argc, char *argv[]){pid_t pid = atoi(argv[1]);while (1)ptrace(PTRACE_ATTACH, pid, NULL, NULL);return 0;}Unable to handle kernel NULL pointer dereference at 0000000000000000 RIP: [<0000000000000000>] [<ffffffff8005f1cd>] report_quiescent+0x36/0x154 [<ffffffff8005f316>] utrace_quiescent+0x2b/0x238 [<ffffffff800601e9>] utrace_get_signal+0x45d/0x4c0 [<ffffffff80039c6f>] get_signal_to_deliver+0x169/0x47a [<ffffffff80008f5a>] do_notify_resume+0xd0/0x7e2 [<ffffffff80203673>] _spin_unlock_irqrestore+0x3f/0x45 [<ffffffff80051d71>] trace_hardirqs_on+0x11b/0x13f [<ffffffff801400c0>] tty_read+0x81/0xc7 [<ffffffff80202ede>] trace_hardirqs_on_thunk+0x35/0x37 [<ffffffff80051d71>] trace_hardirqs_on+0x11b/0x13f [<ffffffff80009b43>] sysret_signal+0x21/0x31 [<ffffffff80009deb>] ptregscall_common+0x67/0xac This is a race we chatted with Roland about: http://marc.info/?l=linux-kernel&m=117863520707703&w=2> engine's flags and ops settings in utrace_detach() and acting on them in> report_quiescent():> utrace_detach()report_quiescent()> ---------------------------------> [utrace lock held][utrace lock is not held]> engine->flags => UTRACE_EVENT(QUIESCE) | UTRACE_ACTION_QUIESCE;>if (engine->flags & UTRACE_EVENT(QUIESCE))>REPORT(report_quiesce);> rcu_assign_pointer(engine->ops, &dead_engine_ops);> At the moment of REPORT call engine's ops are still \"live\" ptrace ops> which do not have ->report_quiesce callback. So, there will oops while> calling function at NULL address. \"Dead\" ptrace engine ops do have dummy> callback but it wasn't yet glued. Obviously, patch #1 won't fix this.3. Looks like nobody filed double free at utrace aka oops at __rcu_process_callbacks() against RHEL5 kernel. It's bug https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=207002 against FC6, but, hey, every utrace version has it. Test program attached. Every user can trigger it."
+      }
+    ],
+    "CVE-2008-3074": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=467428",
+        "title": "CVE-2008-3074 Vim tar.vim plugin: improper Implementation of shellescape() (arbitrary code execution)",
+        "description": "Description of problem:Jan Minar has reported the following problem present in Vim shellescape()function implementation and demonstrated by testcases in tar.vim plugin:The implementation of the shellescape() function does not properlyescape all special items, in particular the '!' character). Thiscan result in untrusted data being insufficiently sanitizedand possibly lead to arbitrary code execution.To show this vulnerability can be exploited, the tar.vim plugin test caseshas been updated (tarplugin, tarplugin.v2 and tarplugin.updated test cases).CVE-2008-3074 has been pre-assigned and used in rPath advisory:http://www.openwall.com/lists/oss-security/2008/07/10/7References:http://www.rdancer.org/vulnerablevim-shellescape.htmlhttp://www.openwall.com/lists/oss-security/2008/07/15/2http://www.openwall.com/lists/oss-security/2008/07/10/7http://www.rdancer.org/vulnerablevim.htmlhttp://www.openwall.com/lists/oss-security/2008/07/13/1http://www.openwall.com/lists/oss-security/2008/08/01/1"
+      }
+    ],
+    "CVE-2008-3075": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=467432",
+        "title": "CVE-2008-3075 Vim zip.vim plugin: improper Implementation of shellescape() (arbitrary code execution)",
+        "description": "Description of problem:Jan Minar has reported the following problem present in Vim shellescape()function implementation and demonstrated by testcases in zip.vim plugin:The implementation of the shellescape() function does not properlyescape all special items, in particular the '!' character). Thiscan result in untrusted data being insufficiently sanitizedand possibly lead to arbitrary code execution.To show this vulnerability can be exploited, the tar.vim plugin test caseshas been updated (zipplugin and zipplugin.v2 test cases).CVE-2008-3075 as been pre-assigned and used in rPath advisory:http://www.openwall.com/lists/oss-security/2008/07/10/7 (ZIP-2)References:http://www.rdancer.org/vulnerablevim-shellescape.htmlhttp://www.rdancer.org/vulnerablevim.html (ZIP-1)http://www.openwall.com/lists/oss-security/2008/07/15/2http://www.openwall.com/lists/oss-security/2008/07/13/1 (ZIP-4)http://www.openwall.com/lists/oss-security/2008/08/01/1CVE-2008-2712 bullet (2)http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2712mentions zipplugin based on same advisory as ZIP-1. Accordingto ZIP-2 and ZIP-4 the zip.vim / zipplugin.vim has not beenfixed as of Vim 7.2a.19/zip.vim v19, so the bullet (2) --mention about zipplugin should be removed from CVE-2008-2712."
+      }
+    ],
+    "CVE-2008-3145": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=454984",
+        "title": "CVE-2008-3145 wireshark: crash in the packet reassembling",
+        "description": "Common Vulnerabilities and Exposures assigned an identifier CVE-2008-3145 to the following vulnerability:An unspecified flaw packet reassemblin in Wireshark (formerly Ethereal) 0.8.19through 1.0.1 allows remote attackers to cause a denial of service (crash) viaunknown vectors.References:http://www.wireshark.org/security/wnpa-sec-2008-04.htmlUpstream bug:https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=2470Upstream commit:http://anonsvn.wireshark.org/viewvc/index.py?view=rev&revision=25343"
+      }
+    ],
+    "CVE-2008-3218": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=454849",
+        "title": "drupal: multiple security issues in < 6.3,5.8/5.9 (SA-2008-044,SA-2008-046 - CVE-2008-3218, CVE-2008-3219, CVE-2008-3220, CVE-2008-3221, CVE-2008-3222, CVE-2008-3223)",
+        "description": "Drupal security team released an advisory describing multiple security issuesaffecting Drupal 5.x and 6.x - SA-2008-044: http://drupal.org/node/280571Advisory includes:- cross site scripting issues- cross site request forgeries- session fixation issues- SQL injectionFixed in upstream versions: 5.8 and 6.3Upstream patches for 5.7/6.2:http://drupal.org/files/sa-2008-044/SA-2008-044-5.7.patchhttp://drupal.org/files/sa-2008-044/SA-2008-044-6.2.patch"
+      }
+    ],
+    "CVE-2008-3219": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=454849",
+        "title": "drupal: multiple security issues in < 6.3,5.8/5.9 (SA-2008-044,SA-2008-046 - CVE-2008-3218, CVE-2008-3219, CVE-2008-3220, CVE-2008-3221, CVE-2008-3222, CVE-2008-3223)",
+        "description": "Drupal security team released an advisory describing multiple security issuesaffecting Drupal 5.x and 6.x - SA-2008-044: http://drupal.org/node/280571Advisory includes:- cross site scripting issues- cross site request forgeries- session fixation issues- SQL injectionFixed in upstream versions: 5.8 and 6.3Upstream patches for 5.7/6.2:http://drupal.org/files/sa-2008-044/SA-2008-044-5.7.patchhttp://drupal.org/files/sa-2008-044/SA-2008-044-6.2.patch"
+      }
+    ],
+    "CVE-2008-3220": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=454849",
+        "title": "drupal: multiple security issues in < 6.3,5.8/5.9 (SA-2008-044,SA-2008-046 - CVE-2008-3218, CVE-2008-3219, CVE-2008-3220, CVE-2008-3221, CVE-2008-3222, CVE-2008-3223)",
+        "description": "Drupal security team released an advisory describing multiple security issuesaffecting Drupal 5.x and 6.x - SA-2008-044: http://drupal.org/node/280571Advisory includes:- cross site scripting issues- cross site request forgeries- session fixation issues- SQL injectionFixed in upstream versions: 5.8 and 6.3Upstream patches for 5.7/6.2:http://drupal.org/files/sa-2008-044/SA-2008-044-5.7.patchhttp://drupal.org/files/sa-2008-044/SA-2008-044-6.2.patch"
+      }
+    ],
+    "CVE-2008-3221": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=454849",
+        "title": "drupal: multiple security issues in < 6.3,5.8/5.9 (SA-2008-044,SA-2008-046 - CVE-2008-3218, CVE-2008-3219, CVE-2008-3220, CVE-2008-3221, CVE-2008-3222, CVE-2008-3223)",
+        "description": "Drupal security team released an advisory describing multiple security issuesaffecting Drupal 5.x and 6.x - SA-2008-044: http://drupal.org/node/280571Advisory includes:- cross site scripting issues- cross site request forgeries- session fixation issues- SQL injectionFixed in upstream versions: 5.8 and 6.3Upstream patches for 5.7/6.2:http://drupal.org/files/sa-2008-044/SA-2008-044-5.7.patchhttp://drupal.org/files/sa-2008-044/SA-2008-044-6.2.patch"
+      }
+    ],
+    "CVE-2008-3223": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=454849",
+        "title": "drupal: multiple security issues in < 6.3,5.8/5.9 (SA-2008-044,SA-2008-046 - CVE-2008-3218, CVE-2008-3219, CVE-2008-3220, CVE-2008-3221, CVE-2008-3222, CVE-2008-3223)",
+        "description": "Drupal security team released an advisory describing multiple security issuesaffecting Drupal 5.x and 6.x - SA-2008-044: http://drupal.org/node/280571Advisory includes:- cross site scripting issues- cross site request forgeries- session fixation issues- SQL injectionFixed in upstream versions: 5.8 and 6.3Upstream patches for 5.7/6.2:http://drupal.org/files/sa-2008-044/SA-2008-044-5.7.patchhttp://drupal.org/files/sa-2008-044/SA-2008-044-6.2.patch"
+      }
+    ],
+    "CVE-2008-3252": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=454483",
+        "title": "CVE-2008-3252 newsx: Stack overflow with lines with leading '.'",
+        "description": "Description of problem:Runnings newsx to fetchhttp://permalink.gmane.org/gmane.mail.spam.spamassassin.general/109986generates an| *** stack smashing detected ***: newsx(news.gmane.org) gmane.mail.spam.spamassassin.general 109996 terminatedabort. This is caused by--- src/getarticle.c ---static intread_article(long where,char *group){ char linebuf[MAX_HEADER_SIZE+1], *line; ... line=linebuf; ... for (;;) { if (!get_server_msg(line, MAX_HEADER_SIZE)) {... if (line[1]=='.') { /* escape-period, remove it */ line++; len--;-------------i.e. 'line' grows and grows when a line starts with '.'. Havinghundreds of such lines make 'linebuf[]' overflow and it is possible toplace arbitrary data on stack.Fix would be probably| - if (!get_server_msg(line, MAX_HEADER_SIZE)) {| + if (!get_server_msg(linebuf, MAX_HEADER_SIZE)) {but is untested.Stack-smash detection protects against remote code execution. Nevertheless,it causes lot of traffic (newsx fetches articles but aborts before updating'active' file)Version-Release number of selected component (if applicable):newsx-1.6-8.fc9.x86_64How reproducible:100%"
+      }
+    ],
+    "CVE-2008-3270": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=457113",
+        "title": "CVE-2008-3270 yum-rhn-plugin: does not verify SSL certificate for all communication with RHN server",
+        "description": "It was discovered that yum-rhn-plugin does not always properly verify SSLcertificate against configured trusted CA certificate when communicating withRed Hat Network (RHN) server. SSL certificate was properly verified for XML-RPCcommunication, but the check was not applied to the file downloads.This can possibly simplify man-in-the-middle attacks, allowing attacker toprovide users with crafted repository meta-data files or RPM packages. However,GPG signatures are applied before installing any package, so an attacker couldnot use this to trick user to install packages from an untrusted source."
+      }
+    ],
+    "CVE-2008-3273": [
+      {
+        "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=457757",
+        "title": "CVE-2008-3273 JBossEAP status servlet info leak",
+        "description": "The status servlet exposes details about the deployed servlets and makes it easier to identity the attack surface of an EAP installation. * http://host:8080/status?full=true"
+      }
+    ],
+    "CVE-2008-3274": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=457835",
+        "title": "CVE-2008-3274 IPA Kerberos master password disclosure",
+        "description": "IPA contains a flaw in where installations of freipa/RHEIPA exposed the Master Kerberos Password through anonymous queries.The Master Kerberos Password is used to encrypt keys, however this flaw does not lead to individual keys being exposed. By itself this flaw has limited scope, but could be combined with a different flaw which could reveal user credentials."
+      }
+    ],
+    "CVE-2008-3276": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=459226",
+        "title": "CVE-2008-3276 Linux kernel dccp_setsockopt_change() integer overflow",
+        "description": "Description of problem:Eugene Teo reported that an integer overflow flaw was found in the Linux kernel dccp_setsockopt_change() function. The vulnerability exists due to a lack of sanitisation performed on a user-controlled integer value before the value is employed as the size argument of a memory allocation operation. An attacker may leverage this vulnerability to trigger a kernel panic on a victim's machine remotely."
+      }
+    ],
+    "CVE-2008-3277": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=457935",
+        "title": "CVE-2008-3277 ibutils: insecure relative RPATH",
+        "description": "ibutils packages as shipped in Red Hat Enterprise Linux 4 and 5 are built to use insecure RPATH set in the ELF header of the ibmssh command.This issue can possibly be exploited by a local attacker to run arbitrary code as some other user if victim user can be convinced to run ibmssh command in an attacker controlled directory with specially crafted content.Affected binary: /usr/bin/ibmsshRPATH: refix/lib"
+      }
+    ],
+    "CVE-2008-3279": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=457942",
+        "title": "CVE-2008-3279 brltty: insecure relative RPATH",
+        "description": "brltty packages as shipped in Red Hat Enterprise Linux 5 are built with aninsecure RPATH set in the ELF header of one of the libraries shipped in thepackage.This issue can possibly be exploited by a local attacker to run arbitrary codeas some other user if victim user can be convinced to run command using affected library in an attacker controlled directory with specially crafted content.Affected binary: /usr/lib/brltty/libbrlttybba.soRPATH: ../../Programs"
+      }
+    ],
+    "CVE-2008-3281": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=458086",
+        "title": "CVE-2008-3281 libxml2 denial of service",
+        "description": "Daniel Veillard discovered that a specially crafted document can lead to arecursive evaluation of entities, the result being an exhaustion of memoryand CPU usageAcknowledgements:Red Hat would like to thank Andreas Solberg for responsibly disclosing thisissue."
+      }
+    ],
+    "CVE-2008-3282": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=455867",
+        "title": "openoffice.org: crash on malformed PCX image (CESA-2008-006)",
+        "description": "Chris Evans of the Google Security Team reports an Openoffice.org crashtriggered by crafted PCX image: http://scary.beasts.org/security/CESA-2008-006.htmlAccording to Chris, the issue should no longer affect current upstream 2.4.1,but may affect unspecified older versions."
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=458056",
+        "title": "CVE-2008-3282 openoffice.org: numeric truncation error in memory allocator (64bit)",
+        "description": "It was discovered, that OpenOffice.org memory allocator is not 64bit clean.rtl_allocateMemory() function in sal/rtl/source/alloc_global.c accepts oneargument - sal_Size n. On 64bit platforms such as x86_64, sal_Size is definedas unsigned long int. This requested memory chunk size is later memory alignedas size (type sal_Size). size is later used to calculate int index tog_alloc_table[] array: int index = (size - 1) >> RTL_MEMALIGN_SHIFT;However, as sizeof(int) == 4 and sizeof(sal_Size) == 8 on 64bit platforms, thecalculated value may not fit into index (this can happen whenrtl_allocateMemory() is called with large argument, e.g. when some other flawcauses OpenOffice to attempt to allocate chunk of memory with negative size,which wraps to large positive value during signed -> unsigned type conversion,such as [1]). Value stored in the index is wrapped / truncated, possiblyresulting in the index being negative.Before index is used, it is checked not to exceed fixed upper limit, but it'snot checked whether its value is >= 0: if (index < RTL_MEMORY_CACHED_LIMIT >> RTL_MEMALIGN_SHIFT)Negative index used in g_alloc_table[index] will cause OpenOffice to accessmemory outside of the g_alloc_table[] array. This may result it crash, or ifthat points to an attacker controlled memory, attacker may possibly be able touse this flaw to run arbitrary code.[1] http://www.openoffice.org/issues/show_bug.cgi?id=91818 http://scary.beasts.org/security/CESA-2008-006.html"
+      }
+    ],
+    "CVE-2008-3283": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=458977",
+        "title": "CVE-2008-3283 Directory Server: multiple memory leaks",
+        "description": "Richard Megginson identified multiple memory leaks affecting Red Hat Directory Server and Fedora Directory Server. These issues may possibly be triggered by unauthenticated remote attackers with access to LDAP port. An attacker can cause Directory Server to use excessive amount of memory, and possibly crash or terminate unexpectedly when running out of available memory. Memory leaks that can be triggered by an anonymous user occur during authentication / bind phase, or in (anonymous) LDAP search requests.Affected version:Red Hat Directory Server 7.1, 8.0Fedora Directory Server 1.1.1 and earlier"
+      }
+    ],
+    "CVE-2008-3323": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=449929",
+        "title": "CVE-2008-3323 Cygwin installation and update process can be subverted",
+        "description": "Derek Callaway from Security Objectives contacted the Red Hat Security ResponseTeam on 25th May 2008 to report a security issue with Cygwin.\"Tarball software packages are installed and updated via setup.exe. This programdownloads a package list and packages from mirrors over plaintext HTTP or FTP.The package list contains MD5 checksums for verifying package integrity. If arogue server answers the HTTP request responsible for package updates andresponds with a modified MD5 string setup.exe will download and install amalicious package.\"He included a proof-of-concept and stated that he notified vulnerabilityco-coordinator iDefense about this issue. iDefense responded that they did notconsider this a vulnerability because \"The installer prompts you to select arepository, and it is clear that HTTP/FTP is being used. Any site that allows auser to download applications over HTTP allows for similar attacks. \"But Derek disagrees and his company plans to publish a formal advisory statingthat the download mechanism used by Red Hat is insecure."
+      }
+    ],
+    "CVE-2008-3333": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=456044",
+        "title": "CVE-2008-3333 mantis: arbitrary file inclusion through user preferences page",
+        "description": "New upstream Mantis version 1.1.2 fixes following security issue:- 0009154: [security] arbitrary file inclusion through user preferences page(giallu) - closed. http://www.mantisbt.org/bugs/changelog_page.phpUpstream bug report: http://www.mantisbt.org/bugs/view.php?id=9154 Vulnerability overview: ----------------------- Due to unchecked user input, arbitrary files can be included within a PHP require_once() statement. Input length is limited to 32 characters. This vulnerability allows for reading arbitrary files on the affected webserver, as well as code execution if the attacker can put php code in any includable file (which is possible in most scenarios). Vulnerability description: -------------------------- Vulnerable files/objects: core/lang_api.php, account_prefs_update.php Line 37 (in \"core/lang_api.php\") loads text file with user-supplied language preference. ---cut here--- require_once( $t_lang_dir . 'strings_' . $p_lang . '.txt' ); ---cut here--- Proof of concept: ----------------- Use account_prefs_update.php to set language to something like: language=urdu.txt/../../../../etc/passwd%00Fix in upstream SVN:http://mantisbt.svn.sourceforge.net/viewvc/mantisbt?view=rev&revision=5270"
+      }
+    ],
+    "CVE-2008-3432": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=455455",
+        "title": "CVE-2008-3432 vim: heap buffer overflow in mch_expand_wildcards()",
+        "description": "Jan Minar's test suite [1] for multiple vim vulnerabilities uncovered an old vimbug that could trigger a heap buffer overflow in mch_expand_wildcards() inos_unix.c when file or directory with specially crafted name is opened in vim. [1] http://www.rdancer.org/vulnerablevim-netrw.tar.bz2Issue is caused by incorrect computation of memory requirements for buffer tostore external command executed by vim. File / directory name is escaped /quoted before being passed to an external command, however, possible quoting isnot taken into account when allocating memory.Issue was introduced in 6.2.429: http://vim.cvs.sourceforge.net/vim/vim/src/os_unix.c?view=log#rev1.104 ftp://ftp.vim.org/pub/vim/patches/6.2.429and fixed upstream in 6.3.059: http://vim.cvs.sourceforge.net/vim/vim/src/os_unix.c?view=log#rev1.111 ftp://ftp.vim.org/pub/vim/patches/6.3/6.3.059and later re-written for vim 7.0 to use backslash escaping instead of quoting: http://vim.cvs.sourceforge.net/vim/vim7/src/os_unix.c?r1=1.49&r2=1.50For further details, see: http://www.openwall.com/lists/oss-security/2008/07/15/4"
+      }
+    ],
+    "CVE-2008-3528": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=459577",
+        "title": "CVE-2008-3528 Linux kernel ext[234] directory corruption denial of service",
+        "description": "Description of problem:Eugene Teo reported that the ext2 filesystem code fails to properly handle corrupted data structures, leading to an exploitable denial of service issue when read or write operations are performed."
+      }
+    ],
+    "CVE-2008-3529": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=461015",
+        "title": "CVE-2008-3529 libxml2: long entity name heap buffer overflow",
+        "description": "It was discovered, that libxml2 does not properly handle long XML entity names. In the xmlParseAttValueComplex() function in parser.c, when entity name is not substituted with entity value, but is sent to output unchanged, buffer used to store entity name may not be grown sufficiently in case of long entity names, resulting in a heap buffer overflow.Issue is already fixed upstream in version 2.7.0."
+      }
+    ],
+    "CVE-2008-3651": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=456660",
+        "title": "CVE-2008-3651 ipsec-tools: racoon memory leak caused by invalid proposals",
+        "description": "ipsec-tools upstream released 0.7.1 including a fix for a memory leak in racoondaemon triggered by the invalid proposals, possibly resulting in a denial ofservice once daemon runs out of memory.References:http://marc.info/?l=ipsec-tools-devel&m=121688914101709&w=2http://bugs.gentoo.org/show_bug.cgi?id=232831Upstream patch:http://cvsweb.netbsd.org/bsdweb.cgi/src/crypto/dist/ipsec-tools/src/racoon/proposal.c.diff?r1=1.15&r2=1.16&f=hhttp://cvsweb.netbsd.org/bsdweb.cgi/src/crypto/dist/ipsec-tools/ChangeLog.diff?r1=1.169&r2=1.170&f=h"
+      }
+    ],
+    "CVE-2008-3740": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=459108",
+        "title": "drupal: multiple drupal issues in < 6.4,5.10 (SA-2008-047 - CVE-2008-3740, CVE-2008-3741, CVE-2008-3742, CVE-2008-3743, CVE-2008-3744, CVE-2008-3745)",
+        "description": "Drupal upstream released new upstream versions 6.4 and 5.10 fixing multiple security issues described in upstream advisory SA-2008-047: http://drupal.org/node/295053Issues reported:- Cross site scripting issues (5.x, 6.x)- Arbitrary file uploads via BlogAPI (5.x, 6.x)- Multiple Cross site request forgeries (6.x ; 5.x, 6.x)- Various Upload module vulnerabilities (6.x)Upstream patches against previous versions:http://drupal.org/files/sa-2008-047/SA-2008-047-5.9.patchhttp://drupal.org/files/sa-2008-047/SA-2008-047-6.3.patch"
+      }
+    ],
+    "CVE-2008-3741": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=459108",
+        "title": "drupal: multiple drupal issues in < 6.4,5.10 (SA-2008-047 - CVE-2008-3740, CVE-2008-3741, CVE-2008-3742, CVE-2008-3743, CVE-2008-3744, CVE-2008-3745)",
+        "description": "Drupal upstream released new upstream versions 6.4 and 5.10 fixing multiple security issues described in upstream advisory SA-2008-047: http://drupal.org/node/295053Issues reported:- Cross site scripting issues (5.x, 6.x)- Arbitrary file uploads via BlogAPI (5.x, 6.x)- Multiple Cross site request forgeries (6.x ; 5.x, 6.x)- Various Upload module vulnerabilities (6.x)Upstream patches against previous versions:http://drupal.org/files/sa-2008-047/SA-2008-047-5.9.patchhttp://drupal.org/files/sa-2008-047/SA-2008-047-6.3.patch"
+      }
+    ],
+    "CVE-2008-3742": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=459108",
+        "title": "drupal: multiple drupal issues in < 6.4,5.10 (SA-2008-047 - CVE-2008-3740, CVE-2008-3741, CVE-2008-3742, CVE-2008-3743, CVE-2008-3744, CVE-2008-3745)",
+        "description": "Drupal upstream released new upstream versions 6.4 and 5.10 fixing multiple security issues described in upstream advisory SA-2008-047: http://drupal.org/node/295053Issues reported:- Cross site scripting issues (5.x, 6.x)- Arbitrary file uploads via BlogAPI (5.x, 6.x)- Multiple Cross site request forgeries (6.x ; 5.x, 6.x)- Various Upload module vulnerabilities (6.x)Upstream patches against previous versions:http://drupal.org/files/sa-2008-047/SA-2008-047-5.9.patchhttp://drupal.org/files/sa-2008-047/SA-2008-047-6.3.patch"
+      }
+    ],
+    "CVE-2008-3743": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=459108",
+        "title": "drupal: multiple drupal issues in < 6.4,5.10 (SA-2008-047 - CVE-2008-3740, CVE-2008-3741, CVE-2008-3742, CVE-2008-3743, CVE-2008-3744, CVE-2008-3745)",
+        "description": "Drupal upstream released new upstream versions 6.4 and 5.10 fixing multiple security issues described in upstream advisory SA-2008-047: http://drupal.org/node/295053Issues reported:- Cross site scripting issues (5.x, 6.x)- Arbitrary file uploads via BlogAPI (5.x, 6.x)- Multiple Cross site request forgeries (6.x ; 5.x, 6.x)- Various Upload module vulnerabilities (6.x)Upstream patches against previous versions:http://drupal.org/files/sa-2008-047/SA-2008-047-5.9.patchhttp://drupal.org/files/sa-2008-047/SA-2008-047-6.3.patch"
+      }
+    ],
+    "CVE-2008-3744": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=459108",
+        "title": "drupal: multiple drupal issues in < 6.4,5.10 (SA-2008-047 - CVE-2008-3740, CVE-2008-3741, CVE-2008-3742, CVE-2008-3743, CVE-2008-3744, CVE-2008-3745)",
+        "description": "Drupal upstream released new upstream versions 6.4 and 5.10 fixing multiple security issues described in upstream advisory SA-2008-047: http://drupal.org/node/295053Issues reported:- Cross site scripting issues (5.x, 6.x)- Arbitrary file uploads via BlogAPI (5.x, 6.x)- Multiple Cross site request forgeries (6.x ; 5.x, 6.x)- Various Upload module vulnerabilities (6.x)Upstream patches against previous versions:http://drupal.org/files/sa-2008-047/SA-2008-047-5.9.patchhttp://drupal.org/files/sa-2008-047/SA-2008-047-6.3.patch"
+      }
+    ],
+    "CVE-2008-3745": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=459108",
+        "title": "drupal: multiple drupal issues in < 6.4,5.10 (SA-2008-047 - CVE-2008-3740, CVE-2008-3741, CVE-2008-3742, CVE-2008-3743, CVE-2008-3744, CVE-2008-3745)",
+        "description": "Drupal upstream released new upstream versions 6.4 and 5.10 fixing multiple security issues described in upstream advisory SA-2008-047: http://drupal.org/node/295053Issues reported:- Cross site scripting issues (5.x, 6.x)- Arbitrary file uploads via BlogAPI (5.x, 6.x)- Multiple Cross site request forgeries (6.x ; 5.x, 6.x)- Various Upload module vulnerabilities (6.x)Upstream patches against previous versions:http://drupal.org/files/sa-2008-047/SA-2008-047-5.9.patchhttp://drupal.org/files/sa-2008-047/SA-2008-047-6.3.patch"
+      }
+    ],
+    "CVE-2008-3825": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=461960",
+        "title": "CVE-2008-3825 pam_krb5 existing_ticket permission flaw",
+        "description": "This bug was reported to us by Stéphane BERTIN.The pam_krb5 module does not verify that the user has permission to read from the credential cache via the existing_ticket option.From the mail Stéphane sent:I failed to open SSH session with existing_ticket option.I used these options to configure pam_krb5 :auth sufficient pam_krb5.so try_first_pass minimum_uid=1use_shmem=sshd existing_ticket validate=sshd debug...Extract from manual page :\"existing_tickettells pam_krb5.so to accept the presence of pre-existing Kerberoscredentials provided by the calling application in the defaultcredential cache as sufficient to authenticate the user, and to skip anyaccount management checks.DANGER! Unless validation is also in use, it is relatively easy toproduce a credential cache which looks \"good enough\" to fool pam_krb5.so.\"I use validate=sshd like it is recommended but it seems danger is around ...I notice two things :1) the module try twice to get credential see logs \"trying existingcredentials\" but don't try with user password and the session failed tobe opened. (that's why I have written the bug report)2) User try to open SSH session so he doesn't already have credentialsand his variable KRB5CCNAME is not defined. By default module try to getcredentials on file /tmp/krb5cc_0. The root credential file !!!I don't know why but root credential file doesn't have the same formatkrb5cc_0_XXXXX.So if root ask a ticket for user TEST and get credential what happens ...If you know which credential is used by root you can open a sessionwithout to know password !!!!Acknowledgements:Red Hat would like to thank Stéphane Bertin for responsibly disclosing thisissue."
+      }
+    ],
+    "CVE-2008-3832": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=464883",
+        "title": "CVE-2008-3832 kernel: null pointer dereference in utrace_control",
+        "description": "Reported by Michael Simms:Any user can crash init with a single commandVersion-Release number of selected component (if applicable):Fedora 9, patched to latest as of 90 minutes agoHow reproducible:Always. May have to run the command 2-3 times but it always crashes the kernelin the end.Steps to Reproduce:1.as ANY user - start a shell2.gdb any_executable 13.There will be a kerneloops and usually a kernel crash or hangActual results:Kernel blows upExpected results:Kernel doesnt blow up, permission denied for process initAdditional info:"
+      }
+    ],
+    "CVE-2008-3833": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=464450",
+        "title": "CVE-2008-3833 kernel: remove SUID when splicing into an inode",
+        "description": "Description of problem:Originally from Mark Fasheh <mark.fasheh@oracle.com>generic_file_splice_write() does not remove S_ISUID or S_ISGID. This is inconsistent with the way we generally write to files.Proposed upstream patch:http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=8c34e2d63231d4bf4852bac8521883944d770fe3"
+      }
+    ],
+    "CVE-2008-3834": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2008-3834",
+        "title": "CVE-2008-3834 dbus denial of service",
+        "description": "Upstream bug report:https://bugs.freedesktop.org/show_bug.cgi?id=17803It is likely possible to send a message with a malformed signature which would cause the bus (or in general any process using libdbus to receive messages) to abort."
+      }
+    ],
+    "CVE-2008-3909": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=460966",
+        "title": "CVE-2008-3909 Django: CSRF issue fixed in 0.96.3",
+        "description": "Description of problem:The following was reported today to the public (Sept, 2, 2008) via the Django main site:The Django administration application, as a convenience for users whose sessions expire, will attempt to preserve HTTP POST data from an incoming submission while re-authenticating the user, and will -- on successful authentication -- allow the submission to continue without requiring data to be re-entered.Django developer Simon Willison has presented the Django development team with a proof-of-concept cross-site request forgery (CSRF) which exploits this behavior to perform unrequested deletion/modification of data. This exploit has been tested and verified by the Django team, and succeeds regardless of whether Django's bundled CSRF-protection module is active.Version-Release number of selected component (if applicable): Django-0.96.2-1Extra InfoSince I am not aware if the maintainer of the package was given advance notice I'm cc'ing him on this bug."
+      }
+    ],
+    "CVE-2008-3920": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=460355",
+        "title": "Bitlbee 1.2.2 was released, update required",
+        "description": "Description of problem:Bitlbee 1.2.2 was released, see the following changelog:Version 1.2.2:- Security bugfix: It was possible to hijack accounts (without gaining access to the old account, it's simply an overwrite)- Some more stability improvements.- Fixed bug where people with non-lowercase nicks couldn't drop their account.- Easier upgrades of non-forking daemon mode servers (using the DEAF command).- Can be cross-compiled for Win32 now! (No support for SSL yet though, which makes it less useful for now.)- Exponential backoff on auto-reconnect.- Changing passwords gives less confusing feedback (\"password is empty\") now.Finished 26 Aug 2008Version-Release number of selected component (if applicable):bitlbee-1.2.1-1Actual results:bitlbee-1.2.1-1Expected results:bitlbee-1.2.2-1 ;-)Additional info:I know, there's a security fix inside, but I'm unable to identify that one."
+      }
+    ],
+    "CVE-2008-4096": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=462430",
+        "title": "CVE-2008-4096 phpMyAdmin: Code execution vulnerability (< 2.11.9.1)",
+        "description": "Description of problem:phpMyAdmin < 2.11.9.1 contains a not yet clearly documented security bug:\"Welcome to this security update for phpMyAdmin 2.11.9. Details will followon http://phpmyadmin.net. Marc Delisle, for the team\"Additional info (http://www.phpmyadmin.net/home_page/downloads.php?relnotes=0):Fixes for 2.11.9.x:- bug #2031221 [auth] Links to version number on login screen - bug #2032707 [core] PMA does not start if ini_set() is disabled - bug #2004915 [bookmarks] Saved queries greater than 1000 chars not displayed- bug #2037381 [export] Export type \"replace\" does not work - bug #2037375 [export] DROP PROCEDURE needs IF EXISTS - bug #2045512 [export] Numbers in Excel export+ [lang] Norwegian UTF-8 original file remerged- bug #2074250 [parser] Undefined variable seen_from- (2.11.9.1) [security] Code execution vulnerability"
+      }
+    ],
+    "CVE-2008-4101": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=461927",
+        "title": "CVE-2008-4101 vim: arbitrary code execution in commands: K, Control-], g]",
+        "description": "Description of problem:Ben Schmidt has discovered the following security flaw in Vim, whichcould lead to arbitrary code execution. Insufficient sanitization can lead to Vim executing arbitrary commands when performing keyword or tag lookup.Flaw description pasted from original rdancer.org report (see [1]):3.1. Keyword Lookup -- The ``K'' Command3.1.1. Shell Commands and Ex CommandsBecause the string passed to the shell for execution is not sanitized,it is possible to specify arbitrary shell commands where Vim expects anargument for the keyword program. Same applies to arbitrary Ex commands.3.1.2. Keyword Program Command Line SwitchesIt is possible to specify command line switches for the keyword programin place of the argument. The gravity of this vulnerability depends onthe keyword program selected. GNU man, the default keyword program inmany installations, supports for example the ``--pager'' option (cf.the GNU man(1) manual page). This allows arbitrary command execution.3.2. Tag Lookup -- the ``Control-]'' and ``g]'' CommandsInsufficient sanitization of an Ex command argument allows specifyingadditional arbitrary Ex commands in place of the argument.3.3. Unknown Shell/Keyword ProgramBecause the syntax of the shell that is being used to execute thecommands is not known beforehand, there may be other unknownvulnerabilities, that are present depending on the shell being used.Ditto for the man(1) program, and other keyword programs.Version-Release number of selected component (if applicable):3.0--current, possibly olderHow reproducible:AlwaysSteps to Reproduce:1. See part \"4.EXPLOIT\" from the original rdancer.org report [1] Actual results:Arbitrary code execution possibleExpected results:No security flaw present.References:[1] http://www.rdancer.org/vulnerablevim-K.htmlProposed patch:Report: http://groups.google.com/group/vim_dev/msg/dd32ad3a84f36bb2 Patch: http://groups.google.com/group/vim_dev/attach/dd32ad3a84f36bb2/K-arbitrary-command-execution.patch?part=2RH SRT official statement:This issue affects all versions of the vim-enhanced package, as shippedwith Red Hat Enterprise Linux 2.1, 3, 4 and 5 and within Fedora releasesof 8, 9 and 10."
+      }
+    ],
+    "CVE-2008-4210": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=463661",
+        "title": "CVE-2008-4210 kernel: open() call allows setgid bit when user is not in new file's group",
+        "description": "Description of problem:When creating a file, open()/creat() allows the setgid bit to be set via the mode argument even when, due to the bsdgroups mount option or the file being created in a setgid directory, the new file's group is one which the user is not a member of. The user can then use ftruncate() and memory-mapped I/O to turn the new file into an arbitrary binary and thus gain the privileges of this group, since these operations do not clear the setgid bit."
+      }
+    ],
+    "CVE-2008-4225": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=470480",
+        "title": "CVE-2008-4225 libxml2: integer overflow leading to infinite loop in xmlBufferResize",
+        "description": "Created attachment 322846 [details]Proposed patch from Drew YaoDescription of problem:Drew Yao of Apple Product Security has reported an integer overflowpresent in xmlBufferResize function in the libxml2 library potentiallyleading to an infinite loop. User could provide a very large XML filefor parsing to the XML parsing library, which could allow him tocause a denial of service.Proposed patch: See attachment.Acknowledgements:Red Hat would like to thank Drew Yao of the Apple Product Security team forreporting this issue."
+      }
+    ],
+    "CVE-2008-4226": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=470466",
+        "title": "CVE-2008-4226 libxml2: integer overflow leading to memory corruption in xmlSAX2Characters",
+        "description": "Created attachment 322841 [details]Proposed patch from Drew YaoDescription of problem:Drew Yao from Apple Product Security has reported integer overflow leadingto memory corruption present in the xmlSAX2Characters() function in thelibxml2 library. User could trigger this flaw by providing very largeXML file for parsing to the XML parsing library, which would corrupt thememory and might potentially allow arbitrary code execution.Proposed patch: See attachment.Acknowledgements:Red Hat would like to thank Drew Yao of the Apple Product Security team forreporting this issue."
+      }
+    ],
+    "CVE-2008-4302": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=462434",
+        "title": "CVE-2008-4302 kernel: splice: fix bad unlock_page() in error case",
+        "description": "Description of problem:If add_to_page_cache_lru() fails, the page will not be locked. But splice jumps to an error path that does a page release and unlock, causing a BUG() in unlock_page()."
+      }
+    ],
+    "CVE-2008-4310": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=470252",
+        "title": "CVE-2008-4310 ruby: Incomplete fix for CVE-2008-3656",
+        "description": "Common Vulnerabilities and Exposures assigned an identifier CVE-2008-3656 tothe following vulnerability:Algorithmic complexity vulnerability in WEBrick::HTTP::DefaultFileHandler inWEBrick in Ruby 1.8.5 and earlier, 1.8.5 through 1.8.6-p286, 1.8.7 through1.8.7-p71, and 1.9 through r18423 allows context-dependent attackers to cause adenial of service (CPU consumption) via a crafted HTTP request that isprocessed by a backtracking regular expression.Refences:http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=494401http://www.ruby-lang.org/en/news/2008/08/08/multiple-vulnerabilities-in-ruby/Vincent Danen from LinSec discovered the original patch for this flaw, provided by Red Hat, did not properly address this flaw."
+      }
+    ],
+    "CVE-2008-4313": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=459217",
+        "title": "CVE-2008-4313 tog-pegasus: WBEM services access not restricted to dedicated user after 2.7.0 rebase",
+        "description": "Description of problem:While investigating bug 459057 I noticed that the tog-pegasus RPM based on Pegasus 2.7.0 no longer sets the PAM tty name to \"wbemLocal\" or \"wbemRemote\" as in previous releases. It's always set to the service name, \"wbem\". I believe this completely bypasses the security settings in /etc/Pegasus/access.conf.To test, install the 2.7.0 RPM and enumerate the PG_ComputerSystem instance as root. By default this should not work, but it does. If you change the access.conf file from:-: ALL EXCEPT pegasus:wbemNetworkto:-: ALL EXCEPT pegasus:wbemand retry accessing PG_ComputerSystem, the request fails as it is supposed to.Looking at the differences between the local-or-remote-auth patch in tog-pegasus-2.6.1-2.el5.src.rpm vs tog-pegasus-2.7.0-2.el5.src.rpm, it appears that both patches pass whether the connection is remote further down through various Pegasus classes, but the 2.7.0 patch looks like it's missing a whole chunk of code in Security/Authentication/PAMBasicAuthenticatorUnix.cpp where the isRemoteUser parameter is unused.Tested on ia64 system upgraded from rhel5.0 to rhel5.2 and freshly installed rhel5.2 on x86_64.Version-Release number of selected component (if applicable):How reproducible:Steps to Reproduce:1.2.3. Actual results:Expected results:Additional info:"
+      }
+    ],
+    "CVE-2008-4405": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=464818",
+        "title": "libvirt/virsh access unsafe data from xenstored",
+        "description": "Description of problem:The location /local/domain/$DOMID in xenstore is fully writable by guest virtual machines.Unfortunately, libvirt reads a few pieces of data from here & uses them in ways which are potentially unsafe.Specifically we read - VNC port for graphical framebuffer - TTY path for text consoleThis info is expoed in the libvirt XML, which is then used by other virt enabled applications like virt-manager, virt-install. It is possible that a malicious guest can write bogus data into xenstore which would cause applications using libvirt to perform unsafe actions.Version-Release number of selected component (if applicable):libvirt-0.3.3-7.el5How reproducible:AlwaysSteps to Reproduce:1. Inside a gueest #yum install xen # xenstore-write /local/domain/GUEST-DOMID/console/tty /i/am/the/evil/guest2. On the host virsh dumpxml GUEST-NAME | grep console Actual results:# virsh dumpxml rhel5pv | grep console <console tty='/i/am/the/evil/guest'/>Expected results:# virsh dumpxml rhel5pv | grep console <console tty='/dev/pty/3'/>ie, console tty is not impacted by guest. Likewise for VNC portAdditional info:"
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=464817",
+        "title": "CVE-2008-4405 xen: Multiple unsafe uses of guest-writable data from xenstore",
+        "description": "Description of problem:Every paravirt guest (and some fullvirt guests) have a TTY path associated with them for the text console access to the guest domain. The TTY path is allocated at time of VM creation, and is written into xenstored.xm console reads the TTY path out of xenstored and opens it to provide admin access to the text console.The problem is that the TTY path is written into an area of xenstore which is writtable by the guest. So a malicious guest can re-write the TTY path, tricking the host admin into accessing a different TTY than they should. eg, if you have a guest called 'demo', with domain ID 5, inside the guest you could do # yum install xen # xenstore-write /local/domain/5/console/tty /i/am/the/evil/guest Then when the host admin tries to connect to the console later # xm console rhel5pv xenconsole: Could not open tty `/i/am/the/evil/guest': No such file or directoryNot sure yet if this could cause xm console to actually corrupt/overwrite important files, or if its just a inconvenience.There is a tonne of other info written & read to/from this untrustable area, and some of it *is* seriousFor fullvirt guests, the PID of the QEMU device model is written into the device model at /local/domain/$DOMID/image/device-model-pid If a malicious guest did xenstore-write /local/domain/26/image/device-model-pid 1It is possible that in some circumstances, when a host admin later tries to kill the guest, it would in fact kill 'init' process in the host. Version-Release number of selected component (if applicable):xen-3.0.3-64.el5How reproducible:AlwaysSteps to Reproduce:1. Inside a guest #yum install xen # xenstore-write /local/domain/GUEST-DOMID/console/tty /i/am/the/evil/guest2. On the host xm console GUEST-NAMEAlso various other checks Actual results:xenconsole: Could not open tty `/i/am/the/evil/guest': No such file or directoryExpected results:xm console still works, and does not read data from untrusted areas.Additional info:"
+      }
+    ],
+    "CVE-2008-4539": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=237342",
+        "title": "CVE-2007-1320 xen/qemu Cirrus LGD-54XX \"bitblt\" Heap Overflow",
+        "description": "The cirrus_invalidate_region() routine used during video-to-video copyoperations in the cirrus vga extension code omits bounds checking inmultiple locations, allowing you to overwrite adjacent buffers byattempting to mark non-existent regions as dirty. Successfulexploitation would result in a complete compromise of the qemuprocess. Additionally multiple bitblt operations omit bounds checking,where the srcpitch or dstpitch coefficients cause the operation toexceed the bounds of the vram buffer."
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=466890",
+        "title": "CVE-2008-4539 kvm/qemu/xen: Incomplete upstream fix for CVE-2007-1320",
+        "description": "Created attachment 320281 [details]Proposed actualized upstream qemu patch to resolve the Cirrus LGD-54XX \"bitblt\" heap overflow (CVE-2007-1320)Jan Niehusmann discovered that the upstream fix for the CVE-2007-1320 isincomplete and still allows local users to cause a heap-based buffer overlow,when connecting via the VNC console.Steps to reproduce:No reproducer.Upstream qemu patch for the initial CVE-2007-1320 issue: https://svn.pardus.org.tr/pardus/2007/applications/emulators/qemu/files/CVE-2007-1320.patchProposed upstream correction of this patch - see attachment."
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=448525",
+        "title": "CVE-2007-1320 xen/qemu Cirrus LGD-54XX \"bitblt\" Heap Overflow [Fedora 9]",
+        "description": "kvm-65-7.fc9 has been pushed to the Fedora 9 stable repository. If problems still persist, please make note of it in this bug report."
+      }
+    ],
+    "CVE-2008-4552": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=458676",
+        "title": "CVE-2008-4552 nfs-utils: incorrect use of tcp_wrappers, causing hostname-based rules to be ignored",
+        "description": "It seems that tcp_wrappers does not honor netgroups. As this was noted in a different unrelated bug, I'm opening this one:https://bugzilla.redhat.com/show_bug.cgi?id=440114#c8 It seems that netgroups are not working; if I put in my hosts.allow file mountd: hostname - or - mountd: ip-address then I can mount, but if I have a netgroup, I can't... for instance mountd: @selected_hosts Can you confirm this behaviour?"
+      }
+    ],
+    "CVE-2008-4554": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=466707",
+        "title": "CVE-2008-4554 kernel: don't allow splice() to files opened with O_APPEND",
+        "description": "Description of problem:Miklos Szeredi reported that splice() to files opened with O_APPEND are ignored, which allows users to bypass the append-only restriction."
+      }
+    ],
+    "CVE-2008-4776": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=468830",
+        "title": "CVE-2008-4776 libgadu: contact description buffer over-read vulnerability",
+        "description": "New libgadu upstream version 1.8.2 fixes a buffer overrun issue, quoting the Fedora update request (https://admin.fedoraproject.org/updates/libgadu): Security fix for contact description buffer overrun vulnerability. A specifically crafted packet sent by the server could overwrite memory. Successful exploitation would require a man-in-the-middle attack or hacking the Gadu-Gadu servers. No known exploits.References:http://toxygen.net/libgadu/releases/1.8.2.html"
+      }
+    ],
+    "CVE-2008-4815": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=469882",
+        "title": "CVE-2008-4815 Adobe Reader: insecure RPATH flaw",
+        "description": "Adobe Reader was built to use insecure RPATH in the binary.This issue could possibly be exploited by a local attacker to run arbitrarycode as some other user if victim user can be convinced to run Adobe Readerin an attacker controlled directory with specially crafted content."
+      }
+    ],
+    "CVE-2008-4870": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=436287",
+        "title": "dovecot.conf is world readable - possible password exposure",
+        "description": "Description of problem:The file dovecot.conf is world readable by default. This poses a potentialsecurity issue if the ssl_key_password parameter is set. Any local user would beable to view the password used to protect the SSL key file. The dovecot.conffile does not need to be world readable, dovecot functions perfectly well with/etc/dovecot.conf not being world readable. Changing the default permissions ofdovecot.conf to -rw-r---- (0640) would prevent this issue and has no impact onsystem functionality.Version-Release number of selected component (if applicable):How reproducible:AlwaysSteps to Reproduce:1. install dovecot2.3. Actual results:Expected results:Additional info:"
+      }
+    ],
+    "CVE-2008-5005": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=469667",
+        "title": "CVE-2008-5005 uw-imap: buffer overflow in dmail and tmail",
+        "description": "UW-IMAP upstream developers released new upstream version - 2007d - that fixes security issue in dmail and tmail utilities. Upstream announcement fails to detail those issue further.References:http://mailman2.u.washington.edu/pipermail/imap-uw/2008-October/002267.htmlhttp://mailman2.u.washington.edu/pipermail/imap-uw/2008-October/002268.html"
+      }
+    ],
+    "CVE-2008-5025": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=470769",
+        "title": "CVE-2008-5025 kernel: hfs: fix namelength memory corruption",
+        "description": "From: Eric Sesterhenn: Fix a stack corruption caused by a corrupted hfs filesystem. If the catalog name length is corrupted the memcpy overwrites the catalog btree structure. Since the field is limited to HFS_NAMELEN bytes in thestructure and the file format, we throw an error if it is too long."
+      }
+    ],
+    "CVE-2008-5078": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=473958",
+        "title": "CVE-2008-5078 enscript: \"epsf\" special escape buffer overflows",
+        "description": "While preparing updates for CVE-2008-3863 and CVE-2008-4306, we have discovered that enscript 1.6.1 (and possibly earlier versions) is affected by similar flaws affecting handling of epsf special escape.Long file name specified as an argument for epsf special escape can cause buffer overflow in recognize_eps_file() in src/psgen.c, or in tilde_subst() in src/util.c due to unsafe use of strcpy or sprintf.Identified flaws do not affect enscript 1.6.4."
+      }
+    ],
+    "CVE-2008-5082": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=475998",
+        "title": "CVE-2008-5082 Certificate System: missing public key challenge proof verification in the TPS component",
+        "description": "During the internal code review, it was discovered that Red Hat Certificate System / Dogtag Certificate System does not properly verify challenge response received during the enrollment of new security token.If keys are generated on the token during the enrollment, TPS correctly verifies that the requestor possesses the private key, but fails to verify that the key really exists on the token and is not only in software.An attacker with access to blank token known to TPS component and with privilege to perform enrollments of new tokens could use this flaw to successfully finish enrollment procedure with the software generated key instead of the one stored in the token.Affected versions:Red Hat Certificate System 7.1, 7.2, 7.3Dogtag Certificate System 1.0"
+      }
+    ],
+    "CVE-2008-5134": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=470761",
+        "title": "CVE-2008-5134 kernel: libertas: fix buffer overrun",
+        "description": "Description of problem:From: Johannes Berg <johannes@sipsolutions.net>If somebody sends an invalid beacon/probe response, that can trash the whole BSS descriptor. The descriptor is, luckily, large enough so that it cannot scribble past the end of it; it's well above 400 bytes long."
+      }
+    ],
+    "CVE-2008-5285": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=472737",
+        "title": "CVE-2008-5285 wireshark: DoS (infinite loop) in SMTP dissector via large SMTP request",
+        "description": "A security flaw was found in the Wireshark's SMTP dissector -- routines for SMTP packet disassembly. A remote attacker could use this flaw to cause a denial of service (infinite loop) via sending a large SMTP request to port 25.References:http://packetstormsecurity.org/0811-advisories/wireshark104-dos.txthttp://www.securityfocus.com/archive/1/498562/30/0/threadedhttp://www.nabble.com/-SVRT-04-08--Vulnerability-in-WireShark-1.0.4-for-DoS-Attack-td20640164.htmlProposed upstream patches:http://anonsvn.wireshark.org/viewvc/trunk/epan/dissectors/packet-smtp.c?r1=24989&r2=24988&pathrev=24989&view=patchhttp://anonsvn.wireshark.org/viewvc/trunk/epan/dissectors/packet-smtp.c?r1=24994&r2=24993&pathrev=24994&view=patch"
+      }
+    ],
+    "CVE-2008-5300": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=470201",
+        "title": "CVE-2008-5029 kernel: Unix sockets kernel panic",
+        "description": "http://marc.info/?l=linux-netdev&m=122593044330973&w=2\"The following code causes a kernel panic on Linux 2.6.26:http://darkircop.org/unix.cI haven't investigated the bug so I'm not sure what is causing it, and don't know if it's exploitable. The code passes unix sockets from one process to another using unix sockets. The bug probably has to do with closing file descriptors.\""
+      },
+      {
+        "url": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=473259",
+        "title": "CVE-2008-5300 kernel: fix soft lockups/OOM issues with unix socket garbage collector",
+        "description": "Reported and fixed by Dann Frazier <dannf@hp.com>:This is an implementation of David Miller's suggested fix in: https://bugzilla.redhat.com/show_bug.cgi?id=470201Paraphrasing the description from the above report, it makes sendmsg() block while UNIX garbage collection is in progress. This avoids a situation where child processes continue to queue new FDs over a AF_UNIX socket to a parent which is in the exit path and running garbage collection on these FDs. This contention can result in soft lockups and oom-killing of unrelated processes.This bug was triggerable after fixing CVE-2008-5029. From Dave Miller, \"It's a different bug, but triggerable by the same test program.\"Reproducers:https://bugzilla.redhat.com/show_bug.cgi?id=470201#c1https://bugzilla.redhat.com/show_bug.cgi?id=470201#c7"
+      }
+    ],
+    "CVE-2008-5514": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=477227",
+        "title": "CVE-2008-5514 libc-client: buffer overflow in rfc822_output_char / rfc822_output_data",
+        "description": "Ludwig Nussel reported a flaw in libc-client / uw-imap:The rfc822_output_char() function in the uw-imap c-client library does not check whether the buffer is already full and may therefore write one byte too much. This leads to a segfault in rfc822_output_data() later due to memcpy with size -1.Issue was fixed in imap-2007e: Updated: 16 December 2008 imap-2007e is a maintenance release, consisting primarily of bugfixes to problems discovered in the release that affected a small number of users plus a security fix for users of the RFC822BUFFER routines."
+      }
+    ],
+    "CVE-2008-5516": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=479715",
+        "title": "git: gitweb multiple remote command injections (CVE-2008-5516 CVE-2008-5517)",
+        "description": "Sebastian Krahmer of the SuSE security team discovered a remote command injection flaws in the gitweb, caused by an insufficient checking of the inputs used to build argument to perl's open() function. Remote attacker could use these flaws to run arbitrary commands with the privileges of the web server executing gitweb CGI scripts.Issues are already fixed upstream in the latest git branches. It seems that the security consequences were not noticed when fixes were applied upstream, as multiple occurrences of the similar flaws were fixed in different upstream versions:CVE-2008-5517 http://repo.or.cz/w/git.git?a=commitdiff;h=516381d5 (fixes issues in git_snapshot and git_object, first occurred in 1.5.6)CVE-2008-5516 http://repo.or.cz/w/git.git?a=commitdiff;h=c582abae (fixes issue in git_search, first occurred in 1.5.5)All current Fedora packages use version 1.5.6+, so neither of the issue apply to them. EPEL versions should be affected by one or both of the issues."
+      }
+    ],
+    "CVE-2008-5517": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=479715",
+        "title": "git: gitweb multiple remote command injections (CVE-2008-5516 CVE-2008-5517)",
+        "description": "Sebastian Krahmer of the SuSE security team discovered a remote command injection flaws in the gitweb, caused by an insufficient checking of the inputs used to build argument to perl's open() function. Remote attacker could use these flaws to run arbitrary commands with the privileges of the web server executing gitweb CGI scripts.Issues are already fixed upstream in the latest git branches. It seems that the security consequences were not noticed when fixes were applied upstream, as multiple occurrences of the similar flaws were fixed in different upstream versions:CVE-2008-5517 http://repo.or.cz/w/git.git?a=commitdiff;h=516381d5 (fixes issues in git_snapshot and git_object, first occurred in 1.5.6)CVE-2008-5516 http://repo.or.cz/w/git.git?a=commitdiff;h=c582abae (fixes issue in git_search, first occurred in 1.5.5)All current Fedora packages use version 1.5.6+, so neither of the issue apply to them. EPEL versions should be affected by one or both of the issues."
+      }
+    ],
+    "CVE-2008-5519": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=490201",
+        "title": "CVE-2008-5519 mod_jk: session information leak",
+        "description": "An issue with mod_jk 1.2.26, and possibly older versions, allows one user to see another user's information due to missing logic where faulty clients set Content-Length without providing data, or if a user submits too many times very fast.The relevant changelog entry in mod_jk 1.2.27 that corrects the issue is:\"AJP13: Always send initial POST packet even if the client disconnected after sending request but before providing POST data. In that case or in case the client broke the connection in a middle of read send an zero size packet informing container about broken client connection. (mturk)\"from http://tomcat.apache.org/connectors-doc/miscellaneous/changelog.html"
+      }
+    ],
+    "CVE-2008-5700": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=474495",
+        "title": "CVE-2008-5700 kernel: enforce a minimum SG_IO timeout",
+        "description": "From Alan Cox:Looks like libata needs to enforce sensible minimum timeouts on SG_IOrequests otherwise the code below (especially run ten at a time) which I wasusing to try and duplicate the kerneloops logged errors produces long spewsof errors and forces the drives into PIO run as any user.."
+      }
+    ],
+    "CVE-2008-5713": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=477744",
+        "title": "CVE-2008-5713 kernel: soft lockup occurs when network load is very high",
+        "description": "From Flavio Leitner:On many core SMP machine (such as 16 core or more), soft lockup can occur when heavy network load are produced concurrently.The lockup happens at __qdisc_run()(@net/sched/sch_generic.c:line 84). Because driver continue to send packet and return NETDEV_TX_OK, __qdisc_run() can't exit from qdisc_restart() loop.This behavior may improve throughput, but some application can stuck over 10s.This issue has been fixed on vanilla kernel.Version-Release number of selected component:kernel version: 2.6.18-92.el5 (RHEL5.2GA)How reproducible:It can be reproducible in dozens of seconds, on 16 core SMP box. This issue is easy to happen, when UDP workload is very high.Steps to Reproduce:On 16 core SMP machine, execute netperf in higher than 16 parallel with the following options, then it occurs at a client side.# netperf -H <netserver_address> -l 60 -t UDP_STREAM -- -s 262144 -r 262144 -m16384Actual results:A lot of soft lockup messages are recorded into syslog, and performance problem appears in some applications.Expected results:In kernel, any CPU doesn't dedicate to some work without schedule() for a long time.Hardware info:Express5800/140Rf-4Business impact:It makes customer's applications unresponsive too long and it makes impossible to apply RHEL5.2 to performance/latency sensitive systems.Additional info:git patch: [NET]: Add preemption point in qdisc_runhttp://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=2ba2506ca7ca62c56edaa334b0fe61eb5eab6ab0"
+      }
+    ],
+    "CVE-2008-5744": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=475446#c4",
+        "title": "CVE-2008-5396 zaptel: Array index error in multiple zaptel drivers",
+        "description": "Common Vulnerabilities and Exposures assigned an identifier CVE-2008-5396 tothe following vulnerability:Array index error in the (1) torisa.c and (2) dahdi/tor2.c drivers inZaptel (aka DAHDI) 1.4.11 and earlier allows local users in thedialout group to overwrite an integer value in kernel memory bywriting to /dev/zap/ctl, related to missing validation of the syncfield associated with the ZT_SPANCONFIG ioctl.References:http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5396http://www.openwall.com/lists/oss-security/2008/12/03/10http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=507459http://bugs.digium.com/view.php?id=13954Patches:http://bugs.digium.com/file_download.php?file_id=20796&type=bug (tor2)http://bugs.digium.com/file_download.php?file_id=20797&type=bug (torisa)http://bugs.digium.com/file_download.php?file_id=20808&type=bug (wcte11xp)"
+      }
+    ],
+    "CVE-2008-6123": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=485211",
+        "title": "CVE-2008-6123 net-snmp: incorrect application of hosts access restrictions in hosts.{allow,deny}",
+        "description": "A possibility of sensitive host information disclosure was found in the implementation of SNMP protocol as defined in RFC 1065, RFC 1066, and RFC 1067.If the snmpd deamon was running on the host, it served the SNMP queriesregardless of the fact, the IP address of the requester was not mentioned inthe list of hosts allowed to issue / request SNMP MIB objects information.Remote attacker could use this flaw to gain host related sensitive informationvia performing a SNMP query.References:http://bugs.gentoo.org/show_bug.cgi?id=250429Upstream patch:http://net-snmp.svn.sourceforge.net/viewvc/net-snmp?view=rev&revision=17367"
+      }
+    ],
+    "CVE-2008-6560": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=468966",
+        "title": "Possible buffer overflow in cman config loader can lead to memory corruption",
+        "description": "Description of problem:a static array (with max 52 entries) is used during config load operations to store data.It is possible to overflow this buffer and corrupt memory (it's not possible to exploit it for code execution).Version-Release number of selected component (if applicable):all versions of RHEL5 are affectedHow reproducible:alwaysSteps to Reproduce:1. create a \"big\" cluster.conf:<cluster> .. standard cluster conf stuff here .. <junk> <extrajunk foo=\"bar\"/> <- repeat this line 60 times for example (as long as it's more than 53) </junk></cluster>2. fire up ccsd (this will work just fine)3. cman_tool -d join Actual results:openais/cman will start spinning 100% of the CPU. gdb bt will show that the system is haning on libxml operations because libxml is trying to parse what might be invalid data.Expected results:should work just fine.Additional info:this has been fixed already in cluster.git master branch:http://git.fedorahosted.org/git/cluster.git?p=cluster.git;a=commitdiff;h=67fee9128e54c6c3fc3eae306b5b501f3029c3beIt needs backporting to RHEL5 branch as the file name has changed."
+      }
+    ],
+    "CVE-2008-6755": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=476529",
+        "title": "CVE-2008-6755 zoneminder: default permissions of zm.conf",
+        "description": "While checking Gentoo bug: http://bugs.gentoo.org/show_bug.cgi?id=250715I noticed that zoneminder in Fedora defaults to apache:apache 600 for /etc/zm.conf. Therefore, Fedora defaults does now allow reading the config file directly using cat or vim. chmod o-r is probably not much of a fix in setups where local users can run own php or cgi scripts with web server privileges.However, in such setups, Fedora default seems even worse, as any php or cgi can actually modify the config (and at least break DB connectivity).In similar cases, where some daemon user needs read access to certain config file, root:<daemon_group> 640 is more common. Please check if changing:%config(noreplace) %attr(600,%{zmuid_final},%{zmgid_final}) %{_sysconfdir}/zm.confto%config(noreplace) %attr(640,root,%{zmgid_final}) %{_sysconfdir}/zm.confmakes sense for ZM."
+      }
+    ],
+    "CVE-2008-7177": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=452800",
+        "title": "Buffer overflows, EQU miscompile in NASM < 2.03.01",
+        "description": "Description of problem:There are several (low impact, but still) buffer overflows in NASM releasesprior to 2.03.01.Additionally, in NASM prior to 2.03, some code that use the EQU instructionwould silently produce incorrect code.Version-Release number of selected component (if applicable):How reproducible:AlwaysSteps to Reproduce:- Create a piece of code which contains an EQU with a forward reference.- Then *reference* the EQU before the forward reference is resolved.- NASM will emit an *absolute* reference, which will produce incorrect code iflinked at a non-zero offset."
+      }
+    ],
+    "CVE-2008-7258": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=582236",
+        "title": "CVE-2008-7258 standardise() -- Buffer overflow",
+        "description": "Description of problem:See full descrition of bug here: https://bugs.launchpad.net/ubuntu/+source/ssmtp/+bug/282424Version-Release number of selected component: ssmtp-2.61-11.8.el5How reproducible: AlwaysSteps to Reproduce:( 0. Install & configure ssmtp, of course )1. (echo -n . ; for i in {1..2050} ; do echo -n $i ; done) | mail rootActual results:ssmtp dies with \"send-mail: standardise() -- Buffer overflow\"Expected results: Mail sent"
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2008-7258",
+        "title": "CVE-2008-7258 Ssmtp: Buffer overflow by cutting '\\n' sequence from lines with leading dot",
+        "description": "Brendan Boerner reported: [1] https://bugs.launchpad.net/ubuntu/+source/ssmtp/+bug/282424a deficiency in the way ssmtp removed trailing '\\n' sequenceby processing lines beginning with a leading dot. A local user,could send a specially-crafted e-mail message via ssmtp send-onlysendmail emulator, leading to ssmtp executable denial of service (exit with:ssmtp: standardise() -- Buffer overflow). Different vulnerabilitythan CVE-2008-3962.References: [2] https://bugzilla.redhat.com/show_bug.cgi?id=582236 [3] https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2008-3962 [4] http://patch-tracker.debian.org/package/ssmtp/2.62-3 [5] http://lists.fedoraproject.org/pipermail/package-announce/2010-May/041012.html [6] http://lists.fedoraproject.org/pipermail/package-announce/2010-May/041009.html [7] http://lists.fedoraproject.org/pipermail/package-announce/2010-May/041119.htmlDebian Linux distribution patch: [8] http://patch-tracker.debian.org/patch/series/view/ssmtp/2.62-3/345780-standardise-bufsize"
+      }
+    ],
+    "CVE-2008-7270": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=659462",
+        "title": "CVE-2010-4180 openssl: NETSCAPE_REUSE_CIPHER_CHANGE_BUG ciphersuite downgrade attack",
+        "description": "Quoting OpenSSL security advisory: http://openssl.org/news/secadv_20101202.txt A flaw has been found in the OpenSSL SSL/TLS server code where an old bug workaround allows malicous clients to modify the stored session cache ciphersuite. In some cases the ciphersuite can be downgraded to a weaker one on subsequent connections.Problem affects SSL/TLS server that enable workaround for old Netscape server SSL implementation bug - SSL_OP_NETSCAPE_REUSE_CIPHER_CHANGE_BUG. An attacker able to sniff session identifier (sent in plain during the SSL handshake) could use this flaw to force change of the cipher suite in stored session. Client, that later resumes that session, may start using different (weaker) cipher suite chosen by attacker.OpenSSL upstream version enable SSL_OP_NETSCAPE_REUSE_CIPHER_CHANGE_BUG when SSL_OP_ALL option is set (it's common to set this option in applications using OpenSSL). However, OpenSSL versions in Red Hat Enterprise Linux 5 and 6 have SSL_OP_NETSCAPE_REUSE_CIPHER_CHANGE_BUG excluded from SSL_OP_ALL (the change was done in response to bug #175779). Applications can enable Netscape bug workaround on those versions explicitly.OpenSSL versions prior to 0.9.8j allowed attacker to change stored session cipher quite to arbitrary cipher suite supported by OpenSSL. Version 0.9.8j corrected this issue to only allow changing cipher suite to those server is configured to use: http://cvs.openssl.org/chngview?cn=17489In both cases, client must accept cipher suite change on resume for the downgrade attack to succeed.Issue was addressed upstream in 0.9.8q and 1.0.0c by completely disabling this obsolete bug workaround: http://cvs.openssl.org/chngview?cn=20131"
+      }
+    ],
+    "CVE-2008-7316": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1302009",
+        "title": "CVE-2008-7316 kernel: writev regression: pan hanging unkillable and un-straceable",
+        "description": "A flaw was discovered in Linux kernel. Zero length iovecs can go into an infinite loop in writev, because theiovec iterator does not always advance over them.CVE assignment:http://seclists.org/oss-sec/2016/q1/189Upstream fix:https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=124d3b7041f9a0ca7c43a6293e1cae4576c32fd5"
+      }
+    ],
+    "CVE-2008-0122": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=429149",
+        "title": "CVE-2008-0122 libbind off-by-one buffer overflow",
+        "description": "CVE-2008-0122:Off-by-one error in the inet_network function in libc in FreeBSD 6.2, 6.3, and7.0-PRERELEASE and earlier allows context-dependent attackers to cause a denialof service (crash) and possibly execute arbitrary code via crafted input thattriggers memory corruption.Affected code is also used by ISC Bind library, which is affected by thisproblem too."
+      }
+    ],
+    "CVE-2008-1615": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=431430",
+        "title": "CVE-2008-1615 kernel: ptrace: Unprivileged crash on x86_64 %cs corruption",
+        "description": "RHTS testcases:/kernel/syscalls/ptrace/x86_64-cs/kernel/syscalls/ptrace/x86_64-cs-biarch"
+      }
+    ],
+    "CVE-2008-1673": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=443962",
+        "title": "CVE-2008-1673 kernel: possible buffer overflow in ASN.1 parsing routines",
+        "description": "Wei Wang of McAfee Avert Labs discovered a security problem in kernel's ASN.1decoder affecting CIFS and ip_nat_snmp_basic modules:Due to an error in two linux kernel modules, cifs filesytem andip_nat_snmp_basic in the ASN.1 decoder when handling length BERencodings, This flaw can be remotely exploited by remote attackers tocause a vulnerable system to hang or even to execute arbitrary code inkernel mode.Since cifs and ip_nat_snmp_basic kernel module are using the same ASN1.1decoder which was derived from the gxsnmp package . So, gxsnmp is alsovulnerable."
+      }
+    ],
+    "CVE-2008-2375": [
+      {
+        "url": "https://bugzilla.redhat.com/attachment.cgi?id=201051",
+        "description": "Wei Wang of McAfee Avert Labs discovered a security problem in kernel's ASN.1decoder affecting CIFS and ip_nat_snmp_basic modules:Due to an error in two linux kernel modules, cifs filesytem andip_nat_snmp_basic in the ASN.1 decoder when handling length BERencodings, This flaw can be remotely exploited by remote attackers tocause a vulnerable system to hang or even to execute arbitrary code inkernel mode.Since cifs and ip_nat_snmp_basic kernel module are using the same ASN1.1decoder which was derived from the gxsnmp package . So, gxsnmp is alsovulnerable."
+      }
+    ],
+    "CVE-2008-2940": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=455235",
+        "title": "CVE-2008-2940 hpssd of hplip allows unprivileged user to trigger alert mail",
+        "description": "==Description==hpssd allows unprivileged local users to trigger alert mails by sending specially crafted packets"
+      }
+    ],
+    "CVE-2008-3527": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=460251",
+        "title": "CVE-2008-3527 kernel: missing boundary checks in syscall/syscall32_nopage()",
+        "description": "Description of problem:Tavis Ormandy reported missing boundary checks in the Virtual Dynamic Shared Objects (vDSO) implementation. This could allow a local unprivileged user to cause a denial of service or privilege escalation."
+      }
+    ],
+    "CVE-2008-3915": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=461101",
+        "title": "CVE-2008-3915 kernel: nfsd: fix buffer overrun decoding NFSv4 acl",
+        "description": "Description of problem:The array allocated in init_state() is not large enough. It is possible to write past the end of the allocated memory."
+      }
+    ],
+    "CVE-2008-5080": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=474396",
+        "title": "CVE-2008-5080 awstats: incomplete fix for CVE-2008-3714 XSS issue",
+        "description": "It was discovered that the upstream patch for cross-site scripting (XSS) issue in awstats known as CVE-2008-3714 does not completely resolve the problem and it still allows injection of quote characters.Improved patch is available in the Debian BTS: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=495432#21It strips quotes only after URL-decoding %-escaped strings was done, rather than before.Patch is included in the Debian security advisory DSA-1679-1: http://www.debian.org/security/2008/dsa-1679"
+      }
+    ],
+    "CVE-2008-5083": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2008-5083",
+        "title": "CVE-2008-5083 JON unauthorized access private property",
+        "description": "This is a duplicate of RHQ-491: If the user knew the name of secured property such as 'principal' or 'credentials', they could get security information about the resources managed by JBoss ON. The fix to this was to filter out any results that deal with PASSWORD types of properties.The issue affected JON 2.1.x and was fixed with JON 2.1.2 SP1.*** This bug has been marked as a duplicate of bug 536105 ***"
+      }
+    ],
+    "CVE-2008-6679": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=493445",
+        "title": "CVE-2008-6679 ghostscript: Buffer overflow in BaseFont writer module for pdfwrite device",
+        "description": "Created attachment 337627 [details]PoC proving presence of the flaw"
+      }
+    ]
+  }
 }

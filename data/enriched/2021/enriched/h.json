@@ -1,6 +1,34 @@
 {
   "year": 2021,
-  "total": 0,
+  "total": 3,
   "reference": "kb.cert.org",
-  "reports": {}
+  "reports": {
+    "CVE-2021-1675": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/383432",
+        "title": "Microsoft Windows Print Spooler allows for RCE via AddPrinterDriverEx()",
+        "overview": "The Microsoft Windows Print Spooler service fails to restrict access to functionality that allows users to add printers and related drivers, which can allow a remote authenticated attacker to execute arbitrary code with SYSTEM privileges on a vulnerable system.",
+        "description": "The RpcAddPrinterDriverEx() function is used to install a printer driver on a system. One of the parameters to this function is the DRIVER_CONTAINER object, which contains information about which driver is to be used by the added printer. The other argument, dwFileCopyFlags, specifies how replacement printer driver files are to be copied. An attacker can take advantage of the fact that any authenticated user can call RpcAddPrinterDriverEx() and specify a driver file that lives on a remote server. This results in the Print Spooler service spoolsv.exe executing code in an arbitrary DLL file with SYSTEM privileges. Note that while original exploit code relied on the RpcAddPrinterDriverEx to achieve code execution, an updated version of the exploit uses RpcAsyncAddPrinterDriver to achieve the same goal. Both of these functions achieve their functionality using AddPrinterDriverEx. While Microsoft has released an update for CVE-2021-1675, it is important to realize that this update does NOT protect against public exploits that may refer to PrintNightmare or CVE-2021-1675. On July 1, Microsoft released CVE-2021-34527. This bulletin states that CVE-2021-34527 is similar but distinct from the vulnerability that is assigned CVE-2021-1675, which addresses a different vulnerability in RpcAddPrinterDriverEx(). The attack vector is different as well. CVE-2021-1675 was addressed by the June 2021 security update.",
+        "impact": "By sending a request to add a printer, e.g. by using RpcAddPrinterDriverEx() over SMB or RpcAsyncAddPrinterDriver() over RPC, a remote, authenticated attacker may be able to execute arbitrary code with SYSTEM privileges on a vulnerable system. A local unprivileged user may be able to execute arbitrary code with SYSTEM privileges as well. We have created a flowchart to indicate exploitability of PrintNightmare across various platform configurations:"
+      }
+    ],
+    "CVE-2021-22893": [
+      {
+        "url": "https://kb.cert.org/vuls/id/213092",
+        "title": "Pulse Connect Secure contains a use-after-free vulnerability",
+        "overview": "Pulse Connect Secure (PCS) gateway contains a use-after-free vulnerability that can allow an unauthenticated remote attacker to execute arbitrary code.",
+        "description": "A use-after-free vulnerability that can be reached via a license server handling endpoint may allow a remote, unauthenticated attacker to execute arbitrary code on a vulnerable Pulse Connect Secure gateway system. Every system that is running PCS 9.0R3 or higher or 9.1R1 through 9.2R11.3 is affected. Having the license server configuration enabled is NOT a prerequisite to being vulnerable. The vulnerable endpoints are present regardless of whether the system is an actual license server or not.",
+        "impact": "By making a crafted request to a vulnerable Pulse Connect Secure system, an unauthenticated remote attacker may be able to execute arbitrary code on the gateway with root privileges."
+      }
+    ],
+    "CVE-2021-34527": [
+      {
+        "url": "https://www.kb.cert.org/vuls/id/383432",
+        "title": "Microsoft Windows Print Spooler allows for RCE via AddPrinterDriverEx()",
+        "overview": "The Microsoft Windows Print Spooler service fails to restrict access to functionality that allows users to add printers and related drivers, which can allow a remote authenticated attacker to execute arbitrary code with SYSTEM privileges on a vulnerable system.",
+        "description": "The RpcAddPrinterDriverEx() function is used to install a printer driver on a system. One of the parameters to this function is the DRIVER_CONTAINER object, which contains information about which driver is to be used by the added printer. The other argument, dwFileCopyFlags, specifies how replacement printer driver files are to be copied. An attacker can take advantage of the fact that any authenticated user can call RpcAddPrinterDriverEx() and specify a driver file that lives on a remote server. This results in the Print Spooler service spoolsv.exe executing code in an arbitrary DLL file with SYSTEM privileges. Note that while original exploit code relied on the RpcAddPrinterDriverEx to achieve code execution, an updated version of the exploit uses RpcAsyncAddPrinterDriver to achieve the same goal. Both of these functions achieve their functionality using AddPrinterDriverEx. While Microsoft has released an update for CVE-2021-1675, it is important to realize that this update does NOT protect against public exploits that may refer to PrintNightmare or CVE-2021-1675. On July 1, Microsoft released CVE-2021-34527. This bulletin states that CVE-2021-34527 is similar but distinct from the vulnerability that is assigned CVE-2021-1675, which addresses a different vulnerability in RpcAddPrinterDriverEx(). The attack vector is different as well. CVE-2021-1675 was addressed by the June 2021 security update.",
+        "impact": "By sending a request to add a printer, e.g. by using RpcAddPrinterDriverEx() over SMB or RpcAsyncAddPrinterDriver() over RPC, a remote, authenticated attacker may be able to execute arbitrary code with SYSTEM privileges on a vulnerable system. A local unprivileged user may be able to execute arbitrary code with SYSTEM privileges as well. We have created a flowchart to indicate exploitability of PrintNightmare across various platform configurations:"
+      }
+    ]
+  }
 }
