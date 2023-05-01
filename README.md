@@ -1,42 +1,6 @@
 # vulBERT
 
 
-## Result
-
-```
-One-vs-One (OvO) CWE-20 vs CWE-89
-1455/1455 [==============================] - 2150s 1s/step - loss: 0.0362 - accuracy: 0.9923 - val_loss: 0.0307 - val_accuracy: 0.9950
-
-One-vs-One (OvR) CWE-89 vs Top 10
-896/4424 [=====>........................] - ETA: 1:18:45 - loss: 0.0425 - accuracy: 0.9862
-
-vul_dataset_ovr_no_references_top10_vs_CWE-89
-2765/2765 [==============================] - ETA: 0s - loss: 0.0239 - accuracy: 0.9936
-
-vul_dataset_ovr_top20_vs_CWE-89
-1111/10956 [==>...........................] - ETA: 1:56:29 - loss: 0.0381 - accuracy: 0.9904
-
-vul_dataset_ovr_top20_vs_CWE-189
-10956/10956 [==============================] - 10556s 962ms/step - loss: 0.0717 - accuracy: 0.9784 - val_loss: 0.0630 - val_accuracy: 0.9814
-```
-
-## How to run
-
-
-```
-YEAR=2013 node enriching.js
-```
-
-```
-YEAR=2013 SYMBOL=n node enriching.js
-```
-
-```
-SYMBOL=n YEAR=2021 node cleaning.js
-```
-
-## The Elephant in a Dark Room
-
 CVE-2001-1432
 - https://nvd.nist.gov/vuln/detail/CVE-2001-1432
 - https://www.kb.cert.org/vuls/id/464827
